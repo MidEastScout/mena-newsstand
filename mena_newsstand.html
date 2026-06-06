@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MENA Morning Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#18171A;--ink2:#3D3B42;--muted:#8A8690;
+  --line:#DDD9D0;--bg:#F7F4EE;--card:#FFFFFF;
+  --blue:#1A3B6B;--gold:#9A7B2E;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+
+/* Masthead */
+.mast{border-bottom:4px double var(--ink);padding:20px 0 0;text-align:center}
+.mast-kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.mast h1{font-family:'Playfair Display',serif;font-size:clamp(28px,6vw,52px);font-weight:700;letter-spacing:-.5px;line-height:1.05}
+.mast-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--muted);margin:8px 0 14px}
+.mast-bar{display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);flex-wrap:wrap}
+.mast-date{font-weight:600;color:var(--ink)}
+
+/* Nav */
+.navbar{background:var(--ink);position:sticky;top:0;z-index:50}
+.navbar .wrap{display:flex;overflow-x:auto;scrollbar-width:none}
+.navbar .wrap::-webkit-scrollbar{display:none}
+.navbtn{color:rgba(255,255,255,.5);font-size:12px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;padding:11px 16px;border:none;background:none;white-space:nowrap;border-bottom:2px solid transparent;transition:.15s}
+.navbtn:hover,.navbtn.active{color:#fff}
+.navbtn.active{border-bottom-color:#fff}
+
+.main{max-width:960px;margin:0 auto;padding:20px 16px}
+.section{display:none}
+.section.active{display:block}
+
+/* Front page cards */
+.fp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-bottom:24px}
+.fp-card{background:var(--card);border:1px solid var(--line);border-radius:9px;overflow:hidden;transition:.15s;display:block}
+.fp-card:hover{border-color:#BFBAB0;box-shadow:0 3px 10px rgba(0,0,0,.09);transform:translateY(-2px)}
+.fp-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;background:#f0ede6;display:block}
+.fp-info{padding:9px 11px}
+.fp-name{font-size:13px;font-weight:600;color:var(--ink)}
+.fp-loc{font-size:11px;color:var(--muted);margin-top:2px}
+.fp-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.4px;border-radius:3px;padding:2px 6px;margin-top:5px}
+.t-en{background:#E3EBF5;color:#1A3B6B}
+.t-he{background:#EAF0E3;color:#2B5C1A}
+.t-ar{background:#F5EBE0;color:#7A4B1A}
+
+/* Section header */
+.sec-head{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:14px}
+.sec-head h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:600}
+.sec-note{font-size:12px;color:var(--muted);margin-bottom:14px;font-style:italic;line-height:1.5}
+
+/* Source grid (no front pages) */
+.src-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:9px;margin-bottom:24px}
+.src-card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;transition:.15s}
+.src-card:hover{border-color:#BFBAB0}
+.src-top{display:flex;align-items:flex-start;justify-content:space-between;gap:6px}
+.src-name{font-size:14px;font-weight:600;color:var(--ink)}
+.src-loc{font-size:11px;color:var(--muted);margin-top:2px}
+.src-btn{display:block;padding:6px 0;border-radius:5px;font-size:12px;font-weight:500;text-align:center;border:1px solid var(--line);background:none;color:var(--ink2);transition:.15s}
+.src-btn:hover{border-color:var(--ink);background:var(--bg)}
+
+/* Kiosko section */
+.kiosko-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:9px;margin-bottom:24px}
+.kc{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:8px;transition:.15s}
+.kc:hover{border-color:var(--ink);transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.kc-flag{font-size:22px}
+.kc-name{font-size:14px;font-weight:600;color:var(--ink)}
+.kc-note{font-size:11px;color:var(--muted);margin-top:1px}
+
+/* Analysis */
+.analysis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.acol h3{font-family:'Playfair Display',serif;font-size:16px;padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.acol ul{list-style:none}
+.acol li{margin-bottom:9px}
+.acol a{font-size:14px;font-weight:500;color:var(--blue)}
+.acol a:hover{text-decoration:underline}
+.acol .desc{font-size:11px;color:var(--muted);display:block;margin-top:1px}
+
+/* Tip */
+.tip{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 15px;margin-bottom:20px;font-size:13px;line-height:1.6;color:var(--ink2)}
+.tip strong{color:var(--ink)}
+
+footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-align:center;font-size:12px;color:var(--muted);max-width:960px;margin-left:auto;margin-right:auto}
+</style>
+</head>
+<body>
+
+<div class="mast">
+  <div class="wrap">
+    <div class="mast-kicker">Regional Intelligence Desk · Daily Edition</div>
+    <h1>MENA Morning Briefing</h1>
+    <div class="mast-tag">Front pages & sources across the Middle East</div>
+    <div class="mast-bar">
+      <span class="mast-date" id="hdr-date"></span>
+      <span>·</span>
+      <span>Click any card to see today's front page</span>
+    </div>
+  </div>
+</div>
+
+<div class="navbar">
+  <div class="wrap">
+    <button class="navbtn active" data-sec="frontpages">Front Pages</button>
+    <button class="navbtn" data-sec="gulf">Gulf</button>
+    <button class="navbtn" data-sec="levant">Levant & Egypt</button>
+    <button class="navbtn" data-sec="analysis">Analysis</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- FRONT PAGES TAB -->
+  <div class="section active" id="sec-frontpages">
+
+    <div class="tip">
+      <strong>How this works:</strong> Cards with images link to FrontPages.com — click them to see the actual print cover. Country buttons link to Kiosko, which shows all papers from that country. Arabic-language papers don't have a reliable free front-page aggregator, so those link directly to their websites.
+    </div>
+
+    <div class="sec-head"><h2>Front Pages — FrontPages.com</h2></div>
+    <div class="fp-grid" id="fp-grid"></div>
+
+    <div class="sec-head" style="margin-top:8px"><h2>More Front Pages — Kiosko</h2></div>
+    <div class="sec-note">Kiosko covers these five countries in the region. Click to browse all papers from each country.</div>
+    <div class="kiosko-row">
+      <a class="kc" href="https://es.kiosko.net/il/" target="_blank" rel="noopener">
+        <div class="kc-flag">🇮🇱</div><div><div class="kc-name">Israel</div><div class="kc-note">All Israeli papers</div></div>
+      </a>
+      <a class="kc" href="https://es.kiosko.net/eg/" target="_blank" rel="noopener">
+        <div class="kc-flag">🇪🇬</div><div><div class="kc-name">Egypt</div><div class="kc-note">Al-Ahram, Shorouk…</div></div>
+      </a>
+      <a class="kc" href="https://es.kiosko.net/asi/geo/ae.html" target="_blank" rel="noopener">
+        <div class="kc-flag">🇦🇪</div><div><div class="kc-name">UAE</div><div class="kc-note">Gulf News, National…</div></div>
+      </a>
+      <a class="kc" href="https://es.kiosko.net/ir/" target="_blank" rel="noopener">
+        <div class="kc-flag">🇮🇷</div><div><div class="kc-name">Iran</div><div class="kc-note">Tehran Times…</div></div>
+      </a>
+      <a class="kc" href="https://es.kiosko.net/ma/" target="_blank" rel="noopener">
+        <div class="kc-flag">🇲🇦</div><div><div class="kc-name">Morocco</div><div class="kc-note">Le Matin…</div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- GULF TAB -->
+  <div class="section" id="sec-gulf">
+    <div class="sec-head"><h2>Gulf Sources</h2></div>
+    <div class="sec-note">Direct links to each outlet's website. Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman are not on FrontPages.com or Kiosko — for front pages, visit each paper's website directly.</div>
+    <div class="src-grid" id="grid-gulf"></div>
+  </div>
+
+  <!-- LEVANT & EGYPT TAB -->
+  <div class="section" id="sec-levant">
+    <div class="sec-head"><h2>Levant & Egypt</h2></div>
+    <div class="sec-note">Lebanon and Jordan are not on FrontPages.com. Egypt is on Kiosko — use the button on the Front Pages tab.</div>
+    <div class="src-grid" id="grid-levant"></div>
+  </div>
+
+  <!-- ANALYSIS TAB -->
+  <div class="section" id="sec-analysis">
+    <div class="sec-head"><h2>Analysis & Intelligence Sources</h2></div>
+    <div class="analysis-grid" id="grid-analysis"></div>
+  </div>
+
+</div>
+
+<footer class="wrap">
+  Front page images via FrontPages.com · Country pages via es.kiosko.net · All other links to original outlets
+</footer>
+
+<script>
+// Papers confirmed on FrontPages.com with working front-page images
+const FP_PAPERS = [
+  { name:"Jerusalem Post",  loc:"Israel",  lang:"en", fp:"https://www.frontpages.com/the-jerusalem-post/" },
+  { name:"Haaretz",         loc:"Israel",  lang:"he", fp:"https://www.frontpages.com/haaretz/" },
+  { name:"Gulf Times",      loc:"Qatar",   lang:"en", fp:"https://www.frontpages.com/gulf-times/" },
+  { name:"Jordan Times",    loc:"Jordan",  lang:"en", fp:"https://www.frontpages.com/the-jordan-times/" },
+];
+
+const GULF = [
+  {n:"Arab News",       loc:"Saudi Arabia", l:"en", u:"https://www.arabnews.com"},
+  {n:"Saudi Gazette",   loc:"Saudi Arabia", l:"en", u:"https://www.saudigazette.com.sa"},
+  {n:"Okaz",            loc:"Saudi Arabia", l:"ar", u:"https://www.okaz.com.sa"},
+  {n:"Al Riyadh",       loc:"Saudi Arabia", l:"ar", u:"https://www.alriyadh.com"},
+  {n:"Asharq Al-Awsat", loc:"Pan-Arab",     l:"ar", u:"https://aawsat.com"},
+  {n:"Gulf News",       loc:"UAE",          l:"en", u:"https://gulfnews.com"},
+  {n:"The National",    loc:"UAE",          l:"en", u:"https://www.thenationalnews.com"},
+  {n:"Khaleej Times",   loc:"UAE",          l:"en", u:"https://www.khaleejtimes.com"},
+  {n:"Gulf Times",      loc:"Qatar",        l:"en", u:"https://www.gulf-times.com"},
+  {n:"The Peninsula",   loc:"Qatar",        l:"en", u:"https://www.thepeninsulaqatar.com"},
+  {n:"Al Qabas",        loc:"Kuwait",       l:"ar", u:"https://alqabas.com"},
+  {n:"Arab Times",      loc:"Kuwait",       l:"en", u:"https://www.arabtimesonline.com"},
+  {n:"Gulf Daily News", loc:"Bahrain",      l:"en", u:"https://www.gdnonline.com"},
+  {n:"Times of Oman",   loc:"Oman",         l:"en", u:"https://timesofoman.com"},
+];
+
+const LEVANT = [
+  {n:"An-Nahar",        loc:"Lebanon",  l:"ar", u:"https://www.annahar.com"},
+  {n:"Al-Akhbar",       loc:"Lebanon",  l:"ar", u:"https://al-akhbar.com"},
+  {n:"L'Orient Today",  loc:"Lebanon",  l:"en", u:"https://today.lorientlejour.com"},
+  {n:"Al Rai",          loc:"Jordan",   l:"ar", u:"https://alrai.com"},
+  {n:"Jordan Times",    loc:"Jordan",   l:"en", u:"https://www.jordantimes.com"},
+  {n:"Al-Ahram",        loc:"Egypt",    l:"ar", u:"https://www.ahram.org.eg"},
+  {n:"Al-Masry Al-Youm",loc:"Egypt",    l:"ar", u:"https://www.almasryalyoum.com"},
+  {n:"Al-Shorouk",      loc:"Egypt",    l:"ar", u:"https://www.shorouknews.com"},
+  {n:"Youm7",           loc:"Egypt",    l:"ar", u:"https://www.youm7.com"},
+  {n:"Ma'an News",      loc:"Palestine",l:"en", u:"https://www.maannews.com"},
+];
+
+const ANALYSIS = [
+  {col:"Pan-Arab / Online", items:[
+    {n:"Al Jazeera English", u:"https://www.aljazeera.com",     d:"Qatari-funded, strong original reporting"},
+    {n:"Al-Monitor",         u:"https://www.al-monitor.com",    d:"Best in-depth MENA analysis in English"},
+    {n:"Middle East Eye",    u:"https://www.middleeasteye.net", d:"Investigative, often breaks exclusives"},
+    {n:"The New Arab",       u:"https://www.newarab.com",       d:"Progressive pan-Arab perspective"},
+    {n:"Al Arabiya English", u:"https://english.alarabiya.net", d:"Fast-moving, Saudi/UAE editorial line"},
+  ]},
+  {col:"Think Tanks", items:[
+    {n:"INSS (Israel)",      u:"https://www.inss.org.il/en",    d:"Israel's leading security think tank"},
+    {n:"Mitvim (Israel)",    u:"https://mitvim.org.il/en",      d:"Israeli foreign policy & regional coop."},
+    {n:"Carnegie MENA",      u:"https://carnegieendowment.org/regions/middle-east", d:"Independent, excellent Gulf analysis"},
+    {n:"ICG Middle East",    u:"https://www.crisisgroup.org/middle-east-north-africa", d:"Conflict analysis, early warning"},
+    {n:"AGSIW",              u:"https://agsiw.org",             d:"Arab Gulf States Institute, Washington"},
+    {n:"Chatham House MENA", u:"https://www.chathamhouse.org/regions/middle-east-and-north-africa", d:"UK foreign policy establishment"},
+  ]},
+  {col:"Iran & Security", items:[
+    {n:"Iran International", u:"https://www.iranintl.com/en",   d:"Critical, London-based, strong sourcing"},
+    {n:"Tehran Times",       u:"https://www.tehrantimes.com",   d:"Official Iranian English mouthpiece"},
+    {n:"War on the Rocks",   u:"https://warontherocks.com",     d:"Strategy & security, MENA content"},
+    {n:"Bellingcat",         u:"https://www.bellingcat.com",    d:"OSINT investigations, often MENA-relevant"},
+    {n:"MEMRI",              u:"https://www.memri.org",         d:"Arabic/Farsi media monitoring & translation"},
+  ]},
+  {col:"Wires & Monitoring", items:[
+    {n:"Reuters Middle East", u:"https://www.reuters.com/world/middle-east", d:"Fastest reliable breaking news wire"},
+    {n:"Jadaliyya",          u:"https://www.jadaliyya.com",     d:"Academic, critical, Arab Studies focus"},
+    {n:"All Arab News",      u:"https://allarab.news",          d:"English aggregator of regional coverage"},
+    {n:"MEMRI TV",           u:"https://www.memri.org/tv",      d:"Translated Arabic/Farsi broadcast clips"},
+  ]},
+];
+
+function lb(l){
+  if(l==="en") return `<span class="fp-tag t-en">EN</span>`;
+  if(l==="ar") return `<span class="fp-tag t-ar">AR</span>`;
+  return `<span class="fp-tag t-he">HE</span>`;
+}
+
+function buildFPGrid(){
+  document.getElementById("fp-grid").innerHTML = FP_PAPERS.map(p=>`
+    <a class="fp-card" href="${p.fp}" target="_blank" rel="noopener">
+      <div class="fp-info">
+        <div class="fp-name">${p.name}</div>
+        <div class="fp-loc">${p.loc}</div>
+        ${lb(p.lang)}
+      </div>
+    </a>`).join("");
+}
+
+function buildSrcGrid(id, papers){
+  document.getElementById(id).innerHTML = papers.map(p=>`
+    <div class="src-card">
+      <div class="src-top">
+        <div><div class="src-name">${p.n}</div><div class="src-loc">${p.loc}</div></div>
+        ${lb(p.l)}
+      </div>
+      <a class="src-btn" href="${p.u}" target="_blank" rel="noopener">Open site</a>
+    </div>`).join("");
+}
+
+function buildAnalysis(){
+  document.getElementById("grid-analysis").innerHTML = ANALYSIS.map(c=>`
+    <div class="acol">
+      <h3>${c.col}</h3>
+      <ul>${c.items.map(i=>`
+        <li>
+          <a href="${i.u}" target="_blank" rel="noopener">${i.n}</a>
+          <span class="desc">${i.d}</span>
+        </li>`).join("")}
+      </ul>
+    </div>`).join("");
+}
+
+document.querySelectorAll(".navbtn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".navbtn").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById("sec-"+btn.dataset.sec).classList.add("active");
+  });
+});
+
+document.getElementById("hdr-date").textContent =
+  new Date().toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+
+buildFPGrid();
+buildSrcGrid("grid-gulf", GULF);
+buildSrcGrid("grid-levant", LEVANT);
+buildAnalysis();
+</script>
+</body>
+</html>
