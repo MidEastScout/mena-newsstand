@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Fetches top headlines from 15 MENA outlets via RSS and writes headlines.json."""
+"""Fetches top headlines from 16 MENA outlets via RSS and writes headlines.json."""
 import json
-import socket
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 import feedparser
+import requests
 
 SOURCES = {
     "Gulf": [
@@ -18,12 +18,12 @@ SOURCES = {
         {
             "source": "The National", "country": "UAE", "lang": "en",
             "url": "https://www.thenationalnews.com",
-            "rss": "https://www.thenationalnews.com/rss",
+            "rss": "https://www.thenationalnews.com/arc/outboundfeeds/rss/",
         },
         {
             "source": "Gulf News", "country": "UAE", "lang": "en",
             "url": "https://gulfnews.com",
-            "rss": "https://gulfnews.com/rss",
+            "rss": "https://gulfnews.com/rss/world",
         },
         {
             "source": "Gulf Times", "country": "Qatar", "lang": "en",
@@ -33,19 +33,19 @@ SOURCES = {
         {
             "source": "Times of Oman", "country": "Oman", "lang": "en",
             "url": "https://timesofoman.com",
-            "rss": "https://timesofoman.com/rss",
+            "rss": "https://timesofoman.com/rss/news",
         },
     ],
     "Levant": [
         {
             "source": "Jordan Times", "country": "Jordan", "lang": "en",
             "url": "https://www.jordantimes.com",
-            "rss": "https://www.jordantimes.com/rss.xml",
+            "rss": "https://jordantimes.com/feed",
         },
         {
             "source": "L'Orient Today", "country": "Lebanon", "lang": "en",
             "url": "https://today.lorientlejour.com",
-            "rss": "https://today.lorientlejour.com/rss",
+            "rss": "https://today.lorientlejour.com/feed/",
         },
         {
             "source": "Egypt Independent", "country": "Egypt", "lang": "en",
@@ -55,7 +55,7 @@ SOURCES = {
         {
             "source": "Al-Akhbar", "country": "Lebanon", "lang": "ar",
             "url": "https://al-akhbar.com",
-            "rss": "https://al-akhbar.com/rss",
+            "rss": "https://al-akhbar.com/node/feed",
         },
     ],
     "Israel": [
@@ -89,7 +89,7 @@ SOURCES = {
         {
             "source": "Al Arabiya", "country": "UAE", "lang": "en",
             "url": "https://english.alarabiya.net",
-            "rss": "https://english.alarabiya.net/rss.xml",
+            "rss": "https://english.alarabiya.net/tools/rss/category/news",
         },
         {
             "source": "The New Arab", "country": "UK", "lang": "en",
@@ -101,7 +101,16 @@ SOURCES = {
 
 HEADLINES_PER_OUTLET = 5
 REQUEST_TIMEOUT = 20
-USER_AGENT = "MENA-Newsstand/1.0 (+https://roiebe23.github.io/mena-newsstand/)"
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+    "Accept-Language": "en-US,en;q=0.9",
+}
 
 
 def parse_date(entry) -> str:
@@ -125,7 +134,11 @@ def fetch_outlet(meta: dict) -> dict:
         "error": None,
     }
     try:
-        feed = feedparser.parse(meta["rss"], agent=USER_AGENT)
+        response = requests.get(
+            meta["rss"], headers=HEADERS, timeout=REQUEST_TIMEOUT
+        )
+        response.raise_for_status()
+        feed = feedparser.parse(response.content)
         entries = [
             e for e in feed.entries[:HEADLINES_PER_OUTLET]
             if e.get("title") and e.get("link")
@@ -138,9 +151,9 @@ def fetch_outlet(meta: dict) -> dict:
             }
             for e in entries
         ]
-        if not result["headlines"] and feed.bozo:
-            result["error"] = "feed error"
-            print(f"  x {meta['source']}: {feed.bozo_exception}", file=sys.stderr)
+        if not result["headlines"]:
+            result["error"] = "no entries"
+            print(f"  - {meta['source']}: empty feed", file=sys.stderr)
         else:
             print(f"  + {meta['source']}: {len(result['headlines'])} headlines")
     except Exception as exc:
@@ -150,7 +163,6 @@ def fetch_outlet(meta: dict) -> dict:
 
 
 def main():
-    socket.setdefaulttimeout(REQUEST_TIMEOUT)
     output = {
         "updated": datetime.now(timezone.utc).isoformat(),
         "regions": {},
@@ -169,7 +181,7 @@ def main():
         for outlets in output["regions"].values()
         for outlet in outlets
     )
-    print(f"\nWrote {out_path} — {total} headlines across 15 outlets")
+    print(f"\nWrote {out_path} — {total} headlines across 16 outlets")
 
 
 if __name__ == "__main__":
