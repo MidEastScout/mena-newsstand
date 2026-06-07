@@ -124,7 +124,10 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 .fp-modal-ext:hover{text-decoration:underline}
 .fp-modal-close{background:none;border:1px solid var(--line);border-radius:5px;font-size:18px;line-height:1;cursor:pointer;color:var(--muted);padding:3px 9px}
 .fp-modal-close:hover{border-color:var(--ink);color:var(--ink)}
-.fp-modal-iframe{flex:1;border:none;width:100%}
+.fp-modal-body{flex:1;overflow:auto;display:flex;align-items:flex-start;justify-content:center;background:#33312f;padding:14px}
+.fp-modal-img{max-width:100%;height:auto;display:block;box-shadow:0 6px 24px rgba(0,0,0,.5);background:#fff}
+.fp-modal-fail{color:#fff;text-align:center;padding:48px 20px;font-size:14px;line-height:1.6}
+.fp-modal-fail a{color:#9cc3ff;font-weight:600}
 .fp-modal-note{padding:8px 16px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;flex-shrink:0}
 .fp-card{cursor:pointer}
 </style>
@@ -222,76 +225,67 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
     <div class="fp-modal-head">
       <div class="fp-modal-title" id="fp-modal-title">Today's Front Page</div>
       <div class="fp-modal-actions">
-        <a class="fp-modal-ext" id="fp-modal-link" href="#" target="_blank" rel="noopener">Open in new tab ↗</a>
+        <a class="fp-modal-ext" id="fp-modal-link" href="#" target="_blank" rel="noopener">Open newspaper site ↗</a>
         <button class="fp-modal-close" onclick="closeFPModal()">&#x2715;</button>
       </div>
     </div>
-    <iframe class="fp-modal-iframe" id="fp-modal-iframe" src="" title="Front page" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
-    <div class="fp-modal-note">If the page doesn't load inside the overlay, use "Open in new tab ↗" above.</div>
+    <div class="fp-modal-body" id="fp-modal-body"></div>
+    <div class="fp-modal-note">Front page covers via Kiosko &amp; Freedom Forum, updated daily.</div>
   </div>
 </div>
 
 <footer class="wrap">
-  Front page images via FrontPages.com · Country pages via es.kiosko.net · All other links to original outlets
+  Front page covers via Kiosko.net &amp; Freedom Forum · Country pages via es.kiosko.net · All other links to original outlets
 </footer>
 
 <script>
-// Build today's UTC date string for image CDN URLs (updates each page load)
+// Build today's date for the image CDN URLs (updates automatically each day)
 const _d0 = new Date();
-const _ky = _d0.getUTCFullYear();
-const _km = String(_d0.getUTCMonth() + 1).padStart(2, '0');
-const _kd = String(_d0.getUTCDate()).padStart(2, '0');
-// Kiosko CDN: img.kiosko.net/YYYY/MM/DD/geo/slug.750.jpg
-function kimg(geo, slug){ return `https://img.kiosko.net/${_ky}/${_km}/${_kd}/${geo}/${slug}.750.jpg`; }
+const _ky = _d0.getFullYear();
+const _km = String(_d0.getMonth() + 1).padStart(2, '0');
+const _kd = String(_d0.getDate()).padStart(2, '0');
+const _ffday = _d0.getDate();   // Freedom Forum uses day-of-month (1–31)
 
+// Kiosko cover:        img.kiosko.net/YYYY/MM/DD/{geo}/{slug}.750.jpg
+function k(geo, slug){ return `https://img.kiosko.net/${_ky}/${_km}/${_kd}/${geo}/${slug}.750.jpg`; }
+// Freedom Forum cover: cdn.freedomforum.org/dfp/jpg{day}/lg/{CODE}.jpg
+function ff(code){ return `https://cdn.freedomforum.org/dfp/jpg${_ffday}/lg/${code}.jpg`; }
+
+// Each paper lists several candidate cover URLs; the page tries them in order
+// and falls back to a placeholder if none load. "site" is the click-through.
 const FP_PAPERS = [
-  // ——— MENA ————————————————————————————————————————————————————
-  { name:"Asharq Al-Awsat",    loc:"Pan-Arab",     lang:"ar",
-    fp:"https://www.frontpages.com/asharq-al-awsat/",
-    img: kimg("uk","asharq_al_awsat") },
-  { name:"Al-Ahram",           loc:"Egypt",        lang:"ar",
-    fp:"https://es.kiosko.net/eg/",
-    img: kimg("eg","al_ahram") },
-  { name:"Haaretz",            loc:"Israel",       lang:"he",
-    fp:"https://www.frontpages.com/haaretz/",
-    img: kimg("il","haaretz") },
-  { name:"Al-Quds Al-Arabi",   loc:"Pan-Arab",     lang:"ar",
-    fp:"https://www.alquds.co.uk",
-    img: kimg("uk","al_quds_al_arabi") },
-  { name:"Arab News",          loc:"Saudi Arabia", lang:"en",
-    fp:"https://www.frontpages.com/arab-news/",
-    img: kimg("sa","arab_news") },
-  { name:"Al-Anba",            loc:"Kuwait",       lang:"ar",
-    fp:"https://www.alanba.com.kw",
-    img: kimg("kw","al_anba") },
-  { name:"The National",       loc:"UAE",          lang:"en",
-    fp:"https://www.frontpages.com/the-national/",
-    img: kimg("ae","the_national") },
-  { name:"An-Nahar",           loc:"Lebanon",      lang:"ar",
-    fp:"https://www.annahar.com",
-    img: kimg("lb","an_nahar") },
-  { name:"Hürriyet Daily News",loc:"Turkey",       lang:"en",
-    fp:"https://www.frontpages.com/hurriyet-daily-news/",
-    img: kimg("tr","hurriyet_daily_news") },
-  { name:"Tehran Times",       loc:"Iran",         lang:"en",
-    fp:"https://www.tehrantimes.com",
-    img: kimg("ir","tehran_times") },
+  // ——— Middle East & North Africa ——————————————————————————————
+  { name:"Asharq Al-Awsat", loc:"Pan-Arab / Saudi", lang:"ar", site:"https://aawsat.com",
+    imgs:[ k("sa","asharq_al_awsat"), k("uk","asharq_al_awsat") ] },
+  { name:"Al-Ahram", loc:"Egypt", lang:"ar", site:"https://www.ahram.org.eg",
+    imgs:[ k("eg","al_ahram") ] },
+  { name:"Haaretz", loc:"Israel", lang:"en", site:"https://www.haaretz.com",
+    imgs:[ ff("ISR_HA"), k("il","haaretz") ] },
+  { name:"Al-Quds Al-Arabi", loc:"Pan-Arab / UK", lang:"ar", site:"https://www.alquds.co.uk",
+    imgs:[ k("uk","al_quds_al_arabi"), k("uk","alquds") ] },
+  { name:"Arab News", loc:"Saudi Arabia", lang:"en", site:"https://www.arabnews.com",
+    imgs:[ k("sa","arab_news") ] },
+  { name:"Al-Anba", loc:"Kuwait", lang:"ar", site:"https://www.alanba.com.kw",
+    imgs:[ k("kw","al_anbaa"), k("kw","al_anba") ] },
+  { name:"The National", loc:"UAE", lang:"en", site:"https://www.thenationalnews.com",
+    imgs:[ ff("UAE_TN"), k("ae","the_national") ] },
+  { name:"An-Nahar", loc:"Lebanon", lang:"ar", site:"https://www.annahar.com",
+    imgs:[ k("lb","annahar"), k("lb","an_nahar") ] },
+  { name:"Hürriyet", loc:"Turkey", lang:"tr", site:"https://www.hurriyetdailynews.com",
+    imgs:[ k("tr","hurriyet"), ff("TUR_DS") ] },
+  { name:"Tehran Times", loc:"Iran", lang:"en", site:"https://www.tehrantimes.com",
+    imgs:[ k("ir","tehran_times") ] },
   // ——— International ————————————————————————————————————————————
-  { name:"New York Times",     loc:"USA",          lang:"en",
-    fp:"https://www.frontpages.com/the-new-york-times/",
-    img: kimg("us","new_york_times") },
-  { name:"Wall Street Journal",loc:"USA",          lang:"en",
-    fp:"https://www.frontpages.com/the-wall-street-journal/",
-    img: kimg("us","the_wall_street_journal") },
-  { name:"Financial Times",    loc:"UK",           lang:"en",
-    fp:"https://www.frontpages.com/financial-times/",
-    img: kimg("uk","financial_times") },
-  { name:"The Guardian",       loc:"UK",           lang:"en",
-    fp:"https://www.frontpages.com/the-guardian/",
-    img: kimg("uk","the_guardian") },
-  { name:"Le Monde",           loc:"France",       lang:"fr",
-    fp:"https://www.frontpages.com/le-monde/",
-    img: kimg("fr","le_monde") },
+  { name:"New York Times", loc:"USA", lang:"en", site:"https://www.nytimes.com",
+    imgs:[ ff("NY_NYT"), k("us","newyork_times") ] },
+  { name:"Wall Street Journal", loc:"USA", lang:"en", site:"https://www.wsj.com",
+    imgs:[ ff("WSJ"), k("us","wsj") ] },
+  { name:"Financial Times", loc:"UK", lang:"en", site:"https://www.ft.com",
+    imgs:[ k("uk","ft_uk"), k("us","ft_us") ] },
+  { name:"The Guardian", loc:"UK", lang:"en", site:"https://www.theguardian.com",
+    imgs:[ k("uk","guardian") ] },
+  { name:"Le Monde", loc:"France", lang:"fr", site:"https://www.lemonde.fr",
+    imgs:[ k("fr","lemonde") ] },
 ];
 
 const GULF = [
@@ -363,14 +357,17 @@ function lb(l){
 }
 
 function buildFPGrid(){
-  document.getElementById("fp-grid").innerHTML = FP_PAPERS.map(p=>`
-    <div class="fp-card" onclick="openFPModal(${JSON.stringify(p.name)},${JSON.stringify(p.fp)})">
+  document.getElementById("fp-grid").innerHTML = FP_PAPERS.map((p,idx)=>`
+    <div class="fp-card" onclick="openFPModal(${idx})">
       <div class="fp-img-wrap">
-        <img class="fp-img-actual" src="${p.img}" alt="${esc(p.name)} front page"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img class="fp-img-actual" loading="lazy"
+          data-srcs='${JSON.stringify(p.imgs)}' data-i="0"
+          src="${p.imgs[0]}" alt="${esc(p.name)} front page"
+          onerror="fpImgError(this)">
         <div class="fp-placeholder" style="display:none">
           <span style="font-size:26px">📰</span>
-          <span>Not available today</span>
+          <span>Front page<br>not available today</span>
+          <span style="font-size:10px;color:var(--blue)">Click to open paper ↗</span>
         </div>
       </div>
       <div class="fp-info">
@@ -381,17 +378,50 @@ function buildFPGrid(){
     </div>`).join("");
 }
 
-function openFPModal(name, url){
-  document.getElementById("fp-modal-title").textContent = name + " — Today's Front Page";
-  document.getElementById("fp-modal-link").href = url;
-  document.getElementById("fp-modal-iframe").src = url;
+// Try the next candidate cover URL; show placeholder when all fail.
+function fpImgError(img){
+  const srcs = JSON.parse(img.dataset.srcs || "[]");
+  const i = parseInt(img.dataset.i || "0", 10) + 1;
+  if(i < srcs.length){
+    img.dataset.i = i;
+    img.src = srcs[i];
+  } else {
+    img.style.display = "none";
+    const ph = img.parentElement.querySelector(".fp-placeholder");
+    if(ph) ph.style.display = "flex";
+  }
+}
+
+function openFPModal(idx){
+  const p = FP_PAPERS[idx];
+  document.getElementById("fp-modal-title").textContent = p.name + " — Today's Front Page";
+  document.getElementById("fp-modal-link").href = p.site;
+  document.getElementById("fp-modal-body").innerHTML = `
+    <img class="fp-modal-img" data-srcs='${JSON.stringify(p.imgs)}' data-i="0"
+      src="${p.imgs[0]}" alt="${esc(p.name)} front page" onerror="fpModalImgError(this)">
+    <div class="fp-modal-fail" style="display:none">
+      <p>Today's front page image isn't available for ${esc(p.name)}.</p>
+      <a href="${p.site}" target="_blank" rel="noopener">Open ${esc(p.name)} website ↗</a>
+    </div>`;
   document.getElementById("fp-modal").classList.add("open");
   document.body.style.overflow = "hidden";
 }
 
+function fpModalImgError(img){
+  const srcs = JSON.parse(img.dataset.srcs || "[]");
+  const i = parseInt(img.dataset.i || "0", 10) + 1;
+  if(i < srcs.length){
+    img.dataset.i = i;
+    img.src = srcs[i];
+  } else {
+    img.style.display = "none";
+    img.nextElementSibling.style.display = "block";
+  }
+}
+
 function closeFPModal(){
   document.getElementById("fp-modal").classList.remove("open");
-  document.getElementById("fp-modal-iframe").src = "";
+  document.getElementById("fp-modal-body").innerHTML = "";
   document.body.style.overflow = "";
 }
 
