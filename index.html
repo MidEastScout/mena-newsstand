@@ -39,17 +39,22 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .section.active{display:block}
 
 /* Front page cards */
-.fp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-bottom:24px}
-.fp-card{background:var(--card);border:1px solid var(--line);border-radius:9px;overflow:hidden;transition:.15s;display:block}
-.fp-card:hover{border-color:#BFBAB0;box-shadow:0 3px 10px rgba(0,0,0,.09);transform:translateY(-2px)}
-.fp-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;background:#f0ede6;display:block}
+.fp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-bottom:24px}
+.fp-card{background:var(--card);border:1px solid var(--line);border-radius:9px;overflow:hidden;transition:.15s;cursor:pointer}
+.fp-card:hover{border-color:#BFBAB0;box-shadow:0 3px 12px rgba(0,0,0,.12);transform:translateY(-2px)}
+.fp-img-wrap{position:relative;width:100%;padding-bottom:141%;background:#f0ede6;overflow:hidden}
+.fp-img-actual{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:.25s}
+.fp-card:hover .fp-img-actual{transform:scale(1.03)}
+.fp-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;text-align:center;color:var(--muted);font-size:11px;font-style:italic;gap:8px}
 .fp-info{padding:9px 11px}
-.fp-name{font-size:13px;font-weight:600;color:var(--ink)}
-.fp-loc{font-size:11px;color:var(--muted);margin-top:2px}
+.fp-name{font-size:12px;font-weight:600;color:var(--ink);transition:.15s;line-height:1.3}
+.fp-card:hover .fp-name{color:var(--blue)}
+.fp-loc{font-size:10px;color:var(--muted);margin-top:2px}
 .fp-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.4px;border-radius:3px;padding:2px 6px;margin-top:5px}
 .t-en{background:#E3EBF5;color:#1A3B6B}
 .t-he{background:#EAF0E3;color:#2B5C1A}
 .t-ar{background:#F5EBE0;color:#7A4B1A}
+.t-xx{background:#EEE;color:#555}
 
 /* Section header */
 .sec-head{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:14px}
@@ -122,7 +127,6 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 .fp-modal-iframe{flex:1;border:none;width:100%}
 .fp-modal-note{padding:8px 16px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;flex-shrink:0}
 .fp-card{cursor:pointer}
-.fp-card:hover .fp-name{color:var(--blue)}
 </style>
 </head>
 <body>
@@ -163,10 +167,10 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
   <div class="section active" id="sec-frontpages">
 
     <div class="tip">
-      <strong>How this works:</strong> Cards with images link to FrontPages.com — click them to see the actual print cover. Country buttons link to Kiosko, which shows all papers from that country. Arabic-language papers don't have a reliable free front-page aggregator, so those link directly to their websites.
+      <strong>How this works:</strong> Each card shows today's actual front page image. Click any card to open a larger view. If an image shows "unavailable", that paper's front page couldn't be fetched today — click it anyway to open the paper directly. The Kiosko buttons below let you browse all papers from a given country.
     </div>
 
-    <div class="sec-head"><h2>Front Pages — FrontPages.com</h2></div>
+    <div class="sec-head"><h2>Today's Front Pages</h2></div>
     <div class="fp-grid" id="fp-grid"></div>
 
     <div class="sec-head" style="margin-top:8px"><h2>More Front Pages — Kiosko</h2></div>
@@ -223,7 +227,7 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
       </div>
     </div>
     <iframe class="fp-modal-iframe" id="fp-modal-iframe" src="" title="Front page" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
-    <div class="fp-modal-note">Front page via FrontPages.com — if it doesn't load here, use "Open in new tab ↗" above.</div>
+    <div class="fp-modal-note">If the page doesn't load inside the overlay, use "Open in new tab ↗" above.</div>
   </div>
 </div>
 
@@ -232,12 +236,62 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 </footer>
 
 <script>
-// Papers confirmed on FrontPages.com with working front-page images
+// Build today's UTC date string for image CDN URLs (updates each page load)
+const _d0 = new Date();
+const _ky = _d0.getUTCFullYear();
+const _km = String(_d0.getUTCMonth() + 1).padStart(2, '0');
+const _kd = String(_d0.getUTCDate()).padStart(2, '0');
+// Kiosko CDN: img.kiosko.net/YYYY/MM/DD/geo/slug.750.jpg
+function kimg(geo, slug){ return `https://img.kiosko.net/${_ky}/${_km}/${_kd}/${geo}/${slug}.750.jpg`; }
+
 const FP_PAPERS = [
-  { name:"Jerusalem Post",  loc:"Israel",  lang:"en", fp:"https://www.frontpages.com/the-jerusalem-post/" },
-  { name:"Haaretz",         loc:"Israel",  lang:"he", fp:"https://www.frontpages.com/haaretz/" },
-  { name:"Gulf Times",      loc:"Qatar",   lang:"en", fp:"https://www.frontpages.com/gulf-times/" },
-  { name:"Jordan Times",    loc:"Jordan",  lang:"en", fp:"https://www.frontpages.com/the-jordan-times/" },
+  // ——— MENA ————————————————————————————————————————————————————
+  { name:"Asharq Al-Awsat",    loc:"Pan-Arab",     lang:"ar",
+    fp:"https://www.frontpages.com/asharq-al-awsat/",
+    img: kimg("uk","asharq_al_awsat") },
+  { name:"Al-Ahram",           loc:"Egypt",        lang:"ar",
+    fp:"https://es.kiosko.net/eg/",
+    img: kimg("eg","al_ahram") },
+  { name:"Haaretz",            loc:"Israel",       lang:"he",
+    fp:"https://www.frontpages.com/haaretz/",
+    img: kimg("il","haaretz") },
+  { name:"Al-Quds Al-Arabi",   loc:"Pan-Arab",     lang:"ar",
+    fp:"https://www.alquds.co.uk",
+    img: kimg("uk","al_quds_al_arabi") },
+  { name:"Arab News",          loc:"Saudi Arabia", lang:"en",
+    fp:"https://www.frontpages.com/arab-news/",
+    img: kimg("sa","arab_news") },
+  { name:"Al-Anba",            loc:"Kuwait",       lang:"ar",
+    fp:"https://www.alanba.com.kw",
+    img: kimg("kw","al_anba") },
+  { name:"The National",       loc:"UAE",          lang:"en",
+    fp:"https://www.frontpages.com/the-national/",
+    img: kimg("ae","the_national") },
+  { name:"An-Nahar",           loc:"Lebanon",      lang:"ar",
+    fp:"https://www.annahar.com",
+    img: kimg("lb","an_nahar") },
+  { name:"Hürriyet Daily News",loc:"Turkey",       lang:"en",
+    fp:"https://www.frontpages.com/hurriyet-daily-news/",
+    img: kimg("tr","hurriyet_daily_news") },
+  { name:"Tehran Times",       loc:"Iran",         lang:"en",
+    fp:"https://www.tehrantimes.com",
+    img: kimg("ir","tehran_times") },
+  // ——— International ————————————————————————————————————————————
+  { name:"New York Times",     loc:"USA",          lang:"en",
+    fp:"https://www.frontpages.com/the-new-york-times/",
+    img: kimg("us","new_york_times") },
+  { name:"Wall Street Journal",loc:"USA",          lang:"en",
+    fp:"https://www.frontpages.com/the-wall-street-journal/",
+    img: kimg("us","the_wall_street_journal") },
+  { name:"Financial Times",    loc:"UK",           lang:"en",
+    fp:"https://www.frontpages.com/financial-times/",
+    img: kimg("uk","financial_times") },
+  { name:"The Guardian",       loc:"UK",           lang:"en",
+    fp:"https://www.frontpages.com/the-guardian/",
+    img: kimg("uk","the_guardian") },
+  { name:"Le Monde",           loc:"France",       lang:"fr",
+    fp:"https://www.frontpages.com/le-monde/",
+    img: kimg("fr","le_monde") },
 ];
 
 const GULF = [
@@ -304,15 +358,24 @@ const ANALYSIS = [
 function lb(l){
   if(l==="en") return `<span class="fp-tag t-en">EN</span>`;
   if(l==="ar") return `<span class="fp-tag t-ar">AR</span>`;
-  return `<span class="fp-tag t-he">HE</span>`;
+  if(l==="he") return `<span class="fp-tag t-he">HE</span>`;
+  return `<span class="fp-tag t-xx">${l.toUpperCase()}</span>`;
 }
 
 function buildFPGrid(){
   document.getElementById("fp-grid").innerHTML = FP_PAPERS.map(p=>`
-    <div class="fp-card" onclick="openFPModal('${p.name}','${p.fp}')">
+    <div class="fp-card" onclick="openFPModal(${JSON.stringify(p.name)},${JSON.stringify(p.fp)})">
+      <div class="fp-img-wrap">
+        <img class="fp-img-actual" src="${p.img}" alt="${esc(p.name)} front page"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="fp-placeholder" style="display:none">
+          <span style="font-size:26px">📰</span>
+          <span>Not available today</span>
+        </div>
+      </div>
       <div class="fp-info">
-        <div class="fp-name">${p.name}</div>
-        <div class="fp-loc">${p.loc}</div>
+        <div class="fp-name">${esc(p.name)}</div>
+        <div class="fp-loc">${esc(p.loc)}</div>
         ${lb(p.lang)}
       </div>
     </div>`).join("");
