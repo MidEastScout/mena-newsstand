@@ -13,17 +13,17 @@ SOURCES = {
         {
             "source": "Arab News", "country": "Saudi Arabia", "lang": "en",
             "url": "https://www.arabnews.com",
-            "rss": "https://www.arabnews.com/rss.xml",
+            "rss": "https://www.arabnews.com/node/feed",
         },
         {
             "source": "The National", "country": "UAE", "lang": "en",
             "url": "https://www.thenationalnews.com",
-            "rss": "https://www.thenationalnews.com/arc/outboundfeeds/rss/",
+            "rss": "https://www.thenationalnews.com/rss.xml",
         },
         {
             "source": "Gulf News", "country": "UAE", "lang": "en",
             "url": "https://gulfnews.com",
-            "rss": "https://gulfnews.com/rss/world",
+            "rss": "https://gulfnews.com/rss",
         },
         {
             "source": "Gulf Times", "country": "Qatar", "lang": "en",
@@ -33,7 +33,7 @@ SOURCES = {
         {
             "source": "Times of Oman", "country": "Oman", "lang": "en",
             "url": "https://timesofoman.com",
-            "rss": "https://timesofoman.com/rss/news",
+            "rss": "https://timesofoman.com/rss",
         },
     ],
     "Levant": [
@@ -45,7 +45,7 @@ SOURCES = {
         {
             "source": "L'Orient Today", "country": "Lebanon", "lang": "en",
             "url": "https://today.lorientlejour.com",
-            "rss": "https://today.lorientlejour.com/feed/",
+            "rss": "https://today.lorientlejour.com/feed",
         },
         {
             "source": "Egypt Independent", "country": "Egypt", "lang": "en",
@@ -55,7 +55,7 @@ SOURCES = {
         {
             "source": "Al-Akhbar", "country": "Lebanon", "lang": "ar",
             "url": "https://al-akhbar.com",
-            "rss": "https://al-akhbar.com/node/feed",
+            "rss": "https://al-akhbar.com/rss",
         },
     ],
     "Israel": [
@@ -72,7 +72,7 @@ SOURCES = {
         {
             "source": "Haaretz", "country": "Israel", "lang": "en",
             "url": "https://www.haaretz.com",
-            "rss": "https://www.haaretz.com/cmlink/1.628765",
+            "rss": "https://www.haaretz.com/rss/",
         },
     ],
     "Pan-Arab": [
@@ -89,7 +89,7 @@ SOURCES = {
         {
             "source": "Al Arabiya", "country": "UAE", "lang": "en",
             "url": "https://english.alarabiya.net",
-            "rss": "https://english.alarabiya.net/tools/rss/category/news",
+            "rss": "https://english.alarabiya.net/rss/sections/middle-east",
         },
         {
             "source": "The New Arab", "country": "UK", "lang": "en",
@@ -110,6 +110,9 @@ HEADERS = {
     ),
     "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
     "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
 }
 
 
@@ -133,20 +136,23 @@ def fetch_outlet(meta: dict) -> dict:
         "headlines": [],
         "error": None,
     }
+    # Include the outlet's own domain as Referer — helps bypass some 403 blocks
+    headers = {**HEADERS, "Referer": meta["url"] + "/"}
     try:
         response = requests.get(
-            meta["rss"], headers=HEADERS, timeout=REQUEST_TIMEOUT
+            meta["rss"], headers=headers, timeout=REQUEST_TIMEOUT
         )
         response.raise_for_status()
         feed = feedparser.parse(response.content)
+        # Some feeds use <guid> instead of <link>; fall back to entry.id
         entries = [
             e for e in feed.entries[:HEADLINES_PER_OUTLET]
-            if e.get("title") and e.get("link")
+            if e.get("title") and (e.get("link") or e.get("id"))
         ]
         result["headlines"] = [
             {
                 "title": e.title.strip(),
-                "url": e.link,
+                "url": e.get("link") or e.get("id", ""),
                 "published": parse_date(e),
             }
             for e in entries
