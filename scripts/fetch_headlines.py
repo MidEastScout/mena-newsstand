@@ -1,193 +1,158 @@
 #!/usr/bin/env python3
-"""Fetches top headlines from 16 MENA outlets via RSS and writes headlines.json."""
+"""Downloads today's newspaper front-page images server-side and saves them
+under frontpages/ so the static site can serve them from its own origin.
+
+Why server-side: Kiosko (and most cover CDNs) block hotlinking by checking the
+Referer header, so loading their images directly from the browser fails for all
+but a few papers. Fetching them here — from the GitHub Actions runner — and
+committing the results sidesteps that entirely. Everything is then served from
+GitHub Pages, with no CORS / Referer / hotlink issues.
+
+Writes frontpages/manifest.json describing which papers have a current image.
+"""
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-import feedparser
 import requests
 
-SOURCES = {
-    "Gulf": [
-        {
-            "source": "Arab News", "country": "Saudi Arabia", "lang": "en",
-            "url": "https://www.arabnews.com",
-            "rss": "https://www.arabnews.com/node/feed",
-        },
-        {
-            "source": "The National", "country": "UAE", "lang": "en",
-            "url": "https://www.thenationalnews.com",
-            "rss": "https://www.thenationalnews.com/rss.xml",
-        },
-        {
-            "source": "Gulf News", "country": "UAE", "lang": "en",
-            "url": "https://gulfnews.com",
-            "rss": "https://gulfnews.com/rss",
-        },
-        {
-            "source": "Gulf Times", "country": "Qatar", "lang": "en",
-            "url": "https://www.gulf-times.com",
-            "rss": "https://www.gulf-times.com/rss",
-        },
-        {
-            "source": "Times of Oman", "country": "Oman", "lang": "en",
-            "url": "https://timesofoman.com",
-            "rss": "https://timesofoman.com/rss",
-        },
-    ],
-    "Levant": [
-        {
-            "source": "Jordan Times", "country": "Jordan", "lang": "en",
-            "url": "https://www.jordantimes.com",
-            "rss": "https://jordantimes.com/feed",
-        },
-        {
-            "source": "L'Orient Today", "country": "Lebanon", "lang": "en",
-            "url": "https://today.lorientlejour.com",
-            "rss": "https://today.lorientlejour.com/feed",
-        },
-        {
-            "source": "Egypt Independent", "country": "Egypt", "lang": "en",
-            "url": "https://egyptindependent.com",
-            "rss": "https://egyptindependent.com/feed/",
-        },
-        {
-            "source": "Al-Akhbar", "country": "Lebanon", "lang": "ar",
-            "url": "https://al-akhbar.com",
-            "rss": "https://al-akhbar.com/rss",
-        },
-    ],
-    "Israel": [
-        {
-            "source": "Jerusalem Post", "country": "Israel", "lang": "en",
-            "url": "https://www.jpost.com",
-            "rss": "https://www.jpost.com/rss/rssfeedsfrontpage.aspx",
-        },
-        {
-            "source": "Times of Israel", "country": "Israel", "lang": "en",
-            "url": "https://www.timesofisrael.com",
-            "rss": "https://www.timesofisrael.com/feed/",
-        },
-        {
-            "source": "Haaretz", "country": "Israel", "lang": "en",
-            "url": "https://www.haaretz.com",
-            "rss": "https://www.haaretz.com/rss/",
-        },
-    ],
-    "Pan-Arab": [
-        {
-            "source": "Al Jazeera", "country": "Qatar", "lang": "en",
-            "url": "https://www.aljazeera.com",
-            "rss": "https://www.aljazeera.com/xml/rss/all.xml",
-        },
-        {
-            "source": "Middle East Eye", "country": "UK", "lang": "en",
-            "url": "https://www.middleeasteye.net",
-            "rss": "https://www.middleeasteye.net/rss",
-        },
-        {
-            "source": "Al Arabiya", "country": "UAE", "lang": "en",
-            "url": "https://english.alarabiya.net",
-            "rss": "https://english.alarabiya.net/rss/sections/middle-east",
-        },
-        {
-            "source": "The New Arab", "country": "UK", "lang": "en",
-            "url": "https://www.newarab.com",
-            "rss": "https://www.newarab.com/rss",
-        },
-    ],
-}
+# Each paper lists ordered candidate sources, tried until one yields a valid
+# image. Source kinds:
+#   ("ff", CODE)          -> Freedom Forum CDN (keyed by day-of-month)
+#   ("kiosko", GEO, SLUG) -> Kiosko CDN (keyed by full date)
+PAPERS = [
+    {"id": "asharq", "name": "Asharq Al-Awsat", "loc": "Pan-Arab / Saudi",
+     "lang": "ar", "site": "https://aawsat.com",
+     "src": [("kiosko", "uk", "asharq_al_awsat"),
+             ("kiosko", "asi", "asharq_al_awsat")]},
+    {"id": "al_ahram", "name": "Al-Ahram", "loc": "Egypt", "lang": "ar",
+     "site": "https://www.ahram.org.eg",
+     "src": [("kiosko", "eg", "al_ahram")]},
+    {"id": "haaretz", "name": "Haaretz", "loc": "Israel", "lang": "en",
+     "site": "https://www.haaretz.com",
+     "src": [("ff", "ISR_HA"), ("kiosko", "il", "haaretz")]},
+    {"id": "al_quds", "name": "Al-Quds Al-Arabi", "loc": "Pan-Arab / UK",
+     "lang": "ar", "site": "https://www.alquds.co.uk",
+     "src": [("kiosko", "uk", "alquds"), ("kiosko", "uk", "al_quds"),
+             ("kiosko", "uk", "al_quds_al_arabi")]},
+    {"id": "arab_news", "name": "Arab News", "loc": "Saudi Arabia", "lang": "en",
+     "site": "https://www.arabnews.com",
+     "src": [("ff", "SAU_AN"), ("kiosko", "asi", "arab_news"),
+             ("kiosko", "sa", "arab_news")]},
+    {"id": "al_anba", "name": "Al-Anba", "loc": "Kuwait", "lang": "ar",
+     "site": "https://www.alanba.com.kw",
+     "src": [("kiosko", "asi", "al_anba"), ("kiosko", "asi", "al_anbaa"),
+             ("kiosko", "kw", "al_anba")]},
+    {"id": "the_national", "name": "The National", "loc": "UAE", "lang": "en",
+     "site": "https://www.thenationalnews.com",
+     "src": [("ff", "UAE_TN"), ("kiosko", "asi", "the_national")]},
+    {"id": "annahar", "name": "An-Nahar", "loc": "Lebanon", "lang": "ar",
+     "site": "https://www.annahar.com",
+     "src": [("kiosko", "asi", "nahar"), ("kiosko", "asi", "an_nahar"),
+             ("kiosko", "lb", "nahar")]},
+    {"id": "hurriyet", "name": "Hürriyet", "loc": "Turkey", "lang": "tr",
+     "site": "https://www.hurriyetdailynews.com",
+     "src": [("kiosko", "tr", "hurriyet")]},
+    {"id": "tehran_times", "name": "Tehran Times", "loc": "Iran", "lang": "en",
+     "site": "https://www.tehrantimes.com",
+     "src": [("kiosko", "ir", "tehran_times")]},
+    {"id": "nyt", "name": "New York Times", "loc": "USA", "lang": "en",
+     "site": "https://www.nytimes.com",
+     "src": [("ff", "NY_NYT"), ("kiosko", "us", "newyork_times")]},
+    {"id": "wsj", "name": "Wall Street Journal", "loc": "USA", "lang": "en",
+     "site": "https://www.wsj.com",
+     "src": [("ff", "WSJ"), ("kiosko", "us", "wsj")]},
+    {"id": "ft", "name": "Financial Times", "loc": "UK", "lang": "en",
+     "site": "https://www.ft.com",
+     "src": [("kiosko", "uk", "ft_uk"), ("kiosko", "us", "ft_us")]},
+    {"id": "guardian", "name": "The Guardian", "loc": "UK", "lang": "en",
+     "site": "https://www.theguardian.com",
+     "src": [("kiosko", "uk", "guardian"), ("kiosko", "uk", "observer")]},
+    {"id": "lemonde", "name": "Le Monde", "loc": "France", "lang": "fr",
+     "site": "https://www.lemonde.fr",
+     "src": [("kiosko", "fr", "lemonde")]},
+]
 
-HEADLINES_PER_OUTLET = 5
-REQUEST_TIMEOUT = 20
-
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Cache-Control": "no-cache",
-    "Pragma": "no-cache",
-}
+OUT_DIR = Path(__file__).parent.parent / "frontpages"
+MIN_BYTES = 12000   # anything smaller is almost certainly an error/placeholder
+TIMEOUT = 25
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
 
-def parse_date(entry) -> str:
-    for attr in ("published_parsed", "updated_parsed"):
-        t = getattr(entry, attr, None)
-        if t:
-            try:
-                return datetime(*t[:6], tzinfo=timezone.utc).isoformat()
-            except Exception:
-                pass
-    return ""
+def candidate_url(src, d) -> str:
+    if src[0] == "ff":
+        return f"https://cdn.freedomforum.org/dfp/jpg{d.day}/lg/{src[1]}.jpg"
+    if src[0] == "kiosko":
+        return f"https://img.kiosko.net/{d:%Y/%m/%d}/{src[1]}/{src[2]}.750.jpg"
+    raise ValueError(src)
 
 
-def fetch_outlet(meta: dict) -> dict:
-    result = {
-        "source": meta["source"],
-        "country": meta["country"],
-        "lang": meta["lang"],
-        "url": meta["url"],
-        "headlines": [],
-        "error": None,
-    }
-    # Include the outlet's own domain as Referer — helps bypass some 403 blocks
-    headers = {**HEADERS, "Referer": meta["url"] + "/"}
+def referer_for(url: str):
+    if "kiosko.net" in url:
+        return "https://en.kiosko.net/"
+    if "freedomforum.org" in url:
+        return "https://www.freedomforum.org/todaysfrontpages/"
+    return None
+
+
+def try_download(session: requests.Session, url: str):
+    headers = {"User-Agent": UA, "Accept": "image/avif,image/webp,image/*,*/*"}
+    ref = referer_for(url)
+    if ref:
+        headers["Referer"] = ref
     try:
-        response = requests.get(
-            meta["rss"], headers=headers, timeout=REQUEST_TIMEOUT
-        )
-        response.raise_for_status()
-        feed = feedparser.parse(response.content)
-        # Some feeds use <guid> instead of <link>; fall back to entry.id
-        entries = [
-            e for e in feed.entries[:HEADLINES_PER_OUTLET]
-            if e.get("title") and (e.get("link") or e.get("id"))
-        ]
-        result["headlines"] = [
-            {
-                "title": e.title.strip(),
-                "url": e.get("link") or e.get("id", ""),
-                "published": parse_date(e),
-            }
-            for e in entries
-        ]
-        if not result["headlines"]:
-            result["error"] = "no entries"
-            print(f"  - {meta['source']}: empty feed", file=sys.stderr)
-        else:
-            print(f"  + {meta['source']}: {len(result['headlines'])} headlines")
+        r = session.get(url, headers=headers, timeout=TIMEOUT)
     except Exception as exc:
-        result["error"] = str(exc)
-        print(f"  x {meta['source']}: {exc}", file=sys.stderr)
-    return result
+        print(f"      ! {url} -> {exc}", file=sys.stderr)
+        return None
+    ct = r.headers.get("Content-Type", "")
+    if r.status_code == 200 and ct.startswith("image/") and len(r.content) >= MIN_BYTES:
+        return r.content
+    print(f"      - {url} -> {r.status_code} {ct or '?'} {len(r.content)}B")
+    return None
 
 
 def main():
-    output = {
-        "updated": datetime.now(timezone.utc).isoformat(),
-        "regions": {},
-    }
-    for region, sources in SOURCES.items():
-        print(f"\n[{region}]")
-        output["regions"][region] = [fetch_outlet(s) for s in sources]
+    OUT_DIR.mkdir(exist_ok=True)
+    today = datetime.now(timezone.utc).date()
+    dates = [today, today - timedelta(days=1)]   # today, then yesterday fallback
+    session = requests.Session()
+    manifest = {"updated": datetime.now(timezone.utc).isoformat(), "papers": []}
 
-    out_path = Path(__file__).parent.parent / "headlines.json"
-    out_path.write_text(
-        json.dumps(output, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    total = sum(
-        len(outlet["headlines"])
-        for outlets in output["regions"].values()
-        for outlet in outlets
-    )
-    print(f"\nWrote {out_path} — {total} headlines across 16 outlets")
+    for p in PAPERS:
+        dest = OUT_DIR / f"{p['id']}.jpg"
+        got = used_url = used_date = None
+        for d in dates:
+            for src in p["src"]:
+                url = candidate_url(src, d)
+                data = try_download(session, url)
+                if data:
+                    got, used_url, used_date = data, url, d.isoformat()
+                    break
+            if got:
+                break
+
+        if got:
+            dest.write_bytes(got)
+            print(f"  + {p['name']}: {len(got)}B from {used_url}")
+            ok = True
+        else:
+            # Keep yesterday's committed image if every candidate failed today.
+            ok = dest.exists()
+            print(f"  x {p['name']}: {'kept previous image' if ok else 'no image'}",
+                  file=sys.stderr)
+
+        manifest["papers"].append({
+            "id": p["id"], "name": p["name"], "loc": p["loc"], "lang": p["lang"],
+            "site": p["site"], "ok": ok, "src": used_url, "date": used_date,
+        })
+
+    (OUT_DIR / "manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    n_ok = sum(1 for x in manifest["papers"] if x["ok"])
+    print(f"\nFront pages: {n_ok}/{len(PAPERS)} available")
 
 
 if __name__ == "__main__":
