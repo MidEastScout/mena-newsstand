@@ -62,15 +62,22 @@ jobs:
       - name: Fetch headlines
         run: python scripts/fetch_headlines.py
 
+      # continue-on-error: a bad day at the cover CDNs must never block the
+      # headlines refresh or the morning email. The script already exits 0 on
+      # partial failure; this guards against an unexpected crash too.
       - name: Fetch front pages
         if: ${{ env.DO_FRONTPAGES == 'true' }}
+        continue-on-error: true
         run: python scripts/fetch_frontpages.py
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add headlines.json frontpages
+          # frontpages/ only exists on full runs; never let a missing pathspec
+          # fail the headlines-only (every-30-min) commit.
+          git add headlines.json
+          git add frontpages 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Nothing changed — skipping commit."
           else
@@ -83,6 +90,15 @@ jobs:
             done
           fi
 
+      # always(): the digest must go out even if the front-page or push step
+      # had trouble, as long as this is a full run and the secrets are set.
       - name: Send email digest
-        if: ${{ env.DO_EMAIL == 'true' && env.EMAIL_FROM != '' }}
+        if: ${{ always() && env.DO_EMAIL == 'true' && env.EMAIL_FROM != '' }}
         run: python scripts/send_email.py
+
+      - name: Email skipped notice
+        if: ${{ always() && env.DO_EMAIL == 'true' && env.EMAIL_FROM == '' }}
+        run: |
+          echo "::warning::Email digest skipped — EMAIL_FROM/EMAIL_TO/EMAIL_PASSWORD"
+          echo "repository secrets are not set. Add them under Settings →"
+          echo "Secrets and variables → Actions for the morning email to send."
