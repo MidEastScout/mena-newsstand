@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-"""Fetches top headlines from 16 MENA outlets via RSS and writes headlines.json."""
+"""Fetches top headlines from 16 MENA outlets via RSS and writes headlines.json.
+
+Many outlets' own RSS feeds return 403 to datacenter IPs (GitHub Actions
+runners) behind Cloudflare/Akamai. When an outlet's native feed fails or comes
+back empty, we fall back to Google News' RSS, scoped to that outlet's domain —
+Google News is not blocked from datacenter IPs, so this rescues most outlets.
+Links then point at Google News' redirect, which resolves to the original
+article in the browser.
+"""
 import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import quote_plus, urlparse
 
 import feedparser
 import requests
@@ -13,7 +22,7 @@ SOURCES = {
         {
             "source": "Arab News", "country": "Saudi Arabia", "lang": "en",
             "url": "https://www.arabnews.com",
-            "rss": "https://www.arabnews.com/node/feed",
+            "rss": "https://www.arabnews.com/cms/rss/section/1.xml",
         },
         {
             "source": "The National", "country": "UAE", "lang": "en",
@@ -72,7 +81,7 @@ SOURCES = {
         {
             "source": "Haaretz", "country": "Israel", "lang": "en",
             "url": "https://www.haaretz.com",
-            "rss": "https://www.haaretz.com/rss/",
+            "rss": "https://www.haaretz.com/srv/htz---all-articles",
         },
     ],
     "Pan-Arab": [
@@ -89,7 +98,7 @@ SOURCES = {
         {
             "source": "Al Arabiya", "country": "UAE", "lang": "en",
             "url": "https://english.alarabiya.net",
-            "rss": "https://english.alarabiya.net/rss/sections/middle-east",
+            "rss": "https://english.alarabiya.net/tools/rss",
         },
         {
             "source": "The New Arab", "country": "UK", "lang": "en",
@@ -101,6 +110,15 @@ SOURCES = {
 
 HEADLINES_PER_OUTLET = 5
 REQUEST_TIMEOUT = 20
+
+# Google News RSS locale per language, so Arabic outlets get Arabic results.
+GNEWS_LOCALE = {
+    "en": ("en-US", "US", "US:en"),
+    "ar": ("ar", "EG", "EG:ar"),
+    "he": ("he", "IL", "IL:he"),
+    "tr": ("tr", "TR", "TR:tr"),
+    "fr": ("fr", "FR", "FR:fr"),
+}
 
 HEADERS = {
     "User-Agent": (
@@ -127,7 +145,43 @@ def parse_date(entry) -> str:
     return ""
 
 
-def fetch_outlet(meta: dict) -> dict:
+def domain_of(url: str) -> str:
+    host = urlparse(url).netloc.lower()
+    return host[4:] if host.startswith("www.") else host
+
+
+def gnews_url(meta: dict) -> str:
+    """Google News RSS search scoped to the outlet's domain, last 24h."""
+    hl, gl, ceid = GNEWS_LOCALE.get(meta["lang"], GNEWS_LOCALE["en"])
+    query = quote_plus(f"site:{domain_of(meta['url'])} when:1d")
+    return f"https://news.google.com/rss/search?q={query}&hl={hl}&gl={gl}&ceid={ceid}"
+
+
+def parse_feed(session: requests.Session, url: str, referer: str | None):
+    """Return a list of {title,url,published} or None on failure/empty."""
+    headers = dict(HEADERS)
+    if referer:
+        headers["Referer"] = referer
+    try:
+        resp = session.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+    except Exception as exc:
+        print(f"      ! {url} -> {exc}", file=sys.stderr)
+        return None
+    feed = feedparser.parse(resp.content)
+    items = [
+        {
+            "title": e.title.strip(),
+            "url": e.get("link") or e.get("id", ""),
+            "published": parse_date(e),
+        }
+        for e in feed.entries[:HEADLINES_PER_OUTLET]
+        if e.get("title") and (e.get("link") or e.get("id"))
+    ]
+    return items or None
+
+
+def fetch_outlet(session: requests.Session, meta: dict) -> dict:
     result = {
         "source": meta["source"],
         "country": meta["country"],
@@ -136,46 +190,32 @@ def fetch_outlet(meta: dict) -> dict:
         "headlines": [],
         "error": None,
     }
-    # Include the outlet's own domain as Referer — helps bypass some 403 blocks
-    headers = {**HEADERS, "Referer": meta["url"] + "/"}
-    try:
-        response = requests.get(
-            meta["rss"], headers=headers, timeout=REQUEST_TIMEOUT
-        )
-        response.raise_for_status()
-        feed = feedparser.parse(response.content)
-        # Some feeds use <guid> instead of <link>; fall back to entry.id
-        entries = [
-            e for e in feed.entries[:HEADLINES_PER_OUTLET]
-            if e.get("title") and (e.get("link") or e.get("id"))
-        ]
-        result["headlines"] = [
-            {
-                "title": e.title.strip(),
-                "url": e.get("link") or e.get("id", ""),
-                "published": parse_date(e),
-            }
-            for e in entries
-        ]
-        if not result["headlines"]:
-            result["error"] = "no entries"
-            print(f"  - {meta['source']}: empty feed", file=sys.stderr)
-        else:
-            print(f"  + {meta['source']}: {len(result['headlines'])} headlines")
-    except Exception as exc:
-        result["error"] = str(exc)
-        print(f"  x {meta['source']}: {exc}", file=sys.stderr)
+    # 1) Try the outlet's own feed (own domain as Referer dodges some blocks).
+    items = parse_feed(session, meta["rss"], meta["url"] + "/")
+    via = "native"
+    # 2) Fall back to Google News scoped to the outlet's domain.
+    if not items:
+        items = parse_feed(session, gnews_url(meta), "https://news.google.com/")
+        via = "google-news"
+    if items:
+        result["headlines"] = items
+        print(f"  + {meta['source']}: {len(items)} headlines ({via})")
+    else:
+        result["error"] = "no entries"
+        print(f"  x {meta['source']}: no entries (native + google-news failed)",
+              file=sys.stderr)
     return result
 
 
 def main():
+    session = requests.Session()
     output = {
         "updated": datetime.now(timezone.utc).isoformat(),
         "regions": {},
     }
     for region, sources in SOURCES.items():
         print(f"\n[{region}]")
-        output["regions"][region] = [fetch_outlet(s) for s in sources]
+        output["regions"][region] = [fetch_outlet(session, s) for s in sources]
 
     out_path = Path(__file__).parent.parent / "headlines.json"
     out_path.write_text(
@@ -187,7 +227,11 @@ def main():
         for outlets in output["regions"].values()
         for outlet in outlets
     )
-    print(f"\nWrote {out_path} — {total} headlines across 16 outlets")
+    ok = sum(
+        1 for outlets in output["regions"].values()
+        for outlet in outlets if outlet["headlines"]
+    )
+    print(f"\nWrote {out_path} — {total} headlines, {ok} outlets live")
 
 
 if __name__ == "__main__":
