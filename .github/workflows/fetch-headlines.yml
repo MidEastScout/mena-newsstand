@@ -1,16 +1,37 @@
-name: Fetch MENA Headlines
+name: MENA Newsstand
+
+# One integrated job drives everything:
+#   • every 30 min  → refresh headlines.json  (keeps the Headlines tab live)
+#   • 05:05 UTC     → full run: headlines + front-page images + morning email
+#   • 11:05 UTC     → refresh front-page images (Western editions are up by now)
+#   • manual run    → full run (handy for testing)
+#
+# Cron minutes are deliberately off the hour. GitHub de-prioritises scheduled
+# runs at :00 under load, which is why the old '0 7 * * *' job kept getting
+# dropped. Offsetting to :05/:15/:45 makes runs far more reliable.
 
 on:
   schedule:
-    - cron: '0 7 * * *'   # Daily at 07:00 UTC
-  workflow_dispatch:        # Manual trigger from Actions tab
+    - cron: '15,45 * * * *'   # every 30 min — headlines only
+    - cron: '5 5 * * *'       # daily 05:05 UTC — headlines + front pages + email
+    - cron: '5 11 * * *'      # daily 11:05 UTC — refresh front pages
+  workflow_dispatch:           # manual trigger (also sends the email)
 
 permissions:
   contents: write
 
+# Serialise runs so the 30-min and daily jobs never race on git push.
+concurrency:
+  group: newsstand-data
+  cancel-in-progress: false
+
 jobs:
-  fetch:
+  run:
     runs-on: ubuntu-latest
+    env:
+      EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+      EMAIL_TO: ${{ secrets.EMAIL_TO }}
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -25,25 +46,43 @@ jobs:
       - name: Install dependencies
         run: pip install --no-cache-dir -r requirements.txt
 
+      - name: Determine run type
+        run: |
+          EVENT="${{ github.event_name }}"
+          SCHED="${{ github.event.schedule }}"
+          DO_FP=false
+          DO_EMAIL=false
+          if [ "$EVENT" = "workflow_dispatch" ]; then DO_FP=true; DO_EMAIL=true; fi
+          if [ "$SCHED" = "5 5 * * *" ]; then DO_FP=true; DO_EMAIL=true; fi
+          if [ "$SCHED" = "5 11 * * *" ]; then DO_FP=true; fi
+          echo "DO_FRONTPAGES=$DO_FP" >> "$GITHUB_ENV"
+          echo "DO_EMAIL=$DO_EMAIL" >> "$GITHUB_ENV"
+          echo "event=$EVENT schedule='$SCHED' frontpages=$DO_FP email=$DO_EMAIL"
+
       - name: Fetch headlines
         run: python scripts/fetch_headlines.py
+
+      - name: Fetch front pages
+        if: ${{ env.DO_FRONTPAGES == 'true' }}
+        run: python scripts/fetch_frontpages.py
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add headlines.json
+          git add headlines.json frontpages
           if git diff --cached --quiet; then
-            echo "headlines.json unchanged — nothing to commit"
+            echo "Nothing changed — skipping commit."
           else
-            git commit -m "chore: update headlines $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push origin main
+            git commit -m "chore: refresh data $(date -u +%Y-%m-%dT%H:%MZ)"
+            for i in 1 2 3 4 5; do
+              if git pull --rebase --autostash origin main && git push origin main; then
+                echo "Pushed."; break
+              fi
+              echo "Push attempt $i failed; retrying…"; sleep $((i * 3))
+            done
           fi
 
       - name: Send email digest
-        if: ${{ env.EMAIL_FROM != '' }}
-        env:
-          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        if: ${{ env.DO_EMAIL == 'true' && env.EMAIL_FROM != '' }}
         run: python scripts/send_email.py
