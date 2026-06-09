@@ -9,18 +9,21 @@ committing the results sidesteps that entirely. Everything is then served from
 GitHub Pages, with no CORS / Referer / hotlink issues.
 
 Writes frontpages/manifest.json describing which papers have a current image.
+
+Source kinds:
+  ("ff", CODE)             -> Freedom Forum CDN (keyed by day-of-month)
+  ("kiosko", GEO, SLUG)    -> Kiosko CDN (keyed by full date)
+  ("frontpages", SLUG)     -> frontpages.com page; og:image extracted from HTML
+                              (URL contains a daily random hash, can't predict it)
 """
 import json
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
 
-# Each paper lists ordered candidate sources, tried until one yields a valid
-# image. Source kinds:
-#   ("ff", CODE)          -> Freedom Forum CDN (keyed by day-of-month)
-#   ("kiosko", GEO, SLUG) -> Kiosko CDN (keyed by full date)
 PAPERS = [
     {"id": "asharq", "name": "Asharq Al-Awsat", "loc": "Pan-Arab / Saudi",
      "lang": "ar", "site": "https://aawsat.com",
@@ -34,12 +37,12 @@ PAPERS = [
      "src": [("ff", "ISR_HA"), ("kiosko", "il", "haaretz")]},
     {"id": "al_quds", "name": "Al-Quds Al-Arabi", "loc": "Pan-Arab / UK",
      "lang": "ar", "site": "https://www.alquds.co.uk",
-     "src": [("kiosko", "uk", "alquds"), ("kiosko", "uk", "al_quds"),
-             ("kiosko", "uk", "al_quds_al_arabi")]},
+     "src": [("frontpages", "al-quds"),
+             ("kiosko", "uk", "alquds"), ("kiosko", "uk", "al_quds")]},
     {"id": "arab_news", "name": "Arab News", "loc": "Saudi Arabia", "lang": "en",
      "site": "https://www.arabnews.com",
-     "src": [("ff", "SAU_AN"), ("kiosko", "asi", "arab_news"),
-             ("kiosko", "sa", "arab_news")]},
+     "src": [("ff", "SAU_AN"), ("frontpages", "arab-news"),
+             ("kiosko", "asi", "arab_news")]},
     {"id": "al_anba", "name": "Al-Anba", "loc": "Kuwait", "lang": "ar",
      "site": "https://www.alanba.com.kw",
      "src": [("kiosko", "asi", "al_anba"), ("kiosko", "asi", "al_anbaa"),
@@ -65,20 +68,28 @@ PAPERS = [
      "src": [("ff", "WSJ"), ("kiosko", "us", "wsj")]},
     {"id": "ft", "name": "Financial Times", "loc": "UK", "lang": "en",
      "site": "https://www.ft.com",
-     "src": [("kiosko", "uk", "ft_uk"), ("kiosko", "us", "ft_us")]},
+     "src": [("frontpages", "financial-times"),
+             ("kiosko", "uk", "ft_uk"), ("kiosko", "us", "ft_us")]},
     {"id": "guardian", "name": "The Guardian", "loc": "UK", "lang": "en",
      "site": "https://www.theguardian.com",
      "src": [("kiosko", "uk", "guardian"), ("kiosko", "uk", "observer")]},
     {"id": "lemonde", "name": "Le Monde", "loc": "France", "lang": "fr",
      "site": "https://www.lemonde.fr",
-     "src": [("kiosko", "fr", "lemonde")]},
+     "src": [("frontpages", "le-monde"), ("kiosko", "fr", "lemonde")]},
 ]
 
 OUT_DIR = Path(__file__).parent.parent / "frontpages"
-MIN_BYTES = 12000   # anything smaller is almost certainly an error/placeholder
+MIN_BYTES = 12000
 TIMEOUT = 25
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+
+OG_RE = re.compile(
+    r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
+    re.I)
+OG_RE2 = re.compile(
+    r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+    re.I)
 
 
 def candidate_url(src, d) -> str:
@@ -94,6 +105,8 @@ def referer_for(url: str):
         return "https://en.kiosko.net/"
     if "freedomforum.org" in url:
         return "https://www.freedomforum.org/todaysfrontpages/"
+    if "frontpages.com" in url:
+        return "https://www.frontpages.com/"
     return None
 
 
@@ -114,23 +127,57 @@ def try_download(session: requests.Session, url: str):
     return None
 
 
+def fetch_frontpages_cover(session: requests.Session, slug: str):
+    """Fetch paper page on frontpages.com, extract og:image URL, download it."""
+    page_url = f"https://www.frontpages.com/{slug}/"
+    headers = {
+        "User-Agent": UA,
+        "Accept": "text/html,application/xhtml+xml,*/*",
+        "Referer": "https://www.frontpages.com/",
+    }
+    try:
+        r = session.get(page_url, headers=headers, timeout=TIMEOUT)
+    except Exception as exc:
+        print(f"      ! {page_url} -> {exc}", file=sys.stderr)
+        return None, None
+    if r.status_code != 200:
+        print(f"      - {page_url} -> {r.status_code}")
+        return None, None
+    img_url = next(
+        (m for rx in (OG_RE, OG_RE2) for m in rx.findall(r.text)),
+        None,
+    )
+    if not img_url:
+        print(f"      - {page_url} -> no og:image found")
+        return None, None
+    data = try_download(session, img_url)
+    return data, img_url
+
+
 def main():
     OUT_DIR.mkdir(exist_ok=True)
     today = datetime.now(timezone.utc).date()
-    dates = [today, today - timedelta(days=1)]   # today, then yesterday fallback
+    dates = [today, today - timedelta(days=1)]
     session = requests.Session()
     manifest = {"updated": datetime.now(timezone.utc).isoformat(), "papers": []}
 
     for p in PAPERS:
         dest = OUT_DIR / f"{p['id']}.jpg"
         got = used_url = used_date = None
+
         for d in dates:
             for src in p["src"]:
-                url = candidate_url(src, d)
-                data = try_download(session, url)
-                if data:
-                    got, used_url, used_date = data, url, d.isoformat()
-                    break
+                if src[0] == "frontpages":
+                    data, img_url = fetch_frontpages_cover(session, src[1])
+                    if data:
+                        got, used_url, used_date = data, img_url, d.isoformat()
+                        break
+                else:
+                    url = candidate_url(src, d)
+                    data = try_download(session, url)
+                    if data:
+                        got, used_url, used_date = data, url, d.isoformat()
+                        break
             if got:
                 break
 
@@ -139,7 +186,6 @@ def main():
             print(f"  + {p['name']}: {len(got)}B from {used_url}")
             ok = True
         else:
-            # Keep yesterday's committed image if every candidate failed today.
             ok = dest.exists()
             print(f"  x {p['name']}: {'kept previous image' if ok else 'no image'}",
                   file=sys.stderr)
