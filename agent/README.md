@@ -88,6 +88,11 @@ It prints the top stories and writes `agent\data\briefing.json` — the ranked
 list Stage 3 will draft from. Tune ranking with `--similarity` (how aggressively
 near-duplicate headlines merge) and `--max-age-days` (recency window).
 
+**Israeli domestic politics is excluded by default** (Knesset, coalition,
+judicial overhaul, domestic elections) — but stories with a regional/security
+angle are kept ("Netanyahu orders Lebanon strike" stays). Pass
+`--include-israeli-politics` to keep them all.
+
 ## Model
 
 Default: **`claude-sonnet-4-6`**, configurable via `$env:CLAUDE_MODEL` or `--model`.

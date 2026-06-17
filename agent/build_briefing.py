@@ -68,6 +68,31 @@ BEAT_KEYWORDS = {
     "washington": 1.0, "diplomacy": 1.0, "escalation": 1.5,
 }
 
+# Israeli *domestic* politics — excluded by default. The author covers the
+# Israel-Iran-Lebanon-US arena (strikes, the nuclear file, normalization), not
+# Knesset coalition drama, the judicial overhaul, or domestic elections.
+# These terms are inherently about internal Israeli politics.
+ISRAELI_POLITICS_TERMS = {
+    "knesset", "coalition", "judicial reform", "judicial overhaul",
+    "judicial", "high court of justice", "attorney general", "likud",
+    "haredi", "ultra-orthodox", "conscription law", "draft law", "draft bill",
+    "no-confidence", "no confidence", "opposition leader", "netanyahu trial",
+    "netanyahu's trial", "corruption trial", "shin bet chief", "lapid",
+    "gantz", "bennett", "ben gvir", "ben-gvir", "smotrich", "herzog",
+    "coalition crisis", "government collapse", "snap election", "primaries",
+}
+# If a story carries any of these hard regional/security/diplomatic terms, it
+# stays even when a politics word also appears ("Netanyahu orders Lebanon
+# strike" is beat news, not domestic politics). Deliberately excludes the
+# ambiguous "israel"/"israeli"/"gaza".
+PROTECT_TERMS = {
+    "iran", "tehran", "irgc", "hezbollah", "nasrallah", "lebanon", "beirut",
+    "nuclear", "enrichment", "normalization", "normalisation", "abraham accords",
+    "strike", "airstrike", "missile", "drone", "saudi", "riyadh", "uae",
+    "qatar", "oman", "houthi", "yemen", "syria", "iraq", "hormuz", "hamas",
+    "ceasefire", "sanctions", "mediation",
+}
+
 # Tokens ignored when comparing titles for duplicates.
 STOPWORDS = {
     "the", "a", "an", "and", "or", "of", "to", "in", "on", "for", "with",
@@ -244,6 +269,14 @@ def beat_match(title: str):
     return hits, min(score, BEAT_CAP)
 
 
+def is_israeli_domestic_politics(title: str) -> bool:
+    """True for internal-politics stories with no regional/security angle."""
+    low = title.lower()
+    if not any(term in low for term in ISRAELI_POLITICS_TERMS):
+        return False
+    return not any(term in low for term in PROTECT_TERMS)
+
+
 def humanize_age(dt) -> str:
     if not dt:
         return "undated"
@@ -329,6 +362,8 @@ def main() -> None:
                     help="Title overlap (0-1) needed to merge two stories")
     ap.add_argument("--no-extra-feeds", action="store_true",
                     help="Skip the analyst feeds (no network calls)")
+    ap.add_argument("--include-israeli-politics", action="store_true",
+                    help="Keep Israeli domestic-politics stories (excluded by default)")
     args = ap.parse_args()
 
     newsstand, updated = load_newsstand(Path(args.headlines))
@@ -342,6 +377,14 @@ def main() -> None:
     items = filter_recent(newsstand + analyst, args.max_age_days)
     print(f"Within {args.max_age_days}d window: {len(items)} articles "
           f"({len(newsstand)+len(analyst)-len(items)} dropped as old/undated)")
+
+    if not args.include_israeli_politics:
+        before = len(items)
+        items = [it for it in items if not is_israeli_domestic_politics(it["title"])]
+        dropped = before - len(items)
+        if dropped:
+            print(f"Israeli politics: {dropped} domestic-politics stories excluded "
+                  "(use --include-israeli-politics to keep them)")
 
     clusters = cluster(items, args.similarity)
     stories = sorted((score_cluster(c) for c in clusters),
