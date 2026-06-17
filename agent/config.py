@@ -31,6 +31,10 @@ STYLE_PROFILE_PATH = DATA_DIR / "style_profile.json"
 HEADLINES_PATH = REPO_ROOT / "headlines.json"
 BRIEFING_PATH = DATA_DIR / "briefing.json"
 
+# Stage 3 — relay/update writer. Drafts are short news relays in the author's
+# voice; nothing is published — drafts.json is reviewed in Stage 4.
+DRAFTS_PATH = DATA_DIR / "drafts.json"
+
 
 def ensure_utf8_console() -> None:
     """Avoid UnicodeEncodeError for Hebrew/Arabic/emoji on Windows consoles."""

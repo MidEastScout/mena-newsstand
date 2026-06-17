@@ -10,7 +10,7 @@ A personal agent that learns your writing style from your WhatsApp history, moni
 |---|---|---|
 | 1 | Style learning: parse WhatsApp export → `style_profile.json` | **Ready** |
 | 2 | Content pipeline: rank & dedupe headlines.json + analyst feeds → `briefing.json` | **Ready** |
-| 3 | Draft engine: 2-3 daily drafts in your style, with reasoning + confidence | Planned |
+| 3 | Relay writer: short news-relay drafts in your voice → `drafts.json` | **Ready** |
 | 4 | Review dashboard: approve / edit / reject / schedule, feedback loop | Planned |
 | 5 | Publishing: Telegram Bot API + WhatsApp (human-in-the-loop only) | Planned |
 
@@ -92,6 +92,26 @@ near-duplicate headlines merge) and `--max-age-days` (recency window).
 judicial overhaul, domestic elections) — but stories with a regional/security
 angle are kept ("Netanyahu orders Lebanon strike" stays). Pass
 `--include-israeli-politics` to keep them all.
+
+## Stage 3 — Draft relay posts in your voice
+
+Takes the top stories from `briefing.json` and your `style_profile.json` and
+writes short **news-relay** updates in your voice — restating what a named
+outlet reported, in Hebrew, with your attribution closing. It is a relay, not
+an analyst: it only has the headline, so it relays the headline and **never
+invents facts, quotes, numbers, or analysis**.
+
+```powershell
+py agent\draft_posts.py --dry-run          # free: shows which stories it would relay
+py agent\draft_posts.py                     # draft top 3 -> agent\data\drafts.json
+py agent\draft_posts.py --count 5 --lang he # more drafts; --lang he|en|ar|auto
+```
+
+Typical cost: **a few cents** per run. Each draft is printed for review and
+saved with `status: "pending"`, a `confidence` score, the exact `relays_facts`
+it conveys (so you can verify nothing was added), and `review_flags` (e.g.
+"single source"). **Nothing is ever sent** — Stage 4 will be the dashboard
+where you approve, edit, or reject each draft.
 
 ## Model
 
