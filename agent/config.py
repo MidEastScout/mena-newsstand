@@ -24,6 +24,13 @@ DEFAULT_MODEL = "claude-sonnet-4-6"
 MY_MESSAGES_PATH = DATA_DIR / "my_messages.json"
 STYLE_PROFILE_PATH = DATA_DIR / "style_profile.json"
 
+# Stage 2 — content pipeline.
+# headlines.json is produced at the repo root by scripts/fetch_headlines.py
+# (refreshed every 30 min by GitHub Actions); the briefing is our ranked,
+# deduplicated digest derived from it plus a few analyst feeds.
+HEADLINES_PATH = REPO_ROOT / "headlines.json"
+BRIEFING_PATH = DATA_DIR / "briefing.json"
+
 
 def ensure_utf8_console() -> None:
     """Avoid UnicodeEncodeError for Hebrew/Arabic/emoji on Windows consoles."""

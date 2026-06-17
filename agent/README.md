@@ -9,7 +9,7 @@ A personal agent that learns your writing style from your WhatsApp history, moni
 | Stage | What | Status |
 |---|---|---|
 | 1 | Style learning: parse WhatsApp export → `style_profile.json` | **Ready** |
-| 2 | Content pipeline: headlines.json + RSS feeds, dedupe, rank | Planned |
+| 2 | Content pipeline: rank & dedupe headlines.json + analyst feeds → `briefing.json` | **Ready** |
 | 3 | Draft engine: 2-3 daily drafts in your style, with reasoning + confidence | Planned |
 | 4 | Review dashboard: approve / edit / reject / schedule, feedback loop | Planned |
 | 5 | Publishing: Telegram Bot API + WhatsApp (human-in-the-loop only) | Planned |
@@ -68,6 +68,25 @@ py agent\analyze_style.py              # one API call -> agent\data\style_profil
 Typical cost on the default model: **~$0.10–0.25** per run (≈30K input tokens). The profile contains quantitative stats, a qualitative analysis (tone, structure, openings/closings, topics, Hebrew/English mixing, emoji, citation habits), verbatim representative examples, and a distilled `style_instructions` block that Stage 3 will inject into every draft request.
 
 **Try it first on fake data:** `py agent\parse_whatsapp.py agent\sample_export.txt --author "Demo Author"` then `py agent\analyze_style.py --dry-run`.
+
+## Stage 2 — Build today's ranked briefing
+
+No API call, no cost. This reads the newsstand's own `headlines.json` (16 MENA
+outlets, refreshed every 30 min by GitHub Actions), pulls a few analyst feeds
+(Al-Monitor, INSS, Crisis Group, Reuters MENA), then deduplicates and ranks
+every story by **significance**: how many outlets carry it, how many regions it
+spans, how fresh it is, and how closely it matches your beat (Iran, Lebanon,
+Hezbollah, Gulf–Israel normalization, strikes, Vision 2030…).
+
+```powershell
+py agent\build_briefing.py                    # full briefing -> agent\data\briefing.json
+py agent\build_briefing.py --no-extra-feeds   # newsstand only, zero network calls
+py agent\build_briefing.py --max-age-days 1 --top 15
+```
+
+It prints the top stories and writes `agent\data\briefing.json` — the ranked
+list Stage 3 will draft from. Tune ranking with `--similarity` (how aggressively
+near-duplicate headlines merge) and `--max-age-days` (recency window).
 
 ## Model
 
