@@ -107,11 +107,17 @@ py agent\draft_posts.py                     # draft top 3 -> agent\data\drafts.j
 py agent\draft_posts.py --count 5 --lang he # more drafts; --lang he|en|ar|auto
 ```
 
-Typical cost: **a few cents** per run. Each draft is printed for review and
-saved with `status: "pending"`, a `confidence` score, the exact `relays_facts`
-it conveys (so you can verify nothing was added), and `review_flags` (e.g.
-"single source"). **Nothing is ever sent** — Stage 4 will be the dashboard
-where you approve, edit, or reject each draft.
+Typical cost: **a few cents** per run. Each draft is saved with
+`status: "pending"`, a `confidence` score, the exact `relays_facts` it conveys
+(so you can verify nothing was added), and `review_flags` (e.g. "single
+source"). **Nothing is ever sent** — Stage 4 will be the dashboard where you
+approve, edit, or reject each draft.
+
+> **Reading Hebrew drafts:** the Windows console renders Hebrew left-to-right
+> and garbles it. So `draft_posts.py` also writes `agent\data\drafts.html` —
+> **double-click it** to read the drafts in correct right-to-left layout, with
+> a copy button per draft. (Re-render an existing `drafts.json` anytime with
+> `py agent\render_drafts.py`.)
 
 ## Model
 

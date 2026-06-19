@@ -243,20 +243,30 @@ def main() -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
 
+    # Also render a self-contained HTML page — the Windows console can't show
+    # Hebrew right-to-left, so this is where you actually read the drafts.
+    from render_drafts import write_html
+    html_path = write_html(payload, out_path.with_suffix(".html"))
+
     print(f"\nAPI usage      : {usage['input_tokens']:,} in / {usage['output_tokens']:,} out tokens")
-    print(f"Wrote          : {out_path}  ({len(drafts)} drafts, all status=pending)\n")
+    print(f"Wrote          : {out_path}  ({len(drafts)} drafts, all status=pending)")
+    print(f"Read drafts in : {html_path}")
+    print("  ^ double-click this file — Hebrew renders correctly (right-to-left) there.\n")
     print("=" * 70)
+    # Summary only — NOT the Hebrew body. The console renders Hebrew left-to-
+    # right and garbles it, so the real text lives in the HTML page above.
     for i, d in enumerate(drafts, 1):
         conf = d.get("confidence")
         conf_s = f"{conf:.0%}" if isinstance(conf, (int, float)) else "?"
-        print(f"\nDRAFT {i}  ·  confidence {conf_s}  ·  relays: {d.get('source_headline', '')}")
-        print("-" * 70)
-        print(d.get("post_text", "").strip())
+        chars = len(d.get("post_text", "").strip())
+        print(f"DRAFT {i}  ·  confidence {conf_s}  ·  {chars} chars  ·  "
+              f"relays: {d.get('source_headline', '')}")
         if d.get("review_flags"):
-            print(f"\n  ⚠ review: {', '.join(d['review_flags'])}")
-    print("\n" + "=" * 70)
-    print("NOTHING SENT. Review these drafts. Stage 4 will let you approve / edit / "
-          "reject each one before it is published.")
+            print(f"         ⚠ {', '.join(d['review_flags'])}")
+    print("=" * 70)
+    print("Hebrew is garbled in the console — open the HTML file above to read "
+          "the drafts properly (right-to-left).")
+    print("NOTHING SENT. Stage 4 will let you approve / edit / reject each one.")
 
 
 if __name__ == "__main__":

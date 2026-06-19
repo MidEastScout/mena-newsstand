@@ -34,6 +34,9 @@ BRIEFING_PATH = DATA_DIR / "briefing.json"
 # Stage 3 — relay/update writer. Drafts are short news relays in the author's
 # voice; nothing is published — drafts.json is reviewed in Stage 4.
 DRAFTS_PATH = DATA_DIR / "drafts.json"
+# Stage 3.5 — a self-contained HTML view of the drafts that renders Hebrew
+# right-to-left (the Windows console cannot), with a copy button per draft.
+DRAFTS_HTML_PATH = DATA_DIR / "drafts.html"
 
 
 def ensure_utf8_console() -> None:
