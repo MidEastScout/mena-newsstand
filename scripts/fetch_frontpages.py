@@ -127,6 +127,14 @@ def main():
             "site": p["site"], "ok": ok, "src": used_url, "date": used_date,
         })
 
+    # Prune covers for papers that were removed from PAPERS, so the repo and the
+    # live site never keep showing a paper after it's dropped from the list.
+    keep = {p["id"] for p in PAPERS}
+    for img in OUT_DIR.glob("*.jpg"):
+        if img.stem not in keep:
+            img.unlink()
+            print(f"  - pruned stale cover {img.name}")
+
     (OUT_DIR / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     n_ok = sum(1 for x in manifest["papers"] if x["ok"])
