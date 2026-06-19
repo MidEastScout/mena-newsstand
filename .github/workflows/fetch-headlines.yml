@@ -1,34 +1,30 @@
 name: MENA Newsstand
 
-# One integrated job drives everything:
-#   • every 30 min  → refresh headlines.json ONLY (keeps the Headlines tab live)
-#   • 04:05 UTC     → full run: headlines + front-page images + morning email
-#   • 11:05 UTC     → refresh front-page images (Western editions are up by now)
-#   • manual run    → headlines only, unless you tick the email / front-page boxes
+# The headlines refresh runs on EVERY trigger. The daily email + front-page
+# refresh are decided by scripts/plan_run.py, which uses the reliable 30-min
+# trigger as a CLOCK — GitHub's own scheduled runs are routinely dropped, which
+# is why the morning email used to arrive irregularly and the front pages went
+# stale. plan_run.py instead acts on the first heartbeat after 07:00 Israel time
+# (morning email + front pages) and again after 14:00 (front pages, to catch the
+# later Western editions), keyed to a committed marker (state/daily.json) so each
+# happens exactly once per day. Times are computed in Asia/Jerusalem, so "07:00"
+# means 7 AM local all year, DST included.
 #
-# IMPORTANT: the every-30-min refresh is driven by an external cron-job.org
-# trigger that calls the workflow_dispatch API with NO inputs. A plain dispatch
-# must therefore do HEADLINES ONLY — never the email or front pages — or you'd
-# get an email every 30 minutes. Email + front pages only happen on the daily
-# schedule (or when you explicitly tick the boxes on a manual run).
-#
-# Cron minutes are deliberately off the hour. GitHub de-prioritises scheduled
-# runs at :00 under load, which is why the old '0 7 * * *' job kept getting
-# dropped. Offsetting to :05/:15/:45 makes runs far more reliable.
+# The 30-min heartbeat is driven by an external cron-job.org trigger
+# (workflow_dispatch, no inputs). The GitHub `schedule` below is only a
+# best-effort backup in case that external trigger ever stops.
 
 on:
   schedule:
-    - cron: '15,45 * * * *'   # every 30 min — headlines only
-    - cron: '5 4 * * *'       # daily 04:05 UTC ≈ 07:05 Israel — headlines + front pages + email
-    - cron: '5 11 * * *'      # daily 11:05 UTC — refresh front pages
-  workflow_dispatch:           # manual trigger — headlines only by default
+    - cron: '15,45 * * * *'   # backup heartbeat (cron-job.org is the primary)
+  workflow_dispatch:           # primary 30-min heartbeat + manual runs
     inputs:
       send_email:
-        description: 'Also send the email digest'
+        description: 'Force-send the email digest now'
         type: boolean
         default: false
       refresh_frontpages:
-        description: 'Also refresh front-page images'
+        description: 'Force-refresh front-page images now'
         type: boolean
         default: false
 
@@ -61,28 +57,11 @@ jobs:
       - name: Install dependencies
         run: pip install --no-cache-dir -r requirements.txt
 
-      - name: Determine run type
-        run: |
-          EVENT="${{ github.event_name }}"
-          SCHED="${{ github.event.schedule }}"
-          EMAIL_IN="${{ github.event.inputs.send_email }}"
-          FP_IN="${{ github.event.inputs.refresh_frontpages }}"
-          DO_FP=false
-          DO_EMAIL=false
-          # Daily full run: headlines + front pages + email.
-          if [ "$SCHED" = "5 4 * * *" ]; then DO_FP=true; DO_EMAIL=true; fi
-          # Midday: refresh front pages only.
-          if [ "$SCHED" = "5 11 * * *" ]; then DO_FP=true; fi
-          # Manual / cron-job.org dispatch: headlines only, unless explicitly
-          # opted in. cron-job.org's 30-min trigger sends no inputs, so both
-          # stay false and only headlines refresh.
-          if [ "$EVENT" = "workflow_dispatch" ]; then
-            [ "$FP_IN" = "true" ] && DO_FP=true
-            [ "$EMAIL_IN" = "true" ] && DO_EMAIL=true
-          fi
-          echo "DO_FRONTPAGES=$DO_FP" >> "$GITHUB_ENV"
-          echo "DO_EMAIL=$DO_EMAIL" >> "$GITHUB_ENV"
-          echo "event=$EVENT schedule='$SCHED' frontpages=$DO_FP email=$DO_EMAIL"
+      - name: Plan the run (daily email + front pages, off the reliable heartbeat)
+        env:
+          FORCE_EMAIL: ${{ github.event.inputs.send_email }}
+          FORCE_FRONTPAGES: ${{ github.event.inputs.refresh_frontpages }}
+        run: python scripts/plan_run.py
 
       - name: Fetch headlines
         run: python scripts/fetch_headlines.py
@@ -99,9 +78,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # frontpages/ only exists on full runs; never let a missing pathspec
-          # fail the headlines-only (every-30-min) commit.
-          git add headlines.json
+          # frontpages/ only changes on full runs; state/daily.json only changes
+          # when a daily routine is claimed. Never let a missing pathspec fail
+          # the headlines-only (every-30-min) commit.
+          git add headlines.json state/daily.json
           git add frontpages 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Nothing changed — skipping commit."

@@ -116,13 +116,16 @@ HEADLINES_PER_OUTLET = 5
 REQUEST_TIMEOUT = 20
 MAX_AGE_DAYS = 4          # drop entries older than this (kills evergreen junk)
 
-# Titles that are navigation/section pages, not articles. Matched case-folded
-# against the whole title. Google News returns these for thinly-covered outlets.
+# Titles that are navigation/section/tag pages, not articles. Matched
+# case-folded against the article's core title (outlet suffix stripped).
+# Google News surfaces these for thinly-covered outlets.
 JUNK_TITLES = {
     "contact us", "about us", "home", "homepage", "sports", "sport", "opinion",
     "football", "roundup", "magazine", "business", "world", "news", "videos",
-    "photos", "gallery", "archive", "subscribe", "advertise", "weather",
-    "e-paper", "epaper", "newsletters",
+    "video", "photos", "gallery", "archive", "subscribe", "advertise", "weather",
+    "e-paper", "epaper", "newsletters", "newsletter", "tag", "tags", "live",
+    "live blog", "watch", "author", "authors", "more", "latest", "latest news",
+    "breaking news", "podcasts", "podcast",
 }
 
 GNEWS_LOCALE = {
@@ -171,15 +174,47 @@ def gnews_url(meta: dict) -> str:
     return f"https://news.google.com/rss/search?q={query}&hl={hl}&gl={gl}&ceid={ceid}"
 
 
+def core_title(title: str) -> str:
+    """Strip the trailing ' - Outlet' / ' | Outlet' that Google News appends.
+
+    Only strips when the tail looks like a publisher name (short, title-cased),
+    so real headlines that merely end in '... - comment' are left intact.
+    """
+    t = title.strip()
+    for sep in (" - ", " | ", " – ", " — "):
+        idx = t.rfind(sep)
+        if idx <= 0:
+            continue
+        head, tail = t[:idx].strip(), t[idx + len(sep):].strip()
+        words = tail.split()
+        if head and 1 <= len(words) <= 4 and all(
+            w[:1].isupper() for w in words if w[:1].isalpha()
+        ):
+            return head
+    return t
+
+
 def is_junk_title(title: str, source: str) -> bool:
-    t = title.strip().casefold()
-    if t in JUNK_TITLES:
+    core = core_title(title)
+    c = core.casefold()
+    if not c:
         return True
-    # "Jordan Times - Jordan Times", "Gulf News: Latest UAE news..." homepages
-    if t == source.casefold():
+    if c in JUNK_TITLES:
         return True
-    # Title is just the outlet name (or name + a couple chars) — a homepage/tagline.
-    if source.casefold() in t and len(t) <= len(source) + 3:
+    if c == source.casefold():
+        return True
+    # Just the outlet name (or name + a couple chars) — a homepage/tagline.
+    if source.casefold() in c and len(c) <= len(source) + 3:
+        return True
+    # Pure issue/section numbers, e.g. Al-Akhbar's "5804".
+    if core.replace(" ", "").replace("-", "").isdigit():
+        return True
+    # Author / tag landing pages: one or two capitalised words, no digits, short
+    # — never a real headline (e.g. "Nathaniel Lacsina", "Tricia Gajitos").
+    words = core.split()
+    if len(words) <= 2 and len(core) < 28 and all(
+        w.isalpha() and w[:1].isupper() for w in words
+    ):
         return True
     return False
 
