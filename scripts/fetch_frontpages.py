@@ -7,11 +7,10 @@ Referer header, so loading their images directly from the browser fails.
 Fetching them here — from the GitHub Actions runner — and committing the results
 sidesteps that entirely. Everything is then served from GitHub Pages.
 
-Only papers whose covers are actually reachable from a datacenter IP are listed.
-Many MENA dailies (Asharq, Al-Ahram, Al-Quds, Arab News, Al-Anba, An-Nahar,
-Tehran Times) aren't carried by Kiosko/Freedom Forum or block our requests, and
-paywalled titles (FT, Le Monde) are hotlink-protected — so they're omitted
-rather than shown as permanent "not available" placeholders.
+Only papers whose covers are actually reachable from a datacenter IP are listed
+(verified with scripts/probe_frontpages.py). Titles that block datacenter IPs or
+aren't carried by either source are omitted rather than shown as permanent
+"not available" placeholders.
 
 Writes frontpages/manifest.json describing which papers have a current image.
 
@@ -27,6 +26,7 @@ from pathlib import Path
 import requests
 
 PAPERS = [
+    # ——— Middle East ———
     {"id": "haaretz", "name": "Haaretz", "loc": "Israel", "lang": "en",
      "site": "https://www.haaretz.com",
      "src": [("ff", "ISR_HA"), ("kiosko", "il", "haaretz")]},
@@ -36,12 +36,48 @@ PAPERS = [
     {"id": "hurriyet", "name": "Hürriyet", "loc": "Turkey", "lang": "tr",
      "site": "https://www.hurriyetdailynews.com",
      "src": [("kiosko", "tr", "hurriyet")]},
+
+    # ——— United States (Freedom Forum — all probe-confirmed) ———
     {"id": "nyt", "name": "New York Times", "loc": "USA", "lang": "en",
      "site": "https://www.nytimes.com",
      "src": [("ff", "NY_NYT"), ("kiosko", "us", "newyork_times")]},
     {"id": "wsj", "name": "Wall Street Journal", "loc": "USA", "lang": "en",
      "site": "https://www.wsj.com",
      "src": [("ff", "WSJ"), ("kiosko", "us", "wsj")]},
+    {"id": "usa_today", "name": "USA Today", "loc": "USA", "lang": "en",
+     "site": "https://www.usatoday.com", "src": [("ff", "USAT")]},
+    {"id": "washington_times", "name": "The Washington Times", "loc": "USA", "lang": "en",
+     "site": "https://www.washingtontimes.com", "src": [("ff", "DC_WT")]},
+    {"id": "la_times", "name": "Los Angeles Times", "loc": "USA", "lang": "en",
+     "site": "https://www.latimes.com", "src": [("ff", "CA_LAT")]},
+    {"id": "chicago_tribune", "name": "Chicago Tribune", "loc": "USA", "lang": "en",
+     "site": "https://www.chicagotribune.com", "src": [("ff", "IL_CT")]},
+    {"id": "boston_globe", "name": "The Boston Globe", "loc": "USA", "lang": "en",
+     "site": "https://www.bostonglobe.com", "src": [("ff", "MA_BG")]},
+    {"id": "sf_chronicle", "name": "San Francisco Chronicle", "loc": "USA", "lang": "en",
+     "site": "https://www.sfchronicle.com", "src": [("ff", "CA_SFC")]},
+    {"id": "philly_inquirer", "name": "The Philadelphia Inquirer", "loc": "USA", "lang": "en",
+     "site": "https://www.inquirer.com", "src": [("ff", "PA_PI")]},
+    {"id": "seattle_times", "name": "The Seattle Times", "loc": "USA", "lang": "en",
+     "site": "https://www.seattletimes.com", "src": [("ff", "WA_ST")]},
+    {"id": "miami_herald", "name": "Miami Herald", "loc": "USA", "lang": "en",
+     "site": "https://www.miamiherald.com", "src": [("ff", "FL_MH")]},
+
+    # ——— Europe (Kiosko — all probe-confirmed) ———
+    {"id": "the_independent", "name": "The Independent", "loc": "UK", "lang": "en",
+     "site": "https://www.independent.co.uk", "src": [("kiosko", "uk", "the_independent")]},
+    {"id": "daily_mail", "name": "Daily Mail", "loc": "UK", "lang": "en",
+     "site": "https://www.dailymail.co.uk", "src": [("kiosko", "uk", "daily_mail")]},
+    {"id": "abc_es", "name": "ABC", "loc": "Spain", "lang": "es",
+     "site": "https://www.abc.es", "src": [("kiosko", "es", "abc")]},
+    {"id": "marca", "name": "Marca", "loc": "Spain", "lang": "es",
+     "site": "https://www.marca.com", "src": [("kiosko", "es", "marca")]},
+    {"id": "as_es", "name": "Diario AS", "loc": "Spain", "lang": "es",
+     "site": "https://as.com", "src": [("kiosko", "es", "as")]},
+    {"id": "corriere", "name": "Corriere della Sera", "loc": "Italy", "lang": "it",
+     "site": "https://www.corriere.it", "src": [("kiosko", "it", "corriere_della_sera")]},
+    {"id": "die_welt", "name": "Die Welt", "loc": "Germany", "lang": "de",
+     "site": "https://www.welt.de", "src": [("kiosko", "de", "die_welt")]},
 ]
 
 OUT_DIR = Path(__file__).parent.parent / "frontpages"
