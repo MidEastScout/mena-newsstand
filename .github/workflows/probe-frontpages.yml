@@ -1,12 +1,16 @@
 name: Probe front-page sources (diagnostic)
 
-# One-off helper. Trigger it manually from the Actions tab, then read the log to
-# see which cover URLs actually return a real image from GitHub's network.
-# Delete this file (and scripts/probe_frontpages.py) once the winners are baked
-# into fetch_frontpages.py.
+# One-off helper. It runs scripts/probe_frontpages.py on GitHub's servers to see
+# which US/European newspaper covers actually return a real image, then commits
+# the verdict to state/probe_results.json so the winners can be baked into
+# scripts/fetch_frontpages.py. Safe to delete this file (and the probe script)
+# once the front-page list is finalised.
 
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   probe:
@@ -20,3 +24,14 @@ jobs:
           python-version: '3.11'
       - run: pip install --no-cache-dir requests
       - run: python scripts/probe_frontpages.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state/probe_results.json
+          if git diff --cached --quiet; then
+            echo "No change to probe results."
+          else
+            git commit -m "chore: probe front-page sources $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase --autostash origin main && git push origin main
+          fi
