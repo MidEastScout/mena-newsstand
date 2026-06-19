@@ -42,9 +42,6 @@ PAPERS = [
     {"id": "wsj", "name": "Wall Street Journal", "loc": "USA", "lang": "en",
      "site": "https://www.wsj.com",
      "src": [("ff", "WSJ"), ("kiosko", "us", "wsj")]},
-    {"id": "guardian", "name": "The Guardian", "loc": "UK", "lang": "en",
-     "site": "https://www.theguardian.com",
-     "src": [("kiosko", "uk", "guardian"), ("kiosko", "uk", "observer")]},
 ]
 
 OUT_DIR = Path(__file__).parent.parent / "frontpages"
