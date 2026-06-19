@@ -43,6 +43,10 @@ DRAFTS_HTML_PATH = DATA_DIR / "drafts.html"
 # for the diff-based feedback loop that will refine future drafts).
 FEEDBACK_PATH = DATA_DIR / "feedback.json"
 
+# Stage 5 — Telegram review+publish bot. Runtime state (publish channel,
+# update offset) persists here so settings survive restarts.
+TELEGRAM_STATE_PATH = DATA_DIR / "telegram_state.json"
+
 
 def ensure_utf8_console() -> None:
     """Avoid UnicodeEncodeError for Hebrew/Arabic/emoji on Windows consoles."""

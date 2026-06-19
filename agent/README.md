@@ -12,7 +12,8 @@ A personal agent that learns your writing style from your WhatsApp history, moni
 | 2 | Content pipeline: rank & dedupe headlines.json + analyst feeds → `briefing.json` | **Ready** |
 | 3 | Relay writer: short news-relay drafts in your voice → `drafts.json` | **Ready** |
 | 4 | Review dashboard: approve / edit / reject, persists + logs feedback | **Ready** |
-| 5 | Publishing: Telegram Bot API + WhatsApp (human-in-the-loop only) | Planned |
+| 5 | Telegram bot: review + edit + publish from chat (human-in-the-loop) | **Ready** |
+| 5b | WhatsApp-group publishing (whatsapp-web.js bridge) | Planned |
 
 ## ⚠️ Privacy first
 
@@ -140,6 +141,47 @@ PowerShell to stop the server.
   posting (Stage 5 will add an always-manual publish step).
 - Every edit is logged to `agent\data\feedback.json` (original vs. your final
   text) — the raw material for teaching future drafts to match your voice.
+
+## Stage 5 — Review & publish from Telegram
+
+A Telegram bot lets you do the whole loop from chat: each draft arrives with
+tappable **✓ Approve · ✗ Reject · ✏️ Edit · 📤 Send** buttons. Pure Python over
+the official Bot API (long polling with `requests`) — no extra installs, no
+Node, no ban risk. **Nothing is posted without you tapping Send and then
+Confirm**, and only you (the configured owner) can command the bot.
+
+**One-time setup:**
+
+1. In Telegram, message **@BotFather** → `/newbot` → copy the token.
+2. Give the agent the token (PowerShell):
+   ```powershell
+   $env:TELEGRAM_BOT_TOKEN = "123456:ABC..."
+   ```
+   (or add `TELEGRAM_BOT_TOKEN=...` to a `.env` file next to the scripts)
+3. Start the bot, then message it once — it replies with your numeric ID:
+   ```powershell
+   py agent\telegram_bot.py
+   ```
+   ```powershell
+   $env:TELEGRAM_OWNER_ID = "<that number>"   # then restart the bot
+   ```
+4. Create a channel, **add your bot as an admin**, then in the bot chat send:
+   `/setchannel @yourchannelname`
+
+**Daily use:** generate drafts, start the bot, then send `/list` in Telegram:
+
+```powershell
+py agent\build_briefing.py
+py agent\draft_posts.py
+py agent\telegram_bot.py
+```
+
+Commands: `/list` (show drafts with buttons), `/status` (tallies), `/setchannel`,
+`/whoami`, `/help`. To edit, tap ✏️ then reply with the new text. Approvals,
+edits and sends all persist to `drafts.json` and log to `feedback.json`, exactly
+like the dashboard. Posting to your **WhatsApp group** is the planned Stage 5b
+add-on (an unofficial `whatsapp-web.js` bridge, since no official API can post
+to an existing consumer group).
 
 ## Model
 
