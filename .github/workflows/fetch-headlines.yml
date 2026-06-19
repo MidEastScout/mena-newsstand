@@ -1,18 +1,38 @@
 name: MENA Newsstand
 
-# The headlines refresh runs on EVERY trigger. The daily email + front-page
-# refresh are decided by scripts/plan_run.py, which uses the reliable 30-min
-# trigger as a CLOCK — GitHub's own scheduled runs are routinely dropped, which
-# is why the morning email used to arrive irregularly and the front pages went
-# stale. plan_run.py instead acts on the first heartbeat after 07:00 Israel time
-# (morning email + front pages) and again after 14:00 (front pages, to catch the
-# later Western editions), keyed to a committed marker (state/daily.json) so each
-# happens exactly once per day. Times are computed in Asia/Jerusalem, so "07:00"
-# means 7 AM local all year, DST included.
+# WHAT THIS WORKFLOW DOES (plain English)
+# =========================================
+# This file tells GitHub how to keep the site updated automatically.
+# It runs the Python scripts in the scripts/ folder on a schedule and
+# commits the results back to the repo so the website always shows fresh data.
 #
-# The 30-min heartbeat is driven by an external cron-job.org trigger
-# (workflow_dispatch, no inputs). The GitHub `schedule` below is only a
-# best-effort backup in case that external trigger ever stops.
+# WHAT RUNS EVERY 30 MINUTES (every run):
+#   - scripts/fetch_headlines.py → reads the 16 RSS feeds and writes
+#     headlines.json, which the website loads to show the Headlines tab.
+#
+# WHAT RUNS ONCE A DAY AT ~7 AM ISRAEL TIME (morning run only):
+#   - scripts/fetch_frontpages.py → downloads today's newspaper front-page
+#     images and saves them under frontpages/. The website shows these images
+#     on the Front Pages tab.
+#   - scripts/send_email.py → sends the morning email digest (only if you
+#     have set up the EMAIL_FROM / EMAIL_TO / EMAIL_PASSWORD secrets).
+#
+# WHAT RUNS ONCE A DAY AT ~2 PM ISRAEL TIME (afternoon run only):
+#   - scripts/fetch_frontpages.py again → updates the front-page images a
+#     second time to catch later editions published after the morning run.
+#
+# HOW THE 30-MINUTE SCHEDULE WORKS
+# ==================================
+# GitHub's own timed schedule ("cron") is unreliable and often runs late or
+# gets skipped. So the primary trigger is an external service (cron-job.org)
+# that calls this workflow via the "workflow_dispatch" trigger every 30 minutes
+# like clockwork. The schedule lines below are just a backup in case that
+# external service ever has a problem.
+#
+# The once-a-day routines (front pages, email) use scripts/plan_run.py as a
+# gatekeeper: it checks the current time in Israel and a small file called
+# state/daily.json to make sure each daily task runs exactly once — even if
+# the 7 AM trigger fires a bit late.
 
 on:
   schedule:

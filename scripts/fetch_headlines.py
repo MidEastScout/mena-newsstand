@@ -1,16 +1,42 @@
 #!/usr/bin/env python3
-"""Fetches top headlines from 16 MENA outlets via RSS and writes headlines.json.
+"""
+WHAT THIS SCRIPT DOES (plain English)
+======================================
+This script runs automatically on GitHub every 30 minutes. It visits each of
+the 16 news outlets listed in SOURCES below, reads their RSS feed (a standard
+machine-readable list of recent articles), picks the 5 most recent headlines,
+and saves everything to a file called headlines.json in the root of this repo.
+The website then reads that file to show you the headlines — no live fetching
+happens in the visitor's browser.
 
-Many outlets' own RSS feeds return 403 to datacenter IPs (GitHub Actions
-runners) behind Cloudflare/Akamai. When an outlet's native feed fails or comes
-back empty, we fall back to Google News' RSS, scoped to that outlet's domain.
+HOW TO ADD OR REMOVE AN OUTLET
+================================
+Find the SOURCES dictionary below. Each outlet is one block that looks like:
+    {
+        "source": "Outlet Name",
+        "country": "Country",
+        "lang": "en",          ← language code: "en", "ar", "he", etc.
+        "url": "https://...",  ← the outlet's homepage
+        "rss": "https://...",  ← the RSS feed URL (findable via the outlet's site)
+    },
+Add a new block inside the right region (Gulf / Levant / Israel / Pan-Arab),
+or delete an existing block to remove it. The region names must match exactly
+what's used in index.html.
 
-Freshness guard: some outlets have thin Google News coverage, so Google returns
-evergreen navigation pages ("Contact Us", "Sports") with years-old dates. We
-therefore sort every feed newest-first, drop anything older than MAX_AGE_DAYS,
-and drop obvious navigation/section titles. An outlet only "falls back" to
-Google News if its native feed has no FRESH items, and we prefer whichever
-source yields fresh, dated articles.
+HOW THE FALLBACK WORKS
+========================
+Some outlets block automated requests from GitHub's servers (they return a
+"403 Forbidden" error). In that case the script automatically tries Google News
+as a backup — it searches Google News for recent articles from that same outlet.
+If Google News also has nothing fresh, the script shows the newest article it
+found anyway rather than leaving the card blank. You don't need to do anything
+special to enable this; it happens automatically.
+
+WHAT "JUNK TITLES" MEANS
+=========================
+Sometimes Google News returns navigation pages ("Contact Us", "Sports", etc.)
+instead of real articles. The JUNK_TITLES list below tells the script to skip
+those so they never appear on the site.
 """
 import json
 import sys
