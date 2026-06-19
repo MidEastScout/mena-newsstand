@@ -11,7 +11,7 @@ A personal agent that learns your writing style from your WhatsApp history, moni
 | 1 | Style learning: parse WhatsApp export → `style_profile.json` | **Ready** |
 | 2 | Content pipeline: rank & dedupe headlines.json + analyst feeds → `briefing.json` | **Ready** |
 | 3 | Relay writer: short news-relay drafts in your voice → `drafts.json` | **Ready** |
-| 4 | Review dashboard: approve / edit / reject / schedule, feedback loop | Planned |
+| 4 | Review dashboard: approve / edit / reject, persists + logs feedback | **Ready** |
 | 5 | Publishing: Telegram Bot API + WhatsApp (human-in-the-loop only) | Planned |
 
 ## ⚠️ Privacy first
@@ -118,6 +118,28 @@ approve, edit, or reject each draft.
 > **double-click it** to read the drafts in correct right-to-left layout, with
 > a copy button per draft. (Re-render an existing `drafts.json` anytime with
 > `py agent\render_drafts.py`.)
+
+## Stage 4 — Review dashboard (approve / edit / reject)
+
+The `drafts.html` viewer is read-only. Stage 4 is the interactive version: a
+tiny **local web app** (Python standard library only — no installs, no
+internet) where your decisions are saved back to `drafts.json`.
+
+```powershell
+py agent\review_server.py        # opens http://127.0.0.1:8765 in your browser
+```
+
+In the page you can, per draft: **edit** the Hebrew text in place, **✓ approve**,
+**✗ reject**, **copy**, or **reset** to pending. Edits are saved when you
+approve. A top bar tallies pending / approved / rejected and has a **"copy all
+approved"** button to grab everything you greenlit at once. Press **Ctrl+C** in
+PowerShell to stop the server.
+
+- It binds to **127.0.0.1 only** — not exposed to your network.
+- **Nothing is published.** Approving just marks a draft ready for manual
+  posting (Stage 5 will add an always-manual publish step).
+- Every edit is logged to `agent\data\feedback.json` (original vs. your final
+  text) — the raw material for teaching future drafts to match your voice.
 
 ## Model
 

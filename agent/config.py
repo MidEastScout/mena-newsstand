@@ -38,6 +38,11 @@ DRAFTS_PATH = DATA_DIR / "drafts.json"
 # right-to-left (the Windows console cannot), with a copy button per draft.
 DRAFTS_HTML_PATH = DATA_DIR / "drafts.html"
 
+# Stage 4 — local review dashboard. Approve/edit/reject decisions are written
+# back into drafts.json; every edit is logged to feedback.json (raw material
+# for the diff-based feedback loop that will refine future drafts).
+FEEDBACK_PATH = DATA_DIR / "feedback.json"
+
 
 def ensure_utf8_console() -> None:
     """Avoid UnicodeEncodeError for Hebrew/Arabic/emoji on Windows consoles."""
