@@ -477,7 +477,13 @@ function renderHeadlines(data, container){
     html+=`<div class="hl-updated">Last updated: ${label}</div>`;
   }
   const regions=data.regions||{};
-  for(const [region,outlets] of Object.entries(regions)){
+  // Fixed display order requested for the Headlines tab; any other region
+  // (should one appear) is shown afterwards.
+  const REGION_ORDER=["Pan-Arab","Levant","Gulf","Israel"];
+  const ordered=[...REGION_ORDER.filter(r=>r in regions),
+                 ...Object.keys(regions).filter(r=>!REGION_ORDER.includes(r))];
+  for(const region of ordered){
+    const outlets=regions[region];
     html+=`<div class="hl-region">
       <div class="hl-region-head">${esc(region)}</div>
       <div class="hl-grid">${outlets.map(renderOutletCard).join("")}</div>
