@@ -43,6 +43,7 @@ import hashlib
 import json
 import os
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote_plus, urlparse
@@ -174,6 +175,10 @@ LANG_TARGETS = {
     "de": "German",
     "es": "Spanish",
 }
+
+# Gemini model used for translation. gemini-2.5-flash has free-tier quota;
+# gemini-2.0-flash showed a 0 free-tier limit on some projects.
+GEMINI_MODEL = "gemini-2.5-flash"
 
 HEADERS = {
     "User-Agent": (
@@ -362,8 +367,8 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
     changed since the last run, the cached translations are reused so no API
     call is made.  Returns {} on any failure — non-fatal.
 
-    Uses Gemini's free tier (model gemini-2.0-flash), so the workload here
-    costs nothing in practice.
+    Uses Gemini's free tier (GEMINI_MODEL), so the workload here costs nothing
+    in practice.
     """
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
@@ -408,29 +413,42 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
             "(no markdown, no code fences, no explanation), in the same order as "
             "the input."
         )
-        try:
-            response = client.models.generate_content(
-                model="gemini-2.0-flash",
-                contents=prompt,
-            )
-            raw = (response.text or "").strip()
-            if raw.startswith("```"):
-                raw = raw.split("```")[1]
-                if raw.startswith("json"):
-                    raw = raw[4:]
-                raw = raw.strip()
-            lang_titles = json.loads(raw)
-            if not isinstance(lang_titles, list) or len(lang_titles) != len(titles):
-                print(f"  [{lang_code}] Unexpected response shape — skipping", file=sys.stderr)
-                continue
-            regions_lang = copy.deepcopy(regions)
-            for i, (region, o_idx, h_idx) in enumerate(positions):
-                if i < len(lang_titles) and lang_titles[i]:
-                    regions_lang[region][o_idx]["headlines"][h_idx]["title"] = lang_titles[i]
-            result[f"regions_{lang_code}"] = regions_lang
-            print(f"  [{lang_code}] Translated {len(titles)} headlines")
-        except Exception as exc:
-            print(f"  [{lang_code}] Translation failed: {exc}", file=sys.stderr)
+        # Retry transient rate limits (429) with a short backoff; a few outlets
+        # per minute is well within free-tier limits, but bunched calls can trip
+        # the per-minute cap.
+        for attempt in range(3):
+            try:
+                response = client.models.generate_content(
+                    model=GEMINI_MODEL,
+                    contents=prompt,
+                )
+                raw = (response.text or "").strip()
+                if raw.startswith("```"):
+                    raw = raw.split("```")[1]
+                    if raw.startswith("json"):
+                        raw = raw[4:]
+                    raw = raw.strip()
+                lang_titles = json.loads(raw)
+                if not isinstance(lang_titles, list) or len(lang_titles) != len(titles):
+                    print(f"  [{lang_code}] Unexpected response shape — skipping", file=sys.stderr)
+                    break
+                regions_lang = copy.deepcopy(regions)
+                for i, (region, o_idx, h_idx) in enumerate(positions):
+                    if i < len(lang_titles) and lang_titles[i]:
+                        regions_lang[region][o_idx]["headlines"][h_idx]["title"] = lang_titles[i]
+                result[f"regions_{lang_code}"] = regions_lang
+                print(f"  [{lang_code}] Translated {len(titles)} headlines")
+                break
+            except Exception as exc:
+                msg = str(exc)
+                is_rate_limit = "429" in msg or "RESOURCE_EXHAUSTED" in msg
+                if is_rate_limit and attempt < 2:
+                    wait = 6 * (attempt + 1)
+                    print(f"  [{lang_code}] rate-limited — retrying in {wait}s", file=sys.stderr)
+                    time.sleep(wait)
+                    continue
+                print(f"  [{lang_code}] Translation failed: {exc}", file=sys.stderr)
+                break
 
     return result
 
