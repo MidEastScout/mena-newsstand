@@ -355,16 +355,19 @@ def _titles_hash(regions: dict) -> str:
 
 
 def translate_all_languages(regions: dict, existing_output: dict = None) -> dict:
-    """Translate all headlines into 7 languages using the Claude API.
+    """Translate all headlines into 7 languages using the Google Gemini API.
 
     Returns a dict with keys regions_he, regions_ar, regions_ru, regions_zh,
     regions_fr, regions_de, regions_es.  If the set of headline titles hasn't
     changed since the last run, the cached translations are reused so no API
     call is made.  Returns {} on any failure — non-fatal.
+
+    Uses Gemini's free tier (model gemini-2.0-flash), so the workload here
+    costs nothing in practice.
     """
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        print("  ANTHROPIC_API_KEY not set — skipping translations", file=sys.stderr)
+        print("  GEMINI_API_KEY not set — skipping translations", file=sys.stderr)
         return {}
 
     positions = []
@@ -386,12 +389,12 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
             return cached
 
     try:
-        import anthropic
+        from google import genai
     except ImportError:
-        print("  anthropic package not installed — skipping translations", file=sys.stderr)
+        print("  google-genai package not installed — skipping translations", file=sys.stderr)
         return {}
 
-    client = anthropic.Anthropic(api_key=api_key)
+    client = genai.Client(api_key=api_key)
     titles_json = json.dumps(titles, ensure_ascii=False)
     result = {}
 
@@ -406,12 +409,11 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
             "the input."
         )
         try:
-            message = client.messages.create(
-                model="claude-haiku-4-5-20251001",
-                max_tokens=4096,
-                messages=[{"role": "user", "content": prompt}],
+            response = client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=prompt,
             )
-            raw = message.content[0].text.strip()
+            raw = (response.text or "").strip()
             if raw.startswith("```"):
                 raw = raw.split("```")[1]
                 if raw.startswith("json"):
