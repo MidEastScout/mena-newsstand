@@ -395,11 +395,19 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
 
     try:
         from google import genai
+        from google.genai import types
     except ImportError:
         print("  google-genai package not installed — skipping translations", file=sys.stderr)
         return {}
 
     client = genai.Client(api_key=api_key)
+    # Structured output: force Gemini to return a valid JSON array of strings.
+    # Without this, hand-written JSON occasionally breaks (e.g. an unescaped
+    # quote in a Hebrew/Arabic headline) and the whole language is lost.
+    gen_config = types.GenerateContentConfig(
+        response_mime_type="application/json",
+        response_schema=list[str],
+    )
     titles_json = json.dumps(titles, ensure_ascii=False)
     result = {}
 
@@ -421,6 +429,7 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
                 response = client.models.generate_content(
                     model=GEMINI_MODEL,
                     contents=prompt,
+                    config=gen_config,
                 )
                 raw = (response.text or "").strip()
                 if raw.startswith("```"):
