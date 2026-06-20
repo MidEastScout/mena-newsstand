@@ -178,9 +178,10 @@ LANG_TARGETS = {
     "es": "Spanish",
 }
 
-# Gemini model used for translation. gemini-2.5-flash has free-tier quota;
-# gemini-2.0-flash showed a 0 free-tier limit on some projects.
-GEMINI_MODEL = "gemini-2.5-flash"
+# Gemini model used for snippets + translation. flash-lite has a much higher
+# free-tier daily request limit than gemini-2.5-flash (which capped at ~20/day
+# on this project) — important because each run makes ~8 calls.
+GEMINI_MODEL = "gemini-2.5-flash-lite"
 
 HEADERS = {
     "User-Agent": (
@@ -518,6 +519,7 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
         flat.append(s)
 
     result = {}
+    fresh = 0
     for lang_code, lang_name in LANG_TARGETS.items():
         prompt = (
             f"Translate each string in the JSON array below to {lang_name}. The "
@@ -538,9 +540,21 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
                 hl["title"] = t_title
             hl["snippet"] = t_snip or ""
         result[f"regions_{lang_code}"] = regions_lang
+        fresh += 1
         print(f"  [{lang_code}] Translated {len(titles)} headlines + snippets")
 
-    if result:
+    # Non-destructive: if a language failed this run (e.g. quota), keep the
+    # previous run's copy so its chip never disappears from the site.
+    if existing_output:
+        for lang_code in LANG_TARGETS:
+            key = f"regions_{lang_code}"
+            if key not in result and key in existing_output:
+                result[key] = existing_output[key]
+                print(f"  [{lang_code}] kept previous translation (refresh failed)", file=sys.stderr)
+
+    # Only stamp the content hash when every language was refreshed this run, so
+    # a partial run doesn't get cached and the next run retries the rest.
+    if fresh == len(LANG_TARGETS):
         result["titles_hash"] = current_hash
     return result
 
