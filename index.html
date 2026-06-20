@@ -87,14 +87,6 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .src-btn{display:block;padding:6px 0;border-radius:5px;font-size:12px;font-weight:500;text-align:center;border:1px solid var(--line);background:none;color:var(--ink2);transition:.15s}
 .src-btn:hover{border-color:var(--ink);background:var(--bg)}
 
-/* Kiosko section */
-.kiosko-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:9px;margin-bottom:24px}
-.kc{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:8px;transition:.15s}
-.kc:hover{border-color:var(--ink);transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.07)}
-.kc-flag{font-size:22px}
-.kc-name{font-size:14px;font-weight:600;color:var(--ink)}
-.kc-note{font-size:11px;color:var(--muted);margin-top:1px}
-
 /* Analysis */
 .analysis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
 .acol h3{font-family:'Playfair Display',serif;font-size:16px;padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:10px}
@@ -186,32 +178,13 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
   <div class="section active" id="sec-frontpages">
 
     <div class="tip">
-      <strong>How this works:</strong> Each card shows today's actual front page image. Click any card to open a larger view. If an image shows "unavailable", that paper's front page couldn't be fetched today — click it anyway to open the paper directly. The Kiosko buttons below let you browse all papers from a given country.
+      <strong>How this works:</strong> Each card shows today's actual front page image. Click any card to open a larger view. If an image shows "unavailable", that paper's front page couldn't be fetched today — click it anyway to open the paper directly.
     </div>
 
     <div class="sec-head"><h2>Today's Front Pages</h2></div>
     <div class="sec-note" id="fp-updated"></div>
     <div class="fp-grid" id="fp-grid"></div>
 
-    <div class="sec-head" style="margin-top:8px"><h2>More Front Pages — Kiosko</h2></div>
-    <div class="sec-note">Kiosko covers these five countries in the region. Click to browse all papers from each country.</div>
-    <div class="kiosko-row">
-      <a class="kc" href="https://es.kiosko.net/il/" target="_blank" rel="noopener">
-        <div class="kc-flag">🇮🇱</div><div><div class="kc-name">Israel</div><div class="kc-note">All Israeli papers</div></div>
-      </a>
-      <a class="kc" href="https://es.kiosko.net/eg/" target="_blank" rel="noopener">
-        <div class="kc-flag">🇪🇬</div><div><div class="kc-name">Egypt</div><div class="kc-note">Al-Ahram, Shorouk…</div></div>
-      </a>
-      <a class="kc" href="https://es.kiosko.net/asi/geo/ae.html" target="_blank" rel="noopener">
-        <div class="kc-flag">🇦🇪</div><div><div class="kc-name">UAE</div><div class="kc-note">Gulf News, National…</div></div>
-      </a>
-      <a class="kc" href="https://es.kiosko.net/ir/" target="_blank" rel="noopener">
-        <div class="kc-flag">🇮🇷</div><div><div class="kc-name">Iran</div><div class="kc-note">Tehran Times…</div></div>
-      </a>
-      <a class="kc" href="https://es.kiosko.net/ma/" target="_blank" rel="noopener">
-        <div class="kc-flag">🇲🇦</div><div><div class="kc-name">Morocco</div><div class="kc-note">Le Matin…</div></div>
-      </a>
-    </div>
   </div>
 
   <!-- GULF TAB -->
@@ -224,7 +197,7 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
   <!-- LEVANT & EGYPT TAB -->
   <div class="section" id="sec-levant">
     <div class="sec-head"><h2>Levant & Egypt</h2></div>
-    <div class="sec-note">Lebanon and Jordan are not on FrontPages.com. Egypt is on Kiosko — use the button on the Front Pages tab.</div>
+    <div class="sec-note">Lebanon and Jordan are not on FrontPages.com. Egypt's front pages are available at kiosko.net.</div>
     <div class="src-grid" id="grid-levant"></div>
   </div>
 
@@ -252,7 +225,7 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 </div>
 
 <footer class="wrap">
-  Front page covers via Kiosko.net &amp; Freedom Forum · Country pages via es.kiosko.net · All other links to original outlets
+  Front page covers via Kiosko.net &amp; Freedom Forum · All other links to original outlets
 </footer>
 
 <script>
@@ -261,19 +234,19 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 // loads them from its own origin — no hotlinking — and reads
 // frontpages/manifest.json to know which are available today. "id" must match
 // the ids in fetch_frontpages.py.
-// Only papers whose covers can actually be fetched server-side are listed
-// (verified with scripts/probe_frontpages.py). Others either aren't carried by
-// any reachable cover source or block datacenter IPs, so they're omitted rather
-// than shown as permanent "not available" placeholders.
+// Only papers whose covers can actually be fetched server-side are listed.
+// Others (most MENA dailies, plus paywalled UK/FR titles) either aren't carried
+// by any reachable cover source or block datacenter IPs, so they're omitted
+// rather than shown as permanent "not available" placeholders.
 const FP_PAPERS = [
-  // ——— Middle East ———————————————————————————————————————————————
+  // ——— Middle East ——————————————————————————————
   { id:"haaretz",      name:"Haaretz",         loc:"Israel",           lang:"en", site:"https://www.haaretz.com" },
   { id:"the_national", name:"The National",    loc:"UAE",              lang:"en", site:"https://www.thenationalnews.com" },
-  // ——— United States ————————————————————————————————————————————
+  // ——— United States ————————————————————————————
   { id:"nyt",             name:"New York Times",         loc:"USA", lang:"en", site:"https://www.nytimes.com" },
   { id:"wsj",             name:"Wall Street Journal",    loc:"USA", lang:"en", site:"https://www.wsj.com" },
   { id:"usa_today",       name:"USA Today",              loc:"USA", lang:"en", site:"https://www.usatoday.com" },
-  // ——— Europe —————————————————————————————————————————————————
+  // ——— Europe ——————————————————————————————————
   { id:"the_independent", name:"The Independent",        loc:"UK",      lang:"en", site:"https://www.independent.co.uk" },
   { id:"daily_mail",      name:"Daily Mail",             loc:"UK",      lang:"en", site:"https://www.dailymail.co.uk" },
   { id:"die_welt",        name:"Die Welt",               loc:"Germany", lang:"de", site:"https://www.welt.de" },
@@ -451,7 +424,7 @@ function buildAnalysis(){
         <li>
           <a href="${i.u}" target="_blank" rel="noopener">${i.n}</a>
           <span class="desc">${i.d}</span>
-        </li>`).join("")}
+        </li>`).join(``)}
       </ul>
     </div>`).join("");
 }
@@ -480,7 +453,7 @@ setInterval(loadHeadlines, 30 * 60 * 1000);
 function esc(s){
   return String(s)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;").replace(/\"/g,"&quot;");
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 
 async function loadHeadlines(){
