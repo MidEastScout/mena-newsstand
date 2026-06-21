@@ -170,8 +170,8 @@ SOURCES = {
         },
         {
             "source": "Tasnim News", "country": "Iran", "lang": "fa",
-            "url": "https://tasnimnews.com",
-            "rss": "https://tasnimnews.com/fa/rss.aspx",
+            "url": "https://www.tasnimnews.com",
+            "rss": "https://www.tasnimnews.com/fa/rss.aspx",
         },
     ],
 }
@@ -304,6 +304,9 @@ def is_junk_title(title: str, source: str) -> bool:
         return True
     # "- domain.tld" artifacts from Google News when the outlet isn't indexed.
     if re.match(r'^-\s+\S+\.\S+\s*$', core):
+        return True
+    # Social-media reposts: "9**1234 (@userXXX) | Outlet Name"
+    if re.search(r'@user\d{10,}', core):
         return True
     return False
 
