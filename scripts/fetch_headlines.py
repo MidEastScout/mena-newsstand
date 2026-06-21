@@ -110,7 +110,7 @@ SOURCES = {
         {
             "source": "Quds News", "country": "Palestine", "lang": "ar",
             "url": "https://qudsn.net",
-            "rss": "https://qudsn.net/feed",
+            "rss": "https://www.qudsn.net/rss.xml",
         },
         {
             "source": "Falastin al-Youm", "country": "Palestine", "lang": "ar",
@@ -164,14 +164,14 @@ SOURCES = {
     ],
     "Iran": [
         {
-            "source": "Fars News", "country": "Iran", "lang": "en",
-            "url": "https://en.farsnews.ir",
-            "rss": "https://en.farsnews.ir/rss.aspx",
+            "source": "Fars News", "country": "Iran", "lang": "fa",
+            "url": "https://www.farsnews.ir",
+            "rss": "https://www.farsnews.ir/rss",
         },
         {
-            "source": "Tasnim News", "country": "Iran", "lang": "en",
-            "url": "https://en.tasnimnews.com",
-            "rss": "https://en.tasnimnews.com/en/rss.aspx",
+            "source": "Tasnim News", "country": "Iran", "lang": "fa",
+            "url": "https://tasnimnews.com",
+            "rss": "https://tasnimnews.com/fa/rss.aspx",
         },
     ],
 }
@@ -200,6 +200,7 @@ GNEWS_LOCALE = {
     "en": ("en-US", "US", "US:en"),
     "ar": ("ar", "EG", "EG:ar"),
     "he": ("he", "IL", "IL:he"),
+    "fa": ("fa", "IR", "IR:fa"),
     "tr": ("tr", "TR", "TR:tr"),
     "fr": ("fr", "FR", "FR:fr"),
 }
@@ -207,11 +208,6 @@ GNEWS_LOCALE = {
 LANG_TARGETS = {
     "he": "Hebrew",
     "ar": "Arabic",
-    "ru": "Russian",
-    "zh": "Mandarin Chinese (Simplified)",
-    "fr": "French",
-    "de": "German",
-    "es": "Spanish",
 }
 
 # Gemini model used for snippets + translation. flash-lite has a much higher
@@ -224,7 +220,7 @@ SNIPPET_WORDS = 50
 
 # Bump this whenever the snippet/translation prompt changes so the content cache
 # is invalidated and everything regenerates on the next run.
-TRANSLATION_VERSION = "v3-50w"
+TRANSLATION_VERSION = "v4-he-ar"
 
 HEADERS = {
     "User-Agent": (
@@ -305,6 +301,9 @@ def is_junk_title(title: str, source: str) -> bool:
     if len(words) <= 2 and len(core) < 28 and all(
         w.isalpha() and w[:1].isupper() for w in words
     ):
+        return True
+    # "- domain.tld" artifacts from Google News when the outlet isn't indexed.
+    if re.match(r'^-\s+\S+\.\S+\s*$', core):
         return True
     return False
 
@@ -616,10 +615,10 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
                 result[key] = existing_output[key]
                 print(f"  [{lang_code}] kept previous translation (refresh failed)", file=sys.stderr)
 
-    # Only stamp the content hash when snippets were freshly generated AND every
-    # language was refreshed this run, so a partial run never gets cached (which
-    # would otherwise freeze empty snippets in place until headlines change).
-    if snippets_ok and fresh == len(LANG_TARGETS):
+    # Save the hash whenever snippets were freshly generated (even if some
+    # translations hit the daily quota). This prevents every subsequent run from
+    # re-running the snippet call for unchanged headlines when we're quota-limited.
+    if snippets_ok:
         result["titles_hash"] = current_hash
     return result
 

@@ -32,11 +32,6 @@ BRIEFING_WORDS = "350-500"
 LANG_TARGETS = {
     "he": "Hebrew",
     "ar": "Arabic",
-    "ru": "Russian",
-    "zh": "Mandarin Chinese (Simplified)",
-    "fr": "French",
-    "de": "German",
-    "es": "Spanish",
 }
 
 # Major international feeds that ground the briefing in today's world news.

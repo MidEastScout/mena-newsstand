@@ -187,11 +187,6 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
       <button class="lang-chip active" data-lang="en" onclick="switchLang('en')">English</button>
       <button class="lang-chip" data-lang="he" onclick="switchLang('he')" disabled>עברית</button>
       <button class="lang-chip" data-lang="ar" onclick="switchLang('ar')" disabled>العربية</button>
-      <button class="lang-chip" data-lang="ru" onclick="switchLang('ru')" disabled>Русский</button>
-      <button class="lang-chip" data-lang="zh" onclick="switchLang('zh')" disabled>中文</button>
-      <button class="lang-chip" data-lang="fr" onclick="switchLang('fr')" disabled>Français</button>
-      <button class="lang-chip" data-lang="de" onclick="switchLang('de')" disabled>Deutsch</button>
-      <button class="lang-chip" data-lang="es" onclick="switchLang('es')" disabled>Español</button>
     </div>
     <div class="briefing-card" id="briefing-card" style="display:none">
       <div class="briefing-head">
@@ -215,11 +210,6 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
       <button class="lang-chip active" data-lang="en" onclick="switchLang('en')">English</button>
       <button class="lang-chip" data-lang="he" onclick="switchLang('he')" disabled>עברית</button>
       <button class="lang-chip" data-lang="ar" onclick="switchLang('ar')" disabled>العربية</button>
-      <button class="lang-chip" data-lang="ru" onclick="switchLang('ru')" disabled>Русский</button>
-      <button class="lang-chip" data-lang="zh" onclick="switchLang('zh')" disabled>中文</button>
-      <button class="lang-chip" data-lang="fr" onclick="switchLang('fr')" disabled>Français</button>
-      <button class="lang-chip" data-lang="de" onclick="switchLang('de')" disabled>Deutsch</button>
-      <button class="lang-chip" data-lang="es" onclick="switchLang('es')" disabled>Español</button>
     </div>
     <div class="sec-note">Top 5 headlines from 22 MENA and regional outlets, organized by region. Refreshed automatically every 30 minutes.</div>
     <div id="hl-container"><div class="hl-loading">Loading headlines…</div></div>
@@ -307,8 +297,7 @@ let FP_STATUS = {};   // id -> {ok, date}
 let FP_VER = "";      // cache-busting version (date) for the image URLs
 
 const LANG_KEYS = {
-  en:"regions", he:"regions_he", ar:"regions_ar", ru:"regions_ru",
-  zh:"regions_zh", fr:"regions_fr", de:"regions_de", es:"regions_es"
+  en:"regions", he:"regions_he", ar:"regions_ar"
 };
 
 let hlData = null;
@@ -568,8 +557,7 @@ let briefingData = null;
 
 // Localized label for the card title, per supported language.
 const BRIEFING_LABELS = {
-  en:"World Briefing", he:"תדריך עולמי", ar:"موجز عالمي", ru:"Мировая сводка",
-  zh:"世界简报", fr:"Briefing mondial", de:"Welt-Briefing", es:"Resumen mundial"
+  en:"World Briefing", he:"תדריך עולמי", ar:"موجز عالمي"
 };
 
 async function loadBriefing(){
