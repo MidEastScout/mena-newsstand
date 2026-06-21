@@ -146,6 +146,9 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 .fp-modal-fail a{color:#9cc3ff;font-weight:600}
 .fp-modal-note{padding:8px 16px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;flex-shrink:0}
 .fp-card{cursor:pointer}
+.archive-controls{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.archive-controls label{font-size:13px;font-weight:600;color:var(--ink)}
+.archive-controls select{font:inherit;font-size:13px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;color:inherit;cursor:pointer;min-width:240px}
 </style>
 </head>
 <body>
@@ -166,6 +169,7 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 <div class="navbar">
   <div class="wrap">
     <button class="navbtn active" data-sec="frontpages">Front Pages</button>
+    <button class="navbtn" data-sec="archive">Archive</button>
     <button class="navbtn" data-sec="headlines">Headlines</button>
     <button class="navbtn" data-sec="gulf">Gulf</button>
     <button class="navbtn" data-sec="levant">Levant & Egypt</button>
@@ -205,6 +209,17 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
     <div class="sec-note" id="fp-updated"></div>
     <div class="fp-grid" id="fp-grid"></div>
 
+  </div>
+
+  <!-- ARCHIVE TAB -->
+  <div class="section" id="sec-archive">
+    <div class="sec-head"><h2>Front-Page Archive</h2></div>
+    <div class="sec-note">Browse past front pages. Covers are saved on each daily refresh and kept for one year. Click any card for a larger view.</div>
+    <div class="archive-controls">
+      <label for="archive-date">Show date:</label>
+      <select id="archive-date"></select>
+    </div>
+    <div class="fp-grid" id="archive-grid"><div class="hl-loading">Loading archive…</div></div>
   </div>
 
   <!-- GULF TAB -->
@@ -417,6 +432,82 @@ async function buildFPGrid(){
   if(note) note.textContent = FP_VER ? ("Front pages as of " + FP_VER) : "";
 }
 
+// ——— Archive: browse past front pages by date ———————————————————————
+// Loads frontpages/archive/index.json: { papers:{id:{name,loc,lang,site}},
+// dates:{ "YYYY-MM-DD":[ids] } } produced by fetch_frontpages.py.
+let ARCHIVE_INDEX = null;
+
+function fmtArchiveDate(d){
+  try{
+    return new Date(d + "T00:00:00Z").toLocaleDateString("en-US",
+      {weekday:"long", year:"numeric", month:"long", day:"numeric", timeZone:"UTC"});
+  }catch(e){ return d; }
+}
+
+function archiveImgURL(id, d){ return `frontpages/archive/${d}/${id}.jpg`; }
+
+async function buildArchive(){
+  const grid = document.getElementById("archive-grid");
+  const sel = document.getElementById("archive-date");
+  try{
+    const r = await fetch("frontpages/archive/index.json?t=" + Date.now());
+    if(r.ok) ARCHIVE_INDEX = await r.json();
+  }catch(e){ /* not generated yet */ }
+
+  const dates = ARCHIVE_INDEX && ARCHIVE_INDEX.dates
+    ? Object.keys(ARCHIVE_INDEX.dates).sort().reverse() : [];
+  if(!dates.length){
+    sel.style.display = "none";
+    grid.innerHTML = `<div class="hl-loading">No archived front pages yet — the first day's covers appear after the next daily refresh.</div>`;
+    return;
+  }
+  sel.style.display = "";
+  sel.innerHTML = dates.map(d=>`<option value="${d}">${fmtArchiveDate(d)}</option>`).join("");
+  sel.onchange = () => renderArchiveGrid(sel.value);
+  renderArchiveGrid(dates[0]);
+}
+
+function renderArchiveGrid(d){
+  const grid = document.getElementById("archive-grid");
+  const ids = (ARCHIVE_INDEX.dates[d] || []);
+  const papers = ARCHIVE_INDEX.papers || {};
+  if(!ids.length){ grid.innerHTML = `<div class="hl-loading">No covers saved for this date.</div>`; return; }
+  grid.innerHTML = ids.map(id=>{
+    const p = papers[id] || {name:id, loc:"", lang:"en", site:"#"};
+    return `
+    <div class="fp-card" onclick="openArchiveModal('${id}','${d}')">
+      <div class="fp-img-wrap">
+        <img class="fp-img-actual" loading="lazy" src="${archiveImgURL(id,d)}"
+          alt="${esc(p.name)} front page" onerror="fpImgError(this)">
+        <div class="fp-placeholder" style="display:none">
+          <span style="font-size:26px">📰</span>
+          <span>Image unavailable</span>
+        </div>
+      </div>
+      <div class="fp-info">
+        <div class="fp-name">${esc(p.name)}</div>
+        <div class="fp-loc">${esc(p.loc)}</div>
+        ${lb(p.lang||"en")}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function openArchiveModal(id, d){
+  const p = (ARCHIVE_INDEX.papers || {})[id] || {name:id, site:"#"};
+  document.getElementById("fp-modal-title").textContent = `${p.name} — ${fmtArchiveDate(d)}`;
+  document.getElementById("fp-modal-link").href = p.site || "#";
+  document.getElementById("fp-modal-body").innerHTML =
+    `<img class="fp-modal-img" src="${archiveImgURL(id,d)}"
+       alt="${esc(p.name)} front page" onerror="fpModalImgError(this)">
+     <div class="fp-modal-fail" style="display:none">
+       <p>This front page image isn't available.</p>
+       <a href="${p.site||'#'}" target="_blank" rel="noopener">Open ${esc(p.name)} website ↗</a>
+     </div>`;
+  document.getElementById("fp-modal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
 // If a committed image somehow fails to load, fall back to the placeholder.
 function fpImgError(img){
   img.style.display = "none";
@@ -495,6 +586,7 @@ document.getElementById("hdr-date").textContent =
   new Date().toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
 
 buildFPGrid();
+buildArchive();
 buildSrcGrid("grid-gulf", GULF);
 buildSrcGrid("grid-levant", LEVANT);
 buildAnalysis();

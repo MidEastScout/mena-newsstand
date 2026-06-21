@@ -19,8 +19,9 @@ Source kinds:
   ("kiosko", GEO, SLUG) -> Kiosko CDN (keyed by full date)
 """
 import json
+import shutil
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -54,6 +55,11 @@ PAPERS = [
 ]
 
 OUT_DIR = Path(__file__).parent.parent / "frontpages"
+# Dated copies of each day's covers live here so the site can show history.
+# index.json maps each available date -> the paper ids captured that day, plus
+# a "papers" lookup for display metadata.
+ARCHIVE_DIR = OUT_DIR / "archive"
+ARCHIVE_RETENTION_DAYS = 365   # keep ~1 year, then prune the oldest days
 MIN_BYTES = 12000
 TIMEOUT = 25
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -91,6 +97,64 @@ def try_download(session: requests.Session, url: str):
         return r.content
     print(f"      - {url} -> {r.status_code} {ct or '?'} {len(r.content)}B")
     return None
+
+
+def archive_today(today: date, manifest: dict) -> None:
+    """Save a dated copy of today's available covers under archive/<date>/ and
+    update archive/index.json, then prune anything older than the retention
+    window. Only papers that actually have an image today are archived.
+
+    Idempotent per day: a later run (e.g. the afternoon refresh) overwrites the
+    same day's folder with the newest editions.
+    """
+    today_str = today.isoformat()
+    ok_ids = [p["id"] for p in manifest["papers"] if p["ok"]]
+
+    index_path = ARCHIVE_DIR / "index.json"
+    try:
+        idx = json.loads(index_path.read_text(encoding="utf-8"))
+    except Exception:
+        idx = {}
+    idx.setdefault("papers", {})
+    idx.setdefault("dates", {})
+
+    # Refresh display metadata for every paper we currently track.
+    for p in PAPERS:
+        idx["papers"][p["id"]] = {
+            "name": p["name"], "loc": p["loc"], "lang": p["lang"], "site": p["site"],
+        }
+
+    archived = []
+    if ok_ids:
+        day_dir = ARCHIVE_DIR / today_str
+        day_dir.mkdir(parents=True, exist_ok=True)
+        for pid in ok_ids:
+            src_img = OUT_DIR / f"{pid}.jpg"
+            if src_img.exists():
+                shutil.copy2(src_img, day_dir / f"{pid}.jpg")
+                archived.append(pid)
+        if archived:
+            idx["dates"][today_str] = archived
+            print(f"  archived {len(archived)} covers under archive/{today_str}/")
+
+    # Prune days older than the retention window (from disk and the index).
+    cutoff = today - timedelta(days=ARCHIVE_RETENTION_DAYS)
+    for d in list(idx["dates"].keys()):
+        try:
+            dd = date.fromisoformat(d)
+        except ValueError:
+            continue
+        if dd < cutoff:
+            del idx["dates"][d]
+            folder = ARCHIVE_DIR / d
+            if folder.exists():
+                shutil.rmtree(folder, ignore_errors=True)
+            print(f"  pruned archive/{d}/ (older than {ARCHIVE_RETENTION_DAYS} days)")
+
+    idx["updated"] = datetime.now(timezone.utc).isoformat()
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    index_path.write_text(json.dumps(idx, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  archive index: {len(idx['dates'])} day(s) available")
 
 
 def main():
@@ -139,6 +203,9 @@ def main():
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     n_ok = sum(1 for x in manifest["papers"] if x["ok"])
     print(f"\nFront pages: {n_ok}/{len(PAPERS)} available")
+
+    # Keep a dated copy of today's covers for the in-site archive.
+    archive_today(today, manifest)
 
 
 if __name__ == "__main__":
