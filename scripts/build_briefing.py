@@ -22,10 +22,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 REGION_ORDER = ["Pan-Arab", "Levant", "Gulf", "Israel", "Iran"]
-# flash for the synthesis (quality matters, 4 calls/day); flash-lite for the
-# translations (more mechanical, higher free-tier quota) — 7 calls/briefing.
+# Both synthesis and translation use flash so they share a separate daily quota
+# from the flash-lite quota used by headline snippets/translations.
 GEMINI_MODEL = "gemini-2.5-flash"
-TRANSLATE_MODEL = "gemini-2.5-flash-lite"
+TRANSLATE_MODEL = "gemini-2.5-flash"
 BRIEFING_WORDS = "350-500"
 
 # Same languages offered for the headlines toggle (en is the source).
