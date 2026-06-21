@@ -305,8 +305,13 @@ def is_junk_title(title: str, source: str) -> bool:
     # "- domain.tld" artifacts from Google News when the outlet isn't indexed.
     if re.match(r'^-\s+\S+\.\S+\s*$', core):
         return True
-    # Social-media reposts: "9**1234 (@userXXX) | Outlet Name"
-    if re.search(r'@user\d{10,}', core):
+    # Social-media reposts: any title referencing a @handle in parentheses.
+    # Covers both auto-generated (@user1234567890) and custom (@m0hamm6d) handles
+    # that Google News surfaces as Twitter/X aggregation cards.
+    if re.search(r'\(@\w', core):
+        return True
+    # Titles that are purely punctuation/whitespace with no word characters (e.g. ".").
+    if not re.search(r'\w', core):
         return True
     return False
 
