@@ -15,7 +15,7 @@ from email.mime.text import MIMEText
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
-REGION_ORDER = ["Pan-Arab", "Levant", "Gulf", "Israel"]
+REGION_ORDER = ["Pan-Arab", "Levant", "Gulf", "Israel", "Iran"]
 
 
 def load_headlines() -> dict:

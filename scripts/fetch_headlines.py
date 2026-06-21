@@ -102,6 +102,21 @@ SOURCES = {
             "url": "https://al-akhbar.com",
             "rss": "https://al-akhbar.com/rss",
         },
+        {
+            "source": "Al Manar", "country": "Lebanon", "lang": "ar",
+            "url": "https://www.almanar.com.lb",
+            "rss": "https://www.almanar.com.lb/rss",
+        },
+        {
+            "source": "Quds News", "country": "Palestine", "lang": "ar",
+            "url": "https://qudsn.net",
+            "rss": "https://qudsn.net/feed",
+        },
+        {
+            "source": "Falastin al-Youm", "country": "Palestine", "lang": "ar",
+            "url": "https://paltoday.ps",
+            "rss": "https://paltoday.ps/feed",
+        },
     ],
     "Israel": [
         {
@@ -141,6 +156,23 @@ SOURCES = {
             "url": "https://www.newarab.com",
             "rss": "https://www.newarab.com/rss",
         },
+        {
+            "source": "Al Mayadeen", "country": "Lebanon", "lang": "ar",
+            "url": "https://www.almayadeen.net",
+            "rss": "https://www.almayadeen.net/rss.xml",
+        },
+    ],
+    "Iran": [
+        {
+            "source": "Fars News", "country": "Iran", "lang": "en",
+            "url": "https://en.farsnews.ir",
+            "rss": "https://en.farsnews.ir/rss.aspx",
+        },
+        {
+            "source": "Tasnim News", "country": "Iran", "lang": "en",
+            "url": "https://en.tasnimnews.com",
+            "rss": "https://en.tasnimnews.com/en/rss.aspx",
+        },
     ],
 }
 
@@ -162,7 +194,7 @@ JUNK_TITLES = {
 
 # Order regions appear in the Headlines tab (the site renders them in the order
 # they're written to headlines.json).
-REGION_ORDER = ["Pan-Arab", "Levant", "Gulf", "Israel"]
+REGION_ORDER = ["Pan-Arab", "Levant", "Gulf", "Israel", "Iran"]
 
 GNEWS_LOCALE = {
     "en": ("en-US", "US", "US:en"),

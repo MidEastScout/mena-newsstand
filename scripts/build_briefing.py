@@ -21,7 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-REGION_ORDER = ["Pan-Arab", "Levant", "Gulf", "Israel"]
+REGION_ORDER = ["Pan-Arab", "Levant", "Gulf", "Israel", "Iran"]
 # flash for the synthesis (quality matters, 4 calls/day); flash-lite for the
 # translations (more mechanical, higher free-tier quota) — 7 calls/briefing.
 GEMINI_MODEL = "gemini-2.5-flash"

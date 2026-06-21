@@ -77,25 +77,6 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .sec-head h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:600}
 .sec-note{font-size:12px;color:var(--muted);margin-bottom:14px;font-style:italic;line-height:1.5}
 
-/* Source grid (no front pages) */
-.src-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:9px;margin-bottom:24px}
-.src-card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;transition:.15s}
-.src-card:hover{border-color:#BFBAB0}
-.src-top{display:flex;align-items:flex-start;justify-content:space-between;gap:6px}
-.src-name{font-size:14px;font-weight:600;color:var(--ink)}
-.src-loc{font-size:11px;color:var(--muted);margin-top:2px}
-.src-btn{display:block;padding:6px 0;border-radius:5px;font-size:12px;font-weight:500;text-align:center;border:1px solid var(--line);background:none;color:var(--ink2);transition:.15s}
-.src-btn:hover{border-color:var(--ink);background:var(--bg)}
-
-/* Analysis */
-.analysis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-.acol h3{font-family:'Playfair Display',serif;font-size:16px;padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:10px}
-.acol ul{list-style:none}
-.acol li{margin-bottom:9px}
-.acol a{font-size:14px;font-weight:500;color:var(--blue)}
-.acol a:hover{text-decoration:underline}
-.acol .desc{font-size:11px;color:var(--muted);display:block;margin-top:1px}
-
 /* Tip */
 .tip{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 15px;margin-bottom:20px;font-size:13px;line-height:1.6;color:var(--ink2)}
 .tip strong{color:var(--ink)}
@@ -123,6 +104,11 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .hl-list a{font-size:12px;line-height:1.4;color:var(--blue);font-weight:500}
 .hl-list a:hover{text-decoration:underline}
 .hl-snippet{font-size:11px;line-height:1.45;color:var(--muted);margin-top:3px}
+.hl-none{font-size:12px;color:var(--muted);font-style:italic;flex:1}
+.hl-site-btn{display:block;padding:6px 0;border-radius:5px;font-size:12px;font-weight:500;text-align:center;border:1px solid var(--line);background:none;color:var(--ink2);transition:.15s}
+.hl-site-btn:hover{border-color:var(--ink);background:var(--bg)}
+
+/* World Briefing card */
 .briefing-card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:20px 24px;margin-bottom:24px}
 .briefing-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;border-bottom:2px solid var(--ink);padding-bottom:8px;flex-wrap:wrap}
 .briefing-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600}
@@ -130,6 +116,7 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .briefing-card p{font-size:14px;line-height:1.75;color:var(--ink2);margin:0 0 12px}
 .briefing-card p:last-child{margin-bottom:0}
 .briefing-card strong{color:var(--ink);font-weight:600}
+
 /* Media Pulse word cloud */
 .pulse-cloud{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 16px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:28px 24px;margin-bottom:18px;line-height:1.3}
 .pulse-term{cursor:pointer;font-family:'Playfair Display',serif;font-weight:600;color:var(--blue);transition:.12s;line-height:1}
@@ -141,9 +128,6 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .pulse-hl a{font-size:13px;font-weight:500;color:var(--blue);line-height:1.4}
 .pulse-hl a:hover{text-decoration:underline}
 .pulse-hl .meta{font-size:11px;color:var(--muted);margin-top:3px}
-.hl-none{font-size:12px;color:var(--muted);font-style:italic;flex:1}
-.hl-site-btn{display:block;padding:6px 0;border-radius:5px;font-size:12px;font-weight:500;text-align:center;border:1px solid var(--line);background:none;color:var(--ink2);transition:.15s}
-.hl-site-btn:hover{border-color:var(--ink);background:var(--bg)}
 
 footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-align:center;font-size:12px;color:var(--muted);max-width:960px;margin-left:auto;margin-right:auto}
 
@@ -186,31 +170,46 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 
 <div class="navbar">
   <div class="wrap">
-    <button class="navbtn active" data-sec="frontpages">Front Pages</button>
-    <button class="navbtn" data-sec="archive">Archive</button>
+    <button class="navbtn active" data-sec="briefing">World Briefing</button>
     <button class="navbtn" data-sec="headlines">Headlines</button>
+    <button class="navbtn" data-sec="frontpages">Front Pages</button>
     <button class="navbtn" data-sec="pulse">Pulse</button>
-    <button class="navbtn" data-sec="gulf">Gulf</button>
-    <button class="navbtn" data-sec="levant">Levant & Egypt</button>
-    <button class="navbtn" data-sec="analysis">Analysis</button>
+    <button class="navbtn" data-sec="archive">Archive</button>
   </div>
 </div>
 
 <div class="main">
 
-  <!-- HEADLINES TAB -->
-  <div class="section" id="sec-headlines">
-    <div class="sec-head">
-      <h2>Live Headlines</h2>
+  <!-- WORLD BRIEFING TAB -->
+  <div class="section active" id="sec-briefing">
+    <div class="sec-head"><h2>World Briefing</h2></div>
+    <div class="lang-bar" id="briefing-lang-bar">
+      <button class="lang-chip active" data-lang="en" onclick="switchLang('en')">English</button>
+      <button class="lang-chip" data-lang="he" onclick="switchLang('he')" disabled>עברית</button>
+      <button class="lang-chip" data-lang="ar" onclick="switchLang('ar')" disabled>العربية</button>
+      <button class="lang-chip" data-lang="ru" onclick="switchLang('ru')" disabled>Русский</button>
+      <button class="lang-chip" data-lang="zh" onclick="switchLang('zh')" disabled>中文</button>
+      <button class="lang-chip" data-lang="fr" onclick="switchLang('fr')" disabled>Français</button>
+      <button class="lang-chip" data-lang="de" onclick="switchLang('de')" disabled>Deutsch</button>
+      <button class="lang-chip" data-lang="es" onclick="switchLang('es')" disabled>Español</button>
     </div>
-
-    <!-- World Briefing card — hidden until briefing.json loads -->
     <div class="briefing-card" id="briefing-card" style="display:none">
       <div class="briefing-head">
         <span class="briefing-title" id="briefing-title">World Briefing</span>
         <span class="briefing-ts" id="briefing-ts"></span>
       </div>
+      <div id="briefing-lang-note" class="sec-note" style="display:none;margin-bottom:10px">
+        Translation not yet available — showing English. Translations are added at each 6-hour briefing update.
+      </div>
       <div id="briefing-body"></div>
+    </div>
+    <div id="briefing-placeholder" class="hl-loading">Loading World Briefing…</div>
+  </div>
+
+  <!-- HEADLINES TAB -->
+  <div class="section" id="sec-headlines">
+    <div class="sec-head">
+      <h2>Live Headlines</h2>
     </div>
     <div class="lang-bar" id="lang-bar">
       <button class="lang-chip active" data-lang="en" onclick="switchLang('en')">English</button>
@@ -222,20 +221,12 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
       <button class="lang-chip" data-lang="de" onclick="switchLang('de')" disabled>Deutsch</button>
       <button class="lang-chip" data-lang="es" onclick="switchLang('es')" disabled>Español</button>
     </div>
-    <div class="sec-note">Top 5 headlines from 16 MENA outlets, organized by region. Refreshed automatically every 30 minutes.</div>
+    <div class="sec-note">Top 5 headlines from 22 MENA and regional outlets, organized by region. Refreshed automatically every 30 minutes.</div>
     <div id="hl-container"><div class="hl-loading">Loading headlines…</div></div>
   </div>
 
-  <!-- PULSE TAB -->
-  <div class="section" id="sec-pulse">
-    <div class="sec-head"><h2>Media Pulse</h2></div>
-    <div class="sec-note">The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.</div>
-    <div class="pulse-cloud" id="pulse-cloud"><div class="hl-loading">Loading pulse…</div></div>
-    <div class="pulse-detail" id="pulse-detail"></div>
-  </div>
-
   <!-- FRONT PAGES TAB -->
-  <div class="section active" id="sec-frontpages">
+  <div class="section" id="sec-frontpages">
 
     <div class="tip">
       <strong>How this works:</strong> Each card shows today's actual front page image. Click any card to open a larger view. If an image shows "unavailable", that paper's front page couldn't be fetched today — click it anyway to open the paper directly.
@@ -247,6 +238,14 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
 
   </div>
 
+  <!-- PULSE TAB -->
+  <div class="section" id="sec-pulse">
+    <div class="sec-head"><h2>Media Pulse</h2></div>
+    <div class="sec-note">The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.</div>
+    <div class="pulse-cloud" id="pulse-cloud"><div class="hl-loading">Loading pulse…</div></div>
+    <div class="pulse-detail" id="pulse-detail"></div>
+  </div>
+
   <!-- ARCHIVE TAB -->
   <div class="section" id="sec-archive">
     <div class="sec-head"><h2>Front-Page Archive</h2></div>
@@ -256,26 +255,6 @@ footer{border-top:3px double var(--ink);margin-top:20px;padding:18px 16px;text-a
       <select id="archive-date"></select>
     </div>
     <div class="fp-grid" id="archive-grid"><div class="hl-loading">Loading archive…</div></div>
-  </div>
-
-  <!-- GULF TAB -->
-  <div class="section" id="sec-gulf">
-    <div class="sec-head"><h2>Gulf Sources</h2></div>
-    <div class="sec-note">Direct links to each outlet's website. Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman are not on FrontPages.com or Kiosko — for front pages, visit each paper's website directly.</div>
-    <div class="src-grid" id="grid-gulf"></div>
-  </div>
-
-  <!-- LEVANT & EGYPT TAB -->
-  <div class="section" id="sec-levant">
-    <div class="sec-head"><h2>Levant & Egypt</h2></div>
-    <div class="sec-note">Lebanon and Jordan are not on FrontPages.com. Egypt's front pages are available at kiosko.net.</div>
-    <div class="src-grid" id="grid-levant"></div>
-  </div>
-
-  <!-- ANALYSIS TAB -->
-  <div class="section" id="sec-analysis">
-    <div class="sec-head"><h2>Analysis & Intelligence Sources</h2></div>
-    <div class="analysis-grid" id="grid-analysis"></div>
   </div>
 
 </div>
@@ -336,9 +315,8 @@ let hlData = null;
 let currentLang = "en";
 
 function updateLangChips(){
-  const bar = document.getElementById("lang-bar");
-  if(!bar || !hlData) return;
-  bar.querySelectorAll(".lang-chip").forEach(btn=>{
+  if(!hlData) return;
+  document.querySelectorAll(".lang-chip").forEach(btn=>{
     const lang = btn.dataset.lang;
     const avail = lang === "en" || !!(hlData[LANG_KEYS[lang]]);
     btn.disabled = !avail;
@@ -360,67 +338,6 @@ function switchLang(lang){
 }
 
 function fpImgURL(id){ return `frontpages/${id}.jpg?v=${encodeURIComponent(FP_VER || "0")}`; }
-
-const GULF = [
-  {n:"Arab News",       loc:"Saudi Arabia", l:"en", u:"https://www.arabnews.com"},
-  {n:"Saudi Gazette",   loc:"Saudi Arabia", l:"en", u:"https://www.saudigazette.com.sa"},
-  {n:"Okaz",            loc:"Saudi Arabia", l:"ar", u:"https://www.okaz.com.sa"},
-  {n:"Al Riyadh",       loc:"Saudi Arabia", l:"ar", u:"https://www.alriyadh.com"},
-  {n:"Asharq Al-Awsat", loc:"Pan-Arab",     l:"ar", u:"https://aawsat.com"},
-  {n:"Gulf News",       loc:"UAE",          l:"en", u:"https://gulfnews.com"},
-  {n:"The National",    loc:"UAE",          l:"en", u:"https://www.thenationalnews.com"},
-  {n:"Khaleej Times",   loc:"UAE",          l:"en", u:"https://www.khaleejtimes.com"},
-  {n:"Gulf Times",      loc:"Qatar",        l:"en", u:"https://www.gulf-times.com"},
-  {n:"The Peninsula",   loc:"Qatar",        l:"en", u:"https://www.thepeninsulaqatar.com"},
-  {n:"Al Qabas",        loc:"Kuwait",       l:"ar", u:"https://alqabas.com"},
-  {n:"Arab Times",      loc:"Kuwait",       l:"en", u:"https://www.arabtimesonline.com"},
-  {n:"Gulf Daily News", loc:"Bahrain",      l:"en", u:"https://www.gdnonline.com"},
-  {n:"Times of Oman",   loc:"Oman",         l:"en", u:"https://timesofoman.com"},
-];
-
-const LEVANT = [
-  {n:"An-Nahar",        loc:"Lebanon",  l:"ar", u:"https://www.annahar.com"},
-  {n:"Al-Akhbar",       loc:"Lebanon",  l:"ar", u:"https://al-akhbar.com"},
-  {n:"L'Orient Today",  loc:"Lebanon",  l:"en", u:"https://today.lorientlejour.com"},
-  {n:"Al Rai",          loc:"Jordan",   l:"ar", u:"https://alrai.com"},
-  {n:"Jordan Times",    loc:"Jordan",   l:"en", u:"https://www.jordantimes.com"},
-  {n:"Al-Ahram",        loc:"Egypt",    l:"ar", u:"https://www.ahram.org.eg"},
-  {n:"Al-Masry Al-Youm",loc:"Egypt",    l:"ar", u:"https://www.almasryalyoum.com"},
-  {n:"Al-Shorouk",      loc:"Egypt",    l:"ar", u:"https://www.shorouknews.com"},
-  {n:"Youm7",           loc:"Egypt",    l:"ar", u:"https://www.youm7.com"},
-  {n:"Ma'an News",      loc:"Palestine",l:"en", u:"https://www.maannews.com"},
-];
-
-const ANALYSIS = [
-  {col:"Pan-Arab / Online", items:[
-    {n:"Al Jazeera English", u:"https://www.aljazeera.com",     d:"Qatari-funded, strong original reporting"},
-    {n:"Al-Monitor",         u:"https://www.al-monitor.com",    d:"Best in-depth MENA analysis in English"},
-    {n:"Middle East Eye",    u:"https://www.middleeasteye.net", d:"Investigative, often breaks exclusives"},
-    {n:"The New Arab",       u:"https://www.newarab.com",       d:"Progressive pan-Arab perspective"},
-    {n:"Al Arabiya English", u:"https://english.alarabiya.net", d:"Fast-moving, Saudi/UAE editorial line"},
-  ]},
-  {col:"Think Tanks", items:[
-    {n:"INSS (Israel)",      u:"https://www.inss.org.il/en",    d:"Israel's leading security think tank"},
-    {n:"Mitvim (Israel)",    u:"https://mitvim.org.il/en",      d:"Israeli foreign policy & regional coop."},
-    {n:"Carnegie MENA",      u:"https://carnegieendowment.org/regions/middle-east", d:"Independent, excellent Gulf analysis"},
-    {n:"ICG Middle East",    u:"https://www.crisisgroup.org/middle-east-north-africa", d:"Conflict analysis, early warning"},
-    {n:"AGSIW",              u:"https://agsiw.org",             d:"Arab Gulf States Institute, Washington"},
-    {n:"Chatham House MENA", u:"https://www.chathamhouse.org/regions/middle-east-and-north-africa", d:"UK foreign policy establishment"},
-  ]},
-  {col:"Iran & Security", items:[
-    {n:"Iran International", u:"https://www.iranintl.com/en",   d:"Critical, London-based, strong sourcing"},
-    {n:"Tehran Times",       u:"https://www.tehrantimes.com",   d:"Official Iranian English mouthpiece"},
-    {n:"War on the Rocks",   u:"https://warontherocks.com",     d:"Strategy & security, MENA content"},
-    {n:"Bellingcat",         u:"https://www.bellingcat.com",    d:"OSINT investigations, often MENA-relevant"},
-    {n:"MEMRI",              u:"https://www.memri.org",         d:"Arabic/Farsi media monitoring & translation"},
-  ]},
-  {col:"Wires & Monitoring", items:[
-    {n:"Reuters Middle East", u:"https://www.reuters.com/world/middle-east", d:"Fastest reliable breaking news wire"},
-    {n:"Jadaliyya",          u:"https://www.jadaliyya.com",     d:"Academic, critical, Arab Studies focus"},
-    {n:"All Arab News",      u:"https://allarab.news",          d:"English aggregator of regional coverage"},
-    {n:"MEMRI TV",           u:"https://www.memri.org/tv",      d:"Translated Arabic/Farsi broadcast clips"},
-  ]},
-];
 
 function lb(l){
   if(l==="en") return `<span class="fp-tag t-en">EN</span>`;
@@ -584,30 +501,6 @@ function closeFPModal(){
   document.body.style.overflow = "";
 }
 
-function buildSrcGrid(id, papers){
-  document.getElementById(id).innerHTML = papers.map(p=>`
-    <div class="src-card">
-      <div class="src-top">
-        <div><div class="src-name">${p.n}</div><div class="src-loc">${p.loc}</div></div>
-        ${lb(p.l)}
-      </div>
-      <a class="src-btn" href="${p.u}" target="_blank" rel="noopener">Open site</a>
-    </div>`).join("");
-}
-
-function buildAnalysis(){
-  document.getElementById("grid-analysis").innerHTML = ANALYSIS.map(c=>`
-    <div class="acol">
-      <h3>${c.col}</h3>
-      <ul>${c.items.map(i=>`
-        <li>
-          <a href="${i.u}" target="_blank" rel="noopener">${i.n}</a>
-          <span class="desc">${i.d}</span>
-        </li>`).join("")}
-      </ul>
-    </div>`).join("");
-}
-
 document.querySelectorAll(".navbtn").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.querySelectorAll(".navbtn").forEach(b=>b.classList.remove("active"));
@@ -624,9 +517,6 @@ document.getElementById("hdr-date").textContent =
 
 buildFPGrid();
 buildArchive();
-buildSrcGrid("grid-gulf", GULF);
-buildSrcGrid("grid-levant", LEVANT);
-buildAnalysis();
 loadHeadlines();
 loadBriefing();
 loadPulse();
@@ -671,7 +561,7 @@ function showPulseTerm(i){
       <div class="meta">${esc(h.source)} · ${esc(h.region)}</div>
     </div>`).join("");
   document.getElementById("pulse-detail").innerHTML =
-    `<div class="pulse-detail-head">“${esc(t.term)}” — ${t.count} headline${t.count===1?"":"s"}</div>${hls}`;
+    `<div class="pulse-detail-head">"${esc(t.term)}" — ${t.count} headline${t.count===1?"":"s"}</div>${hls}`;
 }
 
 let briefingData = null;
@@ -698,19 +588,24 @@ async function loadBriefing(){
     }
     renderBriefing(currentLang);
     document.getElementById("briefing-card").style.display = "";
+    const ph = document.getElementById("briefing-placeholder");
+    if(ph) ph.style.display = "none";
   }catch(e){ /* briefing.json not yet available */ }
 }
 
 function renderBriefing(lang){
   if(!briefingData) return;
   const byLang = briefingData.html_by_lang || {en: briefingData.html || ""};
-  const html = (byLang[lang] || byLang.en || briefingData.html || "").trim();
+  const targetHtml = byLang[lang];
+  const html = (targetHtml || byLang.en || briefingData.html || "").trim();
   if(!html) return;
   const body = document.getElementById("briefing-body");
   body.innerHTML = html;
   body.dir = (lang === "he" || lang === "ar") ? "rtl" : "ltr";
   document.getElementById("briefing-title").textContent =
     BRIEFING_LABELS[lang] || BRIEFING_LABELS.en;
+  const note = document.getElementById("briefing-lang-note");
+  if(note) note.style.display = (lang !== "en" && !targetHtml) ? "" : "none";
 }
 
 function esc(s){
