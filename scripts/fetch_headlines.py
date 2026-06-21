@@ -108,9 +108,9 @@ SOURCES = {
             "rss": "https://www.almanar.com.lb/rss",
         },
         {
-            "source": "Quds News", "country": "Palestine", "lang": "ar",
-            "url": "https://qudsn.net",
-            "rss": "https://www.qudsn.net/rss.xml",
+            "source": "WAFA News", "country": "Palestine", "lang": "en",
+            "url": "https://english.wafa.ps",
+            "rss": "https://english.wafa.ps/rss.xml",
         },
         {
             "source": "Falastin al-Youm", "country": "Palestine", "lang": "ar",
@@ -169,9 +169,9 @@ SOURCES = {
             "rss": "https://www.farsnews.ir/rss",
         },
         {
-            "source": "Tasnim News", "country": "Iran", "lang": "fa",
-            "url": "https://www.tasnimnews.com",
-            "rss": "https://www.tasnimnews.com/fa/rss.aspx",
+            "source": "Mehr News", "country": "Iran", "lang": "en",
+            "url": "https://en.mehrnews.com",
+            "rss": "https://en.mehrnews.com/rss",
         },
     ],
 }
