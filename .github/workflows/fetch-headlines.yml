@@ -2,7 +2,7 @@ name: MENA Newsstand
 
 # WHAT THIS WORKFLOW DOES (plain English)
 # =========================================
-# EVERY RUN (every 30 minutes via cron-job.org):
+# EVERY RUN (about every 30 minutes — see the self-perpetuating loop below):
 #   - scripts/fetch_headlines.py  → refreshes headlines.json
 #
 # EVERY 6 HOURS (first run crossing 00:00 / 06:00 / 12:00 / 18:00 Israel time):
@@ -16,27 +16,37 @@ name: MENA Newsstand
 # ONCE A DAY at ~14:00 Israel time (afternoon):
 #   - scripts/fetch_frontpages.py → re-downloads to catch later editions
 #
-# HOW THE REFRESH SCHEDULE WORKS
-# ==================================
-# GitHub's own timed schedule ("cron") is best-effort: individual runs are
-# often delayed and some are silently dropped during high load. To keep the
-# site fresh without depending on any external service, we schedule every
-# 15 minutes — so even when GitHub drops or delays a run, the data still
-# refreshes at least every ~30 minutes from GitHub alone.
+# HOW THE ~30-MIN REFRESH STAYS ALIVE (self-perpetuating loop)
+# ============================================================
+# GitHub's built-in `schedule` cron is unreliable for this repo (it silently
+# drops most runs), and we no longer depend on any external pinger. Instead the
+# workflow keeps ITSELF on schedule: after each run, the `rearm` job waits
+# ~28 minutes and then triggers the next run through the GitHub API. Work time
+# (~2 min) + wait (~28 min) ≈ a 30-minute cadence.
 #
-# workflow_dispatch remains available for manual runs and as an optional
-# external heartbeat (e.g. cron-job.org) for extra-tight cadence, but it is
-# no longer required for the site to stay current.
+# This needs a Personal Access Token saved as the `DISPATCH_PAT` secret
+# (fine-grained, repo = mena-newsstand, permission Actions: Read and write).
+#
+# Safety / robustness:
+#   - The `rearm` job uses concurrency cancel-in-progress, so only ONE timer is
+#     ever waiting. Overlapping triggers (manual, schedule, loop) collapse back
+#     into a single ~30-min loop instead of multiplying.
+#   - The `schedule` below still fires occasionally; if the self-loop ever dies
+#     (a run cancelled at the wrong moment, or the PAT lapses), a scheduled run
+#     restarts it.
+#   - `workflow_dispatch` allows manual "refresh now" runs and an optional
+#     external heartbeat.
+#   - If DISPATCH_PAT is not set, `rearm` is a no-op and the site falls back to
+#     the (unreliable) schedule — nothing breaks.
 #
 # scripts/plan_run.py acts as a gatekeeper: it checks the current time in
-# Israel and state/daily.json to make sure each timed task (briefing, email,
-# front pages) runs exactly once per slot — even though headlines refresh on
-# every run.
+# Israel and state/daily.json so each timed task (briefing, email, front pages)
+# runs once per slot — even though headlines refresh on every run.
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # primary heartbeat — runs every ~15 min (GitHub may delay/drop some)
-  workflow_dispatch:          # manual runs + optional external heartbeat
+    - cron: '*/15 * * * *'   # safety net only — the self-dispatch loop is primary
+  workflow_dispatch:          # manual "refresh now" + the loop's own dispatch
     inputs:
       send_email:
         description: 'Force-send the email digest now'
@@ -50,14 +60,14 @@ on:
 permissions:
   contents: write
 
-# Serialise runs so concurrent jobs never race on git push.
-concurrency:
-  group: newsstand-data
-  cancel-in-progress: false
-
 jobs:
   run:
     runs-on: ubuntu-latest
+    # Serialise the actual work so concurrent runs never race on git push.
+    # (Per-job, so the rearm timer below does not block manual refreshes.)
+    concurrency:
+      group: newsstand-data
+      cancel-in-progress: false
     env:
       EMAIL_FROM:     ${{ secrets.EMAIL_FROM }}
       EMAIL_TO:       ${{ secrets.EMAIL_TO }}
@@ -137,3 +147,49 @@ jobs:
           echo "::warning::Email digest skipped — EMAIL_FROM/EMAIL_TO/EMAIL_PASSWORD"
           echo "repository secrets are not set. Add them under Settings →"
           echo "Secrets and variables → Actions for the digest emails to send."
+
+  # ---------------------------------------------------------------------------
+  # Self-perpetuating timer: wait ~28 min, then trigger the next run so the site
+  # refreshes about every 30 minutes without relying on GitHub's flaky cron.
+  # ---------------------------------------------------------------------------
+  rearm:
+    needs: run
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    # Only ONE timer may wait at a time: a newer run cancels the older timer,
+    # so overlapping triggers collapse into a single loop instead of stacking.
+    concurrency:
+      group: newsstand-rearm
+      cancel-in-progress: true
+    steps:
+      - name: Wait, then dispatch the next run
+        env:
+          DISPATCH_PAT: ${{ secrets.DISPATCH_PAT }}
+        run: |
+          if [ -z "$DISPATCH_PAT" ]; then
+            echo "DISPATCH_PAT secret is not set — skipping self-dispatch."
+            echo "Add a fine-grained PAT (repo: mena-newsstand, Actions: Read"
+            echo "and write) as the DISPATCH_PAT secret to enable the"
+            echo "self-perpetuating ~30-minute refresh loop."
+            exit 0
+          fi
+          # Pace the loop: ~28 min wait + ~2 min of work ≈ 30-minute cadence.
+          # (Public repo → Actions minutes are free, so a waiting job is fine.)
+          echo "Waiting ~28 min before triggering the next run…"
+          sleep 1680
+          echo "Dispatching the next run…"
+          code=$(curl -sS -o /tmp/resp.json -w "%{http_code}" -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $DISPATCH_PAT" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/fetch-headlines.yml/dispatches" \
+            -d '{"ref":"main"}')
+          echo "GitHub API responded HTTP $code"
+          cat /tmp/resp.json 2>/dev/null || true
+          if [ "$code" != "204" ]; then
+            echo "::warning::Self-dispatch failed (HTTP $code). The schedule"
+            echo "safety net will restart the loop; check that DISPATCH_PAT is"
+            echo "valid and has Actions: Read and write on this repo."
+          else
+            echo "Next run queued — loop continues."
+          fi
