@@ -55,6 +55,13 @@ PAPERS = [
 ]
 
 OUT_DIR = Path(__file__).parent.parent / "frontpages"
+# Small grid thumbnails live here. The Front Pages grid shows each cover at
+# ~180px wide, so serving the full 0.5–0.7 MB scans there made the tab load
+# several megabytes of images. These ~360px JPEGs (tens of KB each) load the
+# grid fast; the full-resolution cover is still used in the click-to-open modal.
+THUMB_DIR = OUT_DIR / "thumbs"
+THUMB_WIDTH = 360       # 2x the ~180px display width for sharpness on retina
+THUMB_QUALITY = 72
 # Dated copies of each day's covers live here so the site can show history.
 # index.json maps each available date -> the paper ids captured that day, plus
 # a "papers" lookup for display metadata.
@@ -97,6 +104,29 @@ def try_download(session: requests.Session, url: str):
         return r.content
     print(f"      - {url} -> {r.status_code} {ct or '?'} {len(r.content)}B")
     return None
+
+
+def make_thumb(src_path: Path, thumb_path: Path) -> bool:
+    """Write a small, web-optimised JPEG thumbnail of src_path. Best-effort: a
+    failure (or missing Pillow) never aborts the run — the grid just falls back
+    to the full image for that paper."""
+    try:
+        from PIL import Image
+    except Exception as exc:
+        print(f"      ! Pillow unavailable, skipping thumbnails: {exc}", file=sys.stderr)
+        return False
+    try:
+        with Image.open(src_path) as im:
+            im = im.convert("RGB")
+            w, h = im.size
+            if w > THUMB_WIDTH:
+                im = im.resize((THUMB_WIDTH, round(h * THUMB_WIDTH / w)), Image.LANCZOS)
+            thumb_path.parent.mkdir(parents=True, exist_ok=True)
+            im.save(thumb_path, "JPEG", quality=THUMB_QUALITY, optimize=True, progressive=True)
+        return True
+    except Exception as exc:
+        print(f"      ! thumbnail failed for {src_path.name}: {exc}", file=sys.stderr)
+        return False
 
 
 def archive_today(today: date, manifest: dict) -> None:
@@ -186,6 +216,10 @@ def main():
             print(f"  x {p['name']}: {'kept previous image' if ok else 'no image'}",
                   file=sys.stderr)
 
+        # Build (or refresh) the grid thumbnail for any paper that has a cover.
+        if ok and dest.exists():
+            make_thumb(dest, THUMB_DIR / f"{p['id']}.jpg")
+
         manifest["papers"].append({
             "id": p["id"], "name": p["name"], "loc": p["loc"], "lang": p["lang"],
             "site": p["site"], "ok": ok, "src": used_url, "date": used_date,
@@ -198,6 +232,11 @@ def main():
         if img.stem not in keep:
             img.unlink()
             print(f"  - pruned stale cover {img.name}")
+    if THUMB_DIR.exists():
+        for img in THUMB_DIR.glob("*.jpg"):
+            if img.stem not in keep:
+                img.unlink()
+                print(f"  - pruned stale thumb {img.name}")
 
     (OUT_DIR / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")

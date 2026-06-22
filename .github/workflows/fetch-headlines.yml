@@ -16,22 +16,27 @@ name: MENA Newsstand
 # ONCE A DAY at ~14:00 Israel time (afternoon):
 #   - scripts/fetch_frontpages.py → re-downloads to catch later editions
 #
-# HOW THE 30-MINUTE SCHEDULE WORKS
+# HOW THE REFRESH SCHEDULE WORKS
 # ==================================
-# GitHub's own timed schedule ("cron") is unreliable and often runs late or
-# gets skipped. So the primary trigger is an external service (cron-job.org)
-# that calls this workflow via the "workflow_dispatch" trigger every 30 minutes
-# like clockwork. The schedule lines below are just a backup in case that
-# external service ever has a problem.
+# GitHub's own timed schedule ("cron") is best-effort: individual runs are
+# often delayed and some are silently dropped during high load. To keep the
+# site fresh without depending on any external service, we schedule every
+# 15 minutes — so even when GitHub drops or delays a run, the data still
+# refreshes at least every ~30 minutes from GitHub alone.
+#
+# workflow_dispatch remains available for manual runs and as an optional
+# external heartbeat (e.g. cron-job.org) for extra-tight cadence, but it is
+# no longer required for the site to stay current.
 #
 # scripts/plan_run.py acts as a gatekeeper: it checks the current time in
-# Israel and state/daily.json to make sure each timed task runs exactly once
-# per slot — even if the trigger fires a bit late.
+# Israel and state/daily.json to make sure each timed task (briefing, email,
+# front pages) runs exactly once per slot — even though headlines refresh on
+# every run.
 
 on:
   schedule:
-    - cron: '15,45 * * * *'   # backup heartbeat (cron-job.org is the primary)
-  workflow_dispatch:           # primary 30-min heartbeat + manual runs
+    - cron: '*/15 * * * *'   # primary heartbeat — runs every ~15 min (GitHub may delay/drop some)
+  workflow_dispatch:          # manual runs + optional external heartbeat
     inputs:
       send_email:
         description: 'Force-send the email digest now'
