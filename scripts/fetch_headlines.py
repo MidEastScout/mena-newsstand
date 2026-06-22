@@ -254,6 +254,54 @@ def domain_of(url: str) -> str:
     return host[4:] if host.startswith("www.") else host
 
 
+# Separators Google News (and outlets) use to append a source/publisher label.
+TITLE_SEPS = (" - ", " | ", " – ", " — ")
+# A bare domain token, e.g. "almayadeen.net" or "paltoday.ps".
+DOMAIN_RE = re.compile(r'^[a-z0-9-]+(\.[a-z0-9-]+)+$', re.I)
+
+
+def clean_title(title: str, source: str, domain: str) -> str:
+    """Strip the publisher label Google News bolts onto a headline.
+
+    Google News rewrites titles as "<Outlet> | Real headline - <Outlet>" or
+    "Real headline - outlet-domain.tld". We strip a trailing source/domain suffix
+    and a leading source prefix so the displayed headline is the actual headline
+    (and dedupes correctly). Only strips when the affix matches THIS outlet (its
+    name or domain) or is a bare domain — so real headlines are never touched.
+    """
+    if not title:
+        return title
+    t = title.strip()
+    src_cf = source.casefold()
+    src_compact = src_cf.replace(" ", "")
+    dom = domain.casefold()
+    # Trailing "- <source>" / "- <domain>" (may repeat, e.g. "... - X - X").
+    for _ in range(3):
+        changed = False
+        for sep in TITLE_SEPS:
+            idx = t.rfind(sep)
+            if idx <= 0:
+                continue
+            tail = t[idx + len(sep):].strip()
+            tcf = tail.casefold()
+            if (tcf == dom or DOMAIN_RE.match(tail) or tcf == src_cf
+                    or src_cf in tcf or tcf.replace(" ", "") == src_compact):
+                t = t[:idx].strip()
+                changed = True
+                break
+        if not changed:
+            break
+    # Leading "<source> | " prefix (e.g. "Farsnews | Real headline").
+    for sep in (" | ", " - "):
+        idx = t.find(sep)
+        if 0 < idx <= len(source) + 4:
+            head = t[:idx].strip().casefold().replace(" ", "")
+            if head and (head in src_compact or src_compact.startswith(head)):
+                t = t[idx + len(sep):].strip()
+                break
+    return t or title
+
+
 def gnews_url(meta: dict) -> str:
     """Google News RSS search scoped to the outlet's domain, last 24h."""
     hl, gl, ceid = GNEWS_LOCALE.get(meta["lang"], GNEWS_LOCALE["en"])
@@ -268,7 +316,7 @@ def core_title(title: str) -> str:
     so real headlines that merely end in '... - comment' are left intact.
     """
     t = title.strip()
-    for sep in (" - ", " | ", " – ", " — "):
+    for sep in TITLE_SEPS:
         idx = t.rfind(sep)
         if idx <= 0:
             continue
@@ -279,6 +327,32 @@ def core_title(title: str) -> str:
         ):
             return head
     return t
+
+
+def _is_namecard(core: str) -> bool:
+    """A 'Name - Name' / 'Tagline | Outlet' homepage card, where one side is
+    contained in the other (e.g. 'فارس - خبرگزاری فارس', 'Outlet - Outlet News').
+    Never a real headline."""
+    for sep in TITLE_SEPS:
+        if sep in core:
+            parts = [p.strip() for p in core.split(sep) if p.strip()]
+            if len(parts) >= 2:
+                a, b = parts[0], parts[-1]
+                if (a in b or b in a) and max(len(a), len(b)) <= 40:
+                    return True
+    return False
+
+
+def _is_allcaps_topic(core: str) -> bool:
+    """An all-caps section/topic label like 'US-ISRAEL-IRAN WAR' — a Google News
+    topic page, not an article. Requires at least one Latin letter so non-Latin
+    scripts (no upper/lower case) are never matched."""
+    if not any(c.isascii() and c.isalpha() for c in core):
+        return False
+    words = core.split()
+    return 2 <= len(words) <= 6 and all(
+        (not c.isalpha()) or c.isupper() for c in core
+    )
 
 
 def is_junk_title(title: str, source: str) -> bool:
@@ -313,6 +387,12 @@ def is_junk_title(title: str, source: str) -> bool:
         return True
     # Titles that are purely punctuation/whitespace with no word characters (e.g. ".").
     if not re.search(r'\w', core):
+        return True
+    # Homepage 'Name - Name' cards and all-caps topic/section pages that Google
+    # News surfaces when an outlet has no fresh article in the search window.
+    if _is_namecard(core):
+        return True
+    if _is_allcaps_topic(core):
         return True
     return False
 
@@ -432,6 +512,12 @@ def parse_feed(session: requests.Session, url: str, referer):
     return items or None
 
 
+def _clean_titles(items, source: str, domain: str):
+    """Strip Google News publisher affixes from every entry's title in place."""
+    for it in items:
+        it["title"] = clean_title(it["title"], source, domain)
+
+
 def fresh_items(items, source: str):
     """Keep only recent, non-junk, dated entries."""
     if not items:
@@ -458,9 +544,11 @@ def fetch_outlet(session: requests.Session, meta: dict) -> dict:
         "headlines": [], "error": None,
     }
     source = meta["source"]
+    domain = domain_of(meta["url"])
 
     # 1) Native feed (own domain as Referer dodges some blocks).
     native = parse_feed(session, meta["rss"], meta["url"] + "/") or []
+    _clean_titles(native, source, domain)
     items = fresh_items(native, source)
     via = "native"
 
@@ -468,6 +556,7 @@ def fetch_outlet(session: requests.Session, meta: dict) -> dict:
     gn = []
     if not items:
         gn = parse_feed(session, gnews_url(meta), "https://news.google.com/") or []
+        _clean_titles(gn, source, domain)
         items = fresh_items(gn, source)
         via = "google-news"
 
@@ -638,9 +727,16 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
             en_snippets = [prev_snip.get(t, "") for t in titles]
             print(f"  snippet refresh failed — reused {sum(1 for s in en_snippets if s)} prior snippets", file=sys.stderr)
 
-    n_snips = sum(1 for s in en_snippets if s)
     for i, (region, o_idx, h_idx) in enumerate(positions):
-        regions[region][o_idx]["headlines"][h_idx]["snippet"] = en_snippets[i]
+        hl = regions[region][o_idx]["headlines"][h_idx]
+        # Never wipe a good snippet with an empty refresh: if this run produced
+        # no snippet for a headline that already had one (e.g. a carried-over
+        # stale headline, or a description that briefly vanished), keep the old
+        # one. en_snippets is updated so the translation step stays in sync.
+        eff = en_snippets[i] or hl.get("snippet", "")
+        hl["snippet"] = eff
+        en_snippets[i] = eff
+    n_snips = sum(1 for s in en_snippets if s)
     _strip_descriptions(regions)
     print(f"  Generated {n_snips}/{len(titles)} English snippets")
 
@@ -694,6 +790,52 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
     return result
 
 
+# How long a failing outlet keeps showing its last good headlines before the
+# card finally reads "Feed unavailable". Long enough to ride out a bad night of
+# blocks/outages, short enough that nothing visibly stale lingers for days.
+CARRY_FORWARD_HOURS = 18
+
+
+def apply_carry_forward(output: dict, existing: dict) -> int:
+    """Keep the previous run's headlines for any outlet that returned nothing
+    this run, so a transient block/outage doesn't blank its card ("Feed
+    unavailable today"). Mirrors the snippet/translation reuse-on-failure logic.
+
+    Carried outlets are tagged stale=True (with stale_since = when the data was
+    actually fresh) and stop carrying once that data is older than
+    CARRY_FORWARD_HOURS. Mutates `output` in place; returns how many were carried.
+    """
+    if not existing:
+        return 0
+    now = datetime.now(timezone.utc)
+    prev_updated = existing.get("updated", "")
+    prev_regions = existing.get("regions", {})
+    carried = 0
+    for region, outs in output["regions"].items():
+        prev_by_source = {o["source"]: o for o in prev_regions.get(region, [])}
+        for o in outs:
+            if o.get("headlines"):
+                continue
+            prev = prev_by_source.get(o["source"])
+            if not prev or not prev.get("headlines"):
+                continue
+            stale_since = prev.get("stale_since") or prev_updated
+            try:
+                age_h = (now - datetime.fromisoformat(stale_since)).total_seconds() / 3600
+            except Exception:
+                continue
+            if age_h > CARRY_FORWARD_HOURS:
+                continue
+            o["headlines"] = copy.deepcopy(prev["headlines"])
+            o["error"] = None
+            o["stale"] = True
+            o["stale_since"] = stale_since
+            carried += 1
+            print(f"  ~ {o['source']}: carried {len(o['headlines'])} prior headlines "
+                  f"(feed down, {age_h:.1f}h old)", file=sys.stderr)
+    return carried
+
+
 def main():
     session = requests.Session()
     output = {"updated": datetime.now(timezone.utc).isoformat(), "regions": {}}
@@ -709,6 +851,12 @@ def main():
         except Exception:
             pass
 
+    # Backfill any outlet that came back empty with its last-known-good headlines
+    # before snippets/translations run, so carried cards stay fully populated.
+    carried = apply_carry_forward(output, existing)
+    if carried:
+        print(f"\n[Carry-forward] kept {carried} outlet(s) from the previous run")
+
     print("\n[Snippets + translations]")
     # Adds English snippets to output["regions"], returns translated copies
     # (regions_he/ar/...) plus "titles_hash", and strips raw descriptions.
@@ -718,7 +866,11 @@ def main():
     out_path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
     total = sum(len(o["headlines"]) for outs in output["regions"].values() for o in outs)
     ok = sum(1 for outs in output["regions"].values() for o in outs if o["headlines"])
-    print(f"\nWrote {out_path} — {total} headlines, {ok} outlets live")
+    stale = sum(1 for outs in output["regions"].values() for o in outs if o.get("stale"))
+    down = sum(1 for outs in output["regions"].values() for o in outs if not o["headlines"])
+    print(f"\nWrote {out_path} — {total} headlines, {ok} outlets live"
+          f"{f' ({stale} carried-forward)' if stale else ''}"
+          f"{f', {down} still down' if down else ''}")
 
 
 if __name__ == "__main__":
