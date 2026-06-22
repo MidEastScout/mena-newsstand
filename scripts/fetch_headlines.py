@@ -164,9 +164,12 @@ SOURCES = {
     ],
     "Iran": [
         {
-            "source": "Fars News", "country": "Iran", "lang": "fa",
-            "url": "https://www.farsnews.ir",
-            "rss": "https://www.farsnews.ir/rss",
+            # English edition: titles come back in English (so the snippet step
+            # and title-cleaner work), and the Google News fallback is scoped to
+            # en.farsnews.ir instead of returning Farsi homepage cards.
+            "source": "Fars News", "country": "Iran", "lang": "en",
+            "url": "https://en.farsnews.ir",
+            "rss": "https://en.farsnews.ir/rss",
         },
         {
             "source": "Mehr News", "country": "Iran", "lang": "en",
@@ -291,12 +294,13 @@ def clean_title(title: str, source: str, domain: str) -> str:
                 break
         if not changed:
             break
-    # Leading "<source> | " prefix (e.g. "Farsnews | Real headline").
+    # Leading "<source> | " prefix (e.g. "Farsnews | Real headline"). Use a
+    # prefix match (not substring) so we only strip an actual outlet label.
     for sep in (" | ", " - "):
         idx = t.find(sep)
         if 0 < idx <= len(source) + 4:
             head = t[:idx].strip().casefold().replace(" ", "")
-            if head and (head in src_compact or src_compact.startswith(head)):
+            if head and src_compact.startswith(head):
                 t = t[idx + len(sep):].strip()
                 break
     return t or title
@@ -348,6 +352,8 @@ def _is_allcaps_topic(core: str) -> bool:
     topic page, not an article. Requires at least one Latin letter so non-Latin
     scripts (no upper/lower case) are never matched."""
     if not any(c.isascii() and c.isalpha() for c in core):
+        return False
+    if len(core) > 40:                 # don't risk a long all-caps real headline
         return False
     words = core.split()
     return 2 <= len(words) <= 6 and all(
