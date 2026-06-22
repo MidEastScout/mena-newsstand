@@ -24,9 +24,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Source+Sans+3:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+Hebrew:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#111111;--ink2:#3A3A3A;--muted:#747474;
-  --line:#E5E5E5;--bg:#FFFFFF;--card:#F8F8F8;
-  --accent:#C0212A;--accent-dim:#FCECED;
+  --ink:#141414;--ink2:#3A3A3A;--muted:#76746F;
+  --line:#E4E2DC;--bg:#F4F2EC;--card:#FFFFFF;
+  --accent:#C0212A;--accent-dim:#FBEBEC;
   --blue:#1A3B6B;--gold:#9A7B2E;
   --sh1:0 1px 2px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.08);
   --sh2:0 2px 8px rgba(0,0,0,.10),0 1px 2px rgba(0,0,0,.06);
@@ -39,23 +39,29 @@ a{text-decoration:none;color:inherit}
 button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .wrap{max-width:960px;margin:0 auto;padding:0 16px}
 
-/* Masthead */
-.mast{border-top:4px solid var(--accent);border-bottom:1px solid var(--line);padding:24px 0 0;text-align:center}
-.mast-kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px}
-.mast h1{font-family:'Times New Roman',Times,serif;line-height:1.02;display:flex;flex-direction:column;align-items:center}
-.mast-region{font-family:'Times New Roman',Times,serif;font-size:clamp(20px,4.5vw,38px);font-weight:700;letter-spacing:4px;text-transform:uppercase}
-.mast-name{font-family:'Times New Roman',Times,serif;font-size:clamp(30px,6.5vw,58px);font-weight:700;letter-spacing:0;line-height:1.05}
-.mast-tag{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;color:var(--muted);margin:8px 0 14px}
-.mast-bar{display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);flex-wrap:wrap}
-.mast-date{font-weight:600;color:var(--ink)}
+/* Masthead — dark hero band */
+.mast{background:#16161A;border-top:5px solid var(--accent);padding:34px 0 26px;text-align:center;position:relative;overflow:hidden}
+.mast::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(192,33,42,.16),transparent 60%);pointer-events:none}
+.mast .wrap{position:relative;z-index:1}
+.mast-kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}
+.mast h1{font-family:'Times New Roman',Times,serif;line-height:1;display:flex;flex-direction:column;align-items:center;color:#fff}
+.mast-region{font-family:'Times New Roman',Times,serif;font-size:clamp(18px,4vw,34px);font-weight:400;letter-spacing:10px;text-transform:uppercase;color:rgba(255,255,255,.62);padding-left:10px;margin-bottom:4px}
+.mast-name{font-family:'Times New Roman',Times,serif;font-size:clamp(34px,7.5vw,66px);font-weight:700;letter-spacing:-.5px;line-height:1;color:#fff}
+.mast-tag{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:clamp(14px,2vw,17px);color:rgba(255,255,255,.55);margin:14px 0 0}
+.mast-bar{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:18px;font-size:11.5px;letter-spacing:.3px;color:rgba(255,255,255,.5);flex-wrap:wrap}
+.mast-sep{color:rgba(255,255,255,.25)}
+.mast-date{font-weight:600;color:rgba(255,255,255,.82)}
+.live-dot{display:inline-flex;align-items:center;gap:6px;color:#fff;font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:10.5px}
+.live-pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(192,33,42,.7);animation:livepulse 2s infinite}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(192,33,42,.6)}70%{box-shadow:0 0 0 7px rgba(192,33,42,0)}100%{box-shadow:0 0 0 0 rgba(192,33,42,0)}}
 
-/* Nav */
-.navbar{background:var(--ink);position:sticky;top:0;z-index:50}
-.navbar .wrap{display:flex;overflow-x:auto;scrollbar-width:none}
+/* Nav — light, sticky, contrasts dark masthead */
+.navbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;box-shadow:var(--sh1)}
+.navbar .wrap{display:flex;justify-content:center;overflow-x:auto;scrollbar-width:none}
 .navbar .wrap::-webkit-scrollbar{display:none}
-.navbtn{color:rgba(255,255,255,.5);font-size:12px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;padding:11px 16px;border:none;background:none;white-space:nowrap;border-bottom:2px solid transparent;transition:.15s}
-.navbtn:hover,.navbtn.active{color:#fff}
-.navbtn.active{border-bottom-color:var(--accent)}
+.navbtn{color:var(--muted);font-size:12.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:15px 20px;border:none;background:none;white-space:nowrap;border-bottom:3px solid transparent;transition:.15s;position:relative}
+.navbtn:hover{color:var(--ink)}
+.navbtn.active{color:var(--accent);border-bottom-color:var(--accent)}
 
 .main{max-width:960px;margin:0 auto;padding:24px 16px}
 .section{display:none}
@@ -80,9 +86,10 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .t-xx{background:#EEE;color:#555}
 
 /* Section header */
-.sec-head{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--accent);padding-bottom:6px;margin-bottom:14px}
-.sec-head h2{font-family:'Newsreader',Georgia,serif;font-size:21px;font-weight:600}
-.sec-note{font-size:12px;color:var(--muted);margin-bottom:14px;font-style:italic;line-height:1.5}
+.sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px;position:relative}
+.sec-head::before{content:"";position:absolute;left:0;bottom:-1px;width:64px;height:3px;background:var(--accent)}
+.sec-head h2{font-family:'Newsreader',Georgia,serif;font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.4px;line-height:1.1}
+.sec-note{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.6}
 
 /* Tip */
 .tip{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 var(--r1) var(--r1) 0;padding:12px 15px;margin-bottom:20px;font-size:13px;line-height:1.6;color:var(--ink2)}
@@ -98,29 +105,31 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 /* Headlines tab */
 .hl-updated{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:16px}
 .hl-loading{text-align:center;padding:48px;color:var(--muted);font-style:italic;font-size:14px}
-.hl-region{margin-bottom:30px}
-.hl-region-head{font-family:'Newsreader',Georgia,serif;font-size:18px;font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:5px;margin-bottom:12px}
-.hl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
-.hl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:14px 15px;display:flex;flex-direction:column;gap:9px;box-shadow:var(--sh1)}
-.hl-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:6px}
-.hl-card-name{font-size:13px;font-weight:600;color:var(--ink)}
-.hl-card-loc{font-size:11px;color:var(--muted);margin-top:1px}
+.hl-region{margin-bottom:38px}
+.hl-region-head{font-family:'Newsreader',Georgia,serif;font-size:23px;font-weight:700;letter-spacing:-.3px;padding-bottom:8px;margin-bottom:16px;border-bottom:1px solid var(--line);position:relative}
+.hl-region-head::before{content:"";position:absolute;left:0;bottom:-1px;width:48px;height:3px;background:var(--accent)}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px}
+.hl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:18px 19px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh1);transition:.18s}
+.hl-card:hover{box-shadow:var(--sh2);border-color:#D8D8D8}
+.hl-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;padding-bottom:11px;border-bottom:2px solid var(--ink)}
+.hl-card-name{font-size:13px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.6px}
+.hl-card-loc{font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:.2px}
 .hl-list{list-style:none;display:flex;flex-direction:column;gap:0;flex:1}
-.hl-list li{border-top:1px solid var(--line);padding:5px 0}
+.hl-list li{border-top:1px solid var(--line);padding:9px 0}
 .hl-list li:first-child{border-top:none;padding-top:0}
-.hl-list a{font-size:12px;line-height:1.45;color:var(--ink);font-weight:500;transition:.1s}
+.hl-list a{font-family:'Newsreader',Georgia,serif;font-size:15px;line-height:1.32;color:var(--ink);font-weight:500;transition:.1s;display:block}
 .hl-list a:hover{color:var(--accent)}
-.hl-snippet{font-size:11px;line-height:1.45;color:var(--muted);margin-top:3px}
+.hl-snippet{font-size:12px;line-height:1.5;color:var(--muted);margin-top:4px}
 .hl-none{font-size:12px;color:var(--muted);font-style:italic;flex:1}
 .hl-site-btn{display:block;padding:6px 0;border-radius:var(--r1);font-size:12px;font-weight:500;text-align:center;border:1px solid var(--line);background:none;color:var(--ink2);transition:.15s}
 .hl-site-btn:hover{border-color:var(--ink);background:var(--bg)}
 
 /* World Briefing card */
-.briefing-card{background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:22px 26px;margin-bottom:24px;box-shadow:var(--sh1)}
-.briefing-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;border-bottom:2px solid var(--accent);padding-bottom:8px;flex-wrap:wrap}
-.briefing-title{font-family:'Newsreader',Georgia,serif;font-size:21px;font-weight:600}
+.briefing-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:var(--r2);padding:26px 30px;margin-bottom:24px;box-shadow:var(--sh1)}
+.briefing-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:12px;flex-wrap:wrap}
+.briefing-title{font-family:'Newsreader',Georgia,serif;font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.4px}
 .briefing-ts{font-size:11px;color:var(--muted);font-style:italic}
-.briefing-card p{font-size:14px;line-height:1.8;color:var(--ink2);margin:0 0 12px}
+.briefing-card p{font-size:15px;line-height:1.85;color:var(--ink2);margin:0 0 14px}
 .briefing-card p:last-child{margin-bottom:0}
 .briefing-card strong{color:var(--ink);font-weight:600}
 
@@ -168,9 +177,11 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
     <h1><span class="mast-region">MIDDLE EAST</span><span class="mast-name">Intelligence Hub</span></h1>
     <div class="mast-tag">Front pages & sources across the Middle East</div>
     <div class="mast-bar">
+      <span class="live-dot"><span class="live-pulse"></span>Live</span>
+      <span class="mast-sep">·</span>
       <span class="mast-date" id="hdr-date"></span>
-      <span>·</span>
-      <span>Click any card to see today's front page</span>
+      <span class="mast-sep">·</span>
+      <span>Refreshed every 30 min</span>
     </div>
   </div>
 </div>
