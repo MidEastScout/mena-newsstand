@@ -291,6 +291,7 @@ let FP_VER = "";
 let hlData = null;
 
 function fpImgURL(id){ return `frontpages/${id}.jpg?v=${encodeURIComponent(FP_VER || "0")}`; }
+function fpThumbURL(id){ return `frontpages/thumbs/${id}.jpg?v=${encodeURIComponent(FP_VER || "0")}`; }
 
 function lb(l){
   if(l==="en") return `<span class="fp-tag t-en">EN</span>`;
@@ -313,8 +314,8 @@ async function buildFPGrid(){
     const st = FP_STATUS[p.id];
     const hasImg = !!(st && st.ok);
     const imgTag = hasImg
-      ? `<img class="fp-img-actual" loading="lazy" src="${fpImgURL(p.id)}"
-           alt="${esc(p.name)} front page" onerror="fpImgError(this)">`
+      ? `<img class="fp-img-actual" loading="lazy" decoding="async" src="${fpThumbURL(p.id)}"
+           alt="${esc(p.name)} front page" onerror="fpThumbFallback(this,'${p.id}')">`
       : ``;
     return `
     <div class="fp-card" onclick="openFPModal(${idx})">
@@ -415,6 +416,14 @@ function fpImgError(img){
   img.style.display = "none";
   const ph = img.parentElement.querySelector(".fp-placeholder");
   if(ph) ph.style.display = "flex";
+}
+
+// Grid uses small thumbnails; if a thumb is missing (e.g. not generated yet),
+// fall back to the full-size cover once before showing the placeholder.
+function fpThumbFallback(img, id){
+  if(img.dataset.full){ fpImgError(img); return; }
+  img.dataset.full = "1";
+  img.src = fpImgURL(id);
 }
 
 function openFPModal(idx){
