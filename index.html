@@ -531,7 +531,7 @@ async function loadBriefing(){
       const d = new Date(data.updated);
       document.getElementById("briefing-ts").textContent = "Updated " + d.toLocaleString("en-US",{
         weekday:"short", month:"short", day:"numeric",
-        hour:"2-digit", minute:"2-digit", timeZone:"UTC", timeZoneName:"short"
+        hour:"2-digit", minute:"2-digit", timeZoneName:"short"
       });
     }
     document.getElementById("briefing-body").innerHTML = html;
@@ -564,7 +564,7 @@ function renderHeadlines(data, container){
   let html="";
   if(data.updated){
     const d=new Date(data.updated);
-    const label=d.toLocaleString("en-US",{weekday:"short",year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZone:"UTC",timeZoneName:"short"});
+    const label=d.toLocaleString("en-US",{weekday:"short",year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZoneName:"short"});
     html+=`<div class="hl-updated">Last updated: ${label}</div>`;
   }
   const regions=data.regions||{};
