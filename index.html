@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Middle East Intelligence Hub — Live Front Pages & Headlines</title>
 <meta name="description" content="Live newspaper front pages and the top headlines from across the Middle East, plus the US and Europe — refreshed automatically every 30 minutes.">
-<link rel="canonical" href="https://roiebe23.github.io/mena-newsstand/">
+<link rel="canonical" href="https://mideastscout.github.io/mena-newsstand/">
 <meta name="theme-color" content="#15264F">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
@@ -14,12 +14,12 @@
 <meta property="og:site_name" content="Middle East Intelligence Hub">
 <meta property="og:title" content="Middle East Intelligence Hub — Live Front Pages & Headlines">
 <meta property="og:description" content="Live newspaper front pages and top headlines across the Middle East, US and Europe — refreshed every 30 minutes.">
-<meta property="og:url" content="https://roiebe23.github.io/mena-newsstand/">
-<meta property="og:image" content="https://roiebe23.github.io/mena-newsstand/frontpages/nyt.jpg">
+<meta property="og:url" content="https://mideastscout.github.io/mena-newsstand/">
+<meta property="og:image" content="https://mideastscout.github.io/mena-newsstand/frontpages/the_national.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Middle East Intelligence Hub — Live Front Pages & Headlines">
 <meta name="twitter:description" content="Live newspaper front pages and top headlines across the Middle East, US and Europe — refreshed every 30 minutes.">
-<meta name="twitter:image" content="https://roiebe23.github.io/mena-newsstand/frontpages/nyt.jpg">
+<meta name="twitter:image" content="https://mideastscout.github.io/mena-newsstand/frontpages/the_national.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -275,33 +275,19 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 </footer>
 
 <script>
-// Front-page covers are downloaded server-side by the daily workflow
-// (scripts/fetch_frontpages.py) and committed under frontpages/. The page
-// loads them from its own origin — no hotlinking — and reads
-// frontpages/manifest.json to know which are available today. "id" must match
-// the ids in fetch_frontpages.py.
-// Only papers whose covers can actually be fetched server-side are listed.
-// Others (most MENA dailies, plus paywalled UK/FR titles) either aren't carried
-// by any reachable cover source or block datacenter IPs, so they're omitted
-// rather than shown as permanent "not available" placeholders.
 const FP_PAPERS = [
-  // ――― Middle East ――――――――――――――――――――――――――――――――――――
   { id:"haaretz",      name:"Haaretz",         loc:"Israel",           lang:"en", site:"https://www.haaretz.com" },
   { id:"the_national", name:"The National",    loc:"UAE",              lang:"en", site:"https://www.thenationalnews.com" },
-  // ――― United States ―――――――――――――――――――――――――――――――
   { id:"nyt",             name:"New York Times",         loc:"USA", lang:"en", site:"https://www.nytimes.com" },
   { id:"wsj",             name:"Wall Street Journal",    loc:"USA", lang:"en", site:"https://www.wsj.com" },
   { id:"usa_today",       name:"USA Today",              loc:"USA", lang:"en", site:"https://www.usatoday.com" },
-  // ――― Europe ―――――――――――――――――――――――――――――――――――――――
   { id:"the_independent", name:"The Independent",        loc:"UK",      lang:"en", site:"https://www.independent.co.uk" },
   { id:"daily_mail",      name:"Daily Mail",             loc:"UK",      lang:"en", site:"https://www.dailymail.co.uk" },
   { id:"die_welt",        name:"Die Welt",               loc:"Germany", lang:"de", site:"https://www.welt.de" },
 ];
 
-// Filled in from frontpages/manifest.json at load time.
-let FP_STATUS = {};   // id -> {ok, date}
-let FP_VER = "";      // cache-busting version (date) for the image URLs
-
+let FP_STATUS = {};
+let FP_VER = "";
 let hlData = null;
 
 function fpImgURL(id){ return `frontpages/${id}.jpg?v=${encodeURIComponent(FP_VER || "0")}`; }
@@ -314,7 +300,6 @@ function lb(l){
 }
 
 async function buildFPGrid(){
-  // Load the manifest produced by the daily workflow (cache-busted).
   try{
     const r = await fetch("frontpages/manifest.json?t=" + Date.now());
     if(r.ok){
@@ -322,7 +307,7 @@ async function buildFPGrid(){
       FP_VER = (m.updated || "").slice(0,10);
       (m.papers || []).forEach(p => { FP_STATUS[p.id] = p; });
     }
-  }catch(e){ /* manifest not generated yet — show placeholders */ }
+  }catch(e){}
 
   document.getElementById("fp-grid").innerHTML = FP_PAPERS.map((p,idx)=>{
     const st = FP_STATUS[p.id];
@@ -353,9 +338,6 @@ async function buildFPGrid(){
   if(note) note.textContent = FP_VER ? ("Front pages as of " + FP_VER) : "";
 }
 
-// ――― Archive: browse past front pages by date ―――――――――――――――――――――――
-// Loads frontpages/archive/index.json: { papers:{id:{name,loc,lang,site}},
-// dates:{ "YYYY-MM-DD":[ids] } } produced by fetch_frontpages.py.
 let ARCHIVE_INDEX = null;
 
 function fmtArchiveDate(d){
@@ -373,7 +355,7 @@ async function buildArchive(){
   try{
     const r = await fetch("frontpages/archive/index.json?t=" + Date.now());
     if(r.ok) ARCHIVE_INDEX = await r.json();
-  }catch(e){ /* not generated yet */ }
+  }catch(e){}
 
   const dates = ARCHIVE_INDEX && ARCHIVE_INDEX.dates
     ? Object.keys(ARCHIVE_INDEX.dates).sort().reverse() : [];
@@ -429,7 +411,6 @@ function openArchiveModal(id, d){
   document.body.style.overflow = "hidden";
 }
 
-// If a committed image somehow fails to load, fall back to the placeholder.
 function fpImgError(img){
   img.style.display = "none";
   const ph = img.parentElement.querySelector(".fp-placeholder");
@@ -491,7 +472,6 @@ setInterval(loadHeadlines, 30 * 60 * 1000);
 setInterval(loadBriefing,   6 * 60 * 60 * 1000);
 setInterval(loadPulse,     30 * 60 * 1000);
 
-// ――― Media Pulse word cloud ―――――――――――――――――――――――――――――――――――――――
 let pulseData = null;
 
 async function loadPulse(){
@@ -549,7 +529,7 @@ async function loadBriefing(){
     document.getElementById("briefing-card").style.display = "";
     const ph = document.getElementById("briefing-placeholder");
     if(ph) ph.style.display = "none";
-  }catch(e){ /* briefing.json not yet available */ }
+  }catch(e){}
 }
 
 function esc(s){
@@ -561,7 +541,6 @@ function esc(s){
 async function loadHeadlines(){
   const container = document.getElementById("hl-container");
   try{
-    // Cache-bust so the 30-min refresh isn't served a stale copy by the CDN.
     const res = await fetch("headlines.json?t=" + Date.now(), {cache:"no-store"});
     if(!res.ok) throw new Error("HTTP "+res.status);
     const data = await res.json();
