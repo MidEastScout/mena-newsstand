@@ -209,22 +209,17 @@ GNEWS_LOCALE = {
     "fr": ("fr", "FR", "FR:fr"),
 }
 
-LANG_TARGETS = {
-    "he": "Hebrew",
-    "ar": "Arabic",
-}
-
-# Gemini model used for snippets + translation. flash-lite has a much higher
-# free-tier daily request limit than gemini-2.5-flash (which capped at ~20/day
-# on this project) — important because each run makes ~8 calls.
+# Gemini model used for the English snippets. flash-lite has a much higher
+# free-tier daily request limit than gemini-2.5-flash. Snippet generation is a
+# single batched call per run (only when headlines actually changed).
 GEMINI_MODEL = "gemini-2.5-flash-lite"
 
 # Target length of the per-headline summary, in words.
 SNIPPET_WORDS = 50
 
-# Bump this whenever the snippet/translation prompt changes so the content cache
-# is invalidated and everything regenerates on the next run.
-TRANSLATION_VERSION = "v4-he-ar"
+# Bump this whenever the snippet prompt changes so the content cache is
+# invalidated and snippets regenerate on the next run.
+SNIPPET_VERSION = "v5-en"
 
 HEADERS = {
     "User-Agent": (
@@ -537,7 +532,7 @@ def fresh_items(items, source: str):
 
 def strip_internal(items):
     # "description" is kept temporarily for snippet generation, then removed
-    # before the file is written (see translate_all_languages).
+    # before the file is written (see generate_snippets).
     return [{"title": it["title"], "url": it["url"], "published": it["published"],
              "description": it.get("description", "")}
             for it in items[:HEADLINES_PER_OUTLET]]
@@ -590,7 +585,7 @@ def _titles_hash(regions: dict) -> str:
     """SHA-256 (truncated) of all titles + descriptions — the cache key for
     snippets and translations. Including descriptions means a snippet refreshes
     if its source text changes, even when the title is identical."""
-    parts = [TRANSLATION_VERSION]
+    parts = [SNIPPET_VERSION]
     for outlets in regions.values():
         for outlet in outlets:
             for h in outlet.get("headlines", []):
@@ -607,24 +602,20 @@ def _strip_descriptions(regions: dict):
                 h.pop("description", None)
 
 
-def translate_all_languages(regions: dict, existing_output: dict = None) -> dict:
-    """Generate a short English snippet for each headline and translate both the
-    title and the snippet into 7 languages, using the Google Gemini API.
+def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
+    """Generate a short English snippet for each headline, using the Gemini API.
 
-    Mutates `regions` (English) in place: adds a "snippet" field to each headline
-    and removes the temporary "description" field.
+    Mutates `regions` in place: adds a "snippet" field to each headline and
+    removes the temporary "description" field. Returns {"titles_hash": ...} when
+    snippets were produced (so the next run can skip unchanged content), or {} on
+    skip/failure — always non-fatal.
 
-    Returns a dict with keys regions_he/ar/ru/zh/fr/de/es (each a full regions
-    copy with translated titles + snippets) plus "titles_hash". If the content
-    hasn't changed since the last run, snippets and translations are reused with
-    no API calls. Returns {} on failure — non-fatal.
-
-    Uses Gemini's free tier (GEMINI_MODEL), so the workload here costs nothing
-    in practice.
+    The site is English-only, so no translations are generated; this is a single
+    batched Gemini call per run, and none at all when the headlines are unchanged.
     """
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        print("  GEMINI_API_KEY not set — skipping snippets/translations", file=sys.stderr)
+        print("  GEMINI_API_KEY not set — skipping snippets", file=sys.stderr)
         _strip_descriptions(regions)
         return {}
 
@@ -642,12 +633,10 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
 
     current_hash = _titles_hash(regions)
 
-    # Cache hit: reuse last run's snippets (into the fresh English regions) and
-    # its translated copies, with no API calls.
+    # Cache hit: reuse last run's snippets, with no API call.
     if existing_output and existing_output.get("titles_hash") == current_hash:
-        cached = {k: v for k, v in existing_output.items() if k.startswith("regions_")}
         prev = existing_output.get("regions")
-        if len(cached) >= len(LANG_TARGETS) and prev:
+        if prev:
             for (region, o_idx, h_idx) in positions:
                 try:
                     snip = prev[region][o_idx]["headlines"][h_idx].get("snippet", "")
@@ -655,9 +644,8 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
                     snip = ""
                 regions[region][o_idx]["headlines"][h_idx]["snippet"] = snip
             _strip_descriptions(regions)
-            cached["titles_hash"] = current_hash
-            print(f"  Content unchanged — reusing snippets + translations (hash {current_hash})")
-            return cached
+            print(f"  Content unchanged — reusing snippets (hash {current_hash})")
+            return {"titles_hash": current_hash}
 
     try:
         from google import genai
@@ -737,63 +725,16 @@ def translate_all_languages(regions: dict, existing_output: dict = None) -> dict
         hl = regions[region][o_idx]["headlines"][h_idx]
         # Never wipe a good snippet with an empty refresh: if this run produced
         # no snippet for a headline that already had one (e.g. a carried-over
-        # stale headline, or a description that briefly vanished), keep the old
-        # one. en_snippets is updated so the translation step stays in sync.
-        eff = en_snippets[i] or hl.get("snippet", "")
-        hl["snippet"] = eff
-        en_snippets[i] = eff
-    n_snips = sum(1 for s in en_snippets if s)
+        # stale headline, or a description that briefly vanished), keep the old one.
+        hl["snippet"] = en_snippets[i] or hl.get("snippet", "")
+    n_snips = sum(1 for (region, o_idx, h_idx) in positions
+                  if regions[region][o_idx]["headlines"][h_idx].get("snippet"))
     _strip_descriptions(regions)
     print(f"  Generated {n_snips}/{len(titles)} English snippets")
 
-    # ---- Step 2: translate title + snippet into each language ----
-    # One structured call per language over a flat [title, snippet, title, ...]
-    # list keeps us at 7 calls total.
-    flat = []
-    for t, s in zip(titles, en_snippets):
-        flat.append(t)
-        flat.append(s)
-
-    result = {}
-    fresh = 0
-    for lang_code, lang_name in LANG_TARGETS.items():
-        prompt = (
-            f"Translate each string in the JSON array below to {lang_name}. The "
-            "array alternates between a headline and its summary. Translate "
-            "naturally and journalistically. Keep empty strings as empty strings. "
-            "Do not add notes.\n\n"
-            f"Strings:\n{json.dumps(flat, ensure_ascii=False)}\n\n"
-            f"Return ONLY a JSON array of exactly {len(flat)} strings, same order."
-        )
-        translated = call_model(prompt, len(flat))
-        if not translated:
-            continue
-        regions_lang = copy.deepcopy(regions)  # already has snippet, no description
-        for i, (region, o_idx, h_idx) in enumerate(positions):
-            hl = regions_lang[region][o_idx]["headlines"][h_idx]
-            t_title, t_snip = translated[2 * i], translated[2 * i + 1]
-            if t_title:
-                hl["title"] = t_title
-            hl["snippet"] = t_snip or ""
-        result[f"regions_{lang_code}"] = regions_lang
-        fresh += 1
-        print(f"  [{lang_code}] Translated {len(titles)} headlines + snippets")
-
-    # Non-destructive: if a language failed this run (e.g. quota), keep the
-    # previous run's copy so its chip never disappears from the site.
-    if existing_output:
-        for lang_code in LANG_TARGETS:
-            key = f"regions_{lang_code}"
-            if key not in result and key in existing_output:
-                result[key] = existing_output[key]
-                print(f"  [{lang_code}] kept previous translation (refresh failed)", file=sys.stderr)
-
-    # Save the hash whenever snippets were freshly generated (even if some
-    # translations hit the daily quota). This prevents every subsequent run from
-    # re-running the snippet call for unchanged headlines when we're quota-limited.
-    if snippets_ok:
-        result["titles_hash"] = current_hash
-    return result
+    # Record the hash only when snippets were freshly generated, so the next run
+    # can skip the API call for unchanged headlines.
+    return {"titles_hash": current_hash} if snippets_ok else {}
 
 
 # How long a failing outlet keeps showing its last good headlines before the
@@ -858,16 +799,16 @@ def main():
             pass
 
     # Backfill any outlet that came back empty with its last-known-good headlines
-    # before snippets/translations run, so carried cards stay fully populated.
+    # before snippets run, so carried cards stay fully populated.
     carried = apply_carry_forward(output, existing)
     if carried:
         print(f"\n[Carry-forward] kept {carried} outlet(s) from the previous run")
 
-    print("\n[Snippets + translations]")
-    # Adds English snippets to output["regions"], returns translated copies
-    # (regions_he/ar/...) plus "titles_hash", and strips raw descriptions.
-    translations = translate_all_languages(output["regions"], existing)
-    output.update(translations)
+    print("\n[Snippets]")
+    # Adds English snippets to output["regions"], strips raw descriptions, and
+    # returns {"titles_hash": ...} so unchanged runs can skip the API call.
+    snippet_meta = generate_snippets(output["regions"], existing)
+    output.update(snippet_meta)
 
     out_path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
     total = sum(len(o["headlines"]) for outs in output["regions"].values() for o in outs)
