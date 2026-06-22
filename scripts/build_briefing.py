@@ -16,6 +16,7 @@ import json
 import os
 import re
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -139,6 +140,37 @@ def build_prompt(world: list[str], mena: list[str]) -> str:
     )
 
 
+def generate_with_retry(client, model: str, prompt: str, label: str,
+                        attempts: int = 4) -> str:
+    """Call Gemini with exponential backoff on transient errors (503 UNAVAILABLE,
+    429 RESOURCE_EXHAUSTED, 500). Returns the response text, or '' if every
+    attempt fails. These models are shared free-tier endpoints that routinely
+    return brief 503 'high demand' blips, so a single attempt drops translations
+    far too often — retrying recovers almost all of them."""
+    for attempt in range(attempts):
+        try:
+            resp = client.models.generate_content(model=model, contents=prompt)
+            text = (resp.text or "").strip()
+            if text:
+                return text
+            print(f"  [{label}] empty response (attempt {attempt + 1})", file=sys.stderr)
+        except Exception as exc:
+            msg = str(exc)
+            transient = any(code in msg for code in
+                            ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "500"))
+            if transient and attempt < attempts - 1:
+                wait = 5 * (2 ** attempt)   # 5s, 10s, 20s
+                print(f"  [{label}] transient error — retrying in {wait}s "
+                      f"({msg[:80]})", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            print(f"  [{label}] failed: {exc}", file=sys.stderr)
+            return ""
+        if attempt < attempts - 1:
+            time.sleep(5 * (2 ** attempt))
+    return ""
+
+
 def translate_text(client, text: str, lang_name: str) -> str:
     """Translate the plain-text briefing into lang_name, preserving paragraph
     breaks and the **bold** lead-in markers. Returns '' on failure."""
@@ -149,12 +181,7 @@ def translate_text(client, text: str, lang_name: str) -> str:
         "phrases. Translate naturally and journalistically. Return ONLY the "
         "translated text — no notes, no preamble.\n\n" + text
     )
-    try:
-        resp = client.models.generate_content(model=TRANSLATE_MODEL, contents=prompt)
-        return (resp.text or "").strip()
-    except Exception as exc:
-        print(f"  [{lang_name}] translation failed: {exc}", file=sys.stderr)
-        return ""
+    return generate_with_retry(client, TRANSLATE_MODEL, prompt, lang_name)
 
 
 def main():
@@ -178,26 +205,34 @@ def main():
 
     prompt = build_prompt(world, mena)
 
-    try:
-        client = genai.Client(api_key=api_key)
-        resp   = client.models.generate_content(model=GEMINI_MODEL, contents=prompt)
-        text   = (resp.text or "").strip()
-    except Exception as exc:
-        print(f"Gemini call failed: {exc}", file=sys.stderr)
-        sys.exit(1)
+    client = genai.Client(api_key=api_key)
+    text   = generate_with_retry(client, GEMINI_MODEL, prompt, "synthesis")
 
     if not text:
         print("Empty response from Gemini — skipping write", file=sys.stderr)
         sys.exit(0)
 
-    # English first, then translate into each supported language. A language that
-    # fails simply isn't included — the UI falls back to English for it.
-    html_by_lang = {"en": _para_to_html(text)}
+    # English first, then translate into each supported language. Retries above
+    # absorb transient 503/429 blips. If a translation still fails AND the new
+    # English text is unchanged from the previous run, reuse the prior
+    # translation so the language doesn't silently revert to English.
+    try:
+        prev = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        prev = {}
+    prev_by_lang = prev.get("html_by_lang") or {}
+    prev_en = (prev_by_lang.get("en") or prev.get("html") or "").strip()
+
+    new_en = _para_to_html(text)
+    html_by_lang = {"en": new_en}
     for code, name in LANG_TARGETS.items():
         translated = translate_text(client, text, name)
         if translated:
             html_by_lang[code] = _para_to_html(translated)
             print(f"  [{code}] translated briefing")
+        elif new_en == prev_en and prev_by_lang.get(code):
+            html_by_lang[code] = prev_by_lang[code]
+            print(f"  [{code}] kept previous translation (refresh failed)")
 
     updated = datetime.now(timezone.utc).isoformat()
     OUT_PATH.write_text(
