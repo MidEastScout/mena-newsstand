@@ -135,6 +135,20 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 
 /* Headlines tab */
 .hl-updated{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:16px}
+/* Headlines filter bar */
+.hl-filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.hl-filter-input,.hl-filter-select{font-family:'Source Sans 3',sans-serif;font-size:14px;color:var(--ink);
+  background:#fff;border:1px solid var(--line);border-radius:var(--r1);padding:9px 12px;height:40px;outline:none;transition:border-color .15s,box-shadow .15s}
+.hl-filter-input{flex:1 1 260px;min-width:0}
+.hl-filter-input::placeholder{color:var(--muted)}
+.hl-filter-select{flex:0 0 auto;max-width:60%;cursor:pointer}
+.hl-filter-input:focus,.hl-filter-select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+.hl-filter-clear{font-size:13px;font-weight:600;color:var(--blue);background:#fff;border:1px solid var(--line);
+  border-radius:var(--r1);padding:9px 14px;height:40px}
+.hl-filter-clear:hover{border-color:var(--accent);color:var(--accent)}
+.hl-filter-info{font-size:13px;color:var(--ink2);margin-bottom:18px}
+.hl-filter-info b{color:var(--blue);font-weight:700}
+.hl-link-btn{font:inherit;color:var(--accent);background:none;border:none;padding:0;font-weight:600;text-decoration:underline;cursor:pointer}
 .hl-loading{text-align:center;padding:48px;color:var(--muted);font-style:italic;font-size:14px}
 .hl-region{margin-bottom:38px}
 .hl-region-head{font-family:'Newsreader',Georgia,serif;font-size:23px;font-weight:700;letter-spacing:-.3px;padding-bottom:8px;margin-bottom:16px;border-bottom:1px solid var(--line);position:relative}
@@ -278,6 +292,15 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
       <h2>Live Headlines</h2>
     </div>
     <div class="sec-note">Top 5 headlines from 22 MENA and regional outlets, organized by region. Refreshed automatically every 30 minutes.</div>
+    <div class="hl-filters">
+      <input type="search" id="hl-topic" class="hl-filter-input" autocomplete="off"
+        placeholder="Filter by topic or keyword (e.g. Iran, ceasefire, Hezbollah)…">
+      <select id="hl-source" class="hl-filter-select" aria-label="Filter by source">
+        <option value="">All sources</option>
+      </select>
+      <button type="button" id="hl-clear" class="hl-filter-clear" hidden>Clear</button>
+    </div>
+    <div id="hl-filter-info" class="hl-filter-info" style="display:none"></div>
     <div id="hl-container"><div class="hl-loading">Loading headlines…</div></div>
   </div>
 
@@ -667,7 +690,8 @@ async function loadHeadlines(){
     const data = await res.json();
     hlData = data;
     if(window.MEIH_syncFromHeadlines) window.MEIH_syncFromHeadlines(data);
-    renderHeadlines(data, container);
+    populateHeadlineSources(data);
+    applyHeadlineFilters();
   }catch(err){
     container.innerHTML=`<div class="hl-loading">Headlines not yet available — the fetcher refreshes every 30 minutes.<br><small style="color:var(--muted)">(${err.message})</small></div>`;
   }
@@ -715,6 +739,85 @@ function renderOutletCard(outlet){
     <a class="hl-site-btn" href="${esc(outlet.url)}" target="_blank" rel="noopener">Open site →</a>
   </div>`;
 }
+
+// ---- Headlines filtering (topic keyword + source), client-side over hlData ----
+function populateHeadlineSources(data){
+  const sel = document.getElementById("hl-source");
+  if(!sel) return;
+  const prev = sel.value;
+  const names = [];
+  for(const outs of Object.values(data.regions||{}))
+    for(const o of outs) if(o.source) names.push(o.source);
+  const uniq = [...new Set(names)].sort((a,b)=>a.localeCompare(b));
+  sel.innerHTML = `<option value="">All sources</option>` +
+    uniq.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("");
+  if(uniq.includes(prev)) sel.value = prev;   // preserve choice across refreshes
+}
+
+function filterHeadlineData(data, topic, source){
+  const out = {updated:data.updated, regions:{}};
+  for(const [region, outlets] of Object.entries(data.regions||{})){
+    const kept = [];
+    for(const o of outlets){
+      if(source && o.source !== source) continue;
+      let hls = o.headlines || [];
+      if(topic){
+        hls = hls.filter(h =>
+          (h.title||"").toLowerCase().includes(topic) ||
+          (h.snippet||"").toLowerCase().includes(topic));
+        if(!hls.length) continue;   // hide outlets with no topic match
+      }
+      kept.push(Object.assign({}, o, {headlines:hls}));
+    }
+    if(kept.length) out.regions[region] = kept;
+  }
+  return out;
+}
+
+function applyHeadlineFilters(){
+  if(!hlData) return;
+  const topic  = (document.getElementById("hl-topic").value || "").trim().toLowerCase();
+  const source = document.getElementById("hl-source").value || "";
+  const active = !!(topic || source);
+  const filtered = filterHeadlineData(hlData, topic, source);
+  let nH = 0, nO = 0;
+  for(const outs of Object.values(filtered.regions)){ nO += outs.length;
+    for(const o of outs) nH += (o.headlines||[]).length; }
+
+  const container = document.getElementById("hl-container");
+  if(active && nH === 0) container.innerHTML = "";        // info bar carries the message
+  else renderHeadlines(filtered, container);
+
+  const info = document.getElementById("hl-filter-info");
+  document.getElementById("hl-clear").hidden = !active;
+  if(active){
+    const bits = [];
+    if(topic)  bits.push(`“${esc(topic)}”`);
+    if(source) bits.push(esc(source));
+    info.innerHTML = nH
+      ? `Showing <b>${nH}</b> headline${nH===1?"":"s"} from <b>${nO}</b> outlet${nO===1?"":"s"} matching ${bits.join(" · ")}.`
+      : `No headlines match ${bits.join(" · ")}. <button type="button" class="hl-link-btn" onclick="clearHeadlineFilters()">Clear filter</button>`;
+    info.style.display = "";
+  }else{
+    info.style.display = "none";
+    info.innerHTML = "";
+  }
+}
+
+function clearHeadlineFilters(){
+  document.getElementById("hl-topic").value = "";
+  document.getElementById("hl-source").value = "";
+  applyHeadlineFilters();
+}
+
+(function wireHeadlineFilters(){
+  const topic = document.getElementById("hl-topic");
+  const source = document.getElementById("hl-source");
+  const clear = document.getElementById("hl-clear");
+  if(topic)  topic.addEventListener("input", applyHeadlineFilters);
+  if(source) source.addEventListener("change", applyHeadlineFilters);
+  if(clear)  clear.addEventListener("click", clearHeadlineFilters);
+})();
 </script>
 <script>
 /* Hero globe — rotating canvas wireframe with headline-synced city nodes.
