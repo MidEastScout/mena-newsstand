@@ -252,6 +252,15 @@ def main():
         print("Empty response from Gemini — skipping write", file=sys.stderr)
         sys.exit(0)
 
+    # Deterministic backstop against stale/invented leader titles (e.g. "former
+    # US president Trump") that the model adds despite the prompt rule. Grounded
+    # in the source headlines, so an outlet's own "former PM X" stays intact.
+    try:
+        from fetch_headlines import scrub_stale_titles
+        text = scrub_stale_titles(text, " ".join(world) + " " + " ".join(mena))
+    except Exception as exc:
+        print(f"  title scrub skipped ({exc})", file=sys.stderr)
+
     # English first, then translate into each supported language. Retries above
     # absorb transient 503/429 blips. If a translation still fails AND the new
     # English text is unchanged from the previous run, reuse the prior

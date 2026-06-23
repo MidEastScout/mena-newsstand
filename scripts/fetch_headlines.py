@@ -492,6 +492,42 @@ def is_offtopic(title: str, url: str = "") -> bool:
     return False
 
 
+# Current office-holders a model may wrongly tag as "former" from stale training
+# data — their office title is ALWAYS stripped, regardless of source.
+CURRENT_LEADERS = {"trump"}
+
+# "former / ex / current … president | prime minister | premier " before a name.
+# Used to delete a stale or invented office title the AI added that the source
+# never stated (e.g. "former US president Trump" -> "Trump").
+LEADER_TITLE_RE = re.compile(
+    r"\b(former|ex|current|outgoing|incoming|sitting)[-\s]+"
+    r"(?:(?:us|u\.s\.|american|israeli|iranian|lebanese|egyptian|turkish|saudi|"
+    r"french|british|german|russian|ukrainian|palestinian|syrian|iraqi|qatari|"
+    r"emirati|jordanian|yemeni|gulf)\s+)?"
+    r"(?:president|prime\s+minister|pm|premier)\s+",
+    re.I)
+
+
+def scrub_stale_titles(text: str, source: str = "") -> str:
+    """Remove a leader's office title (e.g. 'former US president') from AI-written
+    text UNLESS the source material actually used that 'former/current/…' wording —
+    so the site never asserts a stale or invented office. Always strips the title
+    before a known current office-holder (e.g. Trump). Best-effort and safe: it
+    only ever drops an honorific, never a name or a real fact."""
+    if not text:
+        return text
+    src = (source or "").lower()
+
+    def repl(m):
+        marker = m.group(1).lower()
+        after = m.string[m.end():m.end() + 24].lower()
+        if any(after.startswith(n) for n in CURRENT_LEADERS):
+            return ""
+        return m.group(0) if marker in src else ""
+
+    return re.sub(r"\s{2,}", " ", LEADER_TITLE_RE.sub(repl, text)).strip()
+
+
 def clean_description(raw: str, title: str) -> str:
     """Turn an RSS summary/description into clean plain text, or '' when it has
     no real content beyond the title.
@@ -735,12 +771,15 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
     if existing_output and existing_output.get("titles_hash") == current_hash:
         prev = existing_output.get("regions")
         if prev:
-            for (region, o_idx, h_idx) in positions:
+            for i, (region, o_idx, h_idx) in enumerate(positions):
                 try:
                     snip = prev[region][o_idx]["headlines"][h_idx].get("snippet", "")
                 except Exception:
                     snip = ""
-                regions[region][o_idx]["headlines"][h_idx]["snippet"] = snip
+                # Scrub on reuse too, so a previously-stored stale title (e.g.
+                # "former president Trump") is corrected even on a cache hit.
+                regions[region][o_idx]["headlines"][h_idx]["snippet"] = \
+                    scrub_stale_titles(snip, f"{titles[i]} {descriptions[i]}")
             _strip_descriptions(regions)
             print(f"  Content unchanged — reusing snippets (hash {current_hash})")
             return {"titles_hash": current_hash}
@@ -845,7 +884,11 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
         # Never wipe a good snippet with an empty refresh: if this run produced
         # no snippet for a headline that already had one (e.g. a carried-over
         # stale headline, or a description that briefly vanished), keep the old one.
-        hl["snippet"] = en_snippets[i] or hl.get("snippet", "")
+        snip = en_snippets[i] or hl.get("snippet", "")
+        # Deterministic backstop: strip any leader office title the model added
+        # that the source never stated (e.g. the recurring "former president
+        # Trump"). Applied to reused snippets too, so old bad text is corrected.
+        hl["snippet"] = scrub_stale_titles(snip, f"{titles[i]} {descriptions[i]}")
     n_snips = sum(1 for (region, o_idx, h_idx) in positions
                   if regions[region][o_idx]["headlines"][h_idx].get("snippet"))
     _strip_descriptions(regions)
