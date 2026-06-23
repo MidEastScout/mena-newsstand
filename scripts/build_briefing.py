@@ -143,10 +143,22 @@ def fetch_mena_lines() -> list[str]:
 
 
 def build_prompt(world: list[str], mena: list[str]) -> str:
+    today = datetime.now(timezone.utc).strftime("%B %d, %Y")
     return (
+        f"Today's date is {today}; treat it as the present. Do NOT rely on your "
+        "outside or training knowledge for any time-sensitive fact — especially "
+        "who currently holds an office. The provided headlines are the present-day "
+        "reality; where your prior knowledge conflicts with them, the headlines "
+        "win.\n\n"
         "You are the editor of a daily world-affairs intelligence briefing. "
         "Below are today's headlines from major international outlets, followed "
         "by Middle East & North Africa headlines.\n\n"
+        "CRITICAL ACCURACY RULE: Do not add, infer, or change anyone's title, "
+        "office, role or status. Never write 'president', 'former', 'current', "
+        "'ex-', 'prime minister', 'minister', etc. for a person unless that exact "
+        "word already appears in the provided headlines. Refer to each person "
+        "EXACTLY as the headlines do — e.g. if a headline says 'Trump', write "
+        "'Trump', never 'former US president Trump'.\n\n"
         "Write a cohesive GLOBAL briefing for a well-informed reader:\n"
         "- Lead with the single biggest development shaping the world order today, "
         "in 1-2 sentences.\n"

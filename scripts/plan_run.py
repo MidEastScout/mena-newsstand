@@ -93,6 +93,9 @@ def main() -> None:
         do_briefing = True
         do_email    = True
         reasons.append("forced email + briefing")
+    if os.environ.get("FORCE_BRIEFING", "").lower() == "true":
+        do_briefing = True
+        reasons.append("forced briefing")
 
     reason = " | ".join(reasons) if reasons else "headlines only"
 

@@ -56,6 +56,10 @@ on:
         description: 'Force-refresh front-page images now'
         type: boolean
         default: false
+      refresh_briefing:
+        description: 'Force-rebuild the World Briefing now (no email)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -91,6 +95,7 @@ jobs:
         env:
           FORCE_EMAIL:       ${{ github.event.inputs.send_email }}
           FORCE_FRONTPAGES:  ${{ github.event.inputs.refresh_frontpages }}
+          FORCE_BRIEFING:    ${{ github.event.inputs.refresh_briefing }}
         run: python scripts/plan_run.py
 
       - name: Fetch headlines

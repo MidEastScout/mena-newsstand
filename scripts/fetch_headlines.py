@@ -277,7 +277,7 @@ SNIPPET_WORDS = 50
 
 # Bump this whenever the snippet prompt changes so the content cache is
 # invalidated and snippets regenerate on the next run.
-SNIPPET_VERSION = "v6-en"
+SNIPPET_VERSION = "v7-en"
 
 HEADERS = {
     "User-Agent": (
@@ -795,22 +795,31 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
     # enriched) we expand the headline itself with safe, widely-known context.
     # That makes the site's expansions CONSISTENT — instead of present for the
     # outlets on a working native feed and blank for the ones on Google News.
+    today_str = datetime.now(timezone.utc).strftime("%B %d, %Y")
     snippet_items = [{"title": t, "description": d} for t, d in zip(titles, descriptions)]
     snip_prompt = (
+        f"Today's date is {today_str}; treat it as the present. Do NOT use outside "
+        "or training knowledge for time-sensitive facts (such as who currently "
+        "holds any office).\n\n"
         "For each news item in the JSON array below, write a concise, informative "
         f"summary of two to three sentences (about {SNIPPET_WORDS} words) in English.\n"
         "Rules for EVERY item:\n"
-        "1. If 'description' has real content, summarise it faithfully and keep its "
-        "specific facts — numbers, names, places, quotes. Use ONLY what 'description' "
-        "says.\n"
-        "2. If 'description' is empty or merely repeats 'title', expand the 'title' "
-        "instead: restate it as a clear sentence and add only widely-known, "
-        "uncontroversial background about the people, places, groups or events it "
-        "names (who or what they are, and why it matters).\n"
-        "3. NEVER invent specifics that are not given — no made-up numbers, dates, "
+        "1. If 'description' has real content, summarise it faithfully, keeping its "
+        "specific facts (numbers, names, places, quotes). Use ONLY what 'description' "
+        "states.\n"
+        "2. If 'description' is empty or merely repeats 'title', expand the 'title': "
+        "restate it as a clear sentence and add only TIMELESS context — e.g. which "
+        "country a city is in, or what an organisation broadly is. Do NOT add who "
+        "currently leads or holds any position.\n"
+        "3. CRITICAL — do not add, infer, or change anyone's title, office, role or "
+        "status. Never write 'president', 'former', 'current', 'ex-', 'prime "
+        "minister', 'minister', etc. for a person unless that exact word already "
+        "appears in the source text. Refer to each person EXACTLY as the source does "
+        "(if it says 'Trump', write 'Trump', never 'former president Trump').\n"
+        "4. NEVER invent specifics that are not given — no made-up numbers, dates, "
         "casualties, quotes, outcomes or events. If a detail isn't available, omit "
-        "it; do not speculate and do not pad.\n"
-        "4. Always return a non-empty string for every item.\n\n"
+        "it; do not speculate or pad.\n"
+        "5. Always return a non-empty string for every item.\n\n"
         f"Items:\n{json.dumps(snippet_items, ensure_ascii=False)}\n\n"
         f"Return ONLY a JSON array of exactly {len(titles)} strings, same order."
     )
