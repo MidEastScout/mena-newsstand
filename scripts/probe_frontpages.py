@@ -1,23 +1,37 @@
 #!/usr/bin/env python3
 """
-WHAT THIS SCRIPT DOES (plain English)
-======================================
-This is a one-off TESTER. The Middle-Eastern newspaper covers are unreliable,
-so this tries a big list of well-known US and European papers and checks which
-ones actually return a real front-page image from GitHub's servers.
+RECON PROBE — more NON-ISRAELI Middle East newspaper front pages.
+=================================================================
+This is a one-off TESTER that runs on GitHub's servers (a datacenter IP that,
+unlike a laptop, is what actually reaches these CDNs). It tries FIVE different
+ways to obtain a real, current front-page cover for Arab / Gulf / Egyptian /
+Levantine / Iranian / Turkish papers, and records which ones genuinely return
+an image — together with the exact URL so the winner can be baked into
+scripts/fetch_frontpages.py.
 
-It tries each paper on the two cover sources we use:
-  - Freedom Forum  (best for US papers)
-  - Kiosko         (best for European papers)
-...for today and yesterday, trying a couple of name spellings each.
+Israeli papers are intentionally excluded (we already carry Haaretz; the goal
+here is to broaden the *rest* of the region).
 
-It then writes the verdict to state/probe_results.json (and prints it to the
-log). Claude reads that file and bakes the winners into fetch_frontpages.py so
-the site only ever lists papers whose covers genuinely work.
+Sources probed
+--------------
+  1. frontpages.com         — per-country MENA pages (scrape → cover image URLs)
+  2. Kiosko (img.kiosko.net) — scrape MENA country indices → (geo, slug) covers
+  3. Freedom Forum TFP       — old CDN codes + the new frontpages.freedomforum.org
+  4. Per-paper e-papers      — each paper's OWN site (Arab News, Gulf Times, …)
+  5. PressReader (i.prcdn.co)— public cover thumbnails, keyed by numeric cid
 
-You don't need to read or edit this file. It's run automatically.
+It writes state/probe_results.json. Because several sources are HTML pages whose
+structure we don't know yet, the probe is reconnaissance-oriented: for those it
+records the candidate image URLs it discovered (not just pass/fail) so the
+winners can be turned into stable, deterministic production URLs.
+
+You don't need to read or edit this file. It's run from the
+"Probe front-page sources" workflow (workflow_dispatch).
 """
 import json
+import re
+import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -25,209 +39,373 @@ import requests
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
-TIMEOUT = 25
-MIN_BYTES = 12000
+TIMEOUT = 20
+MIN_BYTES = 15000          # a real cover scan is tens–hundreds of KB
+MAX_IMGS_PER_PAGE = 30     # cap test-downloads per scraped page
+PAUSE = 0.25               # be polite between requests
 
 today = datetime.now(timezone.utc).date()
 DATES = [today, today - timedelta(days=1)]
 
-# Each candidate lists the id/name/loc/lang we'd use on the site, plus the
-# source(s) to try. A source is either:
-#   ("ff", "CODE")              Freedom Forum
-#   ("kiosko", "geo", "slug")   Kiosko
-# Multiple sources / spellings are tried in order; first hit wins.
-CANDIDATES = [
-    # ——— United States (Freedom Forum) ———
-    {"id": "usa_today", "name": "USA Today", "loc": "USA", "lang": "en",
-     "site": "https://www.usatoday.com", "src": [("ff", "USAT")]},
-    {"id": "washington_post", "name": "The Washington Post", "loc": "USA", "lang": "en",
-     "site": "https://www.washingtonpost.com", "src": [("ff", "DC_WP")]},
-    {"id": "la_times", "name": "Los Angeles Times", "loc": "USA", "lang": "en",
-     "site": "https://www.latimes.com", "src": [("ff", "CA_LAT")]},
-    {"id": "chicago_tribune", "name": "Chicago Tribune", "loc": "USA", "lang": "en",
-     "site": "https://www.chicagotribune.com", "src": [("ff", "IL_CT")]},
-    {"id": "boston_globe", "name": "The Boston Globe", "loc": "USA", "lang": "en",
-     "site": "https://www.bostonglobe.com", "src": [("ff", "MA_BG")]},
-    {"id": "ny_post", "name": "New York Post", "loc": "USA", "lang": "en",
-     "site": "https://nypost.com", "src": [("ff", "NY_NYP")]},
-    {"id": "newsday", "name": "Newsday", "loc": "USA", "lang": "en",
-     "site": "https://www.newsday.com", "src": [("ff", "NY_ND")]},
-    {"id": "denver_post", "name": "The Denver Post", "loc": "USA", "lang": "en",
-     "site": "https://www.denverpost.com", "src": [("ff", "CO_DP")]},
-    {"id": "sf_chronicle", "name": "San Francisco Chronicle", "loc": "USA", "lang": "en",
-     "site": "https://www.sfchronicle.com", "src": [("ff", "CA_SFC")]},
-    {"id": "houston_chronicle", "name": "Houston Chronicle", "loc": "USA", "lang": "en",
-     "site": "https://www.houstonchronicle.com", "src": [("ff", "TX_HC")]},
-    {"id": "dallas_news", "name": "The Dallas Morning News", "loc": "USA", "lang": "en",
-     "site": "https://www.dallasnews.com", "src": [("ff", "TX_DMN")]},
-    {"id": "star_tribune", "name": "Star Tribune", "loc": "USA", "lang": "en",
-     "site": "https://www.startribune.com", "src": [("ff", "MN_ST")]},
-    {"id": "philly_inquirer", "name": "The Philadelphia Inquirer", "loc": "USA", "lang": "en",
-     "site": "https://www.inquirer.com", "src": [("ff", "PA_PI")]},
-    {"id": "seattle_times", "name": "The Seattle Times", "loc": "USA", "lang": "en",
-     "site": "https://www.seattletimes.com", "src": [("ff", "WA_ST")]},
-    {"id": "ajc", "name": "Atlanta Journal-Constitution", "loc": "USA", "lang": "en",
-     "site": "https://www.ajc.com", "src": [("ff", "GA_AJC")]},
-    {"id": "miami_herald", "name": "Miami Herald", "loc": "USA", "lang": "en",
-     "site": "https://www.miamiherald.com", "src": [("ff", "FL_MH")]},
-    {"id": "arizona_republic", "name": "The Arizona Republic", "loc": "USA", "lang": "en",
-     "site": "https://www.azcentral.com", "src": [("ff", "AZ_AR")]},
-    {"id": "washington_times", "name": "The Washington Times", "loc": "USA", "lang": "en",
-     "site": "https://www.washingtontimes.com", "src": [("ff", "DC_WT")]},
+# Non-Israeli MENA countries we care about, with the slug frontpages.com and the
+# country code Kiosko/PressReader tend to use.
+COUNTRIES = [
+    # (display,           fp.com slug,            iso2, kiosko-geo guesses)
+    ("Saudi Arabia",      "saudi-arabia",         "sa", ["asi", "afr"]),
+    ("United Arab Emirates", "uae",               "ae", ["asi"]),
+    ("Qatar",             "qatar",                "qa", ["asi"]),
+    ("Kuwait",            "kuwait",               "kw", ["asi"]),
+    ("Bahrain",           "bahrain",              "bh", ["asi"]),
+    ("Oman",              "oman",                 "om", ["asi"]),
+    ("Egypt",             "egypt",                "eg", ["afr"]),
+    ("Jordan",            "jordan",               "jo", ["asi"]),
+    ("Lebanon",           "lebanon",              "lb", ["asi"]),
+    ("Iraq",              "iraq",                 "iq", ["asi"]),
+    ("Iran",              "iran",                 "ir", ["asi"]),
+    ("Turkey",            "turkey",               "tr", ["eur", "asi"]),
+    ("Syria",             "syria",                "sy", ["asi"]),
+    ("Yemen",             "yemen",                "ye", ["asi"]),
+    ("Palestine",         "palestine",            "ps", ["asi"]),
+    ("Morocco",           "morocco",              "ma", ["afr"]),
+    ("Tunisia",           "tunisia",              "tn", ["afr"]),
+    ("Algeria",           "algeria",              "dz", ["afr"]),
+]
 
-    # ——— United Kingdom (Kiosko) ———
-    {"id": "the_times", "name": "The Times", "loc": "UK", "lang": "en",
-     "site": "https://www.thetimes.co.uk", "src": [("kiosko", "uk", "the_times")]},
-    {"id": "telegraph", "name": "The Daily Telegraph", "loc": "UK", "lang": "en",
-     "site": "https://www.telegraph.co.uk",
-     "src": [("kiosko", "uk", "the_daily_telegraph"), ("kiosko", "uk", "telegraph")]},
-    {"id": "the_independent", "name": "The Independent", "loc": "UK", "lang": "en",
-     "site": "https://www.independent.co.uk",
-     "src": [("kiosko", "uk", "the_independent"), ("kiosko", "uk", "independent")]},
-    {"id": "i_paper", "name": "The i Paper", "loc": "UK", "lang": "en",
-     "site": "https://inews.co.uk",
-     "src": [("kiosko", "uk", "i"), ("kiosko", "uk", "inews"), ("kiosko", "uk", "the_i")]},
-    {"id": "daily_mail", "name": "Daily Mail", "loc": "UK", "lang": "en",
-     "site": "https://www.dailymail.co.uk", "src": [("kiosko", "uk", "daily_mail")]},
-    {"id": "metro_uk", "name": "Metro", "loc": "UK", "lang": "en",
-     "site": "https://metro.co.uk", "src": [("kiosko", "uk", "metro")]},
-    {"id": "guardian", "name": "The Guardian", "loc": "UK", "lang": "en",
-     "site": "https://www.theguardian.com", "src": [("kiosko", "uk", "guardian")]},
+IMG_RE = re.compile(
+    r'https?://[^\s"\'<>()]+?\.(?:jpg|jpeg|png|webp)(?:\?[^\s"\'<>()]*)?', re.I)
+OG_RE = re.compile(
+    r'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)',
+    re.I)
+CID_RE = re.compile(r'(?:i\.prcdn\.co/img\?cid=|[?&]cid=)(\d+)', re.I)
+# filenames that are clearly NOT a front-page scan
+JUNK_IMG = re.compile(r'(logo|sprite|icon|favicon|avatar|flag|placeholder|'
+                      r'banner|ad[s_-]|pixel|blank|default|share|social)', re.I)
 
-    # ——— France (Kiosko) ———
-    {"id": "le_monde", "name": "Le Monde", "loc": "France", "lang": "fr",
-     "site": "https://www.lemonde.fr", "src": [("kiosko", "fr", "le_monde")]},
-    {"id": "le_figaro", "name": "Le Figaro", "loc": "France", "lang": "fr",
-     "site": "https://www.lefigaro.fr", "src": [("kiosko", "fr", "le_figaro")]},
-    {"id": "liberation", "name": "Libération", "loc": "France", "lang": "fr",
-     "site": "https://www.liberation.fr", "src": [("kiosko", "fr", "liberation")]},
-    {"id": "les_echos", "name": "Les Échos", "loc": "France", "lang": "fr",
-     "site": "https://www.lesechos.fr", "src": [("kiosko", "fr", "les_echos")]},
-    {"id": "le_parisien", "name": "Le Parisien", "loc": "France", "lang": "fr",
-     "site": "https://www.leparisien.fr",
-     "src": [("kiosko", "fr", "le_parisien"), ("kiosko", "fr", "aujourd_hui_en_france")]},
-    {"id": "la_croix", "name": "La Croix", "loc": "France", "lang": "fr",
-     "site": "https://www.la-croix.com", "src": [("kiosko", "fr", "la_croix")]},
-    {"id": "l_equipe", "name": "L'Équipe", "loc": "France", "lang": "fr",
-     "site": "https://www.lequipe.fr",
-     "src": [("kiosko", "fr", "l_equipe"), ("kiosko", "fr", "lequipe")]},
 
-    # ——— Spain (Kiosko) ———
-    {"id": "el_pais", "name": "El País", "loc": "Spain", "lang": "es",
-     "site": "https://elpais.com", "src": [("kiosko", "es", "el_pais")]},
-    {"id": "el_mundo", "name": "El Mundo", "loc": "Spain", "lang": "es",
-     "site": "https://www.elmundo.es", "src": [("kiosko", "es", "el_mundo")]},
-    {"id": "abc_es", "name": "ABC", "loc": "Spain", "lang": "es",
-     "site": "https://www.abc.es", "src": [("kiosko", "es", "abc")]},
-    {"id": "la_vanguardia", "name": "La Vanguardia", "loc": "Spain", "lang": "es",
-     "site": "https://www.lavanguardia.com", "src": [("kiosko", "es", "la_vanguardia")]},
-    {"id": "el_periodico", "name": "El Periódico", "loc": "Spain", "lang": "es",
-     "site": "https://www.elperiodico.com", "src": [("kiosko", "es", "el_periodico")]},
-    {"id": "marca", "name": "Marca", "loc": "Spain", "lang": "es",
-     "site": "https://www.marca.com", "src": [("kiosko", "es", "marca")]},
-    {"id": "as_es", "name": "Diario AS", "loc": "Spain", "lang": "es",
-     "site": "https://as.com",
-     "src": [("kiosko", "es", "diario_as"), ("kiosko", "es", "as")]},
+def referer_for(url: str):
+    if "kiosko.net" in url:
+        return "https://en.kiosko.net/"
+    if "freedomforum.org" in url:
+        return "https://frontpages.freedomforum.org/"
+    if "prcdn.co" in url:
+        return "https://www.pressreader.com/"
+    if "frontpages.com" in url:
+        return "https://www.frontpages.com/"
+    return None
 
-    # ——— Italy (Kiosko) ———
-    {"id": "corriere", "name": "Corriere della Sera", "loc": "Italy", "lang": "it",
-     "site": "https://www.corriere.it", "src": [("kiosko", "it", "corriere_della_sera")]},
-    {"id": "repubblica", "name": "La Repubblica", "loc": "Italy", "lang": "it",
-     "site": "https://www.repubblica.it", "src": [("kiosko", "it", "la_repubblica")]},
-    {"id": "la_stampa", "name": "La Stampa", "loc": "Italy", "lang": "it",
-     "site": "https://www.lastampa.it", "src": [("kiosko", "it", "la_stampa")]},
-    {"id": "il_sole", "name": "Il Sole 24 Ore", "loc": "Italy", "lang": "it",
-     "site": "https://www.ilsole24ore.com", "src": [("kiosko", "it", "il_sole_24_ore")]},
-    {"id": "gazzetta", "name": "La Gazzetta dello Sport", "loc": "Italy", "lang": "it",
-     "site": "https://www.gazzetta.it", "src": [("kiosko", "it", "la_gazzetta_dello_sport")]},
 
-    # ——— Germany (Kiosko) ———
-    {"id": "die_welt", "name": "Die Welt", "loc": "Germany", "lang": "de",
-     "site": "https://www.welt.de", "src": [("kiosko", "de", "die_welt")]},
-    {"id": "faz", "name": "Frankfurter Allgemeine", "loc": "Germany", "lang": "de",
-     "site": "https://www.faz.net",
-     "src": [("kiosko", "de", "frankfurter_allgemeine"), ("kiosko", "de", "faz")]},
-    {"id": "sueddeutsche", "name": "Süddeutsche Zeitung", "loc": "Germany", "lang": "de",
-     "site": "https://www.sueddeutsche.de",
-     "src": [("kiosko", "de", "sueddeutsche_zeitung"), ("kiosko", "de", "sueddeutsche")]},
-    {"id": "bild", "name": "Bild", "loc": "Germany", "lang": "de",
-     "site": "https://www.bild.de", "src": [("kiosko", "de", "bild")]},
-    {"id": "handelsblatt", "name": "Handelsblatt", "loc": "Germany", "lang": "de",
-     "site": "https://www.handelsblatt.com", "src": [("kiosko", "de", "handelsblatt")]},
-    {"id": "tagesspiegel", "name": "Der Tagesspiegel", "loc": "Germany", "lang": "de",
-     "site": "https://www.tagesspiegel.de", "src": [("kiosko", "de", "der_tagesspiegel")]},
+def get(session, url, as_image=False):
+    """Return (ok, info, content_or_text). For images, ok means a real cover."""
+    headers = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
+    ref = referer_for(url)
+    if ref:
+        headers["Referer"] = ref
+    headers["Accept"] = ("image/avif,image/webp,image/*,*/*" if as_image
+                         else "text/html,application/xhtml+xml,*/*")
+    try:
+        r = session.get(url, headers=headers, timeout=TIMEOUT)
+    except Exception as e:
+        return False, f"ERR {type(e).__name__}: {str(e)[:80]}", None
+    ct = r.headers.get("Content-Type", "")
+    if as_image:
+        ok = (r.status_code == 200 and ct.startswith("image/")
+              and len(r.content) >= MIN_BYTES)
+        return ok, f"{r.status_code} {ct or '?'} {len(r.content)}B", r.content
+    ok = r.status_code == 200
+    return ok, f"{r.status_code} {ct or '?'} {len(r.text)}c", r.text
+
+
+def extract_images(html, base_host_hint=""):
+    """Pull candidate cover-image URLs out of an HTML page, best first."""
+    urls = []
+    for m in OG_RE.finditer(html):
+        urls.append(m.group(1))
+    urls += IMG_RE.findall(html)
+    # de-dupe, drop obvious junk, keep order
+    seen, out = set(), []
+    for u in urls:
+        u = u.replace("&amp;", "&").strip()
+        if u in seen or JUNK_IMG.search(u):
+            continue
+        seen.add(u)
+        out.append(u)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# 1. frontpages.com — per-country MENA listing pages
+# ---------------------------------------------------------------------------
+def probe_frontpages_com(session):
+    print("\n=== 1. frontpages.com ===")
+    out = []
+    for disp, slug, iso2, _ in COUNTRIES:
+        page = f"https://www.frontpages.com/{slug}-newspapers/"
+        ok, info, html = get(session, page)
+        print(f"  [{disp}] {page} -> {info}")
+        entry = {"country": disp, "page": page, "page_info": info,
+                 "candidates": [], "covers_ok": []}
+        if ok and html:
+            imgs = extract_images(html)
+            entry["candidates"] = imgs[:MAX_IMGS_PER_PAGE]
+            for iu in imgs[:MAX_IMGS_PER_PAGE]:
+                iok, iinfo, _ = get(session, iu, as_image=True)
+                if iok:
+                    entry["covers_ok"].append({"url": iu, "info": iinfo})
+                    print(f"      OK cover {iu} ({iinfo})")
+                time.sleep(PAUSE)
+        out.append(entry)
+        time.sleep(PAUSE)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# 2. Kiosko — scrape MENA country indices, then test the .750 covers
+# ---------------------------------------------------------------------------
+KIOSKO_IMG = re.compile(
+    r'img\.kiosko\.net/(\d{4})/(\d{2})/(\d{2})/([a-z]+)/([a-z0-9_\-]+)\.\d+\.jpg',
+    re.I)
+
+
+def probe_kiosko(session):
+    print("\n=== 2. Kiosko ===")
+    out = []
+    index_urls = []
+    for disp, slug, iso2, geos in COUNTRIES:
+        index_urls.append((disp, f"https://en.kiosko.net/{iso2}/"))
+        for g in geos:
+            index_urls.append((disp, f"https://en.kiosko.net/{g}/geo/{iso2}.html"))
+
+    found = {}   # (geo, slug) -> country
+    for disp, idx in index_urls:
+        ok, info, html = get(session, idx)
+        print(f"  index [{disp}] {idx} -> {info}")
+        if ok and html:
+            for m in KIOSKO_IMG.finditer(html):
+                geo, pslug = m.group(4), m.group(5)
+                found.setdefault((geo, pslug), disp)
+        time.sleep(PAUSE)
+
+    print(f"  discovered {len(found)} (geo,slug) pairs; testing covers…")
+    for (geo, pslug), disp in sorted(found.items()):
+        hit = None
+        for d in DATES:
+            u = f"https://img.kiosko.net/{d:%Y/%m/%d}/{geo}/{pslug}.750.jpg"
+            iok, iinfo, _ = get(session, u, as_image=True)
+            if iok:
+                hit = {"country": disp, "geo": geo, "slug": pslug,
+                       "url": u, "date": d.isoformat(), "info": iinfo}
+                break
+            time.sleep(PAUSE)
+        if hit:
+            print(f"      OK {disp:14s} {geo}/{pslug}")
+            out.append(hit)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# 3. Freedom Forum — old CDN candidate codes + the new TFP site
+# ---------------------------------------------------------------------------
+FF_CANDIDATE_CODES = [
+    # UAE
+    "UAE_TN", "UAE_GN", "UAE_KT", "UAE_GT",
+    # Qatar
+    "QAT_GT", "QAT_PEN", "QAT_QT",
+    # Saudi Arabia
+    "SAU_AN", "SAU_SG", "KSA_AN",
+    # Egypt
+    "EGY_AH", "EGY_ET", "EGY_DNE",
+    # Jordan
+    "JOR_JT", "JOR_AD",
+    # Lebanon
+    "LEB_DS", "LEB_OLJ",
+    # Kuwait / Bahrain / Oman
+    "KUW_KT", "KUW_AT", "BAH_GDN", "OMA_TO", "OMA_ODO",
+    # Iran / Iraq / Turkey
+    "IRN_TT", "IRQ_BG", "TUR_DS", "TUR_HDN", "TUR_DN",
 ]
 
 
-def candidate_url(src, d) -> str:
-    if src[0] == "ff":
-        return f"https://cdn.freedomforum.org/dfp/jpg{d.day}/lg/{src[1]}.jpg"
-    if src[0] == "kiosko":
-        return f"https://img.kiosko.net/{d:%Y/%m/%d}/{src[1]}/{src[2]}.750.jpg"
-    raise ValueError(src)
+def probe_freedomforum(session):
+    print("\n=== 3. Freedom Forum ===")
+    out = {"old_cdn": [], "new_tfp": {}}
+    # 3a. old CDN, keyed by day-of-month
+    for code in FF_CANDIDATE_CODES:
+        hit = None
+        for d in DATES:
+            u = f"https://cdn.freedomforum.org/dfp/jpg{d.day}/lg/{code}.jpg"
+            iok, iinfo, _ = get(session, u, as_image=True)
+            if iok:
+                hit = {"code": code, "url": u, "date": d.isoformat(), "info": iinfo}
+                break
+            time.sleep(PAUSE)
+        if hit:
+            print(f"      OK old-cdn {code}")
+            out["old_cdn"].append(hit)
+
+    # 3b. new TFP — look for a JSON listing of papers + image URLs
+    for probe in [
+        "https://frontpages.freedomforum.org/",
+        "https://frontpages.freedomforum.org/api/papers",
+        "https://frontpages.freedomforum.org/data/papers.json",
+    ]:
+        ok, info, body = get(session, probe)
+        print(f"  new-tfp {probe} -> {info}")
+        out["new_tfp"][probe] = {"info": info}
+        if ok and body and ("freedomforum" in probe):
+            # record any cover URLs + any country/MENA hints we can see
+            imgs = extract_images(body)
+            mena = [u for u in imgs if re.search(
+                r'(uae|qat|sau|ksa|egy|jor|leb|kuw|bah|oma|irn|irq|tur)', u, re.I)]
+            out["new_tfp"][probe]["sample_imgs"] = imgs[:20]
+            out["new_tfp"][probe]["mena_imgs"] = mena[:20]
+        time.sleep(PAUSE)
+    return out
 
 
-def referer(url: str) -> str:
-    if "kiosko" in url:
-        return "https://en.kiosko.net/"
-    return "https://www.freedomforum.org/todaysfrontpages/"
+# ---------------------------------------------------------------------------
+# 4. Per-paper e-papers (each paper's OWN site)
+# ---------------------------------------------------------------------------
+EPAPERS = [
+    ("Arab News", "Saudi Arabia", "https://www.arabnews.com/issuepdf"),
+    ("Saudi Gazette", "Saudi Arabia", "https://saudigazette.com.sa/"),
+    ("Gulf Times", "Qatar", "https://www.gulf-times.com/pdfs"),
+    ("Gulf Times (epaper)", "Qatar", "https://epaper.gulf-times.com/"),
+    ("The Peninsula", "Qatar", "https://thepeninsulaqatar.com/epaper"),
+    ("Qatar Tribune", "Qatar", "https://www.qatar-tribune.com/PDF"),
+    ("Khaleej Times", "UAE", "https://epaper.khaleejtimes.com/"),
+    ("Gulf News (epaper)", "UAE", "https://gulfnews.com/epaper"),
+    ("Oman Daily Observer", "Oman", "https://www.omanobserver.om/epaper/"),
+    ("Times of Oman", "Oman", "https://timesofoman.com/epaper"),
+    ("Kuwait Times", "Kuwait", "https://www.kuwaittimes.com/epaper"),
+    ("The Jordan Times", "Jordan", "https://jordantimes.com/"),
+    ("Daily News Egypt", "Egypt", "https://www.dailynewsegypt.com/"),
+    ("Tehran Times", "Iran", "https://www.tehrantimes.com/"),
+    ("Daily Sabah", "Turkey", "https://www.dailysabah.com/"),
+    ("Hurriyet Daily News", "Turkey", "https://www.hurriyetdailynews.com/"),
+]
 
 
-def get(session: requests.Session, url: str):
-    try:
-        r = session.get(url, timeout=TIMEOUT, headers={
-            "User-Agent": UA, "Referer": referer(url),
-            "Accept": "image/avif,image/webp,image/*,*/*"})
-    except Exception as e:
-        return False, f"ERR {e}"
-    ct = r.headers.get("Content-Type", "")
-    ok = r.status_code == 200 and ct.startswith("image/") and len(r.content) >= MIN_BYTES
-    return ok, f"{r.status_code} {ct or '?'} {len(r.content)}B"
+def probe_epapers(session):
+    print("\n=== 4. Per-paper e-papers ===")
+    out = []
+    for name, country, page in EPAPERS:
+        ok, info, html = get(session, page)
+        print(f"  [{name}] {page} -> {info}")
+        entry = {"name": name, "country": country, "page": page,
+                 "page_info": info, "candidates": [], "covers_ok": []}
+        if ok and html:
+            imgs = extract_images(html)
+            # also surface PDFs that may be the cover
+            pdfs = re.findall(
+                r'https?://[^\s"\'<>()]+?\.pdf(?:\?[^\s"\'<>()]*)?', html, re.I)
+            entry["candidates"] = imgs[:MAX_IMGS_PER_PAGE]
+            entry["pdfs"] = list(dict.fromkeys(pdfs))[:10]
+            for iu in imgs[:MAX_IMGS_PER_PAGE]:
+                iok, iinfo, _ = get(session, iu, as_image=True)
+                if iok:
+                    entry["covers_ok"].append({"url": iu, "info": iinfo})
+                    print(f"      OK cover {iu} ({iinfo})")
+                time.sleep(PAUSE)
+        out.append(entry)
+        time.sleep(PAUSE)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# 5. PressReader — discover cid from the public publication page, test i.prcdn.co
+# ---------------------------------------------------------------------------
+PR_SLUGS = [
+    ("Gulf News", "UAE", "gulf-news"),
+    ("Khaleej Times", "UAE", "khaleej-times"),
+    ("Gulf Times", "Qatar", "gulf-times"),
+    ("The Peninsula", "Qatar", "the-peninsula"),
+    ("Arab News", "Saudi Arabia", "arab-news"),
+    ("Saudi Gazette", "Saudi Arabia", "saudi-gazette"),
+    ("The Jordan Times", "Jordan", "the-jordan-times"),
+    ("Kuwait Times", "Kuwait", "kuwait-times"),
+    ("Oman Daily Observer", "Oman", "oman-daily-observer"),
+    ("Times of Oman", "Oman", "times-of-oman"),
+    ("Daily Sabah", "Turkey", "daily-sabah"),
+    ("Tehran Times", "Iran", "tehran-times"),
+]
+
+
+def probe_pressreader(session):
+    print("\n=== 5. PressReader ===")
+    out = []
+    for name, country, slug in PR_SLUGS:
+        page = f"https://www.pressreader.com/newspapers/n/{slug}"
+        ok, info, html = get(session, page)
+        cids = []
+        if ok and html:
+            cids = sorted(set(CID_RE.findall(html)), key=int)
+        print(f"  [{name}] {page} -> {info}  cids={cids[:5]}")
+        entry = {"name": name, "country": country, "page": page,
+                 "page_info": info, "cids": cids[:5], "cover_ok": None}
+        for cid in cids[:3]:
+            u = f"https://i.prcdn.co/img?cid={cid}&page=1&width=600"
+            iok, iinfo, _ = get(session, u, as_image=True)
+            if iok:
+                entry["cover_ok"] = {"cid": cid, "url": u, "info": iinfo}
+                print(f"      OK cover cid={cid} ({iinfo})")
+                break
+            time.sleep(PAUSE)
+        out.append(entry)
+        time.sleep(PAUSE)
+    return out
 
 
 def main():
     session = requests.Session()
-    results = []
-    for c in CANDIDATES:
-        winner = None
-        last = ""
-        for d in DATES:
-            for src in c["src"]:
-                url = candidate_url(src, d)
-                ok, info = get(session, url)
-                last = info
-                if ok:
-                    winner = (src, d, url)
-                    break
-            if winner:
-                break
-
-        row = {
-            "id": c["id"], "name": c["name"], "loc": c["loc"], "lang": c["lang"],
-            "site": c["site"], "ok": bool(winner),
-        }
-        if winner:
-            src, d, url = winner
-            row["src"] = list(src)
-            row["date"] = d.isoformat()
-            row["url"] = url
-            print(f"OK  {c['name']:30s} -> {src}  ({d})")
-        else:
-            row["src"] = None
-            row["last"] = last
-            print(f"--  {c['name']:30s} (last: {last})")
-        results.append(row)
-
-    out = {
+    report = {
         "ran": datetime.now(timezone.utc).isoformat(),
-        "dates_tried": [d.isoformat() for d in DATES],
-        "ok_count": sum(1 for r in results if r["ok"]),
-        "results": results,
+        "date": today.isoformat(),
+        "note": "Recon probe for NON-ISRAELI Middle East front pages.",
+        "frontpages_com": [],
+        "kiosko": [],
+        "freedomforum": {},
+        "epapers": [],
+        "pressreader": [],
     }
+    for label, fn, key in [
+        ("frontpages.com", probe_frontpages_com, "frontpages_com"),
+        ("kiosko", probe_kiosko, "kiosko"),
+        ("freedomforum", probe_freedomforum, "freedomforum"),
+        ("epapers", probe_epapers, "epapers"),
+        ("pressreader", probe_pressreader, "pressreader"),
+    ]:
+        try:
+            report[key] = fn(session)
+        except Exception as e:
+            print(f"!! {label} crashed: {type(e).__name__}: {e}", file=sys.stderr)
+            report[key] = {"error": f"{type(e).__name__}: {e}"}
+
+    # ---- summary ----
+    fp_ok = sum(len(c["covers_ok"]) for c in report["frontpages_com"]
+                if isinstance(c, dict))
+    kiosko_ok = len(report["kiosko"]) if isinstance(report["kiosko"], list) else 0
+    ff_ok = (len(report["freedomforum"].get("old_cdn", []))
+             if isinstance(report["freedomforum"], dict) else 0)
+    ep_ok = sum(len(c["covers_ok"]) for c in report["epapers"]
+                if isinstance(c, dict))
+    pr_ok = sum(1 for c in report["pressreader"]
+                if isinstance(c, dict) and c.get("cover_ok"))
+    report["summary"] = {
+        "frontpages_com_covers": fp_ok,
+        "kiosko_covers": kiosko_ok,
+        "freedomforum_old_cdn": ff_ok,
+        "epaper_covers": ep_ok,
+        "pressreader_covers": pr_ok,
+    }
+
     out_path = Path(__file__).parent.parent / "state" / "probe_results.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\nWrote {out_path} — {out['ok_count']}/{len(results)} reachable")
+    out_path.write_text(json.dumps(report, ensure_ascii=False, indent=2),
+                        encoding="utf-8")
+    print("\n================  SUMMARY  ================")
+    for k, v in report["summary"].items():
+        print(f"  {k:24s}: {v}")
+    print(f"\nWrote {out_path}")
 
 
 if __name__ == "__main__":
