@@ -166,8 +166,8 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .briefing-card strong{color:var(--ink);font-weight:600}
 
 /* Media Pulse word cloud */
-.pulse-cloud{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:28px 24px;margin-bottom:18px;line-height:1.3;box-shadow:var(--sh1)}
-.pulse-term{cursor:pointer;font-family:'Newsreader',Georgia,serif;font-weight:600;color:var(--ink);transition:.12s;line-height:1}
+.pulse-cloud{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 18px;background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:34px 28px;margin-bottom:18px;line-height:1.12;box-shadow:var(--sh1)}
+.pulse-term{cursor:pointer;font-family:'Newsreader',Georgia,serif;font-weight:600;color:var(--tc,var(--ink));transition:color .12s;line-height:1;letter-spacing:-.01em;white-space:nowrap}
 .pulse-term:hover{color:var(--accent)}
 .pulse-term.active{color:var(--accent);text-decoration:underline}
 .pulse-detail{margin-bottom:24px}
@@ -527,16 +527,31 @@ async function loadPulse(){
     cloud.innerHTML = `<div class="hl-loading">Pulse not yet available — it builds on the next 30-min refresh.</div>`;
     return;
   }
-  const terms = (pulseData.terms || []);
-  if(!terms.length){ cloud.innerHTML = `<div class="hl-loading">No terms yet.</div>`; return; }
-  const counts = terms.map(t=>t.count);
+  const src = (pulseData.terms || []);
+  if(!src.length){ cloud.innerHTML = `<div class="hl-loading">No terms yet.</div>`; return; }
+  const counts = src.map(t=>t.count);
   const min = Math.min(...counts), max = Math.max(...counts);
-  const MIN_PX = 14, MAX_PX = 46;
-  const size = c => max === min ? (MIN_PX+MAX_PX)/2
-    : MIN_PX + (c - min) / (max - min) * (MAX_PX - MIN_PX);
-  cloud.innerHTML = terms.map((t,i)=>
-    `<span class="pulse-term" data-i="${i}" style="font-size:${size(t.count).toFixed(1)}px"
-       onclick="showPulseTerm(${i})" title="${t.count} headlines">${esc(t.term)}</span>`
+  const norm = c => max === min ? 0.5 : (c - min) / (max - min);
+  const MIN_PX = 15, MAX_PX = 56;
+  // Power curve gives a few big words and a long tail of small ones, like a
+  // real word cloud (linear scaling made everything look mid-sized).
+  const size = c => MIN_PX + Math.pow(norm(c), 0.7) * (MAX_PX - MIN_PX);
+  const GOLD = "#C9A24B", NAVY = "#15264F", GRAY = "#8b94a6";
+  const hash = s => { let h = 0; for(let i=0;i<s.length;i++) h = (h*31 + s.charCodeAt(i)) | 0; return Math.abs(h); };
+  const weightFor = c => { const n = norm(c); return n > 0.55 ? 800 : n > 0.28 ? 700 : 600; };
+  // Rank big→small (keeping each term's original index for the detail lookup).
+  // Colour by RANK so the split stays balanced however skewed the counts are:
+  // the smallest ~third go gray, the rest navy with ~30% stable gold accents.
+  const ranked = src.map((t,i)=>({t,i})).sort((a,b)=>b.t.count - a.t.count);
+  const N = ranked.length;
+  ranked.forEach((o,k)=>{ const rf = N > 1 ? k/(N-1) : 0;
+    o.color = rf > 0.68 ? GRAY : (hash(o.t.term) % 10 < 3 ? GOLD : NAVY); });
+  // Lay out largest-in-the-middle so it reads like a packed cloud, not a list.
+  const ordered = [];
+  ranked.forEach((o,k)=>{ if(k % 2 === 0) ordered.push(o); else ordered.unshift(o); });
+  cloud.innerHTML = ordered.map(({t,i,color})=>
+    `<span class="pulse-term" data-i="${i}" onclick="showPulseTerm(${i})" title="${t.count} headlines"
+       style="--tc:${color};font-size:${size(t.count).toFixed(1)}px;font-weight:${weightFor(t.count)}">${esc(t.term)}</span>`
   ).join("");
 }
 
