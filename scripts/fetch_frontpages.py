@@ -14,9 +14,13 @@ aren't carried by either source are omitted rather than shown as permanent
 
 Writes frontpages/manifest.json describing which papers have a current image.
 
-Source kinds:
+Source kinds (all probe-confirmed reachable from a datacenter IP):
   ("ff", CODE)          -> Freedom Forum CDN (keyed by day-of-month)
   ("kiosko", GEO, SLUG) -> Kiosko CDN (keyed by full date)
+  ("gulftimes",)        -> Gulf Times' own CDN: dated page-1 JPEG of the
+                           main section (gulf-times.com/pdf/Y/m/d/main-Ymd-N.jpeg)
+  ("sgpdf",)            -> Saudi Gazette's own dated PDF; page 1 is rendered to
+                           JPEG locally (needs pypdfium2; best-effort)
 """
 import json
 import shutil
@@ -34,6 +38,18 @@ PAPERS = [
     {"id": "the_national", "name": "The National", "loc": "UAE", "lang": "en",
      "site": "https://www.thenationalnews.com",
      "src": [("ff", "UAE_TN"), ("kiosko", "asi", "the_national")]},
+    {"id": "gulf_news", "name": "Gulf News", "loc": "UAE", "lang": "en",
+     "site": "https://gulfnews.com", "src": [("ff", "UAE_GN")]},
+    {"id": "gulf_times", "name": "Gulf Times", "loc": "Qatar", "lang": "en",
+     "site": "https://www.gulf-times.com", "src": [("gulftimes",)]},
+    {"id": "saudi_gazette", "name": "Saudi Gazette", "loc": "Saudi Arabia", "lang": "en",
+     "site": "https://saudigazette.com.sa", "src": [("sgpdf",)]},
+    {"id": "kuwait_times", "name": "Kuwait Times", "loc": "Kuwait", "lang": "en",
+     "site": "https://www.kuwaittimes.com", "src": [("ff", "KUW_KT")]},
+    {"id": "daily_sabah", "name": "Daily Sabah", "loc": "Turkey", "lang": "en",
+     "site": "https://www.dailysabah.com", "src": [("ff", "TUR_DS")]},
+    {"id": "hurriyet", "name": "Hürriyet", "loc": "Turkey", "lang": "tr",
+     "site": "https://www.hurriyet.com.tr", "src": [("kiosko", "tr", "hurriyet")]},
 
     # ——— United States (Freedom Forum — all probe-confirmed) ———
     {"id": "nyt", "name": "New York Times", "loc": "USA", "lang": "en",
@@ -73,11 +89,20 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
 
-def candidate_url(src, d) -> str:
-    if src[0] == "ff":
-        return f"https://cdn.freedomforum.org/dfp/jpg{d.day}/lg/{src[1]}.jpg"
-    if src[0] == "kiosko":
-        return f"https://img.kiosko.net/{d:%Y/%m/%d}/{src[1]}/{src[2]}.750.jpg"
+def candidate_urls(src, d) -> list:
+    """The URL(s) to try for one source on date d, in priority order."""
+    kind = src[0]
+    if kind == "ff":
+        return [f"https://cdn.freedomforum.org/dfp/jpg{d.day}/lg/{src[1]}.jpg"]
+    if kind == "kiosko":
+        return [f"https://img.kiosko.net/{d:%Y/%m/%d}/{src[1]}/{src[2]}.750.jpg"]
+    if kind == "gulftimes":
+        # Gulf Times posts the main section's page 1 as a dated JPEG; the trailing
+        # number is the edition, usually 1 but occasionally a later re-plate (2/3).
+        return [f"https://www.gulf-times.com/pdf/{d:%Y/%m/%d}/main-{d:%Y%m%d}-{e}.jpeg"
+                for e in (1, 2, 3)]
+    if kind == "sgpdf":
+        return [f"https://www.saudigazette.com.sa/uploads/pdf/{d:%Y/%m/%d}/sg-{d:%Y%m%d}.pdf"]
     raise ValueError(src)
 
 
@@ -86,11 +111,42 @@ def referer_for(url: str):
         return "https://en.kiosko.net/"
     if "freedomforum.org" in url:
         return "https://www.freedomforum.org/todaysfrontpages/"
+    if "gulf-times.com" in url:
+        return "https://www.gulf-times.com/"
+    if "saudigazette.com.sa" in url:
+        return "https://www.saudigazette.com.sa/"
     return None
 
 
-def try_download(session: requests.Session, url: str):
-    headers = {"User-Agent": UA, "Accept": "image/avif,image/webp,image/*,*/*"}
+def pdf_first_page_to_jpeg(pdf_bytes: bytes):
+    """Render page 1 of a PDF to JPEG bytes. Best-effort: returns None if
+    pypdfium2 is unavailable or rendering fails, so the paper is simply skipped
+    rather than breaking the whole run."""
+    try:
+        import io
+        import pypdfium2 as pdfium
+    except Exception as exc:
+        print(f"      ! pypdfium2 unavailable, skipping PDF cover: {exc}",
+              file=sys.stderr)
+        return None
+    try:
+        pdf = pdfium.PdfDocument(pdf_bytes)
+        pil = pdf[0].render(scale=2.0).to_pil().convert("RGB")
+        buf = io.BytesIO()
+        pil.save(buf, "JPEG", quality=85, optimize=True)
+        data = buf.getvalue()
+        return data if len(data) >= MIN_BYTES else None
+    except Exception as exc:
+        print(f"      ! PDF render failed: {exc}", file=sys.stderr)
+        return None
+
+
+def fetch_cover(session: requests.Session, url: str):
+    """Download a cover URL and return image bytes. PDFs are rendered to JPEG
+    (page 1). Returns None if it isn't a real cover."""
+    is_pdf = url.lower().split("?")[0].endswith(".pdf")
+    headers = {"User-Agent": UA,
+               "Accept": "*/*" if is_pdf else "image/avif,image/webp,image/*,*/*"}
     ref = referer_for(url)
     if ref:
         headers["Referer"] = ref
@@ -100,7 +156,15 @@ def try_download(session: requests.Session, url: str):
         print(f"      ! {url} -> {exc}", file=sys.stderr)
         return None
     ct = r.headers.get("Content-Type", "")
-    if r.status_code == 200 and ct.startswith("image/") and len(r.content) >= MIN_BYTES:
+    if r.status_code != 200:
+        print(f"      - {url} -> {r.status_code} {ct or '?'} {len(r.content)}B")
+        return None
+    if is_pdf or ct == "application/pdf":
+        img = pdf_first_page_to_jpeg(r.content)
+        if not img:
+            print(f"      - {url} -> PDF unusable ({len(r.content)}B)")
+        return img
+    if ct.startswith("image/") and len(r.content) >= MIN_BYTES:
         return r.content
     print(f"      - {url} -> {r.status_code} {ct or '?'} {len(r.content)}B")
     return None
@@ -199,10 +263,12 @@ def main():
         got = used_url = used_date = None
         for d in dates:
             for src in p["src"]:
-                url = candidate_url(src, d)
-                data = try_download(session, url)
-                if data:
-                    got, used_url, used_date = data, url, d.isoformat()
+                for url in candidate_urls(src, d):
+                    data = fetch_cover(session, url)
+                    if data:
+                        got, used_url, used_date = data, url, d.isoformat()
+                        break
+                if got:
                     break
             if got:
                 break
