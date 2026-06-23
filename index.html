@@ -164,6 +164,39 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .briefing-card p{font-size:15px;line-height:1.85;color:var(--ink2);margin:0 0 14px}
 .briefing-card p:last-child{margin-bottom:0}
 .briefing-card strong{color:var(--ink);font-weight:600}
+/* World Briefing — swipeable topic-card carousel */
+.briefing-meta{margin:-2px 0 14px}
+.brief-carousel{position:relative;margin-bottom:24px}
+.brief-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding:4px 2px 16px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.brief-track::-webkit-scrollbar{height:8px}
+.brief-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+.brief-track::-webkit-scrollbar-track{background:transparent}
+.brief-slide{scroll-snap-align:center;flex:0 0 min(86%,520px);background:var(--card);
+  border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;box-shadow:var(--sh2);
+  display:flex;flex-direction:column}
+.brief-img{position:relative;height:168px;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(120% 120% at 75% 28%,rgba(33,56,107,.7),transparent 60%),
+    linear-gradient(135deg,#0E1A35,#15264F 55%,#21386B);overflow:hidden}
+.brief-img .emoji{font-size:70px;line-height:1;filter:drop-shadow(0 6px 14px rgba(0,0,0,.4))}
+.brief-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+.brief-img .tag{position:absolute;left:14px;bottom:12px;z-index:2;color:#F7F4EE;font-weight:700;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:rgba(14,26,53,.62);
+  padding:5px 12px;border-radius:20px;border:1px solid rgba(201,162,75,.55)}
+.brief-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:9px}
+.brief-h{font-family:'Playfair Display',serif;font-weight:800;font-size:22px;line-height:1.14;color:var(--blue)}
+.brief-sum{font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.62;color:var(--ink2)}
+.brief-prose p{font-size:15px;line-height:1.8;color:var(--ink2);margin:0 0 12px}
+.brief-prose strong{color:var(--blue);font-weight:700}
+.brief-dots{display:flex;gap:7px;justify-content:center;margin-top:6px;flex-wrap:wrap}
+.brief-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.2s;border:none;padding:0}
+.brief-dot.active{background:var(--accent);transform:scale(1.3)}
+.brief-arrow{position:absolute;top:84px;transform:translateY(-50%);z-index:3;width:40px;height:40px;
+  border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--blue);
+  font-size:22px;line-height:1;display:none;align-items:center;justify-content:center;box-shadow:var(--sh2)}
+.brief-arrow:hover{background:#fff;color:var(--accent)}
+.brief-arrow.prev{left:-6px}.brief-arrow.next{right:-6px}
+@media (hover:hover) and (min-width:760px){.brief-arrow{display:flex}}
 
 /* Media Pulse word cloud */
 .pulse-cloud{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 18px;background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:34px 28px;margin-bottom:18px;line-height:1.12;box-shadow:var(--sh1)}
@@ -234,12 +267,12 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
   <!-- WORLD BRIEFING TAB -->
   <div class="section active" id="sec-briefing">
     <div class="sec-head"><h2>World Briefing</h2></div>
-    <div class="briefing-card" id="briefing-card" style="display:none">
-      <div class="briefing-head">
-        <span class="briefing-title">World Briefing</span>
-        <span class="briefing-ts" id="briefing-ts"></span>
-      </div>
-      <div id="briefing-body"></div>
+    <div class="briefing-meta"><span class="briefing-ts" id="briefing-ts"></span></div>
+    <div class="brief-carousel" id="brief-carousel" style="display:none">
+      <button class="brief-arrow prev" id="brief-prev" aria-label="Previous card">‹</button>
+      <div class="brief-track" id="brief-track"></div>
+      <button class="brief-arrow next" id="brief-next" aria-label="Next card">›</button>
+      <div class="brief-dots" id="brief-dots"></div>
     </div>
     <div id="briefing-placeholder" class="hl-loading">Loading World Briefing…</div>
   </div>
@@ -569,13 +602,89 @@ function showPulseTerm(i){
     `<div class="pulse-detail-head">"${esc(t.term)}" — ${t.count} headline${t.count===1?"":"s"}</div>${hls}`;
 }
 
+// Card image resolution: prefer a real front-page cover we host for the card's
+// region, else a country flag, else a topical icon — so a card is never blank.
+const BRIEF_FLAG = {
+  ukraine:'🇺🇦', russia:'🇷🇺', china:'🇨🇳', beijing:'🇨🇳', iran:'🇮🇷', tehran:'🇮🇷',
+  israel:'🇮🇱', israeli:'🇮🇱', lebanon:'🇱🇧', hezbollah:'🇱🇧', beirut:'🇱🇧',
+  syria:'🇸🇾', damascus:'🇸🇾', yemen:'🇾🇪', houthi:'🇾🇪', egypt:'🇪🇬', cairo:'🇪🇬',
+  turkey:'🇹🇷', iraq:'🇮🇶', qatar:'🇶🇦', kuwait:'🇰🇼', bahrain:'🇧🇭', oman:'🇴🇲',
+  jordan:'🇯🇴', sudan:'🇸🇩', libya:'🇱🇾', tunisia:'🇹🇳', algeria:'🇩🇿',
+  'saudi':'🇸🇦', riyadh:'🇸🇦', uae:'🇦🇪', emirates:'🇦🇪', gulf:'🇸🇦',
+  gaza:'🇵🇸', palestin:'🇵🇸', 'west bank':'🇵🇸',
+  'united states':'🇺🇸', 'u.s.':'🇺🇸', america:'🇺🇸', washington:'🇺🇸', trump:'🇺🇸',
+  europe:'🇪🇺', 'european union':'🇪🇺', brussels:'🇪🇺',
+  britain:'🇬🇧', british:'🇬🇧', brexit:'🇬🇧', 'u.k.':'🇬🇧', london:'🇬🇧',
+  france:'🇫🇷', paris:'🇫🇷', germany:'🇩🇪',
+  pakistan:'🇵🇰', india:'🇮🇳', afghanistan:'🇦🇫', 'north korea':'🇰🇵', japan:'🇯🇵',
+  venezuela:'🇻🇪', taiwan:'🇹🇼'
+};
+const BRIEF_TOPIC = [
+  [/(econom|market|stock|equit|inflation|tariff|gdp|fiscal|\bdebt|currenc|invest)/,'📈'],
+  [/(\boil|\bgas\b|energy|opec|barrel|pipeline|crude|\blng)/,'🛢️'],
+  [/(nuclear|enrich|uranium|atomic|centrifuge)/,'☢️'],
+  [/(diploma|summit|talks|negotiat|accord|treaty|cease.?fire|mediat|envoy|normaliz)/,'🤝'],
+  [/(war|militar|strike|missile|drone|troops|forces|offensive|securit|defen[cs]e|attack|raid|clash)/,'🛡️'],
+  [/(election|\bvote|parliament|coalition|govern|politic|protest)/,'🏛️'],
+  [/(court|trial|tribunal|legal|sanction|ruling|genocide)/,'⚖️'],
+  [/(climate|weather|flood|storm|drought|wildfire|quake|earthquake)/,'🌪️']
+];
+// Front-page covers we actually host, keyed by a region keyword.
+const BRIEF_COVER = {
+  israel:'haaretz', israeli:'haaretz', uae:'gulf_news', emirates:'gulf_news',
+  gulf:'gulf_news', qatar:'gulf_times', 'saudi':'saudi_gazette', riyadh:'saudi_gazette',
+  kuwait:'kuwait_times', turkey:'daily_sabah', 'united states':'nyt', america:'nyt',
+  washington:'nyt', britain:'the_independent', british:'the_independent',
+  brexit:'the_independent', 'u.k.':'the_independent', london:'the_independent',
+  germany:'die_welt'
+};
+function briefPick(map, txt){ for(const k in map){ if(txt.includes(k)) return map[k]; } return ''; }
+// Resolve a card's image, weighting the HEADING (its real topic) over the body,
+// and always keeping an emoji behind any cover as an error fallback.
+function briefImg(card){
+  const h = (card.heading||'').toLowerCase();
+  const s = h + ' ' + (card.summary||'').toLowerCase();
+  let cover = briefPick(BRIEF_COVER, h), flag = briefPick(BRIEF_FLAG, h);
+  if(!cover && !flag){ cover = briefPick(BRIEF_COVER, s); flag = briefPick(BRIEF_FLAG, s); }
+  let emoji = flag;
+  if(!emoji){ for(const [re,e] of BRIEF_TOPIC){ if(re.test(h)){ emoji=e; break; } } }
+  if(!emoji){ for(const [re,e] of BRIEF_TOPIC){ if(re.test(s)){ emoji=e; break; } } }
+  return {cover, emoji: emoji || '🌍'};
+}
+function renderBriefCarousel(cards){
+  const track = document.getElementById("brief-track");
+  track.innerHTML = cards.map((c,idx)=>{
+    const pic = briefImg(c);
+    const img = pic.cover ? `<img src="${fpThumbURL(pic.cover)}" loading="lazy" alt="" onerror="this.remove()">` : '';
+    return `<article class="brief-slide">
+      <div class="brief-img"><span class="emoji">${pic.emoji}</span>${img}
+        <span class="tag">${esc(c.heading||('Update '+(idx+1)))}</span></div>
+      <div class="brief-body">
+        <div class="brief-h">${esc(c.heading||'')}</div>
+        <div class="brief-sum">${esc(c.summary||'')}</div>
+      </div></article>`;
+  }).join("");
+  const dots = document.getElementById("brief-dots");
+  dots.innerHTML = cards.map((_,i)=>
+    `<button class="brief-dot${i===0?' active':''}" data-i="${i}" aria-label="Card ${i+1}"></button>`).join("");
+  const slides = [...track.children];
+  const centerOf = el => { const r=el.getBoundingClientRect(); return r.left + r.width/2; };
+  function active(){ const mid=centerOf(track); let best=0,bd=1e9;
+    slides.forEach((s,i)=>{ const dd=Math.abs(centerOf(s)-mid); if(dd<bd){bd=dd;best=i;} }); return best; }
+  function go(i){ i=Math.max(0,Math.min(slides.length-1,i));
+    track.scrollBy({left:centerOf(slides[i])-centerOf(track), behavior:'smooth'}); }
+  dots.querySelectorAll('.brief-dot').forEach(d=> d.onclick=()=>go(+d.dataset.i));
+  document.getElementById("brief-prev").onclick=()=>go(active()-1);
+  document.getElementById("brief-next").onclick=()=>go(active()+1);
+  let raf=0;
+  track.onscroll=()=>{ if(raf) return; raf=requestAnimationFrame(()=>{ raf=0; const a=active();
+    dots.querySelectorAll('.brief-dot').forEach((d,i)=>d.classList.toggle('active', i===a)); }); };
+}
 async function loadBriefing(){
   try{
     const r = await fetch("briefing.json?t=" + Date.now(), {cache:"no-store"});
     if(!r.ok) return;
     const data = await r.json();
-    const html = ((data.html_by_lang && data.html_by_lang.en) || data.html || "").trim();
-    if(!html) return;
     if(data.updated){
       const d = new Date(data.updated);
       document.getElementById("briefing-ts").textContent = "Updated " + d.toLocaleString("en-US",{
@@ -583,8 +692,17 @@ async function loadBriefing(){
         hour:"2-digit", minute:"2-digit", timeZoneName:"short"
       });
     }
-    document.getElementById("briefing-body").innerHTML = html;
-    document.getElementById("briefing-card").style.display = "";
+    const cards = Array.isArray(data.cards) ? data.cards.filter(c=>c && c.summary) : [];
+    if(cards.length){
+      renderBriefCarousel(cards);
+    } else {
+      const html = ((data.html_by_lang && data.html_by_lang.en) || data.html || "").trim();
+      if(!html) return;
+      document.getElementById("brief-track").innerHTML =
+        `<article class="brief-slide" style="flex-basis:min(96%,720px)"><div class="brief-body brief-prose">${html}</div></article>`;
+      document.getElementById("brief-dots").innerHTML = "";
+    }
+    document.getElementById("brief-carousel").style.display = "";
     const ph = document.getElementById("briefing-placeholder");
     if(ph) ph.style.display = "none";
   }catch(e){}

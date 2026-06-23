@@ -65,6 +65,34 @@ def _para_to_html(text: str) -> str:
     return "\n".join(out)
 
 
+def text_to_cards(text: str) -> list:
+    """Split the plain-text briefing into topic cards for the swipe carousel.
+
+    Each paragraph becomes one card. The leading **bold lead-in** (e.g.
+    '**Russia-Ukraine:**') becomes the card heading; the rest is the summary.
+    The opening lead paragraph, which has no lead-in, becomes 'The Big Picture'.
+    """
+    cards = []
+    paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
+    for i, p in enumerate(paras):
+        m = re.match(r"\*\*(.+?)\*\*[:：]?\s*", p)
+        if m:
+            heading = m.group(1).strip().rstrip(":：").strip()
+            summary = p[m.end():].strip()
+        else:
+            heading = "The Big Picture" if i == 0 else ""
+            summary = p
+        # Flatten any remaining inline bold and whitespace.
+        summary = re.sub(r"\*\*(.+?)\*\*", r"\1", summary)
+        summary = re.sub(r"\s+", " ", summary).strip()
+        if not summary:
+            continue
+        if not heading:
+            heading = " ".join(summary.split()[:4]).rstrip(".,:;")
+        cards.append({"heading": heading, "summary": summary})
+    return cards
+
+
 def fetch_world_lines() -> list[str]:
     """Pull today's top stories from major international RSS feeds."""
     try:
@@ -242,6 +270,7 @@ def main():
                 "model": GEMINI_MODEL,
                 "html": html_by_lang["en"],   # back-compat: English
                 "html_by_lang": html_by_lang,
+                "cards": text_to_cards(text),  # swipe-carousel topic cards (EN)
             },
             ensure_ascii=False,
             indent=2,
