@@ -172,6 +172,12 @@ SOURCES = {
             "source": "Tehran Times", "country": "Iran", "lang": "en",
             "url": "https://www.tehrantimes.com",
             "rss": "https://www.tehrantimes.com/rss",
+            # Its full-site Google News feed mixes in sports & culture; exclude
+            # those sections at the query so only news/politics comes through.
+            "gn_exclude": ["volleyball", "football", "soccer", "wrestling",
+                           "basketball", "taekwondo", "sports", "theater",
+                           "theatre", "cinema", "film", "movie", "music",
+                           "festival", "tourism"],
         },
         {
             "source": "Mehr News", "country": "Iran", "lang": "en",
@@ -232,7 +238,8 @@ OFFTOPIC_TERMS = [
     "academy award", "grammy", "golden globe", "film festival", "red carpet",
     "celebrity", "celebrities", "actress", "movie", "movies", "music video",
     "studio album", "rapper", "kardashian", "taylor swift", "beyonce", "netflix",
-    "met gala", "reality show", "reality tv",
+    "met gala", "reality show", "reality tv", "opera", "ballet", "playwright",
+    "philharmonic", "art exhibition", "biennale",
     # — lifestyle / consumer tech —
     "robotaxi", "self-driving", "smartphone", "iphone", "ipad", "playstation",
     "xbox", "nintendo", "smartwatch", "earbuds", "video game", "app store",
@@ -352,9 +359,15 @@ def clean_title(title: str, source: str, domain: str) -> str:
 
 
 def gnews_url(meta: dict) -> str:
-    """Google News RSS search scoped to the outlet's domain, last 24h."""
+    """Google News RSS search scoped to the outlet's domain, last 24h. An outlet
+    may set 'gn_exclude' to drop whole sections (sports, culture…) that its
+    full-site feed would otherwise surface — applied as Google News '-term'
+    exclusions, which match the article body, not just the headline."""
     hl, gl, ceid = GNEWS_LOCALE.get(meta["lang"], GNEWS_LOCALE["en"])
-    query = quote_plus(f"site:{domain_of(meta['url'])} when:1d")
+    q = f"site:{domain_of(meta['url'])} when:1d"
+    for term in meta.get("gn_exclude", []):
+        q += f" -{term}"
+    query = quote_plus(q)
     return f"https://news.google.com/rss/search?q={query}&hl={hl}&gl={gl}&ceid={ceid}"
 
 
