@@ -189,8 +189,9 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .brief-slide{scroll-snap-align:center;flex:0 0 min(86%,460px);background:var(--card);
   border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r3);
   overflow:hidden;box-shadow:var(--sh2);display:flex;flex-direction:column}
-.brief-img{position:relative;height:150px;background:radial-gradient(120% 120% at 50% 30%,#1B2D54,#0E1A35);overflow:hidden;flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:10px}
-.brief-img img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;border-radius:4px;animation:briefimgin .4s ease}
+.brief-img{position:relative;height:152px;background:radial-gradient(120% 120% at 50% 30%,#1B2D54,#0E1A35);overflow:hidden;flex:0 0 auto}
+.brief-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;animation:briefimgin .4s ease}
+.brief-img img.fit{object-fit:contain;padding:8px}
 @keyframes briefimgin{from{opacity:0}to{opacity:1}}
 .brief-body{padding:22px 26px 26px;display:flex;flex-direction:column;gap:13px;min-height:200px}
 .brief-kicker{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
@@ -776,37 +777,41 @@ function briefFlag(card){
   return '';
 }
 
-// Ordered keyword -> Wikipedia page title. People first (real portraits), then
-// groups/events, then places, then topics — so each card prefers a concrete
-// person/event photo. Subjects are de-duplicated across cards.
+// Ordered keyword -> Wikipedia page title, chosen so the lead image is a
+// LANDSCAPE scene/event (fills the banner) rather than a portrait or a flag:
+// current conflicts/events first, then a cityscape of the relevant place, then a
+// topic scene. Subjects are de-duplicated across cards.
 const BRIEF_SUBJECTS = [
-  ["trump","Donald Trump"],["netanyahu","Benjamin Netanyahu"],
-  ["pezeshkian","Masoud Pezeshkian"],["khamenei","Ali Khamenei"],
-  ["erdogan","Recep Tayyip Erdoğan"],["putin","Vladimir Putin"],
-  ["zelensky","Volodymyr Zelenskyy"],["xi jinping","Xi Jinping"],
-  ["macron","Emmanuel Macron"],["starmer","Keir Starmer"],
-  ["el-sisi","Abdel Fattah el-Sisi"],["sisi","Abdel Fattah el-Sisi"],
-  ["bin salman","Mohammed bin Salman"],["nasrallah","Hassan Nasrallah"],
-  ["ghalibaf","Mohammad Bagher Ghalibaf"],["guterres","António Guterres"],
-  ["hezbollah","Hezbollah"],["hamas","Hamas"],["houthi","Houthi movement"],
-  ["islamic state","Islamic State"],["nato","NATO"],["opec","OPEC"],
-  ["security council","United Nations Security Council"],
-  ["gaza","Gaza Strip"],["west bank","West Bank"],
+  // events / conflicts (landscape montages)
   ["russia-ukraine","Russian invasion of Ukraine"],
-  ["ukraine","Russian invasion of Ukraine"],
-  ["nuclear","Nuclear program of Iran"],
-  ["iran","Iran"],["israel","Israel"],["lebanon","Lebanon"],["syria","Syria"],
-  ["yemen","Yemen"],["iraq","Iraq"],["egypt","Egypt"],["turkey","Turkey"],
-  ["saudi","Saudi Arabia"],["qatar","Qatar"],["emirates","United Arab Emirates"],
-  ["uae","United Arab Emirates"],["kuwait","Kuwait"],["jordan","Jordan"],
-  ["china","China"],["russia","Russia"],["united states","United States"],
-  ["washington","United States"],["america","United States"],
-  ["european union","European Union"],["europe","European Union"],
-  ["britain","United Kingdom"],["brexit","Brexit"],["france","France"],
-  ["germany","Germany"],["pakistan","Pakistan"],["india","India"],
-  ["sanction","International sanctions"],["oil","Petroleum industry"],
-  ["energy","Energy"],["economy","World economy"],["market","Stock market"],
-  ["cyber","Cyberwarfare"],["climate","Climate change"],["diploma","Diplomacy"],
+  ["ukraine","Russian invasion of Ukraine"],["zelensky","Russian invasion of Ukraine"],
+  ["syrian civil war","Syrian civil war"],["syria","Syrian civil war"],
+  ["gaza","Gaza Strip"],["west bank","West Bank"],
+  // cities (recognisable landscape cityscapes of the place being discussed)
+  ["tehran","Tehran"],["iran","Tehran"],["beirut","Beirut"],["hezbollah","Beirut"],
+  ["lebanon","Beirut"],["damascus","Damascus"],["sanaa","Sanaa"],["yemen","Sanaa"],
+  ["houthi","Sanaa"],["baghdad","Baghdad"],["iraq","Baghdad"],["cairo","Cairo"],
+  ["egypt","Cairo"],["istanbul","Istanbul"],["turkey","Istanbul"],
+  ["jerusalem","Jerusalem"],["tel aviv","Tel Aviv"],["israel","Tel Aviv"],
+  ["riyadh","Riyadh"],["saudi","Riyadh"],["doha","Doha"],["qatar","Doha"],
+  ["dubai","Dubai"],["emirates","Dubai"],["uae","Dubai"],["kuwait","Kuwait City"],
+  ["amman","Amman"],["jordan","Amman"],["beijing","Beijing"],["china","Beijing"],
+  ["moscow","Moscow"],["russia","Moscow"],["kyiv","Kyiv"],
+  ["washington","Washington, D.C."],["united states","Washington, D.C."],
+  ["america","Washington, D.C."],["trump","Washington, D.C."],
+  ["brussels","Brussels"],["european union","Brussels"],["europe","Brussels"],
+  ["london","London"],["britain","London"],["brexit","London"],["paris","Paris"],
+  ["france","Paris"],["berlin","Berlin"],["germany","Berlin"],
+  ["islamabad","Islamabad"],["pakistan","Islamabad"],["new delhi","New Delhi"],
+  ["india","New Delhi"],
+  // topic scenes (landscape)
+  ["nuclear","Nuclear power plant"],["oil","Oil refinery"],["opec","Oil refinery"],
+  ["energy","Oil refinery"],["economy","New York Stock Exchange"],
+  ["market","New York Stock Exchange"],["sanction","Economic sanctions"],
+  ["cyber","Computer security"],["climate","Climate change"],
+  ["nato","NATO"],["diploma","Headquarters of the United Nations"],
+  ["summit","Headquarters of the United Nations"],
+  ["talks","Headquarters of the United Nations"],
 ];
 const WORLD_SUBJECT = "Earth";
 
@@ -834,20 +839,22 @@ async function wikiThumb(title){
     if(!r.ok) return "";
     const j = await r.json();
     let src = (j.thumbnail && j.thumbnail.source) || "";
-    if(src) src = src.replace(/\/\d+px-/, "/500px-");   // sharper banner
+    if(src) src = src.replace(/\/\d+px-/, "/640px-");   // fill the banner crisply
     return src;
   }catch(e){ return ""; }
 }
 async function loadBriefImages(track, cards, subjects){
   const usedFlag = new Set();
+  // a tall image gets the 'fit' class (contain) so it's never face-cropped
+  const ld = `onload="if(this.naturalHeight>this.naturalWidth*1.2)this.classList.add('fit')"`;
   const boxes = [...track.querySelectorAll(".brief-img")];
   await Promise.all(boxes.map(async (box, idx)=>{
     const src = subjects[idx] ? await wikiThumb(subjects[idx]) : "";
-    if(src){ box.innerHTML = `<img src="${esc(src)}" alt="" loading="lazy">`; return; }
+    if(src){ box.innerHTML = `<img src="${esc(src)}" alt="" loading="lazy" ${ld}>`; return; }
     const cc = briefFlag(cards[idx]);            // fallback: a flag, never duplicated
     if(cc && !usedFlag.has(cc)){
       usedFlag.add(cc);
-      box.innerHTML = `<img src="https://flagcdn.com/w640/${cc}.png" alt="" loading="lazy" onerror="this.closest('.brief-img').remove()">`;
+      box.innerHTML = `<img class="fit" src="https://flagcdn.com/w640/${cc}.png" alt="" loading="lazy" onerror="this.closest('.brief-img').remove()">`;
     }else{
       box.remove();                              // no image — clean text-only card
     }
