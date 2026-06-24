@@ -189,7 +189,10 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .brief-slide{scroll-snap-align:center;flex:0 0 min(86%,460px);background:var(--card);
   border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r3);
   overflow:hidden;box-shadow:var(--sh2);display:flex;flex-direction:column}
-.brief-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:13px;min-height:212px}
+.brief-img{position:relative;height:132px;background:linear-gradient(135deg,#0E1A35,#15264F);overflow:hidden;flex:0 0 auto}
+.brief-img img{width:100%;height:100%;object-fit:cover;display:block}
+.brief-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,26,53,.45),transparent 60%);pointer-events:none}
+.brief-body{padding:22px 26px 26px;display:flex;flex-direction:column;gap:13px;min-height:200px}
 .brief-kicker{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
 .brief-h{font-family:'Playfair Display',serif;font-weight:800;font-size:25px;line-height:1.12;color:var(--blue)}
 .brief-rule{width:46px;height:3px;background:var(--gold);border-radius:2px}
@@ -295,7 +298,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 
 <div class="navbar">
   <div class="wrap">
-    <button class="navbtn active" data-sec="briefing">World Briefing</button>
+    <button class="navbtn active" data-sec="briefing">Geopolitical Briefing</button>
     <button class="navbtn" data-sec="headlines">Headlines</button>
     <button class="navbtn" data-sec="frontpages">Front Pages</button>
     <button class="navbtn" data-sec="pulse">Pulse</button>
@@ -308,7 +311,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 
   <!-- WORLD BRIEFING TAB -->
   <div class="section active" id="sec-briefing">
-    <div class="sec-head"><h2>World Briefing</h2></div>
+    <div class="sec-head"><h2>Geopolitical Briefing</h2></div>
     <div class="briefing-meta"><span class="briefing-ts" id="briefing-ts"></span></div>
     <div class="brief-carousel" id="brief-carousel" style="display:none">
       <button class="brief-arrow prev" id="brief-prev" aria-label="Previous card">‹</button>
@@ -316,7 +319,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
       <button class="brief-arrow next" id="brief-next" aria-label="Next card">›</button>
       <div class="brief-dots" id="brief-dots"></div>
     </div>
-    <div id="briefing-placeholder" class="hl-loading">Loading World Briefing…</div>
+    <div id="briefing-placeholder" class="hl-loading">Loading Geopolitical Briefing…</div>
   </div>
 
   <!-- HEADLINES TAB -->
@@ -748,18 +751,46 @@ async function loadTrends(){
   body.innerHTML = html;
 }
 
+// Map a card to the country it's about, so each card gets a matching flag image
+// from flagcdn.com (the internet, not the site's own covers). Heading is weighted
+// over the body. Returns an ISO country code, or '' (then the card is text-only).
+const BRIEF_CC = {
+  ukraine:'ua', russia:'ru', china:'cn', beijing:'cn', iran:'ir', tehran:'ir',
+  israel:'il', israeli:'il', lebanon:'lb', hezbollah:'lb', beirut:'lb',
+  syria:'sy', damascus:'sy', yemen:'ye', houthi:'ye', egypt:'eg', cairo:'eg',
+  turkey:'tr', iraq:'iq', qatar:'qa', kuwait:'kw', bahrain:'bh', oman:'om',
+  jordan:'jo', sudan:'sd', libya:'ly', tunisia:'tn', algeria:'dz',
+  'saudi':'sa', riyadh:'sa', uae:'ae', emirates:'ae', gulf:'sa',
+  gaza:'ps', palestin:'ps', 'west bank':'ps',
+  'united states':'us', 'u.s.':'us', america:'us', washington:'us', trump:'us',
+  europe:'eu', 'european union':'eu', brussels:'eu',
+  britain:'gb', british:'gb', brexit:'gb', 'u.k.':'gb', london:'gb',
+  france:'fr', paris:'fr', germany:'de', pakistan:'pk', india:'in',
+  afghanistan:'af', 'north korea':'kp', japan:'jp', venezuela:'ve', taiwan:'tw'
+};
+function briefFlag(card){
+  const h = (card.heading||'').toLowerCase();
+  for(const k in BRIEF_CC){ if(h.includes(k)) return BRIEF_CC[k]; }
+  const s = (card.summary||'').toLowerCase();
+  for(const k in BRIEF_CC){ if(s.includes(k)) return BRIEF_CC[k]; }
+  return '';
+}
 function renderBriefCarousel(cards){
   const track = document.getElementById("brief-track");
   const n = cards.length;
-  track.innerHTML = cards.map((c,idx)=>
-    `<article class="brief-slide">
+  track.innerHTML = cards.map((c,idx)=>{
+    const cc = briefFlag(c);
+    const img = cc
+      ? `<div class="brief-img"><img src="https://flagcdn.com/w640/${cc}.png" alt="" loading="lazy" onerror="this.closest('.brief-img').remove()"></div>`
+      : '';
+    return `<article class="brief-slide">${img}
       <div class="brief-body">
         <span class="brief-kicker">${String(idx+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}</span>
         <div class="brief-h">${esc(c.heading||('Update '+(idx+1)))}</div>
         <div class="brief-rule"></div>
         <div class="brief-sum">${esc(c.summary||'')}</div>
       </div>
-    </article>`).join("");
+    </article>`;}).join("");
   const dots = document.getElementById("brief-dots");
   dots.innerHTML = cards.map((_,i)=>
     `<button class="brief-dot${i===0?' active':''}" data-i="${i}" aria-label="Card ${i+1}"></button>`).join("");
