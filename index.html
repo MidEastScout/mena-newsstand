@@ -838,23 +838,38 @@ async function wikiThumb(title){
       encodeURIComponent(title), {headers:{Accept:"application/json"}});
     if(!r.ok) return "";
     const j = await r.json();
-    let src = (j.thumbnail && j.thumbnail.source) || "";
-    if(src) src = src.replace(/\/\d+px-/, "/640px-");   // fill the banner crisply
-    return src;
+    // Use the thumbnail URL AS-IS — do not rewrite the width (requesting a size
+    // the file doesn't have 404s). cover-fill makes even a ~320px thumb fill.
+    return (j.thumbnail && j.thumbnail.source) || "";
   }catch(e){ return ""; }
+}
+// Resolve to an <img> only AFTER it's confirmed loadable, so a 404 never leaves
+// a broken-image icon. Returns the loaded Image (with natural dims) or null.
+function preloadImg(src){
+  return new Promise(res=>{
+    if(!src){ res(null); return; }
+    const im = new Image();
+    im.onload = ()=> res(im);
+    im.onerror = ()=> res(null);
+    im.src = src;
+  });
 }
 async function loadBriefImages(track, cards, subjects){
   const usedFlag = new Set();
-  // a tall image gets the 'fit' class (contain) so it's never face-cropped
-  const ld = `onload="if(this.naturalHeight>this.naturalWidth*1.2)this.classList.add('fit')"`;
   const boxes = [...track.querySelectorAll(".brief-img")];
   await Promise.all(boxes.map(async (box, idx)=>{
-    const src = subjects[idx] ? await wikiThumb(subjects[idx]) : "";
-    if(src){ box.innerHTML = `<img src="${esc(src)}" alt="" loading="lazy" ${ld}>`; return; }
+    const wsrc = subjects[idx] ? await wikiThumb(subjects[idx]) : "";
+    const im = await preloadImg(wsrc);
+    if(im){
+      const fit = im.naturalHeight > im.naturalWidth * 1.2 ? ' class="fit"' : '';
+      box.innerHTML = `<img${fit} src="${esc(wsrc)}" alt="">`;
+      return;
+    }
     const cc = briefFlag(cards[idx]);            // fallback: a flag, never duplicated
-    if(cc && !usedFlag.has(cc)){
+    const fsrc = cc ? `https://flagcdn.com/w640/${cc}.png` : "";
+    if(cc && !usedFlag.has(cc) && await preloadImg(fsrc)){
       usedFlag.add(cc);
-      box.innerHTML = `<img class="fit" src="https://flagcdn.com/w640/${cc}.png" alt="" loading="lazy" onerror="this.closest('.brief-img').remove()">`;
+      box.innerHTML = `<img class="fit" src="${fsrc}" alt="">`;
     }else{
       box.remove();                              // no image — clean text-only card
     }
