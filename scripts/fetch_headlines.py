@@ -164,20 +164,21 @@ SOURCES = {
     ],
     "Iran": [
         {
-            # Replaced Fars News (en): its feed — and even the Google News
-            # fallback — only ever returned Fars's Farsi homepage cards from a
-            # datacenter IP, never article-level headlines. Tehran Times is an
-            # English daily, so it yields real articles beside Mehr.
+            # IRNA — Iran's official state wire service (English edition).
+            # History: Fars News (en) only ever returned its Farsi homepage from
+            # a datacenter IP; Tehran Times replaced it but is too thinly indexed
+            # — its native feed yielded nothing and Google News returned almost
+            # nothing but the e-paper, so its card was a single "pdf" stub.
+            # IRNA is a high-volume agency that is very well indexed, so the
+            # Google News fallback reliably surfaces real articles even when the
+            # native feed is blocked from a datacenter IP.
             #
-            # NOTE: we deliberately do NOT set "gn_exclude" here. The previous
-            # sports-term exclusions were applied by Google News against the
-            # ARTICLE BODY, not the headline, so any political story that merely
-            # mentioned a sport in passing was thrown away — which starved this
-            # outlet down to a single e-paper card. Sports are now dropped at the
-            # TITLE level (is_offtopic), which is precise and never removes news.
-            "source": "Tehran Times", "country": "Iran", "lang": "en",
-            "url": "https://www.tehrantimes.com",
-            "rss": "https://www.tehrantimes.com/rss",
+            # Sports are dropped at the TITLE level (is_offtopic), never via a
+            # Google-News body exclusion (which throws away political stories
+            # that merely mention a sport) — so no "gn_exclude" here.
+            "source": "IRNA", "country": "Iran", "lang": "en",
+            "url": "https://en.irna.ir",
+            "rss": "https://en.irna.ir/rss",
         },
         {
             "source": "Mehr News", "country": "Iran", "lang": "en",
