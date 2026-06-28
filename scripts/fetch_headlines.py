@@ -3,7 +3,7 @@
 WHAT THIS SCRIPT DOES (plain English)
 ======================================
 This script runs automatically on GitHub every 30 minutes. It visits each of
-the 16 news outlets listed in SOURCES below, reads their RSS feed (a standard
+the 21 news outlets listed in SOURCES below, reads their RSS feed (a standard
 machine-readable list of recent articles), picks the 5 most recent headlines,
 and saves everything to a file called headlines.json in the root of this repo.
 The website then reads that file to show you the headlines — no live fetching
@@ -152,6 +152,17 @@ SOURCES = {
             "source": "Mehr News", "country": "Iran", "lang": "en",
             "url": "https://en.mehrnews.com",
             "rss": "https://en.mehrnews.com/rss",
+        },
+        {
+            # Iran International — London-based Persian-language broadcaster with a
+            # high-volume, very well indexed English edition (iranintl.com/en). Like
+            # IRNA above, its native feed is often blocked from a datacenter IP, but
+            # the Google News fallback (site:iranintl.com, English locale) reliably
+            # surfaces real articles. Adds an outside-Iran editorial voice alongside
+            # the state wires IRNA and Mehr.
+            "source": "Iran International", "country": "Iran", "lang": "en",
+            "url": "https://www.iranintl.com/en",
+            "rss": "https://www.iranintl.com/en/rss",
         },
     ],
     "Turkey": [
