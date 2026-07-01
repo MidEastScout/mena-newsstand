@@ -435,8 +435,20 @@ let FP_STATUS = {};
 let FP_VER = "";
 let hlData = null;
 
-function fpImgURL(id){ return `frontpages/${id}.jpg?v=${encodeURIComponent(FP_VER || "0")}`; }
-function fpThumbURL(id){ return `frontpages/thumbs/${id}.jpg?v=${encodeURIComponent(FP_VER || "0")}`; }
+// Cache-bust each cover by ITS OWN edition date, not the manifest's write date.
+// The covers have stable filenames (nyt.jpg), so the query string is what makes
+// the browser refetch. Keying every paper on the manifest's date meant the
+// version string only changed once a day: a paper that showed yesterday's
+// fallback at the 07:00 grab got its stale image cached under *today's* key, and
+// since that key never changed when the real edition landed midmorning, the
+// browser kept serving yesterday's cover all day. A paper's own `date` changes
+// exactly when its cover changes, so the URL busts precisely when it should.
+function fpVer(id){
+  const st = FP_STATUS[id];
+  return encodeURIComponent((st && st.date) || FP_VER || "0");
+}
+function fpImgURL(id){ return `frontpages/${id}.jpg?v=${fpVer(id)}`; }
+function fpThumbURL(id){ return `frontpages/thumbs/${id}.jpg?v=${fpVer(id)}`; }
 
 function lb(l){
   if(l==="en") return `<span class="fp-tag t-en">EN</span>`;
