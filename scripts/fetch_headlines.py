@@ -473,6 +473,88 @@ def gnews_url(meta: dict) -> str:
     return f"https://news.google.com/rss/search?q={query}&hl={hl}&gl={gl}&ceid={ceid}"
 
 
+# ── Google News redirect resolution ─────────────────────────────────────────
+# Outlets whose native feed fails fall back to Google News, whose RSS <link>s are
+# opaque `news.google.com/rss/articles/CBMi…` redirects rather than real article
+# URLs. Some of those redirects are dead (removed articles, regional consent
+# walls, the newer opaque format that never resolves for some clients) — which is
+# why a few headlines "lead to a website that does not work". We turn each one
+# into the publisher's real article URL at fetch time, so a click opens the
+# actual story with no Google/JS/consent hop in between. If resolution fails we
+# keep the original Google link (which usually still redirects in a browser), so
+# a failure never drops or worsens a headline.
+GNEWS_ART_RE = re.compile(r'news\.google\.com/rss/articles/([^?/#]+)', re.I)
+GNEWS_RESOLVE_BUDGET = 90      # cap NEW network resolutions per run
+GNEWS_RESOLVE_TIMEOUT = 12     # seconds; shorter than feed reads so we don't hang
+_gnews_cache = {}              # in-run memo: google url -> resolved url (or "")
+_gnews_budget_left = GNEWS_RESOLVE_BUDGET
+
+
+def _gnews_real_url(session: requests.Session, art_url: str):
+    """Resolve one news.google.com/rss/articles/… redirect to the publisher's
+    real URL via Google's batchexecute RPC. Returns the URL or None."""
+    m = GNEWS_ART_RE.search(art_url)
+    if not m:
+        return None
+    art_id = m.group(1)
+    ua = {"User-Agent": HEADERS["User-Agent"], "Accept-Language": "en-US,en;q=0.9"}
+    # 1) Fetch the article shell to read this article's signature + timestamp.
+    r = session.get(f"https://news.google.com/rss/articles/{art_id}",
+                    headers={**ua, "Accept": "text/html,*/*"},
+                    timeout=GNEWS_RESOLVE_TIMEOUT)
+    r.raise_for_status()
+    doc = r.text
+    sg = re.search(r'data-n-a-sg="([^"]+)"', doc)
+    ts = re.search(r'data-n-a-ts="([^"]+)"', doc)
+    if not (sg and ts):
+        return None
+    # 2) Exchange (id, ts, sg) for the destination URL.
+    inner = json.dumps([
+        "garturlreq",
+        [["X", "X", ["X", "X"], None, None, 1, 1, "US:en", None, 1,
+          None, None, None, None, None, 0, 1],
+         "X", "X", 1, [1, 1, 1], 1, 1, None, 0, 0, None, 0],
+        art_id, int(ts.group(1)), sg.group(1),
+    ])
+    freq = json.dumps([[["Fbv4je", inner, None, "generic"]]])
+    r = session.post(
+        "https://news.google.com/_/DotsSplashUi/data/batchexecute",
+        headers={**ua, "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"},
+        data={"f.req": freq}, timeout=GNEWS_RESOLVE_TIMEOUT)
+    r.raise_for_status()
+    # The resolved URL is embedded as a JSON-escaped string; unescape first (so
+    # \/ path slashes are restored) then take the first non-Google URL — robust
+    # to Google's exact JSON envelope changing.
+    text = (r.text.replace('\\/', '/').replace('\\u003d', '=')
+            .replace('\\u0026', '&').replace('\\u003f', '?'))
+    for u in re.findall(r'https?://[^\s"\\]+', text):
+        if "google.com" not in u and "gstatic.com" not in u:
+            return u
+    return None
+
+
+def resolve_gnews_url(session: requests.Session, url: str) -> str:
+    """Best-effort: return the real article URL behind a Google News redirect.
+    Non-Google URLs pass straight through. On any failure (or once the per-run
+    budget is spent) the original URL is returned, so this can only ever improve
+    a link, never break one."""
+    global _gnews_budget_left
+    if not url or "news.google.com/rss/articles/" not in url:
+        return url
+    if url in _gnews_cache:
+        return _gnews_cache[url] or url
+    if _gnews_budget_left <= 0:
+        return url
+    _gnews_budget_left -= 1
+    try:
+        real = _gnews_real_url(session, url)
+    except Exception as exc:
+        print(f"      ! gnews resolve failed: {str(exc)[:80]}", file=sys.stderr)
+        real = None
+    _gnews_cache[url] = real or ""      # memo within this run (successes only reused)
+    return real or url
+
+
 def core_title(title: str) -> str:
     """Strip the trailing ' - Outlet' / ' | Outlet' that Google News appends.
 
@@ -911,6 +993,11 @@ def fetch_outlet(session: requests.Session, meta: dict) -> dict:
         # items (e.g. the World Cup) from the DISPLAYED headlines. They remain in
         # the broad coverage sample below, so Pulse and Trends still count them.
         display = [it for it in items if not TRACKED_OFFTOPIC_RE.search(it["title"])]
+        # Turn any Google News redirect links into the publisher's real article
+        # URL so clicked headlines open the actual story, not a dead Google page.
+        # Only the ones we'll actually show (strip_internal keeps the top N).
+        for it in display[:HEADLINES_PER_OUTLET]:
+            it["url"] = resolve_gnews_url(session, it.get("url", ""))
         result["headlines"] = strip_internal(display)
         # Broader coverage sample for the Trends/Pulse views (what the outlet is
         # really covering), captured from the SAME already-filtered item list —
@@ -1169,6 +1256,12 @@ def main():
     for region in REGION_ORDER:
         print(f"\n[{region}]")
         output["regions"][region] = [fetch_outlet(session, s) for s in SOURCES[region]]
+
+    if _gnews_cache:
+        resolved = sum(1 for v in _gnews_cache.values() if v)
+        print(f"\n[Links] resolved {resolved}/{len(_gnews_cache)} Google News "
+              f"redirects to real article URLs "
+              f"({GNEWS_RESOLVE_BUDGET - _gnews_budget_left} network lookups)")
 
     out_path = Path(__file__).parent.parent / "headlines.json"
     existing = None
