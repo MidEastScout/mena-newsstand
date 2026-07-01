@@ -523,10 +523,14 @@ def _gnews_real_url(session: requests.Session, art_url: str):
         data={"f.req": freq}, timeout=GNEWS_RESOLVE_TIMEOUT)
     r.raise_for_status()
     # The resolved URL is embedded as a JSON-escaped string; unescape first (so
-    # \/ path slashes are restored) then take the first non-Google URL — robust
-    # to Google's exact JSON envelope changing.
+    # \/ path slashes and \" quotes are restored). Prefer the value right after
+    # the "garturlres" marker (the exact article URL); only if that's missing
+    # fall back to the first non-Google URL — robust to Google's envelope shape.
     text = (r.text.replace('\\/', '/').replace('\\u003d', '=')
-            .replace('\\u0026', '&').replace('\\u003f', '?'))
+            .replace('\\u0026', '&').replace('\\u003f', '?').replace('\\"', '"'))
+    m = re.search(r'garturlres"\s*,\s*"(https?://[^"\\]+)"', text)
+    if m and "google.com" not in m.group(1):
+        return m.group(1)
     for u in re.findall(r'https?://[^\s"\\]+', text):
         if "google.com" not in u and "gstatic.com" not in u:
             return u
