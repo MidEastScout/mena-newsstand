@@ -300,10 +300,19 @@ jobs:
           echo "Latest github-pages deployment ${sha:0:8} state=$state"
           case "$state" in
             in_progress|queued|pending)
-              echo "Stale deployment detected — cancelling ${sha:0:8} so this run can proceed…"
-              curl -sS -X POST "${hdr[@]}" "$repo/pages/deployments/$sha/cancel" \
-                -w ' -> HTTP %{http_code}\n' || true
-              sleep 5 ;;
+              # deploy-pages labels its deployment with the triggering commit
+              # ($GITHUB_SHA). NEVER cancel that same commit here — doing so would
+              # leave it in "cancelled" state and our own deploy below would then
+              # fail with "Deployment cancelled". Only clear a stale deployment
+              # belonging to a DIFFERENT commit (a genuine leftover blocker).
+              if [ "$sha" = "$GITHUB_SHA" ]; then
+                echo "In-progress deployment is this run's own commit (${sha:0:8}); leaving it alone."
+              else
+                echo "Stale deployment for a different commit — cancelling ${sha:0:8} so this run can proceed…"
+                curl -sS -X POST "${hdr[@]}" "$repo/pages/deployments/$sha/cancel" \
+                  -w ' -> HTTP %{http_code}\n' || true
+                sleep 5
+              fi ;;
             *) echo "No stuck deployment to clear." ;;
           esac
 
