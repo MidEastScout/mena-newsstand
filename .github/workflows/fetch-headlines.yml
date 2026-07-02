@@ -70,6 +70,10 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
+    # Expose the exact commit this job leaves on `main` so the deploy job below
+    # publishes THAT commit instead of racing a later `ref: main` checkout.
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
     # Serialise the actual work so concurrent runs never race on git push.
     # (Per-job, so the rearm timer below does not block manual refreshes.)
     concurrency:
@@ -131,6 +135,7 @@ jobs:
         run: python scripts/fetch_frontpages.py
 
       - name: Commit and push if changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -150,6 +155,10 @@ jobs:
               echo "Push attempt $i failed; retrying…"; sleep $((i * 3))
             done
           fi
+          # Hand the deploy job the exact commit now on main so it publishes
+          # THIS commit (deterministic) instead of re-resolving `main` and
+          # possibly racing another run's push.
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       # Send email after the commit so it links to the freshest data. always()
       # means it runs even if the front-page or push step had trouble.
@@ -174,10 +183,17 @@ jobs:
   # Deploying from the workflow makes the live site match the exact commit we
   # just pushed — deterministic, no skipped refreshes.
   #
-  # configure-pages (enablement: true) switches the Pages "Source" to
-  # "GitHub Actions" automatically. If that ever fails on a fresh repo, set it
-  # by hand once: Settings → Pages → Build and deployment → Source →
-  # "GitHub Actions".
+  # configure-pages (enablement: true) only sets the Pages "Source" to
+  # "GitHub Actions" when it CREATES the site for the first time. On a repo whose
+  # site was first created as "Deploy from a branch" it leaves the source alone,
+  # so GitHub's managed `pages-build-deployment` builder keeps firing on EVERY
+  # push and RACES this job for the single github-pages environment. That
+  # collision is what wedged deploys in "deployment_queued" until they timed out,
+  # were cancelled, and then failed the same-commit retry with "Deployment
+  # cancelled." The "Force Pages source" step below flips the source to
+  # "workflow" so only this workflow deploys. If it can't (token lacks the Pages
+  # permission), set it by hand once: Settings → Pages → Build and deployment →
+  # Source → "GitHub Actions".
   # ---------------------------------------------------------------------------
   deploy:
     needs: run
@@ -194,15 +210,59 @@ jobs:
       group: newsstand-pages
       cancel-in-progress: false
     steps:
-      - name: Checkout main (the commit the run job just pushed)
+      - name: Checkout the exact commit the run job published
         uses: actions/checkout@v4
         with:
-          ref: main
+          # Publish the commit the run job just pushed (deterministic) rather
+          # than re-resolving `main`, which can race the push and ship a stale
+          # commit. Falls back to `main` if the output is somehow empty.
+          ref: ${{ needs.run.outputs.sha || 'main' }}
 
-      - name: Configure Pages (sets Source = GitHub Actions)
+      - name: Configure Pages (first-time enablement only)
         uses: actions/configure-pages@v5
         with:
           enablement: true
+
+      # Turn OFF the legacy "deploy from branch" builder by forcing the Pages
+      # source to "workflow". Idempotent (a no-op once already on workflow) and
+      # tolerant: if the token can't change Pages settings the step only warns.
+      # Order of preference: a dedicated PAGES_ADMIN_PAT, then DISPATCH_PAT, then
+      # the job's GITHUB_TOKEN (which has pages: write).
+      - name: Force Pages source = GitHub Actions (disable legacy branch builder)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.PAGES_ADMIN_PAT || secrets.DISPATCH_PAT || github.token }}
+        run: |
+          api="https://api.github.com/repos/${{ github.repository }}/pages"
+          hdr=(-H "Accept: application/vnd.github+json"
+               -H "Authorization: Bearer $GH_TOKEN"
+               -H "X-GitHub-Api-Version: 2022-11-28")
+          # Read the current source first (a plain GET works with GITHUB_TOKEN).
+          # If it's already "workflow" this step is a silent no-op — so once the
+          # source is fixed there is no recurring warning even without a PAT.
+          current=$(curl -sS "${hdr[@]}" "$api" | jq -r '.build_type // empty')
+          echo "Current Pages build_type: ${current:-unknown}"
+          if [ "$current" = "workflow" ]; then
+            echo "Pages source already 'GitHub Actions' — nothing to do."
+            exit 0
+          fi
+          code=$(curl -sS -o /tmp/pages.json -w '%{http_code}' -X PUT "${hdr[@]}" \
+            "$api" -d '{"build_type":"workflow"}') || code=000
+          echo "PUT /pages build_type=workflow -> HTTP $code"
+          if [ "$code" = "204" ] || [ "$code" = "200" ]; then
+            echo "Switched Pages source to 'GitHub Actions' — legacy branch builder disabled."
+          else
+            cat /tmp/pages.json 2>/dev/null || true
+            # NOTE: the default GITHUB_TOKEN cannot change Pages settings (it gets
+            # 403 "Resource not accessible by integration"), so this warns until
+            # the source is fixed by hand or a PAGES_ADMIN_PAT secret is added.
+            echo "::warning::Pages source is still '${current:-branch}' and this token"
+            echo "::warning::can't change it (HTTP $code). Fix once by hand: Settings ->"
+            echo "::warning::Pages -> Build and deployment -> Source -> 'GitHub Actions'."
+            echo "::warning::Until then the legacy branch builder keeps racing this deploy."
+            echo "::warning::(Or add a PAGES_ADMIN_PAT secret with Pages read+write to"
+            echo "::warning::automate it.)"
+          fi
 
       - name: Assemble the published site (everything except git/CI internals)
         run: |
@@ -216,25 +276,45 @@ jobs:
         with:
           path: _site
 
+      # Deploy is best-effort: the run job already committed the data and a fresh
+      # deploy happens every ~30 min, so a transient Pages hiccup must not fail
+      # the whole refresh. BOTH attempts use continue-on-error (the old workflow
+      # left the retry fatal, and because a timed-out first attempt CANCELS its
+      # own deployment, the same-commit retry always saw "Deployment cancelled"
+      # and failed the run). `timeout` caps the wait on a wedged deployment so a
+      # bad cycle fails fast instead of burning 10 minutes.
       - name: Deploy to GitHub Pages
         id: deployment
         continue-on-error: true
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 300000
 
-      # GitHub finishes building a Pages deployment ASYNCHRONOUSLY after the
-      # deploy step returns, so when two runs land close together (the */15
-      # safety cron overlapping the ~28-min self-loop, or several manual
-      # refreshes) the next deploy fails with HTTP 400 "in progress deployment".
-      # It's transient and self-healing — wait for the previous one to settle
-      # and try again so the run doesn't show as failed.
-      - name: Wait, then retry the deploy if it hit an in-progress conflict
+      # A deployment still building when we started makes our create fail with
+      # "in progress deployment". Wait for it to settle, then try once more.
+      - name: Wait, then retry the deploy if the first attempt failed
         if: steps.deployment.outcome == 'failure'
         run: sleep 75
 
       - name: Deploy to GitHub Pages (retry)
         id: deployment_retry
         if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 300000
+
+      - name: Report deploy result
+        if: always()
+        run: |
+          if [ "${{ steps.deployment.outcome }}" = "success" ] \
+             || [ "${{ steps.deployment_retry.outcome }}" = "success" ]; then
+            echo "Deploy succeeded — live site now matches ${{ needs.run.outputs.sha || 'main' }}."
+          else
+            echo "::warning::Both deploy attempts failed this cycle; the next ~30-min"
+            echo "::warning::refresh will redeploy automatically. If this persists,"
+            echo "::warning::confirm Settings -> Pages -> Source is 'GitHub Actions'."
+          fi
 
   # ---------------------------------------------------------------------------
   # Self-perpetuating timer: wait ~28 min, then trigger the next run so the site
