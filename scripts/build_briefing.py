@@ -29,11 +29,14 @@ GEMINI_MODEL = "gemini-2.5-flash"
 TRANSLATE_MODEL = "gemini-2.5-flash"
 BRIEFING_WORDS = "350-500"
 
-# Same languages offered for the headlines toggle (en is the source).
+# Languages offered by the site's language toggle (en is the source). Hebrew
+# only for now — each entry costs one extra Gemini flash call per briefing run.
 LANG_TARGETS = {
     "he": "Hebrew",
-    "ar": "Arabic",
 }
+
+# Heading used for the lead card (the paragraph with no bold lead-in).
+BIG_PICTURE = {"en": "The Big Picture", "he": "התמונה הגדולה"}
 
 # Major international feeds that ground the briefing in today's world news.
 WORLD_FEEDS = [
@@ -65,12 +68,13 @@ def _para_to_html(text: str) -> str:
     return "\n".join(out)
 
 
-def text_to_cards(text: str) -> list:
+def text_to_cards(text: str, big_picture: str = BIG_PICTURE["en"]) -> list:
     """Split the plain-text briefing into topic cards for the swipe carousel.
 
     Each paragraph becomes one card. The leading **bold lead-in** (e.g.
     '**Russia-Ukraine:**') becomes the card heading; the rest is the summary.
-    The opening lead paragraph, which has no lead-in, becomes 'The Big Picture'.
+    The opening lead paragraph, which has no lead-in, gets the `big_picture`
+    heading ('The Big Picture' in the language of the text).
     """
     cards = []
     paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
@@ -80,7 +84,7 @@ def text_to_cards(text: str) -> list:
             heading = m.group(1).strip().rstrip(":：").strip()
             summary = p[m.end():].strip()
         else:
-            heading = "The Big Picture" if i == 0 else ""
+            heading = big_picture if i == 0 else ""
             summary = p
         # Flatten any remaining inline bold and whitespace.
         summary = re.sub(r"\*\*(.+?)\*\*", r"\1", summary)
@@ -261,11 +265,21 @@ def main():
     except Exception as exc:
         print(f"  title scrub skipped ({exc})", file=sys.stderr)
 
-    # English only. The site shows English cards and the email uses the English
-    # 'html'; nothing consumes he/ar, so we don't spend Gemini quota translating
-    # the briefing — that keeps the scarce daily free-tier budget for the
-    # briefing itself and the headline snippets, which DO get used.
+    # English is the source; the site's EN ↔ HE toggle reads html_by_lang /
+    # cards_by_lang and falls back to English whenever a translation is
+    # missing, so a failed translation is never fatal. The email digest keeps
+    # using the English 'html'.
     html_by_lang = {"en": _para_to_html(text)}
+    cards_by_lang = {"en": text_to_cards(text)}
+    for code, lang_name in LANG_TARGETS.items():
+        translated = translate_text(client, text, lang_name)
+        if translated:
+            html_by_lang[code] = _para_to_html(translated)
+            cards_by_lang[code] = text_to_cards(
+                translated, big_picture=BIG_PICTURE.get(code, BIG_PICTURE["en"]))
+        else:
+            print(f"  {lang_name} translation failed — site falls back to English",
+                  file=sys.stderr)
 
     updated = datetime.now(timezone.utc).isoformat()
     OUT_PATH.write_text(
@@ -275,7 +289,8 @@ def main():
                 "model": GEMINI_MODEL,
                 "html": html_by_lang["en"],   # back-compat: English
                 "html_by_lang": html_by_lang,
-                "cards": text_to_cards(text),  # swipe-carousel topic cards (EN)
+                "cards": cards_by_lang["en"],  # back-compat: English cards
+                "cards_by_lang": cards_by_lang,  # swipe-carousel cards per language
             },
             ensure_ascii=False,
             indent=2,

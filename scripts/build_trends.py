@@ -96,11 +96,32 @@ TOPICS = [
      r"\bimf\b|world bank|currency|\bgdp\b"
      r"|النفط|الغاز|الاقتصاد|أوبك|التضخم|البورصة|صندوق النقد"),
 ]
+# Hebrew labels for the site's EN ↔ HE toggle. The topic list is curated and
+# fixed, so these are translated once by hand — perfectly accurate, no API.
+LABELS_HE = {
+    "world_cup":  "המונדיאל",
+    "gaza":       "עזה וחמאס",
+    "lebanon":    "לבנון וחיזבאללה",
+    "yemen":      "תימן והים האדום",
+    "syria":      "סוריה",
+    "iraq":       "עיראק",
+    "turkey":     "טורקיה",
+    "egypt_naf":  "מצרים וצפון אפריקה",
+    "iran":       "איראן והגרעין",
+    "gulf":       "המפרץ והנורמליזציה",
+    "israel_pal": "ישראל–פלסטינים",
+    "us_west":    "ארה\"ב והמערב",
+    "econ":       "כלכלה ואנרגיה",
+    "other":      "אחר",
+}
+
 TOPIC_RES = [(tid, label, color, re.compile(pat, re.I))
              for tid, label, color, pat in TOPICS]
-TOPIC_META = {tid: {"label": label, "color": color}
+TOPIC_META = {tid: {"label": label, "label_he": LABELS_HE.get(tid, label),
+                    "color": color}
               for tid, label, color, _ in TOPICS}
-OTHER = {"id": "other", "label": "Other", "color": "#9AA3B2"}
+OTHER = {"id": "other", "label": "Other", "label_he": LABELS_HE["other"],
+         "color": "#9AA3B2"}
 
 
 def classify(text: str) -> str:
@@ -167,6 +188,7 @@ def main():
             if n >= MIN_OUTLET_HL:
                 mix = sorted(
                     ({"id": t, "label": TOPIC_META.get(t, OTHER)["label"],
+                      "label_he": TOPIC_META.get(t, OTHER)["label_he"],
                       "color": TOPIC_META.get(t, OTHER)["color"],
                       "count": c, "share": round(100 * c / n)}
                      for t, c in counts.items()),
@@ -201,7 +223,8 @@ def main():
     ordered = sorted(topic_counts.items(), key=lambda x: -x[1])
     for tid, c in ordered:
         meta = TOPIC_META.get(tid, OTHER)
-        row = {"id": tid, "label": meta["label"], "color": meta["color"],
+        row = {"id": tid, "label": meta["label"], "label_he": meta["label_he"],
+               "color": meta["color"],
                "count": c, "share": round(cur_share.get(tid, 0), 1),
                "delta": None}
         if ref:
@@ -224,7 +247,8 @@ def main():
             continue
         spread = covering[0]["share"] - covering[-1]["share"]
         divergence.append({
-            "id": tid, "label": meta["label"], "color": meta["color"],
+            "id": tid, "label": meta["label"], "label_he": meta["label_he"],
+            "color": meta["color"],
             "spread": spread,
             "top": covering[:4],
             "bottom": [s for s in shares if s["share"] == 0][:4],  # ignoring it
