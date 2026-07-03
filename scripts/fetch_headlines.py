@@ -376,9 +376,10 @@ GEMINI_MODEL = "gemini-2.5-flash-lite"
 # Target length of the per-headline summary, in words.
 SNIPPET_WORDS = 50
 
-# Bump this whenever the snippet prompt changes so the content cache is
-# invalidated and snippets regenerate on the next run.
-SNIPPET_VERSION = "v7-en"
+# Bump this whenever the snippet/translation prompts change so the content
+# cache is invalidated and snippets + Hebrew translations regenerate on the
+# next run.
+SNIPPET_VERSION = "v8-he"
 
 HEADERS = {
     "User-Agent": (
@@ -1044,13 +1045,15 @@ def _strip_descriptions(regions: dict):
 def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
     """Generate a short English snippet for each headline, using the Gemini API.
 
-    Mutates `regions` in place: adds a "snippet" field to each headline and
-    removes the temporary "description" field. Returns {"titles_hash": ...} when
-    snippets were produced (so the next run can skip unchanged content), or {} on
-    skip/failure — always non-fatal.
+    Mutates `regions` in place: adds "snippet", "title_he" and "snippet_he"
+    fields to each headline and removes the temporary "description" field.
+    Returns {"titles_hash": ...} when everything was produced (so the next run
+    can skip unchanged content), or {} on skip/failure — always non-fatal.
 
-    The site is English-only, so no translations are generated; this is a single
-    batched Gemini call per run, and none at all when the headlines are unchanged.
+    The site offers an EN ↔ HE toggle, so a Hebrew translation of every title
+    and snippet is generated alongside the English snippets. That's three
+    batched flash-lite calls per run (snippets, Hebrew titles, Hebrew snippets)
+    — and none at all when the headlines are unchanged.
     """
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
@@ -1072,21 +1075,24 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
 
     current_hash = _titles_hash(regions)
 
-    # Cache hit: reuse last run's snippets, with no API call.
+    # Cache hit: reuse last run's snippets + Hebrew translations, no API call.
     if existing_output and existing_output.get("titles_hash") == current_hash:
         prev = existing_output.get("regions")
         if prev:
             for i, (region, o_idx, h_idx) in enumerate(positions):
                 try:
-                    snip = prev[region][o_idx]["headlines"][h_idx].get("snippet", "")
+                    prev_hl = prev[region][o_idx]["headlines"][h_idx]
                 except Exception:
-                    snip = ""
+                    prev_hl = {}
+                hl = regions[region][o_idx]["headlines"][h_idx]
                 # Scrub on reuse too, so a previously-stored stale title (e.g.
                 # "former president Trump") is corrected even on a cache hit.
-                regions[region][o_idx]["headlines"][h_idx]["snippet"] = \
-                    scrub_stale_titles(snip, f"{titles[i]} {descriptions[i]}")
+                hl["snippet"] = scrub_stale_titles(
+                    prev_hl.get("snippet", ""), f"{titles[i]} {descriptions[i]}")
+                hl["title_he"] = prev_hl.get("title_he", "")
+                hl["snippet_he"] = prev_hl.get("snippet_he", "")
             _strip_descriptions(regions)
-            print(f"  Content unchanged — reusing snippets (hash {current_hash})")
+            print(f"  Content unchanged — reusing snippets + Hebrew (hash {current_hash})")
             return {"titles_hash": current_hash}
 
     try:
@@ -1200,12 +1206,69 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
         hl["snippet"] = scrub_stale_titles(snip, f"{titles[i]} {descriptions[i]}")
     n_snips = sum(1 for (region, o_idx, h_idx) in positions
                   if regions[region][o_idx]["headlines"][h_idx].get("snippet"))
-    _strip_descriptions(regions)
     print(f"  Generated {n_snips}/{len(titles)} English snippets")
 
-    # Record the hash only when snippets were freshly generated, so the next run
-    # can skip the API call for unchanged headlines.
-    return {"titles_hash": current_hash} if snippets_ok else {}
+    # ---- Hebrew translations — feed the site's EN ↔ HE toggle ----
+    # Two more batched flash-lite calls (titles, then the final snippets). They
+    # ride the same titles_hash cache as the snippets, so unchanged runs cost
+    # no extra API calls at all.
+    final_snips = [regions[r][oi]["headlines"][hi].get("snippet", "")
+                   for (r, oi, hi) in positions]
+    he_rules = (
+        "Rules for EVERY item:\n"
+        "1. Translate faithfully into natural, journalistic Israeli news Hebrew.\n"
+        "2. Use the standard Hebrew spelling for well-known people, places and "
+        "organisations (e.g. נתניהו, חיזבאללה, ריאד); transliterate names that "
+        "have no standard Hebrew form.\n"
+        "3. CRITICAL — do not add, infer or change anyone's title, office, role "
+        "or status; translate exactly what the text states and nothing more.\n"
+        "4. NEVER add facts that are not in the source text.\n"
+        "5. If an input item is an empty string, return an empty string for it; "
+        "otherwise always return a non-empty Hebrew string.\n\n"
+    )
+    he_titles = call_model(
+        "Translate each news headline in the JSON array below into Hebrew.\n"
+        + he_rules
+        + f"Items:\n{json.dumps(titles, ensure_ascii=False)}\n\n"
+        f"Return ONLY a JSON array of exactly {len(titles)} strings, same order.",
+        len(titles))
+    he_snips = call_model(
+        "Translate each news summary in the JSON array below into Hebrew.\n"
+        + he_rules
+        + f"Items:\n{json.dumps(final_snips, ensure_ascii=False)}\n\n"
+        f"Return ONLY a JSON array of exactly {len(final_snips)} strings, same order.",
+        len(final_snips))
+    hebrew_ok = he_titles is not None and he_snips is not None
+
+    # If translation failed, reuse last run's Hebrew (matched by title) so the
+    # toggle doesn't go blank while we wait for the next run to retry.
+    prev_he = {}
+    if not hebrew_ok and existing_output:
+        for outs in existing_output.get("regions", {}).values():
+            for o in outs:
+                for h in o.get("headlines", []):
+                    if h.get("title_he") or h.get("snippet_he"):
+                        prev_he[h.get("title", "")] = h
+
+    n_he = 0
+    for i, (region, o_idx, h_idx) in enumerate(positions):
+        hl = regions[region][o_idx]["headlines"][h_idx]
+        prev_hl = prev_he.get(titles[i], {})
+        # Never wipe a good translation with an empty refresh (same rule as the
+        # snippets): fall back to what the headline already carries (e.g. a
+        # carried-forward outlet), then to last run's translation by title.
+        hl["title_he"] = ((he_titles[i] if he_titles else "")
+                          or hl.get("title_he", "") or prev_hl.get("title_he", ""))
+        hl["snippet_he"] = ((he_snips[i] if he_snips else "")
+                            or hl.get("snippet_he", "") or prev_hl.get("snippet_he", ""))
+        if hl["title_he"]:
+            n_he += 1
+    _strip_descriptions(regions)
+    print(f"  Hebrew translations: {n_he}/{len(titles)} headlines")
+
+    # Record the hash only when snippets AND Hebrew were freshly generated, so
+    # a failed half is retried on the next run instead of being cached as done.
+    return {"titles_hash": current_hash} if (snippets_ok and hebrew_ok) else {}
 
 
 # How long a failing outlet keeps showing its last good headlines before the

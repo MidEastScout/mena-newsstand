@@ -23,6 +23,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+<!-- Hebrew-capable fonts for the EN ↔ HE toggle: Latin glyphs keep rendering in
+     the fonts above (listed first in every stack); Hebrew glyphs fall through
+     to these so translated text doesn't drop to a generic system font. -->
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#16213E;--ink2:#3A4458;--muted:#69707E;
@@ -35,9 +39,9 @@
   --r1:6px;--r2:10px;--r3:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--ink)}
+body{font-family:'Source Sans 3','Heebo',sans-serif;background:var(--bg);color:var(--ink)}
 a{text-decoration:none;color:inherit}
-button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
+button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .wrap{max-width:960px;margin:0 auto;padding:0 16px}
 
 /* ===== Hero masthead — rotating globe (scoped to .hero; vars shadowed locally) ===== */
@@ -60,7 +64,7 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .hero .copy{position:relative;z-index:2;padding:0 clamp(28px,5vw,80px)}
 .hero .kicker{font-size:clamp(13px,1.4vw,17px);font-weight:600;letter-spacing:.32em;
   text-transform:uppercase;color:var(--gold);margin-bottom:clamp(14px,2vw,22px)}
-.hero .title{font-family:'Playfair Display',serif;line-height:.96;letter-spacing:-.01em;margin:0}
+.hero .title{font-family:'Playfair Display','Frank Ruhl Libre',serif;line-height:.96;letter-spacing:-.01em;margin:0}
 .hero .title .l1{display:block;font-weight:800;color:var(--paper);font-size:clamp(40px,7vw,70px)}
 .hero .title .scout{font-weight:600;font-style:italic;color:var(--gold)}
 .hero .title .l2{display:block;font-weight:600;font-style:italic;color:var(--gold);font-size:clamp(26px,4.7vw,47px)}
@@ -68,10 +72,10 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
   background:linear-gradient(90deg, transparent, var(--gold) 15%, var(--gold) 85%, transparent)}
 .hero .rule::after{content:"";position:absolute;left:0;top:7px;height:1px;width:100%;background:var(--gold);opacity:.4}
 .hero .tag{color:var(--muted);font-size:clamp(16px,1.9vw,22px);font-weight:400;line-height:1.45;max-width:30ch}
-.hero .creed{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);
+.hero .creed{font-family:'Playfair Display','Frank Ruhl Libre',serif;font-style:italic;color:var(--gold);
   font-size:clamp(15px,1.7vw,20px);opacity:.9;line-height:1.3;letter-spacing:.01em;
   margin:clamp(14px,1.9vw,22px) 0 0}
-.hero .creed .creed-src{display:inline-block;font-style:normal;font-family:'Source Sans 3',sans-serif;
+.hero .creed .creed-src{display:inline-block;font-style:normal;font-family:'Source Sans 3','Heebo',sans-serif;
   font-size:.7em;letter-spacing:.06em;opacity:.78;margin-left:.6em;white-space:nowrap}
 .hero .chips{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(20px,2.8vw,30px)}
 .hero .chip{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 18px;border-radius:20px;
@@ -150,7 +154,7 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 /* Section header */
 .sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px;position:relative}
 .sec-head::before{content:"";position:absolute;left:0;bottom:-1px;width:64px;height:3px;background:var(--accent)}
-.sec-head h2{font-family:'Newsreader',Georgia,serif;font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.4px;line-height:1.1}
+.sec-head h2{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.4px;line-height:1.1}
 .sec-note{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.6}
 
 /* Tip */
@@ -159,7 +163,7 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .hl-updated{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:16px}
 /* Headlines filter bar */
 .hl-filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
-.hl-filter-input,.hl-filter-select{font-family:'Source Sans 3',sans-serif;font-size:14px;color:var(--ink);
+.hl-filter-input,.hl-filter-select{font-family:'Source Sans 3','Heebo',sans-serif;font-size:14px;color:var(--ink);
   background:#fff;border:1px solid var(--line);border-radius:var(--r1);padding:9px 12px;height:40px;outline:none;transition:border-color .15s,box-shadow .15s}
 .hl-filter-input{flex:1 1 260px;min-width:0}
 .hl-filter-input::placeholder{color:var(--muted)}
@@ -173,7 +177,7 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .hl-link-btn{font:inherit;color:var(--accent);background:none;border:none;padding:0;font-weight:600;text-decoration:underline;cursor:pointer}
 .hl-loading{text-align:center;padding:48px;color:var(--muted);font-style:italic;font-size:14px}
 .hl-region{margin-bottom:38px}
-.hl-region-head{font-family:'Newsreader',Georgia,serif;font-size:23px;font-weight:700;letter-spacing:-.3px;padding-bottom:8px;margin-bottom:16px;border-bottom:1px solid var(--line);position:relative}
+.hl-region-head{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:23px;font-weight:700;letter-spacing:-.3px;padding-bottom:8px;margin-bottom:16px;border-bottom:1px solid var(--line);position:relative}
 .hl-region-head::before{content:"";position:absolute;left:0;bottom:-1px;width:48px;height:3px;background:var(--accent)}
 .hl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px}
 .hl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:18px 19px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh1);transition:.18s}
@@ -184,7 +188,7 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 .hl-list{list-style:none;display:flex;flex-direction:column;gap:0;flex:1}
 .hl-list li{border-top:1px solid var(--line);padding:9px 0}
 .hl-list li:first-child{border-top:none;padding-top:0}
-.hl-list a{font-family:'Newsreader',Georgia,serif;font-size:15px;line-height:1.32;color:var(--ink);font-weight:500;transition:.1s;display:block}
+.hl-list a{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:15px;line-height:1.32;color:var(--ink);font-weight:500;transition:.1s;display:block}
 .hl-list a:hover{color:var(--accent)}
 .hl-snippet{font-size:12px;line-height:1.5;color:var(--muted);margin-top:4px}
 .hl-none{font-size:12px;color:var(--muted);font-style:italic;flex:1}
@@ -195,7 +199,7 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 /* World Briefing card */
 .briefing-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:var(--r2);padding:26px 30px;margin-bottom:24px;box-shadow:var(--sh1)}
 .briefing-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:12px;flex-wrap:wrap}
-.briefing-title{font-family:'Newsreader',Georgia,serif;font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.4px}
+.briefing-title{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.4px}
 .briefing-ts{font-size:11px;color:var(--muted);font-style:italic}
 .briefing-card p{font-size:15px;line-height:1.85;color:var(--ink2);margin:0 0 14px}
 .briefing-card p:last-child{margin-bottom:0}
@@ -213,9 +217,9 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
   overflow:hidden;box-shadow:var(--sh2);display:flex;flex-direction:column}
 .brief-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:13px;min-height:212px}
 .brief-kicker{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
-.brief-h{font-family:'Playfair Display',serif;font-weight:800;font-size:25px;line-height:1.12;color:var(--blue)}
+.brief-h{font-family:'Playfair Display','Frank Ruhl Libre',serif;font-weight:800;font-size:25px;line-height:1.12;color:var(--blue)}
 .brief-rule{width:46px;height:3px;background:var(--gold);border-radius:2px}
-.brief-sum{font-family:'Source Sans 3',sans-serif;font-size:15.5px;line-height:1.66;color:var(--ink2)}
+.brief-sum{font-family:'Source Sans 3','Heebo',sans-serif;font-size:15.5px;line-height:1.66;color:var(--ink2)}
 .brief-prose p{font-size:15px;line-height:1.8;color:var(--ink2);margin:0 0 12px}
 .brief-prose strong{color:var(--blue);font-weight:700}
 .brief-dots{display:flex;gap:7px;justify-content:center;margin-top:6px;flex-wrap:wrap}
@@ -231,18 +235,18 @@ button{font-family:'Source Sans 3',sans-serif;cursor:pointer}
 
 /* Media Pulse word cloud */
 .pulse-cloud{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 18px;background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:34px 28px;margin-bottom:18px;line-height:1.12;box-shadow:var(--sh1)}
-.pulse-term{cursor:pointer;font-family:'Newsreader',Georgia,serif;font-weight:600;color:var(--tc,var(--ink));transition:color .12s;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.pulse-term{cursor:pointer;font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-weight:600;color:var(--tc,var(--ink));transition:color .12s;line-height:1;letter-spacing:-.01em;white-space:nowrap}
 .pulse-term:hover{color:var(--accent)}
 .pulse-term.active{color:var(--accent);text-decoration:underline}
 .pulse-detail{margin-bottom:24px}
-.pulse-detail-head{font-family:'Newsreader',Georgia,serif;font-size:18px;font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:5px;margin-bottom:12px}
+.pulse-detail-head{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:18px;font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:5px;margin-bottom:12px}
 .pulse-hl{background:#fff;border:1px solid var(--line);border-radius:var(--r1);padding:10px 14px;margin-bottom:8px;box-shadow:var(--sh1)}
 .pulse-hl a{font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;transition:.1s}
 .pulse-hl a:hover{color:var(--accent);text-decoration:underline}
 .pulse-hl .meta{font-size:11px;color:var(--muted);margin-top:3px}
 /* Outlet & Topic Trends */
 .tr-section{margin-bottom:34px}
-.tr-h{font-family:'Newsreader',Georgia,serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.tr-h{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:3px}
 .tr-sub{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:16px}
 .tr-row{display:grid;grid-template-columns:clamp(96px,26vw,170px) 1fr auto;align-items:center;gap:11px;margin-bottom:9px}
 .tr-label{font-size:13px;font-weight:600;color:var(--ink2);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -280,7 +284,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 .fp-modal-overlay.open{display:flex}
 .fp-modal-box{background:#fff;border-radius:var(--r2);overflow:hidden;width:min(960px,100%);height:90vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.4)}
 .fp-modal-head{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.fp-modal-title{font-family:'Newsreader',Georgia,serif;font-size:15px;font-weight:600}
+.fp-modal-title{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:15px;font-weight:600}
 .fp-modal-actions{display:flex;align-items:center;gap:8px}
 .fp-modal-ext{font-size:12px;color:var(--accent);font-weight:500}
 .fp-modal-ext:hover{text-decoration:underline}
@@ -295,6 +299,18 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 .archive-controls{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
 .archive-controls label{font-size:13px;font-weight:600;color:var(--ink)}
 .archive-controls select{font:inherit;font-size:13px;padding:7px 12px;border:1px solid var(--line);border-radius:var(--r1);background:#fff;color:inherit;cursor:pointer;min-width:240px}
+
+/* ===== RTL (Hebrew) adjustments. Most of the layout is flex/grid and mirrors
+   automatically when <html dir="rtl">; these fix the few physically-anchored
+   details (accent bars, asymmetric margins/borders). ===== */
+.lang-btn{color:var(--blue);font-weight:700;letter-spacing:.4px}
+.lang-btn:hover{color:var(--accent)}
+[dir="rtl"] .sec-head::before{left:auto;right:0}
+[dir="rtl"] .hl-region-head::before{left:auto;right:0}
+[dir="rtl"] .hero .creed .creed-src{margin-left:0;margin-right:.6em}
+[dir="rtl"] .tr-label,[dir="rtl"] .tr-div-src{text-align:left}
+[dir="rtl"] .tr-delta{margin-left:0;margin-right:5px}
+[dir="rtl"] .tr-div{border-left:1px solid var(--line);border-right:4px solid var(--accent);border-radius:var(--r1) 0 0 var(--r1)}
 </style>
 </head>
 <body>
@@ -305,8 +321,8 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
       <span class="l1">The Middle East <span class="scout">Scout</span></span>
     </h1>
     <div class="rule"></div>
-    <p class="tag">The One-Stop-Shop of Middle East Analysis | Regional Intelligence Hub</p>
-    <p class="creed">“Wisdom is better than weapons of war”<cite class="creed-src">— Ecclesiastes 9:18</cite></p>
+    <p class="tag" data-i18n="hero_tag">The One-Stop-Shop of Middle East Analysis | Regional Intelligence Hub</p>
+    <p class="creed" data-i18n="hero_creed">“Wisdom is better than weapons of war”<cite class="creed-src">— Ecclesiastes 9:18</cite></p>
     <div class="chips">
       <span class="chip live"><span class="dot"></span><b>LIVE</b><span class="sep"></span><span id="hdr-date">—</span></span>
     </div>
@@ -316,12 +332,13 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 
 <div class="navbar">
   <div class="wrap">
-    <button class="navbtn active" data-sec="briefing">Geopolitical Briefing</button>
-    <button class="navbtn" data-sec="headlines">Headlines</button>
-    <button class="navbtn" data-sec="frontpages">Front Pages</button>
-    <button class="navbtn" data-sec="pulse">Pulse</button>
-    <button class="navbtn" data-sec="trends">Trends</button>
-    <button class="navbtn" data-sec="archive">Archive</button>
+    <button class="navbtn active" data-sec="briefing" data-i18n="nav_briefing">Geopolitical Briefing</button>
+    <button class="navbtn" data-sec="headlines" data-i18n="nav_headlines">Headlines</button>
+    <button class="navbtn" data-sec="frontpages" data-i18n="nav_frontpages">Front Pages</button>
+    <button class="navbtn" data-sec="pulse" data-i18n="nav_pulse">Pulse</button>
+    <button class="navbtn" data-sec="trends" data-i18n="nav_trends">Trends</button>
+    <button class="navbtn" data-sec="archive" data-i18n="nav_archive">Archive</button>
+    <button class="navbtn lang-btn" id="lang-toggle" aria-label="עברית / English">עברית</button>
   </div>
 </div>
 
@@ -329,7 +346,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 
   <!-- WORLD BRIEFING TAB -->
   <div class="section active" id="sec-briefing">
-    <div class="sec-head"><h2>Geopolitical Briefing</h2></div>
+    <div class="sec-head"><h2 data-i18n="briefing_title">Geopolitical Briefing</h2></div>
     <div class="briefing-meta"><span class="briefing-ts" id="briefing-ts"></span></div>
     <div class="brief-carousel" id="brief-carousel" style="display:none">
       <button class="brief-arrow prev" id="brief-prev" aria-label="Previous card">‹</button>
@@ -337,31 +354,31 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
       <button class="brief-arrow next" id="brief-next" aria-label="Next card">›</button>
       <div class="brief-dots" id="brief-dots"></div>
     </div>
-    <div id="briefing-placeholder" class="hl-loading">Loading Geopolitical Briefing…</div>
+    <div id="briefing-placeholder" class="hl-loading" data-i18n="loading_briefing">Loading Geopolitical Briefing…</div>
   </div>
 
   <!-- HEADLINES TAB -->
   <div class="section" id="sec-headlines">
     <div class="sec-head">
-      <h2>Live Headlines</h2>
+      <h2 data-i18n="headlines_title">Live Headlines</h2>
     </div>
-    <div class="sec-note">Top 5 headlines from 21 MENA and regional outlets, organized by region. Refreshed automatically every 30 minutes.</div>
+    <div class="sec-note" data-i18n="headlines_note">Top 5 headlines from 21 MENA and regional outlets, organized by region. Refreshed automatically every 30 minutes.</div>
     <div class="hl-filters">
-      <input type="search" id="hl-topic" class="hl-filter-input" autocomplete="off"
+      <input type="search" id="hl-topic" class="hl-filter-input" autocomplete="off" data-i18n-ph="filter_ph"
         placeholder="Filter by topic or keyword (e.g. Iran, ceasefire, Hezbollah)…">
       <select id="hl-source" class="hl-filter-select" aria-label="Filter by source">
         <option value="">All sources</option>
       </select>
-      <button type="button" id="hl-clear" class="hl-filter-clear" hidden>Clear</button>
+      <button type="button" id="hl-clear" class="hl-filter-clear" data-i18n="clear" hidden>Clear</button>
     </div>
     <div id="hl-filter-info" class="hl-filter-info" style="display:none"></div>
-    <div id="hl-container"><div class="hl-loading">Loading headlines…</div></div>
+    <div id="hl-container"><div class="hl-loading" data-i18n="loading_headlines">Loading headlines…</div></div>
   </div>
 
   <!-- FRONT PAGES TAB -->
   <div class="section" id="sec-frontpages">
 
-    <div class="sec-head"><h2>Today's Front Pages</h2></div>
+    <div class="sec-head"><h2 data-i18n="fp_title">Today's Front Pages</h2></div>
     <div class="sec-note" id="fp-updated"></div>
     <div class="fp-grid" id="fp-grid"></div>
 
@@ -369,28 +386,28 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 
   <!-- PULSE TAB -->
   <div class="section" id="sec-pulse">
-    <div class="sec-head"><h2>Media Pulse</h2></div>
-    <div class="sec-note">The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.</div>
-    <div class="pulse-cloud" id="pulse-cloud"><div class="hl-loading">Loading pulse…</div></div>
+    <div class="sec-head"><h2 data-i18n="pulse_title">Media Pulse</h2></div>
+    <div class="sec-note" data-i18n="pulse_note">The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.</div>
+    <div class="pulse-cloud" id="pulse-cloud"><div class="hl-loading" data-i18n="loading_pulse">Loading pulse…</div></div>
     <div class="pulse-detail" id="pulse-detail"></div>
   </div>
 
   <!-- TRENDS TAB -->
   <div class="section" id="sec-trends">
-    <div class="sec-head"><h2>Outlet &amp; Topic Trends</h2></div>
-    <div class="sec-note">How today's coverage breaks down by topic and by outlet across every tracked feed — and where outlets diverge most on the same stories. Updates every 30 minutes.</div>
-    <div id="trends-body"><div class="hl-loading">Loading trends…</div></div>
+    <div class="sec-head"><h2 data-i18n="trends_title">Outlet &amp; Topic Trends</h2></div>
+    <div class="sec-note" data-i18n="trends_note">How today's coverage breaks down by topic and by outlet across every tracked feed — and where outlets diverge most on the same stories. Updates every 30 minutes.</div>
+    <div id="trends-body"><div class="hl-loading" data-i18n="loading_trends">Loading trends…</div></div>
   </div>
 
   <!-- ARCHIVE TAB -->
   <div class="section" id="sec-archive">
-    <div class="sec-head"><h2>Front-Page Archive</h2></div>
-    <div class="sec-note">Browse past front pages. Covers are saved on each daily refresh and kept for one year. Click any card for a larger view.</div>
+    <div class="sec-head"><h2 data-i18n="archive_title">Front-Page Archive</h2></div>
+    <div class="sec-note" data-i18n="archive_note">Browse past front pages. Covers are saved on each daily refresh and kept for one year. Click any card for a larger view.</div>
     <div class="archive-controls">
-      <label for="archive-date">Show date:</label>
+      <label for="archive-date" data-i18n="show_date">Show date:</label>
       <select id="archive-date"></select>
     </div>
-    <div class="fp-grid" id="archive-grid"><div class="hl-loading">Loading archive…</div></div>
+    <div class="fp-grid" id="archive-grid"><div class="hl-loading" data-i18n="loading_archive">Loading archive…</div></div>
   </div>
 
 </div>
@@ -401,20 +418,183 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
     <div class="fp-modal-head">
       <div class="fp-modal-title" id="fp-modal-title">Today's Front Page</div>
       <div class="fp-modal-actions">
-        <a class="fp-modal-ext" id="fp-modal-link" href="#" target="_blank" rel="noopener">Open newspaper site ↗</a>
+        <a class="fp-modal-ext" id="fp-modal-link" href="#" target="_blank" rel="noopener" data-i18n="open_paper_site">Open newspaper site ↗</a>
         <button class="fp-modal-close" onclick="closeFPModal()">&#x2715;</button>
       </div>
     </div>
     <div class="fp-modal-body" id="fp-modal-body"></div>
-    <div class="fp-modal-note">Front page covers via Kiosko &amp; Freedom Forum, updated daily.</div>
+    <div class="fp-modal-note" data-i18n="fp_note">Front page covers via Kiosko &amp; Freedom Forum, updated daily.</div>
   </div>
 </div>
 
-<footer class="wrap">
+<footer class="wrap" data-i18n="footer">
   Front page covers via Kiosko.net &amp; Freedom Forum · All other links to original outlets
 </footer>
 
 <script>
+/* ===== EN ↔ HE language toggle =====
+   LANG drives the chrome strings (I18N), document direction (rtl), date
+   locales, and which content fields render — title_he / snippet_he / term_he /
+   label_he / html_by_lang.he, every one falling back to English when a
+   translation is missing, so a translation failure never blanks the site. */
+const I18N = {
+ en: {
+  doc_title:"The Middle East Scout — Live Front Pages & Headlines",
+  nav_briefing:"Geopolitical Briefing", nav_headlines:"Headlines",
+  nav_frontpages:"Front Pages", nav_pulse:"Pulse", nav_trends:"Trends",
+  nav_archive:"Archive",
+  hero_tag:"The One-Stop-Shop of Middle East Analysis | Regional Intelligence Hub",
+  hero_creed:"“Wisdom is better than weapons of war”<cite class=\"creed-src\">— Ecclesiastes 9:18</cite>",
+  briefing_title:"Geopolitical Briefing", headlines_title:"Live Headlines",
+  fp_title:"Today's Front Pages", pulse_title:"Media Pulse",
+  trends_title:"Outlet &amp; Topic Trends", archive_title:"Front-Page Archive",
+  headlines_note:"Top 5 headlines from 21 MENA and regional outlets, organized by region. Refreshed automatically every 30 minutes.",
+  pulse_note:"The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.",
+  trends_note:"How today's coverage breaks down by topic and by outlet across every tracked feed — and where outlets diverge most on the same stories. Updates every 30 minutes.",
+  archive_note:"Browse past front pages. Covers are saved on each daily refresh and kept for one year. Click any card for a larger view.",
+  filter_ph:"Filter by topic or keyword (e.g. Iran, ceasefire, Hezbollah)…",
+  all_sources:"All sources", clear:"Clear", clear_filter:"Clear filter",
+  show_date:"Show date:",
+  loading_briefing:"Loading Geopolitical Briefing…",
+  loading_headlines:"Loading headlines…", loading_pulse:"Loading pulse…",
+  loading_trends:"Loading trends…", loading_archive:"Loading archive…",
+  open_paper_site:"Open newspaper site ↗",
+  fp_note:"Front page covers via Kiosko &amp; Freedom Forum, updated daily.",
+  footer:"Front page covers via Kiosko.net &amp; Freedom Forum · All other links to original outlets",
+  fp_asof:"Front pages as of ", todays_fp:"Today's Front Page",
+  fp_none:"Front page<br>not available today", fp_click:"Click to open paper ↗",
+  img_unavailable:"Image unavailable",
+  fp_modal_none:n=>`Today's front page image isn't available for ${n} yet.`,
+  fp_modal_fail:()=>`This front page image isn't available.`,
+  open_website:n=>`Open ${n} website ↗`,
+  no_archive:"No archived front pages yet — the first day's covers appear after the next daily refresh.",
+  no_covers:"No covers saved for this date.",
+  feed_unavailable:"Feed unavailable today", no_headlines:"No headlines",
+  stale_note:"Feed temporarily down — showing the latest available.",
+  open_site:"Open site →", last_updated:"Last updated: ",
+  hl_unavailable:"Headlines not yet available — the fetcher refreshes every 30 minutes.",
+  none_yet:"No headlines available yet.",
+  pulse_unavailable:"Pulse not yet available — it builds on the next 30-min refresh.",
+  no_terms:"No terms yet.",
+  n_headlines:n=>`${n} headline${n===1?"":"s"}`,
+  trends_unavailable:"Trends not yet available — they build on the next 30-min refresh.",
+  no_trends:"No trend data yet.",
+  tr_volume:"Topic Volume — Today",
+  tr_volume_sub:(n,ht)=>`Share of the ${n} stories MENA outlets are currently running whose main subject is each topic${ht?", with the change in coverage vs ~24h ago":""}.`,
+  tr_note:"Rising/falling figures appear once ~24h of history has accumulated.",
+  tr_outlets:"What Each Outlet Is Covering",
+  tr_outlets_sub:"Every outlet's recent coverage split by topic — its editorial mix at a glance. Hover a segment for the topic and share.",
+  tr_diverge:"Where Outlets Diverge",
+  tr_diverge_sub:"On the day's biggest stories — who is leaning in hardest, and who is barely covering it.",
+  other:"Other", stories:"stories", most:"most:",
+  barely:"Barely covering it: ",
+  spread:s=>`${s}pp spread`,
+  tr_updated:(d,n)=>`Updated ${d} · based on ${n} snapshot${n===1?"":"s"} of history`,
+  updated:"Updated ",
+  update_n:n=>`Update ${n}`,
+  showing:(nH,nO,bits)=>`Showing <b>${nH}</b> headline${nH===1?"":"s"} from <b>${nO}</b> outlet${nO===1?"":"s"} matching ${bits}.`,
+  no_match:bits=>`No headlines match ${bits}.`,
+ },
+ he: {
+  doc_title:"The Middle East Scout — עמודים ראשיים וכותרות בזמן אמת",
+  nav_briefing:"תדריך גיאופוליטי", nav_headlines:"כותרות",
+  nav_frontpages:"עמודים ראשיים", nav_pulse:"דופק", nav_trends:"מגמות",
+  nav_archive:"ארכיון",
+  hero_tag:"התחנה המרכזית לניתוח המזרח התיכון | מרכז מודיעין אזורי",
+  hero_creed:"״טוֹבָה חָכְמָה מִכְּלֵי קְרָב״<cite class=\"creed-src\">— קהלת ט׳, י״ח</cite>",
+  briefing_title:"תדריך גיאופוליטי", headlines_title:"כותרות בזמן אמת",
+  fp_title:"העמודים הראשיים של היום", pulse_title:"דופק התקשורת",
+  trends_title:"מגמות לפי כלי תקשורת ונושא", archive_title:"ארכיון עמודים ראשיים",
+  headlines_note:"חמש הכותרות המובילות מ-21 כלי תקשורת מהמזרח התיכון והאזור, מסודרות לפי אזור. מתעדכן אוטומטית כל 30 דקות.",
+  pulse_note:"המונחים המוזכרים ביותר בכלל הכותרות כרגע — גדול יותר פירושו סיקור רחב יותר. לחצו על מילה כדי לראות את הכותרות שמאחוריה. מתעדכן כל 30 דקות.",
+  trends_note:"איך הסיקור של היום מתחלק לפי נושא ולפי כלי תקשורת בכל הפידים שבמעקב — והיכן כלי התקשורת נבדלים זה מזה באותם סיפורים. מתעדכן כל 30 דקות.",
+  archive_note:"עיינו בעמודים ראשיים מהעבר. השערים נשמרים בכל רענון יומי למשך שנה. לחצו על כרטיס לתצוגה מוגדלת.",
+  filter_ph:"סינון לפי נושא או מילת מפתח (למשל איראן, הפסקת אש, חיזבאללה)…",
+  all_sources:"כל המקורות", clear:"ניקוי", clear_filter:"ניקוי הסינון",
+  show_date:"בחרו תאריך:",
+  loading_briefing:"טוען את התדריך הגיאופוליטי…",
+  loading_headlines:"טוען כותרות…", loading_pulse:"טוען את הדופק…",
+  loading_trends:"טוען מגמות…", loading_archive:"טוען ארכיון…",
+  open_paper_site:"לאתר העיתון ↗",
+  fp_note:"שערי העיתונים באדיבות Kiosko ו-Freedom Forum, מתעדכנים מדי יום.",
+  footer:"שערי העיתונים באדיבות Kiosko.net ו-Freedom Forum · כל שאר הקישורים מובילים לאתרי המקור",
+  fp_asof:"עמודים ראשיים נכון ל-", todays_fp:"העמוד הראשי של היום",
+  fp_none:"העמוד הראשי<br>אינו זמין היום", fp_click:"לחצו לפתיחת האתר ↗",
+  img_unavailable:"התמונה אינה זמינה",
+  fp_modal_none:n=>`תמונת העמוד הראשי של ${n} אינה זמינה עדיין היום.`,
+  fp_modal_fail:()=>`תמונת העמוד הראשי הזו אינה זמינה.`,
+  open_website:n=>`לאתר ${n} ↗`,
+  no_archive:"אין עדיין עמודים ראשיים בארכיון — שערי היום הראשון יופיעו אחרי הרענון היומי הבא.",
+  no_covers:"לא נשמרו שערים לתאריך הזה.",
+  feed_unavailable:"הפיד אינו זמין היום", no_headlines:"אין כותרות",
+  stale_note:"הפיד מושבת זמנית — מוצגות הכותרות האחרונות שהתקבלו.",
+  open_site:"לאתר המקור ←", last_updated:"עדכון אחרון: ",
+  hl_unavailable:"הכותרות עדיין אינן זמינות — הרענון מתבצע כל 30 דקות.",
+  none_yet:"אין עדיין כותרות זמינות.",
+  pulse_unavailable:"הדופק עדיין אינו זמין — הוא נבנה ברענון הבא (כל 30 דקות).",
+  no_terms:"אין עדיין מונחים.",
+  n_headlines:n=>n===1?"כותרת אחת":`${n} כותרות`,
+  trends_unavailable:"המגמות עדיין אינן זמינות — הן נבנות ברענון הבא (כל 30 דקות).",
+  no_trends:"אין עדיין נתוני מגמות.",
+  tr_volume:"נפח סיקור לפי נושא — היום",
+  tr_volume_sub:(n,ht)=>`חלקן של ${n} הכתבות שכלי התקשורת במזה"ת מריצים כעת, לפי הנושא המרכזי של כל כתבה${ht?", כולל השינוי בסיקור לעומת ~24 השעות האחרונות":""}.`,
+  tr_note:"נתוני עלייה/ירידה יופיעו לאחר שיצטברו כ-24 שעות של היסטוריה.",
+  tr_outlets:"מה מסקר כל כלי תקשורת",
+  tr_outlets_sub:"הסיקור האחרון של כל כלי תקשורת בחלוקה לפי נושא — התמהיל העריכתי שלו במבט אחד. ריחוף על מקטע מציג את הנושא ואת חלקו.",
+  tr_diverge:"היכן כלי התקשורת נבדלים",
+  tr_diverge_sub:"בסיפורים הגדולים של היום — מי משקיע בהם הכי הרבה, ומי בקושי מסקר.",
+  other:"אחר", stories:"כתבות", most:"בעיקר:",
+  barely:"בקושי מסקרים: ",
+  spread:s=>`פער של ${s} נק׳`,
+  tr_updated:(d,n)=>`עודכן ${d} · מבוסס על ${n} תמונות מצב`,
+  updated:"עודכן ",
+  update_n:n=>`עדכון ${n}`,
+  showing:(nH,nO,bits)=>`מוצגות <b>${nH}</b> כותרות מ-<b>${nO}</b> כלי תקשורת, תואמות ${bits}.`,
+  no_match:bits=>`אין כותרות התואמות ${bits}.`,
+ },
+};
+
+let LANG = "en";
+try{ if(localStorage.getItem("mes-lang")==="he") LANG="he"; }catch(e){}
+const T  = k => (I18N[LANG] && I18N[LANG][k]) || I18N.en[k] || k;
+const TF = (k,...a) => { const v=T(k); return typeof v==="function" ? v(...a) : v; };
+const LOCALE = () => LANG==="he" ? "he-IL" : "en-US";
+// Content-field fallback: show the Hebrew field when in Hebrew AND it exists.
+const heb = (he,en) => (LANG==="he" && he) ? he : en;
+
+// Region / country names are a small fixed vocabulary — translated statically.
+const REGION_HE = {"Pan-Arab":"פאן-ערבי","Levant":"הלבנט","Gulf":"המפרץ",
+  "Iran":"איראן","Turkey":"טורקיה","Israel":"ישראל"};
+const PLACE_HE = {"UAE":"איחוד האמירויות","Qatar":"קטאר","Saudi Arabia":"סעודיה",
+  "Kuwait":"כווית","Turkey":"טורקיה","USA":"ארה\"ב","UK":"בריטניה",
+  "Germany":"גרמניה","Jordan":"ירדן","Lebanon":"לבנון","Egypt":"מצרים",
+  "Palestine":"פלסטין","Iran":"איראן","Israel":"ישראל"};
+const rgn = r => LANG==="he" ? (REGION_HE[r]||r) : r;
+const plc = c => LANG==="he" ? (PLACE_HE[c]||c) : c;
+
+// Cached payloads, declared up here so applyLang() can safely test them the
+// moment it first runs — a language toggle re-renders without refetching.
+let briefData = null, pulseData = null, trendsData = null, activePulseIdx = null;
+
+function applyLang(){
+  document.documentElement.lang = LANG;
+  document.documentElement.dir  = LANG==="he" ? "rtl" : "ltr";
+  document.title = T("doc_title");
+  document.querySelectorAll("[data-i18n]").forEach(el=>{ el.innerHTML = T(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{ el.placeholder = T(el.dataset.i18nPh); });
+  const tog = document.getElementById("lang-toggle");
+  if(tog) tog.textContent = LANG==="he" ? "English" : "עברית";
+  document.getElementById("hdr-date").textContent =
+    new Date().toLocaleDateString(LOCALE(),{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+  // Re-render every section whose data is already cached.
+  renderFPGrid();
+  if(ARCHIVE_INDEX) renderArchiveUI();
+  if(hlData){ populateHeadlineSources(hlData); applyHeadlineFilters(); }
+  if(briefData) renderBriefing();
+  if(pulseData){ renderPulse(); if(activePulseIdx!=null) showPulseTerm(activePulseIdx); }
+  if(trendsData) renderTrends();
+}
+
 const FP_PAPERS = [
   { id:"the_national", name:"The National",    loc:"UAE",              lang:"en", site:"https://www.thenationalnews.com" },
   { id:"gulf_news",    name:"Gulf News",       loc:"UAE",              lang:"en", site:"https://gulfnews.com" },
@@ -466,7 +646,10 @@ async function buildFPGrid(){
       (m.papers || []).forEach(p => { FP_STATUS[p.id] = p; });
     }
   }catch(e){}
+  renderFPGrid();
+}
 
+function renderFPGrid(){
   document.getElementById("fp-grid").innerHTML = FP_PAPERS.map((p,idx)=>{
     const st = FP_STATUS[p.id];
     const hasImg = !!(st && st.ok);
@@ -480,27 +663,27 @@ async function buildFPGrid(){
         ${imgTag}
         <div class="fp-placeholder" style="${hasImg?'display:none':'display:flex'}">
           <span style="font-size:26px">📰</span>
-          <span>Front page<br>not available today</span>
-          <span style="font-size:10px;color:var(--blue)">Click to open paper ↗</span>
+          <span>${T("fp_none")}</span>
+          <span style="font-size:10px;color:var(--blue)">${T("fp_click")}</span>
         </div>
       </div>
       <div class="fp-info">
         <div class="fp-name">${esc(p.name)}</div>
-        <div class="fp-loc">${esc(p.loc)}</div>
+        <div class="fp-loc">${esc(plc(p.loc))}</div>
         ${lb(p.lang)}
       </div>
     </div>`;
   }).join("");
 
   const note = document.getElementById("fp-updated");
-  if(note) note.textContent = FP_VER ? ("Front pages as of " + FP_VER) : "";
+  if(note) note.textContent = FP_VER ? (T("fp_asof") + FP_VER) : "";
 }
 
 let ARCHIVE_INDEX = null;
 
 function fmtArchiveDate(d){
   try{
-    return new Date(d + "T00:00:00Z").toLocaleDateString("en-US",
+    return new Date(d + "T00:00:00Z").toLocaleDateString(LOCALE(),
       {weekday:"long", year:"numeric", month:"long", day:"numeric", timeZone:"UTC"});
   }catch(e){ return d; }
 }
@@ -508,31 +691,36 @@ function fmtArchiveDate(d){
 function archiveImgURL(id, d){ return `frontpages/archive/${d}/${id}.jpg`; }
 
 async function buildArchive(){
-  const grid = document.getElementById("archive-grid");
-  const sel = document.getElementById("archive-date");
   try{
     const r = await fetch("frontpages/archive/index.json?t=" + Date.now());
     if(r.ok) ARCHIVE_INDEX = await r.json();
   }catch(e){}
+  renderArchiveUI();
+}
 
+function renderArchiveUI(){
+  const grid = document.getElementById("archive-grid");
+  const sel = document.getElementById("archive-date");
   const dates = ARCHIVE_INDEX && ARCHIVE_INDEX.dates
     ? Object.keys(ARCHIVE_INDEX.dates).sort().reverse() : [];
   if(!dates.length){
     sel.style.display = "none";
-    grid.innerHTML = `<div class="hl-loading">No archived front pages yet — the first day's covers appear after the next daily refresh.</div>`;
+    grid.innerHTML = `<div class="hl-loading">${T("no_archive")}</div>`;
     return;
   }
   sel.style.display = "";
+  const prev = sel.value;                       // keep selection across toggles
   sel.innerHTML = dates.map(d=>`<option value="${d}">${fmtArchiveDate(d)}</option>`).join("");
+  if(dates.includes(prev)) sel.value = prev;
   sel.onchange = () => renderArchiveGrid(sel.value);
-  renderArchiveGrid(dates[0]);
+  renderArchiveGrid(sel.value || dates[0]);
 }
 
 function renderArchiveGrid(d){
   const grid = document.getElementById("archive-grid");
   const ids = (ARCHIVE_INDEX.dates[d] || []);
   const papers = ARCHIVE_INDEX.papers || {};
-  if(!ids.length){ grid.innerHTML = `<div class="hl-loading">No covers saved for this date.</div>`; return; }
+  if(!ids.length){ grid.innerHTML = `<div class="hl-loading">${T("no_covers")}</div>`; return; }
   grid.innerHTML = ids.map(id=>{
     const p = papers[id] || {name:id, loc:"", lang:"en", site:"#"};
     return `
@@ -542,12 +730,12 @@ function renderArchiveGrid(d){
           alt="${esc(p.name)} front page" onerror="fpImgError(this)">
         <div class="fp-placeholder" style="display:none">
           <span style="font-size:26px">📰</span>
-          <span>Image unavailable</span>
+          <span>${T("img_unavailable")}</span>
         </div>
       </div>
       <div class="fp-info">
         <div class="fp-name">${esc(p.name)}</div>
-        <div class="fp-loc">${esc(p.loc)}</div>
+        <div class="fp-loc">${esc(plc(p.loc))}</div>
         ${lb(p.lang||"en")}
       </div>
     </div>`;
@@ -562,8 +750,8 @@ function openArchiveModal(id, d){
     `<img class="fp-modal-img" src="${archiveImgURL(id,d)}"
        alt="${esc(p.name)} front page" onerror="fpModalImgError(this)">
      <div class="fp-modal-fail" style="display:none">
-       <p>This front page image isn't available.</p>
-       <a href="${p.site||'#'}" target="_blank" rel="noopener">Open ${esc(p.name)} website ↗</a>
+       <p>${TF("fp_modal_fail")}</p>
+       <a href="${p.site||'#'}" target="_blank" rel="noopener">${TF("open_website", esc(p.name))}</a>
      </div>`;
   document.getElementById("fp-modal").classList.add("open");
   document.body.style.overflow = "hidden";
@@ -587,18 +775,18 @@ function openFPModal(idx){
   const p = FP_PAPERS[idx];
   const st = FP_STATUS[p.id];
   const hasImg = !!(st && st.ok);
-  document.getElementById("fp-modal-title").textContent = p.name + " — Today's Front Page";
+  document.getElementById("fp-modal-title").textContent = p.name + " — " + T("todays_fp");
   document.getElementById("fp-modal-link").href = p.site;
   document.getElementById("fp-modal-body").innerHTML = hasImg
     ? `<img class="fp-modal-img" src="${fpImgURL(p.id)}"
          alt="${esc(p.name)} front page" onerror="fpModalImgError(this)">
        <div class="fp-modal-fail" style="display:none">
-         <p>Today's front page image isn't available for ${esc(p.name)}.</p>
-         <a href="${p.site}" target="_blank" rel="noopener">Open ${esc(p.name)} website ↗</a>
+         <p>${TF("fp_modal_none", esc(p.name))}</p>
+         <a href="${p.site}" target="_blank" rel="noopener">${TF("open_website", esc(p.name))}</a>
        </div>`
     : `<div class="fp-modal-fail" style="display:block">
-         <p>Today's front page image isn't available for ${esc(p.name)} yet.</p>
-         <a href="${p.site}" target="_blank" rel="noopener">Open ${esc(p.name)} website ↗</a>
+         <p>${TF("fp_modal_none", esc(p.name))}</p>
+         <a href="${p.site}" target="_blank" rel="noopener">${TF("open_website", esc(p.name))}</a>
        </div>`;
   document.getElementById("fp-modal").classList.add("open");
   document.body.style.overflow = "hidden";
@@ -615,7 +803,9 @@ function closeFPModal(){
   document.body.style.overflow = "";
 }
 
-document.querySelectorAll(".navbtn").forEach(btn=>{
+// Only the real tab buttons ([data-sec]) switch sections — the language
+// toggle shares the .navbtn look but must not hijack the active tab.
+document.querySelectorAll(".navbtn[data-sec]").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.querySelectorAll(".navbtn").forEach(b=>b.classList.remove("active"));
     document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
@@ -626,8 +816,12 @@ document.querySelectorAll(".navbtn").forEach(btn=>{
 
 document.addEventListener("keydown", e => { if(e.key==="Escape") closeFPModal(); });
 
-document.getElementById("hdr-date").textContent =
-  new Date().toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+document.getElementById("lang-toggle").addEventListener("click", ()=>{
+  LANG = LANG==="he" ? "en" : "he";
+  try{ localStorage.setItem("mes-lang", LANG); }catch(e){}
+  applyLang();
+});
+applyLang();   // set chrome (and direction) before any data arrives
 
 buildFPGrid();
 buildArchive();
@@ -640,8 +834,6 @@ setInterval(loadBriefing,  30 * 60 * 1000);
 setInterval(loadPulse,     30 * 60 * 1000);
 setInterval(loadTrends,    30 * 60 * 1000);
 
-let pulseData = null;
-
 async function loadPulse(){
   const cloud = document.getElementById("pulse-cloud");
   try{
@@ -649,11 +841,16 @@ async function loadPulse(){
     if(!r.ok) throw new Error("HTTP " + r.status);
     pulseData = await r.json();
   }catch(e){
-    cloud.innerHTML = `<div class="hl-loading">Pulse not yet available — it builds on the next 30-min refresh.</div>`;
+    cloud.innerHTML = `<div class="hl-loading">${T("pulse_unavailable")}</div>`;
     return;
   }
+  renderPulse();
+}
+
+function renderPulse(){
+  const cloud = document.getElementById("pulse-cloud");
   const src = (pulseData.terms || []);
-  if(!src.length){ cloud.innerHTML = `<div class="hl-loading">No terms yet.</div>`; return; }
+  if(!src.length){ cloud.innerHTML = `<div class="hl-loading">${T("no_terms")}</div>`; return; }
   const counts = src.map(t=>t.count);
   const min = Math.min(...counts), max = Math.max(...counts);
   const norm = c => max === min ? 0.5 : (c - min) / (max - min);
@@ -675,56 +872,64 @@ async function loadPulse(){
   const ordered = [];
   ranked.forEach((o,k)=>{ if(k % 2 === 0) ordered.push(o); else ordered.unshift(o); });
   cloud.innerHTML = ordered.map(({t,i,color})=>
-    `<span class="pulse-term" data-i="${i}" onclick="showPulseTerm(${i})" title="${t.count} headlines"
-       style="--tc:${color};font-size:${size(t.count).toFixed(1)}px;font-weight:${weightFor(t.count)}">${esc(t.term)}</span>`
+    `<span class="pulse-term" data-i="${i}" onclick="showPulseTerm(${i})" title="${TF("n_headlines", t.count)}"
+       style="--tc:${color};font-size:${size(t.count).toFixed(1)}px;font-weight:${weightFor(t.count)}">${esc(heb(t.term_he, t.term))}</span>`
   ).join("");
 }
 
 function showPulseTerm(i){
   const t = (pulseData && pulseData.terms || [])[i];
   if(!t) return;
+  activePulseIdx = i;
   document.querySelectorAll(".pulse-term").forEach(el=>
     el.classList.toggle("active", el.dataset.i == i));
   const hls = (t.headlines || []).map(h=>`
     <div class="pulse-hl">
-      <a href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto">${esc(h.title)}</a>
-      <div class="meta">${esc(h.source)} · ${esc(h.region)}</div>
+      <a href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto">${esc(heb(h.title_he, h.title))}</a>
+      <div class="meta">${esc(h.source)} · ${esc(rgn(h.region))}</div>
     </div>`).join("");
   document.getElementById("pulse-detail").innerHTML =
-    `<div class="pulse-detail-head">"${esc(t.term)}" — ${t.count} headline${t.count===1?"":"s"}</div>${hls}`;
+    `<div class="pulse-detail-head">"${esc(heb(t.term_he, t.term))}" — ${TF("n_headlines", t.count)}</div>${hls}`;
 }
 
 // ---- Outlet & Topic Trends ----
 async function loadTrends(){
   const body = document.getElementById("trends-body");
-  let d;
   try{
     const r = await fetch("trends.json?t=" + Date.now(), {cache:"no-store"});
     if(!r.ok) throw new Error("HTTP " + r.status);
-    d = await r.json();
+    trendsData = await r.json();
   }catch(e){
-    body.innerHTML = `<div class="hl-loading">Trends not yet available — they build on the next 30-min refresh.</div>`;
+    body.innerHTML = `<div class="hl-loading">${T("trends_unavailable")}</div>`;
     return;
   }
+  renderTrends();
+}
+
+function renderTrends(){
+  const body = document.getElementById("trends-body");
+  const d = trendsData;
+  const tl = x => esc(heb(x.label_he, x.label));   // topic label in current lang
   const topics = d.topics || [], outlets = d.outlets || [], div = d.divergence || [];
-  if(!topics.length){ body.innerHTML = `<div class="hl-loading">No trend data yet.</div>`; return; }
+  if(!topics.length){ body.innerHTML = `<div class="hl-loading">${T("no_trends")}</div>`; return; }
   const maxShare = Math.max(...topics.map(t=>t.share), 1);
 
   // 1) Topic volume, with rising/falling vs ~24h ago
   let html = `<div class="tr-section">
-    <div class="tr-h">Topic Volume — Today</div>
-    <div class="tr-sub">Share of the ${d.total_headlines} stories MENA outlets are currently running whose main subject is each topic${d.has_trend ? ", with the change in coverage vs ~24h ago" : ""}.</div>`;
-  if(!d.has_trend) html += `<div class="tr-note">Rising/falling figures appear once ~24h of history has accumulated.</div>`;
+    <div class="tr-h">${T("tr_volume")}</div>
+    <div class="tr-sub">${TF("tr_volume_sub", d.total_headlines, d.has_trend)}</div>`;
+  if(!d.has_trend) html += `<div class="tr-note">${T("tr_note")}</div>`;
   for(const t of topics){
     const w = (t.share / maxShare * 100).toFixed(1);
     let delta = "";
     if(d.has_trend && t.delta !== null && t.delta !== undefined){
       const cls = t.delta > 0.3 ? "tr-up" : (t.delta < -0.3 ? "tr-down" : "tr-flat");
       const arrow = t.delta > 0.3 ? "▲" : (t.delta < -0.3 ? "▼" : "▬");
-      delta = `<span class="tr-delta ${cls}">${arrow} ${t.delta > 0 ? "+" : ""}${t.delta}pp</span>`;
+      // dir=ltr: keeps "+4.8pp" from being bidi-reordered to "4.8pp+" in RTL.
+      delta = `<span class="tr-delta ${cls}" dir="ltr">${arrow} ${t.delta > 0 ? "+" : ""}${t.delta}pp</span>`;
     }
     html += `<div class="tr-row">
-      <div class="tr-label">${esc(t.label)}</div>
+      <div class="tr-label">${tl(t)}</div>
       <div class="tr-track"><div class="tr-fill" style="width:${w}%;background:${esc(t.color)}"></div></div>
       <div class="tr-val">${t.count} · ${t.share}%${delta}</div>
     </div>`;
@@ -733,20 +938,20 @@ async function loadTrends(){
 
   // 2) What each outlet is covering — 100% stacked topic mix
   html += `<div class="tr-section">
-    <div class="tr-h">What Each Outlet Is Covering</div>
-    <div class="tr-sub">Every outlet's recent coverage split by topic — its editorial mix at a glance. Hover a segment for the topic and share.</div>`;
+    <div class="tr-h">${T("tr_outlets")}</div>
+    <div class="tr-sub">${T("tr_outlets_sub")}</div>`;
   const legend = topics.filter(t=>t.id !== "other");
   html += `<div class="tr-legend">` +
-    legend.map(t=>`<span class="tr-leg"><span class="tr-leg-dot" style="background:${esc(t.color)}"></span>${esc(t.label)}</span>`).join("") +
-    `<span class="tr-leg"><span class="tr-leg-dot" style="background:#9AA3B2"></span>Other</span></div>`;
+    legend.map(t=>`<span class="tr-leg"><span class="tr-leg-dot" style="background:${esc(t.color)}"></span>${tl(t)}</span>`).join("") +
+    `<span class="tr-leg"><span class="tr-leg-dot" style="background:#9AA3B2"></span>${T("other")}</span></div>`;
   for(const o of outlets){
     const segs = (o.mix || []).map(m=>
-      `<div class="tr-seg" style="width:${m.share}%;background:${esc(m.color)}" title="${esc(m.label)} — ${m.share}%"></div>`).join("");
-    const top = (o.mix && o.mix[0]) ? `${esc(o.mix[0].label)} ${o.mix[0].share}%` : "—";
+      `<div class="tr-seg" style="width:${m.share}%;background:${esc(m.color)}" title="${tl(m)} — ${m.share}%"></div>`).join("");
+    const top = (o.mix && o.mix[0]) ? `${tl(o.mix[0])} ${o.mix[0].share}%` : "—";
     html += `<div class="tr-outlet">
       <div class="tr-outlet-head">
         <span class="tr-outlet-name">${esc(o.source)}</span>
-        <span class="tr-outlet-meta">${esc(o.country)} · ${o.total} stories · most: ${top}</span>
+        <span class="tr-outlet-meta">${esc(plc(o.country))} · ${o.total} ${T("stories")} · ${T("most")} ${top}</span>
       </div>
       <div class="tr-stack">${segs}</div>
     </div>`;
@@ -756,18 +961,18 @@ async function loadTrends(){
   // 3) Where outlets diverge
   if(div.length){
     html += `<div class="tr-section">
-      <div class="tr-h">Where Outlets Diverge</div>
-      <div class="tr-sub">On the day's biggest stories — who is leaning in hardest, and who is barely covering it.</div>`;
+      <div class="tr-h">${T("tr_diverge")}</div>
+      <div class="tr-sub">${T("tr_diverge_sub")}</div>`;
     for(const dv of div){
       const rows = (dv.top || []).map(s=>`<div class="tr-div-row">
         <div class="tr-div-src">${esc(s.source)}</div>
         <div class="tr-div-track"><div class="tr-div-fill" style="width:${s.share}%;background:${esc(dv.color)}"></div></div>
         <div class="tr-div-pct">${s.share}%</div></div>`).join("");
       const low = (dv.bottom && dv.bottom.length)
-        ? `<div class="tr-div-low">Barely covering it: ${dv.bottom.map(s=>esc(s.source)).join(", ")}</div>` : "";
+        ? `<div class="tr-div-low">${T("barely")}${dv.bottom.map(s=>esc(s.source)).join(", ")}</div>` : "";
       html += `<div class="tr-div">
-        <div class="tr-div-head"><span class="tr-div-title">${esc(dv.label)}</span>
-          <span class="tr-div-spread">${dv.spread}pp spread</span></div>
+        <div class="tr-div-head"><span class="tr-div-title">${tl(dv)}</span>
+          <span class="tr-div-spread">${TF("spread", dv.spread)}</span></div>
         ${rows}${low}</div>`;
     }
     html += `</div>`;
@@ -775,7 +980,8 @@ async function loadTrends(){
 
   if(d.updated){
     const dt = new Date(d.updated);
-    html += `<div class="hl-updated">Updated ${dt.toLocaleString("en-US",{weekday:"short",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZoneName:"short"})} · based on ${d.history_points} snapshot${d.history_points===1?"":"s"} of history</div>`;
+    const when = dt.toLocaleString(LOCALE(),{weekday:"short",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZoneName:"short"});
+    html += `<div class="hl-updated">${TF("tr_updated", when, d.history_points)}</div>`;
   }
   body.innerHTML = html;
 }
@@ -787,9 +993,9 @@ function renderBriefCarousel(cards){
     `<article class="brief-slide">
       <div class="brief-body">
         <span class="brief-kicker">${String(idx+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}</span>
-        <div class="brief-h">${esc(c.heading||('Update '+(idx+1)))}</div>
+        <div class="brief-h" dir="auto">${esc(c.heading||TF('update_n', idx+1))}</div>
         <div class="brief-rule"></div>
-        <div class="brief-sum">${esc(c.summary||'')}</div>
+        <div class="brief-sum" dir="auto">${esc(c.summary||'')}</div>
       </div>
     </article>`).join("");
   const dots = document.getElementById("brief-dots");
@@ -802,38 +1008,56 @@ function renderBriefCarousel(cards){
   function go(i){ i=Math.max(0,Math.min(slides.length-1,i));
     track.scrollBy({left:centerOf(slides[i])-centerOf(track), behavior:'smooth'}); }
   dots.querySelectorAll('.brief-dot').forEach(d=> d.onclick=()=>go(+d.dataset.i));
-  document.getElementById("brief-prev").onclick=()=>go(active()-1);
-  document.getElementById("brief-next").onclick=()=>go(active()+1);
+  // In RTL the first card sits on the RIGHT, so the physical left arrow must
+  // advance (index+1) and the right arrow must go back — mirrored from LTR.
+  const rtl = document.documentElement.dir === "rtl";
+  document.getElementById("brief-prev").onclick=()=>go(active()+(rtl?1:-1));
+  document.getElementById("brief-next").onclick=()=>go(active()+(rtl?-1:1));
   let raf=0;
   track.onscroll=()=>{ if(raf) return; raf=requestAnimationFrame(()=>{ raf=0; const a=active();
     dots.querySelectorAll('.brief-dot').forEach((d,i)=>d.classList.toggle('active', i===a)); }); };
 }
+
 async function loadBriefing(){
   try{
     const r = await fetch("briefing.json?t=" + Date.now(), {cache:"no-store"});
     if(!r.ok) return;
-    const data = await r.json();
-    if(data.updated){
-      const d = new Date(data.updated);
-      document.getElementById("briefing-ts").textContent = "Updated " + d.toLocaleString("en-US",{
-        weekday:"short", month:"short", day:"numeric",
-        hour:"2-digit", minute:"2-digit", timeZoneName:"short"
-      });
-    }
-    const cards = Array.isArray(data.cards) ? data.cards.filter(c=>c && c.summary) : [];
-    if(cards.length){
-      renderBriefCarousel(cards);
-    } else {
-      const html = ((data.html_by_lang && data.html_by_lang.en) || data.html || "").trim();
-      if(!html) return;
-      document.getElementById("brief-track").innerHTML =
-        `<article class="brief-slide" style="flex-basis:min(96%,720px)"><div class="brief-body brief-prose">${html}</div></article>`;
-      document.getElementById("brief-dots").innerHTML = "";
-    }
-    document.getElementById("brief-carousel").style.display = "";
-    const ph = document.getElementById("briefing-placeholder");
-    if(ph) ph.style.display = "none";
+    briefData = await r.json();
+    renderBriefing();
   }catch(e){}
+}
+
+function renderBriefing(){
+  const data = briefData;
+  if(!data) return;
+  if(data.updated){
+    const d = new Date(data.updated);
+    document.getElementById("briefing-ts").textContent = T("updated") + d.toLocaleString(LOCALE(),{
+      weekday:"short", month:"short", day:"numeric",
+      hour:"2-digit", minute:"2-digit", timeZoneName:"short"
+    });
+  }
+  // Prefer the current language's cards, then English cards, then prose HTML —
+  // so a missing Hebrew translation degrades to English, never to a blank tab.
+  const byLang = data.cards_by_lang || {};
+  let cards = Array.isArray(byLang[LANG]) ? byLang[LANG].filter(c=>c && c.summary) : [];
+  if(!cards.length){
+    const en = Array.isArray(byLang.en) ? byLang.en : (Array.isArray(data.cards) ? data.cards : []);
+    cards = en.filter(c=>c && c.summary);
+  }
+  if(cards.length){
+    renderBriefCarousel(cards);
+  } else {
+    const hbl = data.html_by_lang || {};
+    const html = (hbl[LANG] || hbl.en || data.html || "").trim();
+    if(!html) return;
+    document.getElementById("brief-track").innerHTML =
+      `<article class="brief-slide" style="flex-basis:min(96%,720px)"><div class="brief-body brief-prose" dir="auto">${html}</div></article>`;
+    document.getElementById("brief-dots").innerHTML = "";
+  }
+  document.getElementById("brief-carousel").style.display = "";
+  const ph = document.getElementById("briefing-placeholder");
+  if(ph) ph.style.display = "none";
 }
 
 function esc(s){
@@ -853,7 +1077,7 @@ async function loadHeadlines(){
     populateHeadlineSources(data);
     applyHeadlineFilters();
   }catch(err){
-    container.innerHTML=`<div class="hl-loading">Headlines not yet available — the fetcher refreshes every 30 minutes.<br><small style="color:var(--muted)">(${err.message})</small></div>`;
+    container.innerHTML=`<div class="hl-loading">${T("hl_unavailable")}<br><small style="color:var(--muted)">(${err.message})</small></div>`;
   }
 }
 
@@ -861,42 +1085,46 @@ function renderHeadlines(data, container){
   let html="";
   if(data.updated){
     const d=new Date(data.updated);
-    const label=d.toLocaleString("en-US",{weekday:"short",year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZoneName:"short"});
-    html+=`<div class="hl-updated">Last updated: ${label}</div>`;
+    const label=d.toLocaleString(LOCALE(),{weekday:"short",year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZoneName:"short"});
+    html+=`<div class="hl-updated">${T("last_updated")}${label}</div>`;
   }
   const regions=data.regions||{};
   for(const [region,outlets] of Object.entries(regions)){
     html+=`<div class="hl-region">
-      <div class="hl-region-head">${esc(region)}</div>
+      <div class="hl-region-head">${esc(rgn(region))}</div>
       <div class="hl-grid">${outlets.map(renderOutletCard).join("")}</div>
     </div>`;
   }
-  container.innerHTML=html||`<div class="hl-loading">No headlines available yet.</div>`;
+  container.innerHTML=html||`<div class="hl-loading">${T("none_yet")}</div>`;
 }
 
 function renderOutletCard(outlet){
   const headlines=outlet.headlines||[];
   let listHTML;
   if(headlines.length){
-    listHTML=`<ul class="hl-list">${headlines.map(h=>`
-      <li><a href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto">${esc(h.title)}</a>${h.snippet?`<div class="hl-snippet" dir="auto">${esc(h.snippet)}</div>`:""}</li>`
-    ).join("")}</ul>`;
+    // heb(): show the Hebrew translation in HE mode when it exists, otherwise
+    // fall back to the original — a missing translation never hides a story.
+    listHTML=`<ul class="hl-list">${headlines.map(h=>{
+      const title=heb(h.title_he,h.title), snip=heb(h.snippet_he,h.snippet);
+      return `
+      <li><a href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto">${esc(title)}</a>${snip?`<div class="hl-snippet" dir="auto">${esc(snip)}</div>`:""}</li>`;
+    }).join("")}</ul>`;
   }else{
-    listHTML=`<div class="hl-none">${outlet.error?"Feed unavailable today":"No headlines"}</div>`;
+    listHTML=`<div class="hl-none">${outlet.error?T("feed_unavailable"):T("no_headlines")}</div>`;
   }
   if(outlet.stale && headlines.length){
-    listHTML+=`<div class="hl-stale">Feed temporarily down — showing the latest available.</div>`;
+    listHTML+=`<div class="hl-stale">${T("stale_note")}</div>`;
   }
   return `<div class="hl-card">
     <div class="hl-card-head">
       <div>
         <div class="hl-card-name">${esc(outlet.source)}</div>
-        <div class="hl-card-loc">${esc(outlet.country)}</div>
+        <div class="hl-card-loc">${esc(plc(outlet.country))}</div>
       </div>
       ${lb(outlet.lang||"en")}
     </div>
     ${listHTML}
-    <a class="hl-site-btn" href="${esc(outlet.url)}" target="_blank" rel="noopener">Open site →</a>
+    <a class="hl-site-btn" href="${esc(outlet.url)}" target="_blank" rel="noopener">${T("open_site")}</a>
   </div>`;
 }
 
@@ -909,7 +1137,7 @@ function populateHeadlineSources(data){
   for(const outs of Object.values(data.regions||{}))
     for(const o of outs) if(o.source) names.push(o.source);
   const uniq = [...new Set(names)].sort((a,b)=>a.localeCompare(b));
-  sel.innerHTML = `<option value="">All sources</option>` +
+  sel.innerHTML = `<option value="">${T("all_sources")}</option>` +
     uniq.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("");
   if(uniq.includes(prev)) sel.value = prev;   // preserve choice across refreshes
 }
@@ -922,9 +1150,13 @@ function filterHeadlineData(data, topic, source){
       if(source && o.source !== source) continue;
       let hls = o.headlines || [];
       if(topic){
+        // Match English AND Hebrew fields regardless of display language, so a
+        // filter typed in either language works in both modes.
         hls = hls.filter(h =>
           (h.title||"").toLowerCase().includes(topic) ||
-          (h.snippet||"").toLowerCase().includes(topic));
+          (h.snippet||"").toLowerCase().includes(topic) ||
+          (h.title_he||"").includes(topic) ||
+          (h.snippet_he||"").includes(topic));
         if(!hls.length) continue;   // hide outlets with no topic match
       }
       kept.push(Object.assign({}, o, {headlines:hls}));
@@ -955,8 +1187,8 @@ function applyHeadlineFilters(){
     if(topic)  bits.push(`“${esc(topic)}”`);
     if(source) bits.push(esc(source));
     info.innerHTML = nH
-      ? `Showing <b>${nH}</b> headline${nH===1?"":"s"} from <b>${nO}</b> outlet${nO===1?"":"s"} matching ${bits.join(" · ")}.`
-      : `No headlines match ${bits.join(" · ")}. <button type="button" class="hl-link-btn" onclick="clearHeadlineFilters()">Clear filter</button>`;
+      ? TF("showing", nH, nO, bits.join(" · "))
+      : `${TF("no_match", bits.join(" · "))} <button type="button" class="hl-link-btn" onclick="clearHeadlineFilters()">${T("clear_filter")}</button>`;
     info.style.display = "";
   }else{
     info.style.display = "none";
