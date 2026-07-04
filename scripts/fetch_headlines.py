@@ -376,10 +376,114 @@ GEMINI_MODEL = "gemini-2.5-flash-lite"
 # Target length of the per-headline summary, in words.
 SNIPPET_WORDS = 50
 
-# Bump this whenever the snippet/translation prompts change so the content
-# cache is invalidated and snippets + Hebrew translations regenerate on the
-# next run.
+# Bump this whenever the snippet prompt changes so the content cache is
+# invalidated and snippets regenerate on the next run.
 SNIPPET_VERSION = "v8-he"
+
+# ---- Azure Translator (free tier) — the Hebrew engine for the wall/pulse ----
+# Gemini's free tier is only ~20 requests/day — far too little to translate the
+# whole wall alongside the English snippets. Azure Translator's free tier gives
+# 2,000,000 characters/month and supports Hebrew, so it powers the bulk
+# translation. Requires two repo secrets, passed through by the workflow:
+#   AZURE_TRANSLATOR_KEY     – the resource key
+#   AZURE_TRANSLATOR_REGION  – the resource region (e.g. "westeurope"; "global"
+#                              works for a global resource)
+AZURE_ENDPOINT = "https://api.cognitive.microsofttranslator.com/translate"
+
+# Per-item Hebrew cache: {"t": {en_title: he}, "s": {en_snippet: he}}. Only text
+# we have NEVER translated is sent to Azure, so steady-state usage is the handful
+# of genuinely new headlines per run — not the whole wall every time (which would
+# burn the 2M/month budget in a day). FIFO-capped so the file stays bounded.
+HE_CACHE_PATH = Path(__file__).parent.parent / "state" / "headlines_he.json"
+HE_CACHE_CAP = 4000
+
+
+def azure_translate(texts, to_lang="he"):
+    """Translate a list of strings via Azure Translator, preserving order.
+
+    Returns a list the same length as `texts`, or None when the key is missing
+    or every retry failed (callers then keep whatever Hebrew they already have).
+    Empty inputs come back empty and cost nothing against the quota."""
+    key = os.environ.get("AZURE_TRANSLATOR_KEY")
+    if not key or not texts:
+        return None
+    region = os.environ.get("AZURE_TRANSLATOR_REGION", "global")
+    headers = {
+        "Ocp-Apim-Subscription-Key": key,
+        "Ocp-Apim-Subscription-Region": region,
+        "Content-Type": "application/json",
+    }
+    params = {"api-version": "3.0", "to": to_lang}
+    out = []
+    i = 0
+    # Azure caps a request at 1000 array elements and 50,000 characters; chunk
+    # under both, with headroom.
+    while i < len(texts):
+        chunk, chars = [], 0
+        while i < len(texts) and len(chunk) < 900 and chars < 45000:
+            t = texts[i] or ""
+            chunk.append(t)
+            chars += len(t) + 1
+            i += 1
+        body = [{"Text": t} for t in chunk]
+        for attempt in range(3):
+            try:
+                r = requests.post(AZURE_ENDPOINT, params=params, headers=headers,
+                                  json=body, timeout=30)
+                if r.status_code == 429 and attempt < 2:
+                    time.sleep(3 * (attempt + 1))
+                    continue
+                r.raise_for_status()
+                out.extend(item["translations"][0]["text"] for item in r.json())
+                break
+            except Exception as exc:
+                if attempt < 2:
+                    time.sleep(3 * (attempt + 1))
+                    continue
+                print(f"  Azure translate failed: {exc}", file=sys.stderr)
+                return None
+    return out if len(out) == len(texts) else None
+
+
+def _load_he_cache():
+    try:
+        d = json.loads(HE_CACHE_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        d = {}
+    d.setdefault("t", {})
+    d.setdefault("s", {})
+    return d
+
+
+def _save_he_cache(cache):
+    try:
+        HE_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        HE_CACHE_PATH.write_text(
+            json.dumps(cache, ensure_ascii=False, indent=0), encoding="utf-8")
+    except Exception as exc:
+        print(f"  could not save Hebrew cache ({exc})", file=sys.stderr)
+
+
+def translate_he_cached(texts, bucket):
+    """Map each string in `texts` to Hebrew, calling Azure only for strings not
+    already in `bucket` (mutated in place, FIFO-pruned). Returns a list aligned
+    to `texts`; cache misses that Azure couldn't fill come back '' so the site
+    falls back to English for exactly those items."""
+    seen, need = set(), []
+    for t in texts:
+        if t and t not in bucket and t not in seen:
+            seen.add(t)
+            need.append(t)
+    if need:
+        got = azure_translate(need)
+        if got:
+            for src, he in zip(need, got):
+                if he:
+                    bucket[src] = he
+            if len(bucket) > HE_CACHE_CAP:
+                for k in list(bucket)[:len(bucket) - HE_CACHE_CAP]:
+                    del bucket[k]
+    return [bucket.get(t or "", "") for t in texts]
 
 HEADERS = {
     "User-Agent": (
@@ -1208,42 +1312,23 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
                   if regions[region][o_idx]["headlines"][h_idx].get("snippet"))
     print(f"  Generated {n_snips}/{len(titles)} English snippets")
 
-    # ---- Hebrew translations — feed the site's EN ↔ HE toggle ----
-    # Two more batched flash-lite calls (titles, then the final snippets). They
-    # ride the same titles_hash cache as the snippets, so unchanged runs cost
-    # no extra API calls at all.
+    # ---- Hebrew via Azure Translator (per-item cached; free-tier friendly) ----
+    # Azure is a dedicated MT with a 2M-char/month free budget, so — unlike
+    # Gemini's ~20 req/day — it can feed the whole wall. The per-item cache means
+    # only genuinely new titles/snippets are ever sent, keeping monthly usage to
+    # the real turnover of distinct headlines rather than the wall × every run.
     final_snips = [regions[r][oi]["headlines"][hi].get("snippet", "")
                    for (r, oi, hi) in positions]
-    he_rules = (
-        "Rules for EVERY item:\n"
-        "1. Translate faithfully into natural, journalistic Israeli news Hebrew.\n"
-        "2. Use the standard Hebrew spelling for well-known people, places and "
-        "organisations (e.g. נתניהו, חיזבאללה, ריאד); transliterate names that "
-        "have no standard Hebrew form.\n"
-        "3. CRITICAL — do not add, infer or change anyone's title, office, role "
-        "or status; translate exactly what the text states and nothing more.\n"
-        "4. NEVER add facts that are not in the source text.\n"
-        "5. If an input item is an empty string, return an empty string for it; "
-        "otherwise always return a non-empty Hebrew string.\n\n"
-    )
-    he_titles = call_model(
-        "Translate each news headline in the JSON array below into Hebrew.\n"
-        + he_rules
-        + f"Items:\n{json.dumps(titles, ensure_ascii=False)}\n\n"
-        f"Return ONLY a JSON array of exactly {len(titles)} strings, same order.",
-        len(titles))
-    he_snips = call_model(
-        "Translate each news summary in the JSON array below into Hebrew.\n"
-        + he_rules
-        + f"Items:\n{json.dumps(final_snips, ensure_ascii=False)}\n\n"
-        f"Return ONLY a JSON array of exactly {len(final_snips)} strings, same order.",
-        len(final_snips))
-    hebrew_ok = he_titles is not None and he_snips is not None
+    he_cache = _load_he_cache()
+    he_titles = translate_he_cached(titles, he_cache["t"])
+    he_snips = translate_he_cached(final_snips, he_cache["s"])
+    _save_he_cache(he_cache)
 
-    # If translation failed, reuse last run's Hebrew (matched by title) so the
-    # toggle doesn't go blank while we wait for the next run to retry.
+    # Reuse-on-failure: if Azure is down and a headline isn't cached yet, keep
+    # any Hebrew the headline already carries (carried-forward outlet) or that
+    # the previous run stored, so the toggle doesn't blank while we wait to retry.
     prev_he = {}
-    if not hebrew_ok and existing_output:
+    if existing_output:
         for outs in existing_output.get("regions", {}).values():
             for o in outs:
                 for h in o.get("headlines", []):
@@ -1254,21 +1339,19 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
     for i, (region, o_idx, h_idx) in enumerate(positions):
         hl = regions[region][o_idx]["headlines"][h_idx]
         prev_hl = prev_he.get(titles[i], {})
-        # Never wipe a good translation with an empty refresh (same rule as the
-        # snippets): fall back to what the headline already carries (e.g. a
-        # carried-forward outlet), then to last run's translation by title.
-        hl["title_he"] = ((he_titles[i] if he_titles else "")
+        hl["title_he"] = (he_titles[i]
                           or hl.get("title_he", "") or prev_hl.get("title_he", ""))
-        hl["snippet_he"] = ((he_snips[i] if he_snips else "")
+        hl["snippet_he"] = (he_snips[i]
                             or hl.get("snippet_he", "") or prev_hl.get("snippet_he", ""))
         if hl["title_he"]:
             n_he += 1
     _strip_descriptions(regions)
-    print(f"  Hebrew translations: {n_he}/{len(titles)} headlines")
+    print(f"  Hebrew (Azure): {n_he}/{len(titles)} titles "
+          f"({len(he_cache['t'])} titles cached)")
 
-    # Record the hash only when snippets AND Hebrew were freshly generated, so
-    # a failed half is retried on the next run instead of being cached as done.
-    return {"titles_hash": current_hash} if (snippets_ok and hebrew_ok) else {}
+    # Hebrew rides its own persistent per-item cache and is best-effort, so the
+    # English-snippet titles_hash gate depends on the snippets alone.
+    return {"titles_hash": current_hash} if snippets_ok else {}
 
 
 # How long a failing outlet keeps showing its last good headlines before the

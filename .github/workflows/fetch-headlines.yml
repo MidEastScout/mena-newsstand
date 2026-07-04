@@ -84,6 +84,11 @@ jobs:
       EMAIL_TO:       ${{ secrets.EMAIL_TO }}
       EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # Azure Translator (free tier) powers the Hebrew translation of headlines,
+      # snippets and pulse terms. Add both as repo secrets; Hebrew falls back to
+      # English if they're absent.
+      AZURE_TRANSLATOR_KEY:    ${{ secrets.AZURE_TRANSLATOR_KEY }}
+      AZURE_TRANSLATOR_REGION: ${{ secrets.AZURE_TRANSLATOR_REGION }}
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -143,7 +148,7 @@ jobs:
           git add pulse.json 2>/dev/null || true
           git add briefing.json 2>/dev/null || true
           git add trends.json state/trends_history.json 2>/dev/null || true
-          git add state/pulse_terms_he.json 2>/dev/null || true
+          git add state/pulse_terms_he.json state/headlines_he.json 2>/dev/null || true
           git add frontpages 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Nothing changed — skipping commit."

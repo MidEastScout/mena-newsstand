@@ -14,29 +14,26 @@ Output (pulse.json):
 
 term_he / title_he feed the site's EN ↔ HE toggle. title_he is copied straight
 from headlines.json (no API); term_he comes from a persistent, ever-growing
-dictionary (state/pulse_terms_he.json) so only never-seen-before terms cost a
-Gemini call — the API cost converges to zero as the vocabulary stabilises.
+dictionary (state/pulse_terms_he.json) so only never-seen-before terms cost an
+Azure Translator call — the cost converges to zero as the vocabulary stabilises.
 
 This is the frequency-only "Pulse"; sentiment / over-time trends can layer on
 later using the front-page archive infrastructure.
 """
 import json
-import os
 import re
 import sys
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))   # so azure_translate imports
+
 ROOT     = Path(__file__).parent.parent
 HL_PATH  = ROOT / "headlines.json"
 COV_PATH = ROOT / "coverage.json"
 OUT_PATH = ROOT / "pulse.json"
 HE_PATH  = ROOT / "state" / "pulse_terms_he.json"
-
-# Same high-free-quota model the headline snippets use; one tiny batched call
-# per run at most (only for cloud terms not yet in the cached dictionary).
-GEMINI_MODEL = "gemini-2.5-flash-lite"
 
 # Topics kept OFF the Headlines wall but still counted here, so the Pulse reflects
 # what media is actually covering. These items don't appear in headlines.json, so
@@ -177,53 +174,37 @@ def hebrew_terms(terms: list) -> dict:
     """Return {English display term -> Hebrew} for the cloud's EN ↔ HE toggle.
 
     Backed by a persistent dictionary (state/pulse_terms_he.json) that only
-    grows: each run translates just the terms not already cached — one small
-    batched flash-lite call — so once the recurring vocabulary (Iran, Gaza,
-    ceasefire…) is covered, most runs make no API call at all. Entirely
-    non-fatal: without a key / on any failure, whatever is cached is used and
-    the site falls back to English for the rest.
+    grows: each run translates just the terms not already cached, via Azure
+    Translator — so once the recurring vocabulary (Iran, Gaza, ceasefire…) is
+    covered, most runs make no API call at all. Entirely non-fatal: without a
+    key / on any failure, whatever is cached is used and the site falls back to
+    English for the rest.
     """
     cache = load_json(HE_PATH) or {}
     missing = [t for t in terms if t not in cache]
     if not missing:
         return cache
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        return cache
     try:
-        from google import genai
-        from google.genai import types
-        client = genai.Client(api_key=api_key)
-        prompt = (
-            "Translate each news-topic term in the JSON array below into Hebrew, "
-            "as the term would appear in Israeli news coverage (e.g. Gaza → עזה, "
-            "ceasefire → הפסקת אש, IDF → צה\"ל). Use the standard Hebrew spelling "
-            "for proper nouns; transliterate names with no standard Hebrew form. "
-            f"Return ONLY a JSON array of exactly {len(missing)} strings, same "
-            "order.\n\n"
-            f"Items:\n{json.dumps(missing, ensure_ascii=False)}"
-        )
-        resp = client.models.generate_content(
-            model=GEMINI_MODEL, contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=list[str]))
-        arr = json.loads((resp.text or "").strip())
-        if isinstance(arr, list) and len(arr) == len(missing):
-            for term, he in zip(missing, arr):
-                if isinstance(he, str) and he.strip():
-                    cache[term] = he.strip()
-            HE_PATH.parent.mkdir(parents=True, exist_ok=True)
-            HE_PATH.write_text(
-                json.dumps(cache, ensure_ascii=False, indent=1, sort_keys=True),
-                encoding="utf-8")
-            print(f"  Hebrew terms: +{len(missing)} translated "
-                  f"({len(cache)} cached total)")
-        else:
-            print(f"  Hebrew terms: unexpected response shape — skipped",
-                  file=sys.stderr)
+        from fetch_headlines import azure_translate
     except Exception as exc:
-        print(f"  Hebrew terms skipped ({exc})", file=sys.stderr)
+        print(f"  Hebrew terms skipped (import: {exc})", file=sys.stderr)
+        return cache
+    got = azure_translate(missing)
+    if got:
+        added = 0
+        for term, he in zip(missing, got):
+            if isinstance(he, str) and he.strip():
+                cache[term] = he.strip()
+                added += 1
+        HE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        HE_PATH.write_text(
+            json.dumps(cache, ensure_ascii=False, indent=1, sort_keys=True),
+            encoding="utf-8")
+        print(f"  Hebrew terms (Azure): +{added} translated "
+              f"({len(cache)} cached total)")
+    else:
+        print("  Hebrew terms: Azure unavailable — English fallback",
+              file=sys.stderr)
     return cache
 
 
