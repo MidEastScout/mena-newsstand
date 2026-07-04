@@ -333,6 +333,23 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 [dir="rtl"] .tr-label,[dir="rtl"] .tr-div-src{text-align:left}
 [dir="rtl"] .tr-delta{margin-left:0;margin-right:5px}
 [dir="rtl"] .tr-div{border-left:1px solid var(--line);border-right:4px solid var(--accent);border-radius:var(--r1) 0 0 var(--r1)}
+/* In Hebrew the whole hero mirrors, so the title swings to the right — move the
+   language switch to the left corner (over the globe, which is now on the left)
+   so it never covers the masthead title. */
+[dir="rtl"] .lang-switch{right:auto;left:clamp(14px,3vw,30px)}
+@media (max-width:430px){[dir="rtl"] .lang-switch{right:auto;left:12px}}
+/* In Hebrew, unify every heading below the hero onto the description typeface
+   (Heebo, via the body sans stack) instead of the serif title face, so the whole
+   site reads in one consistent Hebrew font. The hero title/creed keep their serif. */
+[dir="rtl"] .sec-head h2,
+[dir="rtl"] .briefing-title,
+[dir="rtl"] .brief-h,
+[dir="rtl"] .hl-region-head,
+[dir="rtl"] .hl-list a,
+[dir="rtl"] .pulse-term,
+[dir="rtl"] .pulse-detail-head,
+[dir="rtl"] .tr-h,
+[dir="rtl"] .fp-modal-title{font-family:'Source Sans 3','Heebo',sans-serif}
 </style>
 </head>
 <body>
