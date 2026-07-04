@@ -224,6 +224,8 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .hl-item-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:5px;font-size:11.5px;color:var(--muted)}
 .hl-item-src{font-weight:700;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase;color:var(--ink2)}
+.hl-time{cursor:pointer;white-space:nowrap;padding:4px 0}   /* tap swaps relative ↔ absolute */
+.hl-time:hover{color:var(--ink2)}
 /* "Top Stories Right Now" strip — the stories most outlets are carrying,
    visually set off from the main feed in the masthead's cream/gold. */
 .hl-top{background:linear-gradient(180deg,#FDF9F0,#FAF2E1);border:1px solid #E9DAB9;border-left:4px solid var(--accent);
@@ -1164,12 +1166,48 @@ async function loadHeadlines(){
   }
 }
 
-// Per-headline display time. (Step 3 of the redesign turns this relative.)
+/* Per-headline display time: relative ("23 min. ago" / "לפני 23 דק׳"),
+   with the absolute time on hover (title) and on tap (click toggles the
+   text without following the headline link). Falls back to absolute when
+   Intl.RelativeTimeFormat is unavailable. */
+function hlRelTime(t){
+  if(!(typeof Intl!=="undefined" && Intl.RelativeTimeFormat)) return null;
+  const rtf = new Intl.RelativeTimeFormat(LOCALE(),{numeric:"auto",style:"short"});
+  const s = Math.max(0,(Date.now()-t)/1000);
+  if(s<60)      return rtf.format(0,"second");                 // "now" / "עכשיו"
+  if(s<3600)    return rtf.format(-Math.floor(s/60),"minute");
+  if(s<86400)   return rtf.format(-Math.floor(s/3600),"hour");
+  if(s<7*86400) return rtf.format(-Math.floor(s/86400),"day"); // incl. "yesterday"
+  return null;                                                 // older: absolute date reads better
+}
+function hlAbsTime(t){
+  return new Date(t).toLocaleString(LOCALE(),{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"});
+}
 function hlTime(iso){
   const t = Date.parse(iso||"");
   if(!t) return "";
-  return new Date(t).toLocaleTimeString(LOCALE(),{hour:"2-digit",minute:"2-digit"});
+  const abs = hlAbsTime(t), rel = hlRelTime(t);
+  return `<time class="hl-time" datetime="${esc(iso)}" title="${esc(abs)}"${rel?"":' data-show="abs"'}>${esc(rel||abs)}</time>`;
 }
+// Tapping a timestamp swaps relative ↔ absolute instead of opening the link.
+document.addEventListener("click", e=>{
+  const el = e.target.closest?.(".hl-time");
+  if(!el) return;
+  e.preventDefault(); e.stopPropagation();
+  const t = Date.parse(el.getAttribute("datetime")||"");
+  if(!t) return;
+  const showAbs = el.dataset.show!=="abs";
+  el.dataset.show = showAbs ? "abs" : "rel";
+  el.textContent = showAbs ? hlAbsTime(t) : (hlRelTime(t)||hlAbsTime(t));
+});
+// Keep on-screen relative times honest while the tab sits open.
+setInterval(()=>{
+  document.querySelectorAll(".hl-time:not([data-show='abs'])").forEach(el=>{
+    const t = Date.parse(el.getAttribute("datetime")||"");
+    if(!t) return;
+    el.textContent = hlRelTime(t)||hlAbsTime(t);
+  });
+}, 60*1000);
 
 /* ===== "Top Stories Right Now" =====
    Significance = how many distinct outlets carry the same story. Headlines
@@ -1236,7 +1274,7 @@ function renderTopStrip(data){
           <span class="hl-top-meta">
             <span class="hl-top-src">${esc(rep.source)}</span>
             ${outlets>1?`<b class="hl-top-count">${TF("n_outlets",outlets)}</b>`:""}
-            <span class="hl-time">${hlTime(rep.published)}</span>
+            ${hlTime(rep.published)}
           </span>
         </span>
       </a></li>`).join("")}</ol>
@@ -1330,7 +1368,7 @@ function renderHeadlines(data, container, showTop=true){
         ${snip?`<div class="hl-item-snip" dir="auto">${esc(snip)}</div>`:""}
         <div class="hl-item-meta">
           <span class="hl-item-src">${esc(h.source)}</span>
-          <span class="hl-time">${hlTime(h.published)}</span>
+          ${hlTime(h.published)}
         </div>
       </li>`;
     }).join("");
