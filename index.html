@@ -88,6 +88,30 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .hero .chip.live .sep{width:1px;height:18px;background:rgba(247,244,238,.22)}
 .hero .chip.live #hdr-date{color:var(--muted);font-weight:600;letter-spacing:.02em}
 @keyframes heropulse{0%{box-shadow:0 0 0 0 rgba(95,208,160,.55)}70%{box-shadow:0 0 0 9px rgba(95,208,160,0)}100%{box-shadow:0 0 0 0 rgba(95,208,160,0)}}
+/* Language toggle — a real EN⇄HE switch pinned to the masthead corner. Scoped
+   inside .hero so it inherits the local navy/gold palette; a sliding gold thumb
+   marks the active language. direction:ltr keeps the EN|עב order fixed even when
+   the whole site flips to RTL, so the thumb travel stays predictable. */
+.lang-switch{position:absolute;top:clamp(14px,2.2vw,22px);right:clamp(14px,3vw,30px);z-index:5;
+  direction:ltr;display:inline-flex;padding:3px;border-radius:999px;
+  background:rgba(247,244,238,.07);border:1px solid rgba(247,244,238,.2);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 2px 12px rgba(14,26,53,.35)}
+.lang-switch::before{content:"";position:absolute;top:3px;left:3px;width:46px;height:calc(100% - 6px);
+  border-radius:999px;background:var(--gold);box-shadow:0 1px 5px rgba(0,0,0,.3);
+  transition:transform .24s cubic-bezier(.4,0,.2,1)}
+.lang-switch.he::before{transform:translateX(46px)}
+.lang-switch .lang-opt{position:relative;z-index:1;width:46px;padding:6px 0;text-align:center;border:none;
+  background:none;color:var(--muted);font-family:'Source Sans 3','Heebo',sans-serif;font-weight:700;
+  font-size:13px;letter-spacing:.04em;line-height:1.15;border-radius:999px;transition:color .18s}
+.lang-switch .lang-opt.active{color:var(--navy-deep)}
+.lang-switch .lang-opt:hover:not(.active){color:var(--paper)}
+.lang-switch .lang-opt:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.lang-switch::before{transition:none}}
+@media (max-width:430px){
+  .lang-switch{top:12px;right:12px}
+  .lang-switch::before,.lang-switch .lang-opt{width:42px}
+  .lang-switch.he::before{transform:translateX(42px)}
+}
 .hero .stage{position:relative;z-index:1;height:100%;min-height:440px}
 .hero #globe{position:absolute;inset:0;width:100%;height:100%;display:block}
 @media (max-width:760px){
@@ -303,8 +327,6 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 /* ===== RTL (Hebrew) adjustments. Most of the layout is flex/grid and mirrors
    automatically when <html dir="rtl">; these fix the few physically-anchored
    details (accent bars, asymmetric margins/borders). ===== */
-.lang-btn{color:var(--blue);font-weight:700;letter-spacing:.4px}
-.lang-btn:hover{color:var(--accent)}
 [dir="rtl"] .sec-head::before{left:auto;right:0}
 [dir="rtl"] .hl-region-head::before{left:auto;right:0}
 [dir="rtl"] .hero .creed .creed-src{margin-left:0;margin-right:.6em}
@@ -316,6 +338,10 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 <body>
 
 <section class="hero">
+  <div class="lang-switch" id="lang-switch" role="group" aria-label="Site language / שפת האתר">
+    <button type="button" class="lang-opt active" data-lang="en" lang="en" aria-pressed="true">EN</button>
+    <button type="button" class="lang-opt" data-lang="he" lang="he" aria-pressed="false">עב</button>
+  </div>
   <div class="copy">
     <h1 class="title">
       <span class="l1">The Middle East <span class="scout">Scout</span></span>
@@ -338,7 +364,6 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
     <button class="navbtn" data-sec="pulse" data-i18n="nav_pulse">Pulse</button>
     <button class="navbtn" data-sec="trends" data-i18n="nav_trends">Trends</button>
     <button class="navbtn" data-sec="archive" data-i18n="nav_archive">Archive</button>
-    <button class="navbtn lang-btn" id="lang-toggle" aria-label="עברית / English">עברית</button>
   </div>
 </div>
 
@@ -582,8 +607,15 @@ function applyLang(){
   document.title = T("doc_title");
   document.querySelectorAll("[data-i18n]").forEach(el=>{ el.innerHTML = T(el.dataset.i18n); });
   document.querySelectorAll("[data-i18n-ph]").forEach(el=>{ el.placeholder = T(el.dataset.i18nPh); });
-  const tog = document.getElementById("lang-toggle");
-  if(tog) tog.textContent = LANG==="he" ? "English" : "עברית";
+  const sw = document.getElementById("lang-switch");
+  if(sw){
+    sw.classList.toggle("he", LANG==="he");
+    sw.querySelectorAll(".lang-opt").forEach(o=>{
+      const on = o.dataset.lang===LANG;
+      o.classList.toggle("active", on);
+      o.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
   document.getElementById("hdr-date").textContent =
     new Date().toLocaleDateString(LOCALE(),{weekday:"long",year:"numeric",month:"long",day:"numeric"});
   // Re-render every section whose data is already cached.
@@ -803,8 +835,8 @@ function closeFPModal(){
   document.body.style.overflow = "";
 }
 
-// Only the real tab buttons ([data-sec]) switch sections — the language
-// toggle shares the .navbtn look but must not hijack the active tab.
+// Section tabs. The [data-sec] filter is belt-and-braces: the language switch
+// now lives in the masthead, so every .navbtn here is a real section tab.
 document.querySelectorAll(".navbtn[data-sec]").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.querySelectorAll(".navbtn").forEach(b=>b.classList.remove("active"));
@@ -816,10 +848,14 @@ document.querySelectorAll(".navbtn[data-sec]").forEach(btn=>{
 
 document.addEventListener("keydown", e => { if(e.key==="Escape") closeFPModal(); });
 
-document.getElementById("lang-toggle").addEventListener("click", ()=>{
-  LANG = LANG==="he" ? "en" : "he";
-  try{ localStorage.setItem("mes-lang", LANG); }catch(e){}
-  applyLang();
+document.querySelectorAll("#lang-switch .lang-opt").forEach(opt=>{
+  opt.addEventListener("click", ()=>{
+    const next = opt.dataset.lang;
+    if(next===LANG) return;
+    LANG = next;
+    try{ localStorage.setItem("mes-lang", LANG); }catch(e){}
+    applyLang();
+  });
 });
 applyLang();   // set chrome (and direction) before any data arrives
 
