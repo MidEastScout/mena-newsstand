@@ -223,9 +223,32 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .hl-item-snip{font-size:12.5px;line-height:1.5;color:var(--muted);margin-top:3px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .hl-item-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:5px;font-size:11.5px;color:var(--muted)}
-.hl-item-src{font-weight:700;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase;color:var(--ink2)}
 .hl-time{cursor:pointer;white-space:nowrap;padding:4px 0}   /* tap swaps relative ↔ absolute */
 .hl-time:hover{color:var(--ink2)}
+/* Source tags — outlet name on its category color (regional lens). Muted
+   pastels with deep text, echoing the existing .t-en/.t-he language chips. */
+.src-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+  padding:2.5px 9px;border-radius:999px;line-height:1.5;white-space:nowrap}
+.sc-israeli{background:#E3EBF5;color:#1A3B6B}
+.sc-gulf{background:#F3EAD5;color:#71541A}
+.sc-panarab{background:#E1EDEB;color:#1F5C52}
+.sc-iranian{background:#E7EFE1;color:#3F5C22}
+.sc-levant{background:#F3E6DE;color:#84462B}
+.sc-intl{background:#E9EAEE;color:#3C4658}
+.sc-turkish{background:#F5E2E2;color:#8A2A2A}
+.sc-none{background:#EEE;color:#555}
+/* Collapsible source-color key, sitting quietly under the filter bar */
+.src-legend{margin-bottom:16px}
+.src-legend summary{list-style:none;display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+  -webkit-user-select:none;user-select:none;font-size:12px;font-weight:600;color:var(--muted);padding:4px 0}
+.src-legend summary::-webkit-details-marker{display:none}
+.src-legend summary::before{content:"▸";font-size:10px}
+[dir="rtl"] .src-legend summary::before{content:"◂"}
+.src-legend[open] summary::before{content:"▾"}
+[dir="rtl"] .src-legend[open] summary::before{content:"▾"}
+.src-legend summary:hover{color:var(--ink2)}
+.src-legend-body{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:9px 0 2px}
+.src-legend-note{font-size:11.5px;color:var(--muted);flex-basis:100%;margin-top:3px}
 /* "Top Stories Right Now" strip — the stories most outlets are carrying,
    visually set off from the main feed in the masthead's cream/gold. */
 .hl-top{background:linear-gradient(180deg,#FDF9F0,#FAF2E1);border:1px solid #E9DAB9;border-left:4px solid var(--accent);
@@ -244,7 +267,6 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
   font-weight:600;line-height:1.32;color:var(--ink);transition:.12s}
 .hl-top-item:hover .hl-top-title{color:var(--accent)}
 .hl-top-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:4px;font-size:11.5px;color:var(--muted)}
-.hl-top-src{font-weight:700;color:var(--ink2);text-transform:uppercase;letter-spacing:.4px;font-size:10.5px}
 .hl-top-count{font-size:10px;font-weight:700;color:var(--gold);background:rgba(154,123,46,.12);
   border:1px solid rgba(154,123,46,.3);border-radius:999px;padding:1px 8px;letter-spacing:.03em;white-space:nowrap}
 
@@ -566,6 +588,8 @@ const I18N = {
   no_match:bits=>`No headlines match ${bits}.`,
   top_now:"Top Stories Right Now",
   n_outlets:n=>`${n} outlets`,
+  src_key:"Source colors — what they mean",
+  src_key_note:"Every outlet is tagged with the regional lens it reports from.",
  },
  he: {
   doc_title:"The Middle East Scout — עמודים ראשיים וכותרות בזמן אמת",
@@ -625,6 +649,8 @@ const I18N = {
   no_match:bits=>`אין כותרות התואמות ${bits}.`,
   top_now:"הסיפורים המרכזיים עכשיו",
   n_outlets:n=>`${n} מקורות`,
+  src_key:"צבעי המקורות — מה הם אומרים",
+  src_key_note:"כל כלי תקשורת מסומן לפי נקודת המבט האזורית שממנה הוא מדווח.",
  },
 };
 
@@ -1272,7 +1298,7 @@ function renderTopStrip(data){
         <span class="hl-top-body">
           <span class="hl-top-title" dir="auto">${esc(heb(rep.title_he,rep.title))}</span>
           <span class="hl-top-meta">
-            <span class="hl-top-src">${esc(rep.source)}</span>
+            ${srcTag(rep.source)}
             ${outlets>1?`<b class="hl-top-count">${TF("n_outlets",outlets)}</b>`:""}
             ${hlTime(rep.published)}
           </span>
@@ -1339,6 +1365,62 @@ function classifyTheme(h){
   return best;
 }
 
+/* ===== Source categories — each outlet's regional lens. EDIT HERE:
+   point an outlet name at a category id from CAT_DEFS. Outlets not listed
+   render with a neutral gray tag. Israeli / International-Western outlets
+   are pre-mapped so the tags work the moment such a feed is added. ===== */
+const CAT_DEFS = [
+  {id:"israeli", label:"Israeli",                 label_he:"ישראלי"},
+  {id:"gulf",    label:"Gulf",                    label_he:"מפרצי"},
+  {id:"panarab", label:"Pan-Arab",                label_he:"פאן-ערבי"},
+  {id:"iranian", label:"Iranian",                 label_he:"איראני"},
+  {id:"levant",  label:"Levant",                  label_he:"לבנטיני"},
+  {id:"intl",    label:"International / Western", label_he:"בינלאומי / מערבי"},
+  {id:"turkish", label:"Turkish",                 label_he:"טורקי"},
+];
+const SRC_CATS = {
+  // Pan-Arab
+  "Al Jazeera":"panarab", "Middle East Eye":"panarab", "Al Arabiya":"panarab",
+  "The New Arab":"panarab", "Al Mayadeen":"panarab",
+  // Iranian
+  "IRNA":"iranian", "Mehr News":"iranian", "Iran International":"iranian",
+  // Levant (Lebanon / Jordan / Syria / Palestinian — Egypt kept here to match the feed)
+  "Jordan Times":"levant", "L'Orient Today":"levant", "Egypt Independent":"levant",
+  "Al-Akhbar":"levant", "Al Manar":"levant", "WAFA News":"levant", "Falastin al-Youm":"levant",
+  // Gulf
+  "Arab News":"gulf", "Gulf News":"gulf",
+  // Turkish
+  "Anadolu Agency":"turkish", "Daily Sabah":"turkish",
+  "Hürriyet Daily News":"turkish", "TRT World":"turkish",
+  // Israeli (none in the feed today — ready for when one is added)
+  "Times of Israel":"israeli", "The Jerusalem Post":"israeli", "Haaretz":"israeli", "Ynet News":"israeli",
+  // International / Western
+  "Reuters":"intl", "BBC":"intl", "Associated Press":"intl", "AFP":"intl", "CNN":"intl",
+};
+function srcTag(source){
+  const def = CAT_DEFS.find(c=>c.id===SRC_CATS[source]);
+  const tip = def ? heb(def.label_he,def.label) : "";
+  return `<span class="src-tag ${def?"sc-"+def.id:"sc-none"}"${tip?` title="${esc(tip)}"`:""}>${esc(source)}</span>`;
+}
+
+// Collapsible one-time key for the source colors; only lists categories
+// actually present in the current feed. Open state persists per visit.
+let srcLegendOpen = false;
+function renderSrcLegend(data){
+  const present = new Set();
+  for(const outs of Object.values(data.regions||{}))
+    for(const o of outs) if(SRC_CATS[o.source]) present.add(SRC_CATS[o.source]);
+  const cats = CAT_DEFS.filter(c=>present.has(c.id));
+  if(!cats.length) return "";
+  return `<details class="src-legend" id="src-legend"${srcLegendOpen?" open":""}>
+    <summary>${T("src_key")}</summary>
+    <div class="src-legend-body">
+      ${cats.map(c=>`<span class="src-tag sc-${c.id}">${esc(heb(c.label_he,c.label))}</span>`).join("")}
+      <span class="src-legend-note">${T("src_key_note")}</span>
+    </div>
+  </details>`;
+}
+
 // Collapse state survives re-renders (refreshes, language toggles) per visit.
 const hlThemeClosed = new Set();
 
@@ -1349,6 +1431,7 @@ function renderHeadlines(data, container, showTop=true){
     const label=d.toLocaleString(LOCALE(),{weekday:"short",year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZoneName:"short"});
     html+=`<div class="hl-updated">${T("last_updated")}${label}</div>`;
   }
+  html+=renderSrcLegend(data);
   if(showTop) html+=renderTopStrip(data);
 
   // Bucket every headline into its single best theme, newest first inside.
@@ -1367,7 +1450,7 @@ function renderHeadlines(data, container, showTop=true){
         <a class="hl-item-title" href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto">${esc(heb(h.title_he,h.title))}</a>
         ${snip?`<div class="hl-item-snip" dir="auto">${esc(snip)}</div>`:""}
         <div class="hl-item-meta">
-          <span class="hl-item-src">${esc(h.source)}</span>
+          ${srcTag(h.source)}
           ${hlTime(h.published)}
         </div>
       </li>`;
@@ -1389,6 +1472,8 @@ function renderHeadlines(data, container, showTop=true){
       else hlThemeClosed.add(d.dataset.theme);
     });
   });
+  const lg = container.querySelector("#src-legend");
+  if(lg) lg.addEventListener("toggle",()=>{ srcLegendOpen = lg.open; });
 }
 
 // ---- Headlines filtering (topic keyword + source), client-side over hlData ----
