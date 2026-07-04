@@ -219,6 +219,27 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .hl-stale{font-size:10px;color:var(--muted);font-style:italic;margin-top:6px;opacity:.85}
 .hl-site-btn{display:block;padding:6px 0;border-radius:var(--r1);font-size:12px;font-weight:500;text-align:center;border:1px solid var(--line);background:none;color:var(--ink2);transition:.15s}
 .hl-site-btn:hover{border-color:var(--ink);background:var(--bg)}
+/* "Top Stories Right Now" strip — the stories most outlets are carrying,
+   visually set off from the main feed in the masthead's cream/gold. */
+.hl-top{background:linear-gradient(180deg,#FDF9F0,#FAF2E1);border:1px solid #E9DAB9;border-left:4px solid var(--accent);
+  border-radius:var(--r2);padding:14px 16px 4px;margin-bottom:28px;box-shadow:var(--sh1)}
+[dir="rtl"] .hl-top{border-left:1px solid #E9DAB9;border-right:4px solid var(--accent)}
+.hl-top-kicker{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.hl-top-list{list-style:none;margin:0;padding:0}
+.hl-top-list li{border-top:1px solid rgba(154,123,46,.18)}
+.hl-top-list li:first-child{border-top:none}
+.hl-top-item{display:flex;gap:12px;align-items:flex-start;padding:11px 2px;min-height:44px}
+.hl-top-rank{font-family:'Playfair Display','Frank Ruhl Libre',serif;font-size:19px;font-weight:800;
+  color:var(--accent);line-height:1.1;min-width:20px;text-align:center;flex:0 0 auto}
+.hl-top-body{min-width:0}
+.hl-top-title{display:block;font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:15.5px;
+  font-weight:600;line-height:1.32;color:var(--ink);transition:.12s}
+.hl-top-item:hover .hl-top-title{color:var(--accent)}
+.hl-top-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:4px;font-size:11.5px;color:var(--muted)}
+.hl-top-src{font-weight:700;color:var(--ink2);text-transform:uppercase;letter-spacing:.4px;font-size:10.5px}
+.hl-top-count{font-size:10px;font-weight:700;color:var(--gold);background:rgba(154,123,46,.12);
+  border:1px solid rgba(154,123,46,.3);border-radius:999px;padding:1px 8px;letter-spacing:.03em;white-space:nowrap}
 
 /* World Briefing card */
 .briefing-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:var(--r2);padding:26px 30px;margin-bottom:24px;box-shadow:var(--sh1)}
@@ -346,6 +367,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 [dir="rtl"] .brief-h,
 [dir="rtl"] .hl-region-head,
 [dir="rtl"] .hl-list a,
+[dir="rtl"] .hl-top-title,
 [dir="rtl"] .pulse-term,
 [dir="rtl"] .pulse-detail-head,
 [dir="rtl"] .tr-h,
@@ -536,6 +558,8 @@ const I18N = {
   update_n:n=>`Update ${n}`,
   showing:(nH,nO,bits)=>`Showing <b>${nH}</b> headline${nH===1?"":"s"} from <b>${nO}</b> outlet${nO===1?"":"s"} matching ${bits}.`,
   no_match:bits=>`No headlines match ${bits}.`,
+  top_now:"Top Stories Right Now",
+  n_outlets:n=>`${n} outlets`,
  },
  he: {
   doc_title:"The Middle East Scout — עמודים ראשיים וכותרות בזמן אמת",
@@ -593,6 +617,8 @@ const I18N = {
   update_n:n=>`עדכון ${n}`,
   showing:(nH,nO,bits)=>`מוצגות <b>${nH}</b> כותרות מ-<b>${nO}</b> כלי תקשורת, תואמות ${bits}.`,
   no_match:bits=>`אין כותרות התואמות ${bits}.`,
+  top_now:"הסיפורים המרכזיים עכשיו",
+  n_outlets:n=>`${n} מקורות`,
  },
 };
 
@@ -1134,13 +1160,93 @@ async function loadHeadlines(){
   }
 }
 
-function renderHeadlines(data, container){
+// Per-headline display time. (Step 3 of the redesign turns this relative.)
+function hlTime(iso){
+  const t = Date.parse(iso||"");
+  if(!t) return "";
+  return new Date(t).toLocaleTimeString(LOCALE(),{hour:"2-digit",minute:"2-digit"});
+}
+
+/* ===== "Top Stories Right Now" =====
+   Significance = how many distinct outlets carry the same story. Headlines
+   are clustered by shared informative title words (union-find over pairwise
+   overlap), clusters ranked by outlet count with newest-item tiebreak. */
+const HL_STOP = new Set(("the a an and or but for nor with without from into onto over under after before during amid " +
+  "says said say saying will would could should shall has have had was were are is be been being not no its his her " +
+  "their they them this that these those as at by in of on to up out off down more most than then also just about " +
+  "against between among across near still yet amid how what when where who why while since because per via de la el " +
+  "al us he she it we you your our two three four five first last next new news live update updates report reports " +
+  "breaking latest today year years day days week weeks month months").split(" "));
+
+function hlTokens(title){
+  const m = (title||"").toLowerCase().replace(/[’']/g,"").match(/[a-z][a-z-]{2,}/g) || [];
+  return new Set(m.filter(w=>!HL_STOP.has(w)));
+}
+
+// Flatten regions → outlets → headlines into one list, each item keeping its outlet.
+function flattenHeadlines(data){
+  const items=[];
+  for(const outs of Object.values(data.regions||{}))
+    for(const o of outs)
+      for(const h of (o.headlines||[]))
+        items.push(Object.assign({}, h, {source:o.source, country:o.country, lang:o.lang}));
+  return items;
+}
+
+function topStories(data, n=5){
+  const items = flattenHeadlines(data);
+  items.forEach(it=>{ it._tok=hlTokens(it.title); it._t=Date.parse(it.published)||0; });
+  const par = items.map((_,i)=>i);
+  const find = i => par[i]===i ? i : (par[i]=find(par[i]));
+  for(let i=0;i<items.length;i++)for(let j=i+1;j<items.length;j++){
+    const A=items[i]._tok, B=items[j]._tok;
+    if(A.size<2||B.size<2) continue;
+    let shared=0; for(const w of A) if(B.has(w)) shared++;
+    // Same story: 3+ shared informative words, or 2+ covering most of the shorter title.
+    if(shared>=3 || (shared>=2 && shared>=0.6*Math.min(A.size,B.size))) par[find(i)]=find(j);
+  }
+  const groups={};
+  items.forEach((it,i)=>{ const r=find(i); (groups[r]=groups[r]||[]).push(it); });
+  const clusters = Object.values(groups).map(g=>({
+    items:g,
+    outlets:new Set(g.map(x=>x.source)).size,
+    newest:Math.max(...g.map(x=>x._t)),
+  }));
+  clusters.sort((a,b)=> b.outlets-a.outlets || b.newest-a.newest);
+  return clusters.slice(0,n).map(c=>({
+    rep: c.items.slice().sort((a,b)=>b._t-a._t)[0],   // freshest phrasing represents the story
+    outlets: c.outlets,
+  }));
+}
+
+function renderTopStrip(data){
+  const top = topStories(data,5);
+  if(!top.length) return "";
+  return `<div class="hl-top">
+    <div class="hl-top-kicker">★ ${T("top_now")}</div>
+    <ol class="hl-top-list">${top.map(({rep,outlets},i)=>`
+      <li><a class="hl-top-item" href="${esc(rep.url)}" target="_blank" rel="noopener">
+        <span class="hl-top-rank">${i+1}</span>
+        <span class="hl-top-body">
+          <span class="hl-top-title" dir="auto">${esc(heb(rep.title_he,rep.title))}</span>
+          <span class="hl-top-meta">
+            <span class="hl-top-src">${esc(rep.source)}</span>
+            ${outlets>1?`<b class="hl-top-count">${TF("n_outlets",outlets)}</b>`:""}
+            <span class="hl-time">${hlTime(rep.published)}</span>
+          </span>
+        </span>
+      </a></li>`).join("")}</ol>
+  </div>`;
+}
+
+function renderHeadlines(data, container, showTop=true){
   let html="";
   if(data.updated){
     const d=new Date(data.updated);
     const label=d.toLocaleString(LOCALE(),{weekday:"short",year:"numeric",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZoneName:"short"});
     html+=`<div class="hl-updated">${T("last_updated")}${label}</div>`;
   }
+  if(showTop) html+=renderTopStrip(data);
   const regions=data.regions||{};
   for(const [region,outlets] of Object.entries(regions)){
     html+=`<div class="hl-region">
@@ -1231,7 +1337,7 @@ function applyHeadlineFilters(){
 
   const container = document.getElementById("hl-container");
   if(active && nH === 0) container.innerHTML = "";        // info bar carries the message
-  else renderHeadlines(filtered, container);
+  else renderHeadlines(filtered, container, !active);     // Top-5 strip only on the unfiltered view
 
   const info = document.getElementById("hl-filter-info");
   document.getElementById("hl-clear").hidden = !active;
