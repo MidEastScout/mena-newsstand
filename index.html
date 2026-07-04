@@ -200,25 +200,30 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .hl-filter-info b{color:var(--blue);font-weight:700}
 .hl-link-btn{font:inherit;color:var(--accent);background:none;border:none;padding:0;font-weight:600;text-decoration:underline;cursor:pointer}
 .hl-loading{text-align:center;padding:48px;color:var(--muted);font-style:italic;font-size:14px}
-.hl-region{margin-bottom:38px}
-.hl-region-head{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:23px;font-weight:700;letter-spacing:-.3px;padding-bottom:8px;margin-bottom:16px;border-bottom:1px solid var(--line);position:relative}
-.hl-region-head::before{content:"";position:absolute;left:0;bottom:-1px;width:48px;height:3px;background:var(--accent)}
-.hl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px}
-.hl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:18px 19px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh1);transition:.18s}
-.hl-card:hover{box-shadow:var(--sh2);border-color:#D8D8D8}
-.hl-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;padding-bottom:11px;border-bottom:2px solid var(--ink)}
-.hl-card-name{font-size:13px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.6px}
-.hl-card-loc{font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:.2px}
-.hl-list{list-style:none;display:flex;flex-direction:column;gap:0;flex:1}
-.hl-list li{border-top:1px solid var(--line);padding:9px 0}
-.hl-list li:first-child{border-top:none;padding-top:0}
-.hl-list a{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:15px;line-height:1.32;color:var(--ink);font-weight:500;transition:.1s;display:block}
-.hl-list a:hover{color:var(--accent)}
-.hl-snippet{font-size:12px;line-height:1.5;color:var(--muted);margin-top:4px}
-.hl-none{font-size:12px;color:var(--muted);font-style:italic;flex:1}
-.hl-stale{font-size:10px;color:var(--muted);font-style:italic;margin-top:6px;opacity:.85}
-.hl-site-btn{display:block;padding:6px 0;border-radius:var(--r1);font-size:12px;font-weight:500;text-align:center;border:1px solid var(--line);background:none;color:var(--ink2);transition:.15s}
-.hl-site-btn:hover{border-color:var(--ink);background:var(--bg)}
+/* Theme sections — the main feed grouped by story theme, each a collapsible
+   card (<details>) with a count chip; sections are ordered by volume. */
+.hl-theme{margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r2);box-shadow:var(--sh1);overflow:hidden}
+.hl-theme-head{list-style:none;display:flex;align-items:center;gap:10px;padding:13px 18px;cursor:pointer;
+  -webkit-user-select:none;user-select:none;position:relative;min-height:48px}
+.hl-theme-head::-webkit-details-marker{display:none}
+.hl-theme-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+[dir="rtl"] .hl-theme-head::before{left:auto;right:0}
+.hl-theme-name{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:19px;font-weight:700;letter-spacing:-.2px;color:var(--ink)}
+.hl-theme-count{font-size:11.5px;font-weight:700;color:var(--blue);background:var(--bg);border:1px solid var(--line);
+  border-radius:999px;padding:2px 10px;line-height:1.5}
+.hl-theme-chev{margin-left:auto;color:var(--muted);font-size:13px;transition:transform .2s;flex:0 0 auto}
+[dir="rtl"] .hl-theme-chev{margin-left:0;margin-right:auto}
+.hl-theme[open] .hl-theme-chev{transform:rotate(180deg)}
+.hl-theme-list{list-style:none;margin:0;padding:0 18px 6px;border-top:1px solid var(--line)}
+.hl-theme-list li{padding:11px 0;border-top:1px solid var(--line)}
+.hl-theme-list li:first-child{border-top:none}
+.hl-item-title{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:15.5px;line-height:1.35;
+  color:var(--ink);font-weight:500;transition:.1s;display:block}
+.hl-item-title:hover{color:var(--accent)}
+.hl-item-snip{font-size:12.5px;line-height:1.5;color:var(--muted);margin-top:3px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.hl-item-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:5px;font-size:11.5px;color:var(--muted)}
+.hl-item-src{font-weight:700;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase;color:var(--ink2)}
 /* "Top Stories Right Now" strip — the stories most outlets are carrying,
    visually set off from the main feed in the masthead's cream/gold. */
 .hl-top{background:linear-gradient(180deg,#FDF9F0,#FAF2E1);border:1px solid #E9DAB9;border-left:4px solid var(--accent);
@@ -349,7 +354,6 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
    automatically when <html dir="rtl">; these fix the few physically-anchored
    details (accent bars, asymmetric margins/borders). ===== */
 [dir="rtl"] .sec-head::before{left:auto;right:0}
-[dir="rtl"] .hl-region-head::before{left:auto;right:0}
 [dir="rtl"] .hero .creed .creed-src{margin-left:0;margin-right:.6em}
 [dir="rtl"] .tr-label,[dir="rtl"] .tr-div-src{text-align:left}
 [dir="rtl"] .tr-delta{margin-left:0;margin-right:5px}
@@ -365,8 +369,8 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 [dir="rtl"] .sec-head h2,
 [dir="rtl"] .briefing-title,
 [dir="rtl"] .brief-h,
-[dir="rtl"] .hl-region-head,
-[dir="rtl"] .hl-list a,
+[dir="rtl"] .hl-theme-name,
+[dir="rtl"] .hl-item-title,
 [dir="rtl"] .hl-top-title,
 [dir="rtl"] .pulse-term,
 [dir="rtl"] .pulse-detail-head,
@@ -512,7 +516,7 @@ const I18N = {
   briefing_title:"Geopolitical Briefing", headlines_title:"Live Headlines",
   fp_title:"Today's Front Pages", pulse_title:"Media Pulse",
   trends_title:"Outlet &amp; Topic Trends", archive_title:"Front-Page Archive",
-  headlines_note:"Top 5 headlines from 21 MENA and regional outlets, organized by region. Refreshed automatically every 30 minutes.",
+  headlines_note:"Top 5 headlines from 21 MENA and regional outlets, grouped by story theme. Tap a theme header to collapse it. Refreshed automatically every 30 minutes.",
   pulse_note:"The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.",
   trends_note:"How today's coverage breaks down by topic and by outlet across every tracked feed — and where outlets diverge most on the same stories. Updates every 30 minutes.",
   archive_note:"Browse past front pages. Covers are saved on each daily refresh and kept for one year. Click any card for a larger view.",
@@ -571,7 +575,7 @@ const I18N = {
   briefing_title:"תדריך גיאופוליטי", headlines_title:"כותרות בזמן אמת",
   fp_title:"העמודים הראשיים של היום", pulse_title:"דופק התקשורת",
   trends_title:"מגמות לפי כלי תקשורת ונושא", archive_title:"ארכיון עמודים ראשיים",
-  headlines_note:"חמש הכותרות המובילות מ-21 כלי תקשורת מהמזרח התיכון והאזור, מסודרות לפי אזור. מתעדכן אוטומטית כל 30 דקות.",
+  headlines_note:"חמש הכותרות המובילות מ-21 כלי תקשורת מהמזרח התיכון והאזור, מקובצות לפי נושא. הקישו על כותרת נושא כדי לצמצם אותה. מתעדכן אוטומטית כל 30 דקות.",
   pulse_note:"המונחים המוזכרים ביותר בכלל הכותרות כרגע — גדול יותר פירושו סיקור רחב יותר. לחצו על מילה כדי לראות את הכותרות שמאחוריה. מתעדכן כל 30 דקות.",
   trends_note:"איך הסיקור של היום מתחלק לפי נושא ולפי כלי תקשורת בכל הפידים שבמעקב — והיכן כלי התקשורת נבדלים זה מזה באותם סיפורים. מתעדכן כל 30 דקות.",
   archive_note:"עיינו בעמודים ראשיים מהעבר. השערים נשמרים בכל רענון יומי למשך שנה. לחצו על כרטיס לתצוגה מוגדלת.",
@@ -1239,6 +1243,67 @@ function renderTopStrip(data){
   </div>`;
 }
 
+/* ===== Theme map for the main feed. EDIT HERE to tune the grouping:
+   add/remove keywords or whole themes. A headline joins the single theme
+   whose keywords score highest (a hit in the title counts double a hit in
+   the snippet); ties break by the order below; no hits → Other/Regional.
+   Keywords match whole words, case-insensitively, against the English
+   title/snippet (present on every item), so grouping is identical in both
+   display languages. ===== */
+const THEMES = [
+  {id:"iran", label:"Iran", label_he:"איראן", kw:[
+    "iran","iranian","tehran","irgc","khamenei","pezeshkian","araghchi","ayatollah",
+    "nuclear","uranium","enrichment","natanz","fordow","revolutionary guard","quds force","basij",
+    "إيران","الإيراني","طهران","خامنئي","النووي","الحرس الثوري",
+    "איראן","טהראן","חמינאי","גרעין","הגרעין","משמרות המהפכה"]},
+  {id:"gaza", label:"Gaza", label_he:"עזה", kw:[
+    "gaza","hamas","rafah","khan younis","deir al-balah","unrwa","hostage","hostages",
+    "palestinian","palestinians","west bank","ramallah","jenin","nablus","hebron","settler","settlers",
+    "غزة","حماس","رفح","فلسطين","الفلسطيني","الضفة الغربية","جنين","نابلس","الخليل","المستوطنين","الأونروا",
+    "עזה","חמאס","רפיח","פלסטיני","פלסטינים","הגדה המערבית","ג'נין","שכם","חברון","מתנחל","חטופים","אונר\"א"]},
+  {id:"gulf", label:"Gulf", label_he:"המפרץ", kw:[
+    "saudi","riyadh","uae","emirates","emirati","dubai","abu dhabi","qatar","qatari","doha",
+    "kuwait","bahrain","oman","gcc","opec","aramco","bin salman","yemen","houthi","houthis","red sea",
+    "السعودية","الرياض","الإمارات","دبي","أبوظبي","قطر","الدوحة","الكويت","البحرين","اليمن","الحوثي","البحر الأحمر",
+    "סעודיה","ריאד","האמירויות","דובאי","אבו דאבי","קטאר","דוחה","כווית","בחריין","תימן","חות'י","החות'ים","הים האדום"]},
+  {id:"lebanon", label:"Lebanon", label_he:"לבנון", kw:[
+    "lebanon","lebanese","beirut","hezbollah","nasrallah","litani","sidon","tyre","bekaa","unifil",
+    "لبنان","اللبناني","بيروت","حزب الله","نصرالله","جبل عامل","الليطاني","صيدا","صور","البقاع",
+    "לבנון","ביירות","בירות","חיזבאללה","חזבאללה","נסראללה","ליטני"]},
+  {id:"israel", label:"Israel", label_he:"ישראל", kw:[
+    "israel","israeli","idf","netanyahu","knesset","tel aviv","jerusalem","mossad","shin bet",
+    "ben-gvir","ben gvir","smotrich","herzog",
+    "إسرائيل","الإسرائيلي","الاحتلال","نتنياهو","تل أبيب","القدس",
+    "ישראל","ישראלי","צה\"ל","נתניהו","תל אביב","ירושלים","הכנסת"]},
+  {id:"other", label:"Other / Regional", label_he:"אחר / אזורי", kw:[]},
+];
+// Precompile matchers. Latin keywords match whole words ("oman" must not hit
+// "woman"); Arabic/Hebrew keywords match as substrings, since \b doesn't work
+// outside ASCII and those scripts attach prefixes (بغزة, ובלבנון) to words.
+THEMES.forEach(t=>{ t._re = t.kw.map(k=>{
+  const escd = k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&").replace(/[\s-]+/g,"[\\s-]");
+  return /^[a-z]/i.test(k) ? new RegExp("\\b"+escd+"\\b","i") : new RegExp(escd);
+}); });
+
+function classifyTheme(h){
+  let best="other", bestScore=0;
+  // Titles weigh double; Hebrew fields are machine translations present on
+  // every item, so Arabic/Turkish headlines classify via their Hebrew text.
+  const title=(h.title||"")+" "+(h.title_he||""), snip=(h.snippet||"")+" "+(h.snippet_he||"");
+  for(const t of THEMES){
+    let s=0;
+    for(const re of t._re){
+      if(re.test(title)) s+=2;
+      else if(re.test(snip)) s+=1;
+    }
+    if(s>bestScore){ bestScore=s; best=t.id; }
+  }
+  return best;
+}
+
+// Collapse state survives re-renders (refreshes, language toggles) per visit.
+const hlThemeClosed = new Set();
+
 function renderHeadlines(data, container, showTop=true){
   let html="";
   if(data.updated){
@@ -1247,44 +1312,45 @@ function renderHeadlines(data, container, showTop=true){
     html+=`<div class="hl-updated">${T("last_updated")}${label}</div>`;
   }
   if(showTop) html+=renderTopStrip(data);
-  const regions=data.regions||{};
-  for(const [region,outlets] of Object.entries(regions)){
-    html+=`<div class="hl-region">
-      <div class="hl-region-head">${esc(rgn(region))}</div>
-      <div class="hl-grid">${outlets.map(renderOutletCard).join("")}</div>
-    </div>`;
-  }
-  container.innerHTML=html||`<div class="hl-loading">${T("none_yet")}</div>`;
-}
 
-function renderOutletCard(outlet){
-  const headlines=outlet.headlines||[];
-  let listHTML;
-  if(headlines.length){
-    // heb(): show the Hebrew translation in HE mode when it exists, otherwise
-    // fall back to the original — a missing translation never hides a story.
-    listHTML=`<ul class="hl-list">${headlines.map(h=>{
-      const title=heb(h.title_he,h.title), snip=heb(h.snippet_he,h.snippet);
-      return `
-      <li><a href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto">${esc(title)}</a>${snip?`<div class="hl-snippet" dir="auto">${esc(snip)}</div>`:""}</li>`;
-    }).join("")}</ul>`;
-  }else{
-    listHTML=`<div class="hl-none">${outlet.error?T("feed_unavailable"):T("no_headlines")}</div>`;
+  // Bucket every headline into its single best theme, newest first inside.
+  const items = flattenHeadlines(data);
+  items.forEach(it=>{ it._t=Date.parse(it.published)||0; });
+  const buckets = {};
+  for(const it of items){ const th=classifyTheme(it); (buckets[th]=buckets[th]||[]).push(it); }
+  // Sections ordered by volume, catch-all pinned last so the day's shape leads.
+  const sections = THEMES.filter(t=>buckets[t.id]?.length)
+    .sort((a,b)=> (a.id==="other")-(b.id==="other") || buckets[b.id].length-buckets[a.id].length);
+
+  for(const t of sections){
+    const rows = buckets[t.id].sort((a,b)=>b._t-a._t).map(h=>{
+      const snip = heb(h.snippet_he,h.snippet);
+      return `<li>
+        <a class="hl-item-title" href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto">${esc(heb(h.title_he,h.title))}</a>
+        ${snip?`<div class="hl-item-snip" dir="auto">${esc(snip)}</div>`:""}
+        <div class="hl-item-meta">
+          <span class="hl-item-src">${esc(h.source)}</span>
+          <span class="hl-time">${hlTime(h.published)}</span>
+        </div>
+      </li>`;
+    }).join("");
+    html+=`<details class="hl-theme" data-theme="${t.id}"${hlThemeClosed.has(t.id)?"":" open"}>
+      <summary class="hl-theme-head">
+        <span class="hl-theme-name">${esc(heb(t.label_he,t.label))}</span>
+        <span class="hl-theme-count">${buckets[t.id].length}</span>
+        <span class="hl-theme-chev">▼</span>
+      </summary>
+      <ul class="hl-theme-list">${rows}</ul>
+    </details>`;
   }
-  if(outlet.stale && headlines.length){
-    listHTML+=`<div class="hl-stale">${T("stale_note")}</div>`;
-  }
-  return `<div class="hl-card">
-    <div class="hl-card-head">
-      <div>
-        <div class="hl-card-name">${esc(outlet.source)}</div>
-        <div class="hl-card-loc">${esc(plc(outlet.country))}</div>
-      </div>
-      ${lb(outlet.lang||"en")}
-    </div>
-    ${listHTML}
-    <a class="hl-site-btn" href="${esc(outlet.url)}" target="_blank" rel="noopener">${T("open_site")}</a>
-  </div>`;
+
+  container.innerHTML=html||`<div class="hl-loading">${T("none_yet")}</div>`;
+  container.querySelectorAll(".hl-theme").forEach(d=>{
+    d.addEventListener("toggle",()=>{
+      if(d.open) hlThemeClosed.delete(d.dataset.theme);
+      else hlThemeClosed.add(d.dataset.theme);
+    });
+  });
 }
 
 // ---- Headlines filtering (topic keyword + source), client-side over hlData ----
