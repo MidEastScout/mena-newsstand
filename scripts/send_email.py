@@ -143,8 +143,8 @@ def build_html(data: dict, review_html: str = "") -> str:
       <td style="padding:14px 28px;border-top:2px double #18171A;
           text-align:center;font-size:11px;color:#8A8690">
         View full newsstand at
-        <a href="https://roiebe23.github.io/mena-newsstand/"
-            style="color:#1A3B6B">roiebe23.github.io/mena-newsstand</a>
+        <a href="https://mideastscout.github.io/mena-newsstand/"
+            style="color:#1A3B6B">mideastscout.github.io/mena-newsstand</a>
       </td>
     </tr>
   </table>
