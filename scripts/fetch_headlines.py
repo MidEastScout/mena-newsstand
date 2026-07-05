@@ -538,7 +538,10 @@ HEADERS = {
     ),
     "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
     "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
+    # No "br": brotli isn't in requirements, so advertising it makes servers that
+    # honour it (e.g. Kan's newsflash API) return undecodable bytes → an empty
+    # feed. gzip/deflate are decoded natively by requests.
+    "Accept-Encoding": "gzip, deflate",
     "Cache-Control": "no-cache",
     "Pragma": "no-cache",
 }

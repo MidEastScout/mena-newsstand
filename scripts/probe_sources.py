@@ -393,29 +393,47 @@ def probe_israel_parsers(session):
         print(f"  could not import fetch_headlines: {e}")
         return {"import_error": str(e)}
 
-    cases = [
-        ("kan11 (parse_feed)", fh.parse_feed,
-         "https://www.kan.org.il/api/newsflash/v2/Newsflash"),
-        ("n12 news-israel (parse_feed)", fh.parse_feed,
-         "https://rcs.mako.co.il/rss/news-israel.xml"),
-        ("n12 news-world (parse_feed)", fh.parse_feed,
-         "https://rcs.mako.co.il/rss/news-world.xml"),
-        ("ch13 (parse_news_sitemap)", fh.parse_news_sitemap,
-         "https://13tv.co.il/Services/sitemapGenerator/xmls/news_sitemap.xml"),
-    ]
-    for name, fn, url in cases:
+    # Full end-to-end: fetch_outlet does native fetch + freshness + off-topic /
+    # junk filtering — exactly what the live wall shows. This is the real test.
+    for meta in fh.SOURCES.get("Israel", []):
+        name = meta["source"]
         try:
-            items = fn(session, url, None) or []
+            res = fh.fetch_outlet(session, meta)
         except Exception as e:
             out[name] = {"error": f"{type(e).__name__}: {e}"}
             print(f"\n  {name}: ERROR {e}")
             continue
-        sample = [{"title": it["title"][:70], "published": it["published"],
-                   "url": it["url"][:60]} for it in items[:4]]
-        out[name] = {"count": len(items), "sample": sample}
-        print(f"\n  {name}: {len(items)} items")
-        for s in sample:
-            print(f"    · [{s['published'][:16]}] {s['title']}")
+        hls = res.get("headlines", [])
+        out[name] = {"headlines": len(hls), "error": res.get("error"),
+                     "sample": [{"title": h["title"][:74], "published": h.get("published", ""),
+                                 "url": h.get("url", "")[:64]} for h in hls]}
+        print(f"\n  {name}: {len(hls)} headlines after filtering"
+              f"{'  (error: ' + res['error'] + ')' if res.get('error') else ''}")
+        for h in hls:
+            print(f"    · [{h.get('published','')[:16]}] {h['title'][:74]}")
+            print(f"        {h.get('url','')[:80]}")
+
+    # Also show what Channel 13's raw sitemap contains vs. what off-topic drops,
+    # so we can tune the filter: sample 12 items with their is_offtopic verdict.
+    try:
+        raw = fh.parse_news_sitemap(
+            session, "https://13tv.co.il/Services/sitemapGenerator/xmls/news_sitemap.xml", None) or []
+        tally = {"kept": 0, "offtopic": 0, "junk": 0}
+        detail = []
+        for it in raw:
+            off = fh.is_offtopic(it["title"], it.get("url", ""))
+            junk = fh.is_junk_title(it["title"], "Channel 13")
+            tally["offtopic" if off else ("junk" if junk else "kept")] += 1
+            if len(detail) < 14:
+                detail.append({"v": ("OFF" if off else "JUNK" if junk else "keep"),
+                               "date": it["published"][:16], "title": it["title"][:56],
+                               "path": (it.get("url", "").split("13tv.co.il", 1) + [""])[1][:46]})
+        out["ch13_raw_filter"] = {"total": len(raw), "tally": tally, "detail": detail}
+        print(f"\n  ch13 raw sitemap: {len(raw)} items → {tally}")
+        for d in detail:
+            print(f"    {d['v']:4s} [{d['date']}] {d['path']:46s} {d['title']}")
+    except Exception as e:
+        out["ch13_raw_filter"] = {"error": str(e)}
     return out
 
 
