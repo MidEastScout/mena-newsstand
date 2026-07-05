@@ -1340,6 +1340,35 @@ function tsEntities(text){
   return {strong, all};
 }
 
+// Arabic + Persian script (Hebrew is a separate block and is left alone).
+const TS_ARABIC = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]/;
+function tsCleanTitle(title, source){
+  let t = (title||"").trim();
+  const m = t.match(/\s[-–—]\s([^-–—]{1,40})$/);
+  if(m){
+    const seg = m[1].trim();
+    const st = new Set((seg.toLowerCase().match(/[a-z]{3,}/g)||[]));
+    const so = new Set(((source||"").toLowerCase().match(/[a-z]{3,}/g)||[]));
+    if(TS_ARABIC.test(seg) || [...st].some(w=>so.has(w))) t = t.slice(0, m.index).trim();
+  }
+  return t;
+}
+function tsFirstSentence(text){
+  let t = (text||"").trim(); if(!t) return "";
+  const m = t.match(/^(.+?[.!?])(\s|$)/); let s = (m?m[1]:t).trim();
+  if(s.length>110) s = s.slice(0,110).replace(/\s+\S*$/,"").replace(/[ ,;:]+$/,"")+"…";
+  return s;
+}
+// Guaranteed-English headline for the strip: cleaned title if English, else the
+// outlet's English snippet. Mirrors _english_display in build_topstories.py.
+function tsEnglish(it){
+  const t = tsCleanTitle(it.title, it.source);
+  if(t && !TS_ARABIC.test(t)) return t;
+  const s = tsFirstSentence(it.snippet);
+  if(s && !TS_ARABIC.test(s)) return s;
+  return t || s;
+}
+
 function buildClustersFallback(data){
   const catOrder = CAT_DEFS.map(c=>c.id);   // computed lazily (CAT_DEFS is defined below)
   const items = flattenHeadlines(data);
@@ -1371,8 +1400,9 @@ function buildClustersFallback(data){
   clusters.sort((a,b)=> b.outlets-a.outlets || b.cats.size-a.cats.size || b.newest-a.newest);
   return clusters.slice(0,5).map(c=>{
     const rep = tsPickRep(c.members);
-    const view = m => ({source:m.source, category:m.category, title:m.title,
-      title_he:m.title_he, url:m.url, published:m.published});
+    // `title` forced to English (EN mode); `title_he` (Hebrew) kept for HE mode.
+    const view = m => ({source:m.source, category:m.category, title:tsEnglish(m),
+      title_he:tsCleanTitle(m.title_he, m.source), url:m.url, published:m.published});
     return {
       rep: view(rep),
       outlets: c.outlets,
@@ -1392,10 +1422,12 @@ function tsPickRep(members){
   let best=members[0], bestKey=null;
   for(const m of members){
     const title=m.title||"";
+    const clean=tsCleanTitle(title,m.source);
+    const english=clean && !TS_ARABIC.test(clean) ? 1 : 0;   // real English headline available
     let covers=0; for(const e of tsEntities(title).strong) if(dom.has(e)) covers++;
     let central=0; for(const o of members) if(o!==m) for(const w of m._tok) if(o._tok.has(w)) central++;
-    const key=[covers, /[A-Za-z]/.test(title)?1:0, (stub.test(title)||title.length<18)?0:1,
-               -Math.abs(title.length-50), central, m._t];
+    const key=[english, covers, (stub.test(clean)||clean.length<18)?0:1,
+               -Math.abs(clean.length-50), central, m._t];
     if(bestKey===null || tsCmp(key,bestKey)>0){ bestKey=key; best=m; }
   }
   return best;

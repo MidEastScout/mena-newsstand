@@ -86,6 +86,52 @@ SRC_CATS = {
 # Deterministic display order for category tags on a story.
 CAT_ORDER = ["israeli", "gulf", "panarab", "iranian", "levant", "turkish", "intl"]
 
+# Arabic + Persian script (they share the Arabic Unicode blocks). Hebrew
+# (U+0590–U+05FF) is deliberately NOT included — the site's HE mode is fine.
+_ARABIC = re.compile(r"[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]")
+
+
+def _seg_matches_source(seg: str, source: str) -> bool:
+    st = set(re.findall(r"[a-z]{3,}", seg.lower()))
+    so = set(re.findall(r"[a-z]{3,}", (source or "").lower()))
+    return bool(st & so)
+
+
+def _clean_title(title: str, source: str) -> str:
+    """Strip a trailing ' - <outlet>' / ' - <Persian tail>' attribution that some
+    feeds append (e.g. '… - ایران اینترنشنال', '… - WAFA Agency')."""
+    t = (title or "").strip()
+    m = re.search(r"\s[-–—]\s([^-–—]{1,40})$", t)
+    if m:
+        seg = m.group(1).strip()
+        if _ARABIC.search(seg) or _seg_matches_source(seg, source):
+            t = t[:m.start()].strip()
+    return t
+
+
+def _first_sentence(text: str, maxlen: int = 110) -> str:
+    t = (text or "").strip()
+    if not t:
+        return ""
+    m = re.match(r"(.+?[.!?])(\s|$)", t)
+    s = (m.group(1) if m else t).strip()
+    if len(s) > maxlen:
+        s = s[:maxlen].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    return s
+
+
+def _english_display(it: dict) -> str:
+    """A guaranteed-English headline for the strip: the cleaned title when it's
+    English, otherwise the outlet's English snippet (present for every item, incl.
+    Arabic/Persian-titled outlets). Never returns Arabic or Persian text."""
+    t = _clean_title(it.get("title", ""), it.get("source", ""))
+    if t and not _ARABIC.search(t):
+        return t
+    s = _first_sentence(it.get("snippet", ""))
+    if s and not _ARABIC.search(s):
+        return s
+    return t or s   # last resort (shouldn't happen — snippets are English)
+
 
 # ---------------------------------------------------------------------------
 # Flatten headlines.json → one flat list of items, each keeping its outlet.
@@ -265,13 +311,16 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
     best, best_key = idxs[0], None
     for i in idxs:
         title = items[i]["title"]
+        clean = _clean_title(title, items[i]["source"])
+        english = bool(clean) and not _ARABIC.search(clean)    # real English headline available
         title_ents = _entities(title) & STRONG
         covers = len(title_ents & dominant)                    # names the shared story
-        latin = bool(re.search(r"[A-Za-z]", title))            # readable English title
-        stub = bool(generic.match(title)) or len(title) < 18
-        length_fit = -abs(len(title) - 50)                     # prefer natural headline length
+        stub = bool(generic.match(clean)) or len(clean) < 18
+        length_fit = -abs(len(clean) - 50)                     # prefer natural headline length
         central = sum(len(tok[i] & tok[j]) for j in idxs if j != i)
-        key = (covers, latin, not stub, length_fit, central, items[i]["_t"])
+        # English first, so the card shows a genuine English headline rather than
+        # falling back to a snippet; then story-coverage, non-stub, length, etc.
+        key = (english, covers, not stub, length_fit, central, items[i]["_t"])
         if best_key is None or key > best_key:
             best_key, best = key, i
     return best
@@ -414,7 +463,16 @@ def cluster_with_claude(client, items: list[dict]):
 # Ranking + assembling the output stories (shared by both clustering paths).
 # ---------------------------------------------------------------------------
 def _member_view(it: dict) -> dict:
-    return {k: it[k] for k in ("source", "category", "title", "title_he", "url", "published")}
+    # `title` is forced to English for the strip (EN mode); `title_he` (Hebrew)
+    # stays for HE mode. Neither is ever Arabic or Persian.
+    return {
+        "source": it["source"],
+        "category": it["category"],
+        "title": _english_display(it),
+        "title_he": _clean_title(it.get("title_he", ""), it["source"]),
+        "url": it["url"],
+        "published": it["published"],
+    }
 
 
 def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
