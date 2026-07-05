@@ -1111,22 +1111,32 @@ def parse_news_sitemap(session: requests.Session, url: str, referer):
     for block in re.findall(r"<url>(.*?)</url>", body, re.S):
         loc = re.search(r"<loc>\s*(.*?)\s*</loc>", block, re.S)
         title = re.search(r"<(?:\w+:)?title>\s*(.*?)\s*</(?:\w+:)?title>", block, re.S)
-        pub = re.search(r"<(?:\w+:)?publication_date>\s*(.*?)\s*</(?:\w+:)?publication_date>",
-                        block, re.S)
         if not (loc and title):
             continue
         link = html.unescape(loc.group(1)).strip()
+        # Skip TV magazine / talk-show segments. Channel 13 lists these under its
+        # news section too, but they're video clips ("Behind the Money" etc.), not
+        # news articles — and it stamps them all with a date-only 00:00 timestamp,
+        # so they'd otherwise dominate the feed.
+        low = link.lower()
+        if "/clips/" in low or "/episodes/" in low or re.search(r"/season-?\d", low):
+            continue
         t = html.unescape(re.sub(r"<!\[CDATA\[(.*?)\]\]>", r"\1", title.group(1), flags=re.S)).strip()
         if not link or not t:
             continue
+        # Order by the most precise timestamp available: news:publication_date is
+        # often date-only here, while <lastmod> carries the real time — take the max.
         dt = None
-        if pub:
+        for m in re.finditer(
+                r"<(?:\w+:)?(?:publication_date|lastmod)>\s*([0-9T:+\-]{10,})\s*</", block):
             try:
-                dt = datetime.fromisoformat(pub.group(1).strip())
-                if dt.tzinfo is None:
-                    dt = dt.replace(tzinfo=timezone.utc)
+                cand = datetime.fromisoformat(m.group(1).strip())
+                if cand.tzinfo is None:
+                    cand = cand.replace(tzinfo=timezone.utc)
+                if dt is None or cand > dt:
+                    dt = cand
             except Exception:
-                dt = None
+                pass
         items.append({
             "title": t,
             "url": link,
