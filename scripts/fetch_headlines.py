@@ -191,6 +191,39 @@ SOURCES = {
             "rss": "https://www.trtworld.com/rss",
         },
     ],
+    # Israeli broadcast channels. lang "he" — their headlines stay in the
+    # original Hebrew everywhere on the site (never translated to English); the
+    # English snippet + EN↔HE toggle work as for every other outlet. Sources,
+    # probed 2026-07-05 from a datacenter IP (state/probe_sources.json):
+    #   • Kan 11  — the newsflash API is a real RSS 2.0 feed, but it declares a
+    #     bogus encoding="utf-16"; parse_feed strips the declaration and retries.
+    #   • N12     — Mako ships per-section RSS; we merge domestic + military +
+    #     world so the card stays fresh even when one section's feed lags.
+    #   • Ch. 13  — no RSS at all (Google stopped indexing it in 2021); its
+    #     Google-news sitemap carries the last ~48h of articles with Hebrew
+    #     titles + timestamps, parsed by parse_news_sitemap.
+    "Israel": [
+        {
+            "source": "Kan 11", "country": "Israel", "lang": "he",
+            "url": "https://www.kan.org.il",
+            "rss": "https://www.kan.org.il/api/newsflash/v2/Newsflash",
+        },
+        {
+            "source": "N12", "country": "Israel", "lang": "he",
+            "url": "https://www.mako.co.il",
+            "rss": [
+                "https://rcs.mako.co.il/rss/news-israel.xml",
+                "https://rcs.mako.co.il/rss/news-military.xml",
+                "https://rcs.mako.co.il/rss/news-world.xml",
+            ],
+        },
+        {
+            "source": "Channel 13", "country": "Israel", "lang": "he",
+            "url": "https://13tv.co.il",
+            "rss": None,
+            "sitemap": "https://13tv.co.il/Services/sitemapGenerator/xmls/news_sitemap.xml",
+        },
+    ],
 }
 
 HEADLINES_PER_OUTLET = 5
@@ -331,13 +364,25 @@ OFFTOPIC_AR = [
 ]
 OFFTOPIC_AR_RE = re.compile("|".join(re.escape(t) for t in OFFTOPIC_AR))
 
+# Hebrew sports / entertainment / lifestyle for the Israeli channels. Like the
+# Arabic list, matched as substrings, so only unambiguous multi-letter terms
+# that never hide inside a geopolitical word are listed.
+OFFTOPIC_HE = [
+    "כדורגל", "כדורסל", "כדוריד", "ליגת האלופות", "ליגת העל", "מכבי תל אביב",
+    "הפועל תל אביב", "מכבי חיפה", "משחקי הליגה",                  # sports
+    "אירוויזיון", "האח הגדול", "ריאליטי", "רכילות", "פרשת השבוע",
+    "מתכונים", "אופנה", "בישול", "הורוסקופ", "אסטרולוגיה",         # entertainment / lifestyle
+]
+OFFTOPIC_HE_RE = re.compile("|".join(re.escape(t) for t in OFFTOPIC_HE))
+
 # TRACKED-but-off-the-wall topics. These are NOT MENA geopolitics, so they are
 # kept off the Headlines wall — but they ARE major media stories worth measuring,
 # so they must survive the off-topic filter and reach the broad coverage sample
 # that feeds the Pulse and Trends views. Currently: the football World Cup
 # (English + the Arabic "كأس العالم" / colloquial "المونديال"). Everything else
 # in OFFTOPIC_* stays fully filtered out of every view.
-TRACKED_OFFTOPIC_RE = re.compile(r"\bworld\s*cup\b|كأس العالم|المونديال", re.I)
+TRACKED_OFFTOPIC_RE = re.compile(
+    r"\bworld\s*cup\b|كأس العالم|المونديال|מונדיאל|גביע העולם", re.I)
 
 # Football / match-report scorelines, e.g. "… holding England to 0-0 draw",
 # "won 3-1", "goalless draw". A digit-digit pairing next to a result word never
@@ -357,7 +402,7 @@ WEATHER_FILLER_RE = re.compile(
 
 # Order regions appear in the Headlines tab (the site renders them in the order
 # they're written to headlines.json).
-REGION_ORDER = ["Pan-Arab", "Iran", "Levant", "Gulf", "Turkey"]
+REGION_ORDER = ["Israel", "Pan-Arab", "Iran", "Levant", "Gulf", "Turkey"]
 
 GNEWS_LOCALE = {
     "en": ("en-US", "US", "US:en"),
@@ -840,6 +885,9 @@ def is_offtopic(title: str, url: str = "") -> bool:
         # Arabic-language sports / lifestyle the English term list misses.
         if OFFTOPIC_AR_RE.search(title):
             return True
+        # Hebrew-language sports / lifestyle (the Israeli channels).
+        if OFFTOPIC_HE_RE.search(title):
+            return True
         # Football/match scorelines and weather-record filler.
         if SPORT_SCORE_RE.search(title):
             return True
@@ -1010,6 +1058,14 @@ def parse_feed(session: requests.Session, url: str, referer):
         print(f"      ! {url} -> {exc}", file=sys.stderr)
         return None
     feed = feedparser.parse(resp.content)
+    if not feed.entries:
+        # Some feeds ship a wrong XML encoding declaration (e.g. Kan's newsflash
+        # API declares encoding="utf-16" but sends UTF-8), which stops feedparser
+        # cold on the raw bytes. Retry on the decoded text with the declaration
+        # stripped — a no-op for well-formed feeds, a rescue for mislabelled ones.
+        stripped = re.sub(r"^\s*<\?xml[^>]*\?>", "", resp.text, count=1)
+        if stripped != resp.text:
+            feed = feedparser.parse(stripped)
     items = []
     for e in feed.entries:
         title = (e.get("title") or "").strip()
@@ -1026,6 +1082,55 @@ def parse_feed(session: requests.Session, url: str, referer):
             "_dt": dt,
         })
     # Newest first; undated entries sink to the bottom.
+    floor = datetime.min.replace(tzinfo=timezone.utc)
+    items.sort(key=lambda x: x["_dt"] or floor, reverse=True)
+    return items or None
+
+
+def parse_news_sitemap(session: requests.Session, url: str, referer):
+    """Parse a Google-news XML sitemap into the same item dicts as parse_feed.
+
+    For outlets with no RSS (Channel 13): each <url> block carries <loc> (the
+    article link), <news:title> (the Hebrew headline) and <news:publication_date>.
+    Namespace prefixes vary, so the tag matches allow any 'prefix:' form.
+    """
+    headers = dict(HEADERS)
+    if referer:
+        headers["Referer"] = referer
+    try:
+        resp = session.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+    except Exception as exc:
+        print(f"      ! {url} -> {exc}", file=sys.stderr)
+        return None
+    body = resp.text
+    items = []
+    for block in re.findall(r"<url>(.*?)</url>", body, re.S):
+        loc = re.search(r"<loc>\s*(.*?)\s*</loc>", block, re.S)
+        title = re.search(r"<(?:\w+:)?title>\s*(.*?)\s*</(?:\w+:)?title>", block, re.S)
+        pub = re.search(r"<(?:\w+:)?publication_date>\s*(.*?)\s*</(?:\w+:)?publication_date>",
+                        block, re.S)
+        if not (loc and title):
+            continue
+        link = html.unescape(loc.group(1)).strip()
+        t = html.unescape(re.sub(r"<!\[CDATA\[(.*?)\]\]>", r"\1", title.group(1), flags=re.S)).strip()
+        if not link or not t:
+            continue
+        dt = None
+        if pub:
+            try:
+                dt = datetime.fromisoformat(pub.group(1).strip())
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=timezone.utc)
+            except Exception:
+                dt = None
+        items.append({
+            "title": t,
+            "url": link,
+            "published": dt.isoformat() if dt else "",
+            "description": "",     # sitemaps carry no summary; snippet expands the title
+            "_dt": dt,
+        })
     floor = datetime.min.replace(tzinfo=timezone.utc)
     items.sort(key=lambda x: x["_dt"] or floor, reverse=True)
     return items or None
@@ -1066,6 +1171,27 @@ def coverage_items(items):
             for it in items[:COVERAGE_PER_OUTLET]]
 
 
+def _fetch_native(session: requests.Session, meta: dict) -> list:
+    """Load an outlet's own feed: a Google-news sitemap, a merged list of RSS
+    feeds, or a single RSS feed — returning parse_feed-shaped items (deduped by
+    URL, newest first)."""
+    ref = meta["url"] + "/"
+    if meta.get("sitemap"):
+        return parse_news_sitemap(session, meta["sitemap"], ref) or []
+    rss = meta.get("rss")
+    urls = rss if isinstance(rss, (list, tuple)) else ([rss] if rss else [])
+    merged, seen = [], set()
+    for ru in urls:
+        for it in (parse_feed(session, ru, ref) or []):
+            if it["url"] in seen:
+                continue
+            seen.add(it["url"])
+            merged.append(it)
+    floor = datetime.min.replace(tzinfo=timezone.utc)
+    merged.sort(key=lambda x: x["_dt"] or floor, reverse=True)
+    return merged
+
+
 def fetch_outlet(session: requests.Session, meta: dict) -> dict:
     result = {
         "source": meta["source"], "country": meta["country"],
@@ -1075,8 +1201,10 @@ def fetch_outlet(session: requests.Session, meta: dict) -> dict:
     source = meta["source"]
     domain = domain_of(meta["url"])
 
-    # 1) Native feed (own domain as Referer dodges some blocks).
-    native = parse_feed(session, meta["rss"], meta["url"] + "/") or []
+    # 1) Native source. A paper may declare a single RSS url, a LIST of RSS urls
+    #    (merged — e.g. N12's per-section feeds), or a Google-news sitemap
+    #    (outlets with no RSS, e.g. Channel 13).
+    native = _fetch_native(session, meta)
     _clean_titles(native, source, domain)
     items = fresh_items(native, source)
     via = "native"
@@ -1165,13 +1293,14 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
         _strip_descriptions(regions)
         return {}
 
-    positions, titles, descriptions = [], [], []
+    positions, titles, descriptions, langs = [], [], [], []
     for region, outlets in regions.items():
         for o_idx, outlet in enumerate(outlets):
             for h_idx, h in enumerate(outlet.get("headlines", [])):
                 positions.append((region, o_idx, h_idx))
                 titles.append(h["title"])
                 descriptions.append(h.get("description", ""))
+                langs.append(outlet.get("lang", "en"))
 
     if not titles:
         _strip_descriptions(regions)
@@ -1320,7 +1449,12 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
     final_snips = [regions[r][oi]["headlines"][hi].get("snippet", "")
                    for (r, oi, hi) in positions]
     he_cache = _load_he_cache()
-    he_titles = translate_he_cached(titles, he_cache["t"])
+    # Hebrew-source titles are already Hebrew — never send them to Azure (a he→he
+    # round-trip that wastes budget and could mangle the wording). We pass them as
+    # blank so translate_he_cached skips them, then use the original title verbatim
+    # below. The English snippet still gets a real Hebrew translation.
+    titles_for_he = [("" if langs[i] == "he" else titles[i]) for i in range(len(titles))]
+    he_titles = translate_he_cached(titles_for_he, he_cache["t"])
     he_snips = translate_he_cached(final_snips, he_cache["s"])
     _save_he_cache(he_cache)
 
@@ -1339,8 +1473,11 @@ def generate_snippets(regions: dict, existing_output: dict = None) -> dict:
     for i, (region, o_idx, h_idx) in enumerate(positions):
         hl = regions[region][o_idx]["headlines"][h_idx]
         prev_hl = prev_he.get(titles[i], {})
-        hl["title_he"] = (he_titles[i]
-                          or hl.get("title_he", "") or prev_hl.get("title_he", ""))
+        if langs[i] == "he":
+            hl["title_he"] = titles[i]        # Hebrew headline: HE view = the original
+        else:
+            hl["title_he"] = (he_titles[i]
+                              or hl.get("title_he", "") or prev_hl.get("title_he", ""))
         hl["snippet_he"] = (he_snips[i]
                             or hl.get("snippet_he", "") or prev_hl.get("snippet_he", ""))
         if hl["title_he"]:

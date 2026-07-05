@@ -375,6 +375,50 @@ def probe_final(session):
     return out
 
 
+# ---------------------------------------------------------------------------
+# E. Exercise the REAL fetch_headlines parsers against the three Israeli
+#    channels on the runner — the definitive integration test before the live
+#    pipeline touches them: Kan via parse_feed (declaration-strip retry), N12
+#    via merged parse_feed, Channel 13 via parse_news_sitemap.
+# ---------------------------------------------------------------------------
+def probe_israel_parsers(session):
+    print("\n" + "=" * 70)
+    print("E. REAL PARSERS — fetch_headlines against Kan / N12 / Channel 13")
+    print("=" * 70)
+    out = {}
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        import fetch_headlines as fh
+    except Exception as e:
+        print(f"  could not import fetch_headlines: {e}")
+        return {"import_error": str(e)}
+
+    cases = [
+        ("kan11 (parse_feed)", fh.parse_feed,
+         "https://www.kan.org.il/api/newsflash/v2/Newsflash"),
+        ("n12 news-israel (parse_feed)", fh.parse_feed,
+         "https://rcs.mako.co.il/rss/news-israel.xml"),
+        ("n12 news-world (parse_feed)", fh.parse_feed,
+         "https://rcs.mako.co.il/rss/news-world.xml"),
+        ("ch13 (parse_news_sitemap)", fh.parse_news_sitemap,
+         "https://13tv.co.il/Services/sitemapGenerator/xmls/news_sitemap.xml"),
+    ]
+    for name, fn, url in cases:
+        try:
+            items = fn(session, url, None) or []
+        except Exception as e:
+            out[name] = {"error": f"{type(e).__name__}: {e}"}
+            print(f"\n  {name}: ERROR {e}")
+            continue
+        sample = [{"title": it["title"][:70], "published": it["published"],
+                   "url": it["url"][:60]} for it in items[:4]]
+        out[name] = {"count": len(items), "sample": sample}
+        print(f"\n  {name}: {len(items)} items")
+        for s in sample:
+            print(f"    · [{s['published'][:16]}] {s['title']}")
+    return out
+
+
 def main():
     session = requests.Session()
     report = {"ran": datetime.now(timezone.utc).isoformat(), "date": today.isoformat()}
@@ -398,6 +442,11 @@ def main():
     except Exception as e:
         print(f"!! final probe crashed: {type(e).__name__}: {e}", file=sys.stderr)
         report["final"] = {"error": str(e)}
+    try:
+        report["israel_parsers"] = probe_israel_parsers(session)
+    except Exception as e:
+        print(f"!! israel-parser probe crashed: {type(e).__name__}: {e}", file=sys.stderr)
+        report["israel_parsers"] = {"error": str(e)}
 
     out_path = Path(__file__).parent.parent / "state" / "probe_sources.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)

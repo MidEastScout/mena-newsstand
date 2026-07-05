@@ -78,7 +78,8 @@ SRC_CATS = {
     # Turkish
     "Anadolu Agency": "turkish", "Daily Sabah": "turkish",
     "Hürriyet Daily News": "turkish", "TRT World": "turkish",
-    # Israeli / International (none in the feed today — ready for when added)
+    # Israeli
+    "Kan 11": "israeli", "N12": "israeli", "Channel 13": "israeli",
     "Times of Israel": "israeli", "The Jerusalem Post": "israeli", "Haaretz": "israeli",
     "Ynet News": "israeli",
     "Reuters": "intl", "BBC": "intl", "Associated Press": "intl", "AFP": "intl", "CNN": "intl",
