@@ -34,6 +34,13 @@ PAUSE = 0.2
 today = datetime.now(timezone.utc).date()
 DAYS = [today - timedelta(days=k) for k in range(6)]   # today .. today-5
 
+# Cover-image discovery regexes (mirrors probe_frontpages.py).
+IMG_RE = re.compile(r'https?://[^\s"\'<>()]+?\.(?:jpg|jpeg|png|webp)(?:\?[^\s"\'<>()]*)?', re.I)
+OG_RE = re.compile(r'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)', re.I)
+CID_RE = re.compile(r'(?:i\.prcdn\.co/img\?cid=|[?&]cid=)(\d+)', re.I)
+JUNK_IMG = re.compile(r'(logo|sprite|icon|favicon|avatar|flag|placeholder|'
+                      r'banner|ad[s_-]|pixel|blank|default|share|social)', re.I)
+
 
 def get(session, url, as_image=False, referer=None):
     headers = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9,he;q=0.8"}
@@ -437,6 +444,96 @@ def probe_israel_parsers(session):
     return out
 
 
+# ---------------------------------------------------------------------------
+# F. Alternative-source hunt for the two UAE covers stuck on Freedom Forum
+#    (The National, Gulf News). UAE dailies publish 7 days/week, so a Friday
+#    cover on a Sunday is a source gap, not a no-print day. Test every angle for
+#    a fresh (today / yesterday) cover: more FF codes, more Kiosko geo/slug
+#    combos, PressReader cids, frontpages.com UAE, and each paper's own e-paper.
+# ---------------------------------------------------------------------------
+def _img_ok(session, url):
+    r, info = get(session, url, as_image=True, referer=ref_for(url))
+    return (r is not None), info
+
+
+def probe_uae_alternates(session):
+    print("\n" + "=" * 70)
+    print("F. UAE COVER HUNT — The National / Gulf News fresh-source search")
+    print("=" * 70)
+    out = {}
+    days = [today, today - timedelta(days=1)]
+
+    ff_codes = {
+        "the_national": ["UAE_TN", "UAE_TNN", "AE_TN", "UAE_NAT"],
+        "gulf_news": ["UAE_GN", "AE_GN", "UAE_GLF"],
+    }
+    kiosko = {
+        "the_national": [("asi", "the_national"), ("ae", "the_national"),
+                         ("asi", "the-national"), ("me", "the_national")],
+        "gulf_news": [("asi", "gulf_news"), ("ae", "gulf_news"),
+                      ("asi", "gulfnews"), ("me", "gulf_news")],
+    }
+    for pid in ("the_national", "gulf_news"):
+        hits = []
+        for code in ff_codes[pid]:
+            for d in days:
+                ok, info = _img_ok(session, f"https://cdn.freedomforum.org/dfp/jpg{d.day}/lg/{code}.jpg")
+                if ok:
+                    hits.append(("ff " + code, d.isoformat()))
+                time.sleep(PAUSE)
+        for geo, slug in kiosko[pid]:
+            for d in days:
+                ok, info = _img_ok(session, f"https://img.kiosko.net/{d:%Y/%m/%d}/{geo}/{slug}.750.jpg")
+                if ok:
+                    hits.append((f"kiosko {geo}/{slug}", d.isoformat()))
+                time.sleep(PAUSE)
+        out[pid] = {"image_hits": hits}
+        print(f"\n  {pid}: {hits or 'no fresh image via FF/Kiosko'}")
+
+    # PressReader + frontpages.com + e-papers (scrape for cover URLs)
+    pages = {
+        "the_national": [
+            "https://www.pressreader.com/uae/the-national-news",
+            "https://www.pressreader.com/newspapers/n/the-national",
+            "https://www.frontpages.com/uae-newspapers/",
+        ],
+        "gulf_news": [
+            "https://www.pressreader.com/uae/gulf-news",
+            "https://www.pressreader.com/newspapers/n/gulf-news",
+            "https://gulfnews.com/epaper",
+        ],
+    }
+    for pid, urls in pages.items():
+        found = []
+        for page in urls:
+            r, info = get(session, page)
+            print(f"\n  [{pid}] {page} -> {info}")
+            if r is None:
+                continue
+            body = r.text
+            cids = sorted(set(CID_RE.findall(body)), key=int)[:4]
+            for cid in cids:
+                u = f"https://i.prcdn.co/img?cid={cid}&page=1&width=700"
+                ok, info2 = _img_ok(session, u)
+                print(f"      cid {cid}: {'OK ' if ok else 'x '}{info2}")
+                if ok:
+                    found.append({"cid": cid, "url": u, "info": info2})
+                time.sleep(PAUSE)
+            # og:image + inline cover-ish images
+            imgs = [m.group(1) for m in OG_RE.finditer(body)]
+            imgs += [u for u in IMG_RE.findall(body)
+                     if not JUNK_IMG.search(u) and re.search(r"(cover|front|page|thumb|prcdn|cdn)", u, re.I)][:6]
+            for iu in list(dict.fromkeys(imgs))[:6]:
+                iu = iu.replace("&amp;", "&")
+                ok, info2 = _img_ok(session, iu)
+                if ok:
+                    found.append({"url": iu, "info": info2})
+                    print(f"      IMG OK {iu[:80]} ({info2})")
+                time.sleep(PAUSE)
+        out.setdefault(pid, {})["scraped_covers"] = found
+    return out
+
+
 def main():
     session = requests.Session()
     report = {"ran": datetime.now(timezone.utc).isoformat(), "date": today.isoformat()}
@@ -465,6 +562,11 @@ def main():
     except Exception as e:
         print(f"!! israel-parser probe crashed: {type(e).__name__}: {e}", file=sys.stderr)
         report["israel_parsers"] = {"error": str(e)}
+    try:
+        report["uae_alternates"] = probe_uae_alternates(session)
+    except Exception as e:
+        print(f"!! uae-alternates probe crashed: {type(e).__name__}: {e}", file=sys.stderr)
+        report["uae_alternates"] = {"error": str(e)}
 
     out_path = Path(__file__).parent.parent / "state" / "probe_sources.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
