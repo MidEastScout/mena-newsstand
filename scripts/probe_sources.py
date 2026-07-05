@@ -283,6 +283,87 @@ def probe_followups(session):
     return out
 
 
+# ---------------------------------------------------------------------------
+# D. Final follow-ups: (1) Channel 13 sitemaps — GNews stopped indexing
+#    13tv.co.il in 2021 and there's no RSS, but WordPress sites list sitemaps in
+#    robots.txt and often expose a news sitemap with the last 48h of articles.
+#    (2) Kan newsflash parse variants — the API declares encoding="utf-16",
+#    which can defeat feedparser on raw bytes; test the exact variants
+#    fetch_headlines.parse_feed could use so the winner is known in advance.
+# ---------------------------------------------------------------------------
+SITEMAP_CANDIDATES = [
+    "https://13tv.co.il/robots.txt",
+    "https://13tv.co.il/sitemap_index.xml",
+    "https://13tv.co.il/news-sitemap.xml",
+    "https://13tv.co.il/sitemap.xml",
+    "https://13tv.co.il/wp-sitemap.xml",
+]
+
+
+def probe_final(session):
+    print("\n" + "=" * 70)
+    print("D. FINAL — Channel 13 sitemaps + Kan parse variants")
+    print("=" * 70)
+    out = {"ch13_sitemaps": [], "kan_parse": {}}
+
+    for url in SITEMAP_CANDIDATES:
+        r, info = get(session, url)
+        entry = {"url": url, "info": info}
+        print(f"\n  {url}\n      -> {info}")
+        if r is not None:
+            body = r.text
+            if url.endswith("robots.txt"):
+                maps = re.findall(r"(?im)^sitemap:\s*(\S+)", body)
+                entry["sitemaps"] = maps
+                print(f"      robots.txt sitemaps: {maps}")
+                for m in maps[:5]:
+                    r2, info2 = get(session, m)
+                    print(f"        {m} -> {info2}")
+                    if r2 is not None:
+                        locs = re.findall(r"<loc>([^<]+)</loc>", r2.text)[:8]
+                        dates = re.findall(
+                            r"<(?:news:publication_date|lastmod)>([^<]+)<", r2.text)[:4]
+                        out["ch13_sitemaps"].append(
+                            {"url": m, "info": info2, "locs": locs, "dates": dates})
+                        print(f"          locs: {len(locs)} (first: {locs[0][:70] if locs else '-'})")
+                        print(f"          dates: {dates[:3]}")
+                    time.sleep(PAUSE)
+            else:
+                locs = re.findall(r"<loc>([^<]+)</loc>", body)[:8]
+                dates = re.findall(r"<(?:news:publication_date|lastmod)>([^<]+)<", body)[:4]
+                entry["locs"], entry["dates"] = locs, dates
+                if locs:
+                    print(f"      locs: {len(locs)} (first: {locs[0][:70]})  dates: {dates[:3]}")
+        out["ch13_sitemaps"].append(entry)
+        time.sleep(PAUSE)
+
+    # Kan parse variants
+    import feedparser
+    url = "https://www.kan.org.il/api/newsflash/v2/Newsflash"
+    headers = {"User-Agent": UA}
+    try:
+        r = session.get(url, headers=headers, timeout=TIMEOUT)
+        variants = {
+            "bytes": r.content,
+            "text": r.text,
+            "text_decl_stripped": re.sub(r"^\s*<\?xml[^>]*\?>", "", r.text, count=1),
+        }
+        for name, payload in variants.items():
+            try:
+                f = feedparser.parse(payload)
+                n = len(f.entries)
+                t0 = f.entries[0].get("title", "")[:60] if n else ""
+                out["kan_parse"][name] = {"entries": n, "first_title": t0,
+                                          "bozo": str(getattr(f, "bozo_exception", ""))[:90]}
+                print(f"\n  kan variant {name:20s}: {n} entries  {t0}")
+            except Exception as e:
+                out["kan_parse"][name] = {"error": f"{type(e).__name__}: {e}"}
+                print(f"\n  kan variant {name:20s}: ERROR {e}")
+    except Exception as e:
+        out["kan_parse"]["fetch_error"] = str(e)
+    return out
+
+
 def main():
     session = requests.Session()
     report = {"ran": datetime.now(timezone.utc).isoformat(), "date": today.isoformat()}
@@ -301,6 +382,11 @@ def main():
     except Exception as e:
         print(f"!! follow-up probe crashed: {type(e).__name__}: {e}", file=sys.stderr)
         report["followups"] = {"error": str(e)}
+    try:
+        report["final"] = probe_final(session)
+    except Exception as e:
+        print(f"!! final probe crashed: {type(e).__name__}: {e}", file=sys.stderr)
+        report["final"] = {"error": str(e)}
 
     out_path = Path(__file__).parent.parent / "state" / "probe_sources.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
