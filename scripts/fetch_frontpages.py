@@ -100,6 +100,15 @@ ARCHIVE_DIR = OUT_DIR / "archive"
 ARCHIVE_RETENTION_DAYS = 365   # keep ~1 year, then prune the oldest days
 MIN_BYTES = 12000
 TIMEOUT = 25
+# How many days back to try for each cover (today first). Widening past
+# yesterday lets a title recover the most recent edition it can actually reach
+# when the last day or two are missing upstream, instead of freezing on a much
+# older carried-forward image. used_date is always stamped with the real
+# calendar date of the edition fetched, so covers stay honestly labelled.
+WINDOW_DAYS = max(2, int(os.environ.get("FRONTPAGES_WINDOW_DAYS", "3")))
+# Covers this many days behind (or more) are flagged as a workflow warning so a
+# chronic refresh failure surfaces in the Actions log instead of going unnoticed.
+STALE_WARN_DAYS = int(os.environ.get("FRONTPAGES_STALE_WARN_DAYS", "2"))
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
@@ -266,6 +275,15 @@ def archive_today(today: date, manifest: dict) -> None:
     print(f"  archive index: {len(idx['dates'])} day(s) available")
 
 
+def _stale_days(today: date, used_date):
+    """How many days behind `today` the edition labelled `used_date` is (0 = today,
+    None if there's no dated cover)."""
+    try:
+        return (today - date.fromisoformat(used_date)).days
+    except Exception:
+        return None
+
+
 def load_prev_manifest() -> dict:
     """Return {id: entry} from the committed manifest, or {} if unreadable."""
     try:
@@ -279,7 +297,7 @@ def main():
     OUT_DIR.mkdir(exist_ok=True)
     today = datetime.now(timezone.utc).date()
     today_str = today.isoformat()
-    dates = [today, today - timedelta(days=1)]   # today, then yesterday fallback
+    dates = [today - timedelta(days=k) for k in range(WINDOW_DAYS)]   # today, then progressively older
     session = requests.Session()
     manifest = {"updated": datetime.now(timezone.utc).isoformat(), "papers": []}
 
@@ -300,7 +318,7 @@ def main():
             manifest["papers"].append({
                 "id": p["id"], "name": p["name"], "loc": p["loc"], "lang": p["lang"],
                 "site": p["site"], "ok": True, "src": prev_entry.get("src"),
-                "date": today_str,
+                "date": today_str, "stale_days": 0,
             })
             continue
 
@@ -340,6 +358,7 @@ def main():
         manifest["papers"].append({
             "id": p["id"], "name": p["name"], "loc": p["loc"], "lang": p["lang"],
             "site": p["site"], "ok": ok, "src": used_url, "date": used_date,
+            "stale_days": _stale_days(today, used_date),
         })
 
     # Prune covers for papers that were removed from PAPERS, so the repo and the
@@ -359,6 +378,23 @@ def main():
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     n_ok = sum(1 for x in manifest["papers"] if x["ok"])
     print(f"\nFront pages: {n_ok}/{len(PAPERS)} available")
+
+    # Surface chronic refresh failures. A cover this many days behind isn't just
+    # waiting on the upstream scan — its source (Freedom Forum code / Kiosko slug)
+    # is likely dead and needs re-probing (scripts/probe_frontpages.py). Emitting
+    # a GitHub Actions ::warning:: makes the recurring problem visible in the run
+    # log instead of only surfacing when someone notices the covers look old.
+    stale = sorted(
+        ((x["id"], x["stale_days"]) for x in manifest["papers"]
+         if isinstance(x.get("stale_days"), int) and x["stale_days"] >= STALE_WARN_DAYS),
+        key=lambda t: -t[1])
+    missing = [x["id"] for x in manifest["papers"] if not x["ok"]]
+    if stale:
+        listed = ", ".join(f"{pid} ({n}d behind)" for pid, n in stale)
+        print(f"::warning title=Stale front pages::{len(stale)} cover(s) "
+              f"≥{STALE_WARN_DAYS} days old — source likely dead, re-probe needed: {listed}")
+    if missing:
+        print(f"::warning title=Missing front pages::no image for: {', '.join(missing)}")
 
     # Keep a dated copy of today's covers for the in-site archive.
     archive_today(today, manifest)
