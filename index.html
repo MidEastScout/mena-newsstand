@@ -169,6 +169,9 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .fp-name{font-size:12px;font-weight:600;color:var(--ink);transition:.15s;line-height:1.3}
 .fp-card:hover .fp-name{color:var(--accent)}
 .fp-loc{font-size:10px;color:var(--muted);margin-top:2px}
+.fp-date{font-size:10px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:4px}
+.fp-date.stale{color:var(--accent)}
+.fp-date.stale::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
 .fp-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.4px;border-radius:3px;padding:2px 6px;margin-top:5px}
 .t-en{background:#E3EBF5;color:#1A3B6B}
 .t-he{background:#EAF0E3;color:#2B5C1A}
@@ -573,6 +576,7 @@ const I18N = {
   fp_note:"Front page covers via Kiosko &amp; Freedom Forum, updated daily.",
   footer:"Front page covers via Kiosko.net &amp; Freedom Forum · All other links to original outlets",
   fp_asof:"Front pages as of ", todays_fp:"Today's Front Page",
+  fp_latest:"Latest edition", fp_current:"Today",
   fp_none:"Front page<br>not available today", fp_click:"Click to open paper ↗",
   img_unavailable:"Image unavailable",
   fp_modal_none:n=>`Today's front page image isn't available for ${n} yet.`,
@@ -636,6 +640,7 @@ const I18N = {
   fp_note:"שערי העיתונים באדיבות Kiosko ו-Freedom Forum, מתעדכנים מדי יום.",
   footer:"שערי העיתונים באדיבות Kiosko.net ו-Freedom Forum · כל שאר הקישורים מובילים לאתרי המקור",
   fp_asof:"עמודים ראשיים נכון ל-", todays_fp:"העמוד הראשי של היום",
+  fp_latest:"מהדורה אחרונה", fp_current:"היום",
   fp_none:"העמוד הראשי<br>אינו זמין היום", fp_click:"לחצו לפתיחת האתר ↗",
   img_unavailable:"התמונה אינה זמינה",
   fp_modal_none:n=>`תמונת העמוד הראשי של ${n} אינה זמינה עדיין היום.`,
@@ -761,6 +766,13 @@ function fpVer(id){
 function fpImgURL(id){ return `frontpages/${id}.jpg?v=${fpVer(id)}`; }
 function fpThumbURL(id){ return `frontpages/thumbs/${id}.jpg?v=${fpVer(id)}`; }
 
+function fpShortDate(d){
+  try{
+    return new Date(d + "T00:00:00Z").toLocaleDateString(LOCALE(),
+      {weekday:"short", month:"short", day:"numeric", timeZone:"UTC"});
+  }catch(e){ return d; }
+}
+
 function lb(l){
   if(l==="en") return `<span class="fp-tag t-en">EN</span>`;
   if(l==="ar") return `<span class="fp-tag t-ar">AR</span>`;
@@ -788,6 +800,11 @@ function renderFPGrid(){
       ? `<img class="fp-img-actual" loading="lazy" decoding="async" src="${fpThumbURL(p.id)}"
            alt="${esc(p.name)} front page" onerror="fpThumbFallback(this,'${p.id}')">`
       : ``;
+    const stale = !!(st && st.stale_days > 0);
+    const dateLine = (hasImg && st && st.date)
+      ? `<div class="fp-date${stale?' stale':''}" title="${esc(st.date)}">${
+          stale ? esc(T("fp_latest")) + " · " : ""}${esc(fpShortDate(st.date))}</div>`
+      : ``;
     return `
     <div class="fp-card" onclick="openFPModal(${idx})">
       <div class="fp-img-wrap">
@@ -801,6 +818,7 @@ function renderFPGrid(){
       <div class="fp-info">
         <div class="fp-name">${esc(p.name)}</div>
         <div class="fp-loc">${esc(plc(p.loc))}</div>
+        ${dateLine}
         ${lb(p.lang)}
       </div>
     </div>`;
@@ -906,7 +924,9 @@ function openFPModal(idx){
   const p = FP_PAPERS[idx];
   const st = FP_STATUS[p.id];
   const hasImg = !!(st && st.ok);
-  document.getElementById("fp-modal-title").textContent = p.name + " — " + T("todays_fp");
+  const stale = !!(st && st.stale_days > 0);
+  const dlabel = (stale && st.date) ? (T("fp_latest") + " · " + fpShortDate(st.date)) : T("todays_fp");
+  document.getElementById("fp-modal-title").textContent = p.name + " — " + dlabel;
   document.getElementById("fp-modal-link").href = p.site;
   document.getElementById("fp-modal-body").innerHTML = hasImg
     ? `<img class="fp-modal-img" src="${fpImgURL(p.id)}"
