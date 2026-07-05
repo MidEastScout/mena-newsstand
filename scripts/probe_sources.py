@@ -334,6 +334,17 @@ def probe_final(session):
                 entry["locs"], entry["dates"] = locs, dates
                 if locs:
                     print(f"      locs: {len(locs)} (first: {locs[0][:70]})  dates: {dates[:3]}")
+                if "news_sitemap" in url:
+                    # Nail the exact Google-news-sitemap schema before writing the
+                    # parser: unique tag names + the first two <url> blocks raw.
+                    tags = sorted(set(re.findall(r"<(/?[a-zA-Z0-9:_-]+)", body)))
+                    entry["tag_names"] = tags
+                    blocks = re.findall(r"<url>.*?</url>", body, re.S)[:2]
+                    entry["raw_url_blocks"] = [b[:900] for b in blocks]
+                    print(f"      tag names: {tags}")
+                    for b in blocks:
+                        print("      --- <url> block ---")
+                        print("      " + b[:900].replace("\n", "\n      "))
         out["ch13_sitemaps"].append(entry)
         time.sleep(PAUSE)
 
