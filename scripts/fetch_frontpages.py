@@ -50,11 +50,16 @@ import requests
 
 PAPERS = [
     # ——— Middle East ———
+    # Freedom Forum receives no weekend scans for the UAE titles (probed
+    # 2026-07-05: both codes serve Friday's edition all weekend, back to normal
+    # Monday). no_print here reflects upstream scan availability, not the print
+    # schedule, so weekends don't raise false "dead source" warnings.
     {"id": "the_national", "name": "The National", "loc": "UAE", "lang": "en",
-     "site": "https://www.thenationalnews.com",
+     "site": "https://www.thenationalnews.com", "no_print": {5, 6},
      "src": [("ff", "UAE_TN"), ("kiosko", "asi", "the_national")]},
     {"id": "gulf_news", "name": "Gulf News", "loc": "UAE", "lang": "en",
-     "site": "https://gulfnews.com", "src": [("ff", "UAE_GN")]},
+     "site": "https://gulfnews.com", "no_print": {5, 6},
+     "src": [("ff", "UAE_GN")]},
     {"id": "gulf_times", "name": "Gulf Times", "loc": "Qatar", "lang": "en",
      "site": "https://www.gulf-times.com", "src": [("gulftimes",)]},
     {"id": "saudi_gazette", "name": "Saudi Gazette", "loc": "Saudi Arabia", "lang": "en",
@@ -70,11 +75,17 @@ PAPERS = [
     {"id": "nyt", "name": "New York Times", "loc": "USA", "lang": "en",
      "site": "https://www.nytimes.com",
      "src": [("ff", "NY_NYT"), ("kiosko", "us", "newyork_times")]},
+    # WSJ has no Sunday print edition; USA Today prints no weekend editions at
+    # all (the Friday paper is the weekend edition) — those aren't stale covers,
+    # there is simply no newer edition to fetch. no_print lists the weekdays
+    # (Mon=0..Sun=6) with no NEW edition expected, so the staleness warning
+    # counts only genuinely missed print days.
     {"id": "wsj", "name": "Wall Street Journal", "loc": "USA", "lang": "en",
-     "site": "https://www.wsj.com",
+     "site": "https://www.wsj.com", "no_print": {6},
      "src": [("ff", "WSJ"), ("kiosko", "us", "wsj")]},
     {"id": "usa_today", "name": "USA Today", "loc": "USA", "lang": "en",
-     "site": "https://www.usatoday.com", "src": [("ff", "USAT")]},
+     "site": "https://www.usatoday.com", "no_print": {5, 6},
+     "src": [("ff", "USAT"), ("kiosko", "us", "usa_today")]},
 
     # ——— Europe (Kiosko — all probe-confirmed) ———
     {"id": "the_independent", "name": "The Independent", "loc": "UK", "lang": "en",
@@ -106,8 +117,10 @@ TIMEOUT = 25
 # older carried-forward image. used_date is always stamped with the real
 # calendar date of the edition fetched, so covers stay honestly labelled.
 WINDOW_DAYS = max(2, int(os.environ.get("FRONTPAGES_WINDOW_DAYS", "3")))
-# Covers this many days behind (or more) are flagged as a workflow warning so a
-# chronic refresh failure surfaces in the Actions log instead of going unnoticed.
+# Covers that have missed this many EXPECTED editions (per-paper no_print days
+# excluded) are flagged as a workflow warning, so a chronic refresh failure
+# surfaces in the Actions log instead of going unnoticed — without weekends or
+# a single holiday raising false alarms.
 STALE_WARN_DAYS = int(os.environ.get("FRONTPAGES_STALE_WARN_DAYS", "2"))
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
@@ -284,6 +297,23 @@ def _stale_days(today: date, used_date):
         return None
 
 
+def _missed_print_days(today: date, used_date, no_print) -> int | None:
+    """How many EXPECTED editions have been missed since used_date — i.e. days in
+    (used_date, today] that are not in the paper's no_print weekday set. A WSJ
+    Friday cover on a Sunday misses nothing (Sat 4-Jul was a holiday, Sun has no
+    print); the same gap on Tue-Thu misses two — that's the real staleness."""
+    try:
+        d = date.fromisoformat(used_date)
+    except Exception:
+        return None
+    missed, cur = 0, d + timedelta(days=1)
+    while cur <= today:
+        if cur.weekday() not in (no_print or ()):
+            missed += 1
+        cur += timedelta(days=1)
+    return missed
+
+
 def load_prev_manifest() -> dict:
     """Return {id: entry} from the committed manifest, or {} if unreadable."""
     try:
@@ -318,7 +348,7 @@ def main():
             manifest["papers"].append({
                 "id": p["id"], "name": p["name"], "loc": p["loc"], "lang": p["lang"],
                 "site": p["site"], "ok": True, "src": prev_entry.get("src"),
-                "date": today_str, "stale_days": 0,
+                "date": today_str, "stale_days": 0, "missed_editions": 0,
             })
             continue
 
@@ -359,6 +389,7 @@ def main():
             "id": p["id"], "name": p["name"], "loc": p["loc"], "lang": p["lang"],
             "site": p["site"], "ok": ok, "src": used_url, "date": used_date,
             "stale_days": _stale_days(today, used_date),
+            "missed_editions": _missed_print_days(today, used_date, p.get("no_print")),
         })
 
     # Prune covers for papers that were removed from PAPERS, so the repo and the
@@ -379,20 +410,24 @@ def main():
     n_ok = sum(1 for x in manifest["papers"] if x["ok"])
     print(f"\nFront pages: {n_ok}/{len(PAPERS)} available")
 
-    # Surface chronic refresh failures. A cover this many days behind isn't just
-    # waiting on the upstream scan — its source (Freedom Forum code / Kiosko slug)
-    # is likely dead and needs re-probing (scripts/probe_frontpages.py). Emitting
-    # a GitHub Actions ::warning:: makes the recurring problem visible in the run
-    # log instead of only surfacing when someone notices the covers look old.
+    # Surface chronic refresh failures. Staleness is measured in MISSED EXPECTED
+    # EDITIONS, not calendar days — a WSJ Friday cover on a Sunday has missed
+    # nothing (no Sunday print), so weekends and single holidays don't cry wolf.
+    # A cover that has genuinely missed 2+ print days means its source (Freedom
+    # Forum code / Kiosko slug) is likely dead and needs re-probing
+    # (scripts/probe_frontpages.py / probe_sources.py). The ::warning:: makes
+    # that visible in the Actions log every run.
     stale = sorted(
-        ((x["id"], x["stale_days"]) for x in manifest["papers"]
-         if isinstance(x.get("stale_days"), int) and x["stale_days"] >= STALE_WARN_DAYS),
+        ((x["id"], x["missed_editions"]) for x in manifest["papers"]
+         if isinstance(x.get("missed_editions"), int)
+         and x["missed_editions"] >= STALE_WARN_DAYS),
         key=lambda t: -t[1])
     missing = [x["id"] for x in manifest["papers"] if not x["ok"]]
     if stale:
-        listed = ", ".join(f"{pid} ({n}d behind)" for pid, n in stale)
-        print(f"::warning title=Stale front pages::{len(stale)} cover(s) "
-              f"≥{STALE_WARN_DAYS} days old — source likely dead, re-probe needed: {listed}")
+        listed = ", ".join(f"{pid} ({n} editions behind)" for pid, n in stale)
+        print(f"::warning title=Stale front pages::{len(stale)} cover(s) have missed "
+              f"≥{STALE_WARN_DAYS} expected editions — source likely dead, "
+              f"re-probe needed: {listed}")
     if missing:
         print(f"::warning title=Missing front pages::no image for: {', '.join(missing)}")
 

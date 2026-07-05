@@ -231,6 +231,58 @@ def probe_feeds(session):
     return out
 
 
+# ---------------------------------------------------------------------------
+# C. Follow-ups from the first probe run: (1) what does Kan's newsflash XML
+#    actually look like (schema sample)? (2) does the fetcher's existing
+#    Google-News fallback carry each channel's site in the Hebrew locale?
+#    The GNews URLs mirror gnews_url() in fetch_headlines.py exactly.
+# ---------------------------------------------------------------------------
+from urllib.parse import quote_plus
+
+GNEWS_SITES = ["13tv.co.il", "kan.org.il", "mako.co.il"]
+
+
+def probe_followups(session):
+    print("\n" + "=" * 70)
+    print("C. FOLLOW-UPS — Kan newsflash schema + Google News hebrew fallback")
+    print("=" * 70)
+    out = {}
+
+    url = "https://www.kan.org.il/api/newsflash/v2/Newsflash"
+    r, info = get(session, url)
+    entry = {"url": url, "info": info}
+    print(f"\n  Kan newsflash API: {info}")
+    if r is not None:
+        entry["raw_head"] = r.text[:3000]
+        print("  --- first 1500 chars ---")
+        print(r.text[:1500])
+        s = summarize_feed(r.text)
+        entry["feedparse"] = s
+        if s and s.get("items"):
+            print(f"  feedparser: {s['items']} items, newest {s.get('newest','?')}")
+            for t in s.get("sample_titles", [])[:3]:
+                print(f"    · {t[:80]}")
+    out["kan_newsflash"] = entry
+
+    out["gnews"] = []
+    for site in GNEWS_SITES:
+        q = quote_plus(f"site:{site} when:2d")
+        gurl = f"https://news.google.com/rss/search?q={q}&hl=he&gl=IL&ceid=IL:he"
+        r, info = get(session, gurl)
+        entry = {"site": site, "url": gurl, "info": info}
+        print(f"\n  GNews he site:{site} -> {info}")
+        if r is not None:
+            s = summarize_feed(r.text)
+            entry["feed"] = s
+            if s and s.get("items"):
+                print(f"      {s['items']} items, newest {s.get('newest','?')}")
+                for t in s.get("sample_titles", [])[:3]:
+                    print(f"        · {t[:80]}")
+        out["gnews"].append(entry)
+        time.sleep(PAUSE)
+    return out
+
+
 def main():
     session = requests.Session()
     report = {"ran": datetime.now(timezone.utc).isoformat(), "date": today.isoformat()}
@@ -244,6 +296,11 @@ def main():
     except Exception as e:
         print(f"!! feeds probe crashed: {type(e).__name__}: {e}", file=sys.stderr)
         report["israeli_feeds"] = {"error": str(e)}
+    try:
+        report["followups"] = probe_followups(session)
+    except Exception as e:
+        print(f"!! follow-up probe crashed: {type(e).__name__}: {e}", file=sys.stderr)
+        report["followups"] = {"error": str(e)}
 
     out_path = Path(__file__).parent.parent / "state" / "probe_sources.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
