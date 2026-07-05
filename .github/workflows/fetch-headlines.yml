@@ -4,6 +4,11 @@ name: MENA Newsstand
 # =========================================
 # EVERY RUN (about every 30 minutes — see the self-perpetuating loop below):
 #   - scripts/fetch_headlines.py  → refreshes headlines.json
+#   - scripts/build_pulse.py      → refreshes pulse.json (word cloud)
+#   - scripts/build_trends.py     → refreshes trends.json (outlet/topic trends)
+#   - scripts/build_topstories.py → clusters headlines into top_stories.json
+#                                   (Claude if ANTHROPIC_API_KEY set, else a
+#                                    keyword + named-entity heuristic)
 #
 # EVERY 6 HOURS (first run crossing 00:00 / 06:00 / 12:00 / 18:00 Israel time):
 #   - scripts/build_briefing.py   → fetches world feeds + MENA headlines,
@@ -84,6 +89,9 @@ jobs:
       EMAIL_TO:       ${{ secrets.EMAIL_TO }}
       EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # Powers semantic Top-5 story clustering in build_topstories.py. Optional:
+      # if unset, that builder falls back to a keyword + named-entity heuristic.
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # Azure Translator (free tier) powers the Hebrew translation of headlines,
       # snippets and pulse terms. Add both as repo secrets; Hebrew falls back to
       # English if they're absent.
@@ -123,6 +131,14 @@ jobs:
         continue-on-error: true
         run: python scripts/build_trends.py
 
+      # Top-5 cross-outlet story clustering, recomputed every refresh. Uses the
+      # Claude API when ANTHROPIC_API_KEY is set (semantic clustering + neutral
+      # summaries); otherwise falls back to a no-key keyword + named-entity
+      # heuristic. continue-on-error so an API hiccup never blocks the commit.
+      - name: Build top stories
+        continue-on-error: true
+        run: python scripts/build_topstories.py
+
       # Build the world briefing every 6 hours. continue-on-error so a Gemini
       # quota or network hiccup never blocks the headlines commit or email.
       - name: Build world briefing
@@ -148,6 +164,7 @@ jobs:
           git add pulse.json 2>/dev/null || true
           git add briefing.json 2>/dev/null || true
           git add trends.json state/trends_history.json 2>/dev/null || true
+          git add top_stories.json 2>/dev/null || true
           git add state/pulse_terms_he.json state/headlines_he.json 2>/dev/null || true
           git add frontpages 2>/dev/null || true
           if git diff --cached --quiet; then

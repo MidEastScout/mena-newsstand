@@ -1,5 +1,9 @@
 feedparser==6.0.11
 requests==2.32.3
 google-genai
+# Optional: only used by build_topstories.py when ANTHROPIC_API_KEY is set
+# (semantic Top-5 clustering). The builder imports it lazily and falls back to a
+# no-key heuristic, so an install/network hiccup never breaks the refresh.
+anthropic
 Pillow==12.2.0
 pypdfium2==4.30.0
