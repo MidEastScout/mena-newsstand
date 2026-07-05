@@ -249,26 +249,44 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .src-legend summary:hover{color:var(--ink2)}
 .src-legend-body{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:9px 0 2px}
 .src-legend-note{font-size:11.5px;color:var(--muted);flex-basis:100%;margin-top:3px}
-/* "Top Stories Right Now" strip — the stories most outlets are carrying,
-   visually set off from the main feed in the masthead's navy/blue. */
+/* "Top Stories Right Now" — cross-outlet story clusters, ranked by how many
+   distinct outlets (and how many regional camps) carry the same story. Each is
+   an expandable card that reveals how every outlet worded it. Navy/blue set-off
+   marks it apart from the main feed. */
 .hl-top{background:linear-gradient(180deg,#F7FAFD,#ECF2F9);border:1px solid #C9D7EA;border-left:4px solid var(--blue);
-  border-radius:var(--r2);padding:14px 16px 4px;margin-bottom:28px;box-shadow:var(--sh1)}
+  border-radius:var(--r2);padding:14px 16px 8px;margin-bottom:28px;box-shadow:var(--sh1)}
 [dir="rtl"] .hl-top{border-left:1px solid #C9D7EA;border-right:4px solid var(--blue)}
-.hl-top-kicker{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--blue);margin-bottom:3px}
+.hl-top-kicker{display:flex;align-items:baseline;flex-wrap:wrap;gap:3px 9px;font-size:11.5px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+.hl-top-sub{font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--muted);font-size:11px}
 .hl-top-list{list-style:none;margin:0;padding:0}
-.hl-top-list li{border-top:1px solid rgba(21,38,79,.14)}
-.hl-top-list li:first-child{border-top:none}
-.hl-top-item{display:flex;gap:12px;align-items:flex-start;padding:11px 2px;min-height:44px}
+.hl-top-list>li{border-top:1px solid rgba(21,38,79,.14)}
+.hl-top-list>li:first-child{border-top:none}
+.hl-story-head{list-style:none;display:flex;gap:11px;align-items:flex-start;padding:11px 2px;cursor:pointer;min-height:44px}
+.hl-story-head::-webkit-details-marker{display:none}
 .hl-top-rank{font-family:'Playfair Display','Frank Ruhl Libre',serif;font-size:19px;font-weight:800;
-  color:var(--blue);line-height:1.1;min-width:20px;text-align:center;flex:0 0 auto}
-.hl-top-body{min-width:0}
-.hl-top-title{display:block;font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:15.5px;
+  color:var(--blue);line-height:1.24;min-width:20px;text-align:center;flex:0 0 auto}
+.hl-story-body{min-width:0;flex:1}
+.hl-story-title{display:block;font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:15.5px;
   font-weight:600;line-height:1.32;color:var(--ink);transition:.12s}
-.hl-top-item:hover .hl-top-title{color:#2E5AA8}
-.hl-top-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:4px;font-size:11.5px;color:var(--muted)}
+.hl-story-head:hover .hl-story-title{color:#2E5AA8}
+.hl-story-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:5px;font-size:11.5px;color:var(--muted)}
 .hl-top-count{font-size:10px;font-weight:700;color:var(--blue);background:rgba(21,38,79,.08);
   border:1px solid rgba(21,38,79,.25);border-radius:999px;padding:1px 8px;letter-spacing:.03em;white-space:nowrap}
+.hl-cats{display:inline-flex;flex-wrap:wrap;gap:4px}
+.hl-story-chev{margin-left:auto;color:var(--muted);font-size:12px;transition:transform .2s;flex:0 0 auto;padding-top:2px}
+[dir="rtl"] .hl-story-chev{margin-left:0;margin-right:auto}
+.hl-story[open] .hl-story-chev{transform:rotate(180deg)}
+.hl-story-detail{padding:0 2px 12px 33px}
+[dir="rtl"] .hl-story-detail{padding:0 33px 12px 2px}
+.hl-story-note{font-size:11px;color:var(--muted);font-style:italic;margin:0 0 9px}
+.hl-story-members{list-style:none;margin:0;padding:0}
+.hl-story-members li{padding:8px 0;border-top:1px dashed rgba(21,38,79,.14)}
+.hl-story-members li:first-child{border-top:none}
+.hl-story-mtitle{display:block;font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:14px;font-weight:500;
+  line-height:1.35;color:var(--ink2);transition:.1s}
+a.hl-story-mtitle:hover{color:var(--accent);text-decoration:underline}
+.hl-story-mmeta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:4px;font-size:11px;color:var(--muted)}
 
 /* World Briefing card */
 .briefing-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:var(--r2);padding:26px 30px;margin-bottom:24px;box-shadow:var(--sh1)}
@@ -395,7 +413,8 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 [dir="rtl"] .brief-h,
 [dir="rtl"] .hl-theme-name,
 [dir="rtl"] .hl-item-title,
-[dir="rtl"] .hl-top-title,
+[dir="rtl"] .hl-story-title,
+[dir="rtl"] .hl-story-mtitle,
 [dir="rtl"] .pulse-term,
 [dir="rtl"] .pulse-detail-head,
 [dir="rtl"] .tr-h,
@@ -454,7 +473,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
     <div class="sec-head">
       <h2 data-i18n="headlines_title">Live Headlines</h2>
     </div>
-    <div class="sec-note" data-i18n="headlines_note">Top 5 headlines from 21 MENA and regional outlets, organized by region. Refreshed automatically every 30 minutes.</div>
+    <div class="sec-note" data-i18n="headlines_note">The top stories across 21 MENA and regional outlets — ranked by how many outlets (and regional camps) are carrying each one. Tap a story to see how each outlet worded it. Full feed below, grouped by theme. Refreshed every 30 minutes.</div>
     <div class="hl-filters">
       <input type="search" id="hl-topic" class="hl-filter-input" autocomplete="off" data-i18n-ph="filter_ph"
         placeholder="Filter by topic or keyword (e.g. Iran, ceasefire, Hezbollah)…">
@@ -540,7 +559,7 @@ const I18N = {
   briefing_title:"Geopolitical Briefing", headlines_title:"Live Headlines",
   fp_title:"Today's Front Pages", pulse_title:"Media Pulse",
   trends_title:"Outlet &amp; Topic Trends", archive_title:"Front-Page Archive",
-  headlines_note:"Top 5 headlines from 21 MENA and regional outlets, grouped by story theme. Tap a theme header to collapse it. Refreshed automatically every 30 minutes.",
+  headlines_note:"The top stories across 21 MENA and regional outlets — ranked by how many outlets (and regional camps) are carrying each one. Tap a story to see how each outlet worded it. Full feed below, grouped by theme. Refreshed every 30 minutes.",
   pulse_note:"The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.",
   trends_note:"How today's coverage breaks down by topic and by outlet across every tracked feed — and where outlets diverge most on the same stories. Updates every 30 minutes.",
   archive_note:"Browse past front pages. Covers are saved on each daily refresh and kept for one year. Click any card for a larger view.",
@@ -587,7 +606,9 @@ const I18N = {
   showing:(nH,nO,bits)=>`Showing <b>${nH}</b> headline${nH===1?"":"s"} from <b>${nO}</b> outlet${nO===1?"":"s"} matching ${bits}.`,
   no_match:bits=>`No headlines match ${bits}.`,
   top_now:"Top Stories Right Now",
-  n_outlets:n=>`${n} outlets`,
+  top_sub:"— the stories the most outlets are carrying now",
+  n_outlets:n=>`${n} outlet${n===1?"":"s"}`,
+  worded:"How different outlets worded the same story — tap a link to read each:",
   src_key:"Source colors — what they mean",
   src_key_note:"Every outlet is tagged with the regional lens it reports from.",
  },
@@ -601,7 +622,7 @@ const I18N = {
   briefing_title:"תדריך גיאופוליטי", headlines_title:"כותרות בזמן אמת",
   fp_title:"העמודים הראשיים של היום", pulse_title:"דופק התקשורת",
   trends_title:"מגמות לפי כלי תקשורת ונושא", archive_title:"ארכיון עמודים ראשיים",
-  headlines_note:"חמש הכותרות המובילות מ-21 כלי תקשורת מהמזרח התיכון והאזור, מקובצות לפי נושא. הקישו על כותרת נושא כדי לצמצם אותה. מתעדכן אוטומטית כל 30 דקות.",
+  headlines_note:"הסיפורים המובילים מ-21 כלי תקשורת מהמזרח התיכון והאזור — מדורגים לפי מספר כלי התקשורת (והמחנות האזוריים) המסקרים כל סיפור. הקישו על סיפור כדי לראות כיצד כל גוף ניסח אותו. הפיד המלא למטה, מקובץ לפי נושא. מתעדכן כל 30 דקות.",
   pulse_note:"המונחים המוזכרים ביותר בכלל הכותרות כרגע — גדול יותר פירושו סיקור רחב יותר. לחצו על מילה כדי לראות את הכותרות שמאחוריה. מתעדכן כל 30 דקות.",
   trends_note:"איך הסיקור של היום מתחלק לפי נושא ולפי כלי תקשורת בכל הפידים שבמעקב — והיכן כלי התקשורת נבדלים זה מזה באותם סיפורים. מתעדכן כל 30 דקות.",
   archive_note:"עיינו בעמודים ראשיים מהעבר. השערים נשמרים בכל רענון יומי למשך שנה. לחצו על כרטיס לתצוגה מוגדלת.",
@@ -648,7 +669,9 @@ const I18N = {
   showing:(nH,nO,bits)=>`מוצגות <b>${nH}</b> כותרות מ-<b>${nO}</b> כלי תקשורת, תואמות ${bits}.`,
   no_match:bits=>`אין כותרות התואמות ${bits}.`,
   top_now:"הסיפורים המרכזיים עכשיו",
-  n_outlets:n=>`${n} מקורות`,
+  top_sub:"— הסיפורים שהכי הרבה כלי תקשורת מסקרים כרגע",
+  n_outlets:n=>`${n===1?"מקור אחד":n+" מקורות"}`,
+  worded:"כך ניסחו כלי תקשורת שונים את אותו סיפור — הקישו על קישור כדי לקרוא:",
   src_key:"צבעי המקורות — מה הם אומרים",
   src_key_note:"כל כלי תקשורת מסומן לפי נקודת המבט האזורית שממנה הוא מדווח.",
  },
@@ -721,6 +744,7 @@ const FP_PAPERS = [
 let FP_STATUS = {};
 let FP_VER = "";
 let hlData = null;
+let topData = null;   // precomputed Top-5 story clusters (top_stories.json)
 
 // Cache-bust each cover by ITS OWN edition date, not the manifest's write date.
 // The covers have stable filenames (nyt.jpg), so the query string is what makes
@@ -1180,10 +1204,20 @@ function esc(s){
 async function loadHeadlines(){
   const container = document.getElementById("hl-container");
   try{
-    const res = await fetch("headlines.json?t=" + Date.now(), {cache:"no-store"});
+    // Fetch the headlines and the precomputed Top-5 story clusters together.
+    // top_stories.json is optional — if it's missing or stale the strip falls
+    // back to clustering client-side, so the page never blocks on it.
+    const [res, topRes] = await Promise.all([
+      fetch("headlines.json?t=" + Date.now(), {cache:"no-store"}),
+      fetch("top_stories.json?t=" + Date.now(), {cache:"no-store"}).catch(()=>null),
+    ]);
     if(!res.ok) throw new Error("HTTP "+res.status);
     const data = await res.json();
     hlData = data;
+    topData = null;
+    if(topRes && topRes.ok){
+      try{ topData = await topRes.json(); }catch{ topData = null; }
+    }
     if(window.MEIH_syncFromHeadlines) window.MEIH_syncFromHeadlines(data);
     populateHeadlineSources(data);
     applyHeadlineFilters();
@@ -1261,49 +1295,159 @@ function flattenHeadlines(data){
   return items;
 }
 
-function topStories(data, n=5){
+/* The Top-5 clusters are computed server-side each refresh cycle by
+   scripts/build_topstories.py (Claude API if available, else a keyword +
+   named-entity heuristic) and shipped in top_stories.json, so the page just
+   renders them. The functions below are the CLIENT-SIDE FALLBACK: if that file
+   is missing, we cluster here so the strip is never empty. Keep this heuristic
+   in rough sync with the Python one. */
+
+// A small camp label pill, coloured by the same scheme as the outlet tags.
+function catTag(id){
+  const def = CAT_DEFS.find(c=>c.id===id);
+  if(!def) return "";
+  const label = heb(def.label_he, def.label);
+  return `<span class="src-tag sc-${id}" title="${esc(label)}">${esc(label)}</span>`;
+}
+
+// Named-entity gazetteer for the fallback. STRONG = specific event/place/person
+// (sharing one is strong evidence of the same story); BROAD = nation-level lens
+// (must not, alone, merge two headlines). Mirrors build_topstories.py.
+const TS_STRONG = {
+  khamenei:["khamenei","ayatollah","supreme leader","slain leader","martyred leader"],
+  funeral:["funeral","mourning","mourn","laid in state","commemoration","state funeral","week of mourning","burial"],
+  hormuz:["hormuz"], nuclear:["nuclear","enrichment","uranium","natanz","fordow"],
+  gaza:["gaza","hamas","rafah","khan younis","jabaliya","islamic jihad"],
+  westbank:["west bank","ramallah","jenin","nablus","hebron","settler","settlers","colonist","colonists","settlement","demolition","demolitions"],
+  hezbollah:["hezbollah","nasrallah"],
+  lebdeal:["lebanon-israel","lebanese-israeli","framework agreement","washington agreement","after israel agreement"],
+  southleb:["bint jbeil","litani","wadi slouki","south lebanon","southern lebanon"],
+  syria:["syria","syrian","damascus","druze","aleppo"],
+  ukraine:["ukraine","ukrainian","kyiv","kiev","russian strike","russian attack"],
+  nato:["nato"], venezuela:["venezuela","venezuelan"], earthquake:["earthquake","quake"],
+  yemen:["yemen","houthi","houthis"],
+};
+const TS_BROAD = {
+  iran:["iran","iranian","tehran","irgc","revolutionary guard","pezeshkian","araghchi"],
+  israel:["israel","israeli"," idf","netanyahu","occupation","colonists","settlers"],
+  us:["united states","washington","trump"], turkey:["turkey","türkiye","turkish","ankara","erdogan"],
+  russia:["russia","russian","moscow","putin"],
+};
+function tsEntities(text){
+  const t = " " + (text||"").toLowerCase() + " ", strong = new Set(), all = new Set();
+  for(const [k,al] of Object.entries(TS_STRONG)) if(al.some(a=>t.includes(a))){ strong.add(k); all.add(k); }
+  for(const [k,al] of Object.entries(TS_BROAD))  if(al.some(a=>t.includes(a))) all.add(k);
+  return {strong, all};
+}
+
+function buildClustersFallback(data){
+  const catOrder = CAT_DEFS.map(c=>c.id);   // computed lazily (CAT_DEFS is defined below)
   const items = flattenHeadlines(data);
-  items.forEach(it=>{ it._tok=hlTokens(it.title); it._t=Date.parse(it.published)||0; });
+  items.forEach(it=>{
+    it.category = SRC_CATS[it.source] || null;
+    it._tok = hlTokens(it.title);
+    const e = tsEntities((it.title||"")+" "+(it.snippet||""));
+    it._all = e.all; it._strong = e.strong;
+    it._t = Date.parse(it.published)||0;
+  });
   const par = items.map((_,i)=>i);
   const find = i => par[i]===i ? i : (par[i]=find(par[i]));
   for(let i=0;i<items.length;i++)for(let j=i+1;j<items.length;j++){
-    const A=items[i]._tok, B=items[j]._tok;
-    if(A.size<2||B.size<2) continue;
-    let shared=0; for(const w of A) if(B.has(w)) shared++;
-    // Same story: 3+ shared informative words, or 2+ covering most of the shorter title.
-    if(shared>=3 || (shared>=2 && shared>=0.6*Math.min(A.size,B.size))) par[find(i)]=find(j);
+    const A=items[i], B=items[j];
+    let ss=0; for(const e of A._strong) if(B._strong.has(e)) ss++;
+    let se=0; for(const e of A._all)    if(B._all.has(e))    se++;
+    let st=0; for(const w of A._tok)    if(B._tok.has(w))    st++;
+    if((ss>=1 && (se>=2 || st>=2)) || st>=4) par[find(i)]=find(j);
   }
   const groups={};
   items.forEach((it,i)=>{ const r=find(i); (groups[r]=groups[r]||[]).push(it); });
   const clusters = Object.values(groups).map(g=>({
-    items:g,
+    members:g,
     outlets:new Set(g.map(x=>x.source)).size,
+    cats:new Set(g.map(x=>x.category).filter(Boolean)),
     newest:Math.max(...g.map(x=>x._t)),
   }));
-  clusters.sort((a,b)=> b.outlets-a.outlets || b.newest-a.newest);
-  return clusters.slice(0,n).map(c=>({
-    rep: c.items.slice().sort((a,b)=>b._t-a._t)[0],   // freshest phrasing represents the story
-    outlets: c.outlets,
-  }));
+  // Primary outlet count → secondary camp diversity → tertiary recency.
+  clusters.sort((a,b)=> b.outlets-a.outlets || b.cats.size-a.cats.size || b.newest-a.newest);
+  return clusters.slice(0,5).map(c=>{
+    const rep = tsPickRep(c.members);
+    const view = m => ({source:m.source, category:m.category, title:m.title,
+      title_he:m.title_he, url:m.url, published:m.published});
+    return {
+      rep: view(rep),
+      outlets: c.outlets,
+      categories: [...c.cats].sort((x,y)=>catOrder.indexOf(x)-catOrder.indexOf(y)),
+      members: c.members.slice().sort((a,b)=>b._t-a._t).map(view),
+    };
+  });
+}
+
+// Clearest, most on-topic member: English headline naming the story's dominant
+// specific entities, no bare stub, natural length; centrality/recency break ties.
+function tsPickRep(members){
+  const counts={}; members.forEach(m=>{ for(const e of m._strong) counts[e]=(counts[e]||0)+1; });
+  const maxc=Math.max(0,...Object.values(counts));
+  const dom=new Set(Object.keys(counts).filter(e=>counts[e]>=maxc*0.5));
+  const stub=/^(live|breaking|war on|live blog|watch|video|photos|update|main news)/i;
+  let best=members[0], bestKey=null;
+  for(const m of members){
+    const title=m.title||"";
+    let covers=0; for(const e of tsEntities(title).strong) if(dom.has(e)) covers++;
+    let central=0; for(const o of members) if(o!==m) for(const w of m._tok) if(o._tok.has(w)) central++;
+    const key=[covers, /[A-Za-z]/.test(title)?1:0, (stub.test(title)||title.length<18)?0:1,
+               -Math.abs(title.length-50), central, m._t];
+    if(bestKey===null || tsCmp(key,bestKey)>0){ bestKey=key; best=m; }
+  }
+  return best;
+}
+function tsCmp(a,b){ for(let i=0;i<a.length;i++){ if(a[i]!==b[i]) return a[i]-b[i]; } return 0; }
+
+// Precomputed clusters if available, else the client-side fallback.
+function getTopStories(data){
+  if(topData && Array.isArray(topData.stories) && topData.stories.length) return topData.stories;
+  return buildClustersFallback(data);
+}
+
+// Which story cards are expanded — persists across refreshes / language toggles.
+const hlStoryOpen = new Set();
+
+function renderStoryCard(s, i){
+  const headline = ("summary" in s) ? heb(s.summary_he, s.summary) : heb(s.rep.title_he, s.rep.title);
+  const key = (s.rep && s.rep.url) || headline;
+  const cats = (s.categories||[]).map(catTag).join("");
+  const members = (s.members||[]).map(m=>`
+    <li>
+      <a class="hl-story-mtitle" href="${esc(m.url)}" target="_blank" rel="noopener" dir="auto">${esc(heb(m.title_he,m.title))}</a>
+      <div class="hl-story-mmeta">${srcTag(m.source)}${hlTime(m.published)}</div>
+    </li>`).join("");
+  return `<li>
+    <details class="hl-story" data-key="${esc(key)}"${hlStoryOpen.has(key)?" open":""}>
+      <summary class="hl-story-head">
+        <span class="hl-top-rank">${i+1}</span>
+        <span class="hl-story-body">
+          <span class="hl-story-title" dir="auto">${esc(headline)}</span>
+          <span class="hl-story-meta">
+            <b class="hl-top-count">${TF("n_outlets", s.outlets)}</b>
+            ${cats?`<span class="hl-cats">${cats}</span>`:""}
+            ${s.rep?hlTime(s.rep.published):""}
+          </span>
+        </span>
+        <span class="hl-story-chev">▼</span>
+      </summary>
+      <div class="hl-story-detail">
+        <div class="hl-story-note">${T("worded")}</div>
+        <ul class="hl-story-members">${members}</ul>
+      </div>
+    </details>
+  </li>`;
 }
 
 function renderTopStrip(data){
-  const top = topStories(data,5);
-  if(!top.length) return "";
+  const stories = getTopStories(data);
+  if(!stories.length) return "";
   return `<div class="hl-top">
-    <div class="hl-top-kicker">★ ${T("top_now")}</div>
-    <ol class="hl-top-list">${top.map(({rep,outlets},i)=>`
-      <li><a class="hl-top-item" href="${esc(rep.url)}" target="_blank" rel="noopener">
-        <span class="hl-top-rank">${i+1}</span>
-        <span class="hl-top-body">
-          <span class="hl-top-title" dir="auto">${esc(heb(rep.title_he,rep.title))}</span>
-          <span class="hl-top-meta">
-            ${srcTag(rep.source)}
-            ${outlets>1?`<b class="hl-top-count">${TF("n_outlets",outlets)}</b>`:""}
-            ${hlTime(rep.published)}
-          </span>
-        </span>
-      </a></li>`).join("")}</ol>
+    <div class="hl-top-kicker">★ ${T("top_now")}<span class="hl-top-sub">${T("top_sub")}</span></div>
+    <ol class="hl-top-list">${stories.map((s,i)=>renderStoryCard(s,i)).join("")}</ol>
   </div>`;
 }
 
@@ -1470,6 +1614,12 @@ function renderHeadlines(data, container, showTop=true){
     d.addEventListener("toggle",()=>{
       if(d.open) hlThemeClosed.delete(d.dataset.theme);
       else hlThemeClosed.add(d.dataset.theme);
+    });
+  });
+  container.querySelectorAll(".hl-story").forEach(d=>{
+    d.addEventListener("toggle",()=>{
+      if(d.open) hlStoryOpen.add(d.dataset.key);
+      else hlStoryOpen.delete(d.dataset.key);
     });
   });
   const lg = container.querySelector("#src-legend");
