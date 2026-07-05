@@ -44,57 +44,81 @@ TOPICS = [
     # wall but counted here (and in Pulse). Listed FIRST so a "… World Cup" item
     # is bucketed as World Cup rather than absorbed by a country topic. Matches
     # TRACKED_OFFTOPIC_RE in fetch_headlines.py (English + Arabic).
+    #
+    # Each pattern carries English (word-boundaried) + Arabic + HEBREW keywords,
+    # so the Israeli channels' Hebrew coverage classifies too. Arabic/Hebrew are
+    # matched as substrings (prefixes attach to words in both scripts), so only
+    # unambiguous multi-letter terms are used; acronyms allow any gershayim
+    # variant ("/'/״).
     ("world_cup",  "World Cup",           "#3F8F4F",
-     r"world\s*cup|كأس العالم|المونديال"),
+     r"world\s*cup|كأس العالم|المونديال|מונדיאל|גביע העולם"),
     ("gaza",       "Gaza & Hamas",        "#B0413E",
      r"gaza|hamas|rafah|khan younis|deir al-?balah|al-?shifa|nuseirat|jabalia"
-     r"|غزة|حماس|رفح|خان يونس|النصيرات|جباليا"),
+     r"|غزة|حماس|رفح|خان يونس|النصيرات|جباليا"
+     r"|עזה|חמאס|רפיח|ח'אן יונס|ג'באליא|רצועת עזה|הרצועה"),
     ("lebanon",    "Lebanon & Hezbollah", "#9C6B2E",
      r"lebanon|lebanese|hezbollah|hizbollah|beirut|nasrallah|naim qassem|"
      r"nabatieh|litani|blue line"
-     r"|لبنان|حزب الله|بيروت|نصرالله|النبطية|الليطاني|الضاحية"),
+     r"|لبنان|حزب الله|بيروت|نصرالله|النبطية|الليطاني|الضاحية"
+     r"|לבנון|לבנוני|חיזבאללה|חזבאללה|ביירות|נסראללה|נעים קאסם|ליטני"),
     ("yemen",      "Yemen & Red Sea",     "#C77D34",
      r"yemen|yemeni|houthi|sana'?a|red sea|bab el-?mandeb|hodeida|aden"
-     r"|اليمن|الحوثي|صنعاء|البحر الأحمر|الحديدة"),
+     r"|اليمن|الحوثي|صنعاء|البحر الأحمر|الحديدة"
+     r"|תימן|חות'י|חותי|צנעא|הים האדום|אל-חודיידה|באב אל-מנדב"),
     ("syria",      "Syria",               "#7D6BA6",
      r"syria|syrian|damascus|assad|idlib|aleppo|hayat tahrir|\bhts\b|\bsdf\b|"
-     r"deir ez-?zor|سوريا|سورية|دمشق|الأسد|إدلب|حلب"),
+     r"deir ez-?zor|سوريا|سورية|دمشق|الأسد|إدلب|حلب"
+     r"|סוריה|סורי|דמשק|אסד|אידליב|חלב|א-שרע|אל-שרע"),
     ("iraq",       "Iraq",                "#5B6E8C",
      r"iraq|iraqi|baghdad|islamic state|\bisis\b|daesh|kurdistan|erbil|"
-     r"popular mobiliz|العراق|بغداد|داعش|كردستان|أربيل"),
+     r"popular mobiliz|العراق|بغداد|داعش|كردستان|أربيل"
+     r"|עיראק|עיראקי|בגדאד|דאעש|כורדיסטן|אירביל"),
     ("turkey",     "Turkey",              "#A4434B",
      r"turkey|turkish|erdogan|ankara|istanbul|\bypg\b"
-     r"|تركيا|أردوغان|أنقرة|إسطنبول"),
+     r"|تركيا|أردوغان|أنقرة|إسطنبول"
+     r"|טורקיה|טורקי|ארדואן|ארדואן|אנקרה|איסטנבול"),
     ("egypt_naf",  "Egypt & N. Africa",   "#B08A3E",
      r"egypt|egyptian|cairo|\bsisi\b|suez|sudan|sudanese|libya|libyan|tunisia|"
      r"algeria|algerian|morocco|moroccan|rapid support"
-     r"|مصر|القاهرة|السيسي|السودان|ليبيا|تونس|الجزائر|المغرب"),
+     r"|مصر|القاهرة|السيسي|السودان|ليبيا|تونس|الجزائر|المغرب"
+     r"|מצרים|מצרי|קהיר|א-סיסי|אל-סיסי|סואץ|סודאן|לוב|תוניסיה|אלג'יריה|מרוקו"),
     ("iran",       "Iran & Nuclear",      "#1F7A6E",
      r"iran|iranian|tehran|\birgc\b|khamenei|pezeshkian|revolutionary guard|"
      r"nuclear|enrich|uranium|centrifuge|natanz|fordow"
-     r"|إيران|طهران|نووي|الحرس الثوري|بزشكيان|خامنئي|اليورانيوم"),
+     r"|إيران|طهران|نووي|الحرس الثوري|بزشكيان|خامنئي|اليورانيوم"
+     r"|איראן|איראני|טהראן|גרעין|הגרעין|משמרות המהפכה|ח'אמנאי|חמינאי|פזשכיאן|"
+     r"אורניום|נתנז|פורדו|הפורום"),
     ("gulf",       "Gulf & Normalization","#3E7C59",
      r"saudi|riyadh|\buae\b|emirates|abu dhabi|dubai|qatar|doha|bahrain|kuwait|"
      r"\boman\b|muscat|\bgcc\b|gulf cooperation|normaliz|abraham accords|"
      r"bin salman|\bmbs\b|aramco"
      r"|السعودية|الرياض|الإمارات|أبوظبي|دبي|قطر|الدوحة|البحرين|الكويت|"
-     r"التطبيع|بن سلمان|أرامكو|الخليج"),
+     r"التطبيع|بن سلمان|أرامكو|الخليج"
+     r"|סעודיה|סעודית|ריאד|איחוד האמירויות|אמירויות|אבו דאבי|דובאי|קטאר|דוחא|"
+     r"בחריין|כווית|עומאן|נורמליזציה|הסכמי אברהם|בן סלמאן|איראמקו|המפרץ"),
     ("israel_pal", "Israel–Palestine",    "#2F4B7C",
      r"israel|israeli|palestin|west bank|jerusalem|settler|settlement|knesset|"
      r"netanyahu|\bidf\b|jenin|ramallah|al-?aqsa|zionist|ben gvir|smotrich|"
      r"tel aviv|hostage"
      r"|إسرائيل|الاحتلال|فلسطين|الضفة|القدس|نتنياهو|الأقصى|صهيوني|الأسرى|"
-     r"المستوطن|جنين|رام الله|تل أبيب"),
+     r"المستوطن|جنين|رام الله|تل أبيب"
+     r"|ישראל|ישראלי|פלסטין|פלסטיני|הגדה המערבית|ירושלים|מתנחל|התנחלות|הכנסת|"
+     r"נתניהו|צה\"ל|צה'ל|צהל|ג'נין|רמאללה|אל-אקצא|בן גביר|סמוטריץ'|תל אביב|"
+     r"חטופים|החטופים|בג\"ץ|בג'ץ|בגץ"),
     ("us_west",    "US & the West",       "#4A6FA5",
      r"united states|washington|white house|\bu\.?s\.?\b|biden|trump|american|"
      r"pentagon|state department|europe|european union|britain|british|\buk\b|"
      r"france|french|germany|german|\bnato\b|brussels"
-     r"|أمريكا|أميركا|واشنطن|ترامب|أوروبا|فرنسا|بريطانيا|الناتو|البيت الأبيض"),
+     r"|أمريكا|أميركا|واشنطن|ترامب|أوروبا|فرنسا|بريطانيا|الناتو|البيت الأبيض"
+     r"|ארצות הברית|ארה\"ב|ארה'ב|וושינגטון|הבית הלבן|טראמפ|ביידן|פנטגון|"
+     r"אירופה|האיחוד האירופי|בריטניה|צרפת|גרמניה|נאט\"ו|נאטו"),
     ("econ",       "Economy & Energy",    "#6E7B3D",
      r"\boil\b|crude|\bopec\b|natural gas|energy|economy|economic|inflation|"
      r"interest rate|\btrade\b|tariff|investment|stock market|barrel|budget|"
      r"\bimf\b|world bank|currency|\bgdp\b"
-     r"|النفط|الغاز|الاقتصاد|أوبك|التضخم|البورصة|صندوق النقد"),
+     r"|النفط|الغاز|الاقتصاد|أوبك|التضخم|البورصة|صندوق النقد"
+     r"|נפט|אופ\"ק|גז טבעי|אנרגיה|כלכלה|כלכלי|אינפלציה|ריבית|מכס|השקעה|"
+     r"הבורסה|תקציב|קרן המטבע|הבנק העולמי"),
 ]
 # Hebrew labels for the site's EN ↔ HE toggle. The topic list is curated and
 # fixed, so these are translated once by hand — perfectly accurate, no API.
