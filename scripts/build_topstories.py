@@ -609,6 +609,25 @@ OFF_PHRASES = (
     "attorney general", "box office", "red carpet", "stock market", "interest rate", "exchange rate",
     "world cup", "champions league", "transfer window", "oil output", "output hike", "judicial",
 )
+# Natural disasters / accidents read as "security" via casualty words (killed,
+# refugees) but aren't geopolitics/military — a landslide or quake is off-topic
+# UNLESS a real conflict dimension is present. So they're excluded only when no
+# CONFLICT word appears.
+DISASTER_WORDS = set("""
+landslide landslides mudslide mudslides flood floods flooding earthquake earthquakes quake quakes
+aftershock aftershocks storm storms cyclone hurricane hurricanes typhoon monsoon wildfire wildfires
+avalanche drought tornado tornadoes stampede crash crashes collision derailment capsized wreck
+""".split())
+CONFLICT_WORDS = set("""
+war wars warplane warplanes military militia militias militant militants fighter fighters troops
+soldier soldiers gunmen airstrike airstrikes strike strikes shelling bombard bombardment bombing
+bombings missile missiles rocket rockets drone drones artillery offensive incursion raid raids ambush
+clash clashes siege blockade ceasefire truce hostage hostages militiamen insurgent insurgency
+insurgents terror terrorist terrorists jihad hamas hezbollah houthi houthis irgc nuclear enrichment
+sanctions embargo occupation settler settlers settlement settlements annexation coup assassination
+assassinated warship warships naval
+""".split())
+CONFLICT_PHRASES = ("air strike", "ground offensive", "war crimes", "revolutionary guard", "islamic jihad")
 
 
 def _is_relevant(members: list[dict]) -> bool:
@@ -618,6 +637,11 @@ def _is_relevant(members: list[dict]) -> bool:
     English snippet, so the judgement holds across languages."""
     text = " ".join(f"{m.get('title','')} {m.get('snippet','')}" for m in members).lower()
     toks = set(re.findall(r"[a-z]+", text))
+    # A natural disaster / accident with no conflict dimension is off-topic even
+    # though it mentions casualties or refugees (e.g. a Bangladesh landslide).
+    if (toks & DISASTER_WORDS) and not ((toks & CONFLICT_WORDS)
+                                        or any(p in text for p in CONFLICT_PHRASES)):
+        return False
     sec = len(toks & SEC_WORDS) + sum(p in text for p in SEC_PHRASES)
     off = len(toks & OFF_WORDS) + sum(p in text for p in OFF_PHRASES)
     return sec >= 1 and sec >= off
