@@ -96,6 +96,15 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .hero .chip.notify-chip:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .hero .chip.notify-chip.on{border-color:rgba(95,208,160,.55);color:var(--paper)}
 .hero .chip.notify-chip.busy{opacity:.6;pointer-events:none}
+/* Frequency picker — matches the chip look; appears once alerts are on. */
+.hero .notify-freq{height:40px;padding:0 34px 0 16px;border-radius:20px;cursor:pointer;
+  background:rgba(247,244,238,.06);border:1px solid rgba(247,244,238,.18);color:var(--paper);
+  font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.02em;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23c9c2b6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center}
+.hero .notify-freq:hover{border-color:var(--gold)}
+.hero .notify-freq:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.hero .notify-freq option{color:#18171A}   /* native dropdown list uses OS colours */
 @keyframes heropulse{0%{box-shadow:0 0 0 0 rgba(95,208,160,.55)}70%{box-shadow:0 0 0 9px rgba(95,208,160,0)}100%{box-shadow:0 0 0 0 rgba(95,208,160,0)}}
 /* Language toggle — a real EN⇄HE switch pinned to the masthead corner. Scoped
    inside .hero so it inherits the local navy/gold palette; a sliding gold thumb
@@ -454,6 +463,14 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
       <button type="button" class="chip notify-chip" id="notify-btn" hidden aria-pressed="false">
         <span class="notify-ico" aria-hidden="true">🔔</span><span id="notify-label">Get alerts</span>
       </button>
+      <!-- Per-user notification frequency; shown only once alerts are on. -->
+      <select class="notify-freq" id="notify-freq" hidden aria-label="How often to be notified">
+        <option value="30">Every ~30 min</option>
+        <option value="60">Hourly</option>
+        <option value="180">Every 3 hours</option>
+        <option value="720">Twice a day</option>
+        <option value="1440">Once a day</option>
+      </select>
     </div>
   </div>
   <div class="stage"><canvas id="globe"></canvas></div>
@@ -1985,27 +2002,43 @@ function clearHeadlineFilters(){
 })();
 </script>
 
-<!-- ===== Web-push opt-in (hourly top-story alerts) =====
+<!-- ===== Web-push opt-in (top-story alerts, user-set frequency) =====
      Fully progressive enhancement: if the browser can't do web push, or
      push-config.json has no "api" URL yet, the button stays hidden and the
      site behaves exactly as before. Setup: PUSH-NOTIFICATIONS.md. -->
 <script>
 (function(){
-  const btn   = document.getElementById("notify-btn");
-  const label = document.getElementById("notify-label");
+  const btn    = document.getElementById("notify-btn");
+  const label  = document.getElementById("notify-label");
+  const freqSel = document.getElementById("notify-freq");
   if(!btn || !label) return;
 
   const LABELS = {
     en:{ get:"Get alerts", on:"Alerts on", blocked:"Alerts blocked", ios:"Add to Home Screen" },
     he:{ get:"קבל התראות", on:"התראות פועלות", blocked:"התראות חסומות", ios:"הוסף למסך הבית" }
   };
+  // Per-user frequency labels (values are minutes; must match the <option>s).
+  const FREQ_LABELS = {
+    en:{ "30":"Every ~30 min", "60":"Hourly", "180":"Every 3 hours", "720":"Twice a day", "1440":"Once a day" },
+    he:{ "30":"כל ~30 דק׳", "60":"כל שעה", "180":"כל 3 שעות", "720":"פעמיים ביום", "1440":"פעם ביום" }
+  };
   const lang = () => (typeof LANG !== "undefined" && LANG === "he") ? "he" : "en";
   let state = "get";                       // get | on | blocked | ios
+
+  // Restore the saved frequency choice so the picker reflects the last pick.
+  try{ const s = localStorage.getItem("mes-notify-freq"); if(s && freqSel) freqSel.value = s; }catch(e){}
+  const freqVal = () => (freqSel ? (Number(freqSel.value) || 30) : 30);
+
   function paint(){
     const L = LABELS[lang()] || LABELS.en;
     label.textContent = L[state] || L.get;
     btn.classList.toggle("on", state === "on");
     btn.setAttribute("aria-pressed", state === "on" ? "true" : "false");
+    if(freqSel){
+      freqSel.hidden = state !== "on";     // only relevant once alerts are on
+      const fl = FREQ_LABELS[lang()] || FREQ_LABELS.en;
+      Array.from(freqSel.options).forEach(o => { if(fl[o.value]) o.textContent = fl[o.value]; });
+    }
   }
   window.__notifySync = paint;             // called by applyLang() on EN⇄HE flip
 
@@ -2025,6 +2058,15 @@ function clearHeadlineFilters(){
   }
 
   let API = "", reg = null;
+  // Store the subscription with the chosen interval (minutes). Re-callable to
+  // update just the frequency without re-subscribing.
+  function saveSub(sub){
+    const body = sub.toJSON();
+    body.interval = freqVal();
+    return fetch(API + "/subscribe", { method:"POST", headers:{"content-type":"application/json"},
+                                       body: JSON.stringify(body) });
+  }
+
   async function boot(){
     // The one file the site owner edits after deploying the Worker.
     try{
@@ -2045,6 +2087,17 @@ function clearHeadlineFilters(){
     }
     paint();
     btn.addEventListener("click", onClick);
+
+    // Changing the frequency: remember it, and if already subscribed push the new
+    // interval to the server (re-storing the same subscription just updates it).
+    if(freqSel) freqSel.addEventListener("change", async () => {
+      try{ localStorage.setItem("mes-notify-freq", freqSel.value); }catch(e){}
+      if(state !== "on") return;
+      try{
+        const sub = await reg.pushManager.getSubscription();
+        if(sub) await saveSub(sub);
+      }catch(e){}
+    });
   }
 
   async function onClick(){
@@ -2075,7 +2128,7 @@ function clearHeadlineFilters(){
         const key = (await fetch(API + "/vapidPublicKey").then(r => r.text())).trim();
         if(!key) throw new Error("no VAPID key from Worker");
         const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToUint8(key) });
-        await fetch(API + "/subscribe", { method:"POST", headers:{"content-type":"application/json"}, body: JSON.stringify(sub) });
+        await saveSub(sub);                 // stores the subscription + chosen interval
         state = "on";
       }
     }catch(e){

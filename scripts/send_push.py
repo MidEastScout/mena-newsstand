@@ -142,6 +142,23 @@ def prune(api: str, token: str, endpoints: list) -> None:
         log(f"prune failed (non-fatal): {exc}")
 
 
+def _endpoint_key(endpoint: str) -> str:
+    """A stable per-subscriber key for the timing state (never store raw
+    endpoints, which are long and effectively identifiers)."""
+    return sha256(endpoint.encode("utf-8")).hexdigest()
+
+
+def _interval_min(rec: dict, default_min: float) -> float:
+    """This subscriber's chosen minutes-between-notifications, clamped to a sane
+    window. The practical floor is the site's refresh cadence (~30 min): a value
+    below it just means 'every refresh'."""
+    try:
+        v = float(rec.get("interval"))
+    except (TypeError, ValueError):
+        return default_min
+    return max(15.0, min(v, 10080.0))   # 15 min .. 1 week
+
+
 def main() -> int:
     stories = top_stories()
     if not stories:
@@ -155,35 +172,15 @@ def main() -> int:
     site_url = os.environ.get("SITE_URL", "").strip() or DEFAULT_SITE_URL
     force = os.environ.get("FORCE_PUSH", "").lower() == "true"
     try:
-        min_interval = int(os.environ.get("PUSH_MIN_INTERVAL_MIN", "60"))
+        default_interval = float(os.environ.get("PUSH_DEFAULT_INTERVAL_MIN", "30"))
     except ValueError:
-        min_interval = 60
+        default_interval = 30.0
 
     if not (api and token and vapid_key and vapid_subject):
         log("push not configured (need PUSH_API, PUSH_ADMIN_TOKEN, "
             "VAPID_PRIVATE_KEY, VAPID_SUBJECT) — skipping. This is expected "
             "until you finish the one-time setup in PUSH-NOTIFICATIONS.md.")
         return 0
-
-    now = datetime.now(timezone.utc)
-    sig = signature(stories)
-    state = load_json(STATE_PATH)
-    last_sig = state.get("last_signature")
-    last_sent = state.get("last_sent_at")
-
-    if not force:
-        if sig == last_sig:
-            log("top stories unchanged since last push — skipping")
-            return 0
-        if last_sent:
-            try:
-                elapsed_min = (now - datetime.fromisoformat(last_sent)).total_seconds() / 60
-                if elapsed_min < min_interval:
-                    log(f"last push was {elapsed_min:.0f} min ago (< {min_interval}); "
-                        "holding to keep the hourly cap")
-                    return 0
-            except Exception:
-                pass  # unparseable timestamp → treat as due
 
     # Import the sender lazily so a missing dependency degrades to a notice
     # instead of crashing the workflow step.
@@ -200,18 +197,46 @@ def main() -> int:
         log(f"could not fetch subscriptions from the Worker: {exc}")
         return 0
 
+    now = datetime.now(timezone.utc)
+    sig = signature(stories)
+    prev_subs = (load_json(STATE_PATH).get("subs") or {})
+
     if not subs:
         log("no subscribers yet — recording state, nothing to send")
-        save_state({"last_signature": sig, "last_sent_at": now.isoformat(),
-                    "last_subscribers": 0})
+        save_state({"last_signature": sig, "updated": now.isoformat(),
+                    "subscribers": 0, "subs": {}})
         return 0
 
+    # Each subscriber is gated on THEIR OWN interval and THEIR OWN last-seen story
+    # set — so timing is per person and nobody gets the same five headlines twice.
     payload = json.dumps(build_payload(stories, site_url))
-    sent, dead = 0, []
+    sent = held = 0
+    dead = []
+    new_subs = {}
     for rec in subs:
         endpoint = rec.get("endpoint")
         keys = rec.get("keys") or {}
         if not endpoint or not keys.get("p256dh") or not keys.get("auth"):
+            continue
+        key = _endpoint_key(endpoint)
+        prev = prev_subs.get(key, {})
+        interval = _interval_min(rec, default_interval)
+
+        due = force
+        if not force:
+            changed = sig != prev.get("last_sig")
+            elapsed_ok = True
+            ls = prev.get("last_sent_at")
+            if ls:
+                try:
+                    elapsed_ok = (now - datetime.fromisoformat(ls)).total_seconds() / 60 >= interval
+                except Exception:
+                    elapsed_ok = True  # unparseable → treat as due
+            due = changed and elapsed_ok
+
+        if not due:
+            new_subs[key] = prev          # carry state forward unchanged
+            held += 1
             continue
         try:
             webpush(
@@ -219,27 +244,32 @@ def main() -> int:
                 data=payload,
                 vapid_private_key=vapid_key,
                 vapid_claims={"sub": vapid_subject},  # fresh dict per send
-                ttl=3600,
+                ttl=int(interval * 60),
             )
             sent += 1
+            new_subs[key] = {"last_sent_at": now.isoformat(), "last_sig": sig,
+                             "interval": interval}
         except WebPushException as exc:
             status = getattr(getattr(exc, "response", None), "status_code", None)
             if status in (404, 410):
-                dead.append(endpoint)  # subscription gone — prune it
+                dead.append(endpoint)     # subscription gone — prune, drop its state
             else:
+                new_subs[key] = prev      # transient failure — keep state, retry next run
                 log(f"push failed for one subscriber (HTTP {status}): {exc}")
         except Exception as exc:
+            new_subs[key] = prev
             log(f"unexpected push error for one subscriber: {exc}")
 
     prune(api, token, dead)
 
     save_state({
         "last_signature": sig,
-        "last_sent_at": now.isoformat(),
-        "last_subscribers": len(subs),
-        "last_lead": (stories[0].get("rep") or {}).get("title", ""),
+        "updated": now.isoformat(),
+        "subscribers": len(subs),
+        "subs": new_subs,
     })
-    log(f"sent {sent}/{len(subs)} notification(s); lead: "
+    log(f"sent {sent}, held {held}, pruned {len(dead)} "
+        f"(of {len(subs)} subscribers); lead: "
         f"{(stories[0].get('rep') or {}).get('title', '')!r}")
     return 0
 
