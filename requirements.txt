@@ -7,3 +7,7 @@ google-genai
 anthropic
 Pillow==12.2.0
 pypdfium2==4.30.0
+# Web-push sender for the hourly "top stories" notifications (scripts/send_push.py).
+# Optional: if unset secrets leave push unconfigured the script exits 0, so this
+# install never blocks a refresh. Pulls in `cryptography` for VAPID signing.
+pywebpush==2.3.0

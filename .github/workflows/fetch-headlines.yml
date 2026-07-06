@@ -68,6 +68,10 @@ on:
         description: 'Force-rebuild the World Briefing now (no email)'
         type: boolean
         default: false
+      force_push:
+        description: 'Force-send a push notification now (ignores the change + hourly gates)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -97,6 +101,18 @@ jobs:
       # English if they're absent.
       AZURE_TRANSLATOR_KEY:    ${{ secrets.AZURE_TRANSLATOR_KEY }}
       AZURE_TRANSLATOR_REGION: ${{ secrets.AZURE_TRANSLATOR_REGION }}
+      # Web push — hourly "top stories" notifications (scripts/send_push.py).
+      # ALL optional: if these are unset the sender logs a notice and exits 0,
+      # so nothing breaks until you finish the one-time setup in
+      # PUSH-NOTIFICATIONS.md.
+      #   PUSH_API          → your Cloudflare Worker base URL
+      #   PUSH_ADMIN_TOKEN  → bearer guarding the Worker's list/prune endpoints
+      #   VAPID_PRIVATE_KEY → base64url private key from gen_vapid_keys.py
+      #   VAPID_SUBJECT     → mailto: contact for the push services
+      PUSH_API:          ${{ secrets.PUSH_API }}
+      PUSH_ADMIN_TOKEN:  ${{ secrets.PUSH_ADMIN_TOKEN }}
+      VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+      VAPID_SUBJECT:     ${{ secrets.VAPID_SUBJECT }}
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -139,6 +155,17 @@ jobs:
         continue-on-error: true
         run: python scripts/build_topstories.py
 
+      # Hourly "top stories" web-push notification. Self-gating in send_push.py:
+      # it only fires when the top-story set has CHANGED since the last push AND
+      # at least ~1h has passed (state/push_state.json), unless force_push is set.
+      # continue-on-error so a push-service or Worker hiccup never blocks the
+      # data commit. No-op (exits 0) until the push secrets are configured.
+      - name: Send push notifications
+        continue-on-error: true
+        env:
+          FORCE_PUSH: ${{ github.event.inputs.force_push }}
+        run: python scripts/send_push.py
+
       # Build the world briefing every 6 hours. continue-on-error so a Gemini
       # quota or network hiccup never blocks the headlines commit or email.
       - name: Build world briefing
@@ -165,6 +192,7 @@ jobs:
           git add briefing.json 2>/dev/null || true
           git add trends.json state/trends_history.json 2>/dev/null || true
           git add top_stories.json 2>/dev/null || true
+          git add state/push_state.json 2>/dev/null || true
           git add state/pulse_terms_he.json state/headlines_he.json 2>/dev/null || true
           git add frontpages 2>/dev/null || true
           if git diff --cached --quiet; then
