@@ -8,11 +8,11 @@
  * needs a cache-busting dance here.
  *
  * Payload shape (sent by scripts/send_push.py):
- *   { "title": "<lead headline>",
- *     "body":  "and 4 more top stories",
+ *   { "title": "<lead headline> · <N> outlets",
+ *     "body":  "2. <headline> · <N> outlets\n3. <headline> · <N> outlets\n…",
  *     "url":   "https://mideastscout.github.io/mena-newsstand/",
  *     "tag":   "mena-top-stories",
- *     "stories": [ { "title": "...", "url": "..." }, ... ] }
+ *     "stories": [ { "title": "...", "url": "...", "outlets": N }, ... ] }
  */
 
 // Activate a freshly deployed worker immediately instead of waiting for every
