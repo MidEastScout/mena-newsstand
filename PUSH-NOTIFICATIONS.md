@@ -123,15 +123,26 @@ subscriber.
 
 ## How it behaves
 
-- **Cadence:** at most **once per hour** (`PUSH_MIN_INTERVAL_MIN`, default 60).
-- **Only when it matters:** it compares the current top-5 links to the last push
-  and **skips if nothing changed** — so quiet news hours stay quiet.
-- **Content:** title = the #1 headline; body = "and *N* more top stories"; tap
-  opens the site.
+- **Each person picks their own frequency.** After turning alerts on, a small
+  dropdown lets the visitor choose **Every ~30 min / Hourly / Every 3 hours /
+  Twice a day / Once a day**. Their choice is stored with their subscription and
+  the sender paces each person independently (default ~30 min).
+- **Only when it matters:** each subscriber is compared to the top-5 they were
+  *last* sent and **skipped if nothing changed** — so nobody gets the same five
+  headlines twice, however often they've asked to hear from you.
+- **~30 min is the practical floor.** The whole site refreshes about every 30
+  minutes, which is also roughly how often the news actually moves, so "Every ~30
+  min" is as fast as it gets unless the site's refresh cycle itself is sped up.
+- **Content:** title = the #1 headline (with its outlet count); body lists the
+  other top stories with their outlet counts; tap opens the site.
 - **Self-cleaning:** subscriptions the push service reports as expired are
   pruned automatically.
 - **Never blocks the site:** every part is best-effort; if anything is
   misconfigured the sender logs a notice and exits cleanly.
+
+> **Updating the Worker:** the frequency feature added a field the Worker stores,
+> so after pulling these changes redeploy it once — `cd push && npx wrangler
+> deploy`. Until you do, everyone stays on the default ~30-minute pace.
 
 ## Costs
 
@@ -148,8 +159,13 @@ volumes a news site like this generates.
 
 ## Tuning
 
-- Change the hourly cap by adding a `PUSH_MIN_INTERVAL_MIN` repo **variable**
-  (e.g. `120` for every two hours) and passing it through in the workflow, or
-  set it inline on the "Send push notifications" step.
+- Change the **default** frequency (for subscribers who never touch the picker)
+  with a `PUSH_DEFAULT_INTERVAL_MIN` repo **variable** (minutes; default 30),
+  passed through on the "Send push notifications" step.
+- To offer **faster than ~30 min** (e.g. a real 15-minute option), the whole
+  site's refresh loop has to run that often too: shorten the `sleep` in the
+  workflow's `rearm` job (currently ~28 min) and add the shorter interval to the
+  frequency `<option>`s in `index.html`. This roughly doubles GitHub Actions
+  usage and how often the news sources are polled.
 - The click-through target defaults to the live GitHub Pages URL; set a
   `SITE_URL` secret to point at a custom domain once you have one.

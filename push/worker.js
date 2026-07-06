@@ -86,6 +86,10 @@ export default {
       }
       if (!sub || !sub.endpoint) return json({ error: "missing endpoint" }, 400, origin);
       const record = { endpoint: sub.endpoint, keys: sub.keys || {}, added: Date.now() };
+      // Per-subscriber notification frequency (minutes). Stored so the sender can
+      // pace each person independently. Clamped to a sane 15 min .. 1 week window.
+      const iv = Number(sub.interval);
+      if (Number.isFinite(iv)) record.interval = Math.max(15, Math.min(iv, 10080));
       await env.SUBS.put(await keyFor(sub.endpoint), JSON.stringify(record));
       return json({ ok: true }, 201, origin);
     }
