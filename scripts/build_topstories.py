@@ -21,6 +21,12 @@ Clustering strategy (recomputed fresh every cycle — clusters never persist):
      outlets), so a story is counted across every outlet in every language, not
      just the English ones. No network, no key required.
 
+Topical filter (both paths): only Middle-Eastern / global geopolitics, security,
+military, conflict and diplomacy stories are eligible — the Ukraine war counts;
+domestic-administrative politics (e.g. Israeli coalition / court / regulator
+stories), sports, tech & consumer business, markets and lifestyle are dropped so
+they can't take a Top-5 slot from a real security story.
+
 Ranking (identical for both paths — the user's stated priority order):
   • Primary   : number of DISTINCT outlets carrying the story.
   • Secondary : diversity of outlet CATEGORY / regional camp (Israeli, Gulf,
@@ -561,6 +567,63 @@ def cluster_with_claude(client, items: list[dict]):
 
 
 # ---------------------------------------------------------------------------
+# Topical filter — keep only what the site is FOR: Middle-Eastern and global
+# geopolitics / security / military / conflict / diplomacy (the Ukraine war
+# counts). Drop domestic-administrative politics (especially Israeli coalition /
+# court / regulator stories), sports, tech & consumer business, markets/finance,
+# and lifestyle/health/entertainment — so a heavily-carried but off-topic item
+# never takes a Top-5 slot from a real security story.
+# ---------------------------------------------------------------------------
+SEC_WORDS = set("""
+war wars warplane warplanes military militia militias militant militants fighter fighters army troops
+soldier soldiers forces gunmen airstrike airstrikes strike strikes shelling bombard bombardment
+bombing bombings blast blasts explosion explosions missile missiles rocket rockets drone drones
+artillery offensive incursion raid raids ambush clash clashes fighting combat frontline siege
+blockade ceasefire truce armistice killed dead casualties wounded slain massacre genocide hostage
+hostages captive captives prisoner prisoners abducted kidnapped assassination assassinated martyr
+martyred martyrs mourning funeral coup uprising revolt insurgency insurgents terror terrorist
+terrorists extremist extremists jihad hamas hezbollah houthi houthis irgc nuclear enrichment uranium
+centrifuges ballistic sanctions sanction embargo diplomat diplomacy diplomatic summit negotiations
+negotiation talks treaty accord envoy delegation occupation settler settlers settlement settlements
+annexation annex sovereignty escalation retaliation deterrence naval warship warships airspace
+checkpoint checkpoints intelligence espionage refugees refugee displaced famine evacuation crackdown
+detained detention insurgent militiamen
+""".split())
+SEC_PHRASES = (
+    "air strike", "west bank", "gaza strip", "strait of hormuz", "red sea", "security council",
+    "foreign minister", "defense minister", "defence minister", "war crimes", "death toll",
+    "peace deal", "prisoner exchange", "ground offensive", "revolutionary guard", "islamic jihad",
+    "peace talks", "war on", "human rights", "aid convoy", "arms deal",
+)
+OFF_WORDS = set("""
+football soccer fifa uefa afcon match matches league tournament striker goalkeeper goals penalty
+penalties coach olympics medal medals championship cricket tennis basketball app apps iphone android
+google apple microsoft meta whatsapp tiktok website websites login logins password startup startups
+gadget smartphone smartphones ecommerce streaming stock stocks shares bourse ipo dividend
+cryptocurrency bitcoin crypto recipe watermelon cuisine celebrity movie movies film films cinema
+actor actress singer concert festival fashion wedding horoscope zodiac diet skincare tourism tourist
+weather forecast rainfall
+""".split())
+OFF_PHRASES = (
+    "broadcast regulator", "broadcasting authority", "supreme court", "high court", "court of appeal",
+    "attorney general", "box office", "red carpet", "stock market", "interest rate", "exchange rate",
+    "world cup", "champions league", "transfer window", "oil output", "output hike", "judicial",
+)
+
+
+def _is_relevant(members: list[dict]) -> bool:
+    """True if a cluster is on-topic: it carries a clear security / geopolitical /
+    military / diplomacy signal that is not outweighed by off-topic (sports, tech,
+    market, lifestyle, domestic-admin) signals. Read over every member's title +
+    English snippet, so the judgement holds across languages."""
+    text = " ".join(f"{m.get('title','')} {m.get('snippet','')}" for m in members).lower()
+    toks = set(re.findall(r"[a-z]+", text))
+    sec = len(toks & SEC_WORDS) + sum(p in text for p in SEC_PHRASES)
+    off = len(toks & OFF_WORDS) + sum(p in text for p in OFF_PHRASES)
+    return sec >= 1 and sec >= off
+
+
+# ---------------------------------------------------------------------------
 # Ranking + assembling the output stories (shared by both clustering paths).
 # ---------------------------------------------------------------------------
 def _member_view(it: dict) -> dict:
@@ -578,7 +641,8 @@ def _member_view(it: dict) -> dict:
 
 def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
     """clusters: [{member_indices, representative_index, summary?, summary_he?}].
-    Rank by distinct-outlet count → category diversity → recency, keep top N."""
+    Rank by distinct-outlet count → category diversity → recency, keep the top N
+    that pass the geopolitics/security topical filter."""
     scored = []
     for c in clusters:
         idxs = c["member_indices"]
@@ -591,8 +655,15 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
     # Primary: outlet count. Secondary: category (camp) diversity. Tertiary: recency.
     scored.sort(key=lambda x: (x[3], x[4], x[5]), reverse=True)
 
+    # Keep only on-topic stories (geopolitics / security / military / diplomacy),
+    # THEN take the top N — so a widely-carried but off-topic item (a court
+    # ruling, a tech fine, a cup final) can't claim a slot. Safety net: if a
+    # cycle somehow has no on-topic cluster, fall back to the raw ranking rather
+    # than blanking the strip.
+    relevant = [s for s in scored if _is_relevant(s[2])] or scored
+
     out = []
-    for rank, (c, idxs, members, n_outlets, n_cats, newest) in enumerate(scored[:TOP_N], 1):
+    for rank, (c, idxs, members, n_outlets, n_cats, newest) in enumerate(relevant[:TOP_N], 1):
         rep = items[c["representative_index"]]
         cats = sorted({m["category"] for m in members if m["category"]},
                       key=lambda x: CAT_ORDER.index(x) if x in CAT_ORDER else 99)
