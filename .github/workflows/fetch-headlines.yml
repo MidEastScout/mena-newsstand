@@ -13,7 +13,6 @@ name: MENA Newsstand
 # EVERY 6 HOURS (first run crossing 00:00 / 06:00 / 12:00 / 18:00 Israel time):
 #   - scripts/build_briefing.py   → fetches world feeds + MENA headlines,
 #                                   calls Gemini, writes briefing.json
-#   - scripts/send_email.py       → sends the digest email (if secrets set)
 #
 # FRONT PAGES (scripts/fetch_frontpages.py):
 #   - ~07:00 Israel (morning) + ~14:00 Israel (afternoon): full refresh of every
@@ -48,7 +47,7 @@ name: MENA Newsstand
 #     the (unreliable) schedule — nothing breaks.
 #
 # scripts/plan_run.py acts as a gatekeeper: it checks the current time in
-# Israel and state/daily.json so each timed task (briefing, email, front pages)
+# Israel and state/daily.json so each timed task (briefing, front pages)
 # runs once per slot — even though headlines refresh on every run.
 
 on:
@@ -56,10 +55,6 @@ on:
     - cron: '*/15 * * * *'   # safety net only — the self-dispatch loop is primary
   workflow_dispatch:          # manual "refresh now" + the loop's own dispatch
     inputs:
-      send_email:
-        description: 'Force-send the email digest now'
-        type: boolean
-        default: false
       refresh_frontpages:
         description: 'Force-refresh front-page images now'
         type: boolean
@@ -89,9 +84,6 @@ jobs:
       group: newsstand-data
       cancel-in-progress: false
     env:
-      EMAIL_FROM:     ${{ secrets.EMAIL_FROM }}
-      EMAIL_TO:       ${{ secrets.EMAIL_TO }}
-      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       # Powers semantic Top-5 story clustering in build_topstories.py. Optional:
       # if unset, that builder falls back to a keyword + named-entity heuristic.
@@ -129,7 +121,6 @@ jobs:
 
       - name: Plan the run
         env:
-          FORCE_EMAIL:       ${{ github.event.inputs.send_email }}
           FORCE_FRONTPAGES:  ${{ github.event.inputs.refresh_frontpages }}
           FORCE_BRIEFING:    ${{ github.event.inputs.refresh_briefing }}
         run: python scripts/plan_run.py
@@ -210,19 +201,6 @@ jobs:
           # THIS commit (deterministic) instead of re-resolving `main` and
           # possibly racing another run's push.
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-      # Send email after the commit so it links to the freshest data. always()
-      # means it runs even if the front-page or push step had trouble.
-      - name: Send email digest
-        if: ${{ always() && env.DO_EMAIL == 'true' && env.EMAIL_FROM != '' }}
-        run: python scripts/send_email.py
-
-      - name: Email skipped notice
-        if: ${{ always() && env.DO_EMAIL == 'true' && env.EMAIL_FROM == '' }}
-        run: |
-          echo "::warning::Email digest skipped — EMAIL_FROM/EMAIL_TO/EMAIL_PASSWORD"
-          echo "repository secrets are not set. Add them under Settings →"
-          echo "Secrets and variables → Actions for the digest emails to send."
 
   # ---------------------------------------------------------------------------
   # Publish to GitHub Pages ourselves, every run, right after the data commit.

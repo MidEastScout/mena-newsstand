@@ -75,23 +75,42 @@ def signature(stories: list) -> str:
     return sha256(joined.encode("utf-8")).hexdigest()
 
 
+def _story_headline(s: dict) -> str:
+    """The clearest one-line label for a story: the neutral LLM summary when the
+    clustering produced one, otherwise the representative outlet's English
+    headline."""
+    return (s.get("summary") or (s.get("rep") or {}).get("title") or "").strip()
+
+
+def _coverage(s: dict) -> str:
+    """A short '· 11 outlets' tag conveying how widely the story is carried — the
+    'most-covered' signal, shown inline so each line says why it's a top story."""
+    n = s.get("outlets")
+    return f" · {n} outlets" if isinstance(n, int) and n > 1 else ""
+
+
 def build_payload(stories: list, site_url: str) -> dict:
     lead = stories[0]
-    lead_title = (lead.get("rep") or {}).get("title", "Top stories")
-    more = len(stories) - 1
-    if more > 0:
-        body = f"and {more} more top {'story' if more == 1 else 'stories'} across the Middle East"
-    else:
-        body = "Tap to read the latest across the Middle East"
+    lead_title = _story_headline(lead) or "Top stories across the Middle East"
+    # Body names the OTHER top stories (not a vague "and 4 more"), each with how
+    # many outlets carry it, so the notification itself is a scannable digest that
+    # opens the site on tap. Numbered from 2 (the lead is the title = story 1).
+    lines = []
+    for i, s in enumerate(stories[1:5], start=2):
+        h = _story_headline(s)
+        if h:
+            lines.append(f"{i}. {h}{_coverage(s)}")
+    body = "\n".join(lines) if lines else "Tap to read the latest across the Middle East"
     return {
-        "title": lead_title,
+        "title": f"{lead_title}{_coverage(lead)}",
         "body": body,
         "url": site_url,
         "tag": NOTIF_TAG,
         "stories": [
             {
-                "title": (s.get("rep") or {}).get("title", ""),
+                "title": _story_headline(s),
                 "url": (s.get("rep") or {}).get("url", site_url),
+                "outlets": s.get("outlets"),
             }
             for s in stories
         ],

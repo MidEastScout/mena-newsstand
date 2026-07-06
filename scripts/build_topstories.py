@@ -13,10 +13,19 @@ Clustering strategy (recomputed fresh every cycle — clusters never persist):
      neutral representative plus a short neutral summary line per story. This is
      semantic — it clusters "Israel strikes Hezbollah position" with "IDF
      targets Hezbollah site in south Lebanon" even though they share few words.
-  2. Otherwise fall back to a pure-Python heuristic: named-entity matching (same
-     people / places / organisations) combined with informative-word overlap,
-     over each item's English title + snippet (the English snippet carries the
-     signal for Arabic-titled outlets). No network, no key required.
+  2. Otherwise fall back to a pure-Python heuristic that clusters by strong-entity
+     CO-OCCURRENCE anchors, then splits distinct sub-events within a topic. This
+     avoids the naive-single-linkage trap where one bridging headline fuses two
+     unrelated stories into a giant blob. It reads each item's English title +
+     snippet (the snippet carries the signal for Arabic/Hebrew/Persian-titled
+     outlets), so a story is counted across every outlet in every language, not
+     just the English ones. No network, no key required.
+
+Topical filter (both paths): only Middle-Eastern / global geopolitics, security,
+military, conflict and diplomacy stories are eligible — the Ukraine war counts;
+domestic-administrative politics (e.g. Israeli coalition / court / regulator
+stories), sports, tech & consumer business, markets and lifestyle are dropped so
+they can't take a Top-5 slot from a real security story.
 
 Ranking (identical for both paths — the user's stated priority order):
   • Primary   : number of DISTINCT outlets carrying the story.
@@ -50,7 +59,9 @@ import json
 import os
 import re
 import sys
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
+from itertools import combinations
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -249,50 +260,145 @@ def _entities(text: str) -> set:
 
 
 def cluster_heuristic(items: list[dict]) -> list[list[int]]:
-    """Union-find over pairwise similarity. Two headlines are the same story when
-    they share a SPECIFIC entity (backed by a second shared entity or word
-    overlap), or their titles are near-duplicates. Broad nation-level entities
-    alone never merge — that keeps the many Iran/Israel stories from collapsing
-    into one blob. Entities are read from title + snippet (so Arabic-titled
-    outlets cluster on their English snippet); word overlap uses titles only (so
-    two headlines aren't merged just because their snippets share filler)."""
+    """Group headlines into stories WITHOUT letting a single bridging headline
+    fuse two unrelated events — the failure mode of naive single-linkage, where
+    one 'Gaza funeral' item glues the whole Gaza story onto Khamenei's funeral and
+    produces one giant, meaningless top 'story'.
+
+    Strategy — story-topic anchors from strong-entity CO-OCCURRENCE:
+      1. Strong entities that genuinely co-occur across many headlines (khamenei +
+         funeral) merge into one topic anchor; an incidental one-off overlap
+         (gaza + funeral, seen once) does NOT, so distinct topics stay apart.
+      2. Each headline joins the anchor it fits best: most of its strong entities
+         land there, breaking ties toward its more SPECIFIC (rarer) entity — so a
+         generic 'funeral'/'mourning' word can't drag an unrelated death story (a
+         Venezuela quake, a Lebanon burial) into Khamenei's funeral.
+      3. Within an anchor, distinct sub-events separate by wording overlap, while
+         topic stragglers — including Arabic/Hebrew-titled items that carry their
+         signal in the English snippet, not the title — fold into the sub-event
+         they match best instead of fragmenting off. That keeps cross-language
+         coverage COUNTED, never stranded as its own bogus one-outlet story.
+      4. Headlines with no known entity cluster among themselves by near-duplicate
+         title only.
+
+    Entities are read from title + snippet (the English snippet is present on
+    every item, so Arabic/Persian/Hebrew-titled outlets cluster too); wording
+    overlap uses titles. Result: the ranking counts every outlet carrying a story
+    in any language, and the top five are genuinely distinct events."""
     n = len(items)
-    title_tok, ents, strong_ents = [], [], []
-    for it in items:
-        title_tok.append(_tokens(it["title"]))
-        e = _entities(f"{it['title']} {it['snippet']}")
-        ents.append(e)
-        strong_ents.append(e & STRONG)
+    all_ents  = [_entities(f"{it['title']} {it['snippet']}") for it in items]
+    strong    = [e & STRONG for e in all_ents]
+    title_tok = [_tokens(it["title"]) for it in items]
 
-    parent = list(range(n))
+    # 1. Co-occurrence anchors over strong entities. Two strong entities name the
+    #    same story when they co-occur in >=2 headlines AND in >=40% of the rarer
+    #    one's headlines — real pairs (khamenei+funeral) merge, one-offs don't.
+    ent_count, cooc = Counter(), Counter()
+    for se in strong:
+        for e in se:
+            ent_count[e] += 1
+        for e, f in combinations(sorted(se), 2):
+            cooc[(e, f)] += 1
+    eparent = {e: e for e in ent_count}
 
-    def find(i):
-        while parent[i] != i:
-            parent[i] = parent[parent[i]]
-            i = parent[i]
+    def efind(e):
+        while eparent[e] != e:
+            eparent[e] = eparent[eparent[e]]
+            e = eparent[e]
+        return e
+
+    for (e, f), c in cooc.items():
+        if c >= 2 and c >= 0.4 * min(ent_count[e], ent_count[f]):
+            ra, rb = efind(e), efind(f)
+            if ra != rb:
+                eparent[ra] = rb
+
+    # 2. Assign each item to its best-fit anchor (most entities there; more
+    #    specific entity wins ties). No-entity items are held for phase 4.
+    def item_anchor(i):
+        se = strong[i]
+        if not se:
+            return None
+        by = defaultdict(list)
+        for e in se:
+            by[efind(e)].append(e)
+        return max(by, key=lambda a: (len(by[a]),
+                                      sum(1.0 / ent_count[e] for e in by[a])))
+
+    anchor_of = [item_anchor(i) for i in range(n)]
+    by_anchor = defaultdict(list)
+    for i in range(n):
+        if anchor_of[i] is not None:
+            by_anchor[anchor_of[i]].append(i)
+
+    # 3. Split each anchor into distinct events; fold stragglers into the event
+    #    they match best (default: the largest = the topic's main story). Bounded
+    #    to one anchor, so this single-linkage can never bridge across topics.
+    def subsplit(idxs):
+        if len(idxs) <= 2:
+            return [idxs]
+        parent = {i: i for i in idxs}
+
+        def find(i):
+            while parent[i] != i:
+                parent[i] = parent[parent[i]]
+                i = parent[i]
+            return i
+
+        for a in range(len(idxs)):
+            for b in range(a + 1, len(idxs)):
+                i, j = idxs[a], idxs[b]
+                if (len(title_tok[i] & title_tok[j]) >= 3
+                        or (len(all_ents[i] & all_ents[j]) >= 2
+                            and len(title_tok[i] & title_tok[j]) >= 1)):
+                    ri, rj = find(i), find(j)
+                    if ri != rj:
+                        parent[ri] = rj
+        groups = defaultdict(list)
+        for i in idxs:
+            groups[find(i)].append(i)
+        dense   = [g for g in groups.values() if len(g) >= 2]
+        singles = [g[0] for g in groups.values() if len(g) == 1]
+        if not dense:
+            return [idxs]                       # one coherent story — keep whole
+        dense.sort(key=len, reverse=True)
+        for s in singles:
+            best, best_score = dense[0], -1
+            for g in dense:
+                score = sum(2 * len(all_ents[s] & all_ents[m])
+                            + len(title_tok[s] & title_tok[m]) for m in g)
+                if score > best_score:
+                    best, best_score = g, score
+            best.append(s)
+        return dense
+
+    clusters = []
+    for idxs in by_anchor.values():
+        clusters.extend(subsplit(idxs))
+
+    # 4. No-entity leftovers: merge only near-duplicate titles.
+    leftover = [i for i in range(n) if anchor_of[i] is None]
+    lp = {i: i for i in leftover}
+
+    def lfind(i):
+        while lp[i] != i:
+            lp[i] = lp[lp[i]]
+            i = lp[i]
         return i
 
-    def union(i, j):
-        ri, rj = find(i), find(j)
-        if ri != rj:
-            parent[ri] = rj
+    for a in range(len(leftover)):
+        for b in range(a + 1, len(leftover)):
+            i, j = leftover[a], leftover[b]
+            if len(title_tok[i] & title_tok[j]) >= 4:
+                ri, rj = lfind(i), lfind(j)
+                if ri != rj:
+                    lp[ri] = rj
+    lg = defaultdict(list)
+    for i in leftover:
+        lg[lfind(i)].append(i)
+    clusters.extend(lg.values())
 
-    for i in range(n):
-        for j in range(i + 1, n):
-            shared_strong = len(strong_ents[i] & strong_ents[j])
-            shared_ent = len(ents[i] & ents[j])
-            shared_tok = len(title_tok[i] & title_tok[j])
-            same = (
-                (shared_strong >= 1 and (shared_ent >= 2 or shared_tok >= 2))  # specific story
-                or shared_tok >= 4                                             # near-duplicate title
-            )
-            if same:
-                union(i, j)
-
-    groups = {}
-    for i in range(n):
-        groups.setdefault(find(i), []).append(i)
-    return list(groups.values())
+    return clusters
 
 
 def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
@@ -461,6 +567,63 @@ def cluster_with_claude(client, items: list[dict]):
 
 
 # ---------------------------------------------------------------------------
+# Topical filter — keep only what the site is FOR: Middle-Eastern and global
+# geopolitics / security / military / conflict / diplomacy (the Ukraine war
+# counts). Drop domestic-administrative politics (especially Israeli coalition /
+# court / regulator stories), sports, tech & consumer business, markets/finance,
+# and lifestyle/health/entertainment — so a heavily-carried but off-topic item
+# never takes a Top-5 slot from a real security story.
+# ---------------------------------------------------------------------------
+SEC_WORDS = set("""
+war wars warplane warplanes military militia militias militant militants fighter fighters army troops
+soldier soldiers forces gunmen airstrike airstrikes strike strikes shelling bombard bombardment
+bombing bombings blast blasts explosion explosions missile missiles rocket rockets drone drones
+artillery offensive incursion raid raids ambush clash clashes fighting combat frontline siege
+blockade ceasefire truce armistice killed dead casualties wounded slain massacre genocide hostage
+hostages captive captives prisoner prisoners abducted kidnapped assassination assassinated martyr
+martyred martyrs mourning funeral coup uprising revolt insurgency insurgents terror terrorist
+terrorists extremist extremists jihad hamas hezbollah houthi houthis irgc nuclear enrichment uranium
+centrifuges ballistic sanctions sanction embargo diplomat diplomacy diplomatic summit negotiations
+negotiation talks treaty accord envoy delegation occupation settler settlers settlement settlements
+annexation annex sovereignty escalation retaliation deterrence naval warship warships airspace
+checkpoint checkpoints intelligence espionage refugees refugee displaced famine evacuation crackdown
+detained detention insurgent militiamen
+""".split())
+SEC_PHRASES = (
+    "air strike", "west bank", "gaza strip", "strait of hormuz", "red sea", "security council",
+    "foreign minister", "defense minister", "defence minister", "war crimes", "death toll",
+    "peace deal", "prisoner exchange", "ground offensive", "revolutionary guard", "islamic jihad",
+    "peace talks", "war on", "human rights", "aid convoy", "arms deal",
+)
+OFF_WORDS = set("""
+football soccer fifa uefa afcon match matches league tournament striker goalkeeper goals penalty
+penalties coach olympics medal medals championship cricket tennis basketball app apps iphone android
+google apple microsoft meta whatsapp tiktok website websites login logins password startup startups
+gadget smartphone smartphones ecommerce streaming stock stocks shares bourse ipo dividend
+cryptocurrency bitcoin crypto recipe watermelon cuisine celebrity movie movies film films cinema
+actor actress singer concert festival fashion wedding horoscope zodiac diet skincare tourism tourist
+weather forecast rainfall
+""".split())
+OFF_PHRASES = (
+    "broadcast regulator", "broadcasting authority", "supreme court", "high court", "court of appeal",
+    "attorney general", "box office", "red carpet", "stock market", "interest rate", "exchange rate",
+    "world cup", "champions league", "transfer window", "oil output", "output hike", "judicial",
+)
+
+
+def _is_relevant(members: list[dict]) -> bool:
+    """True if a cluster is on-topic: it carries a clear security / geopolitical /
+    military / diplomacy signal that is not outweighed by off-topic (sports, tech,
+    market, lifestyle, domestic-admin) signals. Read over every member's title +
+    English snippet, so the judgement holds across languages."""
+    text = " ".join(f"{m.get('title','')} {m.get('snippet','')}" for m in members).lower()
+    toks = set(re.findall(r"[a-z]+", text))
+    sec = len(toks & SEC_WORDS) + sum(p in text for p in SEC_PHRASES)
+    off = len(toks & OFF_WORDS) + sum(p in text for p in OFF_PHRASES)
+    return sec >= 1 and sec >= off
+
+
+# ---------------------------------------------------------------------------
 # Ranking + assembling the output stories (shared by both clustering paths).
 # ---------------------------------------------------------------------------
 def _member_view(it: dict) -> dict:
@@ -478,7 +641,8 @@ def _member_view(it: dict) -> dict:
 
 def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
     """clusters: [{member_indices, representative_index, summary?, summary_he?}].
-    Rank by distinct-outlet count → category diversity → recency, keep top N."""
+    Rank by distinct-outlet count → category diversity → recency, keep the top N
+    that pass the geopolitics/security topical filter."""
     scored = []
     for c in clusters:
         idxs = c["member_indices"]
@@ -491,8 +655,15 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
     # Primary: outlet count. Secondary: category (camp) diversity. Tertiary: recency.
     scored.sort(key=lambda x: (x[3], x[4], x[5]), reverse=True)
 
+    # Keep only on-topic stories (geopolitics / security / military / diplomacy),
+    # THEN take the top N — so a widely-carried but off-topic item (a court
+    # ruling, a tech fine, a cup final) can't claim a slot. Safety net: if a
+    # cycle somehow has no on-topic cluster, fall back to the raw ranking rather
+    # than blanking the strip.
+    relevant = [s for s in scored if _is_relevant(s[2])] or scored
+
     out = []
-    for rank, (c, idxs, members, n_outlets, n_cats, newest) in enumerate(scored[:TOP_N], 1):
+    for rank, (c, idxs, members, n_outlets, n_cats, newest) in enumerate(relevant[:TOP_N], 1):
         rep = items[c["representative_index"]]
         cats = sorted({m["category"] for m in members if m["category"]},
                       key=lambda x: CAT_ORDER.index(x) if x in CAT_ORDER else 99)

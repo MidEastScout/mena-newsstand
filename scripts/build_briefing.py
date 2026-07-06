@@ -8,7 +8,6 @@ and treats the Middle East as one part of the world order, not the focus.
 Output (briefing.json):
   { "updated": "<ISO>", "html": "<p>...</p>…", "model": "<model-id>" }
 
-send_email.py reads this file rather than calling the API a second time.
 index.html loads it directly to show the in-page world briefing.
 """
 import html as html_lib
@@ -267,8 +266,7 @@ def main():
 
     # English is the source; the site's EN ↔ HE toggle reads html_by_lang /
     # cards_by_lang and falls back to English whenever a translation is
-    # missing, so a failed translation is never fatal. The email digest keeps
-    # using the English 'html'.
+    # missing, so a failed translation is never fatal.
     html_by_lang = {"en": _para_to_html(text)}
     cards_by_lang = {"en": text_to_cards(text)}
     for code, lang_name in LANG_TARGETS.items():

@@ -8,7 +8,6 @@ Every run:
 Every 6 hours (slots 00:00, 06:00, 12:00, 18:00 Israel time — first run
 after each boundary):
   - DO_BRIEFING=true  → build_briefing.py writes briefing.json
-  - DO_EMAIL=true     → send_email.py sends the digest
 
 Once a day at ~07:00 Israel time (morning):
   - DO_FRONTPAGES=true (full refresh) → fetch_frontpages.py downloads today's
@@ -111,7 +110,6 @@ def main() -> None:
     do_fp       = False
     fp_force    = False   # full refresh (morning/afternoon) vs fill-only catch-up
     do_briefing = False
-    do_email    = False
     reasons     = []
 
     # ── Front pages: morning + afternoon full refreshes (once each per day) ───
@@ -134,22 +132,21 @@ def main() -> None:
         do_fp = True
         reasons.append("front pages (catch-up: some covers still stale)")
 
-    # ── World briefing + email: every 6-hour slot ─────────────────────────────
+    # ── World briefing: every 6-hour slot ─────────────────────────────────────
     # Slot 0 = 00:00-05:59, slot 1 = 06:00-11:59, etc.
     slot       = hour // 6
     slot_key   = f"{today}_s{slot}"
     slot_start = now.replace(hour=slot * 6, minute=0, second=0, microsecond=0)
     if state.get("briefing_slot") != slot_key:
-        # First run of the slot: (re)build the briefing and send the digest once.
+        # First run of the slot: (re)build the briefing once.
         do_briefing = True
-        do_email    = True
         state["briefing_slot"] = slot_key
-        reasons.append(f"briefing + email (slot {slot}, ~{slot*6:02d}:00-{slot*6+5:02d}:59)")
+        reasons.append(f"briefing (slot {slot}, ~{slot*6:02d}:00-{slot*6+5:02d}:59)")
     elif briefing_is_stale(slot_start):
         # The slot's first attempt produced no briefing — e.g. a transient Gemini
         # outage, where build_briefing.py exits 0 without writing. Retry on every
         # run until it lands, instead of leaving the briefing stale for the whole
-        # 6-hour slot. No email here, so a blip can't trigger duplicate digests.
+        # 6-hour slot.
         do_briefing = True
         reasons.append("briefing retry (no fresh briefing yet this slot)")
 
@@ -158,10 +155,6 @@ def main() -> None:
         do_fp = True
         fp_force = True
         reasons.append("forced front pages")
-    if os.environ.get("FORCE_EMAIL", "").lower() == "true":
-        do_briefing = True
-        do_email    = True
-        reasons.append("forced email + briefing")
     if os.environ.get("FORCE_BRIEFING", "").lower() == "true":
         do_briefing = True
         reasons.append("forced briefing")
@@ -177,12 +170,11 @@ def main() -> None:
         DO_FRONTPAGES=str(do_fp).lower(),
         FRONTPAGES_FILL_ONLY=str(fill_only).lower(),
         DO_BRIEFING=str(do_briefing).lower(),
-        DO_EMAIL=str(do_email).lower(),
     )
 
     print(f"Israel time {now:%Y-%m-%d %H:%M %Z} (hour={hour}, slot={slot}) → {reason}")
     print(f"  DO_FRONTPAGES={do_fp}  FILL_ONLY={fill_only}  "
-          f"DO_BRIEFING={do_briefing}  DO_EMAIL={do_email}")
+          f"DO_BRIEFING={do_briefing}")
     print(f"  state={state}")
 
 
