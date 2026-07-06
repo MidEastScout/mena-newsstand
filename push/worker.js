@@ -90,6 +90,9 @@ export default {
       // pace each person independently. Clamped to a sane 15 min .. 1 week window.
       const iv = Number(sub.interval);
       if (Number.isFinite(iv)) record.interval = Math.max(15, Math.min(iv, 10080));
+      // Preferred language (matches the reader's site language) so the sender can
+      // localise the notification. Only 'he' / 'en' are accepted.
+      if (sub.lang === "he" || sub.lang === "en") record.lang = sub.lang;
       await env.SUBS.put(await keyFor(sub.endpoint), JSON.stringify(record));
       return json({ ok: true }, 201, origin);
     }

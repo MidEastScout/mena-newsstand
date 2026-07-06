@@ -133,6 +133,10 @@ subscriber.
 - **~30 min is the practical floor.** The whole site refreshes about every 30
   minutes, which is also roughly how often the news actually moves, so "Every ~30
   min" is as fast as it gets unless the site's refresh cycle itself is sped up.
+- **Matches the reader's language.** Notifications arrive in the language the
+  visitor has the site set to — Hebrew for Hebrew readers (right-to-left, using
+  the neutral Hebrew summaries), English otherwise. Switching the site language
+  updates it for future notifications.
 - **Content:** title = the #1 headline (with its outlet count); body lists the
   other top stories with their outlet counts; tap opens the site.
 - **Self-cleaning:** subscriptions the push service reports as expired are

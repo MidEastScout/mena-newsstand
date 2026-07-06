@@ -39,6 +39,9 @@ self.addEventListener("push", (event) => {
 
   const options = {
     body,
+    // Language + direction so Hebrew notifications render right-to-left.
+    lang: data.lang || "en",
+    dir: data.dir || "auto",
     // SVG favicon renders as the notification icon in Chromium; other engines
     // fall back to the site icon. Kept relative to the worker's scope.
     icon: "favicon.svg",

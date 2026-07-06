@@ -75,40 +75,52 @@ def signature(stories: list) -> str:
     return sha256(joined.encode("utf-8")).hexdigest()
 
 
-def _story_headline(s: dict) -> str:
-    """The clearest one-line label for a story: the neutral LLM summary when the
-    clustering produced one, otherwise the representative outlet's English
-    headline."""
+def _story_headline(s: dict, he: bool = False) -> str:
+    """The clearest one-line label for a story, in the requested language: the
+    neutral summary when the clustering produced one, else the representative
+    outlet's headline. Hebrew falls back to English if a Hebrew field is missing,
+    so a notification is never blank."""
+    if he:
+        t = (s.get("summary_he") or (s.get("rep") or {}).get("title_he") or "").strip()
+        if t:
+            return t
     return (s.get("summary") or (s.get("rep") or {}).get("title") or "").strip()
 
 
-def _coverage(s: dict) -> str:
+def _coverage(s: dict, he: bool = False) -> str:
     """A short '· 11 outlets' tag conveying how widely the story is carried — the
     'most-covered' signal, shown inline so each line says why it's a top story."""
     n = s.get("outlets")
-    return f" · {n} outlets" if isinstance(n, int) and n > 1 else ""
+    if not (isinstance(n, int) and n > 1):
+        return ""
+    return f" · {n} מקורות" if he else f" · {n} outlets"
 
 
-def build_payload(stories: list, site_url: str) -> dict:
+def build_payload(stories: list, site_url: str, he: bool = False) -> dict:
     lead = stories[0]
-    lead_title = _story_headline(lead) or "Top stories across the Middle East"
+    lead_title = _story_headline(lead, he) or (
+        "עדכוני החדשות מהמזרח התיכון" if he else "Top stories across the Middle East")
     # Body names the OTHER top stories (not a vague "and 4 more"), each with how
     # many outlets carry it, so the notification itself is a scannable digest that
     # opens the site on tap. Numbered from 2 (the lead is the title = story 1).
     lines = []
     for i, s in enumerate(stories[1:5], start=2):
-        h = _story_headline(s)
+        h = _story_headline(s, he)
         if h:
-            lines.append(f"{i}. {h}{_coverage(s)}")
-    body = "\n".join(lines) if lines else "Tap to read the latest across the Middle East"
+            lines.append(f"{i}. {h}{_coverage(s, he)}")
+    body = "\n".join(lines) if lines else (
+        "הקישו לקריאת העדכונים האחרונים מהמזרח התיכון" if he
+        else "Tap to read the latest across the Middle East")
     return {
-        "title": f"{lead_title}{_coverage(lead)}",
+        "title": f"{lead_title}{_coverage(lead, he)}",
         "body": body,
         "url": site_url,
         "tag": NOTIF_TAG,
+        "lang": "he" if he else "en",
+        "dir": "rtl" if he else "ltr",
         "stories": [
             {
-                "title": _story_headline(s),
+                "title": _story_headline(s, he),
                 "url": (s.get("rep") or {}).get("url", site_url),
                 "outlets": s.get("outlets"),
             }
@@ -209,7 +221,12 @@ def main() -> int:
 
     # Each subscriber is gated on THEIR OWN interval and THEIR OWN last-seen story
     # set — so timing is per person and nobody gets the same five headlines twice.
-    payload = json.dumps(build_payload(stories, site_url))
+    # Two payloads are built once; each subscriber gets theirs in the language they
+    # chose on the site (stored with the subscription).
+    payloads = {
+        "en": json.dumps(build_payload(stories, site_url, he=False)),
+        "he": json.dumps(build_payload(stories, site_url, he=True)),
+    }
     sent = held = 0
     dead = []
     new_subs = {}
@@ -241,7 +258,7 @@ def main() -> int:
         try:
             webpush(
                 subscription_info={"endpoint": endpoint, "keys": keys},
-                data=payload,
+                data=payloads["he"] if rec.get("lang") == "he" else payloads["en"],
                 vapid_private_key=vapid_key,
                 vapid_claims={"sub": vapid_subject},  # fresh dict per send
                 ttl=int(interval * 60),

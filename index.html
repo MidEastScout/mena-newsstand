@@ -2029,6 +2029,10 @@ function clearHeadlineFilters(){
   try{ const s = localStorage.getItem("mes-notify-freq"); if(s && freqSel) freqSel.value = s; }catch(e){}
   const freqVal = () => (freqSel ? (Number(freqSel.value) || 30) : 30);
 
+  // The language we've last told the server this subscriber wants notified in.
+  let syncedLang = null;
+  try{ syncedLang = localStorage.getItem("mes-notify-lang"); }catch(e){}
+
   function paint(){
     const L = LABELS[lang()] || LABELS.en;
     label.textContent = L[state] || L.get;
@@ -2038,6 +2042,14 @@ function clearHeadlineFilters(){
       freqSel.hidden = state !== "on";     // only relevant once alerts are on
       const fl = FREQ_LABELS[lang()] || FREQ_LABELS.en;
       Array.from(freqSel.options).forEach(o => { if(fl[o.value]) o.textContent = fl[o.value]; });
+    }
+    // If the reader switched the site language (EN⇄HE) while subscribed, tell the
+    // server so their notifications arrive in that language too. Only fires on an
+    // actual change, so it's a no-op on ordinary re-renders.
+    if(state === "on" && reg && lang() !== syncedLang){
+      syncedLang = lang();
+      try{ localStorage.setItem("mes-notify-lang", syncedLang); }catch(e){}
+      reg.pushManager.getSubscription().then(s => { if(s) saveSub(s); }).catch(() => {});
     }
   }
   window.__notifySync = paint;             // called by applyLang() on EN⇄HE flip
@@ -2063,6 +2075,7 @@ function clearHeadlineFilters(){
   function saveSub(sub){
     const body = sub.toJSON();
     body.interval = freqVal();
+    body.lang = lang();                    // notify in the reader's site language
     return fetch(API + "/subscribe", { method:"POST", headers:{"content-type":"application/json"},
                                        body: JSON.stringify(body) });
   }
@@ -2128,7 +2141,9 @@ function clearHeadlineFilters(){
         const key = (await fetch(API + "/vapidPublicKey").then(r => r.text())).trim();
         if(!key) throw new Error("no VAPID key from Worker");
         const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToUint8(key) });
-        await saveSub(sub);                 // stores the subscription + chosen interval
+        await saveSub(sub);                 // stores the subscription + chosen interval + language
+        syncedLang = lang();                // server now has this language
+        try{ localStorage.setItem("mes-notify-lang", syncedLang); }catch(e){}
         state = "on";
       }
     }catch(e){
