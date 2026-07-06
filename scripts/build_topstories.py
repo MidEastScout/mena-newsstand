@@ -42,7 +42,7 @@ Output (top_stories.json):
     "stories": [
       {
         "rank": 1,
-        "summary": "...", "summary_he": "...",   # present only on the llm path
+        "summary": "...", "summary_he": "...",   # neutral EN/HE line (Gemini/LLM)
         "outlets": 9,                            # distinct outlet count
         "categories": ["iranian","panarab","levant","gulf","turkish"],
         "rep": {source,category,title,title_he,url,published},   # representative
@@ -59,14 +59,24 @@ import json
 import os
 import re
 import sys
+import time
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
+from hashlib import sha256
 from itertools import combinations
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 HL_PATH = ROOT / "headlines.json"
 OUT_PATH = ROOT / "top_stories.json"
+SUMM_CACHE = ROOT / "state" / "topstories_summaries.json"
+
+
+def _load_json(path: Path) -> dict:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
 
 TOP_N = 5                       # stories surfaced on the site
 CLAUDE_MODEL = os.environ.get("TOPSTORIES_MODEL", "claude-opus-4-8")
@@ -401,11 +411,20 @@ def cluster_heuristic(items: list[dict]) -> list[list[int]]:
     return clusters
 
 
+# Partisan / loaded wording. When a cluster has both loaded and plain headlines,
+# prefer the plain one as the representative (used only as a tiebreaker among
+# members of the SAME story, so it never changes which stories are shown).
+_LOADED_RE = re.compile(
+    r"\b(martyr(?:ed|s)?|death\s+towers?|colonists?|the\s+regime|terrorists?|"
+    r"zionist|vengeance|heroic|brutal|barbaric|savage|cowardly|massacre|"
+    r"slaughter|genocidal|apartheid|crusaders?|infidels?)\b", re.I)
+
+
 def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
-    """Choose the clearest, most on-topic member: an English headline that names
-    the story's dominant specific entities, isn't a bare 'Live'/'Breaking' stub,
-    and reads at a natural headline length. Title-word centrality and recency
-    break remaining ties."""
+    """Choose the clearest, most on-topic member: a NEUTRAL English headline that
+    names the story's dominant specific entities, isn't a bare 'Live'/'Breaking'
+    stub, and reads at a natural headline length. Title-word centrality and
+    recency break remaining ties."""
     # The story's dominant strong entities = those appearing in the most members.
     strong_counts = {}
     for i in idxs:
@@ -423,11 +442,13 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
         title_ents = _entities(title) & STRONG
         covers = len(title_ents & dominant)                    # names the shared story
         stub = bool(generic.match(clean)) or len(clean) < 18
+        neutral = not (_LOADED_RE.search(clean) or "!" in clean)
         length_fit = -abs(len(clean) - 50)                     # prefer natural headline length
         central = sum(len(tok[i] & tok[j]) for j in idxs if j != i)
         # English first, so the card shows a genuine English headline rather than
-        # falling back to a snippet; then story-coverage, non-stub, length, etc.
-        key = (english, covers, not stub, length_fit, central, items[i]["_t"])
+        # falling back to a snippet; then neutral wording, story-coverage,
+        # non-stub, natural length, centrality, recency.
+        key = (english, neutral, covers, not stub, length_fit, central, items[i]["_t"])
         if best_key is None or key > best_key:
             best_key, best = key, i
     return best
@@ -708,6 +729,129 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
     return out
 
 
+# ---------------------------------------------------------------------------
+# Neutral one-line summaries (English + Hebrew) for the Top 5.
+#
+# Outlet headlines are often loaded ("martyred Leader", "death towers",
+# "colonists", scare-quoted "ceasefire"). Rather than surface one outlet's
+# framing, we ask Gemini — already configured for the World Briefing — for a
+# short, factual, NEUTRAL line per story in both languages, and the site shows
+# that instead of the representative headline. Cached per Top-5 set so the API is
+# only called when the top stories actually change; fully best-effort, so any
+# miss just leaves the (neutrally-selected) representative headline in place.
+# ---------------------------------------------------------------------------
+SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash")
+
+
+def _top5_signature(stories: list[dict]) -> str:
+    joined = "|".join((s.get("rep") or {}).get("url", "") for s in stories)
+    return sha256(joined.encode("utf-8")).hexdigest()
+
+
+def _gemini_summaries(stories: list[dict]):
+    """Ask Gemini for a neutral {en, he} one-liner per story, in order. Returns a
+    list aligned to `stories`, or None on any failure."""
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return None
+    try:
+        from google import genai
+    except ImportError:
+        print("google-genai not installed — skipping neutral summaries", file=sys.stderr)
+        return None
+    try:
+        client = genai.Client(api_key=api_key)
+    except Exception as exc:
+        print(f"Gemini client init failed ({exc}) — skipping neutral summaries", file=sys.stderr)
+        return None
+
+    blocks = []
+    for i, s in enumerate(stories, 1):
+        lines = [f"- ({m.get('source', '?')}) {m.get('title', '').strip()}"
+                 for m in s.get("members", [])[:6] if m.get("title")]
+        blocks.append(f"STORY {i}:\n" + "\n".join(lines))
+    prompt = (
+        f"You are a neutral newswire editor. Below are the day's top {len(stories)} "
+        "Middle-East stories; each is a cluster of headlines from different outlets "
+        "about the SAME event.\n\n"
+        "For EACH story, write ONE short, factual, strictly NEUTRAL summary line "
+        "and its natural Hebrew translation. Rules:\n"
+        "- State only what outlets agree on; attribute any contested claim "
+        "(e.g. 'Hamas says…', 'the Israeli military says…').\n"
+        "- Remove loaded or partisan wording and scare-quotes. Use plain, neutral "
+        "terms: 'settlers' not 'colonists'; 'Iran's late supreme leader' not "
+        "'martyred Leader'; 'fighters'/'militants' per context, not 'terrorists' "
+        "or 'heroes'.\n"
+        "- No praise, no condemnation, no adjectives of judgement. Max ~16 words.\n"
+        "- The Hebrew must be equally neutral, natural and journalistic.\n\n"
+        f"Return ONLY a JSON array of exactly {len(stories)} objects, in the same "
+        'order, each {"en": "...", "he": "..."}. No prose, no code fences.\n\n'
+        + "\n\n".join(blocks)
+    )
+
+    text = ""
+    for attempt in range(3):
+        try:
+            resp = client.models.generate_content(model=SUMM_MODEL, contents=prompt)
+            text = (resp.text or "").strip()
+            if text:
+                break
+        except Exception as exc:
+            msg = str(exc)
+            if any(c in msg for c in ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "500")) \
+                    and attempt < 2:
+                time.sleep(4 * (2 ** attempt))
+                continue
+            print(f"  [summaries] Gemini failed: {exc}", file=sys.stderr)
+            return None
+    if not text:
+        return None
+
+    m = re.search(r"\[.*\]", text, re.S)   # tolerate stray preamble / ``` fences
+    if not m:
+        print("  [summaries] no JSON array in Gemini output", file=sys.stderr)
+        return None
+    try:
+        arr = json.loads(m.group(0))
+    except Exception as exc:
+        print(f"  [summaries] could not parse Gemini JSON ({exc})", file=sys.stderr)
+        return None
+    if not isinstance(arr, list) or len(arr) < len(stories):
+        return None
+    return [{"en": (o.get("en") or "").strip(), "he": (o.get("he") or "").strip()}
+            if isinstance(o, dict) else {"en": "", "he": ""}
+            for o in arr[:len(stories)]]
+
+
+def attach_neutral_summaries(stories: list[dict]) -> None:
+    """Attach a neutral summary / summary_he to each Top-5 story (Gemini + cache).
+    Best-effort: on any miss the story keeps its representative headline."""
+    if not stories:
+        return
+    # If clustering already produced summaries (the Claude path), keep them.
+    if all(s.get("summary") and s.get("summary_he") for s in stories):
+        return
+
+    sig = _top5_signature(stories)
+    cache = _load_json(SUMM_CACHE)
+    items = cache.get("items") if cache.get("sig") == sig else None
+    if not (isinstance(items, list) and len(items) >= len(stories)):
+        items = _gemini_summaries(stories)
+        if items:
+            SUMM_CACHE.parent.mkdir(parents=True, exist_ok=True)
+            SUMM_CACHE.write_text(
+                json.dumps({"sig": sig, "items": items}, ensure_ascii=False, indent=2),
+                encoding="utf-8")
+
+    if not items:
+        return
+    for s, it in zip(stories, items):
+        if it.get("en"):
+            s["summary"] = it["en"]
+        if it.get("he"):
+            s["summary_he"] = it["he"]
+
+
 def main():
     try:
         data = json.loads(HL_PATH.read_text(encoding="utf-8"))
@@ -735,6 +879,9 @@ def main():
         ]
 
     stories = build_stories(items, clusters)
+
+    # Replace loaded outlet phrasing with a neutral EN+HE line per story.
+    attach_neutral_summaries(stories)
 
     payload = {
         "updated": datetime.now(timezone.utc).isoformat(),
