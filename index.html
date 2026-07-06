@@ -87,6 +87,15 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .hero .chip.live b{color:var(--paper);letter-spacing:.14em;font-weight:700}
 .hero .chip.live .sep{width:1px;height:18px;background:rgba(247,244,238,.22)}
 .hero .chip.live #hdr-date{color:var(--muted);font-weight:600;letter-spacing:.02em}
+/* Push opt-in chip — a real button that matches the .chip look. */
+.hero .chip.notify-chip{cursor:pointer;-webkit-appearance:none;appearance:none;
+  color:var(--paper);font-family:inherit;font-size:15px;font-weight:600;letter-spacing:.02em;
+  transition:border-color .15s,background .15s,opacity .15s}
+.hero .chip.notify-chip .notify-ico{font-size:15px;line-height:1}
+.hero .chip.notify-chip:hover{border-color:var(--gold);background:rgba(247,244,238,.12)}
+.hero .chip.notify-chip:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.hero .chip.notify-chip.on{border-color:rgba(95,208,160,.55);color:var(--paper)}
+.hero .chip.notify-chip.busy{opacity:.6;pointer-events:none}
 @keyframes heropulse{0%{box-shadow:0 0 0 0 rgba(95,208,160,.55)}70%{box-shadow:0 0 0 9px rgba(95,208,160,0)}100%{box-shadow:0 0 0 0 rgba(95,208,160,0)}}
 /* Language toggle — a real EN⇄HE switch pinned to the masthead corner. Scoped
    inside .hero so it inherits the local navy/gold palette; a sliding gold thumb
@@ -440,6 +449,11 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
     <p class="creed" data-i18n="hero_creed">“Wisdom is better than weapons of war”<cite class="creed-src">— Ecclesiastes 9:18</cite></p>
     <div class="chips">
       <span class="chip live"><span class="dot"></span><b>LIVE</b><span class="sep"></span><span id="hdr-date">—</span></span>
+      <!-- Web-push opt-in. Stays hidden until (a) the browser supports push and
+           (b) push-config.json has an "api" URL set. See PUSH-NOTIFICATIONS.md. -->
+      <button type="button" class="chip notify-chip" id="notify-btn" hidden aria-pressed="false">
+        <span class="notify-ico" aria-hidden="true">🔔</span><span id="notify-label">Get alerts</span>
+      </button>
     </div>
   </div>
   <div class="stage"><canvas id="globe"></canvas></div>
@@ -719,6 +733,9 @@ function applyLang(){
       o.setAttribute("aria-pressed", on ? "true" : "false");
     });
   }
+  // Keep the push opt-in button's label in the active language (it isn't a
+  // data-i18n node because its text also reflects subscription state).
+  if(window.__notifySync) window.__notifySync();
   document.getElementById("hdr-date").textContent =
     new Date().toLocaleDateString(LOCALE(),{weekday:"long",year:"numeric",month:"long",day:"numeric"});
   // Re-render every section whose data is already cached.
@@ -1965,6 +1982,111 @@ function clearHeadlineFilters(){
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(start);}
   window.addEventListener('load',start);
   setTimeout(start,600);
+})();
+</script>
+
+<!-- ===== Web-push opt-in (hourly top-story alerts) =====
+     Fully progressive enhancement: if the browser can't do web push, or
+     push-config.json has no "api" URL yet, the button stays hidden and the
+     site behaves exactly as before. Setup: PUSH-NOTIFICATIONS.md. -->
+<script>
+(function(){
+  const btn   = document.getElementById("notify-btn");
+  const label = document.getElementById("notify-label");
+  if(!btn || !label) return;
+
+  const LABELS = {
+    en:{ get:"Get alerts", on:"Alerts on", blocked:"Alerts blocked", ios:"Add to Home Screen" },
+    he:{ get:"קבל התראות", on:"התראות פועלות", blocked:"התראות חסומות", ios:"הוסף למסך הבית" }
+  };
+  const lang = () => (typeof LANG !== "undefined" && LANG === "he") ? "he" : "en";
+  let state = "get";                       // get | on | blocked | ios
+  function paint(){
+    const L = LABELS[lang()] || LABELS.en;
+    label.textContent = L[state] || L.get;
+    btn.classList.toggle("on", state === "on");
+    btn.setAttribute("aria-pressed", state === "on" ? "true" : "false");
+  }
+  window.__notifySync = paint;             // called by applyLang() on EN⇄HE flip
+
+  const supported = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
+  if(!supported) return;                   // no push → leave the button hidden
+
+  // iOS only allows web push once the site is installed to the Home Screen.
+  const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent);
+  const standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+
+  function b64ToUint8(b64){
+    const pad = "=".repeat((4 - (b64.length % 4)) % 4);
+    const s = (b64 + pad).replace(/-/g, "+").replace(/_/g, "/");
+    const raw = atob(s), arr = new Uint8Array(raw.length);
+    for(let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+    return arr;
+  }
+
+  let API = "", reg = null;
+  async function boot(){
+    // The one file the site owner edits after deploying the Worker.
+    try{
+      const cfg = await fetch("push-config.json?t=" + Date.now()).then(r => r.json());
+      API = ((cfg && cfg.api) || "").trim().replace(/\/+$/, "");
+    }catch(e){ API = ""; }
+    if(!API) return;                       // not wired up yet → stay hidden
+
+    try{ reg = await navigator.serviceWorker.register("sw.js"); }
+    catch(e){ return; }                    // SW registration failed → stay hidden
+
+    btn.hidden = false;
+    if(Notification.permission === "denied"){
+      state = "blocked";
+    }else{
+      const existing = await reg.pushManager.getSubscription();
+      state = existing ? "on" : ((isIOS && !standalone) ? "ios" : "get");
+    }
+    paint();
+    btn.addEventListener("click", onClick);
+  }
+
+  async function onClick(){
+    if(state === "blocked"){
+      alert(lang() === "he"
+        ? "ההתראות חסומות בהגדרות הדפדפן עבור אתר זה. יש לאפשר אותן שם כדי לקבל עדכונים."
+        : "Notifications are blocked for this site in your browser settings. Enable them there to receive alerts.");
+      return;
+    }
+    if(state === "ios" || (isIOS && !standalone)){
+      alert(lang() === "he"
+        ? "כדי לקבל התראות ב-iPhone: פתחו את תפריט השיתוף, בחרו 'הוסף למסך הבית', ואז פתחו את האתר משם והפעילו התראות."
+        : "To get alerts on iPhone: open the Share menu, tap ‘Add to Home Screen’, then open the site from your Home Screen and turn on alerts.");
+      return;
+    }
+    btn.classList.add("busy");
+    try{
+      if(state === "on"){
+        const sub = await reg.pushManager.getSubscription();
+        if(sub){
+          try{ await fetch(API + "/unsubscribe", { method:"POST", headers:{"content-type":"application/json"}, body: JSON.stringify({ endpoint: sub.endpoint }) }); }catch(e){}
+          await sub.unsubscribe();
+        }
+        state = "get";
+      }else{
+        const perm = await Notification.requestPermission();
+        if(perm !== "granted"){ state = perm === "denied" ? "blocked" : "get"; return; }
+        const key = (await fetch(API + "/vapidPublicKey").then(r => r.text())).trim();
+        if(!key) throw new Error("no VAPID key from Worker");
+        const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToUint8(key) });
+        await fetch(API + "/subscribe", { method:"POST", headers:{"content-type":"application/json"}, body: JSON.stringify(sub) });
+        state = "on";
+      }
+    }catch(e){
+      state = (isIOS && !standalone) ? "ios" : "get";   // most often iOS-not-installed
+    }finally{
+      btn.classList.remove("busy");
+      paint();
+    }
+  }
+
+  boot();
 })();
 </script>
 </body>
