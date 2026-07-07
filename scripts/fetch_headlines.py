@@ -217,12 +217,21 @@ SOURCES = {
             "source": "Al-Masirah", "country": "Yemen", "lang": "ar",
             "url": "https://www.almasirah.net.ye",
             "rss": "https://www.almasirah.net.ye/rss",
-            # The feed bolts the site's Arabic name onto every title and mixes
-            # commentary/teasers in with news. Strip the label + date stamps, and
-            # keep op-eds ("!!"), "special coverage" roundups, maqāma eulogies and
-            # bare teasers ("…"/"..") off the news wall — real reporting stays.
+            # The feed bolts the site's Arabic name + Hijri/Gregorian date stamps
+            # onto titles and floods the wire with non-news: TV-programme episodes
+            # and teasers (pipe-delimited), bare site-label cards, ideological
+            # columns and op-eds. Real reporting is a plain declarative sentence
+            # with none of those markers — so drop the markers, not the news.
             "strip_affixes": ["المسيرة نت"],
-            "drop_patterns": [r"تغطية خاصة", r"مقامة", r"!!", r"\.\.\s*$", r"…\s*$"],
+            "drop_patterns": [
+                r"\|",                            # programme / teaser / "special coverage" formats
+                r"^\s*المسيرة نت\s*[-–—|]?\s*$",   # bare site-label cards
+                r"تغطية خاصة",                     # "special coverage" opinion roundups
+                r"مقامة",                          # maqāma eulogies
+                r"ثقافة الغدير",                   # recurring ideological column
+                r"!!",                            # op-eds
+                r"\.\.\s*$", r"…\s*$",            # bare teasers
+            ],
         },
     ],
     # Israeli broadcast channels. lang "he" — their headlines stay in the
