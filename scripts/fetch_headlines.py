@@ -3,7 +3,7 @@
 WHAT THIS SCRIPT DOES (plain English)
 ======================================
 This script runs automatically on GitHub every 30 minutes. It visits each of
-the 21 news outlets listed in SOURCES below, reads their RSS feed (a standard
+the 27 news outlets listed in SOURCES below, reads their RSS feed (a standard
 machine-readable list of recent articles), picks the 5 most recent headlines,
 and saves everything to a file called headlines.json in the root of this repo.
 The website then reads that file to show you the headlines — no live fetching
@@ -102,6 +102,21 @@ SOURCES = {
             "url": "https://paltoday.ps",
             "rss": "https://paltoday.ps/feed",
         },
+        {
+            # SANA — Syria's official state news agency (English edition). Like
+            # the other state wires (IRNA, Anadolu) it may block a datacenter IP
+            # on its native feed; the Google News fallback (site:sana.sy, English
+            # locale) then surfaces real articles.
+            "source": "SANA", "country": "Syria", "lang": "en",
+            "url": "https://sana.sy/en",
+            "rss": "https://sana.sy/en/?feed=rss2",
+        },
+        {
+            # Syria Direct — independent, English-language Syria-focused outlet.
+            "source": "Syria Direct", "country": "Syria", "lang": "en",
+            "url": "https://syriadirect.org",
+            "rss": "https://syriadirect.org/feed/",
+        },
     ],
     "Pan-Arab": [
         {
@@ -189,6 +204,19 @@ SOURCES = {
             "source": "TRT World", "country": "Turkey", "lang": "en",
             "url": "https://www.trtworld.com",
             "rss": "https://www.trtworld.com/rss",
+        },
+    ],
+    "Yemen": [
+        {
+            # Al-Masirah — the Ansar Allah (Houthi) satellite channel's news
+            # site. lang "ar": the Arabic headline is kept and translated to
+            # Hebrew for HE mode, with an English snippet generated like every
+            # other Arabic outlet (Al Manar, Al Mayadeen). If the native feed is
+            # blocked from a datacenter IP, the Google News fallback
+            # (site:almasirah.net.ye, ar locale) surfaces recent articles.
+            "source": "Al-Masirah", "country": "Yemen", "lang": "ar",
+            "url": "https://www.almasirah.net.ye",
+            "rss": "https://www.almasirah.net.ye/rss",
         },
     ],
     # Israeli broadcast channels. lang "he" — their headlines stay in the

@@ -507,7 +507,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
     <div class="sec-head">
       <h2 data-i18n="headlines_title">Live Headlines</h2>
     </div>
-    <div class="sec-note" data-i18n="headlines_note">The top stories across 24 MENA, Israeli and regional outlets — ranked by how many outlets (and regional camps) are carrying each one. Tap a story to see how each outlet worded it. Full feed below, grouped by theme. Refreshed every 30 minutes.</div>
+    <div class="sec-note" data-i18n="headlines_note">The top stories across 27 MENA, Israeli and regional outlets — ranked by how many outlets (and regional camps) are carrying each one. Tap a story to see how each outlet worded it. Full feed below, grouped by theme. Refreshed every 30 minutes.</div>
     <div class="hl-filters">
       <input type="search" id="hl-topic" class="hl-filter-input" autocomplete="off" data-i18n-ph="filter_ph"
         placeholder="Filter by topic or keyword (e.g. Iran, ceasefire, Hezbollah)…">
@@ -593,7 +593,7 @@ const I18N = {
   briefing_title:"Geopolitical Briefing", headlines_title:"Live Headlines",
   fp_title:"Today's Front Pages", pulse_title:"Media Pulse",
   trends_title:"Outlet &amp; Topic Trends", archive_title:"Front-Page Archive",
-  headlines_note:"The top stories across 24 MENA, Israeli and regional outlets — ranked by how many outlets (and regional camps) are carrying each one. Tap a story to see how each outlet worded it. Full feed below, grouped by theme. Refreshed every 30 minutes.",
+  headlines_note:"The top stories across 27 MENA, Israeli and regional outlets — ranked by how many outlets (and regional camps) are carrying each one. Tap a story to see how each outlet worded it. Full feed below, grouped by theme. Refreshed every 30 minutes.",
   pulse_note:"The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.",
   trends_note:"How today's coverage breaks down by topic and by outlet across every tracked feed — and where outlets diverge most on the same stories. Updates every 30 minutes.",
   archive_note:"Browse past front pages. Covers are saved on each daily refresh and kept for one year. Click any card for a larger view.",
@@ -657,7 +657,7 @@ const I18N = {
   briefing_title:"תדריך גיאופוליטי", headlines_title:"כותרות בזמן אמת",
   fp_title:"העמודים הראשיים של היום", pulse_title:"דופק התקשורת",
   trends_title:"מגמות לפי כלי תקשורת ונושא", archive_title:"ארכיון עמודים ראשיים",
-  headlines_note:"הסיפורים המובילים מ-24 כלי תקשורת ישראליים, מהמזרח התיכון והאזור — מדורגים לפי מספר כלי התקשורת (והמחנות האזוריים) המסקרים כל סיפור. הקישו על סיפור כדי לראות כיצד כל גוף ניסח אותו. הפיד המלא למטה, מקובץ לפי נושא. מתעדכן כל 30 דקות.",
+  headlines_note:"הסיפורים המובילים מ-27 כלי תקשורת ישראליים, מהמזרח התיכון והאזור — מדורגים לפי מספר כלי התקשורת (והמחנות האזוריים) המסקרים כל סיפור. הקישו על סיפור כדי לראות כיצד כל גוף ניסח אותו. הפיד המלא למטה, מקובץ לפי נושא. מתעדכן כל 30 דקות.",
   pulse_note:"המונחים המוזכרים ביותר בכלל הכותרות כרגע — גדול יותר פירושו סיקור רחב יותר. לחצו על מילה כדי לראות את הכותרות שמאחוריה. מתעדכן כל 30 דקות.",
   trends_note:"איך הסיקור של היום מתחלק לפי נושא ולפי כלי תקשורת בכל הפידים שבמעקב — והיכן כלי התקשורת נבדלים זה מזה באותם סיפורים. מתעדכן כל 30 דקות.",
   archive_note:"עיינו בעמודים ראשיים מהעבר. השערים נשמרים בכל רענון יומי למשך שנה. לחצו על כרטיס לתצוגה מוגדלת.",
@@ -723,10 +723,11 @@ const heb = (he,en) => (LANG==="he" && he) ? he : en;
 
 // Region / country names are a small fixed vocabulary — translated statically.
 const REGION_HE = {"Pan-Arab":"פאן-ערבי","Levant":"הלבנט","Gulf":"המפרץ",
-  "Iran":"איראן","Turkey":"טורקיה","Israel":"ישראל"};
+  "Iran":"איראן","Turkey":"טורקיה","Yemen":"תימן","Israel":"ישראל"};
 const PLACE_HE = {"UAE":"איחוד האמירויות","Qatar":"קטאר","Saudi Arabia":"סעודיה",
   "Kuwait":"כווית","Turkey":"טורקיה","USA":"ארה\"ב","UK":"בריטניה",
   "Germany":"גרמניה","Jordan":"ירדן","Lebanon":"לבנון","Egypt":"מצרים",
+  "Syria":"סוריה","Yemen":"תימן",
   "Palestine":"פלסטין","Iran":"איראן","Israel":"ישראל"};
 const rgn = r => LANG==="he" ? (REGION_HE[r]||r) : r;
 const plc = c => LANG==="he" ? (PLACE_HE[c]||c) : c;
@@ -1617,6 +1618,10 @@ const SRC_CATS = {
   // Levant (Lebanon / Jordan / Syria / Palestinian — Egypt kept here to match the feed)
   "Jordan Times":"levant", "L'Orient Today":"levant", "Egypt Independent":"levant",
   "Al-Akhbar":"levant", "Al Manar":"levant", "WAFA News":"levant", "Falastin al-Youm":"levant",
+  "SANA":"levant", "Syria Direct":"levant",
+  // Yemen — Al-Masirah is the Houthi channel; tagged with the pan-Arab
+  // resistance lens (like Al Mayadeen), since there is no Yemeni camp color.
+  "Al-Masirah":"panarab",
   // Gulf
   "Arab News":"gulf", "Gulf News":"gulf",
   // Turkish

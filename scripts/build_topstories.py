@@ -93,7 +93,9 @@ SRC_CATS = {
     # Levant
     "Jordan Times": "levant", "L'Orient Today": "levant", "Egypt Independent": "levant",
     "Al-Akhbar": "levant", "Al Manar": "levant", "WAFA News": "levant",
-    "Falastin al-Youm": "levant",
+    "Falastin al-Youm": "levant", "SANA": "levant", "Syria Direct": "levant",
+    # Yemen — Al-Masirah (Houthi) carries the pan-Arab resistance lens.
+    "Al-Masirah": "panarab",
     # Gulf
     "Arab News": "gulf", "Gulf News": "gulf",
     # Turkish
