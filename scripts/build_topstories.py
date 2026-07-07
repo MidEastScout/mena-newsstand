@@ -779,7 +779,7 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
 SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash")
 # Bump when the summary PROMPT changes so cached summaries written under the old
 # wording are invalidated and regenerated (the signature keys the cache).
-SUMM_PROMPT_VERSION = "v2-accuracy"
+SUMM_PROMPT_VERSION = "v3-accuracy"
 
 
 def _top5_signature(stories: list[dict]) -> str:
@@ -830,9 +830,11 @@ def _gemini_summaries(stories: list[dict]):
         "- State only what outlets agree on; attribute any contested claim "
         "(e.g. 'Hamas says…', 'the Israeli military says…').\n"
         "- Remove loaded or partisan wording and scare-quotes. Use plain, neutral "
-        "terms: 'settlers' not 'colonists'; 'Iran's late supreme leader' not "
-        "'martyred Leader'; 'fighters'/'militants' per context, not 'terrorists' "
-        "or 'heroes'.\n"
+        "terms: 'settlers' not 'colonists'; name people plainly — 'Iran's late "
+        "supreme leader Khamenei', never an honorific like 'martyred Leader' or "
+        "'the Leader'; 'fighters'/'militants' per context, not 'terrorists' or "
+        "'heroes'. Don't surface a side's rhetoric ('vengeance', 'victory') as "
+        "fact — drop it or attribute it.\n"
         "- No praise, no condemnation, no adjectives of judgement. Max ~16 words.\n"
         "- The Hebrew must be equally neutral, natural, accurate and journalistic.\n\n"
         f"Return ONLY a JSON array of exactly {len(stories)} objects, in the same "
