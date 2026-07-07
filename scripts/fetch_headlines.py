@@ -217,6 +217,12 @@ SOURCES = {
             "source": "Al-Masirah", "country": "Yemen", "lang": "ar",
             "url": "https://www.almasirah.net.ye",
             "rss": "https://www.almasirah.net.ye/rss",
+            # The feed bolts the site's Arabic name onto every title and mixes
+            # commentary/teasers in with news. Strip the label + date stamps, and
+            # keep op-eds ("!!"), "special coverage" roundups, maqāma eulogies and
+            # bare teasers ("…"/"..") off the news wall — real reporting stays.
+            "strip_affixes": ["المسيرة نت"],
+            "drop_patterns": [r"تغطية خاصة", r"مقامة", r"!!", r"\.\.\s*$", r"…\s*$"],
         },
     ],
     # Israeli broadcast channels. lang "he" — their headlines stay in the
@@ -601,9 +607,17 @@ def domain_of(url: str) -> str:
 TITLE_SEPS = (" - ", " | ", " – ", " — ")
 # A bare domain token, e.g. "almayadeen.net" or "paltoday.ps".
 DOMAIN_RE = re.compile(r'^[a-z0-9-]+(\.[a-z0-9-]+)+$', re.I)
+# An embedded Hijri/Gregorian date stamp some Arabic feeds bolt into the title,
+# e.g. "21‏-01‏-1448هـ 06‏-07‏-2026م" — digits (Latin or Arabic-Indic) joined by
+# dashes/slashes and closed by an era marker (هـ = Hijri, م = Gregorian). RTL/LRM
+# marks between the pieces are tolerated. Never part of an actual headline.
+_EMBEDDED_DATE_RE = re.compile(
+    r"\s*[‎‏]?[\d٠-٩]{1,4}"
+    r"(?:[‎‏]?[-‐-―/.][‎‏]?[\d٠-٩]{1,4}){1,2}"
+    r"[‎‏]?\s*(?:هـ|م)\b")
 
 
-def clean_title(title: str, source: str, domain: str) -> str:
+def clean_title(title: str, source: str, domain: str, extra_affixes=None) -> str:
     """Strip the publisher label Google News bolts onto a headline.
 
     Google News rewrites titles as "<Outlet> | Real headline - <Outlet>" or
@@ -611,10 +625,15 @@ def clean_title(title: str, source: str, domain: str) -> str:
     and a leading source prefix so the displayed headline is the actual headline
     (and dedupes correctly). Only strips when the affix matches THIS outlet (its
     name or domain) or is a bare domain — so real headlines are never touched.
+
+    extra_affixes: outlet-declared publisher/section labels in the outlet's own
+    language that the English source-name match above can't catch (e.g. Arabic
+    "المسيرة نت"). Each is stripped as a leading or trailing affix (with a
+    separator). Embedded date stamps are stripped for every outlet.
     """
     if not title:
         return title
-    t = title.strip()
+    t = _EMBEDDED_DATE_RE.sub(" ", title).strip()
     src_cf = source.casefold()
     src_compact = src_cf.replace(" ", "")
     dom = domain.casefold()
@@ -643,6 +662,18 @@ def clean_title(title: str, source: str, domain: str) -> str:
             if head and src_compact.startswith(head):
                 t = t[idx + len(sep):].strip()
                 break
+    # Outlet-declared native-language affixes (leading or trailing, with a
+    # separator), e.g. Al-Masirah's "المسيرة نت" that the English name can't match.
+    for aff in (extra_affixes or []):
+        a = aff.strip()
+        if not a:
+            continue
+        for sep in TITLE_SEPS:
+            if t.endswith(sep + a):
+                t = t[: -len(sep + a)].strip()
+            if t.startswith(a + sep):
+                t = t[len(a + sep):].strip()
+    t = re.sub(r"\s{2,}", " ", t).strip()
     return t or title
 
 
@@ -1182,14 +1213,16 @@ def parse_news_sitemap(session: requests.Session, url: str, referer):
     return items or None
 
 
-def _clean_titles(items, source: str, domain: str):
+def _clean_titles(items, source: str, domain: str, extra_affixes=None):
     """Strip Google News publisher affixes from every entry's title in place."""
     for it in items:
-        it["title"] = clean_title(it["title"], source, domain)
+        it["title"] = clean_title(it["title"], source, domain, extra_affixes)
 
 
-def fresh_items(items, source: str):
-    """Keep only recent, non-junk, dated entries."""
+def fresh_items(items, source: str, drop_re=None):
+    """Keep only recent, non-junk, dated entries. drop_re (optional) drops an
+    outlet's opinion/teaser/eulogy items — those the outlet files as commentary
+    rather than news (see the per-outlet 'drop_patterns' in SOURCES)."""
     if not items:
         return []
     cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
@@ -1198,6 +1231,7 @@ def fresh_items(items, source: str):
         if it["_dt"] and it["_dt"] >= cutoff
         and not is_junk_title(it["title"], source)
         and not is_offtopic(it["title"], it.get("url", ""))
+        and not (drop_re and drop_re.search(it["title"]))
     ]
 
 
@@ -1246,29 +1280,37 @@ def fetch_outlet(session: requests.Session, meta: dict) -> dict:
     }
     source = meta["source"]
     domain = domain_of(meta["url"])
+    affixes = meta.get("strip_affixes")
+    # Outlet-scoped opinion/teaser/eulogy filter: some outlets file commentary and
+    # section teasers in the same feed as news (e.g. Al-Masirah's "تغطية خاصة"
+    # roundups, "مقامة" eulogies, "!!" op-eds). Keep those off the news wall.
+    patterns = meta.get("drop_patterns")
+    drop_re = re.compile("|".join(patterns)) if patterns else None
 
     # 1) Native source. A paper may declare a single RSS url, a LIST of RSS urls
     #    (merged — e.g. N12's per-section feeds), or a Google-news sitemap
     #    (outlets with no RSS, e.g. Channel 13).
     native = _fetch_native(session, meta)
-    _clean_titles(native, source, domain)
-    items = fresh_items(native, source)
+    _clean_titles(native, source, domain, affixes)
+    items = fresh_items(native, source, drop_re)
     via = "native"
 
     # 2) Fall back to Google News only if native has no fresh items.
     gn = []
     if not items:
         gn = parse_feed(session, gnews_url(meta), "https://news.google.com/") or []
-        _clean_titles(gn, source, domain)
-        items = fresh_items(gn, source)
+        _clean_titles(gn, source, domain, affixes)
+        items = fresh_items(gn, source, drop_re)
         via = "google-news"
 
     # 3) Last resort: if nothing is "fresh" anywhere, show the newest we have
-    #    (still date-sorted, junk removed) rather than an empty card.
+    #    (still date-sorted, junk + dropped commentary removed) rather than an
+    #    empty card.
     if not items:
         items = [it for it in (native or gn)
                  if not is_junk_title(it["title"], source)
-                 and not is_offtopic(it["title"], it.get("url", ""))]
+                 and not is_offtopic(it["title"], it.get("url", ""))
+                 and not (drop_re and drop_re.search(it["title"]))]
         via += "/stale"
 
     if items:
