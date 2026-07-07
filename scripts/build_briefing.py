@@ -67,6 +67,17 @@ def _para_to_html(text: str) -> str:
     return "\n".join(out)
 
 
+def _is_date_line(p: str) -> bool:
+    """A standalone date header the model sometimes echoes back (e.g.
+    'July 07, 2026', '7 ביולי 2026'): a short line carrying a 4-digit year and
+    no sentence body. If it leads the text it must NOT be mistaken for the
+    opening 'Big Picture' paragraph — otherwise the date becomes card 1 and the
+    real lead paragraph gets a machine-made heading from its first few words."""
+    return (len(p.split()) <= 5
+            and re.search(r"\b(19|20)\d{2}\b", p) is not None
+            and re.search(r"[.!?…]\s*$", p) is None)
+
+
 def text_to_cards(text: str, big_picture: str = BIG_PICTURE["en"]) -> list:
     """Split the plain-text briefing into topic cards for the swipe carousel.
 
@@ -77,6 +88,8 @@ def text_to_cards(text: str, big_picture: str = BIG_PICTURE["en"]) -> list:
     """
     cards = []
     paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
+    if paras and _is_date_line(paras[0]):
+        paras = paras[1:]     # drop an echoed date header so it isn't a card
     for i, p in enumerate(paras):
         m = re.match(r"\*\*(.+?)\*\*[:：]?\s*", p)
         if m:
@@ -174,7 +187,10 @@ def build_prompt(world: list[str], mena: list[str]) -> str:
         "- Stay factual and grounded STRICTLY in the material provided; never "
         "invent facts, figures, or attributions that are not in the headlines.\n"
         "- Begin each paragraph with a short bold lead-in in **double asterisks** "
-        "(e.g. **Russia-Ukraine:**).\n"
+        "(e.g. **Russia-Ukraine:**). The opening lead paragraph is the exception: "
+        "it has NO bold lead-in.\n"
+        "- Do NOT print the date or any title/header line — open directly with the "
+        "lead development.\n"
         f"- Aim for {BRIEFING_WORDS} words. Return plain text only — no headings, "
         "no bullet lists.\n\n"
         "WORLD HEADLINES:\n" + "\n".join(world or ["(none available)"]) +
