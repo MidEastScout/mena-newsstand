@@ -429,8 +429,13 @@ WEATHER_FILLER_RE = re.compile(
     r"|\bcold\s+snap\b")
 
 # Order regions appear in the Headlines tab (the site renders them in the order
-# they're written to headlines.json).
-REGION_ORDER = ["Israel", "Pan-Arab", "Iran", "Levant", "Gulf", "Turkey"]
+# they're written to headlines.json). main() only fetches regions listed here,
+# so this MUST cover every region in SOURCES — the assert makes a new region
+# added to SOURCES fail loudly instead of being silently skipped.
+REGION_ORDER = ["Israel", "Pan-Arab", "Iran", "Levant", "Gulf", "Yemen", "Turkey"]
+assert set(REGION_ORDER) == set(SOURCES), (
+    f"REGION_ORDER {sorted(REGION_ORDER)} must match SOURCES regions "
+    f"{sorted(SOURCES)}")
 
 GNEWS_LOCALE = {
     "en": ("en-US", "US", "US:en"),
