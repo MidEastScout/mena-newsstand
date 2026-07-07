@@ -442,6 +442,27 @@ _REP_SOURCE_RANK = {
 }
 _REP_RANK_DEFAULT = 1
 
+# Anticipatory / selection framing that goes STALE once the event is under way —
+# e.g. "Turkey to host the 2026 NATO summit" is fine before the summit but wrong
+# once it has opened. We demote such a headline as the representative (and reject
+# it as a summary) whenever a NEWER member frames the same story as happening or
+# finished.
+_STALE_FRAME_RE = re.compile(
+    r"\b(to\s+host|will\s+host|set\s+to\s+host|selected\s+to\s+host|"
+    r"picked\s+to\s+host|chosen\s+to\s+host|to\s+be\s+held|will\s+be\s+held|"
+    r"to\s+take\s+place|set\s+to\s+(?:begin|open|start|meet|convene|kick)|"
+    r"prepares?\s+(?:to|for)|gears?\s+up|ahead\s+of|expected\s+to|due\s+to|"
+    r"to\s+attend|to\s+visit|to\s+meet)\b", re.I)
+# Present / ongoing / concluded framing that supersedes the anticipatory one.
+_CURRENT_FRAME_RE = re.compile(
+    r"\b(under\s?way|gets?\s+under\s?way|kicks?\s+off|kicked\s+off|opens?|"
+    r"opened|begins?|began|commences?|commenced|convenes?|convened|meets?|met|"
+    r"arrives?|arrived|holds?\s+talks|live|hosts|hosting|hosted|wraps?\s+up|"
+    r"concludes?|concluded|ends?|ended|signs?|signed|killed|struck)\b", re.I)
+# A member more than this far behind the cluster's newest item is treated as not
+# "fresh" for representative selection (its framing may be a stage out of date).
+STALE_GAP_SEC = 18 * 3600
+
 
 def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
     """Choose the clearest, most on-topic member: a NEUTRAL English headline that
@@ -457,6 +478,11 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
 
     tok = {i: _tokens(items[i]["title"]) for i in idxs}
     generic = re.compile(r"^(live|breaking|war on|live blog|watch|video|photos|update|main news)\b", re.I)
+    # Recency signals for the whole cluster: the newest timestamp, and whether any
+    # member frames the story as already happening/finished — if one does, an
+    # older "to host / selected to host" member is out of date and must not lead.
+    newest_t = max((items[i]["_t"] for i in idxs), default=0.0)
+    cluster_has_current = any(_CURRENT_FRAME_RE.search(items[i]["title"]) for i in idxs)
     best, best_key = idxs[0], None
     for i in idxs:
         title = items[i]["title"]
@@ -467,13 +493,20 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
         stub = bool(generic.match(clean)) or len(clean) < 18
         neutral = not (_LOADED_RE.search(clean) or "!" in clean)
         src_rank = _REP_SOURCE_RANK.get(items[i]["source"], _REP_RANK_DEFAULT)
+        # Recency: reject stale anticipatory framing when the cluster has a more
+        # current member, and prefer members within STALE_GAP of the newest.
+        stale_frame = bool(_STALE_FRAME_RE.search(clean)) and not _CURRENT_FRAME_RE.search(clean)
+        current_ok = not (stale_frame and cluster_has_current)
+        fresh = (newest_t - items[i]["_t"]) <= STALE_GAP_SEC
         length_fit = -abs(len(clean) - 50)                     # prefer natural headline length
         central = sum(len(tok[i] & tok[j]) for j in idxs if j != i)
-        # English first, so the card shows a genuine English headline rather than
-        # falling back to a snippet; then neutral wording, story-coverage, a
-        # mainstream outlet's plainer phrasing, non-stub, natural length,
-        # centrality, recency.
-        key = (english, neutral, covers, src_rank, not stub, length_fit, central, items[i]["_t"])
+        # English + neutral are gates; then reject stale framing (current_ok) so
+        # an out-of-date "to host / selected" headline can't lead a story that has
+        # moved on. Source-quality stays primary (coverage, then a mainstream
+        # outlet's plainer phrasing); freshness only demotes a meaningfully older
+        # member among otherwise-equal ones, with raw recency the final tiebreak.
+        key = (english, neutral, current_ok, covers, src_rank, fresh,
+               not stub, length_fit, central, items[i]["_t"])
         if best_key is None or key > best_key:
             best_key, best = key, i
     return best
@@ -548,13 +581,15 @@ def cluster_with_claude(client, items: list[dict]):
         "never invent an index.\n\n"
         "For each story return:\n"
         "  - member_indices: all headline indices in the story.\n"
-        "  - representative_index: the member with the clearest, most neutral "
-        "phrasing (avoid loaded wording and bare 'Live'/'Breaking' stubs).\n"
-        "  - summary: a short, neutral one-line summary of the story in English "
-        "(max ~14 words), attributing claims where outlets differ. Keep the event "
-        "at the stage the headlines describe — do NOT turn a planned or upcoming "
-        "event ('leaders to meet', 'heads to summit') into a completed one "
-        "('met', 'arrived'); add no specifics the headlines don't state.\n"
+        "  - representative_index: the member with the clearest, most neutral, "
+        "MOST CURRENT phrasing (avoid loaded wording, bare 'Live'/'Breaking' "
+        "stubs, and stale framing — prefer the newest member's status).\n"
+        "  - summary: a short, neutral, punchy one-line summary in English "
+        "(max ~14 words, active voice), attributing claims where outlets differ. "
+        "Base the status on the most recent headline: if an older one says an "
+        "event is upcoming ('to host', 'leaders to meet') but a newer one shows "
+        "it happening or done ('under way', 'met'), write the CURRENT state. Add "
+        "no specifics the headlines don't state.\n"
         "  - summary_he: the same neutral summary in Hebrew.\n\n"
         "Return ONLY the JSON object.\n\n"
         "HEADLINES:\n" + listing
@@ -779,7 +814,7 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
 SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash")
 # Bump when the summary PROMPT changes so cached summaries written under the old
 # wording are invalidated and regenerated (the signature keys the cache).
-SUMM_PROMPT_VERSION = "v3-accuracy"
+SUMM_PROMPT_VERSION = "v4-recency"
 
 
 def _top5_signature(stories: list[dict]) -> str:
@@ -807,24 +842,38 @@ def _gemini_summaries(stories: list[dict]):
 
     blocks = []
     for i, s in enumerate(stories, 1):
-        lines = [f"- ({m.get('source', '?')}) {m.get('title', '').strip()}"
-                 for m in s.get("members", [])[:6] if m.get("title")]
-        blocks.append(f"STORY {i}:\n" + "\n".join(lines))
+        lines = []
+        for j, m in enumerate(m for m in s.get("members", [])[:6] if m.get("title")):
+            when = (m.get("published") or "")[:16].replace("T", " ")
+            tag = "  [MOST RECENT]" if j == 0 else ""
+            lines.append(f"- ({m.get('source', '?')}, {when}{tag}) {m['title'].strip()}")
+        blocks.append(f"STORY {i} (headlines newest-first):\n" + "\n".join(lines))
     prompt = (
         f"You are a neutral newswire editor. Below are the day's top {len(stories)} "
         "Middle-East stories; each is a cluster of headlines from different outlets "
         "about the SAME event.\n\n"
         "For EACH story, write ONE short, factual, strictly NEUTRAL summary line "
         "and its natural Hebrew translation. Rules:\n"
-        "- ACCURACY FIRST. Never assert more than the headlines support. Keep the "
-        "event at the EXACT stage the headlines describe: if they say it is "
-        "planned, upcoming or 'to' happen ('leaders to meet', 'Trump heads to the "
-        "summit'), do NOT write it as already done ('leaders met', 'summit "
-        "began', 'Trump arrived'). Mirror the status — planned→planned, "
-        "under way→under way, concluded→concluded.\n"
+        "- LEAD WITH THE LATEST. The headlines are listed newest-first and the "
+        "newest is tagged [MOST RECENT]. Base the event's status on it: if an "
+        "older headline frames the event as upcoming or a decision ('to host', "
+        "'selected to host', 'set to meet') but a newer one shows it happening or "
+        "finished ('summit under way', 'leaders meet', 'talks concluded'), write "
+        "the CURRENT state — never the superseded one.\n"
+        "- ACCURACY FIRST. Never assert more than the headlines support. Mirror "
+        "the status the newest headlines give — planned→planned, under "
+        "way→under way, concluded→concluded — and never upgrade a plan into a "
+        "completed act.\n"
+        "- FACT-CHECK your line against the listed headlines before writing it: "
+        "every actor, action and claim must appear in them (especially the most "
+        "recent). Assert no host, selection, number, or outcome that isn't there.\n"
         "- Do not invent or add specifics (arrivals, numbers, casualties, "
         "locations, outcomes) that are not in the headlines. If outlets differ on "
         "a detail, omit it or hedge it — never resolve it yourself.\n"
+        "- MAKE IT PUNCHY: active voice, concrete nouns, lead with what's "
+        "newsworthy. A strong verb early. Avoid limp, administrative openers like "
+        "'Incidents reported in…', 'Reports from… detail…', 'Developments "
+        "regarding…' — state who did what.\n"
         "- Be specific about who and what: name the main actors and the concrete "
         "development so the line is informative, not vague.\n"
         "- State only what outlets agree on; attribute any contested claim "
@@ -876,6 +925,19 @@ def _gemini_summaries(stories: list[dict]):
             for o in arr[:len(stories)]]
 
 
+def _summary_contradicts_recency(summary_en: str, story: dict) -> bool:
+    """Deterministic fact-check: True if the generated line still leads with
+    anticipatory framing ('selected to host', 'to meet') while a member headline
+    already shows the event happening or finished ('summit under way', 'leaders
+    meet'). Such a line is stale, so we drop it and let the recency-corrected
+    representative headline stand instead."""
+    if not summary_en:
+        return False
+    if not (_STALE_FRAME_RE.search(summary_en) and not _CURRENT_FRAME_RE.search(summary_en)):
+        return False
+    return any(_CURRENT_FRAME_RE.search(m.get("title", "")) for m in story.get("members", []))
+
+
 def attach_neutral_summaries(stories: list[dict]) -> None:
     """Attach a neutral summary / summary_he to each Top-5 story (Gemini + cache).
     Best-effort: on any miss the story keeps its representative headline."""
@@ -899,8 +961,16 @@ def attach_neutral_summaries(stories: list[dict]) -> None:
     if not items:
         return
     for s, it in zip(stories, items):
-        if it.get("en"):
-            s["summary"] = it["en"]
+        en = it.get("en", "")
+        # Fact-check the generated line against the cluster before using it: a
+        # summary that still asserts stale framing is dropped so the (recency-
+        # corrected) representative headline shows instead.
+        if en and _summary_contradicts_recency(en, s):
+            print(f"  [summaries] dropped stale summary → using representative: {en!r}",
+                  file=sys.stderr)
+            continue
+        if en:
+            s["summary"] = en
         if it.get("he"):
             s["summary_he"] = it["he"]
 
