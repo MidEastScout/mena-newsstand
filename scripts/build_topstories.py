@@ -423,6 +423,25 @@ _LOADED_RE = re.compile(
     r"aggression|usurper(?:s|ing)?|occupier(?:s)?|mercenaries|puppet(?:s)?|"
     r"criminal\s+entity|zionist\s+entity)\b", re.I)
 
+# Which outlet's wording heads the cluster. The Top-5 falls back to this
+# representative headline whenever the neutral LLM summary is unavailable (the
+# common case on Gemini's free tier), so it must read cleanly. Mainstream wires
+# and broadsheets phrase events plainly and hedge status correctly ("leaders to
+# meet", "heads to summit"); state / heavily partisan outlets lead with framing
+# ("10 strategic messages of the Leader's funeral", "Yemen exposes the
+# aggression"). Prefer the former FOR THE HEADLINE — every member still shows,
+# attributed, in the expanded view. Higher = preferred; unlisted outlets = 1.
+_REP_SOURCE_RANK = {
+    "Reuters": 3, "Associated Press": 3, "AFP": 3, "BBC": 3, "CNN": 3,
+    "Al Jazeera": 2, "Anadolu Agency": 2, "Arab News": 2, "Gulf News": 2,
+    "Daily Sabah": 2, "Jordan Times": 2, "Egypt Independent": 2, "Al Arabiya": 2,
+    "The New Arab": 2, "Middle East Eye": 2, "Hürriyet Daily News": 2,
+    "TRT World": 2, "L'Orient Today": 2, "The National": 2,
+    "IRNA": 0, "Mehr News": 0, "Al Manar": 0, "Al Mayadeen": 0, "Al-Masirah": 0,
+    "Falastin al-Youm": 0,
+}
+_REP_RANK_DEFAULT = 1
+
 
 def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
     """Choose the clearest, most on-topic member: a NEUTRAL English headline that
@@ -447,12 +466,14 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
         covers = len(title_ents & dominant)                    # names the shared story
         stub = bool(generic.match(clean)) or len(clean) < 18
         neutral = not (_LOADED_RE.search(clean) or "!" in clean)
+        src_rank = _REP_SOURCE_RANK.get(items[i]["source"], _REP_RANK_DEFAULT)
         length_fit = -abs(len(clean) - 50)                     # prefer natural headline length
         central = sum(len(tok[i] & tok[j]) for j in idxs if j != i)
         # English first, so the card shows a genuine English headline rather than
-        # falling back to a snippet; then neutral wording, story-coverage,
-        # non-stub, natural length, centrality, recency.
-        key = (english, neutral, covers, not stub, length_fit, central, items[i]["_t"])
+        # falling back to a snippet; then neutral wording, story-coverage, a
+        # mainstream outlet's plainer phrasing, non-stub, natural length,
+        # centrality, recency.
+        key = (english, neutral, covers, src_rank, not stub, length_fit, central, items[i]["_t"])
         if best_key is None or key > best_key:
             best_key, best = key, i
     return best
@@ -747,12 +768,15 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
 # only called when the top stories actually change; fully best-effort, so any
 # miss just leaves the (neutrally-selected) representative headline in place.
 # ---------------------------------------------------------------------------
-# flash-lite has a much higher free-tier request budget than gemini-2.5-flash
-# (which the World Briefing also draws on) — and the Top-5 set changes almost
-# every run, so summaries are regenerated often. Using flash-lite keeps the
-# neutral line actually present most runs instead of falling back to a raw,
-# sometimes-loaded outlet headline whenever the flash quota is spent.
-SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash-lite")
+# Gemini's free tier is only ~20 requests/day PER MODEL. The headline snippets
+# in fetch_headlines.py already spend flash-lite's daily budget every run, so a
+# summary call on flash-lite just 429s (RESOURCE_EXHAUSTED) and the Top-5 falls
+# back to raw outlet headlines. gemini-2.5-flash's budget, by contrast, is spent
+# only by the World Briefing (≈4 runs/day), leaving real headroom — so summaries
+# actually generate here. The neutral summary is a best-effort enhancement over
+# the representative headline, which pick_representative_heuristic already keeps
+# neutral and mainstream, so a quota miss degrades gracefully rather than badly.
+SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash")
 # Bump when the summary PROMPT changes so cached summaries written under the old
 # wording are invalidated and regenerated (the signature keys the cache).
 SUMM_PROMPT_VERSION = "v2-accuracy"
