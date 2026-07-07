@@ -417,9 +417,11 @@ def cluster_heuristic(items: list[dict]) -> list[list[int]]:
 # prefer the plain one as the representative (used only as a tiebreaker among
 # members of the SAME story, so it never changes which stories are shown).
 _LOADED_RE = re.compile(
-    r"\b(martyr(?:ed|s)?|death\s+towers?|colonists?|the\s+regime|terrorists?|"
+    r"\b(martyr(?:ed|s|dom)?|death\s+towers?|colonists?|the\s+regime|terrorists?|"
     r"zionist|vengeance|heroic|brutal|barbaric|savage|cowardly|massacre|"
-    r"slaughter|genocidal|apartheid|crusaders?|infidels?)\b", re.I)
+    r"slaughter|genocidal|apartheid|crusaders?|infidels?|the\s+enemy|"
+    r"aggression|usurper(?:s|ing)?|occupier(?:s)?|mercenaries|puppet(?:s)?|"
+    r"criminal\s+entity|zionist\s+entity)\b", re.I)
 
 
 def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
@@ -528,7 +530,10 @@ def cluster_with_claude(client, items: list[dict]):
         "  - representative_index: the member with the clearest, most neutral "
         "phrasing (avoid loaded wording and bare 'Live'/'Breaking' stubs).\n"
         "  - summary: a short, neutral one-line summary of the story in English "
-        "(max ~14 words), attributing claims where outlets differ.\n"
+        "(max ~14 words), attributing claims where outlets differ. Keep the event "
+        "at the stage the headlines describe — do NOT turn a planned or upcoming "
+        "event ('leaders to meet', 'heads to summit') into a completed one "
+        "('met', 'arrived'); add no specifics the headlines don't state.\n"
         "  - summary_he: the same neutral summary in Hebrew.\n\n"
         "Return ONLY the JSON object.\n\n"
         "HEADLINES:\n" + listing
@@ -742,11 +747,20 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
 # only called when the top stories actually change; fully best-effort, so any
 # miss just leaves the (neutrally-selected) representative headline in place.
 # ---------------------------------------------------------------------------
-SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash")
+# flash-lite has a much higher free-tier request budget than gemini-2.5-flash
+# (which the World Briefing also draws on) — and the Top-5 set changes almost
+# every run, so summaries are regenerated often. Using flash-lite keeps the
+# neutral line actually present most runs instead of falling back to a raw,
+# sometimes-loaded outlet headline whenever the flash quota is spent.
+SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash-lite")
+# Bump when the summary PROMPT changes so cached summaries written under the old
+# wording are invalidated and regenerated (the signature keys the cache).
+SUMM_PROMPT_VERSION = "v2-accuracy"
 
 
 def _top5_signature(stories: list[dict]) -> str:
-    joined = "|".join((s.get("rep") or {}).get("url", "") for s in stories)
+    joined = SUMM_PROMPT_VERSION + "|" + "|".join(
+        (s.get("rep") or {}).get("url", "") for s in stories)
     return sha256(joined.encode("utf-8")).hexdigest()
 
 
@@ -778,6 +792,17 @@ def _gemini_summaries(stories: list[dict]):
         "about the SAME event.\n\n"
         "For EACH story, write ONE short, factual, strictly NEUTRAL summary line "
         "and its natural Hebrew translation. Rules:\n"
+        "- ACCURACY FIRST. Never assert more than the headlines support. Keep the "
+        "event at the EXACT stage the headlines describe: if they say it is "
+        "planned, upcoming or 'to' happen ('leaders to meet', 'Trump heads to the "
+        "summit'), do NOT write it as already done ('leaders met', 'summit "
+        "began', 'Trump arrived'). Mirror the status — planned→planned, "
+        "under way→under way, concluded→concluded.\n"
+        "- Do not invent or add specifics (arrivals, numbers, casualties, "
+        "locations, outcomes) that are not in the headlines. If outlets differ on "
+        "a detail, omit it or hedge it — never resolve it yourself.\n"
+        "- Be specific about who and what: name the main actors and the concrete "
+        "development so the line is informative, not vague.\n"
         "- State only what outlets agree on; attribute any contested claim "
         "(e.g. 'Hamas says…', 'the Israeli military says…').\n"
         "- Remove loaded or partisan wording and scare-quotes. Use plain, neutral "
@@ -785,7 +810,7 @@ def _gemini_summaries(stories: list[dict]):
         "'martyred Leader'; 'fighters'/'militants' per context, not 'terrorists' "
         "or 'heroes'.\n"
         "- No praise, no condemnation, no adjectives of judgement. Max ~16 words.\n"
-        "- The Hebrew must be equally neutral, natural and journalistic.\n\n"
+        "- The Hebrew must be equally neutral, natural, accurate and journalistic.\n\n"
         f"Return ONLY a JSON array of exactly {len(stories)} objects, in the same "
         'order, each {"en": "...", "he": "..."}. No prose, no code fences.\n\n'
         + "\n\n".join(blocks)
