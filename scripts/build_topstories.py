@@ -28,11 +28,14 @@ stories), sports, tech & consumer business, markets and lifestyle are dropped so
 they can't take a Top-5 slot from a real security story.
 
 Ranking (identical for both paths — the user's stated priority order):
-  • Primary   : number of DISTINCT outlets carrying the story.
-  • Secondary : diversity of outlet CATEGORY / regional camp (Israeli, Gulf,
-                Pan-Arab, Iranian, Levant, Turkish, International) — cross-camp
-                attention is itself a significance signal.
-  • Tertiary  : recency (newest item), tiebreak only.
+  • Primary   : salience score = freshness-weighted DISTINCT-outlet votes (each
+                outlet votes once, decaying with a 12-hour half-life on its
+                newest item) × a cross-camp diversity bonus (Israeli, Gulf,
+                Pan-Arab, Iranian, Levant, Turkish, International) — breadth of
+                outlets is the main signal, cross-camp attention lifts it.
+  • Secondary : recency (newest item).
+  • Tertiary  : a hash of the member URLs — a pure content tie-break, so the
+                order NEVER depends on ingestion or cluster enumeration order.
 
 Output (top_stories.json):
   {
@@ -65,6 +68,12 @@ from datetime import datetime, timezone
 from hashlib import sha256
 from itertools import combinations
 from pathlib import Path
+
+# Deterministic grounding verification for generated titles + the shared
+# framing/neutrality lexicons (single source of truth: title_grounding.py).
+sys.path.insert(0, str(Path(__file__).parent))
+from title_grounding import (CURRENT_FRAME_RE, LOADED_RE, STALE_FRAME_RE,
+                             verify_title)
 
 ROOT = Path(__file__).parent.parent
 HL_PATH = ROOT / "headlines.json"
@@ -290,6 +299,9 @@ def cluster_heuristic(items: list[dict]) -> list[list[int]]:
          signal in the English snippet, not the title — fold into the sub-event
          they match best instead of fragmenting off. That keeps cross-language
          coverage COUNTED, never stranded as its own bogus one-outlet story.
+         BUT a straggler must share real evidence (a strong entity, or clear
+         wording overlap) with the sub-event it joins; one with none stays its
+         own one-item story rather than contaminating the biggest sub-event.
       4. Headlines with no known entity cluster among themselves by near-duplicate
          title only.
 
@@ -375,13 +387,29 @@ def cluster_heuristic(items: list[dict]) -> list[list[int]]:
             return [idxs]                       # one coherent story — keep whole
         dense.sort(key=len, reverse=True)
         for s in singles:
-            best, best_score = dense[0], -1
+            # A straggler only folds into a sub-event it shares REAL evidence
+            # with: 2+ entities, or 2+ informative title words, with some
+            # member (a relaxed echo of the pairwise-union rule above — no
+            # title requirement, so Arabic/Hebrew-titled items whose entities
+            # come from the English snippet still fold). Sharing only the
+            # anchor's single topic entity (gaza, funeral, nato…) is NOT
+            # enough: that is how a chickenpox-outbreak item joined the
+            # Gaza-strikes story and an unrelated quote joined the NATO-summit
+            # story, poisoning their titles. A straggler with no qualifying
+            # sub-event stays a one-item story instead.
+            best, best_score = None, 0
             for g in dense:
+                if not any(len(all_ents[s] & all_ents[m]) >= 2
+                           or len(title_tok[s] & title_tok[m]) >= 2 for m in g):
+                    continue
                 score = sum(2 * len(all_ents[s] & all_ents[m])
                             + len(title_tok[s] & title_tok[m]) for m in g)
                 if score > best_score:
                     best, best_score = g, score
-            best.append(s)
+            if best is not None:
+                best.append(s)
+            else:
+                dense.append([s])
         return dense
 
     clusters = []
@@ -413,15 +441,10 @@ def cluster_heuristic(items: list[dict]) -> list[list[int]]:
     return clusters
 
 
-# Partisan / loaded wording. When a cluster has both loaded and plain headlines,
-# prefer the plain one as the representative (used only as a tiebreaker among
-# members of the SAME story, so it never changes which stories are shown).
-_LOADED_RE = re.compile(
-    r"\b(martyr(?:ed|s|dom)?|death\s+towers?|colonists?|the\s+regime|terrorists?|"
-    r"zionist|vengeance|heroic|brutal|barbaric|savage|cowardly|massacre|"
-    r"slaughter|genocidal|apartheid|crusaders?|infidels?|the\s+enemy|"
-    r"aggression|usurper(?:s|ing)?|occupier(?:s)?|mercenaries|puppet(?:s)?|"
-    r"criminal\s+entity|zionist\s+entity)\b", re.I)
+# Partisan / loaded wording (LOADED_RE, imported from title_grounding). When a
+# cluster has both loaded and plain headlines, prefer the plain one as the
+# representative (used only as a tiebreaker among members of the SAME story, so
+# it never changes which stories are shown).
 
 # Which outlet's wording heads the cluster. The Top-5 falls back to this
 # representative headline whenever the neutral LLM summary is unavailable (the
@@ -442,23 +465,10 @@ _REP_SOURCE_RANK = {
 }
 _REP_RANK_DEFAULT = 1
 
-# Anticipatory / selection framing that goes STALE once the event is under way —
-# e.g. "Turkey to host the 2026 NATO summit" is fine before the summit but wrong
-# once it has opened. We demote such a headline as the representative (and reject
-# it as a summary) whenever a NEWER member frames the same story as happening or
-# finished.
-_STALE_FRAME_RE = re.compile(
-    r"\b(to\s+host|will\s+host|set\s+to\s+host|selected\s+to\s+host|"
-    r"picked\s+to\s+host|chosen\s+to\s+host|to\s+be\s+held|will\s+be\s+held|"
-    r"to\s+take\s+place|set\s+to\s+(?:begin|open|start|meet|convene|kick)|"
-    r"prepares?\s+(?:to|for)|gears?\s+up|ahead\s+of|expected\s+to|due\s+to|"
-    r"to\s+attend|to\s+visit|to\s+meet)\b", re.I)
-# Present / ongoing / concluded framing that supersedes the anticipatory one.
-_CURRENT_FRAME_RE = re.compile(
-    r"\b(under\s?way|gets?\s+under\s?way|kicks?\s+off|kicked\s+off|opens?|"
-    r"opened|begins?|began|commences?|commenced|convenes?|convened|meets?|met|"
-    r"arrives?|arrived|holds?\s+talks|live|hosts|hosting|hosted|wraps?\s+up|"
-    r"concludes?|concluded|ends?|ended|signs?|signed|killed|struck)\b", re.I)
+# Anticipatory framing that goes STALE once the event is under way (imported
+# STALE_FRAME_RE / CURRENT_FRAME_RE — see title_grounding.py): we demote such a
+# headline as the representative whenever a NEWER member frames the same story
+# as happening or finished, and verify_title rejects it in a generated summary.
 # A member more than this far behind the cluster's newest item is treated as not
 # "fresh" for representative selection. Kept TIGHT (6h): in a running story
 # (attack → retaliation → sanctions) yesterday's wave still uses active verbs
@@ -486,7 +496,7 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
     # member frames the story as already happening/finished — if one does, an
     # older "to host / selected to host" member is out of date and must not lead.
     newest_t = max((items[i]["_t"] for i in idxs), default=0.0)
-    cluster_has_current = any(_CURRENT_FRAME_RE.search(items[i]["title"]) for i in idxs)
+    cluster_has_current = any(CURRENT_FRAME_RE.search(items[i]["title"]) for i in idxs)
     best, best_key = idxs[0], None
     for i in idxs:
         title = items[i]["title"]
@@ -495,11 +505,11 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
         title_ents = _entities(title) & STRONG
         covers = len(title_ents & dominant)                    # names the shared story
         stub = bool(generic.match(clean)) or len(clean) < 18
-        neutral = not (_LOADED_RE.search(clean) or "!" in clean)
+        neutral = not (LOADED_RE.search(clean) or "!" in clean)
         src_rank = _REP_SOURCE_RANK.get(items[i]["source"], _REP_RANK_DEFAULT)
         # Recency: reject stale anticipatory framing when the cluster has a more
         # current member, and prefer members within STALE_GAP of the newest.
-        stale_frame = bool(_STALE_FRAME_RE.search(clean)) and not _CURRENT_FRAME_RE.search(clean)
+        stale_frame = bool(STALE_FRAME_RE.search(clean)) and not CURRENT_FRAME_RE.search(clean)
         current_ok = not (stale_frame and cluster_has_current)
         fresh = (newest_t - items[i]["_t"]) <= STALE_GAP_SEC
         length_fit = -abs(len(clean) - 50)                     # prefer natural headline length
@@ -509,9 +519,10 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
         # of coverage, so an older stage of a running story ("ships struck…")
         # can't lead once the story has escalated (US strikes, sanctions). Only
         # among equally-fresh members do coverage, a mainstream outlet's plainer
-        # phrasing, non-stub, length and centrality decide; raw recency last.
+        # phrasing, non-stub, length and centrality decide; raw recency, then
+        # URL (pure determinism — never input order) settle what's left.
         key = (english, neutral, current_ok, fresh, covers, src_rank,
-               not stub, length_fit, central, items[i]["_t"])
+               not stub, length_fit, central, items[i]["_t"], items[i]["url"])
         if best_key is None or key > best_key:
             best_key, best = key, i
     return best
@@ -590,11 +601,16 @@ def cluster_with_claude(client, items: list[dict]):
         "MOST CURRENT phrasing (avoid loaded wording, bare 'Live'/'Breaking' "
         "stubs, and stale framing — prefer the newest member's status).\n"
         "  - summary: a short, neutral, punchy one-line summary in English "
-        "(max ~14 words, active voice), attributing claims where outlets differ. "
-        "Base the status on the most recent headline: if an older one says an "
-        "event is upcoming ('to host', 'leaders to meet') but a newer one shows "
-        "it happening or done ('under way', 'met'), write the CURRENT state. Add "
-        "no specifics the headlines don't state.\n"
+        "(max ~14 words, active voice). TOPIC = the consensus: the event most "
+        "of the story's outlets report — never a single outlet's angle, and "
+        "never an outlet as the subject ('X reports…'). STATUS from the most "
+        "recent headline: if an older one says an event is upcoming ('to host', "
+        "'leaders to meet') but a newer one shows it happening or done ('under "
+        "way', 'met'), write the CURRENT state. Every actor, action, number "
+        "and outcome must appear in the story's headlines — add nothing they "
+        "don't state; attribute claims where outlets differ. When camps frame "
+        "the event differently, state what happened plainly and attribute each "
+        "side's interpretation — adopt no camp's framing or vocabulary.\n"
         "  - summary_he: the same neutral summary in Hebrew.\n\n"
         "Return ONLY the JSON object.\n\n"
         "HEADLINES:\n" + listing
@@ -758,14 +774,22 @@ def _member_view(it: dict) -> dict:
 # stage of a running story) can no longer outrank the day's fresh development
 # just because it has had more hours to accumulate outlets.
 RANK_HALFLIFE_H = 12.0
+# Cross-camp coverage bonus: each additional regional camp carrying the story
+# lifts its score by this fraction. Folded INTO the score (not a tie-break key)
+# because the freshness-weighted vote is a float — exact ties never happen, so
+# a mere secondary sort key would be dead code and camp diversity would never
+# actually influence the ranking.
+DIVERSITY_BONUS = 0.15
 
 
-def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
+def build_stories(items: list[dict], clusters: list[dict], now: float | None = None) -> list[dict]:
     """clusters: [{member_indices, representative_index, summary?, summary_he?}].
-    Rank by freshness-weighted outlet count → category diversity → recency, keep
-    the top N that pass the geopolitics/security topical filter."""
-    import math
-    now = datetime.now(timezone.utc).timestamp()
+    Rank by salience score = freshness-weighted outlet votes × (1 + camp-
+    diversity bonus), then recency, then a content hash — fully deterministic
+    and independent of ingestion/cluster order. Keep the top N that pass the
+    geopolitics/security topical filter. `now` is injectable for tests."""
+    if now is None:
+        now = datetime.now(timezone.utc).timestamp()
     scored = []
     for c in clusters:
         idxs = c["member_indices"]
@@ -780,11 +804,14 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
             per_outlet_newest[m["source"]] = max(per_outlet_newest.get(m["source"], 0.0), m["_t"])
         weight = sum(0.5 ** (max(0.0, (now - t) / 3600.0) / RANK_HALFLIFE_H)
                      for t in per_outlet_newest.values())
-        scored.append((c, idxs, members, len(outlets), len(cats), newest, weight))
+        score = weight * (1.0 + DIVERSITY_BONUS * max(0, len(cats) - 1))
+        # Content-derived final tie-break, so equal-score stories order by WHAT
+        # they contain, never by the order clusters happened to be enumerated.
+        urlsig = sha256("|".join(sorted(m["url"] for m in members)).encode("utf-8")).hexdigest()
+        scored.append((c, idxs, members, len(outlets), len(cats), newest, score, urlsig))
 
-    # Primary: freshness-weighted outlet count. Secondary: category (camp)
-    # diversity. Tertiary: recency.
-    scored.sort(key=lambda x: (x[6], x[4], x[5]), reverse=True)
+    # Salience score (outlet votes × camp diversity) → recency → content hash.
+    scored.sort(key=lambda x: (x[6], x[5], x[7]), reverse=True)
 
     # Keep only on-topic stories (geopolitics / security / military / diplomacy),
     # THEN take the top N — so a widely-carried but off-topic item (a court
@@ -794,7 +821,7 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
     relevant = [s for s in scored if _is_relevant(s[2])] or scored
 
     out = []
-    for rank, (c, idxs, members, n_outlets, n_cats, newest, _w) in enumerate(relevant[:TOP_N], 1):
+    for rank, (c, idxs, members, n_outlets, n_cats, newest, _score, _sig) in enumerate(relevant[:TOP_N], 1):
         rep = items[c["representative_index"]]
         cats = sorted({m["category"] for m in members if m["category"]},
                       key=lambda x: CAT_ORDER.index(x) if x in CAT_ORDER else 99)
@@ -816,15 +843,22 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# Neutral one-line summaries (English + Hebrew) for the Top 5.
+# Neutral one-line summaries (English + Hebrew) for the Top 5 — GROUNDED.
 #
 # Outlet headlines are often loaded ("martyred Leader", "death towers",
 # "colonists", scare-quoted "ceasefire"). Rather than surface one outlet's
 # framing, we ask Gemini — already configured for the World Briefing — for a
 # short, factual, NEUTRAL line per story in both languages, and the site shows
-# that instead of the representative headline. Cached per Top-5 set so the API is
-# only called when the top stories actually change; fully best-effort, so any
-# miss just leaves the (neutrally-selected) representative headline in place.
+# that instead of the representative headline.
+#
+# STRUCTURAL GUARANTEE (the fix for titles drifting from their sources): no
+# generated line is ever attached without passing title_grounding.verify_title
+# against the story's CURRENT members — fresh Gemini output, summaries the
+# Claude clustering path produced, and cached lines alike, every cycle. A
+# rejected line gets ONE regeneration carrying the verifier's concrete
+# complaints; if it still fails, the story falls back to its representative
+# headline, which IS a source headline and therefore grounded by construction.
+# scripts/check_topstories.py re-runs the same check as a pre-publish gate.
 # ---------------------------------------------------------------------------
 # Gemini's free tier is only ~20 requests/day PER MODEL. The headline snippets
 # in fetch_headlines.py already spend flash-lite's daily budget every run, so a
@@ -836,28 +870,125 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
 # neutral and mainstream, so a quota miss degrades gracefully rather than badly.
 SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash")
 # Bump when the summary PROMPT changes so cached summaries written under the old
-# wording are invalidated and regenerated (the signature keys the cache).
-SUMM_PROMPT_VERSION = "v5-evolving"
+# wording are invalidated and regenerated (the version keys the cache).
+SUMM_PROMPT_VERSION = "v6-grounded"
+# Headlines shown to the generator per story, capped. Selection guarantees the
+# newest item of EVERY outlet gets in first, so each outlet — and therefore
+# each regional camp — is represented, not just whoever published last.
+GEN_MAX_MEMBERS = 12
 
 
-def _top5_signature(stories: list[dict]) -> str:
-    """Cache key for the neutral summaries. Includes each story's NEWEST member
-    (members are sorted newest-first) as well as its representative: a running
-    story keeps its rep for hours while new developments join the cluster, and a
-    summary written before those developments is exactly the stale line we must
-    not keep serving. The key changes only when a story's lead item actually
-    changes, so quota is still spent on real developments, not on every run."""
-    parts = [SUMM_PROMPT_VERSION]
-    for s in stories:
-        members = s.get("members") or []
-        parts.append((s.get("rep") or {}).get("url", ""))
-        parts.append((members[0].get("url", "") if members else ""))
+def _story_cache_key(story: dict) -> str:
+    """Per-story cache key: prompt version + representative + newest member.
+    A new development joining the cluster changes the newest member and thus
+    the key, so quota is spent on real developments, not on every run. Cached
+    lines are ALSO re-verified against the current members each cycle, so no
+    cache hit can keep serving a line the sources no longer support."""
+    members = story.get("members") or []
+    parts = [SUMM_PROMPT_VERSION,
+             (story.get("rep") or {}).get("url", ""),
+             (members[0].get("url", "") if members else "")]
     return sha256("|".join(parts).encode("utf-8")).hexdigest()
 
 
-def _gemini_summaries(stories: list[dict]):
-    """Ask Gemini for a neutral {en, he} one-liner per story, in order. Returns a
-    list aligned to `stories`, or None on any failure."""
+def _prompt_members(story: dict) -> list[dict]:
+    """Members shown to the generator: the newest item per outlet first (every
+    outlet and camp represented), then the rest, newest-first overall, capped
+    at GEN_MAX_MEMBERS."""
+    members = [m for m in story.get("members", []) if m.get("title")]
+    seen, primary, rest = set(), [], []
+    for m in members:                       # members arrive newest-first
+        (rest if m.get("source") in seen else primary).append(m)
+        seen.add(m.get("source"))
+    sel = (primary + rest)[:GEN_MAX_MEMBERS]
+    sel.sort(key=lambda m: _parse_ts(m.get("published")), reverse=True)
+    return sel
+
+
+def _age_str(published: str, now: float) -> str:
+    t = _parse_ts(published)
+    if not t:
+        return "age unknown"
+    h = max(0.0, now - t) / 3600.0
+    return f"{h * 60:.0f} min ago" if h < 1 else f"{h:.0f}h ago"
+
+
+def _story_block(i: int, story: dict, now: float, rejected=None) -> str:
+    """One story's section of the generation prompt: outlet count, camps, and
+    each selected headline tagged [outlet · camp · age], newest first. For a
+    retry, `rejected` = (previous_line, [problems]) appends the fact-check
+    complaints so the model can fix exactly what failed."""
+    camps = ", ".join(story.get("categories") or []) or "unknown"
+    lines = []
+    for j, m in enumerate(_prompt_members(story)):
+        tag = "   <-- MOST RECENT (take the story's current status from here)" if j == 0 else ""
+        camp = m.get("category") or "other"
+        lines.append(f"- [{m.get('source', '?')} · {camp} · "
+                     f"{_age_str(m.get('published', ''), now)}] {m['title'].strip()}{tag}")
+    block = (f"STORY {i} — carried by {story.get('outlets', '?')} outlets across "
+             f"these camps: {camps}\n" + "\n".join(lines))
+    if rejected:
+        prev, problems = rejected
+        block += ("\n\nNOTE: your previous line for this story was REJECTED by an "
+                  f"automated fact-check against the headlines above.\nPrevious line: {prev!r}\n"
+                  "Problems:\n" + "\n".join(f"  - {p}" for p in problems) +
+                  "\nWrite a corrected line that fixes every problem, using ONLY "
+                  "claims present in the headlines above.")
+    return block
+
+
+def _summary_prompt(stories: list[dict], now: float, rejected: dict | None = None) -> str:
+    """The full generation prompt. `rejected`: {index-in-stories: (line,
+    problems)} on the retry pass. The rules encode the site's title policy —
+    consensus topic, status from the newest sources, sourced claims only,
+    cross-camp neutrality — and the deterministic verifier in
+    title_grounding.py enforces the verifiable ones after generation."""
+    blocks = [_story_block(i + 1, s, now, (rejected or {}).get(i))
+              for i, s in enumerate(stories)]
+    return (
+        f"You are a neutral newswire editor writing the display titles for the "
+        f"day's top {len(stories)} Middle-East stories. Each STORY below is a "
+        "cluster of headlines about the SAME event from outlets across different "
+        "regional camps (israeli, gulf, panarab, iranian, levant, turkish, intl), "
+        "listed newest-first with outlet, camp and age.\n\n"
+        "For EACH story write ONE short, factual, strictly NEUTRAL headline line "
+        "in English plus its natural Hebrew translation. Hard rules:\n"
+        "1. TOPIC = THE CONSENSUS. Write the event the cluster as a whole is "
+        "covering — what most outlets report. A single outlet's newest statement, "
+        "reaction or side angle is NOT the story; at most it may close the line "
+        "('…; Tehran rejects Qatari claim').\n"
+        "2. STATUS FROM THE NEWEST. Take the event's current status and tense "
+        "from the most recent headlines: planned stays planned, under way is "
+        "under way, finished is finished. If an older headline calls the event "
+        "upcoming ('to host', 'selected to host', 'set to meet') but a newer one "
+        "shows it happening or done, write the CURRENT state — never the "
+        "superseded one, and never upgrade a plan into a completed act.\n"
+        "3. ONLY WHAT THE SOURCES SAY. Every actor, action, place, number and "
+        "outcome in your line must appear in that story's listed headlines. Do "
+        "not infer, add or resolve anything yourself. A detail outlets disagree "
+        "on: attribute it ('Hamas says…', 'the Israeli military says…') or omit "
+        "it.\n"
+        "4. NEUTRAL ACROSS CAMPS. Where camps frame the event differently, state "
+        "the underlying event plainly (what happened) and attribute each side's "
+        "interpretation; never adopt one camp's framing or vocabulary. Plain "
+        "terms only: 'settlers' not 'colonists'; \"Iran's late supreme leader "
+        "Khamenei\", never an honorific like 'martyred Leader'; "
+        "'fighters'/'militants' per context, not 'terrorists' or 'heroes'. A "
+        "side's rhetoric ('vengeance', 'victory') is never stated as fact — drop "
+        "it or attribute it. No praise, no condemnation, no scare-quotes, no "
+        "adjectives of judgement.\n"
+        "5. NEVER make an outlet the subject of the line ('Al Jazeera reports "
+        "on…') — report the event, not the coverage of it.\n"
+        "6. MAKE IT PUNCHY: active voice, concrete nouns, a strong verb early, "
+        "name the main actors, max ~16 words. The Hebrew line must be equally "
+        "neutral, natural, accurate and journalistic.\n\n"
+        f"Return ONLY a JSON array of exactly {len(stories)} objects, in the "
+        'same order, each {"en": "...", "he": "..."}. No prose, no code fences.\n\n'
+        + "\n\n".join(blocks)
+    )
+
+
+def _gemini_client():
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         return None
@@ -867,65 +998,17 @@ def _gemini_summaries(stories: list[dict]):
         print("google-genai not installed — skipping neutral summaries", file=sys.stderr)
         return None
     try:
-        client = genai.Client(api_key=api_key)
+        return genai.Client(api_key=api_key)
     except Exception as exc:
         print(f"Gemini client init failed ({exc}) — skipping neutral summaries", file=sys.stderr)
         return None
 
-    blocks = []
-    for i, s in enumerate(stories, 1):
-        lines = []
-        for j, m in enumerate(m for m in s.get("members", [])[:6] if m.get("title")):
-            when = (m.get("published") or "")[:16].replace("T", " ")
-            tag = "  [MOST RECENT]" if j == 0 else ""
-            lines.append(f"- ({m.get('source', '?')}, {when}{tag}) {m['title'].strip()}")
-        blocks.append(f"STORY {i} (headlines newest-first):\n" + "\n".join(lines))
-    prompt = (
-        f"You are a neutral newswire editor. Below are the day's top {len(stories)} "
-        "Middle-East stories; each is a cluster of headlines from different outlets "
-        "about the SAME event.\n\n"
-        "For EACH story, write ONE short, factual, strictly NEUTRAL summary line "
-        "and its natural Hebrew translation. Rules:\n"
-        "- LEAD WITH THE LATEST. The headlines are listed newest-first and the "
-        "newest is tagged [MOST RECENT]. Base the event's status on it: if an "
-        "older headline frames the event as upcoming or a decision ('to host', "
-        "'selected to host', 'set to meet') but a newer one shows it happening or "
-        "finished ('summit under way', 'leaders meet', 'talks concluded'), write "
-        "the CURRENT state — never the superseded one.\n"
-        "- If the story has ESCALATED (e.g. tanker attacks → retaliatory strikes "
-        "→ sanctions), the line is about the LATEST development; mention the "
-        "trigger briefly at most ('after Hormuz attacks'), never as the lead.\n"
-        "- ACCURACY FIRST. Never assert more than the headlines support. Mirror "
-        "the status the newest headlines give — planned→planned, under "
-        "way→under way, concluded→concluded — and never upgrade a plan into a "
-        "completed act.\n"
-        "- FACT-CHECK your line against the listed headlines before writing it: "
-        "every actor, action and claim must appear in them (especially the most "
-        "recent). Assert no host, selection, number, or outcome that isn't there.\n"
-        "- Do not invent or add specifics (arrivals, numbers, casualties, "
-        "locations, outcomes) that are not in the headlines. If outlets differ on "
-        "a detail, omit it or hedge it — never resolve it yourself.\n"
-        "- MAKE IT PUNCHY: active voice, concrete nouns, lead with what's "
-        "newsworthy. A strong verb early. Avoid limp, administrative openers like "
-        "'Incidents reported in…', 'Reports from… detail…', 'Developments "
-        "regarding…' — state who did what.\n"
-        "- Be specific about who and what: name the main actors and the concrete "
-        "development so the line is informative, not vague.\n"
-        "- State only what outlets agree on; attribute any contested claim "
-        "(e.g. 'Hamas says…', 'the Israeli military says…').\n"
-        "- Remove loaded or partisan wording and scare-quotes. Use plain, neutral "
-        "terms: 'settlers' not 'colonists'; name people plainly — 'Iran's late "
-        "supreme leader Khamenei', never an honorific like 'martyred Leader' or "
-        "'the Leader'; 'fighters'/'militants' per context, not 'terrorists' or "
-        "'heroes'. Don't surface a side's rhetoric ('vengeance', 'victory') as "
-        "fact — drop it or attribute it.\n"
-        "- No praise, no condemnation, no adjectives of judgement. Max ~16 words.\n"
-        "- The Hebrew must be equally neutral, natural, accurate and journalistic.\n\n"
-        f"Return ONLY a JSON array of exactly {len(stories)} objects, in the same "
-        'order, each {"en": "...", "he": "..."}. No prose, no code fences.\n\n'
-        + "\n\n".join(blocks)
-    )
 
+def _gemini_summaries(client, stories: list[dict], now: float,
+                      rejected: dict | None = None):
+    """One Gemini call: a neutral {en, he} line per story, aligned to `stories`.
+    Returns the parsed list, or None on any failure."""
+    prompt = _summary_prompt(stories, now, rejected)
     text = ""
     for attempt in range(3):
         try:
@@ -960,54 +1043,117 @@ def _gemini_summaries(stories: list[dict]):
             for o in arr[:len(stories)]]
 
 
-def _summary_contradicts_recency(summary_en: str, story: dict) -> bool:
-    """Deterministic fact-check: True if the generated line still leads with
-    anticipatory framing ('selected to host', 'to meet') while a member headline
-    already shows the event happening or finished ('summit under way', 'leaders
-    meet'). Such a line is stale, so we drop it and let the recency-corrected
-    representative headline stand instead."""
-    if not summary_en:
-        return False
-    if not (_STALE_FRAME_RE.search(summary_en) and not _CURRENT_FRAME_RE.search(summary_en)):
-        return False
-    return any(_CURRENT_FRAME_RE.search(m.get("title", "")) for m in story.get("members", []))
+def _generate_verified(client, stories: list[dict], now: float):
+    """Generate a GROUNDED {en, he} line per story: generate → verify each line
+    against the story's members → regenerate the rejects ONCE, feeding the
+    verifier's concrete complaints back into the prompt → verify again.
+    Returns a list aligned to `stories` in which a still-unverifiable story
+    gets {"en": "", "he": ""} (= keep the representative headline), or None if
+    the API was unavailable."""
+    arr = _gemini_summaries(client, stories, now)
+    if arr is None:
+        return None
+    out, rejects = [], {}
+    for k, (s, ent) in enumerate(zip(stories, arr)):
+        res = verify_title(ent["en"], s.get("members", []))
+        if ent["en"] and res.ok:
+            out.append(ent)
+        else:
+            print(f"  [summaries] rejected ({'; '.join(res.problems)}): {ent['en']!r}",
+                  file=sys.stderr)
+            out.append({"en": "", "he": ""})
+            rejects[k] = (ent["en"], res.problems)
+    if rejects:
+        retry_idx = sorted(rejects)
+        arr2 = _gemini_summaries(client, [stories[k] for k in retry_idx], now,
+                                 rejected={j: rejects[k] for j, k in enumerate(retry_idx)})
+        for j, k in enumerate(retry_idx):
+            ent = (arr2[j] if arr2 and j < len(arr2) else None) or {"en": "", "he": ""}
+            res = verify_title(ent["en"], stories[k].get("members", []))
+            if ent["en"] and res.ok:
+                out[k] = ent
+            else:
+                print("  [summaries] still unverified after retry — story keeps its "
+                      f"representative headline: {ent['en']!r}", file=sys.stderr)
+    return out
 
 
 def attach_neutral_summaries(stories: list[dict]) -> None:
-    """Attach a neutral summary / summary_he to each Top-5 story (Gemini + cache).
-    Best-effort: on any miss the story keeps its representative headline."""
+    """Attach a verified-neutral summary / summary_he to each Top-5 story.
+    EVERY title path is grounded here: cluster-time (Claude) summaries, cached
+    lines and fresh Gemini output all pass title_grounding.verify_title against
+    the story's CURRENT members before they are used; whatever fails is
+    regenerated once and otherwise dropped, leaving the representative headline
+    (a real source headline) to stand. Best-effort: with no API key the stories
+    simply keep their representative headlines."""
     if not stories:
         return
-    # If clustering already produced summaries (the Claude path), keep them.
-    if all(s.get("summary") and s.get("summary_he") for s in stories):
-        return
+    now = datetime.now(timezone.utc).timestamp()
 
-    sig = _top5_signature(stories)
-    cache = _load_json(SUMM_CACHE)
-    items = cache.get("items") if cache.get("sig") == sig else None
-    if not (isinstance(items, list) and len(items) >= len(stories)):
-        items = _gemini_summaries(stories)
-        if items:
-            SUMM_CACHE.parent.mkdir(parents=True, exist_ok=True)
-            SUMM_CACHE.write_text(
-                json.dumps({"sig": sig, "items": items}, ensure_ascii=False, indent=2),
-                encoding="utf-8")
-
-    if not items:
-        return
-    for s, it in zip(stories, items):
-        en = it.get("en", "")
-        # Fact-check the generated line against the cluster before using it: a
-        # summary that still asserts stale framing is dropped so the (recency-
-        # corrected) representative headline shows instead.
-        if en and _summary_contradicts_recency(en, s):
-            print(f"  [summaries] dropped stale summary → using representative: {en!r}",
-                  file=sys.stderr)
+    # 1. Cluster-time (Claude-path) summaries get no free pass.
+    for s in stories:
+        en = (s.get("summary") or "").strip()
+        if not en:
+            s.pop("summary", None)
             continue
-        if en:
-            s["summary"] = en
-        if it.get("he"):
-            s["summary_he"] = it["he"]
+        res = verify_title(en, s.get("members", []))
+        if not res.ok:
+            print(f"  [summaries] cluster-time summary failed grounding "
+                  f"({'; '.join(res.problems)}) — regenerating: {en!r}", file=sys.stderr)
+            s.pop("summary", None)
+            s.pop("summary_he", None)
+
+    # 2. Per-story cache. A hit is re-verified against the CURRENT members; an
+    #    entry with en == "" records "no verifiable line exists for this
+    #    composition", so quota isn't re-burned until the story evolves (its
+    #    key changes with the newest member).
+    cache = _load_json(SUMM_CACHE)
+    entries = cache.get("entries") if cache.get("version") == SUMM_PROMPT_VERSION else None
+    entries = entries if isinstance(entries, dict) else {}
+    keep: dict[str, dict] = {}
+    need: list[int] = []
+    for i, s in enumerate(stories):
+        if s.get("summary"):
+            continue                        # verified cluster-time line stands
+        key = _story_cache_key(s)
+        ent = entries.get(key)
+        if isinstance(ent, dict) and "en" in ent:
+            en = (ent.get("en") or "").strip()
+            if not en:                      # cached "unfixable" marker
+                keep[key] = {"en": "", "he": ""}
+                continue
+            if verify_title(en, s.get("members", [])).ok:
+                keep[key] = ent
+                s["summary"] = en
+                if ent.get("he"):
+                    s["summary_he"] = ent["he"]
+                continue
+            print(f"  [summaries] cached line no longer verifies — regenerating: {en!r}",
+                  file=sys.stderr)
+        need.append(i)
+
+    # 3. Generate (and verify) lines for the stories that still need one.
+    if need:
+        client = _gemini_client()
+        results = _generate_verified(client, [stories[i] for i in need], now) \
+            if client else None
+        if results is not None:
+            for i, ent in zip(need, results):
+                keep[_story_cache_key(stories[i])] = ent
+                if ent.get("en"):
+                    stories[i]["summary"] = ent["en"]
+                    if ent.get("he"):
+                        stories[i]["summary_he"] = ent["he"]
+        # API unavailable → nothing cached for these stories; reps stand and
+        # the next cycle tries again.
+
+    # 4. Persist the cache — only this cycle's keys, so the file stays tiny —
+    #    and only when its content actually changed (avoids a no-op git diff).
+    new_cache = {"version": SUMM_PROMPT_VERSION, "entries": keep}
+    if keep and new_cache != cache:
+        SUMM_CACHE.parent.mkdir(parents=True, exist_ok=True)
+        SUMM_CACHE.write_text(
+            json.dumps(new_cache, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def main():

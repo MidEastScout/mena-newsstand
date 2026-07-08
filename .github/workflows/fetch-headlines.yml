@@ -146,6 +146,16 @@ jobs:
         continue-on-error: true
         run: python scripts/build_topstories.py
 
+      # Grounding gate: re-verify every Top-5 title's claims against its own
+      # cluster's source headlines (scripts/title_grounding.py). Any summary
+      # that no longer verifies is stripped so the story falls back to its
+      # representative headline — a bad title is caught HERE, before the site
+      # deploys or a push notification fires, not after readers see it.
+      # continue-on-error so a bug in the gate itself never blocks the commit.
+      - name: Verify top-story titles against sources
+        continue-on-error: true
+        run: python scripts/check_topstories.py
+
       # Hourly "top stories" web-push notification. Self-gating in send_push.py:
       # it only fires when the top-story set has CHANGED since the last push AND
       # at least ~1h has passed (state/push_state.json), unless force_push is set.

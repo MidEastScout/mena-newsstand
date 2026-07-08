@@ -1,0 +1,37 @@
+name: CI
+
+# Regression tests for the data pipeline — most importantly the Top-5 title
+# grounding rules (tests/), which pin past failure modes (e.g. the "Turkey is
+# selected to host a NATO summit that is already under way" title) so they
+# can't silently return. Runs on code changes only; the ~30-min data refresh
+# workflow (fetch-headlines.yml) is not affected.
+
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/**', 'tests/**', '.github/workflows/ci.yml']
+  pull_request:
+    paths: ['scripts/**', 'tests/**', '.github/workflows/ci.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # The tested modules (title_grounding, build_topstories, check_topstories)
+      # import only the standard library at module level — API SDKs load lazily —
+      # so the tests need nothing beyond pytest.
+      - name: Install pytest
+        run: pip install --no-cache-dir pytest
+
+      - name: Run tests
+        run: python -m pytest tests/ -q
