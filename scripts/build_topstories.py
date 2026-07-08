@@ -460,8 +460,12 @@ _CURRENT_FRAME_RE = re.compile(
     r"arrives?|arrived|holds?\s+talks|live|hosts|hosting|hosted|wraps?\s+up|"
     r"concludes?|concluded|ends?|ended|signs?|signed|killed|struck)\b", re.I)
 # A member more than this far behind the cluster's newest item is treated as not
-# "fresh" for representative selection (its framing may be a stage out of date).
-STALE_GAP_SEC = 18 * 3600
+# "fresh" for representative selection. Kept TIGHT (6h): in a running story
+# (attack → retaliation → sanctions) yesterday's wave still uses active verbs
+# ("ships struck…"), so tense regexes can't spot it — only recency can. The
+# headline must come from the newest wave of coverage; older members lead only
+# when no fresh member survives the english/neutral gates.
+STALE_GAP_SEC = 6 * 3600
 
 
 def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
@@ -477,7 +481,7 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
     dominant = {e for e, c in strong_counts.items() if c >= max(strong_counts.values(), default=0) * 0.5}
 
     tok = {i: _tokens(items[i]["title"]) for i in idxs}
-    generic = re.compile(r"^(live|breaking|war on|live blog|watch|video|photos|update|main news)\b", re.I)
+    generic = re.compile(r"^(live|breaking|war on|live blog|watch|video|photos|in pictures|update|main news)\b", re.I)
     # Recency signals for the whole cluster: the newest timestamp, and whether any
     # member frames the story as already happening/finished — if one does, an
     # older "to host / selected to host" member is out of date and must not lead.
@@ -500,12 +504,13 @@ def pick_representative_heuristic(items: list[dict], idxs: list[int]) -> int:
         fresh = (newest_t - items[i]["_t"]) <= STALE_GAP_SEC
         length_fit = -abs(len(clean) - 50)                     # prefer natural headline length
         central = sum(len(tok[i] & tok[j]) for j in idxs if j != i)
-        # English + neutral are gates; then reject stale framing (current_ok) so
-        # an out-of-date "to host / selected" headline can't lead a story that has
-        # moved on. Source-quality stays primary (coverage, then a mainstream
-        # outlet's plainer phrasing); freshness only demotes a meaningfully older
-        # member among otherwise-equal ones, with raw recency the final tiebreak.
-        key = (english, neutral, current_ok, covers, src_rank, fresh,
+        # English + neutral are gates; then reject stale framing (current_ok);
+        # then FRESHNESS — the headline must come from the cluster's newest wave
+        # of coverage, so an older stage of a running story ("ships struck…")
+        # can't lead once the story has escalated (US strikes, sanctions). Only
+        # among equally-fresh members do coverage, a mainstream outlet's plainer
+        # phrasing, non-stub, length and centrality decide; raw recency last.
+        key = (english, neutral, current_ok, fresh, covers, src_rank,
                not stub, length_fit, central, items[i]["_t"])
         if best_key is None or key > best_key:
             best_key, best = key, i
@@ -747,10 +752,20 @@ def _member_view(it: dict) -> dict:
     }
 
 
+# Ranking half-life: an outlet's vote on a story decays with the age of that
+# outlet's newest item on it, halving every RANK_HALFLIFE_H hours. Breadth stays
+# the primary signal, but a story whose coverage is uniformly old (yesterday's
+# stage of a running story) can no longer outrank the day's fresh development
+# just because it has had more hours to accumulate outlets.
+RANK_HALFLIFE_H = 12.0
+
+
 def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
     """clusters: [{member_indices, representative_index, summary?, summary_he?}].
-    Rank by distinct-outlet count → category diversity → recency, keep the top N
-    that pass the geopolitics/security topical filter."""
+    Rank by freshness-weighted outlet count → category diversity → recency, keep
+    the top N that pass the geopolitics/security topical filter."""
+    import math
+    now = datetime.now(timezone.utc).timestamp()
     scored = []
     for c in clusters:
         idxs = c["member_indices"]
@@ -758,10 +773,18 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
         outlets = {m["source"] for m in members}
         cats = {m["category"] for m in members if m["category"]}
         newest = max((m["_t"] for m in members), default=0.0)
-        scored.append((c, idxs, members, len(outlets), len(cats), newest))
+        # Each outlet votes once, weighted by how recently it last touched the
+        # story (its newest member), with a RANK_HALFLIFE_H-hour half-life.
+        per_outlet_newest = {}
+        for m in members:
+            per_outlet_newest[m["source"]] = max(per_outlet_newest.get(m["source"], 0.0), m["_t"])
+        weight = sum(0.5 ** (max(0.0, (now - t) / 3600.0) / RANK_HALFLIFE_H)
+                     for t in per_outlet_newest.values())
+        scored.append((c, idxs, members, len(outlets), len(cats), newest, weight))
 
-    # Primary: outlet count. Secondary: category (camp) diversity. Tertiary: recency.
-    scored.sort(key=lambda x: (x[3], x[4], x[5]), reverse=True)
+    # Primary: freshness-weighted outlet count. Secondary: category (camp)
+    # diversity. Tertiary: recency.
+    scored.sort(key=lambda x: (x[6], x[4], x[5]), reverse=True)
 
     # Keep only on-topic stories (geopolitics / security / military / diplomacy),
     # THEN take the top N — so a widely-carried but off-topic item (a court
@@ -771,7 +794,7 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
     relevant = [s for s in scored if _is_relevant(s[2])] or scored
 
     out = []
-    for rank, (c, idxs, members, n_outlets, n_cats, newest) in enumerate(relevant[:TOP_N], 1):
+    for rank, (c, idxs, members, n_outlets, n_cats, newest, _w) in enumerate(relevant[:TOP_N], 1):
         rep = items[c["representative_index"]]
         cats = sorted({m["category"] for m in members if m["category"]},
                       key=lambda x: CAT_ORDER.index(x) if x in CAT_ORDER else 99)
@@ -814,13 +837,22 @@ def build_stories(items: list[dict], clusters: list[dict]) -> list[dict]:
 SUMM_MODEL = os.environ.get("TOPSTORIES_SUMMARY_MODEL", "gemini-2.5-flash")
 # Bump when the summary PROMPT changes so cached summaries written under the old
 # wording are invalidated and regenerated (the signature keys the cache).
-SUMM_PROMPT_VERSION = "v4-recency"
+SUMM_PROMPT_VERSION = "v5-evolving"
 
 
 def _top5_signature(stories: list[dict]) -> str:
-    joined = SUMM_PROMPT_VERSION + "|" + "|".join(
-        (s.get("rep") or {}).get("url", "") for s in stories)
-    return sha256(joined.encode("utf-8")).hexdigest()
+    """Cache key for the neutral summaries. Includes each story's NEWEST member
+    (members are sorted newest-first) as well as its representative: a running
+    story keeps its rep for hours while new developments join the cluster, and a
+    summary written before those developments is exactly the stale line we must
+    not keep serving. The key changes only when a story's lead item actually
+    changes, so quota is still spent on real developments, not on every run."""
+    parts = [SUMM_PROMPT_VERSION]
+    for s in stories:
+        members = s.get("members") or []
+        parts.append((s.get("rep") or {}).get("url", ""))
+        parts.append((members[0].get("url", "") if members else ""))
+    return sha256("|".join(parts).encode("utf-8")).hexdigest()
 
 
 def _gemini_summaries(stories: list[dict]):
@@ -860,6 +892,9 @@ def _gemini_summaries(stories: list[dict]):
         "'selected to host', 'set to meet') but a newer one shows it happening or "
         "finished ('summit under way', 'leaders meet', 'talks concluded'), write "
         "the CURRENT state — never the superseded one.\n"
+        "- If the story has ESCALATED (e.g. tanker attacks → retaliatory strikes "
+        "→ sanctions), the line is about the LATEST development; mention the "
+        "trigger briefly at most ('after Hormuz attacks'), never as the lead.\n"
         "- ACCURACY FIRST. Never assert more than the headlines support. Mirror "
         "the status the newest headlines give — planned→planned, under "
         "way→under way, concluded→concluded — and never upgrade a plan into a "
