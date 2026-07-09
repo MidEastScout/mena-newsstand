@@ -52,7 +52,18 @@ name: MENA Newsstand
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # safety net only — the self-dispatch loop is primary
+    # Safety net ONLY — the ~28-min self-dispatch loop (see `rearm`) is primary.
+    # Kept at */15: the `rearm` job itself can silently die (observed 2026-07-09 —
+    # its job sat "queued" with no runner for 15 min and was cancelled, so no next
+    # run was ever dispatched and the site went stale for 40+ min with no error
+    # surfaced anywhere). A frequent watchdog bounds how long that failure mode
+    # can leave the site stale. This used to also collide with `deploy` (GitHub
+    # cancelling the older *pending* deploy in the newsstand-pages group when a
+    # newer run's deploy queued behind it), which failed the whole run and
+    # emailed — but `deploy` now has job-level continue-on-error (below) so a
+    # cancelled/superseded deploy no longer fails the run. That was the real fix;
+    # this schedule can stay frequent again.
+    - cron: '*/15 * * * *'
   workflow_dispatch:          # manual "refresh now" + the loop's own dispatch
     inputs:
       refresh_frontpages:
@@ -227,6 +238,15 @@ jobs:
   deploy:
     needs: run
     runs-on: ubuntu-latest
+    # Deploy is best-effort: `run` has already committed the data and a fresh
+    # deploy happens every ~30 min, so a deploy hiccup must never fail the whole
+    # refresh. The two deploy steps below already carry step-level
+    # continue-on-error, but that does NOT cover the job being CANCELLED before
+    # its steps run — e.g. when this deploy sits pending in the newsstand-pages
+    # concurrency group and GitHub cancels it because a newer run's deploy queued
+    # behind an in-progress one. Job-level continue-on-error catches that case so
+    # a superseded/cancelled deploy no longer marks the run "failure" (and emails).
+    continue-on-error: true
     permissions:
       contents: read
       pages: write
