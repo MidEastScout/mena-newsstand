@@ -53,12 +53,17 @@ name: MENA Newsstand
 on:
   schedule:
     # Safety net ONLY — the ~28-min self-dispatch loop (see `rearm`) is primary.
-    # Kept hourly, not */15: a second high-frequency scheduler running alongside
-    # the self-loop stacks concurrent runs, and GitHub then cancels the older
-    # *pending* `deploy` (queued in the newsstand-pages group) whenever a newer
-    # run's deploy arrives — which marked the whole run "failure" and emailed.
-    # Hourly is ample to restart the loop if it ever dies, without racing it.
-    - cron: '23 * * * *'
+    # Kept at */15: the `rearm` job itself can silently die (observed 2026-07-09 —
+    # its job sat "queued" with no runner for 15 min and was cancelled, so no next
+    # run was ever dispatched and the site went stale for 40+ min with no error
+    # surfaced anywhere). A frequent watchdog bounds how long that failure mode
+    # can leave the site stale. This used to also collide with `deploy` (GitHub
+    # cancelling the older *pending* deploy in the newsstand-pages group when a
+    # newer run's deploy queued behind it), which failed the whole run and
+    # emailed — but `deploy` now has job-level continue-on-error (below) so a
+    # cancelled/superseded deploy no longer fails the run. That was the real fix;
+    # this schedule can stay frequent again.
+    - cron: '*/15 * * * *'
   workflow_dispatch:          # manual "refresh now" + the loop's own dispatch
     inputs:
       refresh_frontpages:
