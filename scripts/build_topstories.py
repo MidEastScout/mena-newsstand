@@ -241,6 +241,18 @@ ENTITIES_STRONG = {
     "us_iran_deal": ["us-iran deal", "iran deal", "nuclear deal"],
     "football": ["afcon", "quarter-final", "quarter-finals", "co-hosts"],
     "boeing": ["boeing", "saudia"],
+    # Nation-TARGETS of a cross-border strike. Unlike the perennial belligerents
+    # in ENTITIES_BROAD (Iran/Israel/US/Turkey), these states surface in the feed
+    # rarely and, when a strike wave hits them, nearly every headline naming one is
+    # the same story — so sharing one is strong evidence of the same event. Without
+    # them the "Iran fires missiles at Jordan/Kuwait/Bahrain" wave carried only the
+    # broad `iran` lens (which never anchors), so each wire report fell to the
+    # near-duplicate leftover bucket, fragmented into singletons, and never reached
+    # the Top-5. Matched TITLE-ONLY (see TITLE_ONLY_ENTITIES) to dodge byline noise.
+    "jordan":  ["jordan", "jordanian", "azraq", "amman", "jaf", "jordan armed forces"],
+    "kuwait":  ["kuwait", "kuwaiti"],
+    "bahrain": ["bahrain", "bahraini", "manama"],
+    "qatar":   ["qatar", "qatari", "doha", "al udeid", "al-udeid"],
 }
 ENTITIES_BROAD = {
     "iran": ["iran", "iranian", "tehran", "irgc", "revolutionary guard", "pezeshkian", "araghchi"],
@@ -252,6 +264,13 @@ ENTITIES_BROAD = {
 }
 ENTITIES = {**ENTITIES_STRONG, **ENTITIES_BROAD}
 STRONG = set(ENTITIES_STRONG)
+# Entities matched against the TITLE only, never the snippet. Country names leak
+# into snippets as outlet bylines / datelines — e.g. the "Jordan Times" byline is
+# appended to the snippet of every Jordan Times story (a UK-politics item, a
+# Hormuz-shipping item), and a dateline like "TEHRAN (MNA)" tags the source city.
+# Crediting those would fold unrelated stories into a country's strike cluster.
+# The title carries the real subject, so anchor nation-targets on the title alone.
+TITLE_ONLY_ENTITIES = {"jordan", "kuwait", "bahrain", "qatar"}
 _ENT_RE = {
     canon: [re.compile(r"\b" + re.escape(a).replace(r"\ ", r"\s+") + r"\b", re.I) for a in aliases]
     for canon, aliases in ENTITIES.items()
@@ -298,7 +317,20 @@ def cluster_heuristic(items: list[dict]) -> list[list[int]]:
     overlap uses titles. Result: the ranking counts every outlet carrying a story
     in any language, and the top five are genuinely distinct events."""
     n = len(items)
-    all_ents  = [_entities(f"{it['title']} {it['snippet']}") for it in items]
+
+    def _item_ents(it):
+        # Most entities are read from title + snippet so Arabic/Persian/Hebrew
+        # titled outlets still cluster on the English snippet. TITLE_ONLY_ENTITIES
+        # (nation-targets) are the exception: credit them only when they appear in
+        # the title, so an outlet byline/dateline in the snippet can't tag an
+        # unrelated story with the country and drag it into its strike cluster.
+        ents = _entities(f"{it['title']} {it['snippet']}")
+        if ents & TITLE_ONLY_ENTITIES:
+            title_ents = _entities(it["title"])
+            ents = (ents - TITLE_ONLY_ENTITIES) | (title_ents & TITLE_ONLY_ENTITIES)
+        return ents
+
+    all_ents  = [_item_ents(it) for it in items]
     strong    = [e & STRONG for e in all_ents]
     title_tok = [_tokens(it["title"]) for it in items]
 
