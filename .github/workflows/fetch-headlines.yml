@@ -52,7 +52,13 @@ name: MENA Newsstand
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # safety net only — the self-dispatch loop is primary
+    # Safety net ONLY — the ~28-min self-dispatch loop (see `rearm`) is primary.
+    # Kept hourly, not */15: a second high-frequency scheduler running alongside
+    # the self-loop stacks concurrent runs, and GitHub then cancels the older
+    # *pending* `deploy` (queued in the newsstand-pages group) whenever a newer
+    # run's deploy arrives — which marked the whole run "failure" and emailed.
+    # Hourly is ample to restart the loop if it ever dies, without racing it.
+    - cron: '23 * * * *'
   workflow_dispatch:          # manual "refresh now" + the loop's own dispatch
     inputs:
       refresh_frontpages:
@@ -227,6 +233,15 @@ jobs:
   deploy:
     needs: run
     runs-on: ubuntu-latest
+    # Deploy is best-effort: `run` has already committed the data and a fresh
+    # deploy happens every ~30 min, so a deploy hiccup must never fail the whole
+    # refresh. The two deploy steps below already carry step-level
+    # continue-on-error, but that does NOT cover the job being CANCELLED before
+    # its steps run — e.g. when this deploy sits pending in the newsstand-pages
+    # concurrency group and GitHub cancels it because a newer run's deploy queued
+    # behind an in-progress one. Job-level continue-on-error catches that case so
+    # a superseded/cancelled deploy no longer marks the run "failure" (and emails).
+    continue-on-error: true
     permissions:
       contents: read
       pages: write
