@@ -64,9 +64,11 @@ def main() -> int:
         "X-GitHub-Api-Version": "2022-11-28",
     })
 
-    # Find our issue among open issues (matched by exact title).
+    # Find our issue among open issues. Matched by exact title, NOT by label:
+    # a label filter silently matches nothing if the label was ever deleted,
+    # and the next run would then open a duplicate issue.
     r = gh(s, "GET", f"/repos/{repo}/issues",
-           params={"state": "open", "labels": LABEL, "per_page": 50})
+           params={"state": "open", "per_page": 100})
     existing = None
     if r.ok:
         existing = next((i for i in r.json()
@@ -125,6 +127,10 @@ def main() -> int:
     else:
         r = gh(s, "POST", f"/repos/{repo}/issues",
                json={"title": ISSUE_TITLE, "body": body, "labels": [LABEL]})
+        if not r.ok:
+            # Some tokens can open issues but not create the missing label.
+            r = gh(s, "POST", f"/repos/{repo}/issues",
+                   json={"title": ISSUE_TITLE, "body": body})
         if r.ok:
             print(f"Opened issue #{r.json().get('number')} "
                   f"({len(stale)} stale cover(s)).")
