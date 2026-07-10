@@ -81,6 +81,7 @@ on:
 
 permissions:
   contents: write
+  issues: write   # report_stale_frontpages.py opens/closes the staleness issue
 
 jobs:
   run:
@@ -183,6 +184,18 @@ jobs:
         if: ${{ env.DO_FRONTPAGES == 'true' }}
         continue-on-error: true
         run: python scripts/fetch_frontpages.py
+
+      # Chronic staleness (a cover that has missed 2+ expected editions) means
+      # a dead source, which retries can't fix — so escalate it from a log
+      # warning to a repo issue that opens when covers stop refreshing and
+      # closes itself on recovery. This is what turned the July 2026 Kiosko
+      # freeze from a silent 4-day outage into something visible.
+      - name: Report chronically stale front pages
+        if: ${{ env.DO_FRONTPAGES == 'true' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/report_stale_frontpages.py
 
       - name: Commit and push if changed
         id: commit
