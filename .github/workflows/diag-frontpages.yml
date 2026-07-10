@@ -6,6 +6,14 @@ name: Diagnose front-page sources (temporary)
 # once fetch_frontpages.py has been fixed.
 
 on:
+  # push-triggered because workflow_dispatch can't target a workflow that only
+  # exists on a feature branch; every push to the fix branch re-runs the probe.
+  push:
+    branches:
+      - claude/newspaper-refresh-fix-c1jn5u
+    paths:
+      - scripts/diag_frontpage_sources.py
+      - .github/workflows/diag-frontpages.yml
   workflow_dispatch:
 
 permissions:
