@@ -1,0 +1,23 @@
+name: Diagnose front-page sources (temporary)
+
+# Temporary diagnostic for the Kiosko outage that froze four covers on the
+# 2026-07-06 edition. Runs scripts/diag_frontpage_sources.py from a GitHub
+# runner and prints which sources still work. Delete together with the script
+# once fetch_frontpages.py has been fixed.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install --no-cache-dir requests
+      - run: python scripts/diag_frontpage_sources.py
