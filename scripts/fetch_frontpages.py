@@ -15,12 +15,28 @@ aren't carried by either source are omitted rather than shown as permanent
 Writes frontpages/manifest.json describing which papers have a current image.
 
 Source kinds (all probe-confirmed reachable from a datacenter IP):
-  ("ff", CODE)          -> Freedom Forum CDN (keyed by day-of-month)
-  ("kiosko", GEO, SLUG) -> Kiosko CDN (keyed by full date)
-  ("gulftimes",)        -> Gulf Times' own CDN: dated page-1 JPEG of the
-                           main section (gulf-times.com/pdf/Y/m/d/main-Ymd-N.jpeg)
-  ("sgpdf",)            -> Saudi Gazette's own dated PDF; page 1 is rendered to
-                           JPEG locally (needs pypdfium2; best-effort)
+  ("ff", CODE)            -> Freedom Forum CDN (keyed by day-of-month)
+  ("kiosko", GEO, SLUG)   -> Kiosko CDN (keyed by full date)
+  ("kioskopage", CC, SLUG)-> Kiosko's HTML paper page, scraped for the current
+                             cover URL. Only accepts an image dated the day
+                             being fetched, so a frozen/stale Kiosko can never
+                             smuggle in an old edition — but if Kiosko ever
+                             changes its image URL scheme again this kind
+                             adapts automatically where the constructed
+                             ("kiosko", ...) URLs would 404 forever.
+  ("paperboy", CC, SLUG)  -> thepaperboy.com CDN (keyed by full date):
+                             cdn.thepaperboy.com/frontpages/CC/YYYYMMDD/SLUG.jpg
+                             (added 2026-07-10 when Kiosko froze site-wide; the
+                             _lg variant is fetched first, ~230 KB)
+  ("gztpage", SLUG)       -> gzt.com/gazeteler/SLUG (Turkish front-page
+                             aggregator), scraped for img.piri.net scans whose
+                             URL path carries the edition date. Same
+                             date-verification rule as kioskopage: only an
+                             image dated the day being fetched is accepted.
+  ("gulftimes",)          -> Gulf Times' own CDN: dated page-1 JPEG of the
+                             main section (gulf-times.com/pdf/Y/m/d/main-Ymd-N.jpeg)
+  ("sgpdf",)              -> Saudi Gazette's own dated PDF; page 1 is rendered to
+                             JPEG locally (needs pypdfium2; best-effort)
 
 Fill-only mode (FRONTPAGES_FILL_ONLY=true)
 ------------------------------------------
@@ -41,6 +57,7 @@ refresh (FILL_ONLY unset/false) to catch late re-plates.
 """
 import json
 import os
+import re
 import shutil
 import sys
 from datetime import date, datetime, timedelta, timezone
@@ -68,8 +85,15 @@ PAPERS = [
      "site": "https://www.kuwaittimes.com", "src": [("ff", "KUW_KT")]},
     {"id": "daily_sabah", "name": "Daily Sabah", "loc": "Turkey", "lang": "en",
      "site": "https://www.dailysabah.com", "src": [("ff", "TUR_DS")]},
+    # Kiosko froze site-wide on 2026-07-06 (its pages kept serving Monday's
+    # editions; every constructed URL for later dates 404s), so gzt.com is the
+    # primary now (probed 2026-07-10: serves today's Hürriyet scan to a
+    # datacenter IP). Kiosko stays as fallback and self-heals if it resumes.
     {"id": "hurriyet", "name": "Hürriyet", "loc": "Turkey", "lang": "tr",
-     "site": "https://www.hurriyet.com.tr", "src": [("kiosko", "tr", "hurriyet")]},
+     "site": "https://www.hurriyet.com.tr",
+     "src": [("gztpage", "hurriyet"),
+             ("kiosko", "tr", "hurriyet"),
+             ("kioskopage", "tr", "hurriyet")]},
 
     # ——— United States (Freedom Forum — all probe-confirmed) ———
     {"id": "nyt", "name": "New York Times", "loc": "USA", "lang": "en",
@@ -87,13 +111,29 @@ PAPERS = [
      "site": "https://www.usatoday.com", "no_print": {5, 6},
      "src": [("ff", "USAT"), ("kiosko", "us", "usa_today")]},
 
-    # ——— Europe (Kiosko — all probe-confirmed) ———
+    # ——— Europe ———
+    # UK titles moved to thepaperboy.com when Kiosko froze on 2026-07-06
+    # (probed 2026-07-10: paperboy serves today's editions from a datacenter IP
+    # as deterministic dated URLs). Kiosko stays as fallback for redundancy.
     {"id": "the_independent", "name": "The Independent", "loc": "UK", "lang": "en",
-     "site": "https://www.independent.co.uk", "src": [("kiosko", "uk", "the_independent")]},
+     "site": "https://www.independent.co.uk",
+     "src": [("paperboy", "uk", "the_independent"),
+             ("kiosko", "uk", "the_independent"),
+             ("kioskopage", "uk", "the_independent")]},
     {"id": "daily_mail", "name": "Daily Mail", "loc": "UK", "lang": "en",
-     "site": "https://www.dailymail.co.uk", "src": [("kiosko", "uk", "daily_mail")]},
+     "site": "https://www.dailymail.co.uk",
+     "src": [("paperboy", "uk", "daily_mail"),
+             ("kiosko", "uk", "daily_mail"),
+             ("kioskopage", "uk", "daily_mail")]},
+    # No reachable replacement source found for Die Welt (probed 2026-07-10:
+    # paperboy has no German titles, epaper.welt.de is a JS app, kiosk
+    # storefronts 404/time out). Until Kiosko resumes this cover stays on its
+    # last edition — honestly date-labelled on the site, tracked by the
+    # auto-opened staleness issue, and self-healing via kioskopage the moment
+    # Kiosko publishes again or changes its URL scheme.
     {"id": "die_welt", "name": "Die Welt", "loc": "Germany", "lang": "de",
-     "site": "https://www.welt.de", "src": [("kiosko", "de", "die_welt")]},
+     "site": "https://www.welt.de",
+     "src": [("kiosko", "de", "die_welt"), ("kioskopage", "de", "die_welt")]},
 ]
 
 OUT_DIR = Path(__file__).parent.parent / "frontpages"
@@ -126,13 +166,93 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
 
-def candidate_urls(src, d) -> list:
+# Scraped-page results, one fetch per page per run (shared across the
+# WINDOW_DAYS date attempts): {page_url: [cover image urls found]}.
+_KIOSKO_PAGE_CACHE = {}
+_GZT_PAGE_CACHE = {}
+
+# gzt.com hosts each day's front-page scan on img.piri.net with the edition
+# date in the path (no zero-padding): .../piri/upload/3/2026/7/10/<hash>.jpg
+_PIRI_IMG_RE = re.compile(
+    r'https?://img\.piri\.net/piri/upload/\d+/\d{4}/\d{1,2}/\d{1,2}/'
+    r'[a-f0-9\-]+\.jpe?g', re.I)
+
+
+def gzt_page_covers(session, slug: str) -> list:
+    """Scrape gzt.com/gazeteler/<slug> for dated img.piri.net cover scans."""
+    page = f"https://www.gzt.com/gazeteler/{slug}"
+    if page in _GZT_PAGE_CACHE:
+        return _GZT_PAGE_CACHE[page]
+    urls = []
+    try:
+        r = session.get(page, headers={"User-Agent": UA,
+                                       "Referer": "https://www.gzt.com/"},
+                        timeout=TIMEOUT)
+        if r.status_code == 200:
+            urls = list(dict.fromkeys(_PIRI_IMG_RE.findall(r.text)))
+    except Exception as exc:
+        print(f"      ! {page} -> {exc}", file=sys.stderr)
+    _GZT_PAGE_CACHE[page] = urls
+    return urls
+
+_KIOSKO_IMG_RE = re.compile(
+    r'https?://img\.kiosko\.net/\d{4}/\d{2}/\d{2}/[a-z]+/[a-z0-9_\-]+\.\d+\.jpg',
+    re.I)
+
+
+def kiosko_page_covers(session, cc: str, slug: str) -> list:
+    """Scrape en.kiosko.net/<cc>/np/<slug>.html for cover image URLs (og:image
+    plus any img.kiosko.net references), deduped, best first."""
+    page = f"https://en.kiosko.net/{cc}/np/{slug}.html"
+    if page in _KIOSKO_PAGE_CACHE:
+        return _KIOSKO_PAGE_CACHE[page]
+    urls = []
+    try:
+        r = session.get(page, headers={"User-Agent": UA,
+                                       "Referer": "https://en.kiosko.net/"},
+                        timeout=TIMEOUT)
+        if r.status_code == 200:
+            og = re.findall(r'<meta[^>]+(?:property|name)=["\']og:image["\']'
+                            r'[^>]+content=["\']([^"\']+)', r.text, re.I)
+            urls = [u for u in og if "kiosko.net" in u]
+            urls += _KIOSKO_IMG_RE.findall(r.text)
+            urls = list(dict.fromkeys(urls))
+    except Exception as exc:
+        print(f"      ! {page} -> {exc}", file=sys.stderr)
+    _KIOSKO_PAGE_CACHE[page] = urls
+    return urls
+
+
+def candidate_urls(session, src, d) -> list:
     """The URL(s) to try for one source on date d, in priority order."""
     kind = src[0]
     if kind == "ff":
         return [f"https://cdn.freedomforum.org/dfp/jpg{d.day}/lg/{src[1]}.jpg"]
     if kind == "kiosko":
         return [f"https://img.kiosko.net/{d:%Y/%m/%d}/{src[1]}/{src[2]}.750.jpg"]
+    if kind == "kioskopage":
+        # Only covers actually dated d are eligible — the date in the image URL
+        # path is the edition date, so a frozen page (still advertising an old
+        # edition) yields nothing here and the fetch falls through to the next
+        # source/date instead of re-downloading a stale cover as "today's".
+        out = []
+        for u in kiosko_page_covers(session, src[1], src[2]):
+            if f"{d:%Y/%m/%d}" in u:
+                # Prefer the full-size scan over whatever thumbnail size the
+                # page embeds (.300/.200); keep the as-found URL as backup.
+                big = re.sub(r'\.\d+\.jpg$', '.750.jpg', u)
+                if big != u:
+                    out.append(big)
+                out.append(u)
+        return list(dict.fromkeys(out))
+    if kind == "paperboy":
+        base = f"https://cdn.thepaperboy.com/frontpages/{src[1]}/{d:%Y%m%d}/{src[2]}"
+        return [f"{base}_lg.jpg", f"{base}.jpg"]
+    if kind == "gztpage":
+        # The date filter (unpadded, slash-delimited) is what guarantees the
+        # scan matched is the edition of day d and not an older one.
+        return [u for u in gzt_page_covers(session, src[1])
+                if f"/{d.year}/{d.month}/{d.day}/" in u]
     if kind == "gulftimes":
         # Gulf Times posts the main section's page 1 as a dated JPEG; the trailing
         # number is the edition, usually 1 but occasionally a later re-plate (2/3).
@@ -148,6 +268,10 @@ def referer_for(url: str):
         return "https://en.kiosko.net/"
     if "freedomforum.org" in url:
         return "https://www.freedomforum.org/todaysfrontpages/"
+    if "thepaperboy.com" in url:
+        return "https://www.thepaperboy.com/"
+    if "piri.net" in url:
+        return "https://www.gzt.com/"
     if "gulf-times.com" in url:
         return "https://www.gulf-times.com/"
     if "saudigazette.com.sa" in url:
@@ -178,6 +302,15 @@ def pdf_first_page_to_jpeg(pdf_bytes: bytes):
         return None
 
 
+def _is_image_bytes(data: bytes) -> bool:
+    """True for JPEG/PNG/WebP magic bytes. Trusting Content-Type instead broke
+    on CDNs that serve real covers as application/octet-stream (thepaperboy),
+    and sniffing also rejects HTML error pages served as 200s."""
+    return (data[:3] == b"\xff\xd8\xff"
+            or data[:8] == b"\x89PNG\r\n\x1a\n"
+            or (data[:4] == b"RIFF" and data[8:12] == b"WEBP"))
+
+
 def fetch_cover(session: requests.Session, url: str):
     """Download a cover URL and return image bytes. PDFs are rendered to JPEG
     (page 1). Returns None if it isn't a real cover."""
@@ -201,7 +334,7 @@ def fetch_cover(session: requests.Session, url: str):
         if not img:
             print(f"      - {url} -> PDF unusable ({len(r.content)}B)")
         return img
-    if ct.startswith("image/") and len(r.content) >= MIN_BYTES:
+    if _is_image_bytes(r.content) and len(r.content) >= MIN_BYTES:
         return r.content
     print(f"      - {url} -> {r.status_code} {ct or '?'} {len(r.content)}B")
     return None
@@ -355,7 +488,7 @@ def main():
         got = used_url = used_date = None
         for d in dates:
             for src in p["src"]:
-                for url in candidate_urls(src, d):
+                for url in candidate_urls(session, src, d):
                     data = fetch_cover(session, url)
                     if data:
                         got, used_url, used_date = data, url, d.isoformat()
