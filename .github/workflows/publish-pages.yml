@@ -1,0 +1,235 @@
+name: Publish to GitHub Pages
+
+# WHAT THIS WORKFLOW DOES (plain English)
+# =========================================
+# Publishes the current `main` to GitHub Pages. This used to be a `deploy` job
+# INSIDE the MENA Newsstand data-refresh workflow (fetch-headlines.yml). It was
+# split out on 2026-07-13 because of a failure mode that job-level
+# `continue-on-error` cannot cover:
+#
+#   A transient GitHub infra hiccup while the deploy job is being SET UP — the
+#   "Getting action download info" phase, where GitHub resolves the marketplace
+#   actions (actions/checkout, actions/deploy-pages, …) — returns 503 Service
+#   Unavailable. That fails the job in a phase BEFORE any step runs, and
+#   `jobs.<id>.continue-on-error: true` does NOT apply to setup-phase failures.
+#   So the deploy job died, and the whole ~30-min refresh run was marked
+#   "failure" (red X + failure email) even though the data had already committed
+#   fine and the site self-heals on the next deploy. (Observed run 29252953982,
+#   2026-07-13T13:16Z: the deploy job's only recorded step was "Set up job",
+#   conclusion=failure, after two internal 503 retries.)
+#
+# Running the deploy in its OWN workflow means such a hiccup fails only this
+# best-effort publish — it can never redden or email the data-refresh pipeline
+# again. The publish steps below are unchanged from the old inline deploy job.
+#
+# HOW IT FIRES:
+#   - PRIMARY: the `run` job of fetch-headlines.yml dispatches this workflow
+#     (workflow_dispatch) right after it commits fresh data, so the live site
+#     updates within a minute of every ~30-min refresh. That dispatch reuses the
+#     same DISPATCH_PAT self-dispatch pattern that keeps the refresh loop alive.
+#   - BACKSTOP: the schedule below, in case a dispatch is ever dropped or
+#     DISPATCH_PAT is absent. GitHub's cron is unreliable for this repo, so it is
+#     only a safety net; the dispatch above is what keeps the site prompt.
+#   - workflow_dispatch also allows a manual "redeploy now".
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Backstop ONLY — the fetch-headlines `run` job dispatches this workflow
+    # promptly after each commit (primary). This bounds how stale the live site
+    # can get if a dispatch is ever dropped or DISPATCH_PAT lapses.
+    - cron: '*/20 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  deployments: write   # lets the "clear stuck deployment" step read/cancel
+
+# Serialise deploys; never cancel one mid-publish. Overlapping triggers (a
+# per-refresh dispatch landing near a scheduled backstop) queue behind one
+# another instead of racing the single github-pages environment.
+concurrency:
+  group: newsstand-pages
+  cancel-in-progress: false
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Publish to GitHub Pages ourselves.
+  # WHY we deploy from a workflow at all: GitHub's legacy "deploy from branch"
+  # builder was unreliable for this repo — it silently dropped about every other
+  # refresh, so the LIVE site lagged ~1 hour behind `main` even though the data
+  # committed every 30 min. (Diagnosed from the pages-build-deployment history:
+  # four 30-min refreshes in a row, but only two distinct commits ever reached
+  # the site.) Deploying from a workflow makes the live site match `main`
+  # deterministically, with no skipped refreshes.
+  #
+  # configure-pages (enablement: true) only sets the Pages "Source" to
+  # "GitHub Actions" when it CREATES the site for the first time. On a repo whose
+  # site was first created as "Deploy from a branch" it leaves the source alone,
+  # so GitHub's managed `pages-build-deployment` builder keeps firing on EVERY
+  # push and RACES this job for the single github-pages environment. That
+  # collision is what wedged deploys in "deployment_queued" until they timed out,
+  # were cancelled, and then failed the same-commit retry with "Deployment
+  # cancelled." The "Force Pages source" step below flips the source to
+  # "workflow" so only this workflow deploys. If it can't (token lacks the Pages
+  # permission), set it by hand once: Settings → Pages → Build and deployment →
+  # Source → "GitHub Actions".
+  # ---------------------------------------------------------------------------
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          # Publish the latest `main`. Because this workflow fires AFTER the run
+          # job has already pushed its commit (or on a later backstop), `main`
+          # is always at least as fresh as that commit — never stale.
+          ref: main
+
+      - name: Configure Pages (first-time enablement only)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      # Turn OFF the legacy "deploy from branch" builder by forcing the Pages
+      # source to "workflow". Idempotent (a no-op once already on workflow) and
+      # tolerant: if the token can't change Pages settings the step only warns.
+      # Order of preference: a dedicated PAGES_ADMIN_PAT, then DISPATCH_PAT, then
+      # the job's GITHUB_TOKEN (which has pages: write).
+      - name: Force Pages source = GitHub Actions (disable legacy branch builder)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.PAGES_ADMIN_PAT || secrets.DISPATCH_PAT || github.token }}
+        run: |
+          api="https://api.github.com/repos/${{ github.repository }}/pages"
+          hdr=(-H "Accept: application/vnd.github+json"
+               -H "Authorization: Bearer $GH_TOKEN"
+               -H "X-GitHub-Api-Version: 2022-11-28")
+          # Read the current source first (a plain GET works with GITHUB_TOKEN).
+          # If it's already "workflow" this step is a silent no-op — so once the
+          # source is fixed there is no recurring warning even without a PAT.
+          current=$(curl -sS "${hdr[@]}" "$api" | jq -r '.build_type // empty')
+          echo "Current Pages build_type: ${current:-unknown}"
+          if [ "$current" = "workflow" ]; then
+            echo "Pages source already 'GitHub Actions' — nothing to do."
+            exit 0
+          fi
+          code=$(curl -sS -o /tmp/pages.json -w '%{http_code}' -X PUT "${hdr[@]}" \
+            "$api" -d '{"build_type":"workflow"}') || code=000
+          echo "PUT /pages build_type=workflow -> HTTP $code"
+          if [ "$code" = "204" ] || [ "$code" = "200" ]; then
+            echo "Switched Pages source to 'GitHub Actions' — legacy branch builder disabled."
+          else
+            cat /tmp/pages.json 2>/dev/null || true
+            # NOTE: the default GITHUB_TOKEN cannot change Pages settings (it gets
+            # 403 "Resource not accessible by integration"), so this warns until
+            # the source is fixed by hand or a PAGES_ADMIN_PAT secret is added.
+            echo "::warning::Pages source is still '${current:-branch}' and this token"
+            echo "::warning::can't change it (HTTP $code). Fix once by hand: Settings ->"
+            echo "::warning::Pages -> Build and deployment -> Source -> 'GitHub Actions'."
+            echo "::warning::Until then the legacy branch builder keeps racing this deploy."
+            echo "::warning::(Or add a PAGES_ADMIN_PAT secret with Pages read+write to"
+            echo "::warning::automate it.)"
+          fi
+
+      - name: Assemble the published site (everything except git/CI internals)
+        run: |
+          mkdir -p _site
+          rsync -a --delete \
+            --exclude='.git' --exclude='.github' --exclude='_site' \
+            ./ _site/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      # A Pages deployment wedged in "in_progress" (e.g. a leftover from an
+      # earlier conflict) blocks EVERY future deploy with "in progress
+      # deployment, cancel X first" — which would freeze the live site until
+      # someone intervenes. Since deploys are serialised by the concurrency
+      # group above, any deployment still "in_progress"/"queued" when this job
+      # starts is stale, so cancel it. Best-effort and safe.
+      - name: Clear any stuck in-progress Pages deployment
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          repo="https://api.github.com/repos/${{ github.repository }}"
+          hdr=(-H "Accept: application/vnd.github+json"
+               -H "Authorization: Bearer $GH_TOKEN"
+               -H "X-GitHub-Api-Version: 2022-11-28")
+          latest=$(curl -sS "${hdr[@]}" "$repo/deployments?environment=github-pages&per_page=1")
+          sha=$(echo "$latest" | jq -r '.[0].sha // empty')
+          id=$(echo "$latest"  | jq -r '.[0].id // empty')
+          if [ -z "$id" ]; then echo "No github-pages deployment yet — nothing to clear."; exit 0; fi
+          state=$(curl -sS "${hdr[@]}" "$repo/deployments/$id/statuses?per_page=1" | jq -r '.[0].state // "none"')
+          echo "Latest github-pages deployment ${sha:0:8} state=$state"
+          case "$state" in
+            in_progress|queued|pending)
+              # deploy-pages labels its deployment with the triggering commit
+              # ($GITHUB_SHA). NEVER cancel that same commit here — doing so would
+              # leave it in "cancelled" state and our own deploy below would then
+              # fail with "Deployment cancelled". Only clear a stale deployment
+              # belonging to a DIFFERENT commit (a genuine leftover blocker).
+              if [ "$sha" = "$GITHUB_SHA" ]; then
+                echo "In-progress deployment is this run's own commit (${sha:0:8}); leaving it alone."
+              else
+                echo "Stale deployment for a different commit — cancelling ${sha:0:8} so this run can proceed…"
+                curl -sS -X POST "${hdr[@]}" "$repo/pages/deployments/$sha/cancel" \
+                  -w ' -> HTTP %{http_code}\n' || true
+                sleep 5
+              fi ;;
+            *) echo "No stuck deployment to clear." ;;
+          esac
+
+      # Deploy is best-effort: a fresh deploy happens after every ~30-min refresh
+      # (and on the schedule backstop), so a transient Pages hiccup must not be
+      # fatal to the point of needing intervention. BOTH attempts use
+      # continue-on-error (an earlier version left the retry fatal, and because a
+      # timed-out first attempt CANCELS its own deployment, the same-commit retry
+      # always saw "Deployment cancelled" and failed). `timeout` caps the wait on
+      # a wedged deployment so a bad cycle fails fast instead of burning 10 min.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 300000
+
+      # A deployment still building when we started makes our create fail with
+      # "in progress deployment". Wait for it to settle, then try once more.
+      - name: Wait, then retry the deploy if the first attempt failed
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 75
+
+      - name: Deploy to GitHub Pages (retry)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 300000
+
+      - name: Report deploy result
+        if: always()
+        run: |
+          if [ "${{ steps.deployment.outcome }}" = "success" ] \
+             || [ "${{ steps.deployment_retry.outcome }}" = "success" ]; then
+            echo "Deploy succeeded — live site now matches main."
+          else
+            echo "::warning::Both deploy attempts failed this cycle; the next ~30-min"
+            echo "::warning::refresh (and the schedule backstop) will redeploy"
+            echo "::warning::automatically. If this persists, confirm Settings ->"
+            echo "::warning::Pages -> Source is 'GitHub Actions'."
+            # Surface a genuinely broken publish path (both attempts failed) as a
+            # failed run so a persistent problem is visible, rather than hiding it
+            # behind the step-level continue-on-error above. Transient setup-phase
+            # 503s (which never reach this step) are already isolated to THIS
+            # workflow and can no longer affect the data-refresh pipeline.
+            exit 1
+          fi
