@@ -1,0 +1,25 @@
+name: Probe most-read feeds (diagnostic)
+
+# One-off diagnostic, dispatch-only. Runs scripts/probe_mostread.py on GitHub's
+# servers (the outlet hosts aren't reachable from dev sandboxes) to find which
+# outlets expose a usable "most read / trending" feed or a scrapable homepage
+# module. The verdict is read from the job log and baked into
+# fetch_headlines.py. Safe to delete this file and the probe script once the
+# answers are baked in.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install --no-cache-dir requests feedparser
+      - run: python scripts/probe_mostread.py
