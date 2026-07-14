@@ -4,10 +4,29 @@ WHAT THIS SCRIPT DOES (plain English)
 ======================================
 This script runs automatically on GitHub every 30 minutes. It visits each of
 the 27 news outlets listed in SOURCES below, reads their RSS feed (a standard
-machine-readable list of recent articles), picks the 5 most recent headlines,
-and saves everything to a file called headlines.json in the root of this repo.
-The website then reads that file to show you the headlines — no live fetching
-happens in the visitor's browser.
+machine-readable list of recent articles), picks the 5 most SIGNIFICANT
+headlines per outlet, and saves everything to a file called headlines.json in
+the root of this repo. The website then reads that file to show you the
+headlines — no live fetching happens in the visitor's browser.
+
+HOW "MOST SIGNIFICANT" IS DECIDED (per outlet, best signal available)
+======================================================================
+We don't have any outlet's internal traffic analytics, so each outlet's top 5
+is ranked by the best available real proxy, in this priority order:
+  1. "most_read"  — the outlet's own public most-read/trending feed, where one
+                    exists (configured per outlet via the "mostread" key below;
+                    found by scripts/probe_mostread.py). This reflects real
+                    reader behaviour ON THAT OUTLET.
+  2. "clicks"     — what readers of THIS site clicked over the last 7 days.
+                    Clicks are counted by the same Cloudflare Worker that
+                    stores push subscriptions (push/worker.js), aggregated
+                    across all visitors, and fetched here via PUSH_API.
+  3. "coverage"   — cross-outlet breadth: an outlet's headline ranks higher
+                    when the same story is also carried by many OTHER outlets
+                    (the same idea as the Top-5 story clustering).
+  4. "latest"     — plain recency, when none of the above has data yet.
+The method used is written to headlines.json as each outlet's "rank_method",
+and the site shows it as a small tag so readers know what the ranking means.
 
 HOW TO ADD OR REMOVE AN OUTLET
 ================================
@@ -18,10 +37,22 @@ Find the SOURCES dictionary below. Each outlet is one block that looks like:
         "lang": "en",          ← language code: "en", "ar", "he", etc.
         "url": "https://...",  ← the outlet's homepage
         "rss": "https://...",  ← the RSS feed URL (findable via the outlet's site)
+        "mostread": ...,       ← OPTIONAL most-read source (see below)
     },
 Add a new block inside the right region (Gulf / Levant / Israel / Pan-Arab),
 or delete an existing block to remove it. The region names must match exactly
 what's used in index.html.
+
+The optional "mostread" key points at the outlet's public most-read/trending
+signal (probed 2026-07-14 by scripts/probe_mostread.py — rerun it to re-check):
+    "mostread": "https://…/rss/mostread"            ← a real most-read RSS feed
+    "mostread": {"page": "https://…/", "marker": "most read"}
+        ← a server-rendered homepage module: the article links following the
+          marker text, scraped in on-page order (that order IS the ranking)
+    "mostread": {"page": "https://…/trending", "link_re": "/trending/."}
+        ← a dedicated trending SECTION: links matching link_re, page order
+Outlets without a usable signal simply omit the key and fall back to on-site
+clicks → cross-outlet coverage → recency (see rank_and_select).
 
 HOW THE FALLBACK WORKS
 ========================
@@ -76,6 +107,9 @@ SOURCES = {
             "source": "L'Orient Today", "country": "Lebanon", "lang": "en",
             "url": "https://today.lorientlejour.com",
             "rss": "https://today.lorientlejour.com/feed",
+            # Server-rendered "Most read" homepage module (probe 2026-07-14).
+            "mostread": {"page": "https://today.lorientlejour.com/",
+                         "marker": "most read"},
         },
         {
             "source": "Egypt Independent", "country": "Egypt", "lang": "en",
@@ -91,6 +125,9 @@ SOURCES = {
             "source": "Al Manar", "country": "Lebanon", "lang": "ar",
             "url": "https://www.almanar.com.lb",
             "rss": "https://www.almanar.com.lb/rss",
+            # Server-rendered "الأكثر قراءة" (most read) homepage module.
+            "mostread": {"page": "https://www.almanar.com.lb/",
+                         "marker": "الأكثر قراءة"},
         },
         {
             "source": "WAFA News", "country": "Palestine", "lang": "en",
@@ -123,11 +160,17 @@ SOURCES = {
             "source": "Al Jazeera", "country": "Qatar", "lang": "en",
             "url": "https://www.aljazeera.com",
             "rss": "https://www.aljazeera.com/xml/rss/all.xml",
+            # Server-rendered "Most popular" homepage module.
+            "mostread": {"page": "https://www.aljazeera.com/",
+                         "marker": "most popular"},
         },
         {
             "source": "Middle East Eye", "country": "UK", "lang": "en",
             "url": "https://www.middleeasteye.net",
             "rss": "https://www.middleeasteye.net/rss",
+            # Dedicated /trending section; its articles live under /trending/.
+            "mostread": {"page": "https://www.middleeasteye.net/trending",
+                         "link_re": r"/trending/."},
         },
         {
             "source": "Al Arabiya", "country": "UAE", "lang": "en",
@@ -138,6 +181,10 @@ SOURCES = {
             "source": "The New Arab", "country": "UK", "lang": "en",
             "url": "https://www.newarab.com",
             "rss": "https://www.newarab.com/rss",
+            # Server-rendered "Most Viewed" homepage module (small — the probe
+            # saw ~3 links; whatever it yields leads, the rest fills by rank).
+            "mostread": {"page": "https://www.newarab.com/",
+                         "marker": "most viewed"},
         },
         {
             "source": "Al Mayadeen", "country": "Lebanon", "lang": "ar",
@@ -167,6 +214,9 @@ SOURCES = {
             "source": "Mehr News", "country": "Iran", "lang": "en",
             "url": "https://en.mehrnews.com",
             "rss": "https://en.mehrnews.com/rss",
+            # Server-rendered "Most Viewed" homepage module.
+            "mostread": {"page": "https://en.mehrnews.com/",
+                         "marker": "most viewed"},
         },
         {
             # Iran International — London-based Persian-language broadcaster with a
@@ -178,6 +228,10 @@ SOURCES = {
             "source": "Iran International", "country": "Iran", "lang": "en",
             "url": "https://www.iranintl.com/en",
             "rss": "https://www.iranintl.com/en/rss",
+            # Server-rendered "Most Viewed" module on the /en homepage (the
+            # /en/mostread-style paths are Next.js soft-404s — do not use).
+            "mostread": {"page": "https://www.iranintl.com/en/",
+                         "marker": "most viewed"},
         },
     ],
     "Turkey": [
@@ -194,11 +248,18 @@ SOURCES = {
             "source": "Daily Sabah", "country": "Turkey", "lang": "en",
             "url": "https://www.dailysabah.com",
             "rss": "https://www.dailysabah.com/rss",
+            # The one outlet with a REAL most-read RSS feed (50 ranked entries).
+            "mostread": "https://www.dailysabah.com/rss/mostread",
         },
         {
             "source": "Hürriyet Daily News", "country": "Turkey", "lang": "en",
             "url": "https://www.hurriyetdailynews.com",
             "rss": "https://www.hurriyetdailynews.com/rss",
+            # Server-rendered "MOST POPULAR" homepage module. (Its
+            # /rss/popular URL is a keyword-SEARCH feed for the word
+            # "popular", not a most-read feed — do not use.)
+            "mostread": {"page": "https://www.hurriyetdailynews.com/",
+                         "marker": "most popular"},
         },
         {
             "source": "TRT World", "country": "Turkey", "lang": "en",
@@ -1119,10 +1180,12 @@ def enrich_missing_descriptions(session: requests.Session, headlines: list) -> i
     return filled
 
 
-def parse_feed(session: requests.Session, url: str, referer):
+def parse_feed(session: requests.Session, url: str, referer, sort=True):
     """Return entries as list of dicts sorted newest-first, or None on failure.
 
     Each dict: {title, url, published(iso str), description(str), _dt(datetime)}.
+    sort=False keeps the feed's own order — a most-read feed's order IS its
+    ranking, so re-sorting it by date would destroy the signal.
     """
     headers = dict(HEADERS)
     if referer:
@@ -1158,8 +1221,9 @@ def parse_feed(session: requests.Session, url: str, referer):
             "_dt": dt,
         })
     # Newest first; undated entries sink to the bottom.
-    floor = datetime.min.replace(tzinfo=timezone.utc)
-    items.sort(key=lambda x: x["_dt"] or floor, reverse=True)
+    if sort:
+        floor = datetime.min.replace(tzinfo=timezone.utc)
+        items.sort(key=lambda x: x["_dt"] or floor, reverse=True)
     return items or None
 
 
@@ -1255,9 +1319,286 @@ def strip_internal(items):
 def coverage_items(items):
     """A lightweight, broader slice of the outlet's fresh coverage for trends —
     titles only (no descriptions/snippets, no article fetches). Already filtered
-    for freshness, junk and off-topic by fresh_items()."""
-    return [{"title": it["title"], "url": it["url"], "published": it["published"]}
-            for it in items[:COVERAGE_PER_OUTLET]]
+    for freshness, junk and off-topic by fresh_items(). Doubles as the "show all
+    headlines" list behind each outlet's top 5 on the site; items that are
+    tracked-but-off-the-wall (e.g. the World Cup) are flagged "off" so the wall
+    can hide them while Pulse and Trends still count them."""
+    out = []
+    for it in items[:COVERAGE_PER_OUTLET]:
+        d = {"title": it["title"], "url": it["url"], "published": it["published"]}
+        if TRACKED_OFFTOPIC_RE.search(it["title"]):
+            d["off"] = True
+        out.append(d)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Per-outlet significance ranking (see the module docstring's priority order).
+# ---------------------------------------------------------------------------
+CLICK_WINDOW_DAYS = 7    # rolling window for the on-site click signal
+CLICK_MIN_TOTAL = 3      # an outlet needs at least this many clicks in window…
+CLICK_MIN_ARTICLES = 2   # …spread over at least this many distinct articles,
+                         # or the "clicks" ranking would just amplify one tap.
+
+# The named-entity gazetteer from the Top-5 clustering doubles as the breadth
+# matcher here. Import is best-effort: without it breadth falls back to plain
+# token overlap, which still works (just a little less cross-language reach).
+try:
+    from build_topstories import STRONG as _TS_STRONG, _entities as _ts_entities
+except Exception:                                    # pragma: no cover
+    _TS_STRONG, _ts_entities = set(), (lambda text: set())
+
+# Unicode-aware title tokens (the clustering STOP list is ASCII-only; headlines
+# here are English, Arabic and Hebrew). Only unambiguous, high-frequency
+# function words are listed for Arabic/Hebrew — precision over recall.
+_RANK_STOP = set((
+    "the a an and or but for nor with without from into onto over under after "
+    "before during amid says said say will would could should has have had was "
+    "were are is be been being not its his her their they this that these those "
+    "more most than then also just about against between among across near "
+    "still yet how what when where who why while since because two three four "
+    "five first last next new news live update updates report reports breaking "
+    "latest today year years day days week weeks month months"
+).split()) | {
+    "على", "إلى", "الى", "التي", "الذي", "بعد", "قبل", "ضد", "بين", "خلال",
+    "اليوم", "أمام", "حول", "منذ", "عاجل", "أخبار", "لكن", "حتى", "عندما",
+    "של", "את", "עם", "אחרי", "לפני", "נגד", "בין", "היום", "כדי", "אבל",
+    "גם", "כל", "על", "לא", "זה", "הוא", "היא",
+}
+
+
+def _uni_tokens(text: str) -> set:
+    words = re.findall(r"[^\W\d_]{3,}", (text or "").lower())
+    return {w for w in words if w not in _RANK_STOP}
+
+
+def _norm_title(t: str) -> str:
+    """Whitespace/punctuation-insensitive key for matching the same article
+    across runs and data files (click records, most-read entries, candidates)."""
+    return re.sub(r"\W+", " ", (t or "").casefold()).strip()[:120]
+
+
+def compute_breadth(outlets: list):
+    """Set it['_breadth'] on every candidate item: how many OTHER outlets carry
+    a matching story. The pairwise test mirrors the site's client-side cluster
+    fallback ((shared strong entity AND corroborating overlap) OR near-duplicate
+    title), so 'widely covered' here agrees with the Top-5 strip's notion of a
+    story. Titles only — snippets don't exist yet at this stage, and bylines in
+    descriptions would inflate matches."""
+    entries = []
+    for oi, o in enumerate(outlets):
+        for it in o.get("_candidates", []):
+            it["_breadth"] = 0
+            toks = _uni_tokens(it["title"])
+            ents = _ts_entities(it["title"])
+            entries.append((oi, it, toks, ents & _TS_STRONG, ents))
+    n = len(entries)
+    matched = [set() for _ in range(n)]          # item → other-outlet indexes
+    for a in range(n):
+        oa, ia, ta, sa, ea = entries[a]
+        for b in range(a + 1, n):
+            ob, ib, tb, sb, eb = entries[b]
+            if oa == ob:
+                continue
+            st = len(ta & tb)
+            if st < 2:                            # cheap gate: nothing shared
+                continue
+            if (sa & sb and (len(ea & eb) >= 2 or st >= 2)) or st >= 4:
+                matched[a].add(ob)
+                matched[b].add(oa)
+        ia["_breadth"] = len(matched[a])
+
+
+def fetch_click_counts(session: requests.Session) -> list:
+    """Rolling per-article click totals from the Cloudflare Worker (the same
+    PUSH_API used by send_push.py). Returns [{url, n, source?, title?}, …] or
+    [] when unconfigured/unreachable — ranking then falls back to breadth."""
+    api = os.environ.get("PUSH_API", "").strip().rstrip("/")
+    if not api:
+        print("  PUSH_API not set — on-site click ranking unavailable this run",
+              file=sys.stderr)
+        return []
+    for attempt in range(2):
+        try:
+            r = session.get(f"{api}/clicks?days={CLICK_WINDOW_DAYS}", timeout=15)
+            r.raise_for_status()
+            clicks = r.json().get("clicks") or []
+            print(f"  {len(clicks)} articles with on-site clicks in the last "
+                  f"{CLICK_WINDOW_DAYS}d")
+            return clicks
+        except Exception as exc:
+            if attempt == 0:
+                time.sleep(2)
+                continue
+            print(f"  could not fetch click counts ({exc})", file=sys.stderr)
+    return []
+
+
+# Asset/utility URLs an <a href> in a most-read module can never be.
+_MR_SKIP_RE = re.compile(
+    r"\.(?:css|js|json|xml|ico|png|jpe?g|gif|svg|webp|mp4|pdf)(?:\?|#|$)"
+    r"|/(?:feed|rss|wp-json|tags?|category|author)s?(?:/|$)", re.I)
+
+
+def scrape_mostread_page(session: requests.Session, url: str, marker: str,
+                         link_re: str, referer: str, domain: str) -> list:
+    """Extract a server-rendered 'most read' HTML module: the article links, in
+    ON-PAGE ORDER (that order IS the ranking). With `marker`, only the window
+    after the marker text is read (a homepage module); with `link_re`, links
+    matching it are read from the whole page (a dedicated trending section).
+    Titles come from the anchor text. Returns parse_feed-shaped items (undated —
+    most-read modules rarely carry timestamps)."""
+    headers = dict(HEADERS)
+    headers["Accept"] = "text/html,*/*"
+    headers["Referer"] = referer
+    try:
+        r = session.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        r.raise_for_status()
+    except Exception as exc:
+        print(f"      ! mostread page {url} -> {exc}", file=sys.stderr)
+        return []
+    text = r.text
+    if marker:
+        idx = text.lower().find(marker.lower())
+        if idx < 0:
+            return []
+        text = text[idx: idx + 8000]
+    filt = re.compile(link_re) if link_re else None
+    items, seen = [], set()
+    for m in re.finditer(r'<a\b[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',
+                         text, re.I | re.S):
+        href = html.unescape(m.group(1)).strip()
+        if href.startswith("//"):
+            href = "https:" + href
+        elif href.startswith("/"):
+            href = f"https://{domain}{href}"
+        if (domain not in urlparse(href).netloc.lower() or href in seen
+                or _MR_SKIP_RE.search(href)):
+            continue
+        if filt and not filt.search(urlparse(href).path):
+            continue
+        title = html.unescape(re.sub(r"<[^>]+>", " ", m.group(2)))
+        title = re.sub(r"\s+", " ", title).strip()
+        if len(title) < 18:                       # nav labels, "More", images
+            continue
+        seen.add(href)
+        items.append({"title": title, "url": href, "published": "",
+                      "description": "", "_dt": None})
+        if len(items) >= 10:                      # a module is never longer
+            break
+    return items
+
+
+def fetch_mostread(session: requests.Session, meta: dict) -> list:
+    """The outlet's own most-read/trending list, in the OUTLET'S ranking order,
+    passed through the same junk/off-topic/age filters as the main feed. The
+    per-outlet 'mostread' config is either a feed URL string or
+    {"page": url, "marker": "Most Read"} for a server-rendered HTML module."""
+    cfg = meta.get("mostread")
+    if not cfg:
+        return []
+    if isinstance(cfg, str):
+        cfg = {"feed": cfg}
+    source, domain = meta["source"], domain_of(meta["url"])
+    ref = meta["url"] + "/"
+    if cfg.get("feed"):
+        items = parse_feed(session, cfg["feed"], ref, sort=False) or []
+    else:
+        items = scrape_mostread_page(session, cfg["page"], cfg.get("marker", ""),
+                                     cfg.get("link_re", ""), ref, domain)
+    _clean_titles(items, source, domain, meta.get("strip_affixes"))
+    patterns = meta.get("drop_patterns")
+    drop_re = re.compile("|".join(patterns)) if patterns else None
+    cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
+    out = []
+    for it in items:
+        if is_junk_title(it["title"], source):
+            continue
+        if is_offtopic(it["title"], it.get("url", "")):
+            continue
+        if TRACKED_OFFTOPIC_RE.search(it["title"]):
+            continue
+        if drop_re and drop_re.search(it["title"]):
+            continue
+        # Dated-and-stale is dropped; undated is kept — a most-read list is by
+        # construction current, and many trending modules carry no timestamps.
+        if it["_dt"] and it["_dt"] < cutoff:
+            continue
+        out.append(it)
+        if len(out) >= HEADLINES_PER_OUTLET:
+            break
+    return out
+
+
+def rank_and_select(session: requests.Session, outlet: dict,
+                    clicks_by_url: dict, clicks_by_title: dict):
+    """Pick the outlet's displayed top 5 from its candidate pool by the best
+    available signal (most_read → clicks → coverage → latest) and record which
+    method decided, so the site can label the ranking honestly."""
+    cands = outlet.pop("_candidates", [])
+    mostread = outlet.pop("_mostread", [])
+    if not (cands or mostread):
+        return
+    floor = datetime.min.replace(tzinfo=timezone.utc)
+
+    def recency(it):
+        return it["_dt"] or floor
+
+    def click_count(it):
+        # URL match first; title match (scoped to this outlet) catches articles
+        # whose Google News redirect URL differs run-to-run.
+        return (clicks_by_url.get(it.get("url", ""), 0)
+                or clicks_by_title.get((outlet["source"], _norm_title(it["title"])), 0))
+
+    def breadth(it):
+        return it.get("_breadth", 0)
+
+    if mostread:
+        method = "most_read"
+        # Prefer the candidate-pool copy of each most-read article (it carries
+        # the description + timestamp the feed gave us); fall back to the
+        # most-read entry itself for articles outside the recent-news pool.
+        by_url = {it["url"]: it for it in cands}
+        by_title = {_norm_title(it["title"]): it for it in cands}
+        chosen, seen = [], set()
+        for mr in mostread:
+            it = by_url.get(mr["url"]) or by_title.get(_norm_title(mr["title"])) or mr
+            key = _norm_title(it["title"])
+            if key in seen:
+                continue
+            seen.add(key)
+            chosen.append(it)
+        rest = [it for it in cands if _norm_title(it["title"]) not in seen]
+        rest.sort(key=lambda it: (breadth(it), recency(it)), reverse=True)
+        chosen.extend(rest[:HEADLINES_PER_OUTLET - len(chosen)])
+    else:
+        clicked = [(click_count(it), it) for it in cands]
+        total = sum(c for c, _ in clicked)
+        distinct = sum(1 for c, _ in clicked if c)
+        if total >= CLICK_MIN_TOTAL and distinct >= CLICK_MIN_ARTICLES:
+            method = "clicks"
+            cands.sort(key=lambda it: (click_count(it), breadth(it), recency(it)),
+                       reverse=True)
+        elif any(breadth(it) for it in cands):
+            method = "coverage"
+            cands.sort(key=lambda it: (breadth(it), recency(it)), reverse=True)
+        else:
+            method = "latest"                     # no signal → the old behavior
+            cands.sort(key=recency, reverse=True)
+        chosen = cands[:HEADLINES_PER_OUTLET]
+
+    # Turn any Google News redirect links into the publisher's real article URL
+    # so clicked headlines open the actual story, not a dead Google page.
+    for it in chosen[:HEADLINES_PER_OUTLET]:
+        it["url"] = resolve_gnews_url(session, it.get("url", ""))
+    outlet["headlines"] = strip_internal(chosen)
+    outlet["rank_method"] = method
+    # Fill in missing descriptions from the article pages so every displayed
+    # headline can get a snippet.
+    filled = enrich_missing_descriptions(session, outlet["headlines"])
+    extra = f", +{filled} desc" if filled else ""
+    print(f"  + {outlet['source']}: {len(outlet['headlines'])} headlines "
+          f"via {method}{extra}")
 
 
 def _fetch_native(session: requests.Session, meta: dict) -> list:
@@ -1323,27 +1664,24 @@ def fetch_outlet(session: requests.Session, meta: dict) -> dict:
         via += "/stale"
 
     if items:
-        # The Headlines wall stays geopolitics-only: drop tracked-but-off-the-wall
-        # items (e.g. the World Cup) from the DISPLAYED headlines. They remain in
-        # the broad coverage sample below, so Pulse and Trends still count them.
-        display = [it for it in items if not TRACKED_OFFTOPIC_RE.search(it["title"])]
-        # Turn any Google News redirect links into the publisher's real article
-        # URL so clicked headlines open the actual story, not a dead Google page.
-        # Only the ones we'll actually show (strip_internal keeps the top N).
-        for it in display[:HEADLINES_PER_OUTLET]:
-            it["url"] = resolve_gnews_url(session, it.get("url", ""))
-        result["headlines"] = strip_internal(display)
-        # Broader coverage sample for the Trends/Pulse views (what the outlet is
-        # really covering), captured from the SAME already-filtered item list —
-        # which DOES include the tracked off-the-wall topics.
+        # The Headlines wall stays geopolitics-only: tracked-but-off-the-wall
+        # items (e.g. the World Cup) are excluded from the display CANDIDATES.
+        # Which 5 candidates actually display is decided AFTER every outlet is
+        # in (rank_and_select) — the ranking needs cross-outlet breadth and the
+        # site-wide click counts.
+        result["_candidates"] = [it for it in items[:COVERAGE_PER_OUTLET]
+                                 if not TRACKED_OFFTOPIC_RE.search(it["title"])]
+        # Broader coverage sample for the Trends/Pulse views and the site's
+        # "show all headlines" expander, captured from the SAME already-filtered
+        # item list — which DOES include the tracked off-the-wall topics.
         result["coverage"] = coverage_items(items)
-        # Fill in missing descriptions from the article pages so every headline
-        # can get a snippet, not just the ones whose feed shipped a description.
-        filled = enrich_missing_descriptions(session, result["headlines"])
+        # The outlet's own most-read/trending list, when it publishes one — the
+        # top-priority ranking signal for rank_and_select.
+        result["_mostread"] = fetch_mostread(session, meta)
+        mr = f", {len(result['_mostread'])} most-read" if result["_mostread"] else ""
         newest = items[0]["published"][:10] or "undated"
-        extra = f", +{filled} desc" if filled else ""
-        print(f"  + {source}: {len(result['headlines'])} headlines "
-              f"({len(result['coverage'])} in coverage, {via}, newest {newest}{extra})")
+        print(f"  · {source}: {len(result['_candidates'])} candidates "
+              f"({len(result['coverage'])} in coverage, {via}, newest {newest}{mr})")
     else:
         result["error"] = "no entries"
         print(f"  x {source}: no entries (native + google-news failed)", file=sys.stderr)
@@ -1628,6 +1966,8 @@ def apply_carry_forward(output: dict, existing: dict) -> int:
             o["error"] = None
             o["stale"] = True
             o["stale_since"] = stale_since
+            # Keep the ranking-method tag the carried headlines were built with.
+            o["rank_method"] = prev.get("rank_method", "latest")
             carried += 1
             print(f"  ~ {o['source']}: carried {len(o['headlines'])} prior headlines "
                   f"(feed down, {age_h:.1f}h old)", file=sys.stderr)
@@ -1637,9 +1977,26 @@ def apply_carry_forward(output: dict, existing: dict) -> int:
 def main():
     session = requests.Session()
     output = {"updated": datetime.now(timezone.utc).isoformat(), "regions": {}}
+    all_outlets = []
     for region in REGION_ORDER:
         print(f"\n[{region}]")
-        output["regions"][region] = [fetch_outlet(session, s) for s in SOURCES[region]]
+        outs = [fetch_outlet(session, s) for s in SOURCES[region]]
+        output["regions"][region] = outs
+        all_outlets.extend(outs)
+
+    # Pick each outlet's displayed top 5 by the best available significance
+    # signal (see the module docstring): the outlet's own most-read list, the
+    # site's own click counts, cross-outlet breadth, else recency.
+    print("\n[Ranking]")
+    compute_breadth(all_outlets)
+    clicks = fetch_click_counts(session)
+    clicks_by_url = {c["url"]: c["n"] for c in clicks
+                     if c.get("url") and isinstance(c.get("n"), (int, float))}
+    clicks_by_title = {(c.get("source", ""), _norm_title(c.get("title", ""))): c["n"]
+                       for c in clicks
+                       if c.get("title") and isinstance(c.get("n"), (int, float))}
+    for o in all_outlets:
+        rank_and_select(session, o, clicks_by_url, clicks_by_title)
 
     if _gnews_cache:
         resolved = sum(1 for v in _gnews_cache.values() if v)
