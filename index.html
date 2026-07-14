@@ -223,23 +223,50 @@ button{font-family:'Source Sans 3','Heebo',sans-serif;cursor:pointer}
 .hl-filter-info b{color:var(--blue);font-weight:700}
 .hl-link-btn{font:inherit;color:var(--accent);background:none;border:none;padding:0;font-weight:600;text-decoration:underline;cursor:pointer}
 .hl-loading{text-align:center;padding:48px;color:var(--muted);font-style:italic;font-size:14px}
-/* Theme sections — the main feed grouped by story theme, each a collapsible
-   card (<details>) with a count chip; sections are ordered by volume. */
-.hl-theme{margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r2);box-shadow:var(--sh1);overflow:hidden}
-.hl-theme-head{list-style:none;display:flex;align-items:center;gap:10px;padding:13px 18px;cursor:pointer;
+/* Outlet cards — the main feed grouped by region → outlet, each outlet a
+   collapsible card (<details>) showing its ranked top 5 with a small tag
+   naming the ranking method, plus a "show all" expander for its full feed. */
+.hl-region-name{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:17px;font-weight:800;
+  letter-spacing:.2px;color:var(--ink);margin:26px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.hl-region:first-of-type .hl-region-name{margin-top:6px}
+.hl-outlet{margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r2);box-shadow:var(--sh1);overflow:hidden}
+.hl-outlet-head{list-style:none;display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;padding:13px 18px;cursor:pointer;
   -webkit-user-select:none;user-select:none;position:relative;min-height:48px}
-.hl-theme-head::-webkit-details-marker{display:none}
-.hl-theme-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
-[dir="rtl"] .hl-theme-head::before{left:auto;right:0}
-.hl-theme-name{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:19px;font-weight:700;letter-spacing:-.2px;color:var(--ink)}
-.hl-theme-count{font-size:11.5px;font-weight:700;color:var(--blue);background:var(--bg);border:1px solid var(--line);
-  border-radius:999px;padding:2px 10px;line-height:1.5}
-.hl-theme-chev{margin-left:auto;color:var(--muted);font-size:13px;transition:transform .2s;flex:0 0 auto}
-[dir="rtl"] .hl-theme-chev{margin-left:0;margin-right:auto}
-.hl-theme[open] .hl-theme-chev{transform:rotate(180deg)}
-.hl-theme-list{list-style:none;margin:0;padding:0 18px 6px;border-top:1px solid var(--line)}
-.hl-theme-list li{padding:11px 0;border-top:1px solid var(--line)}
-.hl-theme-list li:first-child{border-top:none}
+.hl-outlet-head::-webkit-details-marker{display:none}
+.hl-outlet-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+[dir="rtl"] .hl-outlet-head::before{left:auto;right:0}
+.hl-outlet-name{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:18px;font-weight:700;letter-spacing:-.2px;color:var(--ink)}
+.hl-outlet-country{font-size:11.5px;color:var(--muted)}
+.hl-chev{margin-left:auto;color:var(--muted);font-size:13px;transition:transform .2s;flex:0 0 auto}
+[dir="rtl"] .hl-chev{margin-left:0;margin-right:auto}
+.hl-outlet[open] .hl-chev{transform:rotate(180deg)}
+.hl-outlet-list{list-style:none;margin:0;padding:0 18px 6px;border-top:1px solid var(--line)}
+.hl-outlet-list li{padding:11px 0;border-top:1px solid var(--line)}
+.hl-outlet-list li:first-child{border-top:none}
+.hl-outlet-empty{padding:14px 18px;border-top:1px solid var(--line);color:var(--muted);font-style:italic;font-size:13px}
+.hl-stale{font-size:11px;color:#8A5A00;cursor:help}
+/* The ranking-method tag: which real signal ordered this outlet's top 5.
+   Kept subtle but explicit, so the site never implies traffic data it lacks. */
+.hl-method{font-size:9.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+  padding:2px 8px;border-radius:999px;border:1px solid;line-height:1.6;white-space:nowrap;cursor:help}
+.hl-method-most_read{color:#1B7A43;border-color:#BFE3CD;background:#EDF9F1}
+.hl-method-clicks{color:#2E5AA8;border-color:#C9D7EA;background:#F0F5FB}
+.hl-method-coverage{color:#8A5A00;border-color:#EAD9AF;background:#FBF4E4}
+.hl-method-latest{color:#6B7280;border-color:#D9DEE5;background:#F4F6F8}
+/* "Show all headlines" expander inside an outlet card */
+.hl-showall{border-top:1px dashed var(--line)}
+.hl-showall summary{list-style:none;display:flex;align-items:center;gap:6px;cursor:pointer;
+  -webkit-user-select:none;user-select:none;font-size:12px;font-weight:600;color:var(--blue);padding:10px 18px}
+.hl-showall summary::-webkit-details-marker{display:none}
+.hl-showall summary::before{content:"▸";font-size:10px}
+[dir="rtl"] .hl-showall summary::before{content:"◂"}
+.hl-showall[open] summary::before{content:"▾"}
+[dir="rtl"] .hl-showall[open] summary::before{content:"▾"}
+.hl-showall-note{font-size:11px;color:var(--muted);font-style:italic;padding:0 18px 8px}
+.hl-showall-list{list-style:none;margin:0;padding:0 18px 10px}
+.hl-showall-list li{padding:7px 0;border-top:1px dashed var(--line)}
+.hl-showall-list li:first-child{border-top:none}
+.hl-showall-list .hl-item-title{font-size:14px}
 .hl-item-title{font-family:'Newsreader','Frank Ruhl Libre',Georgia,serif;font-size:15.5px;line-height:1.35;
   color:var(--ink);font-weight:500;transition:.1s;display:block}
 .hl-item-title:hover{color:var(--accent)}
@@ -434,7 +461,8 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
 [dir="rtl"] .sec-head h2,
 [dir="rtl"] .briefing-title,
 [dir="rtl"] .brief-h,
-[dir="rtl"] .hl-theme-name,
+[dir="rtl"] .hl-outlet-name,
+[dir="rtl"] .hl-region-name,
 [dir="rtl"] .hl-item-title,
 [dir="rtl"] .hl-story-title,
 [dir="rtl"] .hl-story-mtitle,
@@ -533,7 +561,7 @@ footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 16px;text-a
     <div class="sec-head">
       <h2 data-i18n="headlines_title">Live Headlines</h2>
     </div>
-    <div class="sec-note" data-i18n="headlines_note">The top stories across 27 MENA, Israeli and regional outlets — ranked by how many outlets (and regional camps) are carrying each one. Tap a story to see how each outlet worded it. Full feed below, grouped by theme. Refreshed every 30 minutes.</div>
+    <div class="sec-note" data-i18n="headlines_note">Each outlet's five most significant headlines right now, across 27 MENA, Israeli and regional outlets. Every outlet is ranked by the best real signal available for it — its own public most-read list, what readers click here, or how widely other outlets carry the same story — named by the small tag on each card. Expand “All recent headlines” on a card for that outlet's full feed. Refreshed every 30 minutes.</div>
     <div class="hl-filters">
       <input type="search" id="hl-topic" class="hl-filter-input" autocomplete="off" data-i18n-ph="filter_ph"
         placeholder="Filter by topic or keyword (e.g. Iran, ceasefire, Hezbollah)…">
@@ -619,7 +647,7 @@ const I18N = {
   briefing_title:"Geopolitical Briefing", headlines_title:"Live Headlines",
   fp_title:"Today's Front Pages", pulse_title:"Media Pulse",
   trends_title:"Outlet &amp; Topic Trends", archive_title:"Front-Page Archive",
-  headlines_note:"The top stories across 27 MENA, Israeli and regional outlets — ranked by how many outlets (and regional camps) are carrying each one. Tap a story to see how each outlet worded it. Full feed below, grouped by theme. Refreshed every 30 minutes.",
+  headlines_note:"Each outlet's five most significant headlines right now, across 27 MENA, Israeli and regional outlets. Every outlet is ranked by the best real signal available for it — its own public most-read list, what readers click here, or how widely other outlets carry the same story — named by the small tag on each card. Expand “All recent headlines” on a card for that outlet's full feed. Refreshed every 30 minutes.",
   pulse_note:"The most-mentioned terms across every headline right now — bigger means more coverage. Click any word to see the headlines driving it. Updates every 30 minutes.",
   trends_note:"How today's coverage breaks down by topic and by outlet across every tracked feed — and where outlets diverge most on the same stories. Updates every 30 minutes.",
   archive_note:"Browse past front pages. Covers are saved on each daily refresh and kept for one year. Click any card for a larger view.",
@@ -672,6 +700,18 @@ const I18N = {
   worded:"How different outlets worded the same story — tap a link to read each:",
   src_key:"Source colors — what they mean",
   src_key_note:"Every outlet is tagged with the regional lens it reports from.",
+  rm_most_read:n=>`trending on ${n}`,
+  rm_clicks:"most clicked here",
+  rm_coverage:"widely covered",
+  rm_latest:"latest",
+  rm_tip_most_read:n=>`Ranked by ${n}'s own public most-read/trending list — real reader behaviour on the outlet's site.`,
+  rm_tip_clicks:"Ranked by what readers clicked on this site over the last 7 days, counted across all visitors.",
+  rm_tip_coverage:"Ranked by how many other tracked outlets are carrying the same story right now.",
+  rm_tip_latest:"Newest first — no ranking signal is available for this outlet yet.",
+  show_all:"All recent headlines",
+  show_all_note:"This outlet's full recent feed — the five above are its current top.",
+  show_all_none:"No further headlines available right now.",
+  show_all_loading:"Loading…",
  },
  he: {
   doc_title:"The Middle East Scout — עמודים ראשיים וכותרות בזמן אמת",
@@ -683,7 +723,7 @@ const I18N = {
   briefing_title:"תדריך גיאופוליטי", headlines_title:"כותרות בזמן אמת",
   fp_title:"העמודים הראשיים של היום", pulse_title:"דופק התקשורת",
   trends_title:"מגמות לפי כלי תקשורת ונושא", archive_title:"ארכיון עמודים ראשיים",
-  headlines_note:"הסיפורים המובילים מ-27 כלי תקשורת ישראליים, מהמזרח התיכון והאזור — מדורגים לפי מספר כלי התקשורת (והמחנות האזוריים) המסקרים כל סיפור. הקישו על סיפור כדי לראות כיצד כל גוף ניסח אותו. הפיד המלא למטה, מקובץ לפי נושא. מתעדכן כל 30 דקות.",
+  headlines_note:"חמש הכותרות המשמעותיות ביותר כרגע מכל אחד מ-27 כלי תקשורת ישראליים, מהמזרח התיכון והאזור. כל כלי תקשורת מדורג לפי האות האמיתי הטוב ביותר הזמין עבורו — רשימת \"הנקראות ביותר\" הפומבית שלו, מה שקוראים מקליקים כאן, או כמה כלי תקשורת אחרים מסקרים את אותו סיפור — כפי שמציין התג הקטן בכל כרטיס. הרחיבו \"כל הכותרות האחרונות\" בכרטיס לפיד המלא של אותו כלי. מתעדכן כל 30 דקות.",
   pulse_note:"המונחים המוזכרים ביותר בכלל הכותרות כרגע — גדול יותר פירושו סיקור רחב יותר. לחצו על מילה כדי לראות את הכותרות שמאחוריה. מתעדכן כל 30 דקות.",
   trends_note:"איך הסיקור של היום מתחלק לפי נושא ולפי כלי תקשורת בכל הפידים שבמעקב — והיכן כלי התקשורת נבדלים זה מזה באותם סיפורים. מתעדכן כל 30 דקות.",
   archive_note:"עיינו בעמודים ראשיים מהעבר. השערים נשמרים בכל רענון יומי למשך שנה. לחצו על כרטיס לתצוגה מוגדלת.",
@@ -736,6 +776,18 @@ const I18N = {
   worded:"כך ניסחו כלי תקשורת שונים את אותו סיפור — הקישו על קישור כדי לקרוא:",
   src_key:"צבעי המקורות — מה הם אומרים",
   src_key_note:"כל כלי תקשורת מסומן לפי נקודת המבט האזורית שממנה הוא מדווח.",
+  rm_most_read:n=>`הנקראות ביותר ב-${n}`,
+  rm_clicks:"הנקראות ביותר כאן",
+  rm_coverage:"בסיקור נרחב",
+  rm_latest:"האחרונות",
+  rm_tip_most_read:n=>`מדורג לפי רשימת "הנקראות ביותר" הפומבית של ${n} — התנהגות קוראים אמיתית באתר המקור.`,
+  rm_tip_clicks:"מדורג לפי מה שקוראי האתר הזה הקליקו בשבעת הימים האחרונים, במצטבר על פני כל המבקרים.",
+  rm_tip_coverage:"מדורג לפי כמה כלי תקשורת אחרים במעקב מסקרים כעת את אותו סיפור.",
+  rm_tip_latest:"החדשות ביותר תחילה — אין עדיין אות דירוג לכלי תקשורת זה.",
+  show_all:"כל הכותרות האחרונות",
+  show_all_note:"הפיד המלא של כלי התקשורת — חמש הכותרות שלמעלה הן המובילות כעת.",
+  show_all_none:"אין כותרות נוספות זמינות כרגע.",
+  show_all_loading:"טוען…",
  },
 };
 
@@ -1530,7 +1582,8 @@ function renderStoryCard(s, i){
   const cats = (s.categories||[]).map(catTag).join("");
   const members = (s.members||[]).map(m=>`
     <li>
-      <a class="hl-story-mtitle" href="${esc(m.url)}" target="_blank" rel="noopener" dir="auto">${esc(heb(m.title_he,m.title))}</a>
+      <a class="hl-story-mtitle" href="${esc(m.url)}" target="_blank" rel="noopener" dir="auto"
+         data-track data-src="${esc(m.source)}" data-ttl="${esc(m.title)}">${esc(heb(m.title_he,m.title))}</a>
       <div class="hl-story-mmeta">${srcTag(m.source)}${hlTime(m.published)}</div>
     </li>`).join("");
   return `<li>
@@ -1564,63 +1617,73 @@ function renderTopStrip(data){
   </div>`;
 }
 
-/* ===== Theme map for the main feed. EDIT HERE to tune the grouping:
-   add/remove keywords or whole themes. A headline joins the single theme
-   whose keywords score highest (a hit in the title counts double a hit in
-   the snippet); ties break by the order below; no hits → Other/Regional.
-   Keywords match whole words, case-insensitively, against the English
-   title/snippet (present on every item), so grouping is identical in both
-   display languages. ===== */
-const THEMES = [
-  {id:"iran", label:"Iran", label_he:"איראן", kw:[
-    "iran","iranian","tehran","irgc","khamenei","pezeshkian","araghchi","ayatollah",
-    "nuclear","uranium","enrichment","natanz","fordow","revolutionary guard","quds force","basij",
-    "إيران","الإيراني","طهران","خامنئي","النووي","الحرس الثوري",
-    "איראן","טהראן","חמינאי","גרעין","הגרעין","משמרות המהפכה"]},
-  {id:"gaza", label:"Gaza", label_he:"עזה", kw:[
-    "gaza","hamas","rafah","khan younis","deir al-balah","unrwa","hostage","hostages",
-    "palestinian","palestinians","west bank","ramallah","jenin","nablus","hebron","settler","settlers",
-    "غزة","حماس","رفح","فلسطين","الفلسطيني","الضفة الغربية","جنين","نابلس","الخليل","المستوطنين","الأونروا",
-    "עזה","חמאס","רפיח","פלסטיני","פלסטינים","הגדה המערבית","ג'נין","שכם","חברון","מתנחל","חטופים","אונר\"א"]},
-  {id:"gulf", label:"Gulf", label_he:"המפרץ", kw:[
-    "saudi","riyadh","uae","emirates","emirati","dubai","abu dhabi","qatar","qatari","doha",
-    "kuwait","bahrain","oman","gcc","opec","aramco","bin salman","yemen","houthi","houthis","red sea",
-    "السعودية","الرياض","الإمارات","دبي","أبوظبي","قطر","الدوحة","الكويت","البحرين","اليمن","الحوثي","البحر الأحمر",
-    "סעודיה","ריאד","האמירויות","דובאי","אבו דאבי","קטאר","דוחה","כווית","בחריין","תימן","חות'י","החות'ים","הים האדום"]},
-  {id:"lebanon", label:"Lebanon", label_he:"לבנון", kw:[
-    "lebanon","lebanese","beirut","hezbollah","nasrallah","litani","sidon","tyre","bekaa","unifil",
-    "لبنان","اللبناني","بيروت","حزب الله","نصرالله","جبل عامل","الليطاني","صيدا","صور","البقاع",
-    "לבנון","ביירות","בירות","חיזבאללה","חזבאללה","נסראללה","ליטני"]},
-  {id:"israel", label:"Israel", label_he:"ישראל", kw:[
-    "israel","israeli","idf","netanyahu","knesset","tel aviv","jerusalem","mossad","shin bet",
-    "ben-gvir","ben gvir","smotrich","herzog",
-    "إسرائيل","الإسرائيلي","الاحتلال","نتنياهو","تل أبيب","القدس",
-    "ישראל","ישראלי","צה\"ל","נתניהו","תל אביב","ירושלים","הכנסת"]},
-  {id:"other", label:"Other / Regional", label_he:"אחר / אזורי", kw:[]},
-];
-// Precompile matchers. Latin keywords match whole words ("oman" must not hit
-// "woman"); Arabic/Hebrew keywords match as substrings, since \b doesn't work
-// outside ASCII and those scripts attach prefixes (بغزة, ובלבנון) to words.
-THEMES.forEach(t=>{ t._re = t.kw.map(k=>{
-  const escd = k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&").replace(/[\s-]+/g,"[\\s-]");
-  return /^[a-z]/i.test(k) ? new RegExp("\\b"+escd+"\\b","i") : new RegExp(escd);
-}); });
+/* ===== Click tracking — the "most clicked here" ranking signal =====
+   Every headline link carries data-track; a click sends one beacon to the
+   Cloudflare Worker (the same one that stores push subscriptions), which
+   counts it in KV — aggregated across ALL visitors, persisted server-side.
+   The pipeline reads the rolling 7-day totals each refresh and ranks outlets
+   without a most-read feed by them. localStorage only DE-DUPES (one count per
+   browser per article per day); it is not the store. If push-config.json has
+   no API url (or the Worker predates /click), tracking silently no-ops. */
+let CLICK_API = "";
+fetch("push-config.json?t=" + Date.now())
+  .then(r => r.json())
+  .then(c => { CLICK_API = ((c && c.api) || "").trim().replace(/\/+$/, ""); })
+  .catch(() => {});
 
-function classifyTheme(h){
-  let best="other", bestScore=0;
-  // Titles weigh double; Hebrew fields are machine translations present on
-  // every item, so Arabic/Turkish headlines classify via their Hebrew text.
-  const title=(h.title||"")+" "+(h.title_he||""), snip=(h.snippet||"")+" "+(h.snippet_he||"");
-  for(const t of THEMES){
-    let s=0;
-    for(const re of t._re){
-      if(re.test(title)) s+=2;
-      else if(re.test(snip)) s+=1;
-    }
-    if(s>bestScore){ bestScore=s; best=t.id; }
-  }
-  return best;
+function trackClick(url, source, title){
+  if(!CLICK_API || !url) return;
+  try{
+    const day = new Date().toISOString().slice(0, 10);
+    let seen = {};
+    try{ seen = JSON.parse(localStorage.getItem("mes-clicked") || "{}"); }catch(e){}
+    const k = url.slice(0, 200);
+    if(seen[k] === day) return;                  // this browser already counted it today
+    const fresh = {};                            // keep only today's entries (self-pruning)
+    for(const [u, d] of Object.entries(seen)) if(d === day) fresh[u] = d;
+    fresh[k] = day;
+    try{ localStorage.setItem("mes-clicked", JSON.stringify(fresh)); }catch(e){}
+    const payload = JSON.stringify({url, source: source || "", title: (title || "").slice(0, 200)});
+    // text/plain keeps sendBeacon CORS-simple; the Worker parses the JSON body.
+    if(navigator.sendBeacon)
+      navigator.sendBeacon(CLICK_API + "/click", new Blob([payload], {type: "text/plain"}));
+    else
+      fetch(CLICK_API + "/click", {method: "POST", body: payload, keepalive: true}).catch(() => {});
+  }catch(e){}
 }
+document.addEventListener("click", e => {
+  const a = e.target.closest?.("a[data-track]");
+  if(a) trackClick(a.href, a.dataset.src || "", a.dataset.ttl || a.textContent || "");
+});
+
+/* ===== "Show all headlines" data — coverage.json (up to 40/outlet) =====
+   Fetched lazily, once, the first time any outlet card's expander opens. */
+let covData = null, covPromise = null;
+function loadCoverage(){
+  if(covData) return Promise.resolve(covData);
+  covPromise = covPromise || fetch("coverage.json?t=" + Date.now(), {cache: "no-store"})
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { covData = d; return d; })
+    .catch(() => null);
+  return covPromise;
+}
+function outletCoverage(source){
+  for(const outs of Object.values((covData || {}).regions || {}))
+    for(const o of outs) if(o.source === source) return o.coverage || [];
+  return [];
+}
+
+/* Region section labels (the JSON's region keys, localised). */
+const REGION_LABELS = {
+  "Israel":   {en: "Israel",   he: "ישראל"},
+  "Pan-Arab": {en: "Pan-Arab", he: "פאן-ערבי"},
+  "Iran":     {en: "Iran",     he: "איראן"},
+  "Levant":   {en: "Levant",   he: "הלבנט"},
+  "Gulf":     {en: "Gulf",     he: "המפרץ"},
+  "Yemen":    {en: "Yemen",    he: "תימן"},
+  "Turkey":   {en: "Turkey",   he: "טורקיה"},
+};
+const regionLabel = r => { const d = REGION_LABELS[r]; return d ? heb(d.he, d.en) : r; };
 
 /* ===== Source categories — each outlet's regional lens. EDIT HERE:
    point an outlet name at a category id from CAT_DEFS. Outlets not listed
@@ -1684,7 +1747,67 @@ function renderSrcLegend(data){
 }
 
 // Collapse state survives re-renders (refreshes, language toggles) per visit.
-const hlThemeClosed = new Set();
+const hlOutletClosed = new Set();   // outlet cards a reader closed
+const hlShowAllOpen  = new Set();   // "all recent headlines" expanders opened
+
+// One headline row (shared by the top-5 list and the show-all expander).
+// data-track wires the click beacon; data-ttl carries the ORIGINAL title so
+// the pipeline can match the click back to the article in any display language.
+function hlRow(h, source){
+  const snip = heb(h.snippet_he, h.snippet);
+  return `<li>
+    <a class="hl-item-title" href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto"
+       data-track data-src="${esc(source)}" data-ttl="${esc(h.title)}">${esc(heb(h.title_he,h.title))}</a>
+    ${snip?`<div class="hl-item-snip" dir="auto">${esc(snip)}</div>`:""}
+    <div class="hl-item-meta">${hlTime(h.published)}</div>
+  </li>`;
+}
+
+function renderOutletCard(o){
+  const method = o.rank_method || "latest";
+  const badge = `<span class="hl-method hl-method-${esc(method)}"
+    title="${esc(TF("rm_tip_"+method, o.source))}">${esc(TF("rm_"+method, o.source))}</span>`;
+  const stale = o.stale ? `<span class="hl-stale" title="${esc(T("stale_note"))}">⚠</span>` : "";
+  const rows = (o.headlines||[]).map(h=>hlRow(h, o.source)).join("");
+  const body = rows
+    ? `<ul class="hl-outlet-list">${rows}</ul>`
+    : `<div class="hl-outlet-empty">${T("feed_unavailable")}</div>`;
+  // The "show all" expander only renders for outlets that actually have
+  // headlines (a down outlet has nothing more to show).
+  const showAll = rows ? `
+    <details class="hl-showall" data-outlet="${esc(o.source)}"${hlShowAllOpen.has(o.source)?" open":""}>
+      <summary>${T("show_all")}</summary>
+      <div class="hl-showall-note">${T("show_all_note")}</div>
+      <ul class="hl-showall-list"><li class="hl-outlet-empty">${T("show_all_loading")}</li></ul>
+    </details>` : "";
+  return `<details class="hl-outlet" data-outlet="${esc(o.source)}"${hlOutletClosed.has(o.source)?"":" open"}>
+    <summary class="hl-outlet-head">
+      <span class="hl-outlet-name" dir="auto">${esc(o.source)}</span>
+      ${catTag(SRC_CATS[o.source])}
+      <span class="hl-outlet-country">${esc(o.country||"")}</span>
+      ${badge}${stale}
+      <span class="hl-chev">▼</span>
+    </summary>
+    ${body}${showAll}
+  </details>`;
+}
+
+// Fill an opened "show all" expander from coverage.json: the outlet's broader
+// recent feed, minus items already in its top 5 and minus tracked-but-off-the-
+// wall items (coverage marks those "off" — they feed Pulse/Trends only).
+function fillShowAll(det, outlet){
+  const list = det.querySelector(".hl-showall-list");
+  if(!list || det.dataset.filled) return;
+  loadCoverage().then(()=>{
+    const shown = new Set((outlet.headlines||[]).map(h=>h.url));
+    const items = outletCoverage(outlet.source)
+      .filter(c=>!c.off && c.url && !shown.has(c.url));
+    list.innerHTML = items.length
+      ? items.map(c=>hlRow(c, outlet.source)).join("")
+      : `<li class="hl-outlet-empty">${T("show_all_none")}</li>`;
+    det.dataset.filled = "1";
+  });
+}
 
 function renderHeadlines(data, container, showTop=true){
   let html="";
@@ -1696,43 +1819,31 @@ function renderHeadlines(data, container, showTop=true){
   html+=renderSrcLegend(data);
   if(showTop) html+=renderTopStrip(data);
 
-  // Bucket every headline into its single best theme, newest first inside.
-  const items = flattenHeadlines(data);
-  items.forEach(it=>{ it._t=Date.parse(it.published)||0; });
-  const buckets = {};
-  for(const it of items){ const th=classifyTheme(it); (buckets[th]=buckets[th]||[]).push(it); }
-  // Sections ordered by volume, catch-all pinned last so the day's shape leads.
-  const sections = THEMES.filter(t=>buckets[t.id]?.length)
-    .sort((a,b)=> (a.id==="other")-(b.id==="other") || buckets[b.id].length-buckets[a.id].length);
-
-  for(const t of sections){
-    const rows = buckets[t.id].sort((a,b)=>b._t-a._t).map(h=>{
-      const snip = heb(h.snippet_he,h.snippet);
-      return `<li>
-        <a class="hl-item-title" href="${esc(h.url)}" target="_blank" rel="noopener" dir="auto">${esc(heb(h.title_he,h.title))}</a>
-        ${snip?`<div class="hl-item-snip" dir="auto">${esc(snip)}</div>`:""}
-        <div class="hl-item-meta">
-          ${srcTag(h.source)}
-          ${hlTime(h.published)}
-        </div>
-      </li>`;
-    }).join("");
-    html+=`<details class="hl-theme" data-theme="${t.id}"${hlThemeClosed.has(t.id)?"":" open"}>
-      <summary class="hl-theme-head">
-        <span class="hl-theme-name">${esc(heb(t.label_he,t.label))}</span>
-        <span class="hl-theme-count">${buckets[t.id].length}</span>
-        <span class="hl-theme-chev">▼</span>
-      </summary>
-      <ul class="hl-theme-list">${rows}</ul>
-    </details>`;
+  // Region sections in the JSON's order (the pipeline's REGION_ORDER), each
+  // outlet a card with its ranked top 5 + method tag + show-all expander.
+  const outletBySource = {};
+  for(const [region, outlets] of Object.entries(data.regions||{})){
+    if(!outlets?.length) continue;
+    html+=`<div class="hl-region">
+      <h3 class="hl-region-name">${esc(regionLabel(region))}</h3>
+      ${outlets.map(o=>{ outletBySource[o.source]=o; return renderOutletCard(o); }).join("")}
+    </div>`;
   }
 
   container.innerHTML=html||`<div class="hl-loading">${T("none_yet")}</div>`;
-  container.querySelectorAll(".hl-theme").forEach(d=>{
+  container.querySelectorAll(".hl-outlet").forEach(d=>{
     d.addEventListener("toggle",()=>{
-      if(d.open) hlThemeClosed.delete(d.dataset.theme);
-      else hlThemeClosed.add(d.dataset.theme);
+      if(d.open) hlOutletClosed.delete(d.dataset.outlet);
+      else hlOutletClosed.add(d.dataset.outlet);
     });
+  });
+  container.querySelectorAll(".hl-showall").forEach(d=>{
+    const outlet = outletBySource[d.dataset.outlet];
+    d.addEventListener("toggle",()=>{
+      if(d.open){ hlShowAllOpen.add(d.dataset.outlet); if(outlet) fillShowAll(d, outlet); }
+      else hlShowAllOpen.delete(d.dataset.outlet);
+    });
+    if(d.open && outlet) fillShowAll(d, outlet);   // re-render with expander already open
   });
   container.querySelectorAll(".hl-story").forEach(d=>{
     d.addEventListener("toggle",()=>{

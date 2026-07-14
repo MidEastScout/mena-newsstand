@@ -1,5 +1,12 @@
 # Push notifications — the hourly "top stories" alert
 
+> **Update (Headlines ranking):** the same Cloudflare Worker now also counts
+> headline clicks — the "most clicked here" ranking signal on the Headlines
+> tab. If your Worker was deployed before this feature, redeploy it once
+> (`cd push && npx wrangler deploy` — same URL, same KV, no new secrets).
+> Until then the site silently skips click tracking and the ranking falls
+> back to the cross-outlet-coverage signal. Details: `push/README.md`.
+
 This is a plain-language guide. You do **not** need to be a developer to follow
 it, but you will copy-paste a few commands.
 

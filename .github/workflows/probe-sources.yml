@@ -1,23 +1,38 @@
-# TEMPORARILY REPURPOSED ON THIS BRANCH: dispatching probe-mostread.yml directly
-# is impossible until it lands on main (GitHub only registers workflows from the
-# default branch), so this already-registered diagnostic slot runs the most-read
-# probe when dispatched with ref=claude/headlines-tab-overhaul-kebcdu. Restore
-# from main before merging.
 name: Probe sources (diagnostic)
+
+# One-off diagnostic, dispatch-only. Runs scripts/probe_sources.py on GitHub's
+# servers (the relevant CDNs and Israeli news sites aren't reachable from dev
+# sandboxes) to (a) find working replacement sources for the chronically-stale
+# front-page covers and (b) check RSS availability for Israeli channels
+# 11/12/13. Commits the verdict to state/probe_sources.json. Safe to delete
+# this file and the probe script once the answers are baked in.
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install --no-cache-dir requests feedparser
-      - run: python scripts/probe_mostread.py
+      - run: python scripts/probe_sources.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state/probe_sources.json
+          if git diff --cached --quiet; then
+            echo "No change to probe results."
+          else
+            git commit -m "chore: probe cover + Israeli-feed sources $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase --autostash origin main && git push origin main
+          fi
