@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T21:12:25.044213+00:00",
+  "updated": "2026-07-24T21:18:43.188359+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,25 +167,29 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-24T21:10:26.439870+00:00"
+      "headlines_updated": "2026-07-24T21:16:49.514847+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 35,
+        "dropped_no_english": 10,
+        "title_snippet": 25,
         "title_native": 87,
         "in": 135,
-        "kept": 122
+        "kept": 112
       },
       "translator": {
         "configured": true,
-        "titles_needing_english": 35,
-        "translated": 0
+        "region": "uaenorth",
+        "requested": 35,
+        "translated": 0,
+        "cached": 0,
+        "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
         {
           "source": "Jordan Times",
-          "title": "Trump approves landmark nuclear deal with Saudi Arabia",
+          "title": "Jordan condemns Houthi claim that Saudi Arabia is besieging Yemen",
           "reason": "stale (older than 48h)"
         },
         {
@@ -247,34 +251,63 @@
           "source": "Al-Masirah",
           "title": "محافظ لحج يبارك بيان القوات المسلحة بشأن حظر الملاحة على العدو السعودي ويؤكد الجهوزية الكاملة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הותר לפרסום: רס״ן יובל עזרא נפל בפיגוע ליד חוות גלעד, בו נרצח בניהו מלט",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "רס\"ר (במיל') בניהו מלט ורס\"ן יובל עזרא ז\"ל הם ההרוגים בפיגוע בשומרון - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "אחרי יממה: יובל קוגן בן ה-4 אותר בריא ושלם - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "זהבה שאול, אמו של סמ\"ר אורון שאול ז\"ל, הלכה לעולמה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "\"התקבל מידע חדש\": התפתחות חדשה בתיק הרצח של תאיר ראדה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "האחות שתקפה את הצעירה: \"אני לא רוצה שום דבר מיהודים מסריחים\" - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחרי יותר מיממה: יובל בן ה-4 שנעדר באשקלון אותר בריא ושלם",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الدفاع الروسية: السيطرة على بلدتين في خاركوف وتقدم ميداني في دونيتسك",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تركيا: أوزغور أوزيل يغادر حزب الشعب الجمهوري ويؤسس حزباً جديداً بمشاركة 91 نائباً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "8 دول عربية وإسلامية تدين التصعيد الإسرائيلي في المسجد الأقصى",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 79,
+      "in": 112,
+      "kept": 73,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "Four-year-old Yuval Kogan, who went missing at Ashkelon beach, was found several kilometers away after a day…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Zehavah Shaul, mother of the late Sergeant Oron Shaul, passed away one year after her son's body was…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Yuval's parents described his discovery as a true miracle, expressing their immense relief.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Channel 13",
           "title": "The results of the Democratic primaries are described as a mix of joy and defeat.",
@@ -299,13 +332,6 @@
         {
           "source": "Channel 13",
           "title": "The police have dramatically decided to reopen the investigation into the murder of Tair Rada.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "‘Extremely disappointing’: US trade partners respond to Trump’s new tariffs",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -559,11 +585,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 44,
       "sizes": [
         14,
-        10,
-        4,
+        9,
         3,
         2,
         2,
@@ -571,7 +596,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -620,7 +644,7 @@
           "rank_key": {
             "outlets": 8,
             "camps": 5,
-            "newest": "2026-07-24T18:01+00:00"
+            "newest": "2026-07-24T17:15+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
@@ -639,7 +663,7 @@
             "levant",
             "turkish"
           ],
-          "members": 10,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -678,7 +702,7 @@
         },
         {
           "selected_rank": 2,
-          "headline": "UN's Albanese warns of escalating Israeli violence in occupied West Bank, urges protection for Pales",
+          "headline": "Updates: Israeli settlers attack West Bank, shooting leaves six dead",
           "rank_key": {
             "outlets": 7,
             "camps": 3,
@@ -702,8 +726,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "UN's Albanese warns of escalating Israeli violence in occupied West Bank, urges protection for Palestinians",
+            "source": "Al Jazeera",
+            "title": "Updates: Israeli settlers attack West Bank, shooting leaves six dead",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -718,11 +742,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Jazeera",
-                "title": "Updates: Israeli settlers attack West Bank, shooting leaves six dead",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Arabiya",
                 "title": "Four Palestinians and one Israeli dead after West Bank shooting",
                 "rejected_by": "older than the story's newest wave"
@@ -731,53 +750,17 @@
                 "source": "Egypt Independent",
                 "title": "4 Palestinians and 1 Israeli killed in West Bank clashes near Nablus",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Four Palestinians killed, four injured by Israeli forces during attack by coloni",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
           "selected_rank": 3,
-          "headline": "The US-Saudi Arabia Nuclear Deal: What You Need to Know",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-07-23T16:31+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Channel 13",
-            "Iran International",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "iranian"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "The US-Saudi Arabia Nuclear Deal: What You Need to Know",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (nuclear, us_iran_deal)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "INSIGHT Trump threat to hit Pickaxe renews calls in Iran for nuclear bomb, NPT e",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "US Senate blocks resolution curbing Trump’s Iran war powers",
           "rank_key": {
             "outlets": 3,
@@ -809,39 +792,45 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Houthis claim airstrikes hit western Yemen, accuse Saudi Arabia",
+          "selected_rank": 4,
+          "headline": "Saudi Arabia has reportedly attacked the port city of Al Hudaydah in Yemen.",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-24T20:44+00:00"
+            "newest": "2026-07-24T20:10+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
+            "Al Jazeera",
             "Kan 11"
           ],
           "camps": [
             "israeli",
-            "turkish"
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Houthis claim airstrikes hit western Yemen, accuse Saudi Arabia",
-            "title_source": "native",
+            "source": "Kan 11",
+            "title": "Saudi Arabia has reportedly attacked the port city of Al Hudaydah in Yemen.",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Saudi Arabia strikes Houthi-held Hodeidah, Yemeni group says",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Actual oil prices are approaching $110 per barrel due to the wars in Iran and Ukraine.",
           "rank_key": {
             "outlets": 2,
@@ -979,6 +968,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump added Abraham Accords condition to Saudi nuclear deal after signing: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T21:07+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Siege of Vienna 1683: Summer Europe’s destiny hung by thread",
           "rank_key": {
             "outlets": 1,
@@ -997,6 +1004,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump says Iranians getting ‘very serious’ in talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T19:49+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Trump stated he has not yet decided on expanding attacks in Iran, noting they are not ready for a de",
           "rank_key": {
             "outlets": 1,
@@ -1005,24 +1030,6 @@
           },
           "outlet_names": [
             "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump and senior administration officials are discussing escalating attacks in Iran, potentially bro",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T19:39+00:00"
-          },
-          "outlet_names": [
-            "N12"
           ],
           "camps": [
             "israeli"
@@ -1123,24 +1130,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "An Omani delegation is in Tehran for consultations regarding the management of transit in the Strait",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T16:42+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran, Egypt FMs discuss latest regional developments",
           "rank_key": {
             "outlets": 1,
@@ -1194,7 +1183,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1212,7 +1201,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24T21:13:08.690518+00:00",
+    "last_success": "2026-07-24T21:18:57.919892+00:00",
     "last_failure": null
   },
   "ok": true
