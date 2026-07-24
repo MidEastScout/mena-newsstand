@@ -145,24 +145,36 @@ def make_translator():
 
     def translate(texts):
         need = [t for t in dict.fromkeys(texts) if t and t not in entries]
-        if need and key:
-            try:
-                import requests
-                headers = {"Ocp-Apim-Subscription-Key": key, "Content-Type": "application/json"}
-                if region:
-                    headers["Ocp-Apim-Subscription-Region"] = region
-                for i in range(0, len(need), 50):
-                    batch = need[i:i + 50]
-                    r = requests.post(
-                        AZURE_ENDPOINT, params={"api-version": "3.0", "to": "en"},
-                        headers=headers, json=[{"text": t} for t in batch], timeout=20)
-                    r.raise_for_status()
-                    for src, item in zip(batch, r.json()):
-                        entries[src] = item["translations"][0]["text"]
-                        state["dirty"] = True
-            except Exception as exc:
-                print(f"  [normalize] Azure en-translation failed ({exc}) — "
-                      f"falling back to snippets", file=sys.stderr)
+        if not need:
+            return [entries.get(t) for t in texts]
+        if not key:
+            print(f"  [normalize] AZURE_TRANSLATOR_KEY not set — {len(need)} non-English "
+                  f"title(s) fall back to their English snippet", file=sys.stderr)
+            return [entries.get(t) for t in texts]
+        try:
+            import requests
+            # Field name and region default MUST match scripts/fetch_headlines.py's
+            # azure_translate(): the API's body key is "Text" (capital T) and a
+            # lowercase "text" is rejected, which silently killed this path — every
+            # title fell through to the snippet branch and nothing said why.
+            headers = {"Ocp-Apim-Subscription-Key": key,
+                       "Ocp-Apim-Subscription-Region": region or "global",
+                       "Content-Type": "application/json"}
+            for i in range(0, len(need), 50):
+                batch = need[i:i + 50]
+                r = requests.post(
+                    AZURE_ENDPOINT, params={"api-version": "3.0", "to": "en"},
+                    headers=headers, json=[{"Text": t} for t in batch], timeout=30)
+                r.raise_for_status()
+                for src, item in zip(batch, r.json()):
+                    entries[src] = item["translations"][0]["text"]
+                    state["dirty"] = True
+        except Exception as exc:
+            body = getattr(getattr(exc, "response", None), "text", "")
+            print(f"  [normalize] Azure en-translation failed ({exc}) "
+                  f"{body[:200]} — falling back to snippets", file=sys.stderr)
+        got = sum(1 for t in need if t in entries)
+        print(f"  [normalize] translated {got}/{len(need)} non-English titles", file=sys.stderr)
         return [entries.get(t) for t in texts]
 
     def save():
@@ -643,7 +655,21 @@ def main():
     translate, save_translations = make_translator()
     norm = tp.normalize_stage(items, translate=translate)
     save_translations()
-    debug["stages"]["normalize"] = {"stats": norm["stats"], "dropped": norm["dropped"]}
+    # Record whether the translator was configured AND actually produced
+    # anything. Without this, a broken translation path is invisible: every
+    # title quietly falls through to the snippet branch and the stats look
+    # merely lopsided rather than wrong.
+    debug["stages"]["normalize"] = {
+        "stats": norm["stats"],
+        "translator": {
+            "configured": bool(os.environ.get("AZURE_TRANSLATOR_KEY")),
+            "titles_needing_english": norm["stats"].get("title_translated", 0)
+                                      + norm["stats"].get("title_snippet", 0)
+                                      + norm["stats"].get("dropped_no_english", 0),
+            "translated": norm["stats"].get("title_translated", 0),
+        },
+        "dropped": norm["dropped"],
+    }
 
     # 3. RELEVANCE ---------------------------------------------------------
     rel = tp.relevance_stage(norm["items"])

@@ -227,12 +227,28 @@ jobs:
             echo "Nothing changed — skipping commit."
           else
             git commit -m "chore: refresh data $(date -u +%Y-%m-%dT%H:%MZ)"
+            # A failed `git pull --rebase` leaves a rebase IN PROGRESS, which
+            # makes every later attempt fail instantly ("cannot pull with
+            # rebase: you have unstaged changes" / "a rebase is in progress").
+            # Without the abort below, one conflicting commit burned all five
+            # attempts in a second and the loop still exited 0 — a silently
+            # stale site behind a green check. Observed 2026-07-24, when a
+            # human push of the same data files raced a refresh run.
+            pushed=""
             for i in 1 2 3 4 5; do
               if git pull --rebase --autostash origin main && git push origin main; then
-                echo "Pushed."; break
+                pushed="yes"; echo "Pushed."; break
               fi
+              git rebase --abort 2>/dev/null || true
               echo "Push attempt $i failed; retrying…"; sleep $((i * 3))
             done
+            # Surface a genuine failure instead of pretending the run worked:
+            # if we cannot push, the site keeps serving the previous cycle and
+            # someone needs to know.
+            if [ -z "$pushed" ]; then
+              echo "::error title=Data refresh could not push::5 attempts failed; the site is serving the previous cycle's data."
+              exit 1
+            fi
           fi
 
       # Publish the freshly-committed data to GitHub Pages. This runs in its OWN
