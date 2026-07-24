@@ -58,6 +58,7 @@ HL_PATH = ROOT / "headlines.json"
 OUT_PATH = ROOT / "top_stories.json"
 LKG_PATH = ROOT / "state" / "topstories_lkg.json"
 DEBUG_PATH = ROOT / "state" / "topstories_debug.json"
+FAILURES_PATH = ROOT / "state" / "topstories_failures.json"
 SUMM_CACHE = ROOT / "state" / "topstories_summaries.json"
 EN_CACHE = ROOT / "state" / "topstories_en_cache.json"
 
@@ -455,48 +456,141 @@ def attach_neutral_summaries(stories: list[dict]) -> None:
 # ==========================================================================
 # Stage 7 — PUBLISH (with last-known-good fallback)
 # ==========================================================================
-def _display_clean(stories) -> bool:
-    """Structural screen for a fallback candidate: non-empty, and every
-    displayed string is English. (Full validation needs snippets, which
-    published files don't carry.)"""
+def _fallback_usable(payload: dict) -> tuple[bool, list]:
+    """Re-validate an already-published payload before serving it as the
+    fallback. Runs every gate check except relevance (see validate_stage's
+    check_relevance) so a corrupted or truncated file can never be recycled
+    into place just because it happens to be the previous output."""
+    stories = (payload or {}).get("stories")
     if not isinstance(stories, list) or not stories:
-        return False
-    for s in stories:
-        if s.get("summary") and not tp.is_english_display(s["summary"]):
-            return False
-        if not tp.is_english_display((s.get("rep") or {}).get("title", "")):
-            return False
-        for m in s.get("members", []):
-            if not tp.is_english_display(m.get("title", "")):
-                return False
-    return True
+        return False, [{"check": "structure", "detail": "no stories"}]
+    v = tp.validate_stage(stories, check_relevance=False)
+    return v["ok"], v["failures"]
+
+
+# Consecutive failed cycles tolerated before the CI annotation escalates from
+# a warning to an error, and the age at which a served fallback is called out
+# as stale. At a ~30-min cadence 3 cycles is ~1.5h of frozen Top 5.
+FAIL_ESCALATE_AFTER = 3
+LKG_STALE_HOURS = 3.0
+FAILURE_LOG_KEEP = 20
+
+
+def _health_update(ok: bool, failures: list, fallback: str | None) -> dict:
+    """Persist cross-cycle health in state/topstories_failures.json.
+
+    state/topstories_debug.json is overwritten every cycle, so a failure at
+    03:00 is invisible by morning. This file keeps the last FAILURE_LOG_KEEP
+    failure records plus the consecutive-failure count, which is what drives
+    the escalation below."""
+    health = _load_json(FAILURES_PATH)
+    recent = health.get("recent") or []
+    now_iso = datetime.now(timezone.utc).isoformat()
+    if ok:
+        health = {"consecutive_failures": 0, "last_success": now_iso,
+                  "last_failure": health.get("last_failure"), "recent": recent}
+    else:
+        health = {
+            "consecutive_failures": int(health.get("consecutive_failures") or 0) + 1,
+            "last_success": health.get("last_success"),
+            "last_failure": now_iso,
+            "recent": ([{"at": now_iso,
+                         "checks": sorted({f["check"] for f in failures}),
+                         "failures": failures[:10],
+                         "fallback": fallback}] + recent)[:FAILURE_LOG_KEEP],
+        }
+    try:
+        FAILURES_PATH.parent.mkdir(parents=True, exist_ok=True)
+        _atomic_write(FAILURES_PATH, health)
+    except Exception as exc:
+        print(f"  could not write failure log: {exc}", file=sys.stderr)
+    return health
 
 
 def publish_stage(stories: list[dict], ok: bool, method: str, model: str | None) -> dict:
     """ok=True → write top_stories.json atomically + refresh the LKG copy.
-    ok=False → keep serving the previous good output: leave the existing
-    file if its display strings are clean, else restore the LKG copy, else
-    write an empty-stories payload (the site hides the strip) rather than
-    ever publishing broken data."""
-    now_iso = datetime.now(timezone.utc).isoformat()
+    ok=False → keep serving the last known-good output rather than ever
+    publishing broken data: prefer the existing file, else the LKG copy —
+    each re-validated first — else an empty-stories payload, which makes the
+    site hide the strip entirely.
+
+    Returns the publish outcome plus the age of what is now being served, so
+    the caller can escalate when a fallback has been frozen in place."""
+    now = datetime.now(timezone.utc)
     if ok:
-        payload = {"updated": now_iso, "method": method, "stories": tp.strip_internal(stories)}
+        payload = {"updated": now.isoformat(), "method": method,
+                   "stories": tp.strip_internal(stories)}
         if model:
             payload["model"] = model
         _atomic_write(OUT_PATH, payload)
         LKG_PATH.parent.mkdir(parents=True, exist_ok=True)
         _atomic_write(LKG_PATH, payload)
-        return {"published": True, "fallback": None}
+        return {"published": True, "fallback": None, "serving_age_hours": 0.0}
+
+    def _age_hours(payload: dict) -> float | None:
+        t = tp.parse_ts((payload or {}).get("updated"))
+        return round((now.timestamp() - t) / 3600.0, 2) if t else None
 
     existing = _load_json(OUT_PATH)
-    if _display_clean(existing.get("stories")):
-        return {"published": False, "fallback": "kept existing top_stories.json"}
+    usable, why = _fallback_usable(existing)
+    if usable:
+        return {"published": False, "fallback": "kept existing top_stories.json",
+                "serving_age_hours": _age_hours(existing)}
     lkg = _load_json(LKG_PATH)
-    if _display_clean(lkg.get("stories")):
+    lkg_usable, lkg_why = _fallback_usable(lkg)
+    if lkg_usable:
         _atomic_write(OUT_PATH, lkg)
-        return {"published": False, "fallback": "restored state/topstories_lkg.json"}
-    _atomic_write(OUT_PATH, {"updated": now_iso, "method": method, "stories": []})
-    return {"published": False, "fallback": "no clean fallback — wrote empty stories (strip hidden)"}
+        return {"published": False, "fallback": "restored state/topstories_lkg.json",
+                "rejected_existing": why[:3], "serving_age_hours": _age_hours(lkg)}
+    _atomic_write(OUT_PATH, {"updated": now.isoformat(), "method": method, "stories": []})
+    return {"published": False,
+            "fallback": "no usable fallback — wrote empty stories (strip hidden)",
+            "rejected_existing": why[:3], "rejected_lkg": lkg_why[:3],
+            "serving_age_hours": None}
+
+
+# --------------------------------------------------------------------------
+# Safety-net self-test. TOPSTORIES_FORCE_FAIL=<check> corrupts the ranked
+# stories in a specific way just before validation, so you can confirm the
+# gate catches it and the fallback holds — without waiting for a real
+# failure. No-op unless the variable is set.
+#   english   — put a Hebrew string in a member title
+#   outlets   — reduce a story to a single outlet
+#   relevance — replace a story with sports content
+#   ordering  — swap the top two stories
+#   summary   — put a Hebrew string in a summary (expected to REPAIR, not fail)
+# --------------------------------------------------------------------------
+def force_fail(stories: list[dict], mode: str) -> list[dict]:
+    if not stories:
+        return stories
+    s = stories[0]
+    if mode == "english":
+        s["members"][0]["title"] = "דיווח: ישראל תקפה יעדים בדרום לבנון"
+        s["rep"]["title"] = s["members"][0]["title"]
+    elif mode == "outlets":
+        keep = s["members"][0]["source"]
+        s["members"] = [m for m in s["members"] if m["source"] == keep][:1]
+        s["_members_full"] = s["_members_full"][:1]
+        s["outlets"] = 1
+    elif mode == "relevance":
+        for m in s["members"]:
+            m["title"] = "Barcelona beat Real Madrid 3-1 in the Champions League final"
+        s["rep"]["title"] = s["members"][0]["title"]
+        for m in s.get("_members_full", []):
+            m["display_title"] = s["members"][0]["title"]
+            m["snippet"] = "A football match report from the Champions League final."
+        s.pop("summary", None)
+    elif mode == "ordering" and len(stories) >= 2:
+        stories[0], stories[1] = stories[1], stories[0]
+        stories[0]["rank"], stories[1]["rank"] = 1, 2
+    elif mode == "summary":
+        s["summary"] = "כותרת בעברית שלא אמורה להופיע"
+    else:
+        print(f"  [self-test] unknown TOPSTORIES_FORCE_FAIL={mode!r}", file=sys.stderr)
+        return stories
+    print(f"  [self-test] injected '{mode}' breakage into the ranked stories",
+          file=sys.stderr)
+    return stories
 
 
 def write_debug(debug: dict) -> None:
@@ -563,13 +657,19 @@ def main():
     attach_neutral_summaries(stories)
 
     # 6. VALIDATE ----------------------------------------------------------
+    forced = os.environ.get("TOPSTORIES_FORCE_FAIL")
+    if forced:
+        stories = force_fail(stories, forced)
     val = tp.validate_stage(stories)
     debug["stages"]["validate"] = {"ok": val["ok"], "failures": val["failures"],
-                                   "repairs": val["repairs"]}
+                                   "repairs": val["repairs"],
+                                   "forced_failure": forced or None}
 
     # 7. PUBLISH -----------------------------------------------------------
     pub = publish_stage(val["stories"], val["ok"], method, model)
+    health = _health_update(val["ok"], val["failures"], pub["fallback"])
     debug["stages"]["publish"] = pub
+    debug["health"] = {k: v for k, v in health.items() if k != "recent"}
     debug["ok"] = val["ok"]
     write_debug(debug)
 
@@ -577,12 +677,24 @@ def main():
         print(f"Wrote top_stories.json — {len(val['stories'])} stories via {method} "
               f"from {len(items)} headlines "
               f"({len(norm['items'])} after normalize, {len(rel['items'])} after relevance)")
+        if val["repairs"]:
+            print(f"  ({len(val['repairs'])} repaired before publish: "
+                  f"{'; '.join(r['action'] for r in val['repairs'])})")
     else:
-        # GitHub Actions warning annotation + a debuggable trace on disk.
+        # Escalate from a warning to an error once the Top 5 has been frozen
+        # for several cycles or the served fallback has gone stale — a single
+        # bad cycle is self-healing, a persistent one needs a human.
         reasons = "; ".join(f"{f['check']}: {f['detail']}" for f in val["failures"][:5])
-        print(f"::warning title=Top-5 validation failed::{reasons}")
+        streak = health["consecutive_failures"]
+        age = pub.get("serving_age_hours")
+        stale = age is None or age >= LKG_STALE_HOURS
+        level = "error" if (streak >= FAIL_ESCALATE_AFTER or stale) else "warning"
+        serving = f", serving {age}h-old data" if age is not None else ", nothing to serve"
+        print(f"::{level} title=Top-5 validation failed "
+              f"({streak} cycle{'s' if streak != 1 else ''} in a row{serving})::{reasons}")
         print(f"Validation failed — {pub['fallback']}. Full trace in "
-              f"state/topstories_debug.json", file=sys.stderr)
+              f"state/topstories_debug.json, history in state/topstories_failures.json",
+              file=sys.stderr)
 
     if os.environ.get("TOPSTORIES_SAMPLE"):
         _print_sample(val["stories"], method, model)

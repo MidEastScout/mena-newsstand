@@ -811,7 +811,7 @@ def rank_stage(items: list[dict], clusters: list[dict]) -> dict:
 # ==========================================================================
 # Stage 6 — VALIDATE
 # ==========================================================================
-def validate_stage(stories: list[dict]) -> dict:
+def validate_stage(stories: list[dict], check_relevance: bool = True) -> dict:
     """Final automated gate before anything is displayed. Re-verifies, from
     scratch and without trusting upstream stages:
 
@@ -827,6 +827,13 @@ def validate_stage(stories: list[dict]) -> dict:
                   then camp spread desc, then newest member desc.
       structure — 1..TOP_N contiguous ranks, non-empty members, members
                   sorted newest-first.
+
+    `check_relevance=False` runs every check except relevance. Used when
+    re-validating an ALREADY-PUBLISHED payload as a fallback candidate: it
+    passed the full check (with snippets) when it was published, so the
+    question now is only whether it is still structurally sound and
+    display-clean — and a published file carries titles but no snippets,
+    which would make a relevance re-check weaker than the original anyway.
 
     Returns {"ok": bool, "failures": [...], "repairs": [...], "stories": [...]}.
     On ok=False the caller must NOT publish `stories` — it falls back to the
@@ -867,10 +874,11 @@ def validate_stage(stories: list[dict]) -> dict:
                                        f"{len(distinct)} distinct member sources"})
 
         # -- relevance (full text incl. snippets when available)
-        basis = s.get("_members_full") or s.get("members", [])
-        if not cluster_is_relevant(basis):
-            failures.append({"check": "relevance", "story": rank,
-                             "detail": "story matches irrelevant-content filters"})
+        if check_relevance:
+            basis = s.get("_members_full") or s.get("members", [])
+            if not cluster_is_relevant(basis):
+                failures.append({"check": "relevance", "story": rank,
+                                 "detail": "story matches irrelevant-content filters"})
 
         # -- structure
         if not s.get("members"):
