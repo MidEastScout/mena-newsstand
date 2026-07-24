@@ -47,6 +47,11 @@ name: MENA Newsstand
 #   - The `rearm` job uses concurrency cancel-in-progress, so only ONE timer is
 #     ever waiting. Overlapping triggers (manual, schedule, loop) collapse back
 #     into a single ~30-min loop instead of multiplying.
+#   - Before dispatching, `rearm` checks whether a run is already queued or
+#     working and stands down if so. Without that check the loop tripped over
+#     its own tail whenever a run sat waiting for a runner: a third run entering
+#     the `newsstand-data` concurrency group evicts the one already pending, so
+#     ~10 runs a day showed up cancelled/red even though nothing was broken.
 #   - The `schedule` below still fires occasionally; if the self-loop ever dies
 #     (a run cancelled at the wrong moment, or the PAT lapses), a scheduled run
 #     restarts it.
@@ -292,6 +297,49 @@ jobs:
           # (Public repo → Actions minutes are free, so a waiting job is fine.)
           echo "Waiting ~28 min before triggering the next run…"
           sleep 1680
+
+          # Don't dispatch on top of a run that is already queued or working.
+          # The `run` job is serialised by the `newsstand-data` concurrency
+          # group, and GitHub allows only ONE pending run per group: when a
+          # third run arrives, the one already waiting is CANCELLED. Runners
+          # for this repo regularly sit queued for 10-15 min, so a dispatch
+          # landing while the previous run is still queued was cancelling that
+          # run — ~10 cancelled ("failed"-looking) runs a day, all of them the
+          # loop tripping over itself. Skipping the dispatch cannot stall the
+          # loop: the run we stood down for arms its own rearm timer when it
+          # finishes, and the schedule above is still the backstop.
+          # A lookup failure leaves $other empty, i.e. dispatch as we always did.
+          other=""; other_state=""
+          # `pending`/`waiting` cover a run held back by concurrency or an
+          # environment gate; `queued` is waiting for a runner.
+          for state in queued pending waiting in_progress; do
+            # Our OWN run is in_progress while this timer sleeps — skip its id.
+            other=$(curl -sS \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $DISPATCH_PAT" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/fetch-headlines.yml/runs?per_page=50&status=$state" \
+              | jq -r --arg me "$GITHUB_RUN_ID" \
+                  '[.workflow_runs[]? | select((.id|tostring) != $me)
+                    | "\(.id) \(.created_at)"][0] // empty') || other=""
+            if [ -n "$other" ]; then other_state="$state"; break; fi
+          done
+          if [ -n "$other" ]; then
+            other_id=${other%% *}
+            age=$(( $(date -u +%s) - $(date -u -d "${other#* }" +%s) ))
+            # A run older than ~25 min is wedged, not working (a job stuck with
+            # no runner). Standing down for THAT one would end the loop, so
+            # dispatch anyway — the new run evicting the wedged one is exactly
+            # how the loop recovers.
+            if [ "$age" -lt 1500 ]; then
+              echo "Run $other_id is already $other_state (${age}s old) —"
+              echo "skipping this dispatch; its own rearm timer continues the loop."
+              exit 0
+            fi
+            echo "::warning::Run $other_id has been $other_state for ${age}s —"
+            echo "treating it as wedged and dispatching a fresh run anyway."
+          fi
+
           echo "Dispatching the next run…"
           # Retry transient failures (network blips, 5xx, secondary rate limits)
           # with backoff. A single dropped dispatch would otherwise break the
