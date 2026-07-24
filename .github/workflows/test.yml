@@ -1,0 +1,48 @@
+name: Tests
+
+# Regression tests for the Top-5 stories pipeline (tests/test_topstories.py).
+#
+# Runs on any change to the pipeline, its tests, or this workflow — NOT on the
+# ~30-minute data-refresh commits, which only touch JSON. That keeps the signal
+# meaningful: a red X here means someone changed the logic and broke a
+# guarantee, not that a news feed moved.
+#
+# The suite is stdlib unittest only (no pytest, no requirements install), so
+# this job is a checkout plus a python run — a few seconds.
+
+on:
+  push:
+    paths:
+      - 'scripts/topstories_pipeline.py'
+      - 'scripts/build_topstories.py'
+      - 'tests/**'
+      - '.github/workflows/test.yml'
+  pull_request:
+    paths:
+      - 'scripts/topstories_pipeline.py'
+      - 'scripts/build_topstories.py'
+      - 'tests/**'
+      - '.github/workflows/test.yml'
+  workflow_dispatch:        # manual "run the tests now"
+
+permissions:
+  contents: read
+
+jobs:
+  topstories:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Top-5 pipeline regression tests
+        run: python3 tests/test_topstories.py -v
+
+      # The builders must at least import and compile — a syntax error here
+      # would otherwise only surface in the refresh workflow, where the step
+      # is continue-on-error and would fail quietly.
+      - name: Builders compile
+        run: python3 -m py_compile scripts/build_topstories.py scripts/topstories_pipeline.py scripts/explain_topstories.py
