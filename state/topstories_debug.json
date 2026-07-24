@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T22:16:12.056593+00:00",
+  "updated": "2026-07-24T22:44:14.990198+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-24T22:14:08.555914+00:00"
+      "headlines_updated": "2026-07-24T22:42:08.702556+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 14,
-        "title_snippet": 35,
-        "title_native": 86,
+        "dropped_stale": 12,
+        "title_snippet": 32,
+        "title_native": 88,
+        "dropped_no_english": 3,
         "in": 135,
-        "kept": 121
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -186,11 +187,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Jordan Times",
-          "title": "Hegseth estimates cost of Iran war at $37.5 billion",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Syria Direct",
           "title": "‘Waiting for chaos’: IS adapts under pressure, betting on the failure of Syria’s transition",
@@ -223,11 +219,6 @@
         },
         {
           "source": "Arab News",
-          "title": "Hegseth estimates cost of Iran war at $37.5 billion",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
           "title": "Iran’s forces attack Bahrain and Kuwait after US hits Iranian ports and cities",
           "reason": "stale (older than 48h)"
         },
@@ -255,12 +246,27 @@
           "source": "Al-Masirah",
           "title": "محافظ لحج يبارك بيان القوات المسلحة بشأن حظر الملاحة على العدو السعودي ويؤكد الجهوزية الكاملة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"رويترز\" عن دبلوماسيَّين: \"الجنائية الدولية\" تصوت لصالح عزل كريم خان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "التلفزيون السعودي: استهداف سفينة سعودية في البحر الأحمر وإصابتها بأضرار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "التحليلات",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 83,
+      "in": 120,
+      "kept": 81,
       "dropped": [
         {
           "source": "N12",
@@ -292,6 +298,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "This news item covers general news and updates from Israel and around the world.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "There were expressions of joy and defeat in the Democratic primaries, described as one of the happiest…",
           "sec": 0,
           "off": 0,
@@ -306,13 +319,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "This news item covers general news and updates from Israel and around the world.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "The police have made a dramatic decision to reopen the murder case of Tair Rada.",
           "sec": 0,
           "off": 0,
@@ -320,14 +326,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "Does this disappearing organ hold the secret to longevity?",
+          "title": "‘Extremely disappointing’: US trade partners respond to Trump’s new tariffs",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "‘Extremely disappointing’: US trade partners respond to Trump’s new tariffs",
+          "title": "Does this disappearing organ hold the secret to longevity?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -355,7 +361,7 @@
         },
         {
           "source": "Iran International",
-          "title": "4 Unpaid wages push Iranian workers to brink",
+          "title": "5 Unpaid wages push Iranian workers to brink",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -452,6 +458,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Arab News",
+          "title": "UK PM Burnham heads north to kickstart English ‘devolution’ plans",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Gulf News",
           "title": "Trump says frozen Iranian assets will pay for damage to shipping",
           "sec": 0,
@@ -532,10 +545,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 51,
       "sizes": [
         12,
-        10,
+        9,
         3,
         2,
         2,
@@ -546,7 +559,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -618,7 +630,7 @@
             "levant",
             "turkish"
           ],
-          "members": 10,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -633,11 +645,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Mayadeen",
-                "title": "A report reveals the number of American casualties from Iranian attacks, includi",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "IRNA",
                 "title": "Iran hits US military locations in Kuwait, Bahrain in new phase of operations",
                 "rejected_by": "older than the story's newest wave"
@@ -651,22 +658,29 @@
                 "source": "Mehr News",
                 "title": "Iran’s Army strikes US bases in Bahrain, Jordan with drones",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "LIVE Bahrain, Kuwait struck Iran earlier this month, in rare direct move by Gulf",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "UN's Albanese warns of escalating Israeli violence in occupied West Bank, urges protection for Pales",
+          "headline": "Israel vows to act 'with force' after deadly violence in West Bank",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 8,
             "camps": 3,
-            "newest": "2026-07-24T21:27+00:00"
+            "newest": "2026-07-24T19:10+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
+            "Al-Akhbar",
             "Anadolu Agency",
             "Egypt Independent",
+            "Jordan Times",
             "SANA",
             "TRT World",
             "WAFA News"
@@ -680,8 +694,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "UN's Albanese warns of escalating Israeli violence in occupied West Bank, urges protection for Palestinians",
+            "source": "Jordan Times",
+            "title": "Israel vows to act 'with force' after deadly violence in West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -702,12 +716,12 @@
               },
               {
                 "source": "WAFA News",
-                "title": "UN rights expert: Israeli armed groups escalating deadly attacks against Palesti",
-                "rejected_by": "older than the story's newest wave"
+                "title": "Four Palestinians killed, four injured by Israeli forces during attack by coloni",
+                "rejected_by": "loaded/partisan wording"
               },
               {
                 "source": "WAFA News",
-                "title": "Four Palestinians killed, four injured by Israeli forces during attack by coloni",
+                "title": "Presidency condemns Israeli colonists’ terrorism across West Bank",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
@@ -1034,6 +1048,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump says Iran 'most serious' yet in talks, but has not decided on major strikes",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T22:22+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Siege of Vienna 1683: Summer Europe’s destiny hung by thread",
           "rank_key": {
             "outlets": 1,
@@ -1063,24 +1095,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump says Iran now the 'most serious' yet in talks with US, but he has not decided on launching maj",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T20:31+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1142,17 +1156,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Netanyahu and Katz are authorizing the establishment of settlement outposts in the West Bank.",
+          "headline": "ICC prosecutor Karim Khan removed over ‘political’ sex abuse claims",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-24T18:53+00:00"
+            "newest": "2026-07-24T18:38+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar"
+            "Al Jazeera"
           ],
           "camps": [
-            "levant"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1171,24 +1185,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran's state media reported that five US Army aircraft were stationed at the Al-Dhafra base in the U",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T17:52+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1249,7 +1245,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "UNESCO places West Bank site Sebastia on danger list",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T13:23+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1267,7 +1281,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24T22:16:30.302566+00:00",
+    "last_success": "2026-07-24T22:44:29.569658+00:00",
     "last_failure": null
   },
   "ok": true
