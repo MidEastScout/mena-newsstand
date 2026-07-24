@@ -136,27 +136,36 @@ EN_CACHE_MAX = 4000
 
 
 def make_translator():
-    """Returns (translate, save). translate(texts) -> list[str|None]."""
+    """Returns (translate, save, status). translate(texts) -> list[str|None].
+
+    `status` is a dict the caller copies into the debug trace. A translation
+    outage is otherwise invisible — every title silently falls through to the
+    snippet branch — and the CI job log is not always reachable, so the reason
+    has to land in a committed file.
+    """
     key = os.environ.get("AZURE_TRANSLATOR_KEY")
     region = os.environ.get("AZURE_TRANSLATOR_REGION")
     cache = _load_json(EN_CACHE)
     entries: dict = cache.get("en") or {}
     state = {"dirty": False}
+    status = {"configured": bool(key), "region": region or "global",
+              "requested": 0, "translated": 0, "cached": len(entries), "error": None}
 
     def translate(texts):
         need = [t for t in dict.fromkeys(texts) if t and t not in entries]
+        status["requested"] = len(need)
         if not need:
             return [entries.get(t) for t in texts]
         if not key:
-            print(f"  [normalize] AZURE_TRANSLATOR_KEY not set — {len(need)} non-English "
-                  f"title(s) fall back to their English snippet", file=sys.stderr)
+            status["error"] = "AZURE_TRANSLATOR_KEY not set"
+            print(f"  [normalize] {status['error']} — {len(need)} non-English title(s) "
+                  f"fall back to their English snippet", file=sys.stderr)
             return [entries.get(t) for t in texts]
         try:
             import requests
             # Field name and region default MUST match scripts/fetch_headlines.py's
-            # azure_translate(): the API's body key is "Text" (capital T) and a
-            # lowercase "text" is rejected, which silently killed this path — every
-            # title fell through to the snippet branch and nothing said why.
+            # azure_translate(): the API's body key is "Text" (capital T), and a
+            # missing region header is rejected by regional keys.
             headers = {"Ocp-Apim-Subscription-Key": key,
                        "Ocp-Apim-Subscription-Region": region or "global",
                        "Content-Type": "application/json"}
@@ -165,16 +174,23 @@ def make_translator():
                 r = requests.post(
                     AZURE_ENDPOINT, params={"api-version": "3.0", "to": "en"},
                     headers=headers, json=[{"Text": t} for t in batch], timeout=30)
-                r.raise_for_status()
+                if r.status_code >= 400:
+                    # Record the API's own explanation (quota exhausted, bad key,
+                    # wrong region…) — this is the line that makes the outage
+                    # diagnosable from the committed trace alone.
+                    status["error"] = f"HTTP {r.status_code}: {r.text[:300]}"
+                    r.raise_for_status()
                 for src, item in zip(batch, r.json()):
                     entries[src] = item["translations"][0]["text"]
                     state["dirty"] = True
         except Exception as exc:
-            body = getattr(getattr(exc, "response", None), "text", "")
-            print(f"  [normalize] Azure en-translation failed ({exc}) "
-                  f"{body[:200]} — falling back to snippets", file=sys.stderr)
-        got = sum(1 for t in need if t in entries)
-        print(f"  [normalize] translated {got}/{len(need)} non-English titles", file=sys.stderr)
+            if not status["error"]:
+                status["error"] = f"{type(exc).__name__}: {exc}"[:300]
+            print(f"  [normalize] Azure en-translation failed — {status['error']} "
+                  f"— falling back to snippets", file=sys.stderr)
+        status["translated"] = sum(1 for t in need if t in entries)
+        print(f"  [normalize] translated {status['translated']}/{len(need)} non-English titles",
+              file=sys.stderr)
         return [entries.get(t) for t in texts]
 
     def save():
@@ -184,7 +200,7 @@ def make_translator():
         EN_CACHE.parent.mkdir(parents=True, exist_ok=True)
         _atomic_write(EN_CACHE, {"en": pruned})
 
-    return translate, save
+    return translate, save, status
 
 
 # ==========================================================================
@@ -652,24 +668,19 @@ def main():
         sys.exit(0)
 
     # 2. NORMALIZE ---------------------------------------------------------
-    translate, save_translations = make_translator()
+    translate, save_translations, tr_status = make_translator()
     norm = tp.normalize_stage(items, translate=translate)
     save_translations()
-    # Record whether the translator was configured AND actually produced
-    # anything. Without this, a broken translation path is invisible: every
-    # title quietly falls through to the snippet branch and the stats look
-    # merely lopsided rather than wrong.
-    debug["stages"]["normalize"] = {
-        "stats": norm["stats"],
-        "translator": {
-            "configured": bool(os.environ.get("AZURE_TRANSLATOR_KEY")),
-            "titles_needing_english": norm["stats"].get("title_translated", 0)
-                                      + norm["stats"].get("title_snippet", 0)
-                                      + norm["stats"].get("dropped_no_english", 0),
-            "translated": norm["stats"].get("title_translated", 0),
-        },
-        "dropped": norm["dropped"],
-    }
+    debug["stages"]["normalize"] = {"stats": norm["stats"],
+                                    "translator": tr_status,
+                                    "dropped": norm["dropped"]}
+    if tr_status["requested"] and not tr_status["translated"]:
+        # Not fatal — the snippet fallback usually covers it — but it means the
+        # designed path is down, so say so where CI surfaces it.
+        print(f"::warning title=Top-5 translation unavailable::"
+              f"{tr_status['requested']} non-English title(s) needed translation, "
+              f"0 succeeded ({tr_status['error']}). Falling back to English snippets; "
+              f"items with no English snippet are dropped from the Top 5.")
 
     # 3. RELEVANCE ---------------------------------------------------------
     rel = tp.relevance_stage(norm["items"])
