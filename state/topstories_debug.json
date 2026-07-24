@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T23:15:19.508121+00:00",
+  "updated": "2026-07-24T23:44:52.185577+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-24T23:13:17.198950+00:00"
+      "headlines_updated": "2026-07-24T23:43:00.918307+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 35,
+        "title_snippet": 34,
         "title_native": 88,
+        "dropped_no_english": 1,
         "in": 135,
-        "kept": 123
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -213,7 +214,7 @@
         },
         {
           "source": "Arab News",
-          "title": "Iran denies existence of nuclear facility at Kolang mountain",
+          "title": "Hegseth estimates cost of Iran war at $37.5 billion",
           "reason": "stale (older than 48h)"
         },
         {
@@ -245,11 +246,16 @@
           "source": "Al-Masirah",
           "title": "محافظ لحج يبارك بيان القوات المسلحة بشأن حظر الملاحة على العدو السعودي ويؤكد الجهوزية الكاملة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "قلق أوروبي حول لبنان: استفراد أميركي وتعنت إسرائيلي وتهديد سوري | «بروفة زوطر»: السلطة تريد الجيش أداة لخدمة الاحتلال",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
+      "in": 122,
       "kept": 81,
       "dropped": [
         {
@@ -289,14 +295,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "The Democratic primaries saw both joy and defeat, with one participant calling it 'one of the happiest…",
+          "title": "This news item covers general news and updates from Israel and around the world.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "This news item covers general news and updates from Israel and around the world.",
+          "title": "The Democratic primaries saw both joy and defeat, with one participant calling it 'one of the happiest…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -317,7 +323,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "‘Extremely disappointing’: US trade partners respond to Trump’s new tariffs",
+          "title": "Does this disappearing organ hold the secret to longevity?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -366,10 +372,10 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Winds hamper firefighting efforts as blazes rage near Madrid",
+          "title": "Deadly wildfires in Europe force thousands to flee",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "L'Orient Today",
@@ -470,24 +476,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "UK PM Burnham heads north to kickstart English ‘devolution’ plans",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "Trump says frozen Iranian assets will pay for damage to shipping",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -500,6 +492,13 @@
         {
           "source": "Gulf News",
           "title": "Junior Accountant/Business Analyst",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Shocking viral video: Bear climbs power pole in New Mexico",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -550,17 +549,22 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 54,
       "sizes": [
-        16,
-        9,
+        12,
+        5,
         3,
         3,
+        3,
         2,
         2,
         2,
         2,
         2,
+        2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -610,19 +614,16 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israel vows to act 'with force' after deadly violence in West Bank",
+          "headline": "UN's Albanese warns of escalating Israeli violence in occupied West Bank, urges protection for Pales",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 7,
             "camps": 4,
-            "newest": "2026-07-24T19:10+00:00"
+            "newest": "2026-07-24T21:27+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Al Jazeera",
-            "Al-Akhbar",
             "Anadolu Agency",
             "Egypt Independent",
-            "Jordan Times",
             "Kan 11",
             "SANA",
             "TRT World",
@@ -634,12 +635,12 @@
             "levant",
             "turkish"
           ],
-          "members": 16,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Jordan Times",
-            "title": "Israel vows to act 'with force' after deadly violence in West Bank",
+            "source": "Anadolu Agency",
+            "title": "UN's Albanese warns of escalating Israeli violence in occupied West Bank, urges protection for Palestinians",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -659,13 +660,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Jazeera",
-                "title": "Updates: Israeli settlers attack West Bank, shooting leaves six dead",
+                "source": "Egypt Independent",
+                "title": "4 Palestinians and 1 Israeli killed in West Bank clashes near Nablus",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Four Palestinians and one Israeli dead after West Bank shooting",
+                "source": "Egypt Independent",
+                "title": "“It’s time to do in the West Bank what we did in Gaza”: Israeli National Securit",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -675,17 +676,14 @@
           "selected_rank": 2,
           "headline": "Iran strikes Jordan, Kuwait, Bahrain amid US attacks",
           "rank_key": {
-            "outlets": 8,
-            "camps": 5,
-            "newest": "2026-07-24T17:44+00:00"
+            "outlets": 5,
+            "camps": 4,
+            "newest": "2026-07-24T13:22+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Anadolu Agency",
             "Arab News",
             "IRNA",
             "Jordan Times",
-            "L'Orient Today",
             "Mehr News",
             "The New Arab"
           ],
@@ -693,10 +691,9 @@
             "gulf",
             "panarab",
             "iranian",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 9,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -705,29 +702,19 @@
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 3 of the story's dominant entities (bahrain, jordan, kuwait)",
+              "names 2 of the story's dominant entities (bahrain, jordan)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "IRNA",
-                "title": "Iran hits US military locations in Kuwait, Bahrain in new phase of operations",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Iranian Army hits US bases in Jordan and Bahrain with drones",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "Mehr News",
                 "title": "Iran’s Army strikes US bases in Bahrain, Jordan with drones",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "L'Orient Today",
-                "title": "LIVE Bahrain, Kuwait struck Iran earlier this month, in rare direct move by Gulf",
+                "source": "Arab News",
+                "title": "Gulf states, Jordan reaffirm right to self-defense against Iranian attacks",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -783,15 +770,16 @@
           "headline": "Saudi Arabia strikes Houthi-held Hodeidah, Yemeni group says",
           "rank_key": {
             "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-24T21:01+00:00"
+            "camps": 3,
+            "newest": "2026-07-24T20:44+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Al Jazeera",
-            "Anadolu Agency"
+            "Anadolu Agency",
+            "Kan 11"
           ],
           "camps": [
+            "israeli",
             "panarab",
             "turkish"
           ],
@@ -827,12 +815,43 @@
             "israeli",
             "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
             "title": "Trump says Iran 'most serious' yet in talks, but has not decided on major strikes",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump says Iranians getting ‘very serious’ in talks",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-24T20:33+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Trump says Iranians getting ‘very serious’ in talks",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -878,6 +897,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump warns China, Russia against involvement in Iran war",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-24T18:36+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "SANA"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Trump warns China, Russia against involvement in Iran war",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -983,6 +1033,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Safadi says Israel pushing West Bank towards ‘explosion’",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T22:29+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Siege of Vienna 1683: Summer Europe’s destiny hung by thread",
           "rank_key": {
             "outlets": 1,
@@ -1055,32 +1123,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Saudi Arabia has reportedly conducted airstrikes in the Yemeni port city of Al-Hodeidah.",
+          "headline": "Canada marks Gordie Howe bridge opening without US after trade war deepens",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-24T20:10+00:00"
+            "newest": "2026-07-24T20:22+00:00"
           },
           "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump says Iranians getting ‘very serious’ in talks",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T19:49+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
+            "Al Jazeera"
           ],
           "camps": [
             "panarab"
@@ -1109,6 +1159,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Netanyahu and Katz are reportedly authorizing the establishment of settlement outposts in the West B",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T18:53+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "ICC prosecutor Karim Khan removed over ‘political’ sex abuse claims",
           "rank_key": {
             "outlets": 1,
@@ -1120,24 +1188,6 @@
           ],
           "camps": [
             "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump says China, Russia not involved in Iran war, cites pledges not to arm Tehran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T18:36+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1163,6 +1213,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump threatens 'very bad' consequences if Russia, China enter US-Iran war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T16:48+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran, Egypt FMs discuss latest regional developments",
           "rank_key": {
             "outlets": 1,
@@ -1180,25 +1248,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Pakistan and Iran explore path toward new talks with US",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T16:13+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1216,7 +1266,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24T23:15:33.403906+00:00",
+    "last_success": "2026-07-24T23:45:14.661876+00:00",
     "last_failure": null
   },
   "ok": true
