@@ -214,7 +214,11 @@ jobs:
           git add pulse.json 2>/dev/null || true
           git add briefing.json 2>/dev/null || true
           git add trends.json state/trends_history.json 2>/dev/null || true
+          # Top-5 pipeline: output + last-known-good copy + per-stage debug
+          # trace + the Azure en-translation cache (see build_topstories.py).
           git add top_stories.json state/topstories_summaries.json 2>/dev/null || true
+          git add state/topstories_lkg.json state/topstories_debug.json 2>/dev/null || true
+          git add state/topstories_en_cache.json 2>/dev/null || true
           git add state/push_state.json 2>/dev/null || true
           git add state/pulse_terms_he.json state/headlines_he.json 2>/dev/null || true
           git add frontpages 2>/dev/null || true

@@ -1403,37 +1403,16 @@ setInterval(()=>{
 }, 60*1000);
 
 /* ===== "Top Stories Right Now" =====
-   Significance = how many distinct outlets carry the same story. Headlines
-   are clustered by shared informative title words (union-find over pairwise
-   overlap), clusters ranked by outlet count with newest-item tiebreak. */
-const HL_STOP = new Set(("the a an and or but for nor with without from into onto over under after before during amid " +
-  "says said say saying will would could should shall has have had was were are is be been being not no its his her " +
-  "their they them this that these those as at by in of on to up out off down more most than then also just about " +
-  "against between among across near still yet amid how what when where who why while since because per via de la el " +
-  "al us he she it we you your our two three four five first last next new news live update updates report reports " +
-  "breaking latest today year years day days week weeks month months").split(" "));
-
-function hlTokens(title){
-  const m = (title||"").toLowerCase().replace(/[’']/g,"").match(/[a-z][a-z-]{2,}/g) || [];
-  return new Set(m.filter(w=>!HL_STOP.has(w)));
-}
-
-// Flatten regions → outlets → headlines into one list, each item keeping its outlet.
-function flattenHeadlines(data){
-  const items=[];
-  for(const outs of Object.values(data.regions||{}))
-    for(const o of outs)
-      for(const h of (o.headlines||[]))
-        items.push(Object.assign({}, h, {source:o.source, country:o.country, lang:o.lang}));
-  return items;
-}
-
-/* The Top-5 clusters are computed server-side each refresh cycle by
-   scripts/build_topstories.py (Claude API if available, else a keyword +
-   named-entity heuristic) and shipped in top_stories.json, so the page just
-   renders them. The functions below are the CLIENT-SIDE FALLBACK: if that file
-   is missing, we cluster here so the strip is never empty. Keep this heuristic
-   in rough sync with the Python one. */
+   The Top-5 stories are computed SERVER-SIDE each refresh cycle by the staged
+   pipeline in scripts/build_topstories.py (fetch → normalize-to-English →
+   relevance → cluster → rank → validate → publish) and shipped in
+   top_stories.json. The pipeline's validation gate guarantees the file is
+   present and display-clean (English-only, >=2 outlets per story, on-topic,
+   correctly ordered), falling back to its last known-good output itself — so
+   the page ONLY renders that file. There is deliberately no client-side
+   fallback clusterer any more: it was a second, unvalidated implementation
+   that drifted from the server's. If the fetch failed entirely (in which case
+   headlines.json failed too), the strip simply hides. */
 
 // A small camp label pill, coloured by the same scheme as the outlet tags.
 function catTag(id){
@@ -1443,134 +1422,10 @@ function catTag(id){
   return `<span class="src-tag sc-${id}" title="${esc(label)}">${esc(label)}</span>`;
 }
 
-// Named-entity gazetteer for the fallback. STRONG = specific event/place/person
-// (sharing one is strong evidence of the same story); BROAD = nation-level lens
-// (must not, alone, merge two headlines). Mirrors build_topstories.py.
-const TS_STRONG = {
-  khamenei:["khamenei","ayatollah","supreme leader","slain leader","martyred leader"],
-  funeral:["funeral","mourning","mourn","laid in state","commemoration","state funeral","week of mourning","burial"],
-  hormuz:["hormuz"], nuclear:["nuclear","enrichment","uranium","natanz","fordow"],
-  gaza:["gaza","hamas","rafah","khan younis","jabaliya","islamic jihad"],
-  westbank:["west bank","ramallah","jenin","nablus","hebron","settler","settlers","colonist","colonists","settlement","demolition","demolitions"],
-  hezbollah:["hezbollah","nasrallah"],
-  lebdeal:["lebanon-israel","lebanese-israeli","framework agreement","washington agreement","after israel agreement"],
-  southleb:["bint jbeil","litani","wadi slouki","south lebanon","southern lebanon"],
-  syria:["syria","syrian","damascus","druze","aleppo"],
-  ukraine:["ukraine","ukrainian","kyiv","kiev","russian strike","russian attack"],
-  nato:["nato"], venezuela:["venezuela","venezuelan"], earthquake:["earthquake","quake"],
-  yemen:["yemen","houthi","houthis"],
-};
-const TS_BROAD = {
-  iran:["iran","iranian","tehran","irgc","revolutionary guard","pezeshkian","araghchi"],
-  israel:["israel","israeli"," idf","netanyahu","occupation","colonists","settlers"],
-  us:["united states","washington","trump"], turkey:["turkey","türkiye","turkish","ankara","erdogan"],
-  russia:["russia","russian","moscow","putin"],
-};
-function tsEntities(text){
-  const t = " " + (text||"").toLowerCase() + " ", strong = new Set(), all = new Set();
-  for(const [k,al] of Object.entries(TS_STRONG)) if(al.some(a=>t.includes(a))){ strong.add(k); all.add(k); }
-  for(const [k,al] of Object.entries(TS_BROAD))  if(al.some(a=>t.includes(a))) all.add(k);
-  return {strong, all};
-}
-
-// Arabic + Persian script (Hebrew is a separate block and is left alone).
-const TS_ARABIC = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]/;
-function tsCleanTitle(title, source){
-  let t = (title||"").trim();
-  const m = t.match(/\s[-–—]\s([^-–—]{1,40})$/);
-  if(m){
-    const seg = m[1].trim();
-    const st = new Set((seg.toLowerCase().match(/[a-z]{3,}/g)||[]));
-    const so = new Set(((source||"").toLowerCase().match(/[a-z]{3,}/g)||[]));
-    if(TS_ARABIC.test(seg) || [...st].some(w=>so.has(w))) t = t.slice(0, m.index).trim();
-  }
-  return t;
-}
-function tsFirstSentence(text){
-  let t = (text||"").trim(); if(!t) return "";
-  const m = t.match(/^(.+?[.!?])(\s|$)/); let s = (m?m[1]:t).trim();
-  if(s.length>110) s = s.slice(0,110).replace(/\s+\S*$/,"").replace(/[ ,;:]+$/,"")+"…";
-  return s;
-}
-// Guaranteed-English headline for the strip: cleaned title if English, else the
-// outlet's English snippet. Mirrors _english_display in build_topstories.py.
-function tsEnglish(it){
-  const t = tsCleanTitle(it.title, it.source);
-  if(t && !TS_ARABIC.test(t)) return t;
-  const s = tsFirstSentence(it.snippet);
-  if(s && !TS_ARABIC.test(s)) return s;
-  return t || s;
-}
-
-function buildClustersFallback(data){
-  const catOrder = CAT_DEFS.map(c=>c.id);   // computed lazily (CAT_DEFS is defined below)
-  const items = flattenHeadlines(data);
-  items.forEach(it=>{
-    it.category = SRC_CATS[it.source] || null;
-    it._tok = hlTokens(it.title);
-    const e = tsEntities((it.title||"")+" "+(it.snippet||""));
-    it._all = e.all; it._strong = e.strong;
-    it._t = Date.parse(it.published)||0;
-  });
-  const par = items.map((_,i)=>i);
-  const find = i => par[i]===i ? i : (par[i]=find(par[i]));
-  for(let i=0;i<items.length;i++)for(let j=i+1;j<items.length;j++){
-    const A=items[i], B=items[j];
-    let ss=0; for(const e of A._strong) if(B._strong.has(e)) ss++;
-    let se=0; for(const e of A._all)    if(B._all.has(e))    se++;
-    let st=0; for(const w of A._tok)    if(B._tok.has(w))    st++;
-    if((ss>=1 && (se>=2 || st>=2)) || st>=4) par[find(i)]=find(j);
-  }
-  const groups={};
-  items.forEach((it,i)=>{ const r=find(i); (groups[r]=groups[r]||[]).push(it); });
-  const clusters = Object.values(groups).map(g=>({
-    members:g,
-    outlets:new Set(g.map(x=>x.source)).size,
-    cats:new Set(g.map(x=>x.category).filter(Boolean)),
-    newest:Math.max(...g.map(x=>x._t)),
-  }));
-  // Primary outlet count → secondary camp diversity → tertiary recency.
-  clusters.sort((a,b)=> b.outlets-a.outlets || b.cats.size-a.cats.size || b.newest-a.newest);
-  return clusters.slice(0,5).map(c=>{
-    const rep = tsPickRep(c.members);
-    // `title` forced to English (EN mode); `title_he` (Hebrew) kept for HE mode.
-    const view = m => ({source:m.source, category:m.category, title:tsEnglish(m),
-      title_he:tsCleanTitle(m.title_he, m.source), url:m.url, published:m.published});
-    return {
-      rep: view(rep),
-      outlets: c.outlets,
-      categories: [...c.cats].sort((x,y)=>catOrder.indexOf(x)-catOrder.indexOf(y)),
-      members: c.members.slice().sort((a,b)=>b._t-a._t).map(view),
-    };
-  });
-}
-
-// Clearest, most on-topic member: English headline naming the story's dominant
-// specific entities, no bare stub, natural length; centrality/recency break ties.
-function tsPickRep(members){
-  const counts={}; members.forEach(m=>{ for(const e of m._strong) counts[e]=(counts[e]||0)+1; });
-  const maxc=Math.max(0,...Object.values(counts));
-  const dom=new Set(Object.keys(counts).filter(e=>counts[e]>=maxc*0.5));
-  const stub=/^(live|breaking|war on|live blog|watch|video|photos|update|main news)/i;
-  let best=members[0], bestKey=null;
-  for(const m of members){
-    const title=m.title||"";
-    const clean=tsCleanTitle(title,m.source);
-    const english=clean && !TS_ARABIC.test(clean) ? 1 : 0;   // real English headline available
-    let covers=0; for(const e of tsEntities(title).strong) if(dom.has(e)) covers++;
-    let central=0; for(const o of members) if(o!==m) for(const w of m._tok) if(o._tok.has(w)) central++;
-    const key=[english, covers, (stub.test(clean)||clean.length<18)?0:1,
-               -Math.abs(clean.length-50), central, m._t];
-    if(bestKey===null || tsCmp(key,bestKey)>0){ bestKey=key; best=m; }
-  }
-  return best;
-}
-function tsCmp(a,b){ for(let i=0;i<a.length;i++){ if(a[i]!==b[i]) return a[i]-b[i]; } return 0; }
-
-// Precomputed clusters if available, else the client-side fallback.
-function getTopStories(data){
+// Validated Top-5 from the server pipeline (null → strip hidden).
+function getTopStories(){
   if(topData && Array.isArray(topData.stories) && topData.stories.length) return topData.stories;
-  return buildClustersFallback(data);
+  return null;
 }
 
 // Which story cards are expanded — persists across refreshes / language toggles.
@@ -1608,9 +1463,9 @@ function renderStoryCard(s, i){
   </li>`;
 }
 
-function renderTopStrip(data){
-  const stories = getTopStories(data);
-  if(!stories.length) return "";
+function renderTopStrip(){
+  const stories = getTopStories();
+  if(!stories || !stories.length) return "";
   return `<div class="hl-top">
     <div class="hl-top-kicker">★ ${T("top_now")}<span class="hl-top-sub">${T("top_sub")}</span></div>
     <ol class="hl-top-list">${stories.map((s,i)=>renderStoryCard(s,i)).join("")}</ol>
@@ -1817,7 +1672,7 @@ function renderHeadlines(data, container, showTop=true){
     html+=`<div class="hl-updated">${T("last_updated")}${label}</div>`;
   }
   html+=renderSrcLegend(data);
-  if(showTop) html+=renderTopStrip(data);
+  if(showTop) html+=renderTopStrip();
 
   // Region sections in the JSON's order (the pipeline's REGION_ORDER), each
   // outlet a card with its ranked top 5 + method tag + show-all expander.
