@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Top-5 stories builder — an explicit staged pipeline → top_stories.json.
 
+Full reference (stages, ranking rule, thresholds, debugging, how to tune):
+README-topstories.md in the repository root.
+
 Run every refresh cycle (~30 min) by the workflow, AFTER fetch_headlines.py.
 The stage logic itself lives in scripts/topstories_pipeline.py (pure,
 tested by tests/test_topstories.py); this script wires the stages to the

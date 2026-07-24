@@ -1,5 +1,8 @@
 """Pure stage logic for the Top-5 stories pipeline (no network, no file I/O).
 
+Full reference (stages, ranking rule, thresholds, debugging, how to tune):
+README-topstories.md in the repository root.
+
 The Top 5 is built as an explicit staged pipeline; each stage is a named
 function with a plain-dict input/output contract so it can be tested and
 debugged in isolation. scripts/build_topstories.py orchestrates the stages,

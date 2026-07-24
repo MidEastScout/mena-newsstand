@@ -695,5 +695,53 @@ class EndToEnd(unittest.TestCase):
                 self.assertTrue(r["why_not"])
 
 
+class Documentation(unittest.TestCase):
+    """README-topstories.md must keep describing the code that exists.
+
+    Documentation rots silently: the thresholds, function names and knobs it
+    quotes drift as the code changes, and nothing notices until someone
+    trusts a stale number. These checks fail instead.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.doc_path = Path(__file__).parent.parent / "README-topstories.md"
+        cls.doc = cls.doc_path.read_text(encoding="utf-8")
+
+    def test_documented_thresholds_match_the_code(self):
+        for name, value in (("TOP_N", tp.TOP_N),
+                            ("MIN_STORY_OUTLETS", tp.MIN_STORY_OUTLETS),
+                            ("FRESHNESS_WINDOW_H", tp.FRESHNESS_WINDOW_H),
+                            ("STALE_GAP_SEC", tp.STALE_GAP_SEC)):
+            self.assertRegex(self.doc, rf"\|\s*`{name}`\s*\|\s*{value}\b",
+                             f"README-topstories.md must list {name} = {value}")
+
+    def test_every_stage_function_named_in_the_doc_exists(self):
+        for fn in ("normalize_stage", "relevance_stage", "cluster_stage",
+                   "rank_stage", "validate_stage", "pick_representative",
+                   "describe_representative", "is_english_display"):
+            self.assertIn(fn, self.doc, f"{fn} should be documented")
+            self.assertTrue(hasattr(tp, fn), f"{fn} is documented but does not exist")
+
+    def test_every_tunable_named_in_the_doc_exists(self):
+        for name in ("SEC_WORDS", "SEC_PHRASES", "OFF_WORDS", "OFF_PHRASES",
+                     "DISASTER_WORDS", "CONFLICT_WORDS", "ENTITIES_STRONG",
+                     "ENTITIES_BROAD", "GEO_TOKENS", "SRC_CATS", "CAT_ORDER",
+                     "_REP_SOURCE_RANK"):
+            self.assertIn(name, self.doc, f"{name} should be documented")
+            self.assertTrue(hasattr(tp, name), f"{name} is documented but does not exist")
+
+    def test_every_camp_is_documented(self):
+        for camp in tp.CAT_ORDER:
+            self.assertIn(f"`{camp}`", self.doc, f"camp {camp} missing from the doc")
+
+    def test_ranking_rule_is_stated_in_priority_order(self):
+        outlets = self.doc.index("number of distinct outlets")
+        camps = self.doc.index("spread across outlet camps")
+        recency = self.doc.index("**recency**")
+        self.assertLess(outlets, camps)
+        self.assertLess(camps, recency)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
