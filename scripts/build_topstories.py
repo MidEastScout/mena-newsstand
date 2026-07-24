@@ -30,6 +30,16 @@ Every cycle also writes state/topstories_debug.json — a per-stage trace
 (what was fetched, what each stage dropped and why, every candidate
 cluster with its ranking signals, validation verdict, publish outcome) so
 "why did this story rank #1 today" is answerable without guesswork.
+Read it with:
+
+    python3 scripts/explain_topstories.py            # the whole cycle
+    python3 scripts/explain_topstories.py --why 1    # why story #1 ranked there
+    python3 scripts/explain_topstories.py --dropped  # what was filtered, and why
+    python3 scripts/explain_topstories.py --health   # recent validation failures
+
+Cross-cycle health (consecutive failures, the last 20 failure records)
+lives in state/topstories_failures.json, since the debug trace above is
+overwritten every run.
 
 Neutral one-line summaries (EN+HE) are attached best-effort via Gemini
 (cached in state/topstories_summaries.json; only refreshed when the Top-5
@@ -650,8 +660,10 @@ def main():
     # 5. RANK --------------------------------------------------------------
     rank = tp.rank_stage(rel["items"], clus["clusters"])
     stories = rank["stories"]
-    debug["stages"]["rank"] = {"candidates": rank["table"][:20],
-                               "selected": len(stories)}
+    debug["stages"]["rank"] = {"rule": "distinct outlets → camp spread → recency",
+                               "min_outlets": tp.MIN_STORY_OUTLETS,
+                               "selected": len(stories),
+                               "candidates": rank["table"]}
 
     # Neutral summaries (best-effort; validated below like everything else).
     attach_neutral_summaries(stories)

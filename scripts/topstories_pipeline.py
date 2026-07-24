@@ -708,6 +708,69 @@ def pick_representative(items: list[dict], idxs: list[int]) -> int:
     return best
 
 
+def describe_representative(items: list[dict], chosen: int, idxs: list[int]) -> dict:
+    """Explain, in words, why `chosen` heads its cluster — the audit trail for
+    "why is this the headline?". Mirrors pick_representative's key exactly:
+    neutral wording and current framing are gates, then freshness, entity
+    coverage, title provenance, outlet plainness, non-stub, length, centrality.
+    Also names the members a gate excluded, which is usually the real answer
+    when a more obvious headline was passed over."""
+    strong_counts = Counter()
+    for i in idxs:
+        for e in _item_entities(items[i]) & STRONG:
+            strong_counts[e] += 1
+    top = max(strong_counts.values(), default=0)
+    dominant = {e for e, c in strong_counts.items() if c >= top * 0.5}
+    newest_t = max((items[i].get("_t", 0.0) for i in idxs), default=0.0)
+    cluster_has_current = any(_CURRENT_FRAME_RE.search(items[i]["display_title"]) for i in idxs)
+
+    def gate_block(i):
+        """Which gate, if any, disqualified member i (highest priority first)."""
+        t = items[i]["display_title"]
+        if _LOADED_RE.search(t) or "!" in t:
+            return "loaded/partisan wording"
+        if cluster_has_current and _STALE_FRAME_RE.search(t) and not _CURRENT_FRAME_RE.search(t):
+            return "stale anticipatory framing"
+        if (newest_t - items[i].get("_t", 0.0)) > STALE_GAP_SEC:
+            return "older than the story's newest wave"
+        if _GENERIC_STUB_RE.match(t) or len(t) < 18:
+            return "bare stub headline"
+        return None
+
+    it = items[chosen]
+    covers = len(_entities(it["display_title"]) & STRONG & dominant)
+    why = []
+    if not gate_block(chosen):
+        why.append("passed every gate (neutral, current, fresh, not a stub)")
+    if covers:
+        why.append(f"names {covers} of the story's dominant entities "
+                   f"({', '.join(sorted(_entities(it['display_title']) & STRONG & dominant))})")
+    src_rank = _REP_SOURCE_RANK.get(it["source"], _REP_RANK_DEFAULT)
+    why.append({3: "wire/broadsheet phrasing", 2: "mainstream outlet phrasing",
+                1: "neutral-by-default outlet", 0: "state/partisan outlet (last resort)"}[src_rank])
+    why.append({"native": "outlet's own English headline",
+                "translated": "machine-translated from the outlet's language",
+                "snippet": "derived from the outlet's English snippet"}
+               .get(it.get("title_source"), "unknown provenance"))
+
+    passed_over = []
+    for i in idxs:
+        if i == chosen:
+            continue
+        blocked = gate_block(i)
+        if blocked:
+            passed_over.append({"source": items[i]["source"],
+                                "title": items[i]["display_title"][:80],
+                                "rejected_by": blocked})
+    return {
+        "source": it["source"],
+        "title": it["display_title"],
+        "title_source": it.get("title_source"),
+        "why": why,
+        "passed_over": passed_over[:4],
+    }
+
+
 def summary_contradicts_recency(summary_en: str, story: dict) -> bool:
     """True if a generated summary still leads with anticipatory framing
     while a member headline already shows the event happening/finished."""
@@ -761,8 +824,12 @@ def rank_stage(items: list[dict], clusters: list[dict]) -> dict:
         rep = items[c["representative_index"]]
         relevant = cluster_is_relevant(members)
         scored.append({
-            "cluster": c, "members": members, "rep": rep,
-            "outlets": len(outlets), "cats": len(cats), "newest": newest,
+            "cluster": c, "members": members, "rep": rep, "idxs": idxs,
+            "outlets": len(outlets), "outlet_names": sorted(outlets),
+            "cats": len(cats),
+            "camps": sorted({m.get("category") for m in members if m.get("category")},
+                            key=lambda x: CAT_ORDER.index(x) if x in CAT_ORDER else 99),
+            "newest": newest,
             "relevant": relevant,
             "qualified": len(outlets) >= MIN_STORY_OUTLETS and relevant,
         })
@@ -774,6 +841,7 @@ def rank_stage(items: list[dict], clusters: list[dict]) -> dict:
     for s in scored:
         if not s["qualified"] or len(stories) >= TOP_N:
             continue
+        s["selected_rank"] = len(stories) + 1   # recorded for the audit table
         cats = sorted({m.get("category") for m in s["members"] if m.get("category")},
                       key=lambda x: CAT_ORDER.index(x) if x in CAT_ORDER else 99)
         member_views = sorted((_member_view(m) for m in s["members"]),
@@ -794,16 +862,42 @@ def rank_stage(items: list[dict], clusters: list[dict]) -> dict:
             story["summary_he"] = c["summary_he"]
         stories.append(story)
 
-    table = [{
-        "headline": (s["cluster"].get("summary") or s["rep"]["display_title"])[:100],
-        "outlets": s["outlets"], "cats": s["cats"],
-        "newest": datetime.fromtimestamp(s["newest"], tz=timezone.utc).isoformat(timespec="minutes")
-                  if s["newest"] else None,
-        "members": len(s["members"]),
-        "qualified": s["qualified"],
-        "why_not": (None if s["qualified"] else
-                    ("only 1 outlet" if s["outlets"] < MIN_STORY_OUTLETS else "off-topic")),
-    } for s in scored]
+    # Audit table: every candidate in ranked order, with the literal sort key
+    # and the outlet list behind each count, so a published ranking can be
+    # re-derived by hand. Singletons past the first few are summarised — they
+    # can never qualify and would otherwise dominate the file.
+    table, singles_kept, singles_omitted = [], 0, 0
+    for s in scored:
+        single = s["outlets"] < MIN_STORY_OUTLETS
+        if single:
+            if singles_kept >= 12:
+                singles_omitted += 1
+                continue
+            singles_kept += 1
+        row = {
+            "selected_rank": s.get("selected_rank"),
+            "headline": (s["cluster"].get("summary") or s["rep"]["display_title"])[:100],
+            # The literal ranking rule, in priority order.
+            "rank_key": {
+                "outlets": s["outlets"], "camps": s["cats"],
+                "newest": datetime.fromtimestamp(s["newest"], tz=timezone.utc)
+                          .isoformat(timespec="minutes") if s["newest"] else None,
+            },
+            "outlet_names": s["outlet_names"],
+            "camps": s["camps"],
+            "members": len(s["members"]),
+            "qualified": s["qualified"],
+            "why_not": (None if s["qualified"] else
+                        (f"only {s['outlets']} outlet — needs {MIN_STORY_OUTLETS}"
+                         if single else "failed the cluster relevance check")),
+        }
+        if s["qualified"]:
+            row["representative"] = describe_representative(
+                items, s["cluster"]["representative_index"], s["idxs"])
+        table.append(row)
+    if singles_omitted:
+        table.append({"note": f"{singles_omitted} further single-outlet clusters omitted "
+                              f"(cannot qualify; see the cluster stage for the full count)"})
 
     return {"stories": stories, "table": table}
 
