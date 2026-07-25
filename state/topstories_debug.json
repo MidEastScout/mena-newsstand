@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T00:16:03.265810+00:00",
+  "updated": "2026-07-25T00:47:12.830984+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,25 +167,51 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-25T00:14:18.792931+00:00"
+      "headlines_updated": "2026-07-25T00:44:56.217934+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 35,
+        "dropped_stale": 16,
+        "title_snippet": 25,
+        "dropped_no_english": 5,
         "title_native": 89,
         "in": 135,
-        "kept": 124
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 30,
         "translated": 0,
         "cached": 0,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "N12",
+          "title": "- mako",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "- mako",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "- mako",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "- mako",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "- mako",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Syria Direct",
           "title": "‘Waiting for chaos’: IS adapts under pressure, betting on the failure of Syria’s transition",
@@ -240,41 +266,38 @@
           "source": "Al-Masirah",
           "title": "محافظ لحج يبارك بيان القوات المسلحة بشأن حظر الملاحة على العدو السعودي ويؤكد الجهوزية الكاملة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "תובע ביה\"ד בהאג, כרים חאן, הודח מתפקידו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רוכב אופניים נפצע קשה לאחר שנפגע מרכב סמוך לעפולה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המשטרה בהחלטה דרמטית: תיק רצח תאיר ראדה נפתח מחדש",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "التحليلات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "ترامب: الاتفاق النووي مع السعودية مشروط بانضمامها إلى \"اتفاقيات أبراهام\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 85,
+      "in": 114,
+      "kept": 79,
       "dropped": [
-        {
-          "source": "N12",
-          "title": "Four-year-old Yuval Kogan has been found safe and sound after being missing for a day.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Zehava Shaul, mother of Sergeant Major Oren Shaul, has passed away.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "There has been a new development in the murder case of Tair Rada, with new information reportedly received.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Four-year-old Yuval, who had been missing in Ashkelon, has been found safe and sound after more than a day.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Channel 13",
           "title": "This item is a general news update from Channel 13, covering various news and updates from Israel and around…",
@@ -438,7 +461,7 @@
         },
         {
           "source": "Arab News",
-          "title": "UK PM Burnham heads north to kickstart English ‘devolution’ plans",
+          "title": "Pakistan Saudi Ties",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -524,13 +547,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 56,
+      "clusters": 51,
       "sizes": [
-        12,
-        6,
+        10,
+        5,
+        4,
         3,
         3,
-        3,
         2,
         2,
         2,
@@ -538,12 +561,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -593,13 +611,12 @@
           "selected_rank": 1,
           "headline": "UN's Albanese warns of escalating Israeli violence in occupied West Bank, urges protection for Pales",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-07-24T21:27+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Al-Akhbar",
             "Anadolu Agency",
             "Egypt Independent",
             "SANA",
@@ -611,7 +628,7 @@
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -652,24 +669,23 @@
           "selected_rank": 2,
           "headline": "Saudi Arabia strikes Houthi-held Hodeidah, Yemeni group says",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 3,
-            "newest": "2026-07-24T23:30+00:00"
+            "newest": "2026-07-24T21:40+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
             "Al Mayadeen",
             "Anadolu Agency",
-            "Kan 11",
-            "The New Arab"
+            "Kan 11"
           ],
           "camps": [
             "israeli",
             "panarab",
             "turkish"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -687,11 +703,11 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Trump added Abraham Accords condition to Saudi nuclear deal after signing: Report",
+          "headline": "Trump says no Saudi nuclear deal if no Israel normalisation",
           "rank_key": {
             "outlets": 3,
             "camps": 3,
-            "newest": "2026-07-24T21:07+00:00"
+            "newest": "2026-07-25T00:12+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
@@ -703,12 +719,12 @@
             "iranian",
             "turkish"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Trump added Abraham Accords condition to Saudi nuclear deal after signing: Report",
+            "source": "The New Arab",
+            "title": "Trump says no Saudi nuclear deal if no Israel normalisation",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -871,6 +887,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump warns China, Russia against involvement in Iran war",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-24T18:36+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "SANA"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Trump warns China, Russia against involvement in Iran war",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Hezbollah mourned Kozo Okamoto, describing him as embodying 'the model of the revolutionary human be",
           "rank_key": {
             "outlets": 2,
@@ -899,6 +946,44 @@
               "derived from the outlet's English snippet"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "IRGC targets large US ammunition depot in Kuwait with drones",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-24T08:59+00:00"
+          },
+          "outlet_names": [
+            "L'Orient Today",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "IRGC targets large US ammunition depot in Kuwait with drones",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (kuwait)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "LIVE Bahrain, Kuwait struck Iran earlier this month, in rare direct move by Gulf",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -972,42 +1057,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Major (res.) Benayahu Milet and Major Yuval Ezra were killed in an attack near Havat Gilad.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-24T14:23+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Major (res.) Benayahu Milet and Major Yuval Ezra were killed in an attack near Havat Gilad.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "N12",
-                "title": "Staff Sergeant (res.) Benayahu Milet and Major Yuval Ezra were killed in a terro",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Safadi says Israel pushing West Bank towards ‘explosion’",
           "rank_key": {
             "outlets": 1,
@@ -1062,42 +1111,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Regarding an upcoming rally in Washington, Trump's event is being discussed in the context of a pote",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T21:03+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Canada marks Gordie Howe bridge opening without US after trade war deepens",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T20:22+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "A 20-year-old man was shot in Sderot, and his condition is moderate.",
           "rank_key": {
             "outlets": 1,
@@ -1109,6 +1122,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Netanyahu and Katz are legitimizing the establishment of settlement outposts in the West Bank.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T18:53+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1134,24 +1165,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump says China, Russia not involved in Iran war, cites pledges not to arm Tehran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T18:36+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iranian, Omani FMs discuss maritime security, regional developments",
           "rank_key": {
             "outlets": 1,
@@ -1163,6 +1176,24 @@
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump threatens 'very bad' consequences if Russia, China enter US-Iran war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T16:48+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1223,7 +1254,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "33 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "UNESCO places West Bank site Sebastia on danger list",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T13:23+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1241,7 +1290,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25T00:16:19.036928+00:00",
+    "last_success": "2026-07-25T00:47:29.077139+00:00",
     "last_failure": null
   },
   "ok": true
