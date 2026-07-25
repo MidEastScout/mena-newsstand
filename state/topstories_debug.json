@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T15:25:30.682384+00:00",
+  "updated": "2026-07-25T15:37:18.964622+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-25T15:23:35.988433+00:00"
+      "headlines_updated": "2026-07-25T15:35:13.561314+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 11,
-        "title_snippet": 35,
+        "title_snippet": 33,
+        "dropped_no_english": 2,
         "title_native": 89,
         "in": 135,
-        "kept": 124
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -240,11 +241,21 @@
           "source": "TRT World",
           "title": "Trump ties US-Saudi nuclear deal to Abraham Accords",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "חקירת רצח ליה מלכה במבוי סתום: \"עצרו את החשוד מהר מדי, הוא לא נפל באף תרגיל\" - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "תיעוד דרמטי: כמעט פגעה בהולכי רגל - ונפלה מגשר ההלכה בת\"א",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
+      "in": 122,
       "kept": 77,
       "dropped": [
         {
@@ -283,13 +294,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "Tal Linker is the subject of a news report from mako, which offers a wide range of news and updates.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
           "title": "Four-year-old Yuval, who had been missing in Ashkelon, was found safe and sound after more than a day.",
           "sec": 0,
@@ -299,13 +303,6 @@
         {
           "source": "Channel 13",
           "title": "News 13 provides comprehensive news and updates from Israel and around the world.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Dramatic footage shows a vehicle nearly hitting pedestrians before falling from the Peace Bridge in Tel Aviv.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -473,13 +470,6 @@
         },
         {
           "source": "Arab News",
-          "title": "Zoe Saldana joins US Palestinian short ‘It’s Complicated’",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
           "title": "Cardamom Okra: Al-Ahsa’s vibrant green crop with a distinctive flavor",
           "sec": 0,
           "off": 0,
@@ -488,6 +478,13 @@
         {
           "source": "Arab News",
           "title": "Pakistan Saudi Ties",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "UK PM Burnham heads north to kickstart English ‘devolution’ plans",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -580,7 +577,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 51,
       "sizes": [
         13,
         4,
@@ -588,8 +585,9 @@
         3,
         3,
         3,
-        3,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -790,40 +788,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Iran attacks US military assets in Bahrain, Jordan, Kuwait in retaliation",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-07-24T17:39+00:00"
-          },
-          "outlet_names": [
-            "Mehr News",
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Iran attacks US military assets in Bahrain, Jordan, Kuwait in retaliation",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 3 of the story's dominant entities (bahrain, jordan, kuwait)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Hezbollah mourned Kozo Okamoto, describing him as a model revolutionary embodying humanistic values,",
           "rank_key": {
             "outlets": 3,
@@ -862,7 +826,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Iran blames US for Hormuz dispute as both sides confirm ongoing talks",
           "rank_key": {
             "outlets": 2,
@@ -962,6 +926,38 @@
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran attacks US military assets in Bahrain, Jordan, Kuwait in retaliation",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-24T17:39+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "TRT World"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Iran attacks US military assets in Bahrain, Jordan, Kuwait in retaliation",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 3 of the story's dominant entities (bahrain, jordan, kuwait)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -1185,7 +1181,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1203,7 +1199,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25T15:25:47.225840+00:00",
+    "last_success": "2026-07-25T15:37:33.537432+00:00",
     "last_failure": null
   },
   "ok": true
