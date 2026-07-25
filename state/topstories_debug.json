@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T11:19:37.621026+00:00",
+  "updated": "2026-07-25T11:36:32.413534+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-25T11:17:09.546836+00:00"
+      "headlines_updated": "2026-07-25T11:34:59.494664+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "dropped_no_english": 15,
-        "title_snippet": 20,
-        "title_native": 87,
+        "dropped_stale": 14,
+        "dropped_no_english": 16,
+        "title_snippet": 19,
+        "title_native": 86,
         "in": 135,
-        "kept": 107
+        "kept": 105
       },
       "translator": {
         "configured": true,
@@ -187,6 +187,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Jordan Times",
+          "title": "King sends cable to Egypt president on July revolt anniversary",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Syria Direct",
           "title": "‘Waiting for chaos’: IS adapts under pressure, betting on the failure of Syria’s transition",
@@ -308,8 +313,13 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
+          "source": "Al-Akhbar",
+          "title": "جرائم العدو في بنت جبيل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al Manar",
-          "title": "حزب الله يشيّع الشهيد حسين عزات الحسيني في شمسطار 14:33",
+          "title": "قوى الأمن: توقيف منفذ جرائم احتيال 19:19",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -330,8 +340,8 @@
       ]
     },
     "relevance": {
-      "in": 107,
-      "kept": 65,
+      "in": 105,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -370,6 +380,13 @@
         },
         {
           "source": "Al Jazeera",
+          "title": "Wildfires in Spain and France force evacuation of 200,000 people",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Al Jazeera",
           "title": "Does this disappearing organ hold the secret to longevity?",
           "sec": 0,
           "off": 0,
@@ -377,10 +394,10 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "Wildfires in Spain and France force evacuation of 200,000 people",
-          "sec": 1,
+          "title": "How Volker Turk won new UN rights chief term despite US, Israel opposition",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
@@ -392,6 +409,13 @@
         {
           "source": "Middle East Eye",
           "title": "US influencer Clavicular’s ‘Israelmaxxing’ propaganda trip ends in national scandal",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Indian education minister Dharmandra Pradhan resigns after days of youth protests",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -495,13 +519,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Syria, Türkiye sign agreement to establish mutual cultural centers",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Modi vows to punish exam fraud fueling student anger in India",
           "sec": 0,
@@ -531,13 +548,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "UAE public holiday transfer rule could deliver a three-day weekend in August",
           "sec": 0,
           "off": 0,
@@ -551,8 +561,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "US president dons 'Trump 2028' hat, jokes about another term at rescheduled White House correspondents' dinner",
+          "source": "Gulf News",
+          "title": "A will must be a part of every UAE expat's financial plan: Lawyers explain why",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -560,6 +570,13 @@
         {
           "source": "Anadolu Agency",
           "title": "India's education minister resigns amid protests over paper leaks",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "US president dons 'Trump 2028' hat, jokes about another term at rescheduled White House correspondents' dinner",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -626,14 +643,21 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Modi's education minister resigns after weeks of countrywide protests",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 37,
       "sizes": [
-        15,
+        14,
         3,
         3,
         3,
@@ -641,8 +665,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -683,13 +705,12 @@
           "selected_rank": 1,
           "headline": "Israeli settlers escalate attacks across West Bank",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 9,
             "camps": 3,
             "newest": "2026-07-25T10:06+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Al Manar",
             "Al-Akhbar",
             "Anadolu Agency",
@@ -704,7 +725,7 @@
             "levant",
             "turkish"
           ],
-          "members": 15,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -719,11 +740,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "Iran war updates: Trump says Tehran wants deal; violence rages in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Arabiya",
                 "title": "Israel army says preparing ‘extensive’ operation in West Bank after violence",
                 "rejected_by": "older than the story's newest wave"
@@ -736,6 +752,11 @@
               {
                 "source": "Al Manar",
                 "title": "One Israeli settler was killed and three others injured during Palestinian resis",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "UN rights expert: Israeli armed groups escalating deadly attacks against Palesti",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -865,15 +886,15 @@
         },
         {
           "selected_rank": 5,
-          "headline": "UN chief Guterres arrives in Damascus on first visit by a secretary-general since 2009",
+          "headline": "UN Secretary-General Guterres, FM al-Shaibani launch expanded talks in Damascus",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-25T05:23+00:00"
+            "newest": "2026-07-25T11:31+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Anadolu Agency"
+            "Anadolu Agency",
+            "SANA"
           ],
           "camps": [
             "levant",
@@ -883,19 +904,19 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "UN chief Guterres arrives in Damascus on first visit by a secretary-general since 2009",
+            "source": "SANA",
+            "title": "UN Secretary-General Guterres, FM al-Shaibani launch expanded talks in Damascus",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al-Akhbar",
-                "title": "European concerns regarding Lebanon highlight US unilateralism, Israeli intransi",
+                "source": "Anadolu Agency",
+                "title": "UN chief Guterres arrives in Damascus on first visit by a secretary-general sinc",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -937,37 +958,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "US Senate blocks resolution curbing Trump’s Iran war powers",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-23T19:11+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "US Senate blocks resolution curbing Trump’s Iran war powers",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1121,24 +1111,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump stated that no decision has been made yet regarding new major attacks against Iran.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-25T06:50+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran tells UN US attack on rescue vessels constitutes ‘war crime’",
           "rank_key": {
             "outlets": 1,
@@ -1211,14 +1183,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Safadi says Israel pushing West Bank towards ‘explosion’",
+          "headline": "European concerns regarding Lebanon highlight US unilateralism, Israeli intransigence, and Syrian th",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-24T22:29+00:00"
+            "newest": "2026-07-24T21:30+00:00"
           },
           "outlet_names": [
-            "Jordan Times"
+            "Al-Akhbar"
           ],
           "camps": [
             "levant"
@@ -1228,7 +1200,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Trump says China, Russia not involved in Iran war, cites pledges not to arm Tehran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T18:36+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1246,7 +1236,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25T11:20:03.709920+00:00",
+    "last_success": "2026-07-25T11:36:50.152860+00:00",
     "last_failure": null
   },
   "ok": true
