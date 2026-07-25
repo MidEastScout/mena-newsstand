@@ -127,17 +127,25 @@ jobs:
       VAPID_SUBJECT:     ${{ secrets.VAPID_SUBJECT }}
     steps:
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
+          # requirements.txt pulls Pillow, pypdfium2, cryptography (via
+          # pywebpush), google-genai and anthropic — a lot of large wheels to
+          # re-download from PyPI ~48 times a day. Restoring pip's HTTP cache
+          # between runs turns that back into a local unpack.
+          cache: 'pip'
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
-        run: pip install --no-cache-dir -r requirements.txt
+        # NOT --no-cache-dir: that flag told pip to discard the very cache the
+        # step above just restored, so every refresh re-downloaded every wheel.
+        run: pip install -r requirements.txt
 
       - name: Plan the run
         env:
@@ -213,7 +221,17 @@ jobs:
           git add headlines.json state/daily.json
           # coverage.json feeds the Headlines tab's "all recent headlines"
           # expander (and Trends), so it must ship to the site like the rest.
-          git add coverage.json 2>/dev/null || true
+          # Added WITHOUT the `2>/dev/null` the other optional files get: it was
+          # listed in .gitignore until 2026-07-25, git refused to add it, the
+          # silenced error hid that, and the expander 404'd for as long as the
+          # entry existed. A visible warning is the point — this file is
+          # browser-facing, so its absence is a real problem, not a nice-to-have.
+          if [ -f coverage.json ]; then
+            git add coverage.json
+          else
+            echo "::warning title=coverage.json missing::The 'show all headlines'"
+            echo "expander has no data this cycle; fetch_headlines.py did not write it."
+          fi
           git add pulse.json 2>/dev/null || true
           git add briefing.json 2>/dev/null || true
           git add trends.json state/trends_history.json 2>/dev/null || true
