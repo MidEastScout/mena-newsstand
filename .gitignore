@@ -19,7 +19,11 @@ node_modules/
 package.json
 package-lock.json
 
-# Trends intermediate: the broad per-outlet coverage sample is produced by
-# fetch_headlines.py and consumed by build_trends.py within the same CI run.
-# It's not browser-facing (trends.json is), so it isn't committed or deployed.
-coverage.json
+# NOTE: coverage.json is deliberately NOT ignored. It used to be listed here as
+# a "Trends intermediate ... not browser-facing", but that was wrong: index.html
+# fetches coverage.json directly to fill each outlet card's "show all headlines"
+# expander (see the loadCoverage() block). Ignoring it made the `git add
+# coverage.json` in fetch-headlines.yml fail silently — git refuses to add an
+# ignored path, and the `2>/dev/null || true` there swallowed the error — so the
+# file was never committed, never deployed, and the expander fetched a 404 and
+# fell back to an empty list on every open. Keep it tracked.

@@ -83,7 +83,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     steps:
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # Publish the latest `main`. Because this workflow fires AFTER the run
           # job has already pushed its commit (or on a later backstop), `main`
@@ -136,12 +136,29 @@ jobs:
             echo "::warning::automate it.)"
           fi
 
-      - name: Assemble the published site (everything except git/CI internals)
+      # Only the files the browser actually asks for. index.html / sw.js fetch
+      # headlines, coverage, pulse, trends, top_stories, briefing, push-config
+      # and frontpages/** — nothing under scripts/, state/, tests/, agent/,
+      # mockups/ or push/, which were being packed into every artifact and
+      # served from the live site purely because the old rsync copied `./`
+      # wholesale. That is ~4 MB of pipeline internals, design mockups and the
+      # Hebrew translation cache uploaded and published every ~20 minutes, for
+      # nothing. (state/ in particular is pure server-side bookkeeping — debug
+      # traces, last-known-good copies, push subscriptions state.)
+      #
+      # frontpages/ stays: the Archive tab fetches frontpages/archive/<date>/…
+      # directly, so those images ARE the site.
+      - name: Assemble the published site (browser-facing files only)
         run: |
           mkdir -p _site
           rsync -a --delete \
             --exclude='.git' --exclude='.github' --exclude='_site' \
+            --exclude='.claude' \
+            --exclude='scripts' --exclude='state' --exclude='tests' \
+            --exclude='agent' --exclude='mockups' --exclude='push' \
+            --exclude='*.md' --exclude='requirements.txt' --exclude='.gitignore' \
             ./ _site/
+          echo "Published tree: $(du -sh _site | cut -f1) across $(find _site -type f | wc -l) files"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

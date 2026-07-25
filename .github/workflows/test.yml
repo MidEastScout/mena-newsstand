@@ -15,12 +15,14 @@ on:
     paths:
       - 'scripts/topstories_pipeline.py'
       - 'scripts/build_topstories.py'
+      - 'scripts/send_push.py'
       - 'tests/**'
       - '.github/workflows/test.yml'
   pull_request:
     paths:
       - 'scripts/topstories_pipeline.py'
       - 'scripts/build_topstories.py'
+      - 'scripts/send_push.py'
       - 'tests/**'
       - '.github/workflows/test.yml'
   workflow_dispatch:        # manual "run the tests now"
@@ -32,17 +34,20 @@ jobs:
   topstories:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
       - name: Top-5 pipeline regression tests
         run: python3 tests/test_topstories.py -v
 
+      - name: Web-push payload regression tests
+        run: python3 tests/test_send_push.py -v
+
       # The builders must at least import and compile — a syntax error here
       # would otherwise only surface in the refresh workflow, where the step
       # is continue-on-error and would fail quietly.
       - name: Builders compile
-        run: python3 -m py_compile scripts/build_topstories.py scripts/topstories_pipeline.py scripts/explain_topstories.py
+        run: python3 -m py_compile scripts/build_topstories.py scripts/topstories_pipeline.py scripts/explain_topstories.py scripts/send_push.py
