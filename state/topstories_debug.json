@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T18:12:56.110302+00:00",
+  "updated": "2026-07-25T18:38:17.327122+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-25T18:10:45.166521+00:00"
+      "headlines_updated": "2026-07-25T18:36:26.614738+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 35,
+        "dropped_no_english": 5,
+        "title_snippet": 30,
         "title_native": 88,
         "in": 135,
-        "kept": 123
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -245,12 +246,37 @@
           "source": "TRT World",
           "title": "Trump ties US-Saudi nuclear deal to Abraham Accords",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בצה\"ל נערכים להסלמה ביו\"ש; גורמי ביטחון: \"רצף אירועים שעלול להבעיר את השטח\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "חרף דחיית המתקפה באיראן: רכבת אווירית של מטוסים וחימושים מארה\"ב ממשיכה לזרום לישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "פרטים חדשים על פתיחת תיק רצח תאיר ראדה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המשטרה בהחלטה דרמטית: תיק רצח תאיר ראדה נפתח מחדש",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "فتشتُ عن الصدق وعن الانتماء فوجدتكَ!",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 78,
+      "in": 118,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -272,13 +298,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "N12",
-          "title": "Dian Schwartz expressed disappointment, stating that \"one could say her heart was broken.\" The specific…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
@@ -309,15 +328,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This headline reflects a mix of emotions, 'joy and defeat,' concerning the Democratic primaries.",
+          "source": "Al Jazeera",
+          "title": "India’s ‘Cockroach’ youth call off protests after education minister quits",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "India’s ‘Cockroach’ youth call off protests after education minister quits",
+          "title": "‘We have done it’: Joy as ‘Cockroach’ protests push India minister out",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
@@ -414,13 +433,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "The wedding season reportedly ended before it began, resulting in hundreds of millions of dollars in losses.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "This report discusses documenting alleged Israeli crimes and leading a justice campaign, following up on a…",
           "sec": 0,
@@ -443,7 +455,7 @@
         },
         {
           "source": "SANA",
-          "title": "Guterres: We stand with Syria at this pivotal moment",
+          "title": "Government officials offer condolences following Deir Ezzor–Damascus Road tragedy",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -512,13 +524,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "35 killed, 30 injured in central Syria bus collision",
-          "sec": 2,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Modi's education minister resigns after youth protest pressure",
           "sec": 0,
@@ -571,21 +576,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 53,
+      "clusters": 49,
       "sizes": [
-        9,
+        11,
         5,
-        5,
+        4,
+        3,
         3,
         3,
         3,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -635,14 +636,15 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israeli settlers escalate attacks across West Bank",
+          "headline": "Palestinians bury four killed in West Bank clash with Israeli settlers",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 3,
-            "newest": "2026-07-25T14:56+00:00"
+            "newest": "2026-07-25T18:17+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
+            "Anadolu Agency",
             "Daily Sabah",
             "Jordan Times",
             "TRT World",
@@ -654,12 +656,12 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Israeli settlers escalate attacks across West Bank",
+            "source": "Jordan Times",
+            "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -668,6 +670,11 @@
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Israeli settlers escalate attacks across West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "Al-Akhbar",
                 "title": "The Israeli army closed off northern West Bank districts and launched a widespre",
@@ -682,11 +689,6 @@
                 "source": "WAFA News",
                 "title": "Jordan denounces escalating colonist violence against Palestinians in occupied W",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "TRT World",
-                "title": "Israeli forces, illegal settlers kill four Palestinians in occupied West Bank",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -741,9 +743,9 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Saudi-led coalition targeted Houthi military sites — Saudi media",
+          "headline": "Saudi Arabia strikes Huthi targets in Yemen after vessel was attacked in Red Sea",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 4,
             "newest": "2026-07-25T12:31+00:00"
           },
@@ -751,7 +753,6 @@
             "Al Jazeera",
             "Egypt Independent",
             "Gulf News",
-            "Jordan Times",
             "Mehr News"
           ],
           "camps": [
@@ -760,12 +761,12 @@
             "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Jordan Times",
-            "title": "Saudi-led coalition targeted Houthi military sites — Saudi media",
+            "source": "Egypt Independent",
+            "title": "Saudi Arabia strikes Huthi targets in Yemen after vessel was attacked in Red Sea",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -980,43 +981,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Jordan condemns ‘settler terrorism’ against Palestinians in West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-25T14:56+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Jordan condemns ‘settler terrorism’ against Palestinians in West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (jordan, westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Presidency condemns Israeli colonists’ terrorism across West Bank",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "The Israeli government will approve the extension of the special situation in the home front until A",
           "rank_key": {
             "outlets": 1,
@@ -1089,6 +1053,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Jordan condemns ‘settler terrorism’ against Palestinians in West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-25T14:56+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "UN Secretary-General visits Sednayah Prison on landmark Syria trip",
           "rank_key": {
             "outlets": 1,
@@ -1115,42 +1097,6 @@
           },
           "outlet_names": [
             "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israel prepared for a potential, powerful US strike on Iran, which was ultimately postponed.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-25T14:33+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Following a deadly attack, Israeli civilians entered the Palestinian village of Tal without authoriz",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-25T14:24+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -1232,7 +1178,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "32 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The president of Beşiktaş stated that the club has submitted its final offer to Mohamed Salah and is",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-25T11:46+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1250,7 +1214,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25T18:13:29.635084+00:00",
+    "last_success": "2026-07-25T18:38:40.903804+00:00",
     "last_failure": null
   },
   "ok": true
