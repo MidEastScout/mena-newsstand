@@ -44,9 +44,12 @@ name: MENA Newsstand
 # The same secret is used to dispatch the publish-pages.yml deploy.
 #
 # Safety / robustness:
-#   - The `rearm` job uses concurrency cancel-in-progress, so only ONE timer is
-#     ever waiting. Overlapping triggers (manual, schedule, loop) collapse back
-#     into a single ~30-min loop instead of multiplying.
+#   - Only ONE timer is ever waiting: while it sleeps, `rearm` watches for a
+#     newer run of this workflow and stands itself down (exit 0) the moment one
+#     appears. Overlapping triggers (manual, schedule, loop) collapse back into
+#     a single ~30-min loop instead of multiplying. This used to be a
+#     `cancel-in-progress` concurrency group — see the note on the job itself
+#     for why that was replaced.
 #   - Before dispatching, `rearm` checks whether a run is already queued or
 #     working and stands down if so. Without that check the loop tripped over
 #     its own tail whenever a run sat waiting for a runner: a third run entering
@@ -297,11 +300,23 @@ jobs:
     needs: run
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    # Only ONE timer may wait at a time: a newer run cancels the older timer,
-    # so overlapping triggers collapse into a single loop instead of stacking.
-    concurrency:
-      group: newsstand-rearm
-      cancel-in-progress: true
+    # NOTE: deliberately NO `concurrency` group here.
+    #
+    # This job used to carry `group: newsstand-rearm` + `cancel-in-progress:
+    # true` to keep a single timer alive. It did enforce that — but the way it
+    # enforced it was to CANCEL the sleeping job, and a cancelled job drags its
+    # entire run to a `cancelled` conclusion. So every time a new run started
+    # while this timer was sleeping, an OLDER run that had already fetched,
+    # committed and deployed perfectly went red-and-cancelled after the fact,
+    # and GitHub emailed a workflow-failure notice for work that had succeeded.
+    # Every single one of the 149 cancelled runs between 2026-07-15 and
+    # 2026-07-25 was this exact shape: run=success, rearm=cancelled,
+    # "Canceling since a higher priority waiting request for newsstand-rearm
+    # exists" — ~15 bogus failure emails a day, none of them a real problem.
+    #
+    # The timer now stands ITSELF down instead: it polls while it waits and
+    # exits 0 as soon as a newer run appears. Same single-timer guarantee, but
+    # the superseded run stays green, so a red run means something real again.
     steps:
       - name: Wait, then dispatch the next run
         env:
@@ -316,8 +331,33 @@ jobs:
           fi
           # Pace the loop: ~28 min wait + ~2 min of work ≈ 30-minute cadence.
           # (Public repo → Actions minutes are free, so a waiting job is fine.)
+          #
+          # Sleep in 60s slices instead of one `sleep 1680` so we can notice a
+          # NEWER run of this workflow arriving mid-wait (a scheduled watchdog
+          # run, a manual refresh, or a dispatch we raced). That run arms its
+          # own timer, so this one must go away or the loop doubles up. Exiting
+          # 0 here is the whole point: it replaces the concurrency-group
+          # cancellation that used to redden the already-finished older run.
+          #
+          # A failed lookup leaves $newer empty, i.e. keep waiting — the loop
+          # must fail towards "still armed", never towards silence.
           echo "Waiting ~28 min before triggering the next run…"
-          sleep 1680
+          deadline=$(( $(date -u +%s) + 1680 ))
+          while [ "$(date -u +%s)" -lt "$deadline" ]; do
+            sleep 60
+            newer=$(curl -sS \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $DISPATCH_PAT" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/fetch-headlines.yml/runs?per_page=20" \
+              | jq -r --argjson me "$GITHUB_RUN_ID" \
+                  '[.workflow_runs[]? | select(.id > $me) | .id][0] // empty') || newer=""
+            if [ -n "$newer" ]; then
+              echo "Run $newer started after this one — standing down."
+              echo "Its own rearm timer continues the loop; this run stays green."
+              exit 0
+            fi
+          done
 
           # Don't dispatch on top of a run that is already queued or working.
           # The `run` job is serialised by the `newsstand-data` concurrency
