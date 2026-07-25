@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T04:27:06.225255+00:00",
+  "updated": "2026-07-25T04:58:06.052207+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-25T04:25:14.634510+00:00"
+      "headlines_updated": "2026-07-25T04:56:16.531891+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 28,
-        "dropped_no_english": 7,
-        "title_native": 89,
+        "dropped_stale": 12,
+        "title_snippet": 24,
+        "dropped_no_english": 11,
+        "title_native": 88,
         "in": 135,
-        "kept": 117
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -187,6 +187,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Jordan Times",
+          "title": "King sends cable to Egypt president on July revolt anniversary",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Syria Direct",
           "title": "‘Waiting for chaos’: IS adapts under pressure, betting on the failure of Syria’s transition",
@@ -243,8 +248,18 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Kan 11",
+          "title": "בת כ-50 נפצעה קשה לאחר שהתהפכה עם רכבה מגשר סמוך למחלף השלום",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "N12",
           "title": "אחרי יממה: יובל קוגן בן ה-4 אותר בריא ושלם - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "רכב התהפך מגשר בת\"א - בת 50 נפצעה קשה - mako",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -273,14 +288,24 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "نشرة منتصف الليل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "مقتل ضابط وجندي صهيونيين وإصابة آخرين خلال تصدي فلسطينيين لهجوم على قرية تل غرب نابلس، واستشهاد 4 فلسطينيين 10:15",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Falastin al-Youm",
-          "title": "التحليلات",
+          "title": "الاحتلال يقتحم بلدة بدو وفطنة شمال غرب القدس",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
+      "in": 112,
       "kept": 80,
       "dropped": [
         {
@@ -300,13 +325,6 @@
         {
           "source": "N12",
           "title": "There has been a new development in the Tair Rada murder case, with new information reportedly received.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Angel Bakery is mentioned.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -335,13 +353,6 @@
         {
           "source": "Middle East Eye",
           "title": "US influencer Clavicular’s ‘Israelmaxxing’ propaganda trip ends in national scandal",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "According to diplomats cited by Reuters, member states of the International Criminal Court have voted to…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -390,21 +401,14 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Member states of the International Criminal Court have removed the prosecutor Karim Khan.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "European concern exists regarding Lebanon, citing US actions, Israeli intransigence, and a Syrian threat.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Manar",
-          "title": "The bloc of Loyalty to the Resistance held its regular meeting, presided over by MP Haj Mohammed Raad.",
+          "source": "Al-Akhbar",
+          "title": "Member states of the International Criminal Court have removed the prosecutor Karim Khan.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -446,13 +450,6 @@
         },
         {
           "source": "Arab News",
-          "title": "Pakistan Saudi Ties",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
           "title": "UK PM Burnham heads north to kickstart English ‘devolution’ plans",
           "sec": 0,
           "off": 0,
@@ -474,14 +471,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Japan PM's 3-hour sleep routine reignites debate over overwork culture",
+          "title": "Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Junior Accountant/Business Analyst",
+          "title": "Japan PM's 3-hour sleep routine reignites debate over overwork culture",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -489,13 +486,6 @@
         {
           "source": "Anadolu Agency",
           "title": "UN General Assembly renews Volker Turk's term as rights chief",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "US president dons 'Trump 2028' hat, jokes about another term at rescheduled White House correspondents' dinner",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -546,11 +536,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 53,
+      "clusters": 51,
       "sizes": [
         8,
         6,
-        6,
+        5,
+        4,
         3,
         2,
         2,
@@ -560,9 +551,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -610,43 +598,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Saudi Arabia strikes Houthi-held Hodeidah, Yemeni group says",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 3,
-            "newest": "2026-07-24T23:30+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Al Mayadeen",
-            "Anadolu Agency",
-            "Kan 11",
-            "The New Arab"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "turkish"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "Saudi Arabia strikes Houthi-held Hodeidah, Yemeni group says",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "“It’s time to do in the West Bank what we did in Gaza”: Israeli National Security Minister",
           "rank_key": {
             "outlets": 6,
@@ -701,6 +652,41 @@
                 "rejected_by": "loaded/partisan wording"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Saudi Arabia strikes Houthi-held Hodeidah, Yemeni group says",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 2,
+            "newest": "2026-07-24T23:30+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Al Mayadeen",
+            "Anadolu Agency",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Jazeera",
+            "title": "Saudi Arabia strikes Houthi-held Hodeidah, Yemeni group says",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -801,6 +787,50 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Air defences shoot down seven Iranian missiles, six drones — JAF",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-07-24T17:22+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Jordan Times",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Air defences shoot down seven Iranian missiles, six drones — JAF",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "Jordan, seven Arab, Islamic nations condemn Israeli extremists’ storming of Al A",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Gulf states, Jordan reaffirm right to self-defense against Iranian attacks",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "The actual prices of oil are approaching $110 per barrel due to the wars in Iran and Ukraine.",
           "rank_key": {
             "outlets": 2,
@@ -1072,7 +1102,7 @@
           "camps": [
             "turkish"
           ],
-          "members": 1,
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1125,24 +1155,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Jordan’s FM Safadi: Israeli government is pushing West Bank towards explosion",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-24T17:22+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1221,7 +1233,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "UNESCO places West Bank site Sebastia on danger list",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-24T13:23+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1239,7 +1269,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25T04:27:20.038596+00:00",
+    "last_success": "2026-07-25T04:58:20.618858+00:00",
     "last_failure": null
   },
   "ok": true
