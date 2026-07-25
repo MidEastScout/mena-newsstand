@@ -129,6 +129,60 @@ def build_payload(stories: list, site_url: str, he: bool = False) -> dict:
     }
 
 
+# A web-push record is capped at 4096 bytes ON THE WIRE, i.e. after aes128gcm
+# encryption, which adds an 86-byte header plus a 16-byte auth tag plus padding.
+# Budget the plaintext well under that so the encrypted record always fits.
+PAYLOAD_BUDGET = 3800
+
+
+def _encode_payload(payload: dict) -> str:
+    """Serialise a notification payload so it always fits a web-push record.
+
+    ensure_ascii=False is the whole reason Hebrew notifications used to fail:
+    json.dumps escapes every Hebrew character to a 6-byte \\uXXXX sequence, so
+    the same digest that costs 1768 bytes in English ballooned to 4219 in
+    Hebrew — over the 4096 limit. Every Hebrew subscriber's send died with
+    "binary data passed in the request must be less than 4096 bytes", and
+    because that is not a 404/410 the endpoint was never pruned either: it just
+    failed again every cycle. As UTF-8 the same payload is 2207 bytes.
+
+    The trim below is the belt to that braces: headlines vary in length, so
+    rather than trust the margin, drop the tail of stories[] (the tap-through
+    list — the visible title and body are built separately and always survive)
+    until the record fits.
+    """
+    def enc(p):
+        return json.dumps(p, ensure_ascii=False)
+
+    def size(p):
+        return len(enc(p).encode("utf-8"))
+
+    if size(payload) <= PAYLOAD_BUDGET:
+        return enc(payload)
+
+    trimmed = dict(payload)
+    # 1. Shed the tap-through list from the tail — least visible loss.
+    items = list(trimmed.get("stories") or [])
+    while items and size(trimmed) > PAYLOAD_BUDGET:
+        items.pop()
+        trimmed["stories"] = items
+    # 2. Still over means the text itself is oversized. The OS truncates long
+    #    notification text on screen anyway, so cutting it costs nothing the
+    #    user could have read — and sending something beats sending nothing.
+    #    Shrink geometrically and re-add the ellipsis to the CUT text, never to
+    #    the previous round's output: trimming one character at a time while
+    #    appending a fresh 3-byte "…" each pass grows the string faster than the
+    #    cut shrinks it, and the loop never terminates.
+    for field in ("body", "title"):
+        text = trimmed.get(field) or ""
+        while text and size(trimmed) > PAYLOAD_BUDGET:
+            text = text[:max(0, int(len(text) * 0.9) - 1)]
+            trimmed[field] = (text.rstrip() + "…") if text else ""
+    log(f"payload trimmed to {len(items)} story link(s) to fit the "
+        f"{PAYLOAD_BUDGET}-byte web-push budget")
+    return enc(trimmed)
+
+
 def fetch_subscriptions(api: str, token: str) -> list:
     r = requests.get(
         api.rstrip("/") + "/subscriptions",
@@ -224,8 +278,8 @@ def main() -> int:
     # Two payloads are built once; each subscriber gets theirs in the language they
     # chose on the site (stored with the subscription).
     payloads = {
-        "en": json.dumps(build_payload(stories, site_url, he=False)),
-        "he": json.dumps(build_payload(stories, site_url, he=True)),
+        "en": _encode_payload(build_payload(stories, site_url, he=False)),
+        "he": _encode_payload(build_payload(stories, site_url, he=True)),
     }
     sent = held = 0
     dead = []
