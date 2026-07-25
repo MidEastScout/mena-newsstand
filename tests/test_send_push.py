@@ -20,6 +20,7 @@ These tests pin the two properties that keep that from recurring:
 import importlib.util
 import json
 import sys
+import types
 import unittest
 from pathlib import Path
 
@@ -28,7 +29,18 @@ SITE = "https://mideastscout.github.io/mena-newsstand/"
 
 
 def _load():
-    """Import send_push.py by path — scripts/ is not a package."""
+    """Import send_push.py by path — scripts/ is not a package.
+
+    The Tests workflow installs nothing (stdlib unittest only, no
+    requirements.txt), but send_push.py imports `requests` at module level for
+    the subscription fetch. Stub it when it is genuinely absent: the payload
+    encoder under test is pure string work and never touches the network, so
+    the stub keeps this suite a plain `python3 tests/…` with no install step.
+    """
+    try:
+        import requests  # noqa: F401
+    except Exception:
+        sys.modules.setdefault("requests", types.ModuleType("requests"))
     spec = importlib.util.spec_from_file_location("send_push", ROOT / "scripts" / "send_push.py")
     mod = importlib.util.module_from_spec(spec)
     try:
