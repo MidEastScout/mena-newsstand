@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T08:22:41.615260+00:00",
+  "updated": "2026-07-26T08:53:38.589130+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-26T08:20:45.971449+00:00"
+      "headlines_updated": "2026-07-26T08:52:05.636803+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 38,
-        "title_native": 85,
+        "dropped_stale": 13,
+        "title_snippet": 36,
+        "dropped_no_english": 2,
+        "title_native": 84,
         "in": 135,
-        "kept": 123
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -199,6 +200,11 @@
         {
           "source": "Jordan Times",
           "title": "Jordan condemns Israeli far-right minister's storming of Al Aqsa Mosque",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Jordan, seven Arab, Islamic nations condemn Israeli extremists’ storming of Al Aqsa Mosque",
           "reason": "stale (older than 48h)"
         },
         {
@@ -245,23 +251,26 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers forcibly displace Palestinian family from occupied West Bank home",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בפעם השלישית בתוך שלושה ימים: רומניה הודיעה כי יורט כטב\"ם שחדר לשטחה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "بيان هام للقوات المسلحة الثالثة عصراً للإعلان عن عمليات عسكرية نوعية وواسعة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 85,
+      "in": 120,
+      "kept": 84,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "The body of a man was found in the coastal area of Ashkelon, where he is suspected to have drowned at sea.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The Likud party tribunal ruled that primaries must be held, stating the party does not belong to one person.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -325,6 +334,13 @@
         {
           "source": "Al Mayadeen",
           "title": "Skin diseases are reportedly affecting children in Gaza amid the deteriorating health sector in the Strip.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Alamut Castle named UNESCO World Heritage site",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -442,13 +458,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Trump warns Russia and China against arms sales to Iran",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "NEET row: India education minister Dharmendra Pradhan resigns amid CJP protests",
           "sec": 0,
@@ -460,13 +469,6 @@
           "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Masirah",
-          "title": "This is a news headline concerning the 'Saudi enemy.'",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -522,19 +524,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 53,
+      "clusters": 52,
       "sizes": [
-        11,
-        9,
+        12,
+        8,
         5,
         3,
         3,
         3,
-        3,
         2,
         2,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -586,73 +587,14 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor",
-          "rank_key": {
-            "outlets": 7,
-            "camps": 4,
-            "newest": "2026-07-26T07:46+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Anadolu Agency",
-            "IRNA",
-            "Mehr News",
-            "N12",
-            "TRT World"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "iranian",
-            "turkish"
-          ],
-          "members": 9,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Iran war live: Oman envoys in Tehran as Ukraine drone hits Caspian vessel",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Iran strongly condemns Ukraine's military attack on an Iranian commercial vessel",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "Iran warns Ukraine after attack on commercial ship",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Iran summons Ukrainian charge d’affaires over alleged Caspian Sea vessel attack",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Israeli settlers escalate attacks across West Bank",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 3,
             "newest": "2026-07-26T06:54+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Anadolu Agency",
             "Daily Sabah",
             "Jordan Times",
@@ -665,7 +607,7 @@
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -678,6 +620,11 @@
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Mosques set ablaze in West Bank as Israeli settlers continue rampage",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "Jordan Times",
                 "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
@@ -692,11 +639,65 @@
                 "source": "WAFA News",
                 "title": "Israeli forces detain at least 66 Palestinians during large-scale detention camp",
                 "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-07-26T07:46+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "IRNA",
+            "Mehr News",
+            "N12",
+            "TRT World"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "iranian",
+            "turkish"
+          ],
+          "members": 8,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Iran strongly condemns Ukraine's military attack on an Iranian commercial vessel",
+                "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "WAFA News",
-                "title": "Presidency condemns Israeli colonists’ terrorism across West Bank",
-                "rejected_by": "loaded/partisan wording"
+                "source": "Mehr News",
+                "title": "Iran warns Ukraine after attack on commercial ship",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Iran summons Ukrainian charge d’affaires over alleged Caspian Sea vessel attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Iran claims Ukrainian attack on Caspian Sea vessel killed sailor, warns it will ",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -755,18 +756,19 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Iran destroyed almost entire US infrastructure in Erbil",
+          "headline": "Iran says progress made in talks with Oman on Hormuz shipping mechanisms",
           "rank_key": {
             "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-26T05:45+00:00"
+            "camps": 3,
+            "newest": "2026-07-26T08:01+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Anadolu Agency",
-            "IRNA",
-            "Mehr News"
+            "IRNA"
           ],
           "camps": [
+            "panarab",
             "iranian",
             "turkish"
           ],
@@ -774,18 +776,19 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Mehr News",
-            "title": "Iran destroyed almost entire US infrastructure in Erbil",
+            "source": "Anadolu Agency",
+            "title": "Iran says progress made in talks with Oman on Hormuz shipping mechanisms",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Anadolu Agency",
-                "title": "Iranian army claims ‘almost all’ US infrastructure in Iraq’s Erbil destroyed",
+                "source": "Al Jazeera",
+                "title": "Baghaei says progress made in Oman talks on Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -875,7 +878,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "New front in US-Iran war escalates as Houthis fire at Saudi oil facilities",
+          "headline": "Yemen’s Huthis claim they attacked Saudi installations along Red Sea coast",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
@@ -889,12 +892,12 @@
             "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Jazeera",
-            "title": "New front in US-Iran war escalates as Houthis fire at Saudi oil facilities",
+            "source": "Egypt Independent",
+            "title": "Yemen’s Huthis claim they attacked Saudi installations along Red Sea coast",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -902,22 +905,16 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Iran war updates: Saudi Arabia, Houthis trade attacks as conflict spreads",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
           "selected_rank": null,
-          "headline": "35 dead, 30 injured after buses collide on Syrian highway",
+          "headline": "Israeli occupation forces storm two villages in Syria’s Daraa countryside",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-25T12:27+00:00"
+            "newest": "2026-07-26T07:15+00:00"
           },
           "outlet_names": [
             "Daily Sabah",
@@ -931,13 +928,49 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "35 dead, 30 injured after buses collide on Syrian highway",
+            "source": "SANA",
+            "title": "Israeli occupation forces storm two villages in Syria’s Daraa countryside",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Daily Sabah",
+                "title": "35 dead, 30 injured after buses collide on Syrian highway",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran destroyed almost entire US infrastructure in Erbil",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-07-26T05:45+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Iran destroyed almost entire US infrastructure in Erbil",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": []
@@ -974,24 +1007,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Tehran, Muscat hold constructive talks on safe navigation in Strait of Hormuz: Iran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-26T08:01+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1089,24 +1104,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran condemns terror attack in Pakistan",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-25T21:32+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Kuwait has denied participating in military operations against Iran, while the Revolutionary Guard h",
           "rank_key": {
             "outlets": 1,
@@ -1160,7 +1157,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "33 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran destroys 11 US fighter jets, helicopters over 2 weeks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-25T17:49+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "This is a news headline about the equation of deterrence and breaking the siege.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-25T17:24+00:00"
+          },
+          "outlet_names": [
+            "Al-Masirah"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1178,7 +1211,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-26T08:22:57.664541+00:00",
+    "last_success": "2026-07-26T08:54:04.747069+00:00",
     "last_failure": null
   },
   "ok": true
