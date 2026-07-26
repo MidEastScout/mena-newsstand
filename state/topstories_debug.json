@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-26T02:47:54.490945+00:00",
+  "updated": "2026-07-26T03:19:05.439492+00:00",
   "stages": {
     "fetch": {
-      "items": 132,
+      "items": 133,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -137,7 +137,7 @@
           "error": null
         },
         "Al-Masirah": {
-          "headlines": 2,
+          "headlines": 3,
           "lang": "ar",
           "stale": false,
           "error": null
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-26T02:46:10.271022+00:00"
+      "headlines_updated": "2026-07-26T03:16:56.522018+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "dropped_no_english": 9,
-        "title_snippet": 26,
-        "title_native": 87,
-        "in": 132,
-        "kept": 113
+        "dropped_stale": 11,
+        "dropped_no_english": 11,
+        "title_snippet": 25,
+        "title_native": 86,
+        "in": 133,
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 36,
         "translated": 0,
         "cached": 0,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -238,8 +238,18 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "TRT World",
+          "title": "Illegal Israeli settlers forcibly displace Palestinian family from occupied West Bank home",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Kan 11",
           "title": "יממה אחרי הפיגוע: ישראלים נכנסו ללא אישור לכפר הפלסטיני תל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "לקראת אטימה והריסה: צה\"ל ושב\"כ מיפו את בתי המחבלים שביצעו את הפיגוע ליד חוות גלעד",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -281,20 +291,18 @@
           "source": "Channel 13",
           "title": "\"לא סיפרנו לך שהיית ילדת רמדיה\": האודישן של דור פרילינג",
           "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "داء الحماقة والغطرسة.. هل تمضي السعودية إلى نهايتها؟ - المسيرة نت",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 113,
-      "kept": 71,
+      "in": 111,
+      "kept": 72,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "A motorcycle rider in his 20s was killed in a crash on Road 57 near Tnuvot.",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
         {
           "source": "Channel 13",
           "title": "This is the full episode of 'Voice Over' with Kevin Rubin and Leah Noga, available for viewing.",
@@ -368,13 +376,6 @@
         {
           "source": "Mehr News",
           "title": "Why US policy of threat against Iran is no longer effective",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "Iran determined to defend its national security, interests",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -574,29 +575,21 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Modi's education minister resigns after weeks of countrywide protests",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 40,
       "sizes": [
-        14,
+        15,
         6,
         6,
         3,
         3,
+        3,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -656,7 +649,7 @@
             "levant",
             "turkish"
           ],
-          "members": 14,
+          "members": 15,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -788,6 +781,46 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Six Palestinians killed in Gaza; death toll mounts to 73,317",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-07-25T12:47+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "IRNA",
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "Six Palestinians killed in Gaza; death toll mounts to 73,317",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "35 dead, 30 injured after buses collide on Syrian highway",
           "rank_key": {
             "outlets": 3,
@@ -821,7 +854,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Hezbollah mourned Kozo Okamoto, describing him as a model revolutionary who embodied humanistic valu",
           "rank_key": {
             "outlets": 3,
@@ -857,38 +890,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Palestinian killed, others injured in Israeli strike on Gaza City’s Sheikh Radwan",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-25T11:14+00:00"
-          },
-          "outlet_names": [
-            "IRNA",
-            "WAFA News"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Palestinian killed, others injured in Israeli strike on Gaza City’s Sheikh Radwan",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1093,24 +1094,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hamas stated that the escalating resistance in the West Bank proves the occupation's failure to brea",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-25T12:47+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "What Trump has said about the state of the war and talks with Iran",
           "rank_key": {
             "outlets": 1,
@@ -1146,7 +1129,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "A doctor is warning that heart attacks can occur without traditional chest pain.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-25T11:43+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1164,7 +1165,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-26T02:47:55.497800+00:00",
+    "last_success": "2026-07-26T03:19:21.650701+00:00",
     "last_failure": null
   },
   "ok": true
