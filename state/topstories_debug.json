@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T20:07:09.339605+00:00",
+  "updated": "2026-07-26T20:19:02.215624+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,25 +167,31 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-26T20:04:55.118159+00:00"
+      "headlines_updated": "2026-07-26T20:17:10.498636+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 40,
+        "dropped_stale": 11,
+        "title_snippet": 25,
+        "dropped_no_english": 14,
         "title_native": 85,
         "in": 135,
-        "kept": 125
+        "kept": 110
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 40,
+        "requested": 39,
         "translated": 0,
         "cached": 0,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Al Manar",
+          "title": "تقرير مصور | الضفة الغربية على صفيح ساخن… مخاوف إسرائيلية من تصاعد العمليات الفلسطينية",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "WAFA News",
           "title": "Presidency condemns Israeli colonists’ terrorism across West Bank",
@@ -235,20 +241,83 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers forcibly displace Palestinian family from occupied West Bank home",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נשיא סוריה א-שרע: \"הסכם ביטחוני עם ישראל יוביל את הדרך לשלום",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "פרסום ראשון: זיני יציג לוועדה חסויה בכנסת מידע על התערבות זרה בבחירות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מעורבת ברצח תאיר ראדה? הכוכבת מגיבה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "אדם טל, מחלוצי השיווק הדיגיטלי בישראל, מת בגיל 43: \"היה חד קרן\" - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "נשיא סוריה א-שרע: פועלים להשיג הסכם ביטחוני עם ישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הביצוע שהפך לדואט רומנטי מרגש: האודישן של נוי מרגי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"זה הזמן להגשים את החלום\": האודישן של אלאמר אדוורדס",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تحذيرات إسرائيلية من انفجار أمني وشيك في الضفة الغربية مع تصاعد المواجهات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "السيد مجتبى لمجاهدي حزب الله: أنتم روّاد فصائل الجهاد.. وصون سيادة لبنان شرط أوّل لإيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "الرئيس بري: ما يجري في الجنوب لا يبشّر بنتائج حاسمة في اتفاق الإطار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "الصين | إعصار “نول” يضرب جنوب البلا\\ والسلطات تجلي أكثر من 340 ألف شخص",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "اسبانيا | دخان الحرائق يخنق سماء مدريد مع اقتراب النيران من العاصمة الإسبانية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "ايران | الحرس الثوري يحذر بريطانيا: تعاونكم مع الولايات المتحدة سيكون ضمن أهدافنا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "العدو السعودي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 125,
-      "kept": 81,
+      "in": 110,
+      "kept": 75,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "The head of the Shin Bet will present classified information to a Knesset committee regarding foreign…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Kan 11",
           "title": "Iran reports that communications with the United States are ongoing, and mediation efforts continue.",
@@ -278,27 +347,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "An unexpected guest attended an event involving Yael Shelbia and her partner.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This entry refers to a television program titled 'Elective Zone' from July 26, 2026, available for viewing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Questions are being raised about the true nature of Tiran Galmoudi and Saar Ofir.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
           "title": "This is a general news update from Channel 13, covering various news and updates from Israel and around the…",
           "sec": 0,
@@ -308,13 +356,6 @@
         {
           "source": "Al Jazeera",
           "title": "President Ahmed al-Sharaa: Syria seeking security deal with Israel",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "Netanyahu vows to go to New York City despite ICC arrest warrant, Mamdani",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -341,27 +382,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "A visit by Al-Zaidi to Tehran is discussed in the context of a strategic partnership to enhance cooperation…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "This entry likely refers to a morning news bulletin, possibly titled 'Morning Bulletin'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "UNESCO official congratulates Iran on Alamut Castle’s World Heritage inscription",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Iran International",
           "title": "1 Iran uses migrant smuggling routes to place operatives in Britain - Telegraph",
           "sec": 0,
@@ -371,13 +391,6 @@
         {
           "source": "Iran International",
           "title": "5 Nearly half of Iranian internet users angry over conflict outage, ISPA poll finds",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Aqaba Marine Reserve inscribed on UNESCO World Heritage List",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -554,25 +567,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 40,
       "sizes": [
         12,
-        11,
-        5,
+        10,
+        7,
         4,
+        3,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -678,7 +683,7 @@
           "rank_key": {
             "outlets": 8,
             "camps": 3,
-            "newest": "2026-07-26T17:44+00:00"
+            "newest": "2026-07-26T17:15+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -695,11 +700,11 @@
             "iranian",
             "turkish"
           ],
-          "members": 11,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
+            "source": "The New Arab",
             "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
             "title_source": "native",
             "why": [
@@ -734,16 +739,18 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Oil tanker explodes after hitting naval mine in Strait of Hormuz: Report",
+          "headline": "What lies ahead for Iran’s economy as scope of US war grows beyond Hormuz?",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 6,
             "camps": 3,
-            "newest": "2026-07-26T16:17+00:00"
+            "newest": "2026-07-26T19:31+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al Jazeera",
             "Al Mayadeen",
             "Anadolu Agency",
+            "IRNA",
             "Mehr News"
           ],
           "camps": [
@@ -751,12 +758,12 @@
             "iranian",
             "turkish"
           ],
-          "members": 5,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Oil tanker explodes after hitting naval mine in Strait of Hormuz: Report",
+            "source": "Al Jazeera",
+            "title": "What lies ahead for Iran’s economy as scope of US war grows beyond Hormuz?",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -768,6 +775,21 @@
               {
                 "source": "Al Arabiya",
                 "title": "Iran says progress in Oman talks on Strait of Hormuz management",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Oil tanker explodes after hitting naval mine in Strait of Hormuz: Report",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Tehran, Muscat hold constructive talks on safe navigation in Strait of Hormuz: I",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Oil tanker explodes in Hormuz Strait after hitting mine",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -820,6 +842,50 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Saudi-led coalition targeted Houthi military sites — Saudi media",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-07-25T12:16+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Gulf News",
+            "Jordan Times"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Saudi-led coalition targeted Houthi military sites — Saudi media",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Yemeni air force hit Houthi missile, drone launch sites after Saudi-led Coalitio",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Saudi Coalition strikes Houthi military targets after Red Sea ship attacks",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Police shoot dead Berlin Pride car-ramming attack suspect",
           "rank_key": {
             "outlets": 2,
@@ -853,6 +919,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump Giving Iran Talks ‘Room’ – US Envoy",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-26T15:42+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Trump Giving Iran Talks ‘Room’ – US Envoy",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -932,73 +1029,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hananel Sabag, a MAGAV combatant, is accused of fatally shooting his friend Yosef Ravuch.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-26T12:22+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Hananel Sabag, a MAGAV combatant, is accused of fatally shooting his friend Yosef Ravuch.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Saudi Coalition strikes Houthi military targets after Red Sea ship attacks",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-25T06:11+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "Saudi Coalition strikes Houthi military targets after Red Sea ship attacks",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Yemeni air force hit Houthi missile, drone launch sites after Saudi-led Coalitio",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran’s supreme leader reaffirms support for Hezbollah, demands end to Israeli attacks on Lebanon",
           "rank_key": {
             "outlets": 1,
@@ -1010,24 +1040,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A woman in her 30s has sustained life-threatening injuries in a road accident in Shfaram.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-26T19:02+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1064,24 +1076,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "MAGAV combatants are reportedly witnessing an escalation in riots in the West Bank.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-26T17:25+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1179,24 +1173,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump giving Iran peace talks 'some space' as strikes halt: US envoy",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-26T14:51+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israeli colonists establish third new settlement outpost in one day in West Bank",
           "rank_key": {
             "outlets": 1,
@@ -1214,7 +1190,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "A question is posed regarding whether Saudi Arabia will become a nuclear state.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T14:18+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The Cabinet approved the introduction of a 'Peace Council' and international forces in Gaza.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T14:05+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hananel Sabag, a MAGAV combatant, is accused of accidentally shooting and killing his friend.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T12:21+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1232,7 +1262,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-26T20:07:28.780540+00:00",
+    "last_success": "2026-07-26T20:19:15.898676+00:00",
     "last_failure": null
   },
   "ok": true
