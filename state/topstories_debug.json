@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T07:19:55.967256+00:00",
+  "updated": "2026-07-26T07:51:19.459355+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-26T07:17:57.021774+00:00"
+      "headlines_updated": "2026-07-26T07:49:30.246515+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 40,
+        "title_snippet": 36,
+        "dropped_no_english": 4,
         "title_native": 86,
         "in": 135,
-        "kept": 126
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -230,12 +231,32 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers forcibly displace Palestinian family from occupied West Bank home",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "הורשע בעבירות בסך מאות מיליוני שקלים: עבריין מס הוסגר מפנמה לארץ - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מלחמת הרימונים במרכז הארץ: \"ללא ראיות התיקים יקרסו\" - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: وزارة الخارجية: هذا الاعتداء يُعد عملاً عدوانياً من شأنه أن يزيد من اشتعال نيران الحرب وتوسّع نطاقها أكثر",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "دميترييف يدعو إلى إنهاء وجود المحكمة الجنائية الدولية تعليقا على عزل مدعيها العام 02:18",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 126,
-      "kept": 76,
+      "in": 122,
+      "kept": 77,
       "dropped": [
         {
           "source": "Kan 11",
@@ -282,13 +303,6 @@
         {
           "source": "N12",
           "title": "In an incident described by witnesses, individuals entered with axes searching for Israelis.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Architects are warning about a specific element that, while appearing impressive, could potentially lead to a…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,13 +364,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "India's education minister resigns after countrywide protests",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Mayadeen",
           "title": "This is a midnight news bulletin.",
           "sec": 0,
@@ -366,13 +373,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Skin diseases are severely affecting children in Gaza due to the deteriorating health sector in the strip.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "This refers to Lina Al-Tabbal, an activist and professor of international law.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -393,7 +393,7 @@
         },
         {
           "source": "Iran International",
-          "title": "3 Iran uses migrant smuggling routes to place operatives in Britain - Telegraph",
+          "title": "2 Iran uses migrant smuggling routes to place operatives in Britain - Telegraph",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -421,10 +421,10 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Egypt rejects Trump’s tariffs, slamming it as violation of international law",
-          "sec": 0,
+          "title": "Landslide killed 11 in southwest China, 50 still missing, state media says",
+          "sec": 3,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al-Akhbar",
@@ -436,13 +436,6 @@
         {
           "source": "Al-Akhbar",
           "title": "This entry refers to alleged 'enemy crimes' in Bint Jbeil.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "This entry discusses the systematic destruction by Israeli occupiers and questions who documents the crimes…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -477,17 +470,10 @@
         },
         {
           "source": "SANA",
-          "title": "Olabi: Guterres’ visit to Damascus reflects international interest in Syria",
+          "title": "Guterres says Israel’s violations of 1974 Syria disengagement agreement ‘must stop’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Saudi Arabia offers condolences after deadly Syria bus crash",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Arab News",
@@ -526,14 +512,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
+          "title": "Donald Trump’s aircraft switch in Turkey followed Iran-linked threat alert, reports say",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Donald Trump’s aircraft switch in Turkey followed Iran-linked threat alert, reports say",
+          "title": "Sales & Customer Acquisition",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -591,16 +577,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 45,
       "sizes": [
         13,
         8,
         8,
         3,
+        3,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -704,6 +691,63 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Israeli settlers escalate attacks across West Bank",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 3,
+            "newest": "2026-07-26T06:54+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Daily Sabah",
+            "Jordan Times",
+            "TRT World",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 13,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Israeli settlers escalate attacks across West Bank",
+            "title_source": "native",
+            "why": [
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Jordan Times",
+                "title": "Israel vows to act 'with force' after deadly violence in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli colonists set fire to mosque under construction and Palestinian home nea",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces detain at least 66 Palestinians during large-scale detention camp",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor",
           "rank_key": {
             "outlets": 6,
@@ -761,61 +805,6 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "Israeli forces detain 70 Palestinians in West Bank raids, injure 8",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 2,
-            "newest": "2026-07-26T06:54+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Daily Sabah",
-            "Jordan Times",
-            "TRT World",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 13,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Israeli forces detain 70 Palestinians in West Bank raids, injure 8",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Jordan Times",
-                "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Israel vows to act 'with force' after deadly violence in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Jordan denounces escalating colonist violence against Palestinians in occupied W",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli forces detain at least 66 Palestinians during large-scale detention camp",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 4,
           "headline": "Hezbollah mourned Kouzo Okamot, describing him as a model revolutionary who embodied human values, f",
           "rank_key": {
@@ -856,6 +845,49 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Israeli occupation forces storm two villages in Syria’s Daraa countryside",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-26T07:15+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "SANA"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Israeli occupation forces storm two villages in Syria’s Daraa countryside",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "SANA",
+                "title": "Thirty-Five people killed in traffic accident on the Deir Ezzor–Damascus road",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Daily Sabah",
+                "title": "35 dead, 30 injured after buses collide on Syrian highway",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Nearly all US infrastructure in Erbil destroyed: Iran’s Army",
           "rank_key": {
             "outlets": 2,
@@ -886,44 +918,6 @@
               {
                 "source": "Anadolu Agency",
                 "title": "Iranian army claims ‘almost all’ US infrastructure in Iraq’s Erbil destroyed",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Reports indicate progress in talks between Oman and Iran concerning the opening of the Strait of Hor",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-26T03:56+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "Iran International"
-          ],
-          "camps": [
-            "israeli",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Channel 13",
-            "title": "Reports indicate progress in talks between Oman and Iran concerning the opening of the Strait of Hormuz.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "ANALYSIS Iran bears biggest economic cost of Hormuz closure",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -969,49 +963,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "35 dead, 30 injured after buses collide on Syrian highway",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-25T12:27+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "SANA"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "35 dead, 30 injured after buses collide on Syrian highway",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "In legal proceedings related to assassination attempts, Beni Mocha was released, while Matan Arbeeb ",
+          "headline": "Trump’s appetite for tariffs never faded. His next moves could reshape trade",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-26T06:41+00:00"
+            "newest": "2026-07-26T07:45+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Egypt Independent"
           ],
           "camps": [
-            "israeli"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1048,6 +1010,24 @@
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Reports indicate progress in talks between Oman and Iran concerning the opening of the Strait of Hor",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T03:56+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1198,25 +1178,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "The governor of Lahj province congratulated the operations in Jizan and Yanbu and condemned the Saud",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-25T15:01+00:00"
-          },
-          "outlet_names": [
-            "Al-Masirah"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1234,7 +1196,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-26T07:20:13.665300+00:00",
+    "last_success": "2026-07-26T07:51:43.701972+00:00",
     "last_failure": null
   },
   "ok": true
