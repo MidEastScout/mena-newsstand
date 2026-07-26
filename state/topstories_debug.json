@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T09:25:08.489031+00:00",
+  "updated": "2026-07-26T09:31:29.840029+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-26T09:23:12.182446+00:00"
+      "headlines_updated": "2026-07-26T09:29:29.553775+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 40,
+        "title_snippet": 37,
         "title_native": 83,
+        "dropped_no_english": 3,
         "in": 135,
-        "kept": 123
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -245,12 +246,27 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers forcibly displace Palestinian family from occupied West Bank home",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بقائي: مباحثات مثمرة مع سلطنة عُمان بشأن مضيق هرمز ولا تغيير في حركة الملاحة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "هل يقف الشرق الأوسط على أعتاب تحول تاريخي جديد؟*",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "طبيبة تحذر: النوبة القلبية قد تحدث دون ألم الصدر التقليدي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 79,
+      "in": 120,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
@@ -351,10 +367,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "This refers to the 6 AM news bulletin.",
+          "source": "The New Arab",
+          "title": "India's education minister resigns after countrywide protests",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -415,6 +431,13 @@
         },
         {
           "source": "Egypt Independent",
+          "title": "Israel relocates cabinet meeting underground amid tensions with Iran",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
           "title": "Sisi issues presidential pardon for July 23 Revolution anniversary",
           "sec": 0,
           "off": 0,
@@ -464,13 +487,6 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "The weather forecast indicates typical summer conditions for today and tomorrow, with a temperature increase…",
-          "sec": 0,
-          "off": 2,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
           "title": "The president of Beşiktaş stated that they have presented their final offer to Mohamed Salah and are awaiting…",
           "sec": 0,
           "off": 0,
@@ -500,6 +516,13 @@
         {
           "source": "Arab News",
           "title": "Trump says Israeli PM Netanyahu will visit US next week",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Trump warns Russia and China against arms sales to Iran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -564,9 +587,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 49,
       "sizes": [
-        9,
+        8,
         7,
         4,
         3,
@@ -576,8 +599,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -626,9 +647,9 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israeli settlers escalate attacks across West Bank",
+          "headline": "Israel vows to act 'with force' after deadly violence in West Bank",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-07-26T06:54+00:00"
           },
@@ -638,7 +659,6 @@
             "Anadolu Agency",
             "Jordan Times",
             "TRT World",
-            "The New Arab",
             "WAFA News"
           ],
           "camps": [
@@ -646,12 +666,12 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Israeli settlers escalate attacks across West Bank",
+            "source": "Jordan Times",
+            "title": "Israel vows to act 'with force' after deadly violence in West Bank",
             "title_source": "native",
             "why": [
               "names 1 of the story's dominant entities (westbank)",
@@ -670,14 +690,14 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Jordan Times",
-                "title": "Israel vows to act 'with force' after deadly violence in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al-Akhbar",
                 "title": "The Israeli army has reportedly closed off northern West Bank governorates and l",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Arab Parliament Speaker condemns escalating colonist attacks in the occupied Wes",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -741,17 +761,17 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Saudi Arabia strikes Huthi targets in Yemen after vessel was attacked in Red Sea",
+          "headline": "Saudi-led coalition targeted Houthi military sites — Saudi media",
           "rank_key": {
             "outlets": 4,
             "camps": 3,
-            "newest": "2026-07-25T12:31+00:00"
+            "newest": "2026-07-25T12:16+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Arab News",
-            "Egypt Independent",
-            "Gulf News"
+            "Gulf News",
+            "Jordan Times"
           ],
           "camps": [
             "gulf",
@@ -762,8 +782,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Egypt Independent",
-            "title": "Saudi Arabia strikes Huthi targets in Yemen after vessel was attacked in Red Sea",
+            "source": "Jordan Times",
+            "title": "Saudi-led coalition targeted Houthi military sites — Saudi media",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -871,49 +891,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Two Palestinians killed in Israeli attacks across Gaza",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 1,
-            "newest": "2026-07-26T08:13+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Two Palestinians killed in Israeli attacks across Gaza",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas stated that the increase in resistance in the West Bank confirms the occup",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Four Palestinians killed in Israeli occupation strikes on Gaza Strip",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Yemen’s Huthis claim they attacked Saudi installations along Red Sea coast",
           "rank_key": {
             "outlets": 2,
@@ -960,7 +937,7 @@
             "levant",
             "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -975,6 +952,11 @@
             ],
             "passed_over": [
               {
+                "source": "SANA",
+                "title": "Thirty-Five people killed in traffic accident on the Deir Ezzor–Damascus road",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Daily Sabah",
                 "title": "35 dead, 30 injured after buses collide on Syrian highway",
                 "rejected_by": "older than the story's newest wave"
@@ -984,36 +966,36 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump weighs harder Iran strikes as conflict widens",
+          "headline": "Two Palestinians killed in Israeli attacks across Gaza",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-26T00:49+00:00"
+            "camps": 1,
+            "newest": "2026-07-26T08:13+00:00"
           },
           "outlet_names": [
-            "Iran International",
-            "Jordan Times"
+            "SANA",
+            "WAFA News"
           ],
           "camps": [
-            "iranian",
             "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Jordan Times",
-            "title": "Trump weighs harder Iran strikes as conflict widens",
+            "source": "WAFA News",
+            "title": "Two Palestinians killed in Israeli attacks across Gaza",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Iran International",
-                "title": "5 Trump weighs major Iran strikes as more regional states enter the war",
+                "source": "SANA",
+                "title": "Four Palestinians killed in Israeli occupation strikes on Gaza Strip",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1231,24 +1213,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Saudi Arabia, Pakistan discuss security of Gulf and Red Sea shipping lanes",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-25T18:52+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Sana'a declares itself free and rejects the occupation of any part of Yemen.",
           "rank_key": {
             "outlets": 1,
@@ -1266,7 +1230,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran destroys 11 US fighter jets, helicopters over 2 weeks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-25T17:49+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1284,7 +1266,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-26T09:25:31.596854+00:00",
+    "last_success": "2026-07-26T09:31:53.851209+00:00",
     "last_failure": null
   },
   "ok": true
