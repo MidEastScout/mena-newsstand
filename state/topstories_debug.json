@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T05:53:54.715223+00:00",
+  "updated": "2026-07-27T06:25:30.434057+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-27T05:51:57.854825+00:00"
+      "headlines_updated": "2026-07-27T06:23:27.157063+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 39,
-        "title_native": 85,
+        "dropped_stale": 14,
+        "title_snippet": 27,
+        "dropped_no_english": 11,
+        "title_native": 83,
         "in": 135,
-        "kept": 124
+        "kept": 110
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 38,
         "translated": 0,
         "cached": 0,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -199,6 +200,11 @@
         {
           "source": "WAFA News",
           "title": "Presidency condemns Israeli colonists’ terrorism across West Bank",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "لماذا أعفت الجنائية الدولية مدعيها العام كريم خان من منصبه؟",
           "reason": "stale (older than 48h)"
         },
         {
@@ -232,6 +238,16 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "Saudi Coalition strikes Houthi military targets after Red Sea ship attacks",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "UAE travel alert: US, UK, Canada, Australia renew warnings for Middle East as Etihad, Qatar Airways update flights",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "Israeli forces, illegal settlers kill four Palestinians in occupied West Bank",
           "reason": "stale (older than 48h)"
@@ -240,39 +256,73 @@
           "source": "TRT World",
           "title": "Israeli forces kill three Palestinians, withhold their bodies in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ארה\"ב: שני הרוגים וחמישה פצועים באירוע ירי בפסטיבל אוכל בסיאטל, חשוד נעצר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נשיא סוריה א-שרע: \"הסכם ביטחוני עם ישראל יוביל את הדרך לשלום",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "ירי המוני בסיאטל: לפחות שני הרוגים וחמישה פצועים בפסטיבל האוכל הגדול בעיר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "נשיא סוריה: \"פועלים להשגת הסכם ביטחוני עם ישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "החשש מהסלמה ביו\"ש, והאזהרה לדרג המדיני ולרשויות: \"זה הזמן להרגיע\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "בת 13 מתה במחנה קיץ צבאי במקסיקו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "חשד לפשע שנאה בטורונטו: ירי לעבר מאפייה יהודית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الرئيس البرازيلي ونظيره الصيني: القيود المفروضة على حرية الملاحة في مضيقي هرمز وباب المندب لها آثار ضارة على الاقتصاد ال",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إسرائيل تشكّك في قدرات الجيش: إعادة الانتشار تحتاج إلى سنوات | بري: ما يهمّني وقف الحرب والانسحاب الكامل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الضفة المحتلة: أقرب إلى الانفجار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "العدو السعودي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 79,
+      "in": 110,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "The forecast predicts a slight rise in temperatures.",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "This article discusses how to identify signs of dehydration in children and provides advice on what to do.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "An Israeli national has been arrested in Los Angeles under unclear circumstances.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The star involved in the Tair Rada murder case has responded to the allegations.",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -353,13 +403,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "This is a news update from 3 AM.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Iran International",
           "title": "1 Iran uses migrant smuggling routes to place operatives in Britain - Telegraph",
           "sec": 0,
@@ -430,29 +473,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Israel is disrupting the period of celebration for Gaza's high school students.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "There are warnings regarding the potential dismissal of the International Criminal Court's prosecutor.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The article questions why the International Criminal Court dismissed its prosecutor, Karim Khan.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Guterres urges international support for Syria, calls Israeli violations unacceptable",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -473,21 +495,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "17 missing after Vietnamese cargo ship sinks in South China Sea",
+          "title": "GRID breaks ground on Enchanté, its first signature development in Dubai's Arjan",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "GRID breaks ground on Enchanté, its first signature development in Dubai's Arjan",
+          "title": "Rockhill bets Dh250 million on affordable premium living with its first Ajman tower",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -495,13 +510,6 @@
         {
           "source": "Al-Masirah",
           "title": "The article highlights women who made history and awakened a dormant conscience.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Masirah",
-          "title": "Sana'a is free and does not accept any part of Yemen being occupied.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -566,21 +574,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 38,
       "sizes": [
-        11,
-        8,
-        8,
+        9,
+        9,
+        7,
+        6,
         4,
         3,
         3,
-        3,
         2,
         2,
-        2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -640,7 +644,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 8,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -671,7 +675,7 @@
               },
               {
                 "source": "Mehr News",
-                "title": "No change in Strait of Hormuz traffic as Iran-Oman talks wrap",
+                "title": "Oil tanker explodes in Hormuz Strait after hitting mine",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -679,58 +683,49 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israeli army wounds Palestinian, orders demolition of 10 homes in occupied West Bank",
+          "headline": "Houthis’ war of leverage: How trade routes became weapon",
           "rank_key": {
-            "outlets": 7,
-            "camps": 2,
-            "newest": "2026-07-27T05:29+00:00"
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-07-27T00:13+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Anadolu Agency",
-            "Falastin al-Youm",
-            "Jordan Times",
-            "SANA",
-            "TRT World",
-            "WAFA News"
+            "Al Manar",
+            "Al Mayadeen",
+            "Al-Masirah",
+            "Arab News",
+            "Daily Sabah",
+            "Jordan Times"
           ],
           "camps": [
+            "gulf",
+            "panarab",
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli army wounds Palestinian, orders demolition of 10 homes in occupied West Bank",
+            "source": "Daily Sabah",
+            "title": "Houthis’ war of leverage: How trade routes became weapon",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Jordan Times",
-                "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
+                "title": "Saudi-led coalition targeted Houthi military sites — Saudi media",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al-Akhbar",
-                "title": "The Palestinian Ministry of Foreign Affairs is calling for immediate internation",
+                "source": "Al Manar",
+                "title": "The Yemeni Armed Forces announced two operations targeting Aramco facilities in ",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli forces detain at least 66 Palestinians during large-scale detention camp",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Spain condemns Israeli colonist violence in West Bank, calls for accountability",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -739,7 +734,7 @@
           "selected_rank": 3,
           "headline": "Iranian lawmaker warns Ukraine could face retaliation after Caspian Sea drone strike",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-07-27T01:09+00:00"
           },
@@ -747,6 +742,7 @@
             "Al Arabiya",
             "Anadolu Agency",
             "IRNA",
+            "Mehr News",
             "TRT World",
             "The New Arab"
           ],
@@ -755,7 +751,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -794,52 +790,108 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Saudi crown prince, UK leader review ties as Houthi Red Sea attacks fuel tensions",
+          "headline": "Palestinian presidency warns of escalating settler attacks in West Bank",
           "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-07-27T00:13+00:00"
+            "outlets": 6,
+            "camps": 2,
+            "newest": "2026-07-26T18:41+00:00"
           },
           "outlet_names": [
-            "Al-Masirah",
-            "Arab News",
-            "Gulf News",
-            "Jordan Times"
+            "Al-Akhbar",
+            "Falastin al-Youm",
+            "Jordan Times",
+            "SANA",
+            "TRT World",
+            "WAFA News"
           ],
           "camps": [
-            "gulf",
-            "panarab",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 4,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Saudi crown prince, UK leader review ties as Houthi Red Sea attacks fuel tensions",
+            "source": "SANA",
+            "title": "Palestinian presidency warns of escalating settler attacks in West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Jordan Times",
-                "title": "Saudi-led coalition targeted Houthi military sites — Saudi media",
+                "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Gulf News",
-                "title": "Saudi Coalition strikes Houthi military targets after Red Sea ship attacks",
+                "source": "WAFA News",
+                "title": "Israeli forces detain at least 66 Palestinians during large-scale detention camp",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Spain condemns Israeli colonist violence in West Bank, calls for accountability",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "Abbas is demanding urgent international action to halt the occupation's aggressi",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
           "selected_rank": 5,
+          "headline": "Israeli forces raid homes in southern Syria: Report",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-07-27T05:54+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Arab News",
+            "SANA"
+          ],
+          "camps": [
+            "gulf",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Israeli forces raid homes in southern Syria: Report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "SANA",
+                "title": "Israeli occupation forces storm two villages in Syria’s Daraa countryside",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Syria reports fresh Israeli incursion, shelling in south",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran’s supreme leader reaffirms support for Hezbollah, demands end to Israeli attacks on Lebanon",
           "rank_key": {
             "outlets": 3,
@@ -880,113 +932,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hananel Sabag is a Border Police officer accused of fatally shooting his friend Yosef Rabuch.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 1,
-            "newest": "2026-07-26T12:22+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Hananel Sabag is a Border Police officer accused of fatally shooting his friend Yosef Rabuch.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "North Korea's leader's sister stated that the country will not disarm its nuclear weapons and will c",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-27T04:48+00:00"
-          },
-          "outlet_names": [
-            "Iran International",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "North Korea's leader's sister stated that the country will not disarm its nuclear weapons and will continue…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "5 Potential US targets in Iran extend beyond Pickaxe Mountain - WSJ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces launch fresh incursion into Syria’s Quneitra countryside, detain civilian",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-27T01:13+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli forces launch fresh incursion into Syria’s Quneitra countryside, detain civilian",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Syria reports fresh Israeli incursion, shelling in south",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "UN chief urges immediate removal of all Syria sanctions",
           "rank_key": {
             "outlets": 2,
@@ -1015,44 +960,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The cabinet has approved the entry of a 'Peace Council' and international forces into Gaza.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-26T14:05+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "Middle East Eye"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "The cabinet has approved the entry of a 'Peace Council' and international forces into Gaza.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -1088,57 +995,33 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Ukrainian attack on the Russian cities of Rostov and Belgorod has reportedly resulted in two death",
+          "headline": "Hananel Sabag is a Border Police officer accused of accidentally shooting and killing his friend.",
           "rank_key": {
-            "outlets": 1,
+            "outlets": 2,
             "camps": 1,
-            "newest": "2026-07-27T04:45+00:00"
+            "newest": "2026-07-26T12:21+00:00"
           },
           "outlet_names": [
+            "Channel 13",
             "Kan 11"
           ],
           "camps": [
             "israeli"
           ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Two months after a car explosion in Afula, the murder of Obnch Dinko has been solved.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T04:38+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemeni forces are enforcing a policy of 'blockade for blockade', targeting three Saudi oil tankers.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T00:03+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Channel 13",
+            "title": "Hananel Sabag is a Border Police officer accused of accidentally shooting and killing his friend.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": []
+          }
         },
         {
           "selected_rank": null,
@@ -1146,7 +1029,25 @@
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-26T23:48+00:00"
+            "newest": "2026-07-27T05:38+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces raid Anata, search homes; storm area near Hizma checkpoint",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T03:18+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -1171,24 +1072,6 @@
           ],
           "camps": [
             "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Houthis’ war of leverage: How trade routes became weapon",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-26T21:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1303,7 +1186,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "‘Going it alone does not work’: America’s first one-party war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T12:13+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pezeshkian orders fast rebuild of targeted infrastructure",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T10:05+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Kuwait condemns Houthi attacks on Red Sea shipping",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T09:29+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1321,7 +1258,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-27T05:54:15.678085+00:00",
+    "last_success": "2026-07-27T06:25:47.314625+00:00",
     "last_failure": null
   },
   "ok": true
