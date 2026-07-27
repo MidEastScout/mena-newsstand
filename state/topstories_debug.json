@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T16:20:10.694575+00:00",
+  "updated": "2026-07-27T16:34:46.684083+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-27T16:18:15.893886+00:00"
+      "headlines_updated": "2026-07-27T16:33:12.106226+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 40,
+        "title_snippet": 38,
         "title_native": 81,
+        "dropped_no_english": 2,
         "in": 135,
-        "kept": 121
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -255,12 +256,22 @@
           "source": "TRT World",
           "title": "Israel signals possible attacks on Iran as Trump threatens Tehran and war spreads to Red Sea",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة الثانية عشرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "لليوم الثاني على التوالي : الاحتلال يعربد في طولكرم ويعتقل 20 مواطناً",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 82,
+      "in": 119,
+      "kept": 80,
       "dropped": [
         {
           "source": "Kan 11",
@@ -424,13 +435,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Israa University is offering full scholarships and registration fee exemptions, according to paltoday.ps.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Macron Convenes Crisis Meeting as France, Spain Battle Major Wildfires",
           "sec": 0,
@@ -439,7 +443,7 @@
         },
         {
           "source": "SANA",
-          "title": "Guterres urges international support for Syria, calls Israeli violations unacceptable",
+          "title": "Saudi, Qatari and Omani FMs discuss regional developments, Hormuz navigation security",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -485,6 +489,13 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "France reports 162 arrests over suspected wildfire arson amid record fire season",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
@@ -539,13 +550,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 41,
       "sizes": [
-        13,
-        11,
+        12,
+        12,
         9,
-        3,
-        3,
+        4,
         3,
         2,
         2,
@@ -594,14 +604,13 @@
           "selected_rank": 1,
           "headline": "Will Tehran respond to Ukraine's attack of boat in Caspian Sea?",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 7,
             "camps": 4,
-            "newest": "2026-07-27T13:14+00:00"
+            "newest": "2026-07-27T11:41+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Al Mayadeen",
             "Arab News",
             "IRNA",
             "Mehr News",
@@ -614,7 +623,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 13,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -657,7 +666,7 @@
           "rank_key": {
             "outlets": 7,
             "camps": 3,
-            "newest": "2026-07-27T08:50+00:00"
+            "newest": "2026-07-27T11:55+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
@@ -673,7 +682,7 @@
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -766,6 +775,46 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Trump warns of 'strong military action' if Iran talks fail",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-07-27T15:31+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency",
+            "Arab News",
+            "Daily Sabah"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Trump warns of 'strong military action' if Iran talks fail",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Trump says he is ready for ‘strong military action’ if talks with Iran fail",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Israeli occupation forces intensify attacks across Gaza and West Bank",
           "rank_key": {
             "outlets": 3,
@@ -799,88 +848,6 @@
               {
                 "source": "Middle East Eye",
                 "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Trump warns of 'strong military action' if Iran talks fail",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-27T15:31+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Trump warns of 'strong military action' if Iran talks fail",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Trump says he is ready for ‘strong military action’ if talks with Iran fail",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Why a new war in Yemen could be different for the Houthis",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-27T15:20+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al-Masirah",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "Why a new war in Yemen could be different for the Houthis",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Saudi crown prince, UK leader review ties as Houthi Red Sea attacks fuel tension",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al-Masirah",
-                "title": "Military and strategic affairs experts believe Yemen is foiling Saudi Arabia's b",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -957,32 +924,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "Egypt welcomes Ireland’s ban on imports from Israeli settlements",
+          "headline": "Why a new war in Yemen could be different for the Houthis",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-07-27T12:04+00:00"
+            "newest": "2026-07-27T15:20+00:00"
           },
           "outlet_names": [
-            "Egypt Independent",
-            "WAFA News"
+            "Al Jazeera",
+            "Al-Masirah"
           ],
           "camps": [
-            "levant"
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Egypt Independent",
-            "title": "Egypt welcomes Ireland’s ban on imports from Israeli settlements",
+            "source": "Al Jazeera",
+            "title": "Why a new war in Yemen could be different for the Houthis",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al-Masirah",
+                "title": "Military and strategic affairs experts believe Yemen is foiling Saudi Arabia's b",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1015,24 +989,6 @@
             ],
             "passed_over": []
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Bab al-Mandeb crossings outpace Hormuz as shipping patterns diverge: MarineTraffic",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T16:10+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1233,6 +1189,24 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
+          "selected_rank": null,
+          "headline": "Why has the US halted its bombing of Iran?",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T10:55+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
           "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1251,7 +1225,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-27T16:20:25.685467+00:00",
+    "last_success": "2026-07-27T16:35:01.551656+00:00",
     "last_failure": null
   },
   "ok": true
