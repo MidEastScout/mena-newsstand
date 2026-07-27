@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T01:08:21.130718+00:00",
+  "updated": "2026-07-27T01:39:37.904977+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-27T01:06:40.510803+00:00"
+      "headlines_updated": "2026-07-27T01:37:32.177507+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 39,
-        "title_native": 84,
+        "dropped_stale": 13,
+        "title_snippet": 37,
+        "title_native": 83,
+        "dropped_no_english": 2,
         "in": 135,
-        "kept": 123
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -232,6 +233,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "UAE travel alert: US, UK, Canada, Australia renew warnings for Middle East as Etihad, Qatar Airways update flights",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "Israeli forces, illegal settlers kill four Palestinians in occupied West Bank",
           "reason": "stale (older than 48h)"
@@ -245,12 +251,22 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers forcibly displace Palestinian family from occupied West Bank home",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مضيق هرمز يتصدر المواجهة بين واشنطن وطهران وسط ترقب لمسار التصعيد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "اليمن في قلب المعادلة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 79,
+      "in": 120,
+      "kept": 77,
       "dropped": [
         {
           "source": "Kan 11",
@@ -302,13 +318,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "President Ahmed al-Sharaa: Syria seeking security deal with Israel",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Backlash as Lloyds 'debanks' independent media outlet The Canary 'with no explanation'",
           "sec": 0,
@@ -332,6 +341,13 @@
         {
           "source": "Al Arabiya",
           "title": "Indian education minister Dharmandra Pradhan resigns after days of youth protests",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Tunisia hit by protests as blackouts continue in 50C heatwave",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -369,6 +385,13 @@
           "title": "4 Nearly half of Iranian internet users angry over conflict outage, ISPA poll finds",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Iran International",
+          "title": "5 Thousands pack Tehran mall as Gen Z rallies around a YouTube star",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -484,22 +507,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Pakistan passport 20-year journey: From 79th in 2006 to 101st in 2026 — visa-free travel list explained",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al-Masirah",
           "title": "Women made history by awakening sleeping consciences.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Masirah",
-          "title": "The \"Saudi enemy.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -564,22 +573,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 43,
       "sizes": [
+        11,
         10,
-        9,
         5,
         4,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -621,15 +627,16 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Palestinian presidency warns of escalating settler attacks in West Bank",
+          "headline": "Israeli army wounds Palestinian, orders demolition of 10 homes in occupied West Bank",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 8,
             "camps": 3,
-            "newest": "2026-07-26T18:41+00:00"
+            "newest": "2026-07-27T01:28+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
             "Al-Masirah",
+            "Anadolu Agency",
             "Falastin al-Youm",
             "Jordan Times",
             "SANA",
@@ -641,23 +648,28 @@
             "levant",
             "turkish"
           ],
-          "members": 10,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "SANA",
-            "title": "Palestinian presidency warns of escalating settler attacks in West Bank",
+            "source": "Anadolu Agency",
+            "title": "Israeli army wounds Palestinian, orders demolition of 10 homes in occupied West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Jordan Times",
                 "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al-Akhbar",
+                "title": "The Palestinian Foreign Ministry is demanding immediate international action to ",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -669,22 +681,17 @@
                 "source": "WAFA News",
                 "title": "Spain condemns Israeli colonist violence in West Bank, calls for accountability",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Abbas called for urgent international action to stop the occupation's aggression",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
+          "headline": "Iranian lawmaker warns Ukraine could face retaliation after Caspian Sea drone strike",
           "rank_key": {
             "outlets": 6,
             "camps": 4,
-            "newest": "2026-07-26T17:44+00:00"
+            "newest": "2026-07-27T01:09+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -700,12 +707,12 @@
             "iranian",
             "turkish"
           ],
-          "members": 9,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
+            "source": "Anadolu Agency",
+            "title": "Iranian lawmaker warns Ukraine could face retaliation after Caspian Sea drone strike",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -716,22 +723,22 @@
             "passed_over": [
               {
                 "source": "Al Arabiya",
+                "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
                 "title": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "IRNA",
                 "title": "Iran strongly condemns Ukraine’s military attack on an Iranian commercial vessel",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Iran summons Ukrainian chargé d’affaires over attack on commercial vessel",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -842,46 +849,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Iran’s supreme leader reaffirms support for Hezbollah, demands end to Israeli attacks on Lebanon",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-07-26T19:27+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Anadolu Agency",
-            "IRNA"
-          ],
-          "camps": [
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran’s supreme leader reaffirms support for Hezbollah, demands end to Israeli attacks on Lebanon",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (hezbollah, khamenei)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "The Supreme Leader responded to a message from Hezbollah, stating that resistanc",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "West Bank raids result in death of Gaza police chief and arrest of 40 people in a single village",
           "rank_key": {
             "outlets": 3,
@@ -921,18 +888,18 @@
         },
         {
           "selected_rank": null,
-          "headline": "Palestinian Foreign Ministry welcomes Ireland’s ban on goods from illegal Israeli settlements",
+          "headline": "Israeli forces launch fresh incursion into Syria’s Quneitra countryside, detain civilian",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-27T00:00+00:00"
+            "newest": "2026-07-27T01:13+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "WAFA News"
+            "Arab News"
           ],
           "camps": [
-            "levant",
+            "gulf",
             "turkish"
           ],
           "members": 2,
@@ -940,14 +907,59 @@
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Palestinian Foreign Ministry welcomes Ireland’s ban on goods from illegal Israeli settlements",
+            "title": "Israeli forces launch fresh incursion into Syria’s Quneitra countryside, detain civilian",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Syria reports fresh Israeli incursion, shelling in south",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-26T23:44+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al Manar"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Jazeera",
+            "title": "Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (khamenei)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "The Supreme Leader responded to a message from Hezbollah, stating that resistanc",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1083,6 +1095,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Egypt welcomes Ireland's ban on imports from Israeli settlements",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T23:48+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "In Toronto, two branches of a Jewish bakery were targeted in what is suspected to be an anti-Semitic",
           "rank_key": {
             "outlets": 1,
@@ -1109,24 +1139,6 @@
           },
           "outlet_names": [
             "Al-Masirah"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iranian Security Committee Chairman Ebrahim Azizi stated that any attack on Iran will have a price, ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-26T21:29+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
           ],
           "camps": [
             "panarab"
@@ -1191,24 +1203,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Turkish foreign minister, UN chief discuss regional issues",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-26T18:50+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "FM Fidan, UN chief Guterres discuss regional developments",
           "rank_key": {
             "outlets": 1,
@@ -1220,6 +1214,42 @@
           ],
           "camps": [
             "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran’s support for Hezbollah ‘a strategic mandate’: Leader",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T17:22+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli occupation forces detain civilian in Quneitra incursion",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-26T16:39+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1280,25 +1310,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "‘Going it alone does not work’: America’s first one-party war",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-26T12:13+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1316,7 +1328,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-27T01:08:35.086272+00:00",
+    "last_success": "2026-07-27T01:40:11.793106+00:00",
     "last_failure": null
   },
   "ok": true
