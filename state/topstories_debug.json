@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T13:23:40.112930+00:00",
+  "updated": "2026-07-27T13:54:30.928880+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-27T13:21:28.133346+00:00"
+      "headlines_updated": "2026-07-27T13:52:52.907384+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 40,
+        "title_snippet": 37,
+        "dropped_no_english": 3,
         "title_native": 81,
         "in": 135,
-        "kept": 121
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -255,12 +256,27 @@
           "source": "TRT World",
           "title": "Israel signals possible attacks on Iran as Trump threatens Tehran and war spreads to Red Sea",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בכיר לשעבר במשרד הביטחון: \"המלחמה היא כישלון מהדהד ברמה האסטרטגית\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بقائي: الرسائل مع واشنطن مستمرة.. وعزيزي: أي اعتداء على إيران لن يمر دون رد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "لليوم الثاني على التوالي : الاحتلال يعربد في طولكرم ويعتقل 20 مواطناً",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 79,
+      "in": 118,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
@@ -313,6 +329,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "This news item is from Channel 13, providing news and updates from Israel and around the world.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "A musician, known for \"Two Crazy People,\" has reportedly fallen into a state of poverty and debt.",
           "sec": 0,
           "off": 0,
@@ -328,20 +351,6 @@
         {
           "source": "Channel 13",
           "title": "A quote indicates a person eats a lot and is not ashamed of it.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This news item is from Channel 13, providing news and updates from Israel and around the world.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "Who is India’s new education minister Pralhad Joshi?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -431,13 +440,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Netanyahu is arriving in Washington today, with Iran and regional issues on the agenda for his meeting with…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Macron Convenes Crisis Meeting as France, Spain Battle Major Wildfires",
           "sec": 0,
@@ -453,23 +455,23 @@
         },
         {
           "source": "Gulf News",
-          "title": "Sales & Logistics Coordinator (Female Candidates only)",
+          "title": "Premium Laundry & Dry Cleaning Service in Al Raha, Abu Dhabi",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Office Secretary cum Admin Assistant (Female Candidates only)",
+          "title": "Latest Asia News & Top Stories",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Sales Engineer / Sales Executive (Commercial Vehicle Spare Parts)",
+          "title": "Ecommerce Website Development in Dubai",
           "sec": 0,
-          "off": 0,
+          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -501,22 +503,43 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Thousands remain displaced as wildfires remain out of control in France, Spain",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Trump urges Senate leader block recess until voting bill passes",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Peugeot to produce Rifter model in Türkiye from Q3",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Türkiye launches second Communication Council focused on media policy",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Türkiye's ruling AK Party to mark 25th anniversary with 25 million-trees",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Türkiye records strongest heat waves in 75 years: Study",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Leading Turkish think tank SETA launches young academics program",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Construction employment in Türkiye hits record on urban renewal boom",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -560,16 +583,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 41,
       "sizes": [
         13,
-        11,
-        10,
+        12,
+        8,
         3,
         2,
         2,
-        2,
-        2,
+        1,
         1,
         1,
         1,
@@ -613,9 +635,9 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iran warns Ukraine of retaliation after deadly Caspian Sea strike",
+          "headline": "Iran Warns Ukraine of ‘Unforeseen’ Consequences After Ship Attack",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 8,
             "camps": 4,
             "newest": "2026-07-27T12:00+00:00"
           },
@@ -624,7 +646,6 @@
             "Al Jazeera",
             "Anadolu Agency",
             "Arab News",
-            "Daily Sabah",
             "IRNA",
             "Mehr News",
             "TRT World",
@@ -636,12 +657,12 @@
             "iranian",
             "turkish"
           ],
-          "members": 13,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Jazeera",
-            "title": "Iran warns Ukraine of retaliation after deadly Caspian Sea strike",
+            "source": "Al Arabiya",
+            "title": "Iran Warns Ukraine of ‘Unforeseen’ Consequences After Ship Attack",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -651,8 +672,8 @@
             ],
             "passed_over": [
               {
-                "source": "Al Arabiya",
-                "title": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor",
+                "source": "Al Jazeera",
+                "title": "Iran warns Ukraine of retaliation after deadly Caspian Sea strike",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -679,7 +700,7 @@
           "rank_key": {
             "outlets": 8,
             "camps": 3,
-            "newest": "2026-07-27T08:50+00:00"
+            "newest": "2026-07-27T11:55+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
@@ -696,7 +717,7 @@
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -712,6 +733,11 @@
             "passed_over": [
               {
                 "source": "The New Arab",
+                "title": "Israeli forces kill four Palestinians amid West Bank settler attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
                 "title": "Israel arrests nine at Tel Aviv rally against West Bank attacks",
                 "rejected_by": "older than the story's newest wave"
               },
@@ -724,20 +750,15 @@
                 "source": "Al-Akhbar",
                 "title": "The Palestinian Ministry of Foreign Affairs has called for immediate internation",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Spain condemns Israeli colonist violence in West Bank, calls for accountability",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
           "selected_rank": 3,
-          "headline": "Oil prices sink as US-Iran pause fuels fresh Hormuz hopes",
+          "headline": "Iran says US not involved in talks with Oman over Hormuz strait",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 5,
             "camps": 4,
             "newest": "2026-07-27T13:08+00:00"
           },
@@ -746,9 +767,7 @@
             "Al Mayadeen",
             "Arab News",
             "Falastin al-Youm",
-            "IRNA",
-            "Mehr News",
-            "The New Arab"
+            "IRNA"
           ],
           "camps": [
             "gulf",
@@ -756,12 +775,12 @@
             "iranian",
             "levant"
           ],
-          "members": 10,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Oil prices sink as US-Iran pause fuels fresh Hormuz hopes",
+            "source": "Arab News",
+            "title": "Iran says US not involved in talks with Oman over Hormuz strait",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -786,8 +805,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Mehr News",
-                "title": "Oil tanker violating Iran navigation route exploded in Hormuz",
+                "source": "Al Mayadeen",
+                "title": "The President of Brazil and the Chinese President stated that restrictions on na",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -835,43 +854,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Saudi Arabia intercepts, destroys drones targeting oil facilities from Iraq",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-27T12:44+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Saudi Arabia intercepts, destroys drones targeting oil facilities from Iraq",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Saudi Arabia attacked by drones fired from Iran-backed militia in Iraq",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Saudi crown prince, UK leader review ties as Houthi Red Sea attacks fuel tensions",
           "rank_key": {
             "outlets": 2,
@@ -942,33 +924,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Egypt welcomes Ireland’s ban on imports from Israeli settlements",
+          "headline": "Lithuania weighs additional national sanctions on Russian, Belarusian citizens",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-27T12:04+00:00"
+            "newest": "2026-07-27T13:48+00:00"
           },
           "outlet_names": [
-            "Egypt Independent",
-            "WAFA News"
+            "Anadolu Agency"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Egypt welcomes Ireland’s ban on imports from Israeli settlements",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -990,24 +960,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Putin says Western sanctions on Russia ‘record-breaking’ in scale, futility",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T12:50+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Human rights groups and Arab movements have condemned Cairo's crackdown on activist Salah Hammouri, ",
           "rank_key": {
             "outlets": 1,
@@ -1019,24 +971,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Four militants involved in the abduction of a soldier in Susya over the weekend have been arrested.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T12:41+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1116,24 +1050,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Oil prices fall around 6% on hopes for US-Iran diplomacy",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T11:17+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Why has the US halted its bombing of Iran?",
           "rank_key": {
             "outlets": 1,
@@ -1142,24 +1058,6 @@
           },
           "outlet_names": [
             "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "There were fatalities and injuries in a shooting incident in Seattle, and police have apprehended a ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T09:45+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
           ],
           "camps": [
             "panarab"
@@ -1187,7 +1085,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran stated there are currently no negotiations with Washington, but consultations with Oman are ong",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T09:35+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Egyptian, Tunisian FMs hail bilateral relations and regional coordination",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T09:34+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Egypt welcomes Ireland’s ban on imports from Israeli settlements",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T08:22+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1205,7 +1157,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-27T13:23:56.967081+00:00",
+    "last_success": "2026-07-27T13:54:51.059576+00:00",
     "last_failure": null
   },
   "ok": true
