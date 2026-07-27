@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T17:37:41.045666+00:00",
+  "updated": "2026-07-27T18:09:24.451275+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-27T17:35:50.512052+00:00"
+      "headlines_updated": "2026-07-27T18:07:10.573313+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 40,
+        "title_snippet": 31,
+        "dropped_no_english": 9,
         "title_native": 81,
         "in": 135,
-        "kept": 121
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -186,6 +187,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "UNESCO adds West Bank site, Lebanese castles to World Heritage",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
@@ -233,11 +239,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Inside CJP’s rise: How a viral ‘cockroach’ joke became India’s biggest Gen Z protest movement",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Gulf News",
           "title": "NEET row: India education minister Dharmendra Pradhan resigns amid CJP protests",
           "reason": "stale (older than 48h)"
         },
@@ -255,12 +256,57 @@
           "source": "TRT World",
           "title": "Israel signals possible attacks on Iran as Trump threatens Tehran and war spreads to Red Sea",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בעקבות תקלה במערכת השליטה האווירית האירופית: חשש לעיכובים משמעותיים בטיסות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "טראמפ לחדשות 12: \"מנהלים שיחות עמוקות עם איראן. אם לא יצליחו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "תיעוד תמים לכאורה חשף: ייתכן שפוטין מבין שהוא במשבר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "נעצרו ביוון לאחר שסייעו לישראלים שנקלעו לקטטה: \"שמעו צעקות בעברית ורצו לעזור\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "\"מחאת המקקים\" בהודו: המאמצים של מודי לרצות את המוני המפגינים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "אחרי חמש שנים ובמרחק כאלף קילומטרים: הכלב האבוד חזר לבעליו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "بالصور بالأرقام: الأغذية العالمي يحدد قيمة المساعدات المالية في غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "نتنياهو: سأبحث مع الرئيس ترامب عدة قضايا أبرزها إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "رئيس كولومبيا: سنفتح سفارتنا في القدس لإعادة العلاقات مع إسرائيل",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 78,
+      "in": 112,
+      "kept": 73,
       "dropped": [
         {
           "source": "Kan 11",
@@ -272,34 +318,6 @@
         {
           "source": "Kan 11",
           "title": "Naftali Bennett stated that if he joins the next government, he would declare Qatar a hostile state.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Ahead of his meeting with Prime Minister Netanyahu, Donald Trump stated that while there are some differences…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Eden Golan responded to her injury, stating that sometimes life changes plans in an instant.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Avi or Sasson is a personality featured on the mako news outlet.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Efrat Nomberg Yunger is a featured economics reporter for mako.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -335,6 +353,13 @@
         {
           "source": "Channel 13",
           "title": "A contestant performed a hit song during an audition, stating they went \"all in.\" This reflects a high-stakes…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Chad to join raft of withdrawals from International Criminal Court",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -396,13 +421,6 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "Jordan Times",
-          "title": "Aqaba Marine Reserve inscribed on UNESCO World Heritage List",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "L'Orient Today",
           "title": "Israel blows up Markaba water station, demolishes homes in Kfar Tibnit",
           "sec": 0,
@@ -452,13 +470,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Israa University is offering full scholarships and registration fee exemptions.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Macron Convenes Crisis Meeting as France, Spain Battle Major Wildfires",
           "sec": 0,
@@ -467,7 +478,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "US-Iran conflict: What UAE residents need to know this evening (July 27)",
+          "title": "Premium Laundry & Dry Cleaning Service in Al Raha, Abu Dhabi",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -503,6 +514,13 @@
         {
           "source": "Anadolu Agency",
           "title": "British premier vows to put Britain’s interests first in dealings with Trump",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Turkish Cypriot premier urges UN to recognize TRNC",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -567,17 +585,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 42,
       "sizes": [
         12,
-        11,
-        7,
+        10,
+        6,
         4,
-        4,
         2,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -619,11 +638,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israel continues raids, assaults, detentions in occupied West Bank; US pauses attacks on Iran; Netan",
+          "headline": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
           "rank_key": {
             "outlets": 7,
             "camps": 3,
-            "newest": "2026-07-27T11:55+00:00"
+            "newest": "2026-07-27T15:45+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
@@ -643,8 +662,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "L'Orient Today",
-            "title": "Israel continues raids, assaults, detentions in occupied West Bank; US pauses attacks on Iran; Netanyahu visits Trump: Everything you need to know this Monday",
+            "source": "The New Arab",
+            "title": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -659,6 +678,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "L'Orient Today",
+                "title": "Israel continues raids, assaults, detentions in occupied West Bank; US pauses at",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Al-Akhbar",
                 "title": "The Palestinian Ministry of Foreign Affairs is calling for immediate internation",
                 "rejected_by": "older than the story's newest wave"
@@ -667,22 +691,17 @@
                 "source": "WAFA News",
                 "title": "UAE condemns colonist attacks on West Bank villages, mosque arson in Tulkarm",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Abbas is calling for urgent international action to stop the occupation's aggres",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Will Tehran respond to Ukraine's attack on boat in Caspian Sea?",
+          "headline": "Iran Warns Ukraine of ‘Unforeseen’ Consequences After Ship Attack",
           "rank_key": {
             "outlets": 6,
             "camps": 4,
-            "newest": "2026-07-27T11:41+00:00"
+            "newest": "2026-07-27T10:50+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -698,12 +717,12 @@
             "iranian",
             "turkish"
           ],
-          "members": 11,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Will Tehran respond to Ukraine's attack on boat in Caspian Sea?",
+            "source": "Al Arabiya",
+            "title": "Iran Warns Ukraine of ‘Unforeseen’ Consequences After Ship Attack",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -739,24 +758,22 @@
           "selected_rank": 3,
           "headline": "US not involved in talks with Oman over Hormuz strait — Iran",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 4,
+            "camps": 3,
             "newest": "2026-07-27T13:08+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Arab News",
-            "Falastin al-Youm",
             "IRNA",
             "Mehr News"
           ],
           "camps": [
             "gulf",
             "panarab",
-            "iranian",
-            "levant"
+            "iranian"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -780,40 +797,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Trump warns of 'strong military action' if Iran talks fail",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-07-27T15:31+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Arab News",
-            "Daily Sabah",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Trump warns of 'strong military action' if Iran talks fail",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Why a new war in Yemen could be different for the Houthis",
           "rank_key": {
             "outlets": 4,
@@ -853,7 +836,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Iraqi militias sent a message to Damascus, warning that they would not remain silent if Syria acted ",
           "rank_key": {
             "outlets": 2,
@@ -892,105 +875,29 @@
         },
         {
           "selected_rank": null,
-          "headline": "Pregnant Palestinian loses foetus after Israeli checkpoint delay",
+          "headline": "Trump warns of 'strong military action' if Iran talks fail",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-27T13:50+00:00"
+            "newest": "2026-07-27T15:31+00:00"
           },
           "outlet_names": [
-            "The New Arab",
-            "WAFA News"
+            "Arab News",
+            "Daily Sabah"
           ],
           "camps": [
-            "panarab",
-            "levant"
+            "gulf",
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Pregnant Palestinian loses foetus after Israeli checkpoint delay",
+            "source": "Daily Sabah",
+            "title": "Trump warns of 'strong military action' if Iran talks fail",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Pregnant Palestinian woman loses fetus after Israeli forces delay ambulance at A",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli occupation forces intensify attacks across Gaza and West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-27T10:10+00:00"
-          },
-          "outlet_names": [
-            "Middle East Eye",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Israeli occupation forces intensify attacks across Gaza and West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "UN chief urges immediate removal of all Syria sanctions",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-26T16:48+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Jordan Times"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "UN chief urges immediate removal of all Syria sanctions",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -999,53 +906,72 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump says there is ‘good chance’ of deal with Iran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T17:21+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US delegation walks out of UN Security Council chamber in protest against France",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T17:16+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Syria reiterates support for Saudi Arabia following attempted attack on oil facilities",
           "rank_key": {
-            "outlets": 1,
+            "outlets": 2,
             "camps": 1,
             "newest": "2026-07-27T17:15+00:00"
           },
           "outlet_names": [
+            "Jordan Times",
             "SANA"
           ],
           "camps": [
             "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Syria reiterates support for Saudi Arabia following attempted attack on oil facilities",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "UN chief urges immediate removal of all Syria sanctions",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Presidency condemns drone attacks targeting Saudi Arabia",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T17:44+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "South Korean, Brazilian presidents discuss strengthening cooperation in critical minerals, supply ch",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T17:39+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1071,6 +997,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Jordan condemns attempted drone attacks on Saudi oil facilities",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T17:02+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "A senior White House official described the negotiations with Iran as being in a serious stage.",
           "rank_key": {
             "outlets": 1,
@@ -1089,6 +1033,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "UN chief 'deeply concerned' by Israeli plans to legalize West Bank outposts",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T16:36+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Türkiye to unveil ‘Terror-Free Türkiye’ legal framework before recess",
           "rank_key": {
             "outlets": 1,
@@ -1100,6 +1062,24 @@
           ],
           "camps": [
             "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "No airstrikes, but Iran’s pressure campaign rolls on",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T15:45+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1143,24 +1123,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "New footage emerged of an organized-looking attack by Israelis at a hotel in Crete.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T12:45+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran “will never allow the United States to determine timing of war,” foreign ministry says",
           "rank_key": {
             "outlets": 1,
@@ -1196,25 +1158,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Why has the US halted its bombing of Iran?",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T10:55+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1232,7 +1176,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-27T17:38:04.374934+00:00",
+    "last_success": "2026-07-27T18:09:39.162578+00:00",
     "last_failure": null
   },
   "ok": true
