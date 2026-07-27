@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T11:31:49.778582+00:00",
+  "updated": "2026-07-27T11:48:52.121528+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-27T11:30:10.912957+00:00"
+      "headlines_updated": "2026-07-27T11:47:28.779748+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 40,
+        "title_snippet": 38,
+        "dropped_no_english": 2,
         "title_native": 81,
         "in": 135,
-        "kept": 121
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -255,25 +256,28 @@
           "source": "TRT World",
           "title": "Israel signals possible attacks on Iran as Trump threatens Tehran and war spreads to Red Sea",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "מד\"א: הולך רגל בשנות ה-30 לחייו נפצע קשה מפגיעת משאית סמוך לצומת מגידו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "חדשות 13 | חדשות - כל החדשות והעדכונים מהארץ ומהעולם",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 80,
+      "in": 119,
+      "kept": 78,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Naftali Bennett declared that in the next government, he would announce Qatar as an enemy state.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The forecast indicates a slight increase in temperatures.",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -309,13 +313,6 @@
           "title": "Naftali Bennett stated that in the next government, he would declare Qatar an enemy state.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The forecast shows a slight temperature increase, and the sea is dangerous for swimming.",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -445,8 +442,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "17 missing after Vietnamese cargo ship sinks in South China Sea",
+          "source": "Arab News",
+          "title": "UK’s Burnham to welcome Zelensky in first foreign leader visit",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Syria president in Al Jazeera interview says his country seeks security deal with Israel",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -461,6 +465,13 @@
         {
           "source": "Gulf News",
           "title": "Office Secretary cum Admin Assistant (Female Candidates only)",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Sales Engineer / Sales Executive (Commercial Vehicle Spare Parts)",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -553,15 +564,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 42,
       "sizes": [
         16,
-        9,
         8,
-        5,
+        7,
+        4,
         4,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -669,26 +681,24 @@
           "selected_rank": 2,
           "headline": "Oil prices sink as US-Iran pause fuels fresh Hormuz hopes",
           "rank_key": {
-            "outlets": 7,
-            "camps": 4,
-            "newest": "2026-07-27T09:55+00:00"
+            "outlets": 6,
+            "camps": 3,
+            "newest": "2026-07-27T08:03+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Mayadeen",
-            "Arab News",
             "Falastin al-Youm",
             "IRNA",
             "Mehr News",
             "The New Arab"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 8,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -709,17 +719,17 @@
               },
               {
                 "source": "Al Mayadeen",
-                "title": "The Presidents of Brazil and China stated that restrictions on navigation in the",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
                 "title": "The Strait of Hormuz is a focal point in the confrontation between Washington an",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "IRNA",
                 "title": "Tehran, Muscat hold constructive talks on safe navigation in Strait of Hormuz: I",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Oil tanker explodes in Hormuz Strait after hitting mine",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -729,26 +739,24 @@
           "selected_rank": 3,
           "headline": "Iran warns Ukraine of retaliation after deadly Caspian Sea strike",
           "rank_key": {
-            "outlets": 7,
-            "camps": 4,
+            "outlets": 6,
+            "camps": 3,
             "newest": "2026-07-27T06:15+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Arab News",
             "IRNA",
             "Mehr News",
             "TRT World",
             "The New Arab"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "iranian",
             "turkish"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -789,24 +797,22 @@
           "selected_rank": 4,
           "headline": "Red Sea crossings slow after Houthi attack on Saudi Arabia",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 4,
+            "camps": 3,
             "newest": "2026-07-27T10:08+00:00"
           },
           "outlet_names": [
             "Al Manar",
             "Al Mayadeen",
             "Al-Masirah",
-            "Arab News",
             "Daily Sabah"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -828,11 +834,6 @@
               {
                 "source": "Al Manar",
                 "title": "The Yemeni Armed Forces announced the execution of two operations targeting sens",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Saudi crown prince, UK leader review ties as Houthi Red Sea attacks fuel tension",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -895,36 +896,37 @@
         },
         {
           "selected_rank": null,
-          "headline": "Ebola death toll tops 1,400 in DR Congo",
+          "headline": "Israeli occupation forces intensify attacks across Gaza and West Bank",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-27T10:48+00:00"
+            "newest": "2026-07-27T10:10+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
+            "Middle East Eye",
             "SANA"
           ],
           "camps": [
-            "levant",
-            "turkish"
+            "panarab",
+            "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Ebola death toll tops 1,400 in DR Congo",
+            "source": "SANA",
+            "title": "Israeli occupation forces intensify attacks across Gaza and West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
+              "names 2 of the story's dominant entities (gaza, westbank)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "SANA",
-                "title": "DR Congo Ebola cases surpass 3,000, death toll reaches 1,354",
+                "source": "Middle East Eye",
+                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1011,6 +1013,24 @@
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Ebola death toll tops 1,400 in DR Congo",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T10:48+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1161,25 +1181,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "A large fire broke out at factories in Sderot, leading to the evacuation of the entire industrial zo",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T07:49+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1197,7 +1199,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-27T11:32:04.889004+00:00",
+    "last_success": "2026-07-27T11:49:18.145636+00:00",
     "last_failure": null
   },
   "ok": true
