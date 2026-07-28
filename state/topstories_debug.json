@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T03:41:53.643634+00:00",
+  "updated": "2026-07-28T04:13:39.175625+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-28T03:40:01.170196+00:00"
+      "headlines_updated": "2026-07-28T04:11:51.106310+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 16,
-        "title_snippet": 40,
-        "title_native": 79,
+        "dropped_stale": 15,
+        "title_snippet": 33,
+        "dropped_no_english": 7,
+        "title_native": 80,
         "in": 135,
-        "kept": 119
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -258,19 +259,49 @@
         },
         {
           "source": "TRT World",
-          "title": "Israeli forces, illegal settlers kill four Palestinians in occupied West Bank",
+          "title": "Iran accuses Ukraine of deadly strike on commercial vessel in Caspian Sea",
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Iran accuses Ukraine of deadly strike on commercial vessel in Caspian Sea",
-          "reason": "stale (older than 48h)"
+          "source": "N12",
+          "title": "מפלגת המקקים - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "אלעד שלו - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "בית ציוני - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הקווים האדומים של ישראל: אלה הדרישות שיוצגו לטראמפ - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "לא נעים: ניסה לעלות לבמה בהופעה של הזמרת - וזה מה שקרה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "رسائل من قشم وطهران إلى واشنطن.. دعم شعبي للقوات المسلحة الإيرانية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "بحرية حرس الثورة: جاهزون للرد على أيّ عدوان.. وعبور 31 سفينة من المضيق بالساعات الـ24 الماضية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 82,
+      "in": 113,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
@@ -427,13 +458,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Ship traffic diverges at key chokepoints as Hormuz slows, Bab al-Mandab holds steady: What it means",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al-Masirah",
           "title": "Tehran stated that Washington violated a memorandum of understanding, leading to the suspension of…",
           "sec": 0,
@@ -443,6 +467,13 @@
         {
           "source": "Al-Masirah",
           "title": "The article discusses the 'Men of God' program, based on the booklet 'No Excuse for Anyone Before God'…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Chad to quit International Criminal Court",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -530,33 +561,32 @@
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "US begins Europe force review to reshape NATO role",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 54,
+      "clusters": 46,
       "sizes": [
-        7,
+        6,
         6,
         4,
         4,
+        4,
+        4,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -618,7 +648,7 @@
             "panarab",
             "iranian"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -682,6 +712,57 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Ukraine’s Zelenskyy set to meet Trump as Iran and Ukraine wars converge",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-07-28T03:16+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al-Akhbar",
+            "Kan 11",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Jazeera",
+            "title": "Ukraine’s Zelenskyy set to meet Trump as Iran and Ukraine wars converge",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Kan 11",
+                "title": "Following Ukrainian President Zelensky's visit to Washington, the American Senat",
+                "rejected_by": "stale anticipatory framing"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "'Is Zelensky trying to win Trump's favor before his Washington trip?': Ukraine j",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al-Akhbar",
+                "title": "Kyiv is described as a party to the aggression, with the wars in Ukraine and Ira",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Iran Warns Ukraine of ‘Unforeseen’ Consequences After Ship Attack",
           "rank_key": {
             "outlets": 4,
@@ -732,47 +813,52 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Will Trump's Israel condition derail the US-Saudi nuclear deal?",
+          "selected_rank": 5,
+          "headline": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
           "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-07-27T19:30+00:00"
+            "outlets": 4,
+            "camps": 2,
+            "newest": "2026-07-27T15:45+00:00"
           },
           "outlet_names": [
-            "Iran International",
-            "N12",
+            "Al-Akhbar",
+            "Falastin al-Youm",
+            "SANA",
             "The New Arab"
           ],
           "camps": [
-            "israeli",
             "panarab",
-            "iranian"
+            "levant"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "The New Arab",
-            "title": "Will Trump's Israel condition derail the US-Saudi nuclear deal?",
+            "title": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (nuclear, us_iran_deal)",
+              "names 2 of the story's dominant entities (gaza, westbank)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Iran International",
-                "title": "1 Potential US targets in Iran extend beyond Pickaxe Mountain - WSJ",
+                "source": "Al-Akhbar",
+                "title": "The Palestinian Ministry of Foreign Affairs calls for immediate international ac",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "Abbas called for urgent international action to halt the occupation's aggression",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "UN chief urges immediate removal of all Syria sanctions",
           "rank_key": {
             "outlets": 3,
@@ -884,76 +970,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Following Ukrainian President Zelensky's visit to Washington, the American Senate is expected to vot",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-28T02:25+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Following Ukrainian President Zelensky's visit to Washington, the American Senate is expected to vote on…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "'Is Zelensky trying to win Trump's favor before his Washington trip?': Ukraine j",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-27T15:45+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Pregnant Palestinian loses foetus after Israeli checkpoint delay",
           "rank_key": {
             "outlets": 2,
@@ -1021,54 +1037,47 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Palestinian Ministry of Foreign Affairs calls for immediate international action to stop settler",
+          "headline": "Naval blockade would mean widened US war: Khatam al-Anbia",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-07-26T18:41+00:00"
+            "newest": "2026-07-27T21:07+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Falastin al-Youm"
+            "IRNA",
+            "Mehr News"
           ],
           "camps": [
-            "levant"
+            "iranian"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al-Akhbar",
-            "title": "The Palestinian Ministry of Foreign Affairs calls for immediate international action to stop settler…",
-            "title_source": "snippet",
+            "source": "IRNA",
+            "title": "Naval blockade would mean widened US war: Khatam al-Anbia",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "Abbas called for urgent international action to halt the occupation's aggression",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
           "selected_rank": null,
-          "headline": "The Middle East is described as being on a knife's edge, with simultaneous escalation in Iran, Yemen",
+          "headline": "New round of Israel-Lebanon talks set August 4: US official",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-28T01:53+00:00"
+            "newest": "2026-07-28T02:10+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
+            "Arab News"
           ],
           "camps": [
-            "panarab"
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1081,24 +1090,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-07-28T01:40+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Johnson & Johnson reaches proposed $5.5B settlement to resolve talc lawsuits tied to ovarian cancer ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T00:42+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1148,42 +1139,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli fighter Gordon won after an intense battle, completing a 3/3 record alongside his brother.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T21:33+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Kyiv is described as a party to the aggression, with the wars in Ukraine and Iran intertwining.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Support for Iran war sinks as doubts over Trump grow: Poll",
           "rank_key": {
             "outlets": 1,
@@ -1195,24 +1150,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Naval blockade would mean widened US war: Khatam al-Anbia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T21:07+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1238,24 +1175,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The article discusses 'The Axis: From Martyrdom to Sovereignty.'",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T19:28+00:00"
-          },
-          "outlet_names": [
-            "Al-Masirah"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israeli election campaign billboards in Cyprus spark debate",
           "rank_key": {
             "outlets": 1,
@@ -1273,7 +1192,97 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Yemen is reinforcing the 'blockade for blockade' equation, with mutual escalation redrawing rules of",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T17:34+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Syria reiterates support for Saudi Arabia following attempted attack on oil facilities",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T17:15+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "No airstrikes, but Iran’s pressure campaign rolls on",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T15:45+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran rejected US proposal in talks due to excessive demands",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T15:25+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saraya Al-Quds mourned a group of its fighters martyred during the Al-Aqsa Flood battle.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T14:35+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1291,7 +1300,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28T03:42:08.132828+00:00",
+    "last_success": "2026-07-28T04:13:53.738216+00:00",
     "last_failure": null
   },
   "ok": true
