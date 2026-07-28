@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T08:43:22.743668+00:00",
+  "updated": "2026-07-28T09:15:04.860479+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-28T08:41:46.407671+00:00"
+      "headlines_updated": "2026-07-28T09:13:06.965268+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 40,
+        "title_snippet": 36,
+        "dropped_no_english": 4,
         "title_native": 82,
         "in": 135,
-        "kept": 122
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -250,12 +251,32 @@
           "source": "TRT World",
           "title": "Iran accuses Ukraine of deadly strike on commercial vessel in Caspian Sea",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "משרד הבריאות התריע: יש זינוק מטריד במקרי הכלבת",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الاحتلال يغلق مقر إذاعة الهدى للقرآن الكريم ويقتحم مدناً في الضفة الغربية المحتلة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "ترامب يجتمع مع نتنياهو اليوم في البيت الأبيض ..إيران ولبنان على رأس أجندة المباحثات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "المحور: من الشهادة إلى السيادة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 73,
+      "in": 118,
+      "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
@@ -281,13 +302,6 @@
         {
           "source": "Kan 11",
           "title": "A prison service officer was arrested on suspicion of aiding in the obstruction of an investigation into the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A representative for the Knesset's legal advisor stated that a law concerning arrests must be canceled.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -363,6 +377,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "The New Arab",
+          "title": "Tunisia's Sidi Bou Said inscribed on UNESCO World Heritage list",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "Tensions are high across multiple fronts involving Tehran, Kyiv, and Washington, with behind-the-scenes…",
           "sec": 0,
@@ -384,17 +405,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "This is the midnight news bulletin.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
-          "title": "Pro-Palestinians gather outside White House to protest Netanyahu’s visit, US support for Israel",
+          "title": "Alamut’s World Heritage inscription to open new chapter for tourism in northwest Iran",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -434,24 +448,24 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "More than 63,000 people in central Spain have evacuated from path of fires",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "Ryan Gosling enters the Marvel universe as Ghost Rider",
+          "title": "Why this time around, Netanyahu’s meeting with Trump might not go to script",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
-          "title": "Egypt makes extensive changes in its security leadership",
+          "title": "A weeks-old Gen-Z protest group managed to get India’s Modi to blink. What’s next?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "More than 63,000 people in central Spain have evacuated from path of fires",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al-Akhbar",
@@ -489,13 +503,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The President of Colombia announced the opening of their embassy in Jerusalem to restore relations with…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Macron Convenes Crisis Meeting as France, Spain Battle Major Wildfires",
           "sec": 0,
@@ -507,6 +514,13 @@
           "title": "Netanyahu arrives in the US, says Iran is top agenda in meeting with Trump",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Kerala Chef [3 nos.]",
+          "sec": 0,
+          "off": 3,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -604,22 +618,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 42,
       "sizes": [
-        9,
-        7,
+        10,
+        6,
         5,
         4,
+        3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -661,6 +671,65 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Ukraine’s Zelenskyy set to meet Trump as Iran and Ukraine wars converge",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-07-28T08:53+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Arab News",
+            "Egypt Independent",
+            "Mehr News",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 10,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Jazeera",
+            "title": "Ukraine’s Zelenskyy set to meet Trump as Iran and Ukraine wars converge",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Iran warns of ‘unforeseen’ consequences after Ukraine attack on Caspian Sea ship",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Iran Warns Ukraine of ‘Unforeseen’ Consequences After Ship Attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Iran urges regional cooperation to restore stability in Strait of Hormuz",
           "rank_key": {
             "outlets": 5,
@@ -718,69 +787,12 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Ukraine’s Zelenskyy set to meet Trump as Iran and Ukraine wars converge",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-07-28T03:16+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Arab News",
-            "Mehr News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian"
-          ],
-          "members": 9,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "Ukraine’s Zelenskyy set to meet Trump as Iran and Ukraine wars converge",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Iran warns of ‘unforeseen’ consequences after Ukraine attack on Caspian Sea ship",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Iran Warns Ukraine of ‘Unforeseen’ Consequences After Ship Attack",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "The New Arab",
-                "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
           "headline": "Israeli army raids Quran radio station in occupied West Bank, shuts it down",
           "rank_key": {
             "outlets": 4,
             "camps": 3,
-            "newest": "2026-07-28T08:35+00:00"
+            "newest": "2026-07-28T08:46+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
@@ -793,7 +805,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -816,6 +828,11 @@
                 "source": "WAFA News",
                 "title": "Israeli forces seize two Palestinian homes, turn them into military posts in Jen",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces detain Palestinian father and two sons after colonist attack sout",
+                "rejected_by": "loaded/partisan wording"
               },
               {
                 "source": "SANA",
@@ -978,6 +995,48 @@
         },
         {
           "selected_rank": null,
+          "headline": "The Yemeni operation's dimensions and Saudi accusations against the Iraqi resistance are analyzed, s",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-07-27T21:11+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al-Masirah"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al-Masirah",
+            "title": "The Yemeni operation's dimensions and Saudi accusations against the Iraqi resistance are analyzed, suggesting…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Why a new war in Yemen could be different for the Houthis",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al-Masirah",
+                "title": "Military and strategic experts believe Yemen is undermining Saudi Arabia's plans",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Naval blockade would mean widened US war: Khatam al-Anbia",
           "rank_key": {
             "outlets": 2,
@@ -1039,14 +1098,50 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump says he froze attacks on Iran at request of mediators",
+          "headline": "Petroleum Minister, China’s CNCEC review strategic industrial projects in Egypt",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-28T07:56+00:00"
+            "newest": "2026-07-28T09:12+00:00"
           },
           "outlet_names": [
             "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Palestinian Ambassador delivers President Abbas’ message to Chinese Leadership, urges action to halt",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T09:00+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces issue stop-work order for recreational facility west of Bethlehem",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T08:50+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
           ],
           "camps": [
             "levant"
@@ -1068,24 +1163,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "UN documents over 1,330 colonist attacks in West Bank since start of 2026",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T07:35+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1129,24 +1206,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli ex-generals urge Trump to push Netanyahu on ‘settler terror’",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T04:43+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israel and Lebanon to hold US-mediated talks next week in Rome",
           "rank_key": {
             "outlets": 1,
@@ -1173,42 +1232,6 @@
           },
           "outlet_names": [
             "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US diplomats walk out as France addresses UN Security Council",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T23:07+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Revolutionary Guard Navy stated they are ready to respond to any aggression and noted the passag",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-27T21:49+00:00"
-          },
-          "outlet_names": [
-            "Al-Masirah"
           ],
           "camps": [
             "panarab"
@@ -1254,7 +1277,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Al Akhbar reports from Bandar Abbas on life under the shadow of war.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Support for Iran war sinks as doubts over Trump grow: Poll",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T21:28+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1272,7 +1331,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28T08:43:42.702144+00:00",
+    "last_success": "2026-07-28T09:15:23.222613+00:00",
     "last_failure": null
   },
   "ok": true
