@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T21:11:30.772048+00:00",
+  "updated": "2026-07-28T21:22:50.101446+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-28T21:09:45.563684+00:00"
+      "headlines_updated": "2026-07-28T21:20:33.960474+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 40,
+        "title_snippet": 37,
         "title_native": 85,
+        "dropped_no_english": 3,
         "in": 135,
-        "kept": 125
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -235,12 +236,27 @@
           "source": "TRT World",
           "title": "US condemns violence in occupied West Bank after deadly illegal Israeli settler attacks",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة السادسة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مركز فلسطيني يطالب بالإفراج عن الطبيب حسام أبو صفية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "انتصار إيران الإسلام ومحور الجهاد والمقاومة.. تحولات استراتيجية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 125,
-      "kept": 74,
+      "in": 122,
+      "kept": 73,
       "dropped": [
         {
           "source": "Kan 11",
@@ -320,6 +336,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Jazeera",
+          "title": "People feared dead in Japan after magnitude 7.1 quake causes blast at mall",
+          "sec": 2,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
           "source": "Middle East Eye",
           "title": "Anger rises as ICC member states accused of facilitating Netanyahu’s flight to Washington",
           "sec": 0,
@@ -350,13 +373,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The meeting between Trump and Netanyahu is being analyzed for its potential impact on the dynamics between…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "A daily news briefing for 4 PM.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -516,22 +532,8 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "Gulf News",
-          "title": "Dubai mourns beloved dance teacher who inspired hundreds before tragic death in Kerala",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al-Masirah",
           "title": "Tehran stated that Washington violated a memorandum of understanding, leading to the suspension of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Masirah",
-          "title": "The 'Men of God' program is presented, focusing on a lesson titled 'No Excuse Before God.'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -603,16 +605,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 42,
       "sizes": [
-        9,
         8,
-        4,
+        8,
+        8,
         3,
         3,
         3,
-        2,
-        2,
         2,
         2,
         2,
@@ -658,6 +658,66 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Saudi air defenses intercept drones targeting Eastern Region oil facilities",
+          "rank_key": {
+            "outlets": 7,
+            "camps": 5,
+            "newest": "2026-07-28T20:24+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Gulf News",
+            "Kan 11",
+            "SANA",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "israeli",
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 8,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Saudi air defenses intercept drones targeting Eastern Region oil facilities",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Baghdad orders probe into drone attacks on Saudi Arabia launched from Iraqi terr",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Presidency condemns drone attacks targeting Saudi Arabia",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Pakistan condemns drone attacks on Saudi Arabia, urges regional de-escalation",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Saudi Arabia downs drones targeting oil facilities from Iraq",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Iran proposes temporary Hormuz plan giving itself greater control over transit lines",
           "rank_key": {
             "outlets": 7,
@@ -679,7 +739,7 @@
             "iranian",
             "levant"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -699,11 +759,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Iran says Strait of Hormuz talks with Oman constructive, unrelated to US",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Mehr News",
                 "title": "Iran, Oman to decide on fee for passage through Hormuz Strait",
                 "rejected_by": "older than the story's newest wave"
@@ -712,17 +767,22 @@
                 "source": "Egypt Independent",
                 "title": "Could a proposal for voluntary fees in the Strait of Hormuz break the deadlock i",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Egypt Independent",
+                "title": "Iran’s top diplomat calls counterparts in Oman and Saudi Arabia",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Ukraine says Iran ship strike unintentional, seeks to avoid escalation",
           "rank_key": {
             "outlets": 6,
             "camps": 4,
-            "newest": "2026-07-28T20:14+00:00"
+            "newest": "2026-07-28T21:15+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -765,56 +825,6 @@
               {
                 "source": "Arab News",
                 "title": "How Ukraine’s attack on Iranian ship in Caspian Sea blurred the lines between tw",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "The Saudi Ministry of Defense announced the destruction of drones launched from Iraqi territory aime",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-07-28T19:46+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Kan 11",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The Saudi Ministry of Defense announced the destruction of drones launched from Iraqi territory aimed at oil…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Baghdad orders probe into drone attacks on Saudi Arabia launched from Iraqi terr",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Presidency condemns drone attacks targeting Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Pakistan condemns drone attacks on Saudi Arabia, urges regional de-escalation",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -901,38 +911,6 @@
                 "rejected_by": "stale anticipatory framing"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Zelenskyy visits Trump at White House before Graham’s funeral, seeking cooperation with US",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-28T18:16+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Zelenskyy visits Trump at White House before Graham’s funeral, seeking cooperation with US",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (funeral)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1043,42 +1021,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Saudi Arabia says it intercepted drones targeting oil facilities, blames Iran-backed militias in Ira",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-28T19:52+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Saudi Arabia says it intercepted drones targeting oil facilities, blames Iran-backed militias in Iraq",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Saudi Arabia downs drones targeting oil facilities from Iraq",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Kats announced the destruction of 70% of Gaza and directed the expansion of military operations in t",
           "rank_key": {
             "outlets": 2,
@@ -1113,6 +1055,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Netanyahu hails Trump meeting, cites ‘shared goal’ on Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T21:15+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1163,6 +1123,24 @@
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump, Netanyahu, and Zelenskyy were present at the funeral of Graham, with Trump described as a 'gr",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T18:16+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1295,42 +1273,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Israeli settler arson attacks continue in West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T13:12+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli settlers set ablaze a mosque in northern occupied West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T13:12+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1349,7 +1291,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28T21:11:43.657494+00:00",
+    "last_success": "2026-07-28T21:23:13.489973+00:00",
     "last_failure": null
   },
   "ok": true
