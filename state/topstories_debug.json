@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T16:19:18.112395+00:00",
+  "updated": "2026-07-28T16:50:59.948162+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-28T16:16:40.621051+00:00"
+      "headlines_updated": "2026-07-28T16:48:50.434466+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 40,
+        "title_snippet": 35,
+        "dropped_no_english": 5,
         "title_native": 81,
         "in": 135,
-        "kept": 121
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -186,6 +187,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Palestinians warn of West Bank pogroms as settler attacks surge",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "Tunisia's Sidi Bou Said inscribed on UNESCO World Heritage list",
@@ -203,12 +209,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Palestinians bury four killed in West Bank clash with Israeli settlers",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "WAFA News",
-          "title": "Israeli colonists establish third new settlement outpost in one day in West Bank",
+          "title": "Jordan condemns ‘settler terrorism’ against Palestinians in West Bank",
           "reason": "stale (older than 48h)"
         },
         {
@@ -243,23 +244,48 @@
         },
         {
           "source": "TRT World",
-          "title": "Iran accuses Ukraine of deadly strike on commercial vessel in Caspian Sea",
+          "title": "US condemns violence in occupied West Bank after deadly illegal Israeli settler attacks",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "US condemns violence in occupied West Bank after deadly illegal Israeli settler attacks",
+          "title": "Iran accuses Ukraine of deadly strike on commercial vessel in Caspian Sea",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
           "title": "Gulf states back Oman's plan for voluntary Hormuz fees",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "זיני בדיון החסוי בכנסת: \"גם רוסיה וסין ינסו להשפיע על הבחירות\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הדו\"ח היומי | התוכנית המלאה 28.07.2026 לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "חדשות 13 | חדשות - כל החדשות והעדכונים מהארץ ומהעולם",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "احتياطيات الغاز الأوروبية تصل إلى مستوى منخفض تاريخياً في ظل الحرب على إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "انتصار إيران الإسلام ومحور الجهاد والمقاومة.. تحولات استراتيجية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
+      "in": 116,
       "kept": 69,
       "dropped": [
         {
@@ -268,13 +294,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The meeting between Trump and Netanyahu took place at the White House amid rising tensions with Iran.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
@@ -313,24 +332,10 @@
         },
         {
           "source": "Channel 13",
-          "title": "Netanyahu arrived in Washington for a meeting with Trump, with Iran being the central topic of discussion.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "Zini warned that Iran, Russia, and China are attempting to influence elections.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A mall collapsed and a bridge was destroyed due to an earthquake in Japan, raising fears of dozens of…",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al Jazeera",
@@ -369,13 +374,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Trump Threatens to ‘Take Out’ Iran’s Pickaxe Mountain",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Netanyahu says Iran is top agenda in meeting with Trump",
           "sec": 0,
           "off": 0,
@@ -384,13 +382,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The meeting between Trump and Netanyahu could potentially reshape the political landscape concerning Iran…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The noon news bulletin was broadcast.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -411,14 +402,7 @@
         },
         {
           "source": "IRNA",
-          "title": "Alamut’s World Heritage inscription to open new chapter for tourism in northwest Iran",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "Iran to defend against any threat: First VP",
+          "title": "Pro-Palestinians gather outside White House to protest Netanyahu’s visit, US support for Israel",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -426,6 +410,13 @@
         {
           "source": "Mehr News",
           "title": "Iranian Simorgh airplane nears operational certification",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Mehr News",
+          "title": "Iran to defend against any threat: First VP",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -550,8 +541,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Masirah",
-          "title": "The article discusses the 'Men of God' program, specifically 'Lesson Four: No Excuse Before God'.",
+          "source": "Anadolu Agency",
+          "title": "Pro-Palestinian protesters rally at White House during Netanyahu’s visit",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -630,10 +621,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 37,
       "sizes": [
         10,
-        4,
+        6,
+        5,
         4,
         3,
         3,
@@ -644,13 +636,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -684,11 +669,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Oman presented regional mechanism for Hormuz to Iran",
+          "headline": "Gulf foreign ministers discuss regional security, Strait of Hormuz navigation",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 8,
             "camps": 5,
-            "newest": "2026-07-28T14:28+00:00"
+            "newest": "2026-07-28T16:39+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -698,8 +683,7 @@
             "Egypt Independent",
             "IRNA",
             "L'Orient Today",
-            "SANA",
-            "The New Arab"
+            "SANA"
           ],
           "camps": [
             "gulf",
@@ -712,8 +696,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Oman presented regional mechanism for Hormuz to Iran",
+            "source": "Anadolu Agency",
+            "title": "Gulf foreign ministers discuss regional security, Strait of Hormuz navigation",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -728,6 +712,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Al Arabiya",
+                "title": "Oman proposes regional mechanism with voluntary fees to manage Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "IRNA",
                 "title": "Iran says Strait of Hormuz talks with Oman constructive, unrelated to US",
                 "rejected_by": "older than the story's newest wave"
@@ -736,22 +725,64 @@
                 "source": "L'Orient Today",
                 "title": "LIVE Netanyahu arrives at White House for Trump meeting; Iran warns recipients o",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "US not involved in talks with Oman over Hormuz strait — Iran",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
+          "headline": "Egypt’s 242nd aid convoy heads to Gaza",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 2,
+            "newest": "2026-07-28T12:20+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "Egypt Independent",
+            "Falastin al-Youm",
+            "Middle East Eye",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Egypt’s 242nd aid convoy heads to Gaza",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Israeli settlers set ablaze a mosque in northern occupied West Bank",
           "rank_key": {
             "outlets": 4,
             "camps": 3,
-            "newest": "2026-07-28T14:42+00:00"
+            "newest": "2026-07-28T14:29+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
@@ -764,7 +795,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -784,6 +815,16 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "WAFA News",
+                "title": "Israeli forces demolish two Palestinian homes south of Hebron",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces demolish Palestinian house west of Ramallah",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Anadolu Agency",
                 "title": "Israeli occupiers establish new settlement outpost in northern West Bank",
                 "rejected_by": "loaded/partisan wording"
@@ -792,7 +833,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Pakistan condemns drone attacks on Saudi Arabia, urges regional de-escalation",
           "rank_key": {
             "outlets": 4,
@@ -837,81 +878,38 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Israeli shelling, gunfire injure 17 Palestinians in Gaza despite ceasefire",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-28T15:09+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli shelling, gunfire injure 17 Palestinians in Gaza despite ceasefire",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Two Palestinians injured by Israeli gunfire in central Gaza",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 5,
-          "headline": "Iran, Japan FMs discuss bilateral ties, latest regional developments",
+          "headline": "Zelenskyy meets Trump at White House in closed-door meeting",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-28T14:21+00:00"
+            "newest": "2026-07-28T15:30+00:00"
           },
           "outlet_names": [
-            "IRNA",
-            "Jordan Times"
+            "Al Jazeera",
+            "Anadolu Agency"
           ],
           "camps": [
-            "iranian",
-            "levant"
+            "panarab",
+            "turkish"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "IRNA",
-            "title": "Iran, Japan FMs discuss bilateral ties, latest regional developments",
+            "source": "Anadolu Agency",
+            "title": "Zelenskyy meets Trump at White House in closed-door meeting",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "IRNA",
-                "title": "Iran, Oman, Saudi FMs discuss regional developments, stress diplomatic efforts f",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Foreign minister, UN chief discuss efforts to restore regional security, stabili",
-                "rejected_by": "older than the story's newest wave"
+                "source": "Al Jazeera",
+                "title": "Trump flouts political risk to host Netanyahu’s seventh White House visit",
+                "rejected_by": "stale anticipatory framing"
               }
             ]
           }
@@ -987,6 +985,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "Foreign minister, UN chief discuss efforts to restore regional security, stability",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-28T06:51+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Jordan Times"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Foreign minister, UN chief discuss efforts to restore regional security, stability",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "How Ukraine’s attack on Iranian ship in Caspian Sea blurred the lines between two wars",
           "rank_key": {
             "outlets": 2,
@@ -1023,44 +1052,6 @@
               {
                 "source": "Arab News",
                 "title": "Iran warns of ‘unforeseen’ consequences after Ukraine attack on Caspian Sea ship",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The article discusses the dimensions of the Yemeni operation and Saudi accusations against the Iraqi",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-27T21:11+00:00"
-          },
-          "outlet_names": [
-            "Al-Masirah",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Masirah",
-            "title": "The article discusses the dimensions of the Yemeni operation and Saudi accusations against the Iraqi…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "Israel claims Hezbollah drone spying; Akkar fire threatens homes; Houthis hit Sa",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1135,14 +1126,45 @@
         },
         {
           "selected_rank": null,
-          "headline": "Zelenskyy meets Trump at White House in closed-door meeting",
+          "headline": "Israel claims Hezbollah drone spying; Akkar fire threatens homes; Houthis hit Saudi oil infrastructu",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": null
+          },
+          "outlet_names": [
+            "Al Manar",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "L'Orient Today",
+            "title": "Israel claims Hezbollah drone spying; Akkar fire threatens homes; Houthis hit Saudi oil infrastructure: Everything you need to know this Tuesday",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (hezbollah, yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump, Zelenskyy hold talks on strengthening Ukraine's defense industry",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-28T15:30+00:00"
+            "newest": "2026-07-28T16:18+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1171,17 +1193,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump claims 'good' talks but reiterates threat to hit Iran",
+          "headline": "Zelenskyy visits Trump at White House before Graham’s funeral, seeking cooperation with US",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-28T13:50+00:00"
+            "newest": "2026-07-28T13:36+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "Al Arabiya"
           ],
           "camps": [
-            "turkish"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1225,24 +1247,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Kats announced the destruction of 70% of Gaza and ordered the expansion of military operations in th",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T12:20+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Egypt strongly condemns Israeli raid on UNRWA Qalandia training center",
           "rank_key": {
             "outlets": 1,
@@ -1279,24 +1283,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Hamas movement leader explained what the delegation will discuss in Cairo.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T10:47+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The article questions if artificial intelligence can shorten the wait for breast cancer diagnosis.",
           "rank_key": {
             "outlets": 1,
@@ -1315,14 +1301,50 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump flouts political risk to host Netanyahu’s seventh White House visit",
+          "headline": "Cells belonging to Ukraine carried out bombings in Iraq",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-28T10:12+00:00"
+            "newest": "2026-07-28T05:03+00:00"
           },
           "outlet_names": [
-            "Al Jazeera"
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US begins Europe force review to reshape NATO role",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T01:39+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The Revolutionary Guards Navy stated they are ready to respond to any aggression and reported that 3",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-27T21:49+00:00"
+          },
+          "outlet_names": [
+            "Al-Masirah"
           ],
           "camps": [
             "panarab"
@@ -1333,14 +1355,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Egypt’s 242nd aid convoy heads to Gaza",
+          "headline": "The war in Ukraine and the Iran conflict are interconnected, with Kyiv implicated.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-28T09:29+00:00"
+            "newest": "2026-07-27T21:30+00:00"
           },
           "outlet_names": [
-            "Egypt Independent"
+            "Al-Akhbar"
           ],
           "camps": [
             "levant"
@@ -1350,7 +1372,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1368,7 +1390,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28T16:19:32.724666+00:00",
+    "last_success": "2026-07-28T16:51:24.344156+00:00",
     "last_failure": null
   },
   "ok": true
