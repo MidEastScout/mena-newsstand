@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T21:25:25.898101+00:00",
+  "updated": "2026-07-29T21:49:52.071374+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,21 +167,20 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-29T21:23:27.087403+00:00"
+      "headlines_updated": "2026-07-29T21:47:57.012339+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 29,
-        "dropped_no_english": 9,
-        "title_native": 86,
+        "dropped_stale": 13,
+        "title_snippet": 37,
+        "title_native": 85,
         "in": 135,
-        "kept": 115
+        "kept": 122
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 37,
         "translated": 0,
         "cached": 0,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -200,6 +199,11 @@
         {
           "source": "Jordan Times",
           "title": "Jordan condemns attempted drone attacks on Saudi oil facilities",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Aqaba Marine Reserve inscribed on UNESCO World Heritage List",
           "reason": "stale (older than 48h)"
         },
         {
@@ -229,6 +233,11 @@
         },
         {
           "source": "Al-Masirah",
+          "title": "بحرية حرس الثورة: جاهزون للرد على أيّ عدوان.. وعبور 31 سفينة من المضيق بالساعات الـ24 الماضية",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Masirah",
           "title": "أبعاد العملية اليمنية والاتهامات السعودية للمقاومة العراقية.. ردع متقدم وهروب مكشوف الأهداف",
           "reason": "stale (older than 48h)"
         },
@@ -241,68 +250,93 @@
           "source": "TRT World",
           "title": "What to expect from Netanyahu's first meeting with Trump in Washington since US-Israeli war on Iran",
           "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Kan 11",
-          "title": "מוני מושונוב הוטרד על ידי פעיל ימין בתל אביב: \"למה אתם מסרבים למות?\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "פעיל הימין הטריד את מוני מושונוב: \"למה אתם מסרבים למות?\" - mako",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "אחרי הגירושים - מאי חטואל מודה: \"זה התחיל משיח על ילדים\" - mako",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "ספיידרמן: יום חדש - mako",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "הפריימריז - mako",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "בית המשפט קבע: גיא פלג פרסם אמת. ניצחון לחדשות 12 בתביעת הדיבה שהגיש שמחה רוטמן - mako",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "פאוור קאפל, עונה 1, פרק 10: מי חוזר לסגור חשבון? לצפייה ישירה -",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "אודיה בווידוי כואב מהילדות: \"אני לא אוהבת לדבר על זה, זה גורם לי לבכות\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "عندما «يشتغل الوضوح» مع الصحناوي",
-          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 67,
+      "in": 122,
+      "kept": 61,
       "dropped": [
         {
-          "source": "Channel 13",
-          "title": "This item is a general news summary from Channel 13.",
+          "source": "Kan 11",
+          "title": "Muni Mushenov was reportedly harassed by a right-wing activist in Tel Aviv.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Kan 11",
+          "title": "In an interview with ABC, Netanyahu expressed skepticism about Iran's statements, citing their history of…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "Right-wing activist Eliran Siman Tov reportedly harassed Muni Mushenov in Tel Aviv, questioning his longevity.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "Following her divorce, May Hatuil revealed that her marital issues began with disputes over children.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "This news item pertains to \"Spider-Man: Day One.\" It likely contains updates, images, and videos related to…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "This news item refers to \"The Primaries.\" It suggests a collection of news, updates, photos, and videos…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "The court ruled that Guy Peleg reported the truth, resulting in a victory for Channel 12 in a defamation…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Gal Gadot and Rotem Sela are featured in airplane safety videos.",
+          "title": "This refers to \"Power Couple,\" season 1, episode 10, focusing on a character's return to settle a score.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "This is a general news update from Channel 13, providing various news and updates from Israel and around the…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "Odia shared a painful childhood memory, admitting that she dislikes discussing it because it makes her cry.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "Gal Gadot and Rotem Sela are featured in new airplane safety videos.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Pezeshkian urges Iranians to ‘stand firm’ against ‘the enemy’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -325,7 +359,7 @@
           "source": "Middle East Eye",
           "title": "‘Let Palestinians live’: Egypt coach wins global praise after emotional speech",
           "sec": 0,
-          "off": 2,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -365,28 +399,28 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Washington is funding a private project for ammonia production in Western Sahara for the first time.",
+          "title": "Washington is funding a private ammonia production project in the Western Sahara for the first time.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "This is a news bulletin from 12:00 PM.",
+          "title": "This is a general news bulletin titled \"The 12:30 Bulletin.\" It likely contains top news stories and updates.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "This is a 10:00 AM news bulletin.",
+          "title": "This is a general news bulletin titled \"The 10 AM Bulletin.\" It likely contains morning news updates and key…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "The residents of Haris al-Janoubia are demonstrating resilience against difficulties, reaffirming their…",
+          "title": "Haris Al-Janubia residents are demonstrating resilience despite difficulties, emphasizing their steadfastness…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -399,31 +433,31 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Mehr News",
-          "title": "No movement conducted in Hormuz without Iran’s permission",
+          "source": "IRNA",
+          "title": "Iran, Iraq agree to enhance border security to facilitate Arbaeen pilgrimage",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Iran International",
-          "title": "4 New scaffold in Isfahan fuels fears of imminent protester executions",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Iran International",
-          "title": "5 Iranian protesters’ executions stir grief and harden resolve across Iran",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "India mulls tougher punishment for exam paper leaks after protests",
+          "title": "3 Iran executes two protesters amid heavy security in Isfahan",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Iran International",
+          "title": "4 Iranian protesters’ executions stir grief and harden resolve across Iran",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Iran International",
+          "title": "TEHRAN INSIDER I stayed awake for them",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -456,7 +490,21 @@
         },
         {
           "source": "L'Orient Today",
+          "title": "UNITED STATES Sehnaoui and Ortagus host dinner in memory of Lindsey Graham, attended by Netanyahu",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
           "title": "Economic crisis After his victory against Fransabank, a former depositor finally cashes his check Alexander HADDAD",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
+          "title": "DIESEL Lebanon generator rates fall again as operators protest outside Energy Ministry L'Orient Today staff",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -477,35 +525,28 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "The loading of oil at Saudi Arabia's Yanbu port has decreased by 40%.",
+          "title": "Oil loadings at Saudi Arabia's Yanbu port have decreased by 40%.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "This refers to a conference titled 'Protecting Lebanon'.",
+          "title": "This refers to a conference titled 'Protecting Lebanon.' The event likely addresses issues concerning the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Israeli colonists cut down around 20 citrus trees belonging to Palestinian farmer in Salfit",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Trump stated, 'We will hit Iran hard.'",
+          "source": "Al-Akhbar",
+          "title": "This article discusses the clarity surrounding Antoun Sehnaoui.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "This is a question about whether to leave a tea bag steeping or to press it.",
+          "title": "This is a lighthearted query about the proper method for preparing tea: whether to leave the tea bag steeping…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -513,13 +554,6 @@
         {
           "source": "SANA",
           "title": "Syria, South Korea sign education grant, media cooperation agreements",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Latest MENA News & Top Stories",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -540,7 +574,14 @@
         },
         {
           "source": "Al-Masirah",
-          "title": "The capital and governorates are making official and popular preparations to receive the anniversary of the…",
+          "title": "Preparations are underway in the capital and governorates to receive the birthday of the Prophet Muhammad.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "This article discusses the victory of the Islamic Revolution in Iran and the 'Axis of Resistance.' It…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -556,7 +597,7 @@
           "source": "Anadolu Agency",
           "title": "Meta’s Reality Labs loses $4.62B as revenue outlook falls short",
           "sec": 0,
-          "off": 2,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -564,6 +605,13 @@
           "title": "US stocks tumble as Fed decision, inflation fears rattle markets",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Netanyahu, Lindsey Graham coordinated privately to undermine international court: Report",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -576,6 +624,13 @@
         {
           "source": "Daily Sabah",
           "title": "Prince Harry faces legal costs after losing Daily Mail privacy case",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "WAICO confronts Pax Silica: Why AI states won't choose sides",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -633,8 +688,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 39,
       "sizes": [
+        5,
         4,
         4,
         3,
@@ -646,19 +702,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -711,7 +755,7 @@
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -730,6 +774,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Mehr News",
+                "title": "No movement conducted in Hormuz without Iran’s permission",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Iran International",
                 "title": "2 Iran rejects Oman’s 50-50 Hormuz shipping plan, proposes new route",
                 "rejected_by": "older than the story's newest wave"
@@ -744,6 +793,97 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Trump says US to hit Iran ‘hard’ after attack on bases in Jordan",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-07-29T13:36+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Channel 13",
+            "TRT World"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Trump says US to hit Iran ‘hard’ after attack on bases in Jordan",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Iran attacks US forces in Jordan as Trump meets Netanyahu",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "US will hit Iran 'hard' after attack on bases in Jordan: Trump",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Israeli settlers cut down citrus trees in West Bank, residents say",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-07-29T15:26+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Israeli settlers cut down citrus trees in West Bank, residents say",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Israeli settlers set ablaze a mosque in northern occupied West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli colonists cut down around 20 citrus trees belonging to Palestinian farme",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Egypt denies drone attack after fire at Damietta Port",
           "rank_key": {
             "outlets": 3,
@@ -775,51 +915,7 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "Trump says US to hit Iran ‘hard’ after attack on bases in Jordan",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-29T13:36+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Trump says US to hit Iran ‘hard’ after attack on bases in Jordan",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (jordan)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Iran attacks US forces in Jordan as Trump meets Netanyahu",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "US will hit Iran 'hard' after attack on bases in Jordan: Trump",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Two Palestinians killed in Israeli strikes in Gaza, Khan Younes",
           "rank_key": {
             "outlets": 3,
@@ -850,24 +946,24 @@
             "passed_over": [
               {
                 "source": "Al-Akhbar",
-                "title": "The article discusses Hamas developing a new formula for the 'arms clause' under",
+                "title": "Hamas is reportedly developing a new formula for the 'weapons clause,' potential",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al-Akhbar",
-                "title": "A new round of negotiations is taking place in Cairo, with Egyptian hopes pinned",
+                "title": "New negotiation rounds are taking place in Cairo.",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Falastin al-Youm",
-                "title": "The article states that 38 Israeli soldiers have died by suicide since 2025, lin",
+                "title": "The article discusses the 'curse of the Gaza war,' reporting 38 suicides among o",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Saudi Arabia seeks coalition to safeguard Red Sea shipping: Sources",
           "rank_key": {
             "outlets": 2,
@@ -931,44 +1027,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli settlers cut down citrus trees in West Bank, residents say",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-29T15:26+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Israeli settlers cut down citrus trees in West Bank, residents say",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Israeli settlers set ablaze a mosque in northern occupied West Bank",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Venezuela protests Iranian foreign minister's remarks, summons ambassador",
           "rank_key": {
             "outlets": 2,
@@ -993,6 +1051,38 @@
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (venezuela)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran fires missiles at US base in Jordan, all intercepted: US Central Command",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-29T04:09+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "Mehr News"
+          ],
+          "camps": [
+            "gulf",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Iran fires missiles at US base in Jordan, all intercepted: US Central Command",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -1070,65 +1160,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "WAICO confronts Pax Silica: Why AI states won't choose sides",
+          "headline": "A 52-year-old man was seriously injured in a shooting incident in Ma'alot Tarshiha.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-29T21:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Netanyahu, Lindsey Graham coordinated privately to undermine international court: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-29T20:56+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump declared that it is now the U.S.'s turn to strike Iran forcefully, warning that Iran knows it ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-29T19:32+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Egyptian security officials denied that Damietta Port was attacked, stating that a fire broke out in",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-29T19:25+00:00"
+            "newest": "2026-07-29T21:36+00:00"
           },
           "outlet_names": [
             "Kan 11"
@@ -1285,7 +1321,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran strongly condemns US-Saudi strikes on Iraq",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-29T14:30+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The occupation authorities have rejected four requests to halt the demolition of a school and homes ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-29T13:27+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran has not sought talks with US over past two weeks, official says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-29T12:43+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1303,7 +1393,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29T21:25:40.620410+00:00",
+    "last_success": "2026-07-29T21:50:14.690114+00:00",
     "last_failure": null
   },
   "ok": true
