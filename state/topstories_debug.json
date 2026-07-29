@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T09:58:38.711568+00:00",
+  "updated": "2026-07-29T10:04:58.245849+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-29T09:56:38.519847+00:00"
+      "headlines_updated": "2026-07-29T10:03:15.423137+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 15,
-        "title_snippet": 39,
-        "title_native": 81,
+        "dropped_stale": 13,
+        "title_snippet": 31,
+        "dropped_no_english": 8,
+        "title_native": 83,
         "in": 135,
-        "kept": 120
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -189,16 +190,6 @@
         {
           "source": "The New Arab",
           "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Tunisia's Sidi Bou Said inscribed on UNESCO World Heritage list",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Aqaba Marine Reserve inscribed on UNESCO World Heritage List",
           "reason": "stale (older than 48h)"
         },
         {
@@ -260,12 +251,52 @@
           "source": "TRT World",
           "title": "Iran accuses Ukraine of deadly strike on commercial vessel in Caspian Sea",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אישה בת 48 הוכשה ע\"י נחש בראשון לציון, מצבה התייצב",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הצינור 28.07.2026 - התוכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"איך אין לי כוח לראות אותם\": איזה זוג יחזור לסגור חשבון?",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המהדורה המרכזית 28.07.26 - המהדורה המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "شاسوار عبد الواحد يدعو لإسقاط حكومة كردستان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "اليماحي يشيد بقرار أيرلندا حظر استيراد بضائع المستوطنات الإسرائيلية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تفاصيل ما دار خلال لقاء ترامب ونتنياهو",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "صيغة جديدة قدمها وفد حماس للوسطاء بشأن سلاح المقاومة وملف الموظفين.. ما تفاصيلها؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 72,
+      "in": 114,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
@@ -325,21 +356,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "A boxer was apprehended for theft in a market.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "This is a news broadcast from Channel 13, covering updates from Israel and around the world.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The phenomenon of \"luxe maxing\" involves procedures ranging from complex surgeries to bone shattering.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -375,13 +392,6 @@
         {
           "source": "Al Mayadeen",
           "title": "This is the 6 AM news bulletin.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "This is the 3 AM news bulletin.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -440,6 +450,13 @@
           "title": "France turn to Zidane as coach in long-awaited homecoming",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Germany's Merz completes chaotic Cabinet reshuffle",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -515,13 +532,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Qatar has stated its position regarding Bennett's intention to declare it an enemy state if he wins the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Jozef Misad is mentioned.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -607,7 +617,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 46,
       "sizes": [
         10,
         6,
@@ -619,8 +629,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -729,13 +737,12 @@
           "selected_rank": 2,
           "headline": "Israeli forces raid village near Nablus, detain 15 Palestinians across occupied West Bank",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
             "newest": "2026-07-29T08:24+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "Falastin al-Youm",
             "The New Arab",
             "WAFA News"
           ],
@@ -761,6 +768,11 @@
               {
                 "source": "The New Arab",
                 "title": "Israeli settlers set ablaze a mosque in northern occupied West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Israeli settler arson attacks continue in West Bank",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -817,44 +829,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Trump, Netanyahu, and Zelenskyy were seen together at a funeral for Graham.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-29T07:34+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "Gulf News"
-          ],
-          "camps": [
-            "israeli",
-            "gulf"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Channel 13",
-            "title": "Trump, Netanyahu, and Zelenskyy were seen together at a funeral for Graham.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (funeral)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Gulf News",
-                "title": "Dubai mourns beloved dance teacher who inspired hundreds before tragic death in ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "IRGC strikes US command centre in Jordan",
           "rank_key": {
             "outlets": 2,
@@ -892,7 +866,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Netanyahu, Trump hold first White House talks since Iran war",
           "rank_key": {
             "outlets": 2,
@@ -1199,17 +1173,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "A summit issued a warning that Iran is significantly recovering with the aid of foreign countries.",
+          "headline": "Trump agreed to give Ukraine licenses for Patriot missiles, Zelenskyy says",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-29T07:34+00:00"
+            "newest": "2026-07-29T08:11+00:00"
           },
           "outlet_names": [
-            "Channel 13"
+            "Al Arabiya"
           ],
           "camps": [
-            "israeli"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1271,14 +1245,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "US military says intercepted missiles launched by Iran",
+          "headline": "Iran attacks US bases in Middle East as Trump meets Netanyahu",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-29T06:13+00:00"
+            "newest": "2026-07-29T05:43+00:00"
           },
           "outlet_names": [
-            "Al Arabiya"
+            "Al Jazeera"
           ],
           "camps": [
             "panarab"
@@ -1288,7 +1262,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1306,7 +1280,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29T09:58:57.481307+00:00",
+    "last_success": "2026-07-29T10:05:16.681371+00:00",
     "last_failure": null
   },
   "ok": true
