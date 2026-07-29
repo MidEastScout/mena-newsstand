@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T06:35:08.164663+00:00",
+  "updated": "2026-07-29T07:06:44.439967+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-29T06:33:13.487999+00:00"
+      "headlines_updated": "2026-07-29T07:04:48.112221+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 40,
-        "title_native": 82,
+        "dropped_stale": 12,
+        "title_snippet": 37,
+        "dropped_no_english": 3,
+        "title_native": 83,
         "in": 135,
-        "kept": 122
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -228,11 +229,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Iran says progress in Oman talks on Strait of Hormuz management",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Gulf News",
           "title": "US: Shooting at a Seattle food festival leaves 2 dead and wounds 5, official says",
           "reason": "stale (older than 48h)"
         },
@@ -250,11 +246,26 @@
           "source": "TRT World",
           "title": "US condemns violence in occupied West Bank after deadly illegal Israeli settler attacks",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שתי נשים הוכשו בידי נחשים בראשון לציון ומג'דל כרום, מצבן קל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המתמודד שהפתיע את המנטורים -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "نتنياهو لا يريد الانسحاب ويريد الجنوب بلا أوروبيين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
+      "in": 120,
       "kept": 66,
       "dropped": [
         {
@@ -281,13 +292,6 @@
         {
           "source": "Kan 11",
           "title": "A prison service officer has been arrested on suspicion of aiding the main suspect in the murder of Benayahu…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A 48-year-old woman in Rishon LeZion is in serious condition after being bitten by a snake.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -337,13 +341,6 @@
         {
           "source": "Channel 13",
           "title": "This entry appears to be a program listing and does not contain specific news content to summarize.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This entry appears to be a reality show teaser and does not contain specific news content to summarize.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -447,17 +444,17 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Iran International",
-          "title": "5 Iranian woman archaeologist hailed as a hero after Alamut’s UNESCO listing",
+          "source": "Jordan Times",
+          "title": "Safadi discusses regional developments, bilateral ties in calls with counterparts",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "Safadi discusses regional developments, bilateral ties in calls with counterparts",
+          "title": "France turn to Zidane as coach in long-awaited homecoming",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -546,6 +543,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "Young man kills father after dispute over $2 in Egypt",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "Abu Dhabi Police cut speed limit on key road amid low visibility due to dust",
           "sec": 0,
           "off": 0,
@@ -564,13 +568,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Death toll from powerful Japan quake rises to 13 as rescuers search for missing workers",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
@@ -653,18 +650,25 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 31,
+      "clusters": 38,
       "sizes": [
-        12,
+        11,
         7,
         6,
-        5,
-        4,
+        3,
         3,
         2,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -703,11 +707,11 @@
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Al-Masirah",
             "Anadolu Agency",
             "Arab News",
             "Egypt Independent",
+            "Iran International",
             "Mehr News",
             "SANA"
           ],
@@ -718,7 +722,7 @@
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -733,8 +737,8 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "Iran war updates: Tehran vows Hormuz control amid Trump-Netanyahu talks",
+                "source": "Al Arabiya",
+                "title": "Oman presents Iran with Gulf-backed plan for voluntary fees to use Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -748,8 +752,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Oman presents Iran with Gulf-backed plan for voluntary fees to use Hormuz",
+                "source": "Mehr News",
+                "title": "Iran never recognizes southern route in Hormuz Strait",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -814,70 +818,15 @@
         },
         {
           "selected_rank": 3,
-          "headline": "A new round of negotiations is taking place in Cairo, with Egyptian reliance on Hamas's 'flexibility",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 2,
-            "newest": "2026-07-28T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Egypt Independent",
-            "Falastin al-Youm",
-            "Middle East Eye",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "A new round of negotiations is taking place in Cairo, with Egyptian reliance on Hamas's 'flexibility'.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "The New Arab",
-                "title": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Egypt Independent",
-                "title": "Egypt’s 242nd aid convoy heads to Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas stated that Katz's calls to destroy West Bank camps and displace residents",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Reports indicate Iran prepared to launch an attack in Ukraine, prompting a warning from Kyiv.",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-07-29T05:54+00:00"
           },
           "outlet_names": [
             "Arab News",
+            "IRNA",
             "Iran International",
             "Mehr News",
             "N12"
@@ -887,7 +836,7 @@
             "gulf",
             "iranian"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -902,6 +851,11 @@
             ],
             "passed_over": [
               {
+                "source": "IRNA",
+                "title": "Araghchi stresses Ukraine needs to make up for attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Mehr News",
                 "title": "Araghchi stresses to Ukraine FM need to make up for attack",
                 "rejected_by": "older than the story's newest wave"
@@ -915,10 +869,50 @@
                 "source": "Arab News",
                 "title": "Iran warns of ‘unforeseen’ consequences after Ukraine attack on Caspian Sea ship",
                 "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "IRGC strikes US command centre in Jordan",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-07-29T04:09+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Jordan Times",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "IRGC strikes US command centre in Jordan",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "US, Saudi forces strike ‘Iran-aligned’ groups in Iraq; IRGC attacks Jordan",
+                "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Arab News",
-                "title": "How Ukraine’s attack on Iranian ship in Caspian Sea blurred the lines between tw",
+                "source": "Jordan Times",
+                "title": "Jordan condemns attempted drone attacks on Saudi oil facilities",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -928,21 +922,19 @@
           "selected_rank": 5,
           "headline": "Israeli settler arson attacks continue in West Bank",
           "rank_key": {
-            "outlets": 3,
-            "camps": 3,
+            "outlets": 2,
+            "camps": 2,
             "newest": "2026-07-29T06:03+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "Jordan Times",
             "The New Arab"
           ],
           "camps": [
             "panarab",
-            "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -957,12 +949,7 @@
             "passed_over": [
               {
                 "source": "The New Arab",
-                "title": "Israeli settlers set ablaze a mosque in northern occupied West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Palestinian officials say Israeli settlers torch 2 mosques in West Bank",
+                "title": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -1012,78 +999,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Jordan condemns Israeli raid on UNRWA training centre in East Jerusalem",
+          "headline": "Iran attacks US bases in Middle East as Trump meets Netanyahu",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-28T14:22+00:00"
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-29T05:43+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Jordan Times"
+            "Al Jazeera"
           ],
           "camps": [
-            "panarab",
-            "levant"
+            "panarab"
           ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Jordan condemns Israeli raid on UNRWA training centre in East Jerusalem",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (jordan)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "US, Saudi forces strike ‘Iran-aligned’ groups in Iraq; IRGC attacks Jordan",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Jordan condemns attempted drone attacks on Saudi oil facilities",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemeni army targets Saudi Arabia’s oil transport facilities",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-27T21:11+00:00"
-          },
-          "outlet_names": [
-            "Al-Masirah",
-            "IRNA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Yemeni army targets Saudi Arabia’s oil transport facilities",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1123,17 +1053,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "US Senate advances sweeping Russia sanctions bill",
+          "headline": "Zelenskyy says Trump agreed to Patriot missile production licenses for Ukraine",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-29T00:51+00:00"
+            "newest": "2026-07-29T03:47+00:00"
           },
           "outlet_names": [
-            "Arab News"
+            "Anadolu Agency"
           ],
           "camps": [
-            "gulf"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1160,6 +1090,24 @@
         {
           "selected_rank": null,
           "headline": "Sana'a is preparing for border escalation following an incident involving a Saudi tanker in the Red ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hamas is reportedly developing a new formula for the 'weapons clause' under the guise of 'stability ",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1231,6 +1179,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Jordan condemns Israeli raid on UNRWA training centre in East Jerusalem",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T14:22+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran, Japan FMs discuss bilateral ties, latest regional developments",
           "rank_key": {
             "outlets": 1,
@@ -1248,61 +1214,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Syrian Foreign Minister receives outgoing Omani ambassador",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T14:07+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Russian army has liberated a new town in Donetsk.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T13:49+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "This title refers to the victory of Islamic Iran and the axis of jihad and resistance, indicating st",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T04:36+00:00"
-          },
-          "outlet_names": [
-            "Al-Masirah"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1320,7 +1232,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29T06:35:37.933789+00:00",
+    "last_success": "2026-07-29T07:07:07.448472+00:00",
     "last_failure": null
   },
   "ok": true
