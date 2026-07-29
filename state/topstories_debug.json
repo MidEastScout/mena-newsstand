@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T12:11:44.418660+00:00",
+  "updated": "2026-07-29T12:18:53.676696+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-29T12:09:36.942589+00:00"
+      "headlines_updated": "2026-07-29T12:17:19.753232+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 39,
-        "title_native": 83,
+        "dropped_stale": 12,
+        "title_snippet": 34,
+        "dropped_no_english": 5,
+        "title_native": 84,
         "in": 135,
-        "kept": 122
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -218,11 +219,6 @@
         },
         {
           "source": "Arab News",
-          "title": "US not involved in talks with Oman over Hormuz strait — Iran",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
           "title": "Iran warns of ‘unforeseen’ consequences after Ukraine attack on Caspian Sea ship",
           "reason": "stale (older than 48h)"
         },
@@ -250,25 +246,43 @@
           "source": "TRT World",
           "title": "Iran accuses Ukraine of deadly strike on commercial vessel in Caspian Sea",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "פרשה חדשה בתוך שורות הצבא: גורם המעורה בפרטים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "כדי לאתר קורבנות נוספים: פורסמה תמונת חשוד בעבירות מין בקטינים - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מרי אסתטיק | המפכה בעולם האסתטיקה: מטשטוש סימני גיל להאטת תהליכי הזדקנות| חדשות 13",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة السادسة صباحاً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "لعنة حرب غزة تلاحقهم .. 38 منتحراً بين جنود الاحتلال منذ 2025",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 67,
+      "in": 118,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "A right-wing activist named Eliran Siman Tov accosted actor Moni Mushoenov in Tel Aviv, questioning why he…",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A girl, approximately 4 years old, is in serious condition after choking on a grape at her home in Jerusalem.",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -283,13 +297,6 @@
           "title": "A right-wing activist accosted actor Moni Mushoenov in Tel Aviv, questioning why he and his peers were…",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "A girl is in serious condition after choking on a grape at her home in Jerusalem.",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -342,13 +349,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "Is Netanyahu’s Trump card losing its power in Israel?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Anger rises as ICC member states accused of facilitating Netanyahu’s flight to Washington",
           "sec": 0,
@@ -379,13 +379,6 @@
         {
           "source": "Al Mayadeen",
           "title": "A report from Almayadeen.net states that Trump's popularity has declined to a record low.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "This news item is a morning news bulletin.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -588,6 +581,13 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Price of goodbye: UK airport drop-off fees keep climbing",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "Sagalassos excavation chief becomes Turkish citizen after 30 years",
           "sec": 0,
           "off": 0,
@@ -595,10 +595,10 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Türkiye battles multiple wildfires as Muğla blaze spreads",
+          "title": "Istanbul's Süleymaniye Mosque offers Quran lessons in English",
           "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Hürriyet Daily News",
@@ -646,21 +646,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 45,
       "sizes": [
         9,
+        4,
         3,
-        3,
-        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -762,38 +760,40 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israeli forces bulldoze, shell, demolish homes across southern Lebanon despite US-mediated deal",
+          "headline": "The IDF confirmed Hezbollah fired an explosive drone towards an engineering vehicle in southern Leba",
           "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-29T10:11+00:00"
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-07-29T11:32+00:00"
           },
           "outlet_names": [
             "Al Manar",
             "Anadolu Agency",
+            "Kan 11",
             "L'Orient Today"
           ],
           "camps": [
+            "israeli",
             "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli forces bulldoze, shell, demolish homes across southern Lebanon despite US-mediated deal",
-            "title_source": "native",
+            "source": "Kan 11",
+            "title": "The IDF confirmed Hezbollah fired an explosive drone towards an engineering vehicle in southern Lebanon…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "names 2 of the story's dominant entities (hezbollah, hezbollah_south)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
                 "source": "L'Orient Today",
-                "title": "Focus Lebanon caught between Netanyahu’s endless war and Sharaa’s regional bet",
+                "title": "LIVE Israel says Hezbollah drone struck one of its military vehicles in south Le",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -850,50 +850,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Paltoday.ps details a new formula presented by a Hamas delegation to mediators regarding resistance ",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-29T06:34+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Falastin al-Youm",
-            "Middle East Eye"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Paltoday.ps details a new formula presented by a Hamas delegation to mediators regarding resistance weapons…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al-Akhbar",
-                "title": "Al Akhbar reports that \"Stability Force\" is a cover for further encroachment, wi",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "GCC, Arab countries back Saudi Arabia after drone attacks on oil facilities",
           "rank_key": {
             "outlets": 2,
@@ -930,7 +886,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Saudi Arabia strikes Iran-backed Iraqi militia",
           "rank_key": {
             "outlets": 2,
@@ -1043,6 +999,44 @@
         },
         {
           "selected_rank": null,
+          "headline": "Al Akhbar reports that \"Stability Force\" is a cover for further encroachment, with Hamas formulating",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-28T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al-Akhbar",
+            "title": "Al Akhbar reports that \"Stability Force\" is a cover for further encroachment, with Hamas formulating a new…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Almassirah Net analyzes the dimensions of the Yemeni operation and Saudi accusations against the Ira",
           "rank_key": {
             "outlets": 2,
@@ -1148,24 +1142,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The IDF confirmed Hezbollah fired an explosive drone towards an engineering vehicle in southern Leba",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-29T11:32+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "2 years after ICJ ruling, UN rights office says settler violence, annexation in West Bank 'getting w",
           "rank_key": {
             "outlets": 1,
@@ -1256,42 +1232,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "UN chief secures expanded talks prospect on future of divided Cyprus",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-29T10:52+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A Negev resident was sentenced to 21 years in prison for rape in Gedera, an attack that occurred in ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-29T10:28+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Aftermath of deadly US-Saudi strikes on Iraq captured on camera",
           "rank_key": {
             "outlets": 1,
@@ -1327,7 +1267,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Trump gave Netanyahu green light to burn West Bank: Former MP",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-29T08:23+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump agreed to give Ukraine licenses for Patriot missiles, Zelenskyy says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-29T08:11+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Paltoday.ps reports that Iran may receive a Chinese air defense system within weeks.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-29T08:06+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1345,7 +1339,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29T12:12:01.650317+00:00",
+    "last_success": "2026-07-29T12:19:09.358978+00:00",
     "last_failure": null
   },
   "ok": true
