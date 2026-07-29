@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T03:12:50.875439+00:00",
+  "updated": "2026-07-29T03:44:58.816706+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-29T03:11:02.843687+00:00"
+      "headlines_updated": "2026-07-29T03:43:12.267303+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
+        "dropped_stale": 13,
         "title_snippet": 23,
         "dropped_no_english": 16,
-        "title_native": 85,
+        "title_native": 83,
         "in": 135,
-        "kept": 108
+        "kept": 106
       },
       "translator": {
         "configured": true,
@@ -225,6 +225,16 @@
         {
           "source": "Syria Direct",
           "title": "Child recruitment persists despite SDF-Damascus integration agreement",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Iran says progress in Oman talks on Strait of Hormuz management",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "US: Shooting at a Seattle food festival leaves 2 dead and wounds 5, official says",
           "reason": "stale (older than 48h)"
         },
         {
@@ -314,18 +324,18 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "في كواليس «الجزيرة»... لماذا صُرف صحافيو غزة؟",
+          "title": "برنامج الأغذية العالمي يُفرِغ مستودعات لبنان!",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al-Akhbar",
-          "title": "تراجع تحميلات النفط في ميناء ينبع السعودي بنسبة 40%",
+          "title": "في كواليس «الجزيرة»... لماذا صُرف صحافيو غزة؟",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 108,
+      "in": 106,
       "kept": 63,
       "dropped": [
         {
@@ -526,13 +536,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Shots fired at US consulate in Toronto: police",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "UAE weather update: Hail, dusty whirlwind hit Masafi as storms lash Sharjah, eastern region; visibility drops in Dubai",
           "sec": 0,
           "off": 1,
@@ -541,13 +544,6 @@
         {
           "source": "Gulf News",
           "title": "Dubai mourns beloved dance teacher who inspired hundreds before tragic death in Kerala",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "US-Iran conflict: What UAE residents need to know this evening (July, 28, 2026)",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -647,21 +643,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 35,
       "sizes": [
-        9,
-        6,
+        8,
+        8,
+        5,
         5,
         3,
         3,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -698,7 +689,67 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iran proposes temporary Hormuz plan giving itself greater control over transit lines",
+          "headline": "Saudi Arabia conducts strikes on Iran-backed militias in Iraq after drone attacks on oil facilities",
+          "rank_key": {
+            "outlets": 7,
+            "camps": 5,
+            "newest": "2026-07-29T02:01+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Gulf News",
+            "IRNA",
+            "SANA",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 8,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Saudi Arabia conducts strikes on Iran-backed militias in Iraq after drone attacks on oil facilities",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Baghdad orders probe into drone attacks on Saudi Arabia launched from Iraqi terr",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Saudi Arabia says its forces downed drones launched by Iran-backed Iraqi groups",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Iraqi resistance rejects Saudi claim of drone attacks from Iraq’s soil",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Presidency condemns drone attacks targeting Saudi Arabia",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Iran war deal to have no fees, no tolls for passage through Strait of Hormuz: US official",
           "rank_key": {
             "outlets": 6,
             "camps": 4,
@@ -718,12 +769,12 @@
             "iranian",
             "levant"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Al Arabiya",
-            "title": "Iran proposes temporary Hormuz plan giving itself greater control over transit lines",
+            "title": "Iran war deal to have no fees, no tolls for passage through Strait of Hormuz: US official",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -756,63 +807,58 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Saudi Arabia says its forces downed drones launched by Iran-backed Iraqi groups",
+          "selected_rank": 3,
+          "headline": "Three Palestinians wounded in Israeli drone strike on residential building in Gaza City",
           "rank_key": {
             "outlets": 5,
-            "camps": 3,
-            "newest": "2026-07-28T19:52+00:00"
+            "camps": 2,
+            "newest": "2026-07-29T02:15+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "SANA",
-            "TRT World",
+            "Al-Akhbar",
+            "Egypt Independent",
+            "Falastin al-Youm",
+            "Middle East Eye",
             "WAFA News"
           ],
           "camps": [
             "panarab",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Saudi Arabia says its forces downed drones launched by Iran-backed Iraqi groups",
+            "source": "WAFA News",
+            "title": "Three Palestinians wounded in Israeli drone strike on residential building in Gaza City",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Arabiya",
-                "title": "Baghdad orders probe into drone attacks on Saudi Arabia launched from Iraqi terr",
+                "source": "Middle East Eye",
+                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "WAFA News",
-                "title": "Presidency condemns drone attacks targeting Saudi Arabia",
+                "source": "Egypt Independent",
+                "title": "Egypt’s 242nd aid convoy heads to Gaza",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "SANA",
-                "title": "Pakistan condemns drone attacks on Saudi Arabia, urges regional de-escalation",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Saudi Arabia downs drones targeting oil facilities from Iraq",
-                "rejected_by": "older than the story's newest wave"
+                "source": "Falastin al-Youm",
+                "title": "Hamas stated that Katz's calls to destroy camps in the West Bank and displace re",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Iran says Ukraine assured vessel attack ‘unintentional,’ demands compensation",
           "rank_key": {
             "outlets": 4,
@@ -864,7 +910,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Netanyahu, Trump hold first White House talks since Iran war",
           "rank_key": {
             "outlets": 3,
@@ -907,7 +953,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Iran, Japan FMs discuss bilateral ties, latest regional developments",
           "rank_key": {
             "outlets": 2,
@@ -1042,24 +1088,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A new round of negotiations is taking place in Cairo, with Egyptian hopes pinned on 'Hamas flexibili",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Netanyahu hails Trump meeting, cites ‘shared goal’ on Iran",
           "rank_key": {
             "outlets": 1,
@@ -1132,42 +1160,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "UN: Political process cannot succeed while Gaza remains devastated, violence escalates in West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T19:48+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran, Ukraine foreign ministers hold talks over phone",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-28T19:33+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Heikal expressed aspirations for the end of occupation and the deployment of the army across all Pal",
           "rank_key": {
             "outlets": 1,
@@ -1203,7 +1195,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Syrian Foreign Minister receives outgoing Omani ambassador",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T14:07+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The Russian army liberated a new town in Donetsk.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T13:49+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran blamed for at least 14 drone strikes on Kurdish opposition groups in Iraq",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-28T13:21+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1221,7 +1267,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29T03:13:11.412424+00:00",
+    "last_success": "2026-07-29T03:45:16.172333+00:00",
     "last_failure": null
   },
   "ok": true
