@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T13:52:42.429858+00:00",
+  "updated": "2026-07-29T14:24:33.924834+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-29T13:51:19.430850+00:00"
+      "headlines_updated": "2026-07-29T14:22:09.628522+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
+        "dropped_stale": 9,
         "dropped_no_english": 10,
         "title_snippet": 29,
-        "title_native": 85,
+        "title_native": 87,
         "in": 135,
-        "kept": 114
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -187,11 +187,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "Iran threatens response to Ukraine attack on its ship in Caspian Sea",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Syria Direct",
           "title": "‘Waiting for chaos’: IS adapts under pressure, betting on the failure of Syria’s transition",
@@ -228,11 +223,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Iran says halts Middle East attacks as US holds fire",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Al-Masirah",
           "title": "طهران: واشنطن انتهكت مذكرة التفاهم وعلّقنا التزاماتنا",
           "reason": "stale (older than 48h)"
@@ -264,17 +254,17 @@
         },
         {
           "source": "N12",
+          "title": "עידן חדש בזרוע הים: טייסת \"מגיני המערב\" נפתחה מחדש עם מסוקי ה\"שלך\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
           "title": "החשוד בריגול לאיראן: מילואימניק בן 28 - מאחת היחידות המסווגות ביותר בצה\"ל | פרטים חדשים",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "N12",
           "title": "רוסיה מהדקת את החבל: דרמה בקרמלין לקראת הבחירות",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "מאחורי המתקפה האמריקנית-סעודית החריגה בעיראק: \"מבססת כללי עימות חשובים\"",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -295,8 +285,8 @@
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 68,
+      "in": 116,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
@@ -510,6 +500,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "UAE News",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "UAE Government News: Latest Updates & Policies",
           "sec": 0,
           "off": 0,
@@ -545,7 +542,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Zelenskyy arrives in Polish city of Lublin following US visit",
+          "title": "2,000-year-old Roman mosaic unearthed at ancient city of Tralleis in western Türkiye",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -628,7 +625,7 @@
       "sizes": [
         8,
         8,
-        3,
+        4,
         3,
         2,
         2,
@@ -787,20 +784,21 @@
           "selected_rank": 3,
           "headline": "38 Israeli soldiers have died by suicide since 2025, amidst the fallout from the Gaza war.",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 4,
             "camps": 2,
             "newest": "2026-07-29T10:06+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
             "Falastin al-Youm",
-            "Middle East Eye"
+            "Middle East Eye",
+            "The New Arab"
           ],
           "camps": [
             "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -817,6 +815,11 @@
               {
                 "source": "Middle East Eye",
                 "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Pope Leo calls for end to Israeli attacks in Gaza and West Bank",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -1280,7 +1283,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29T13:52:59.331200+00:00",
+    "last_success": "2026-07-29T14:24:46.133324+00:00",
     "last_failure": null
   },
   "ok": true
