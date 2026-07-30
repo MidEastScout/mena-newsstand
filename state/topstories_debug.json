@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T19:50:02.899893+00:00",
+  "updated": "2026-07-30T19:52:58.143296+00:00",
   "stages": {
     "fetch": {
       "items": 134,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-30T19:48:09.167100+00:00"
+      "headlines_updated": "2026-07-30T19:51:04.256677+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 19,
-        "title_snippet": 36,
+        "title_snippet": 30,
+        "dropped_no_english": 6,
         "title_native": 79,
         "in": 134,
-        "kept": 115
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -280,12 +281,42 @@
           "source": "TRT World",
           "title": "Trump, Netanyahu and Zelenskyy gather at White House amid tight security and pro-Palestine protests",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אתה מחזיק את עצמך לא להעיף לו איזו אחת\": יאיר גולן מגיב לעימות עם מרדכי דוד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "חדשות 13 | חדשות - כל החדשות והעדכונים מהארץ ומהעולם",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "יונתן רושפלד וגיא גמזו על הג'וב החדש ב\"משחקי השף\": \"מתאים מאוד לדנ\"א שלנו\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "החלטת החנות הפופולרית שעוררה סערה: מעל מידה M - תשלמי יותר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "חמאס במגעים מתקדמים לפירוק מנשק -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "نادي الأسير: أكثر من 24600 حالة اعتقال بالضفة منذ بدء حرب الإبادة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 75,
+      "in": 109,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
@@ -307,34 +338,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Channel 13",
-          "title": "\"You have to restrain yourself from wanting to punch him\": Yair Golan responds to the confrontation with…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and the world.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Yonatan Roshfeld and Guy Gamzo on their new job in \"Chef Games\": \"It suits our DNA very well.\" The two chefs…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The popular store's decision that caused a stir: Above size M - you'll pay more.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
@@ -492,13 +495,6 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Gaza's Development Ministry is calling for urgent international action to stop the \"Israeli\" aggression.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
           "title": "Dates in the morning or evening?",
           "sec": 0,
           "off": 0,
@@ -577,7 +573,7 @@
         5,
         5,
         3,
-        3,
+        2,
         2,
         2,
         2,
@@ -834,39 +830,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Hamas is in advanced negotiations for disarmament.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-30T12:59+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "Falastin al-Youm",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Channel 13",
-            "title": "Hamas is in advanced negotiations for disarmament.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "US issues sanctions targeting support networks for Iran’s Mahan Air",
           "rank_key": {
             "outlets": 2,
@@ -892,6 +855,38 @@
               "passed every gate (neutral, current, fresh, not a stub)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Agreements have been reached on Hamas's disarmament and the neutralization of the Gaza Strip.",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-30T11:22+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "Agreements have been reached on Hamas's disarmament and the neutralization of the Gaza Strip.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": []
           }
@@ -1239,7 +1234,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-30T19:50:17.555724+00:00",
+    "last_success": "2026-07-30T19:53:20.484748+00:00",
     "last_failure": null
   },
   "ok": true
