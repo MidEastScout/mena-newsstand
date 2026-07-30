@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T16:29:27.611150+00:00",
+  "updated": "2026-07-30T16:59:23.296981+00:00",
   "stages": {
     "fetch": {
       "items": 134,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-30T16:27:29.062759+00:00"
+      "headlines_updated": "2026-07-30T16:57:10.530154+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 20,
-        "title_snippet": 36,
-        "title_native": 78,
+        "dropped_stale": 22,
+        "title_snippet": 29,
+        "dropped_no_english": 7,
+        "title_native": 76,
         "in": 134,
-        "kept": 114
+        "kept": 105
       },
       "translator": {
         "configured": true,
@@ -199,6 +200,11 @@
         {
           "source": "Jordan Times",
           "title": "Jordan condemns attempted drone attacks on Saudi oil facilities",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Pope Leo XIV calls for renewed negotiations for a just peace in the Middle East",
           "reason": "stale (older than 48h)"
         },
         {
@@ -257,6 +263,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "UAE denounces drone attacks on Saudi oil facilities",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Al-Masirah",
           "title": "بحرية حرس الثورة: جاهزون للرد على أيّ عدوان.. وعبور 31 سفينة من المضيق بالساعات الـ24 الماضية",
           "reason": "stale (older than 48h)"
@@ -285,12 +296,47 @@
           "source": "TRT World",
           "title": "US will hit Iran 'hard' after attack on bases in Jordan: Trump",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "אלעד סנדרוביץ' - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"ذي غارديان\": حتى \"ماغا\" بدأت تفقد حماسها لجي دي فانس.. لولا أن منافسيه أسوأ منه",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تلويح بردّ قريب... وتنسيق مع «المحور» | السعودية - أميركا: عدوان مشترك على العراق",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "زيارةُ كشف حساب | نتنياهو لترامب: لستُ الحليف «السيّئ»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "لماذا حاولت «اليونيفيل» إخفاء ملكية العدو «للنيترات»؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "استهداف جرافة في علي الطاهر... والتوتر يعود إلى الجبهة اللبنانية: واشنطن تتبنّى سردية إسرائيل وتزيد الضغط على لبنان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "البرامج السياسية «مصيّفة»",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 67,
+      "in": 105,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -475,41 +521,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "A report indicates Netanyahu told Trump he is not a 'bad' ally.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "A report details a joint Saudi-US aggression on Iraq, with threats of a swift response.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The article questions why UNIFIL attempted to conceal the enemy's ownership of 'nitrates'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "An incident involving a bulldozer in Ali Al-Taher has led to renewed tension on the Lebanese border.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "This is a listing for political programs described as 'summerized'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "President Aoun discussed the results of his Washington visit and developments in the South with Speaker Nabih…",
           "sec": 0,
@@ -545,13 +556,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Uganda declares Ebola outbreak over after 42-day monitoring period",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al-Masirah",
           "title": "Preparations are underway for the celebration of the Prophet Muhammad's birthday in the capital and…",
           "sec": 0,
@@ -564,20 +568,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Spain mobilizing all resources as thousands attempt to cross into Ceuta from Morocco",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Trump reaffirms support for Blanche to be attorney general, threatens to pull nomination",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Hürriyet Daily News",
@@ -625,10 +615,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 47,
       "sizes": [
         8,
-        6,
         4,
         2,
         2,
@@ -637,6 +626,9 @@
         2,
         2,
         2,
+        2,
+        2,
+        1,
         1,
         1,
         1,
@@ -738,54 +730,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iranian strike hit Chinese firm in Kuwait, Jordan downs missiles",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 3,
-            "newest": "2026-07-30T11:51+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Al Mayadeen",
-            "Gulf News",
-            "Mehr News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Iranian strike hit Chinese firm in Kuwait, Jordan downs missiles",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (jordan, kuwait)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "IRGC says it hit US bases in Kuwait and Jordan after deadly US strikes",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Trump says US to hit Iran ‘hard’ after attack on bases in Jordan",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Gaza cease-fire talks make rare progress toward full implementation",
           "rank_key": {
             "outlets": 4,
@@ -826,7 +770,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Israel places Palestinian prisoner under administrative detention on day of release after 12 years i",
           "rank_key": {
             "outlets": 2,
@@ -857,7 +801,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Illegal Israeli settler remained free after killing Palestinian in occupied West Bank: rights group",
           "rank_key": {
             "outlets": 2,
@@ -890,6 +834,44 @@
                 "source": "WAFA News",
                 "title": "Canada condemns escalating Israeli colonist violence in the occupied West Bank",
                 "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Kuwait: Iranian attack on Chinese firm's building leaves 1 dead",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-30T07:59+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Kuwait: Iranian attack on Chinese firm's building leaves 1 dead",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (kuwait)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "IRGC says it hit US bases in Kuwait and Jordan after deadly US strikes",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -972,6 +954,43 @@
         },
         {
           "selected_rank": null,
+          "headline": "Two German and French aircraft assisted in intercepting Iranian missiles aimed at US bases in Jordan",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-07-30T08:05+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Mayadeen",
+            "title": "Two German and French aircraft assisted in intercepting Iranian missiles aimed at US bases in Jordan…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Trump says US to hit Iran ‘hard’ after attack on bases in Jordan",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Netanyahu arrives at White House after Trump meets Zelenskyy",
           "rank_key": {
             "outlets": 2,
@@ -1032,17 +1051,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces force businesses to close during raid east of Nablus",
+          "headline": "Pakistan, Saudi Arabia welcome Jordan proposal for Arab-Islamic meeting on Palestine",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-30T16:24+00:00"
+            "newest": "2026-07-30T16:55+00:00"
           },
           "outlet_names": [
-            "WAFA News"
+            "Anadolu Agency"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1050,11 +1069,29 @@
         },
         {
           "selected_rank": null,
-          "headline": "Araghchi: Any participation in military attacks against Iran will carry consequences",
+          "headline": "Over 1,400 people displaced after RSF attack in Sudan’s North Kordofan: UN migration agency",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-30T15:55+00:00"
+            "newest": "2026-07-30T16:54+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Tehran urges Cyprus not to let foreign bases be used for attacks against Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-30T15:28+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1212,24 +1249,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "This news item discusses Israel potentially joining a war with Iran.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-30T13:44+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Thousands breach Spanish enclave Ceuta's border with Morocco",
           "rank_key": {
             "outlets": 1,
@@ -1247,7 +1266,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1265,7 +1284,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-30T16:29:48.661827+00:00",
+    "last_success": "2026-07-30T16:59:38.711433+00:00",
     "last_failure": null
   },
   "ok": true
