@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T20:24:46.826110+00:00",
+  "updated": "2026-07-30T20:56:26.106820+00:00",
   "stages": {
     "fetch": {
       "items": 134,
@@ -167,13 +167,14 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-30T20:22:40.089524+00:00"
+      "headlines_updated": "2026-07-30T20:54:06.219154+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 19,
-        "title_snippet": 36,
-        "title_native": 79,
+        "dropped_stale": 18,
+        "title_snippet": 35,
+        "title_native": 80,
+        "dropped_no_english": 1,
         "in": 134,
         "kept": 115
       },
@@ -203,11 +204,6 @@
         },
         {
           "source": "SANA",
-          "title": "Israeli occupation forces carry out new incursion into western Daraa countryside",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "SANA",
           "title": "Syria, Egypt discuss expanding economic ties, reviving joint business council",
           "reason": "stale (older than 48h)"
         },
@@ -219,6 +215,11 @@
         {
           "source": "SANA",
           "title": "Syrian Foreign Minister receives outgoing Omani ambassador",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Israeli occupation forces carry out new incursion into western Daraa countryside",
           "reason": "stale (older than 48h)"
         },
         {
@@ -277,9 +278,9 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Trump, Netanyahu and Zelenskyy gather at White House amid tight security and pro-Palestine protests",
-          "reason": "stale (older than 48h)"
+          "source": "Falastin al-Youm",
+          "title": "\"أخبار مُفرحة لغزة\": ما الذي تغيّر في القاهرة ولماذا في هذا الوقت تحديداً؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
@@ -338,14 +339,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "Spainish enclave Ceuta raises alarm as thousands cross border from Morocco",
+          "title": "Saudi Arabia announces maritime defence alliance to secure vital waterways",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "Why did Anthony Fauci invoke the Fifth Amendment? US hearing explained",
+          "title": "Spainish enclave Ceuta raises alarm as thousands cross border from Morocco",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -571,7 +572,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 50,
       "sizes": [
         10,
         5,
@@ -585,7 +586,8 @@
         2,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -990,44 +992,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Dozens of settlers stormed the Al-Aqsa Mosque and conducted provocative tours.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-30T08:56+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "gulf",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Dozens of settlers stormed the Al-Aqsa Mosque and conducted provocative tours.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Israeli settlers cut down citrus trees in West Bank, residents say",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Residents in northern Israel were informed of planned explosions overnight near the border.",
           "rank_key": {
             "outlets": 1,
@@ -1090,6 +1054,24 @@
           },
           "outlet_names": [
             "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Fourteen countries back Saudi Arabia's maritime defence alliance amid Houthi blockade",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-30T18:09+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
           ],
           "camps": [
             "turkish"
@@ -1225,25 +1207,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "An Israeli man, Artium Zoloterb, was sentenced to seven years in prison for aiding Iranian intellige",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-30T16:03+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1261,7 +1225,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-30T20:25:03.362047+00:00",
+    "last_success": "2026-07-30T20:56:26.463885+00:00",
     "last_failure": null
   },
   "ok": true
