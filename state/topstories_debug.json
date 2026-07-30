@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T08:13:55.316634+00:00",
+  "updated": "2026-07-30T08:45:29.495103+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-30T08:12:01.923638+00:00"
+      "headlines_updated": "2026-07-30T08:43:26.229659+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 36,
-        "title_native": 87,
+        "dropped_stale": 13,
+        "title_snippet": 34,
+        "dropped_no_english": 2,
+        "title_native": 86,
         "in": 135,
-        "kept": 123
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -186,6 +187,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Israeli soldier may have been killed by own forces in West Bank",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Jordan condemns attempted drone attacks on Saudi oil facilities",
@@ -245,86 +251,89 @@
           "source": "TRT World",
           "title": "US will hit Iran 'hard' after attack on bases in Jordan: Trump",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "אישה בת 48 במצב קשה אחרי שהוכשה בידי נחש בראשון לציון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אישה בת 48 הוכשה ע\"י נחש בראשון לציון, מצבה התייצב",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 70,
+      "in": 120,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "The suspect accused of murdering Rabbi Amos Guetta in Netanya allegedly drew a knife and stabbed him four…",
+          "title": "MK Sharren Haskel was summoned to Lahav 433 for testimony regarding the election for State Comptroller.",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Kan 11",
+          "title": "An indictment will be filed against the suspect in the murder of Rabbi Amos Guetta in Netanya.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "The price of gasoline will increase by more than 8 shekels per liter starting Saturday at midnight.",
+          "title": "Beginning Saturday at midnight, the price of gasoline will exceed 8 shekels per liter.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "A 48-year-old woman is in serious condition after being bitten by a snake at the Volcani Institute in Rishon…",
+          "title": "Lebanese businessman Antoun Sehnaoui, who was photographed at a dinner with Prime Minister Netanyahu, faces…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "Lebanese businessman Antoun Sehnaoui, photographed at a dinner with Prime Minister Netanyahu, is facing legal…",
+          "title": "Police are conducting a large-scale enforcement operation across the country with hundreds of officers and…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "Police have launched a large enforcement operation across Israel, deploying hundreds of officers and…",
+          "title": "Large fires are raging across Europe, causing deaths and evacuations in Greece, France, and Spain.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "Massive fires are raging across Europe, leading to deaths and evacuations in Greece, France, and Spain.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Public support for Trump has reportedly hit a low, even among his base.",
+          "title": "Public support for Trump has fallen to a new low, even within his own base.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "A 48-year-old woman bitten by a snake in Rishon LeZion has stabilized.",
+          "title": "This item provides news and updates from Israel and around the world.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "This news item provides general news updates from Israel and around the world.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A truck driver was killed in a collision with another vehicle on Route 4.",
+          "title": "A truck driver was killed in a collision with a vehicle on Highway 4.",
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Channel 13",
-          "title": "Heatwaves are expected across the country, with relief anticipated only mid-next week.",
+          "title": "Heatwaves are expected across the country, with relief only arriving mid-next week.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -365,36 +374,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Netanyahu arrives at White House after Trump meets Zelenskyy",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Israeli forces assault MK, storm vigil for Palestinian activist",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "The New Arab",
-          "title": "First test of pilot zones in Lebanon lays bare difficulties",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Why Kuwait is turning to Pakistan as Gulf security shifts east",
+          "source": "Al Mayadeen",
+          "title": "Iraq is taking legal steps to document Saudi aggression, and resistance groups have given the government…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "49% of Americans support the arrest of Netanyahu upon his arrival in U.S.",
+          "title": "49% of Americans support the arrest of Netanyahu upon his arrival in US territory.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "A photo of a dinner between Netanyahu and Antoun Sehnaoui has sparked widespread controversy in Lebanon.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -408,7 +403,7 @@
         },
         {
           "source": "IRNA",
-          "title": "Iran and Armenia seek to turn joint corridor into an engine of regional growth",
+          "title": "Security for Arbaeen pilgrims is fully ensured: Iraqi official",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -416,13 +411,6 @@
         {
           "source": "Iran International",
           "title": "3 Iranian protesters’ executions stir grief and harden resolve across Iran",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Iran International",
-          "title": "INSIGHT Did China quietly defuse Iran's oil weapon? Pro-Ghalibaf paper asks out loud",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -443,7 +431,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "WHO says Uganda still at risk from Ebola spread in DR Congo",
+          "title": "Palestinian Authority floats launching petrol company to tackle fuel crisis",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -464,6 +452,13 @@
         },
         {
           "source": "L'Orient Today",
+          "title": "SCANDAL Two legal proceedings launched in Lebanon against Sehnaoui after dinner with Netanyahu",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
           "title": "Economic crisis After his victory against Fransabank, a former depositor finally cashes his check Alexander HADDAD",
           "sec": 0,
           "off": 0,
@@ -478,6 +473,13 @@
         },
         {
           "source": "Egypt Independent",
+          "title": "Egypt, Pakistan discuss efforts to reduce regional tensions",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
           "title": "Death toll rises in Japan. Why does the country experience so many large earthquakes?",
           "sec": 1,
           "off": 0,
@@ -485,21 +487,21 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Netanyahu told Trump that he is not the 'bad' ally during a review visit.",
+          "title": "Netanyahu told Trump he is not the \"bad\" ally during their meeting.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Oil loadings at Saudi Arabia's Yanbu port have decreased by 40%.",
+          "title": "Oil loadings at Saudi Arabia's Yanbu port decreased by 40%.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "The article discusses the placement of 'Watad' in the Beqaa region.",
+          "title": "A deployment named 'Wad' is being established in the Bekaa Valley.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -520,14 +522,14 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "A doctor explains the main risk factors that can shorten one's lifespan.",
+          "title": "A doctor revealed that daily habits can shorten lifespan, highlighting key risk factors.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Trump stated, 'We will hit Iran hard.'",
+          "title": "Trump stated, \"We will hit Iran hard.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -541,24 +543,38 @@
         },
         {
           "source": "Gulf News",
-          "title": "Latest MENA News & Top Stories",
+          "title": "UAE President Sheikh Mohamed meets Slovak PM Robert Fico to boost bilateral ties",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Masirah",
-          "title": "Official and popular preparations are underway in the capital and governorates to receive the anniversary of…",
+          "title": "Preparations are underway in the capital and governorates to receive the anniversary of the Prophet…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "Death toll from earthquake in southwestern Japan rises to 30",
-          "sec": 2,
+          "title": "German economy grows 0.2% in second quarter, beating expectations",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Türkiye, Moldova discuss expanding trade, defense industry cooperation",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Türkiye, Moldova push to strengthen trade, defense, tech ties",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
@@ -576,7 +592,7 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Prince Harry faces legal costs after losing Daily Mail privacy case",
+          "title": "Nolan's 'The Odyssey' revives interest in ancient Greek classics",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -627,14 +643,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 45,
       "sizes": [
-        5,
         4,
         4,
         4,
         3,
         3,
+        3,
         2,
         2,
         2,
@@ -642,7 +658,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -684,64 +699,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iran's IRGC says Strait of Hormuz cannot reopen while US 'threats' continue",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-07-30T05:59+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Iran International",
-            "Mehr News",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran's IRGC says Strait of Hormuz cannot reopen while US 'threats' continue",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Iran pushes back against US as regional attacks heat up",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "No movement conducted in Hormuz without Iran’s permission",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Iran International",
-                "title": "2 Iran rejects Oman’s 50-50 Hormuz shipping plan, proposes new route",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Gulf states back Omani plan for voluntary Iran transit fees in Strait of Hormuz,",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Egypt confirms drone caused fire aboard 2 vessels at Damietta Port",
           "rank_key": {
             "outlets": 4,
@@ -785,6 +742,57 @@
               {
                 "source": "Gulf News",
                 "title": "Egypt denies drone attack after fire at Damietta Port",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Iran's IRGC says Strait of Hormuz cannot reopen while US 'threats' continue",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-07-30T05:59+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Iran International",
+            "Mehr News",
+            "SANA"
+          ],
+          "camps": [
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Iran's IRGC says Strait of Hormuz cannot reopen while US 'threats' continue",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Mehr News",
+                "title": "No movement conducted in Hormuz without Iran’s permission",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "2 Iran rejects Oman’s 50-50 Hormuz shipping plan, proposes new route",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Gulf states back Omani plan for voluntary Iran transit fees in Strait of Hormuz,",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -838,46 +846,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Unidentified object lands deep inside Poland causing explosion as Russia launches deadly, Ukraine-wi",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-07-30T08:09+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Egypt Independent",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Unidentified object lands deep inside Poland causing explosion as Russia launches deadly, Ukraine-wide attack",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "At least 14 killed as Russia strikes Ukraine a day after Zelenskyy warning",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "US launches ‘heavy wave’ of new strikes on Iran",
           "rank_key": {
             "outlets": 3,
@@ -909,12 +877,55 @@
           }
         },
         {
+          "selected_rank": 5,
+          "headline": "Netanyahu arrives at White House after Trump meets Zelenskyy",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-07-29T13:41+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "TRT World",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Netanyahu arrives at White House after Trump meets Zelenskyy",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Netanyahu, Trump hold first White House talks since Iran war",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Trump rebukes Netanyahu for second straight day ahead of White House talks",
+                "rejected_by": "stale anticipatory framing"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": null,
-          "headline": "Israeli strike on displaced Palestinians’ tent in Gaza kills 3, including child",
+          "headline": "Israeli strikes kill 3 Palestinians, including 2 children, in Gaza despite ongoing ceasefire",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-30T07:31+00:00"
+            "newest": "2026-07-30T08:33+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
@@ -924,12 +935,12 @@
             "levant",
             "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Israeli strike on displaced Palestinians’ tent in Gaza kills 3, including child",
+            "title": "Israeli strikes kill 3 Palestinians, including 2 children, in Gaza despite ongoing ceasefire",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -937,12 +948,56 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Two Palestinians killed in Israeli strikes in Gaza, Khan Younes",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
           "selected_rank": null,
-          "headline": "The occupation forces are demolishing and threatening residential blocks in the Gaza Strip to reduce",
+          "headline": "Unidentified object lands deep inside Poland causing explosion as Russia launches deadly, Ukraine-wi",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-30T08:09+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent",
+            "Iran International"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Unidentified object lands deep inside Poland causing explosion as Russia launches deadly, Ukraine-wide attack",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "INSIGHT Ukraine strike on Iranian ship divides Tehran over risks of retaliation",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "The occupation is demolishing and threatening residential blocks in the Gaza Strip to reduce habitab",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
@@ -961,7 +1016,7 @@
           "why_not": null,
           "representative": {
             "source": "Al Mayadeen",
-            "title": "The occupation forces are demolishing and threatening residential blocks in the Gaza Strip to reduce the…",
+            "title": "The occupation is demolishing and threatening residential blocks in the Gaza Strip to reduce habitable areas.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -972,7 +1027,7 @@
             "passed_over": [
               {
                 "source": "Falastin al-Youm",
-                "title": "The 'curse of the Gaza war' has led to 38 suicides among occupation soldiers sin",
+                "title": "The toll of war in Gaza has led to 38 suicides among occupation soldiers since 2",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1018,85 +1073,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Netanyahu, Trump hold first White House talks since Iran war",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-28T22:52+00:00"
-          },
-          "outlet_names": [
-            "TRT World",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Netanyahu, Trump hold first White House talks since Iran war",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Trump rebukes Netanyahu for second straight day ahead of White House talks",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces detain dozens, impose curfew during military raid in Hebron",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-30T07:57+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces detain dozens, impose curfew during military raid in Hebron",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Israeli colonists raid Palestinian tents, threaten families with expulsion in Tu",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "The occupation authorities rejected four requests to halt the demolition of a sc",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran FM denounces joint US-Saudi attacks on areas in Iraq",
           "rank_key": {
             "outlets": 2,
@@ -1127,7 +1103,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump stated that they would 'take apart' Iran following the Iranian attack.",
+          "headline": "Trump stated his intention to \"smash\" Iran in response to an Iranian attack.",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
@@ -1145,7 +1121,7 @@
           "why_not": null,
           "representative": {
             "source": "Channel 13",
-            "title": "Trump stated that they would 'take apart' Iran following the Iranian attack.",
+            "title": "Trump stated his intention to \"smash\" Iran in response to an Iranian attack.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -1154,6 +1130,60 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iranian strike hit Chinese firm in Kuwait, Jordan downs missiles",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-30T08:37+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "QatarEnergy buys 33 US LNG cargoes to offset Hormuz disruption",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-30T08:16+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces turn four Palestinian homes into military posts near Nablus",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-30T07:57+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1175,7 +1205,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Revolutionary Guards warned of punishment for the attacker following an American strike.",
+          "headline": "The Revolutionary Guards threatened retaliation following an American attack.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1193,17 +1223,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "Why Iran chose to restart the fight after the US stopped firing",
+          "headline": "India’s arms sale to Israel risks complicity in Gaza genocide, Amnesty says",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-30T07:23+00:00"
+            "newest": "2026-07-30T07:13+00:00"
           },
           "outlet_names": [
-            "Egypt Independent"
+            "Al Jazeera"
           ],
           "camps": [
-            "levant"
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "In the waters off Malaysia, Iranian oil sales continue despite blockade",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-30T07:02+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1247,101 +1295,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Australia sues Telegram over alleged failure to remove terrorist videos",
+          "headline": "IRGC warns states against being accomplice in US aggression",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-30T04:57+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "10 martyrs and 7 wounded in Nineveh as a result of Saudi-American aggression on Iraq.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-30T02:14+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iraq is taking legal action to document the Saudi aggression, and the resistance has given the gover",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-30T02:14+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The question is whether Yemen will impose an economic blockade on Saudi Arabia.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-30T01:50+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "WAICO confronts Pax Silica: Why AI states won't choose sides",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-29T21:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Huge explosions reported in Sulaymaniyah province in n. Iraq",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-29T19:44+00:00"
+            "newest": "2026-07-30T06:03+00:00"
           },
           "outlet_names": [
             "Mehr News"
@@ -1355,11 +1313,29 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran dismantles four Takfiri teams in southeast",
+          "headline": "Ten martyrs and seven wounded in Nineveh as a result of Saudi-American aggression on Iraq.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-29T16:23+00:00"
+            "newest": "2026-07-30T02:14+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Huge explosions reported in Sulaymaniyah province in n. Iraq",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-29T19:44+00:00"
           },
           "outlet_names": [
             "Mehr News"
@@ -1390,7 +1366,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-30T08:14:11.927468+00:00",
+    "last_success": "2026-07-30T08:45:49.523608+00:00",
     "last_failure": null
   },
   "ok": true
