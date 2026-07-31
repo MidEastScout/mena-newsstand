@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T17:15:29.870833+00:00",
+  "updated": "2026-07-31T17:47:25.830224+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -109,7 +109,7 @@
         "Falastin al-Youm": {
           "headlines": 5,
           "lang": "ar",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "SANA": {
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-31T17:13:17.306368+00:00"
+      "headlines_updated": "2026-07-31T17:45:01.840698+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 20,
-        "title_snippet": 36,
-        "title_native": 79,
+        "dropped_stale": 21,
+        "title_snippet": 28,
+        "dropped_no_english": 8,
+        "title_native": 78,
         "in": 135,
-        "kept": 115
+        "kept": 106
       },
       "translator": {
         "configured": true,
@@ -189,6 +190,11 @@
         {
           "source": "The New Arab",
           "title": "Netanyahu, Trump hold first White House talks since Iran war",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Why Kuwait is turning to Pakistan as Gulf security shifts east",
           "reason": "stale (older than 48h)"
         },
         {
@@ -243,22 +249,22 @@
         },
         {
           "source": "Arab News",
-          "title": "Saudi Arabia strikes Iran-backed Iraqi militia",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
           "title": "GCC declares full support for Saudi Arabia after strikes on Iraqi militias",
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Saudi Arabia conducts strikes on Iran-backed militias in Iraq after drone attacks on oil facilities",
+          "source": "Arab News",
+          "title": "Saudi Arabia strikes Iran-backed Iraqi militia",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Gulf News",
           "title": "Egypt denies drone attack after fire at Damietta Port",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Saudi Arabia conducts strikes on Iran-backed militias in Iraq after drone attacks on oil facilities",
           "reason": "stale (older than 48h)"
         },
         {
@@ -285,12 +291,52 @@
           "source": "Al-Masirah",
           "title": "المحور: من الشهادة إلى السيادة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נער בן 14 נפצע קשה בתאונת טרקטורון בכפר כנא",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "القضاء يوقف رياض سلامة في مستشفى بحنس",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "حزب الله يدين العدوان الأميركي على العراق ويحذّر من تداعياته",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«حماس»: التزام الاحتلال المدخل الأساس لتنفيذ ما تمّ التوافق عليه",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "آلاف المهاجرين يعبرون الحدود بين المغرب وجيب سبتة الإسباني",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بري عن تفجيرات الشقيف: لا يجب السكوت عنها",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "حماس\": تسليم ملف السلاح رُبط بوقف أشكال العدوان والانسحاب من غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تباين وإدانات في الشارع السياسي الإسرائيلي عقب إعلان ترامب عن اتفاق بشأن غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 79,
+      "in": 106,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
@@ -419,13 +465,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Thousands of migrants are crossing the border between Morocco and Spain's Ceuta enclave.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "Oil prices are decreasing as supply continues to flow.",
           "sec": 0,
@@ -448,7 +487,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "UAE petrol, diesel prices for August 2026 announced",
+          "title": "Latest MENA News & Top Stories",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -484,20 +523,6 @@
         {
           "source": "Daily Sabah",
           "title": "Future Gaza administration to review up to $400M in financial commitments",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Türkiye enacts 12th Judicial Package pledging faster, stronger judiciary",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Türkiye continues humanitarian support for Lebanon",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -543,16 +568,22 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "TRT World",
+          "title": "US State Department apologises over Africa map blunder at AIDS conference: report",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 45,
       "sizes": [
-        10,
+        9,
         6,
-        4,
         3,
         3,
         2,
@@ -564,10 +595,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -610,14 +638,13 @@
           "selected_rank": 1,
           "headline": "Trump announces agreement for disarmament of Hamas",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 8,
             "camps": 5,
             "newest": "2026-07-31T16:28+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Al-Akhbar",
             "Arab News",
             "Channel 13",
             "Jordan Times",
@@ -632,7 +659,7 @@
             "levant",
             "turkish"
           ],
-          "members": 10,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -759,43 +786,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Trump says US will hit Iran 'very hard,' wants to 'win' war",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-31T16:58+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Iran International"
-          ],
-          "camps": [
-            "iranian",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Trump says US will hit Iran 'very hard,' wants to 'win' war",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "ANALYSIS What does Trump mean by 'finish the job' in Iran?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Iran Army targets US Ahmad al-Jaber airbase in Kuwait",
           "rank_key": {
             "outlets": 2,
@@ -827,7 +817,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "US Treasury sanctions networks in China, India, Russia and Iran supporting IRGC, Mahan Air",
           "rank_key": {
             "outlets": 2,
@@ -903,6 +893,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump urges caution on Ukraine request to produce Patriot missiles",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-07-31T17:16+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Trump urges caution on Ukraine request to produce Patriot missiles",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "A Hamas terrorist who held Romi Gonen and Sgt.",
           "rank_key": {
             "outlets": 2,
@@ -939,76 +960,36 @@
         },
         {
           "selected_rank": null,
-          "headline": "Rivka Greenspan, a Jewish economist, is reportedly the leading candidate for the next UN Secretary-G",
+          "headline": "Persian Gulf Strait Authority says Hormuz remains closed",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-07-31T16:31+00:00"
+            "newest": "2026-07-31T16:18+00:00"
           },
           "outlet_names": [
-            "Kan 11",
-            "N12"
+            "IRNA",
+            "Iran International"
           ],
           "camps": [
-            "israeli"
+            "iranian"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Rivka Greenspan, a Jewish economist, is reportedly the leading candidate for the next UN Secretary-General.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces detain ten Palestinians from West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-31T13:28+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces detain ten Palestinians from West Bank",
+            "source": "IRNA",
+            "title": "Persian Gulf Strait Authority says Hormuz remains closed",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "Colonists set fire to agricultural land in Burin, south of Nablus",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Ten injuries, including four children, resulted from the occupation's and settle",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Settlers, protected by occupation forces, raided the village of Tel and the west",
+                "source": "Iran International",
+                "title": "ANALYSIS Tehran tests a more confrontational strategy",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1112,14 +1093,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Spain says over 48,300 migrants have returned to Morocco from Ceuta",
+          "headline": "FM Fidan meets TRNC Prime Minister Üstel in Ankara",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T17:03+00:00"
+            "newest": "2026-07-31T17:09+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1130,17 +1111,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Persian Gulf Strait Authority says Hormuz remains closed",
+          "headline": "Trump says US will hit Iran 'very hard,' wants to 'win' war",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T16:18+00:00"
+            "newest": "2026-07-31T16:58+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Anadolu Agency"
           ],
           "camps": [
-            "iranian"
+            "turkish"
           ],
           "members": 2,
           "qualified": false,
@@ -1159,24 +1140,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Judicial authorities have detained Riad Salameh at a hospital in Beane.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T14:57+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1220,19 +1183,19 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hezbollah condemned the American aggression in Iraq and warned of its repercussions.",
+          "headline": "Israeli forces detain ten Palestinians from West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T14:05+00:00"
+            "newest": "2026-07-31T13:28+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar"
+            "WAFA News"
           ],
           "camps": [
             "levant"
           ],
-          "members": 1,
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1256,6 +1219,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Rivka Greenspan, a former Vice President of Costa Rica and a survivor's daughter, is the leading can",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T11:20+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Egypt to launch new e-visa system in August to hit 30 million tourism target",
           "rank_key": {
             "outlets": 1,
@@ -1264,24 +1245,6 @@
           },
           "outlet_names": [
             "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Nabih Berri stated that the explosions in Iqlim al-Tuffah should not be ignored.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T10:19+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
           ],
           "camps": [
             "levant"
@@ -1327,7 +1290,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "A leader in Islamic Jihad revealed the reason for the movement's reservation regarding the announced",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T08:17+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1345,7 +1326,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-31T17:15:56.271898+00:00",
+    "last_success": "2026-07-31T17:47:46.577914+00:00",
     "last_failure": null
   },
   "ok": true
