@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-31T10:36:25.580819+00:00",
+  "updated": "2026-07-31T11:07:48.093040+00:00",
   "stages": {
     "fetch": {
-      "items": 135,
+      "items": 134,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -137,7 +137,7 @@
           "error": null
         },
         "Al-Masirah": {
-          "headlines": 5,
+          "headlines": 4,
           "lang": "ar",
           "stale": false,
           "error": null
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-31T10:34:28.063898+00:00"
+      "headlines_updated": "2026-07-31T11:06:02.718211+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 18,
-        "title_snippet": 36,
+        "dropped_stale": 16,
+        "title_snippet": 31,
+        "dropped_no_english": 6,
         "title_native": 81,
-        "in": 135,
-        "kept": 117
+        "in": 134,
+        "kept": 112
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 36,
+        "requested": 37,
         "translated": 0,
         "cached": 0,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -189,11 +190,6 @@
         {
           "source": "The New Arab",
           "title": "Netanyahu, Trump hold first White House talks since Iran war",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "الحرس الثوري الإيراني يعلن استهداف 3 \"سفن مخالفة\" في مضيق هرمز وإيقافها",
           "reason": "stale (older than 48h)"
         },
         {
@@ -267,20 +263,45 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Al-Masirah",
-          "title": "المحور: من الشهادة إلى السيادة",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "TRT World",
           "title": "US will hit Iran 'hard' after attack on bases in Jordan: Trump",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "חוסל מפקד בכתאאב אל-מג'אהדין שלקח חלק בחטיפת אבינתן אור ונועה ארגמני וסודיסאק רינטלאק",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "טרגדיה בנהריה: אם נהרגה ובתה נפצעה בינוני מפגיעת מונית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بري عن تفجيرات الشقيف: لا يجب السكوت عنها",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "العدو الاسرائيلي ينفذ تفجيرات عنيفة في منطقة الشقيف جنوب لبنان 01:12",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "انخفاض أسعار النفط مع استمرار تدفق الامدادات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مصدر مصري: توقعات بتوقيع اتفاق المرحلة الثانية الإثنين بمدينة العلمين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 76,
+      "in": 112,
+      "kept": 74,
       "dropped": [
         {
           "source": "Channel 13",
@@ -306,6 +327,13 @@
         {
           "source": "Channel 13",
           "title": "Yonatan Roshfeld and Guy Gamzo commented on their new role in \"Mishakey Ha'Shaf,\" stating it aligns well with…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "At least 18 die as thousands cross from Morocco into enclave of Ceuta",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -341,13 +369,6 @@
         {
           "source": "Al Arabiya",
           "title": "US admits error after flawed Africa map shown at aids conference",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Iran’s Araghchi presses European counterparts over use of bases in US operations",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -423,13 +444,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Egypt Independent",
-          "title": "Egyptian fencing team defeats Israel to claim World Championship team bronze",
-          "sec": 0,
-          "off": 2,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al-Akhbar",
           "title": "Al Akhbar reports the destruction surrounding the historic Shqif Castle in southern Lebanon amidst perceived…",
           "sec": 0,
@@ -444,29 +458,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Al Akhbar reports that the State Employees Cooperative in Akkar is operating without employees.",
+          "source": "WAFA News",
+          "title": "Colonists set fire to agricultural land in Burin, south of Nablus",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "WAFA News",
-          "title": "Israeli colonists storm areas west of Nablus, Tell village under army protection",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Falastin al-Youm",
           "title": "Trump announced an agreement for a Palestinian government in Gaza and an Israeli withdrawal following…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "A meeting is scheduled in Cairo to discuss the implementation mechanisms of the Gaza agreement following…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -494,10 +494,10 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Anthropic says Claude models breached 3 organizations during cybersecurity tests",
+          "title": "France makes over 300 arrests linked to wildfire outbreaks",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
@@ -573,21 +573,22 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 48,
       "sizes": [
-        9,
+        8,
         5,
-        5,
-        4,
-        4,
+        3,
+        3,
         3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
+        2,
+        2,
+        2,
         1,
         1,
         1,
@@ -651,7 +652,7 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -670,11 +671,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Drone hits gas storage tanker at Egypt’s Mediterranean port of Damietta",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Jordan Times",
                 "title": "Fire at Egypt's Damietta port caused by drone attack: PM's office",
                 "rejected_by": "older than the story's newest wave"
@@ -682,6 +678,11 @@
               {
                 "source": "Egypt Independent",
                 "title": "Egypt assures Damietta Port operating at ‘full capacity’ following drone attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Egypt Independent",
+                "title": "Amr Adib calls for ‘firm response’ to Damietta Port drone attack",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -746,76 +747,23 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Sources in Yemen indicate preparations are underway for a ground invasion by Saudi Arabia.",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-07-31T07:10+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Arab News",
-            "Kan 11",
-            "TRT World"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Sources in Yemen indicate preparations are underway for a ground invasion by Saudi Arabia.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Sayyed Al-Houthi offered condolences to the Iraqi people for the martyrs of the ",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Arab News",
-                "title": "Yemen govt says Houthis planning to impose fees for Red Sea transit",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Saudi Arabia seeks coalition to protect Red Sea shipping from Houthi attacks",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Jordan condemns drone attack on vessels at Egypt's Damietta Port",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
             "newest": "2026-07-30T18:03+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Jordan Times",
-            "Mehr News",
-            "The New Arab"
+            "Mehr News"
           ],
           "camps": [
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -835,11 +783,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "The New Arab",
-                "title": "Iranian strike hit Chinese firm in Kuwait, Jordan downs missiles",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Mehr News",
                 "title": "IRGC destroys 3 US F-35 fighter jets in Al-Azraq Airbase",
                 "rejected_by": "older than the story's newest wave"
@@ -848,108 +791,17 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Israeli forces detain ten Palestinians from West Bank",
+          "selected_rank": 4,
+          "headline": "Iran war live: IRGC claims ‘retaliatory attack’ on Kuwait",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-07-31T08:36+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces detain ten Palestinians from West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Palestinian shot, others suffer tear gas inhalation during Israeli forces and co",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Ten injuries, including four children, were reported due to attacks by the occup",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Colonists stormed the village of Tell and the western area of Nablus under the p",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli occupiers raid areas near Nablus, army arrests 14 Palestinians in raids ",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran's IRGC says it hit 2 tankers, forced 4 others to turn back in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-31T09:59+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran's IRGC says it hit 2 tankers, forced 4 others to turn back in Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Gulf News",
-                "title": "US airstrikes hit Iran amid escalating clash over control of Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran war live: IRGC claims ‘retaliatory attack’ on Kuwait",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-07-31T09:09+00:00"
+            "newest": "2026-07-31T06:49+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Gulf News"
+            "Gulf News",
+            "The New Arab"
           ],
           "camps": [
             "gulf",
@@ -970,8 +822,182 @@
             ],
             "passed_over": [
               {
+                "source": "The New Arab",
+                "title": "Iranian strike hit Chinese firm in Kuwait, Jordan downs missiles",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Gulf News",
                 "title": "Kuwait: Iranian attack on Chinese firm's building leaves 1 dead",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Russia claims capture of 2 more settlements in Ukraine",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-31T10:54+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Russia claims capture of 2 more settlements in Ukraine",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran's IRGC says it hit 2 tankers, forced 4 others to turn back in Strait of Hormuz",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-31T09:59+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Iran International"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Iran's IRGC says it hit 2 tankers, forced 4 others to turn back in Strait of Hormuz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "INSIGHT Did China quietly defuse Iran's oil weapon? Pro-Ghalibaf paper asks out ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Coal mine blast in Pakistan's Balochistan leaves over 30 killed",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-31T08:50+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Coal mine blast in Pakistan's Balochistan leaves over 30 killed",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Morocco blocks thousands of irregular migrants from heading to Spain’s Ceuta",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-31T08:11+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Morocco blocks thousands of irregular migrants from heading to Spain’s Ceuta",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US Treasury sanctions networks in China, India, Russia and Iran supporting IRGC, Mahan Air",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-30T22:52+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "US Treasury sanctions networks in China, India, Russia and Iran supporting IRGC, Mahan Air",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "US issues sanctions targeting support networks for Iran’s Mahan Air",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1010,6 +1036,44 @@
               {
                 "source": "WAFA News",
                 "title": "Canada condemns escalating Israeli colonist violence in the occupied West Bank",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Yemen govt says Houthis planning to impose fees for Red Sea transit",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-29T12:03+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Yemen govt says Houthis planning to impose fees for Red Sea transit",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Sayyed Al-Houthi offered condolences to the Iraqi people for the martyrs of the ",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
@@ -1077,11 +1141,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "18 dead, thousands massed: Inside the growing crisis at the Morocco–Spain border",
+          "headline": "Egypt to launch new e-visa system in August to hit 30 million tourism target",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T10:32+00:00"
+            "newest": "2026-07-31T10:56+00:00"
           },
           "outlet_names": [
             "Egypt Independent"
@@ -1095,11 +1159,29 @@
         },
         {
           "selected_rank": null,
-          "headline": "Belgium to ease medical requirements for military recruits, reservists",
+          "headline": "Lebanese President meets Palestinian delegation to discuss elections and refugee issues",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T10:14+00:00"
+            "newest": "2026-07-31T10:55+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Kyrgyz, Azerbaijani presidents hold meeting in Cholpon-Ata to deepen bilateral ties",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T10:46+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1113,17 +1195,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Gaza administration committee says it is ready to govern enclave after ceasefire progress",
+          "headline": "18 dead, thousands massed: Inside the growing crisis at the Morocco–Spain border",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T09:57+00:00"
+            "newest": "2026-07-31T10:32+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Egypt Independent"
           ],
           "camps": [
-            "turkish"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1185,17 +1267,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "The number of migrants killed while attempting to cross from Morocco to Spain's Ceuta has risen to 1",
+          "headline": "Israeli forces detain ten Palestinians from West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T08:11+00:00"
+            "newest": "2026-07-31T08:36+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
+            "WAFA News"
           ],
           "camps": [
-            "panarab"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1211,24 +1293,6 @@
           },
           "outlet_names": [
             "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The United States is reassessing its military presence in Kuwait in light of continued Iranian attac",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T07:40+00:00"
-          },
-          "outlet_names": [
-            "N12"
           ],
           "camps": [
             "israeli"
@@ -1257,32 +1321,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russia reports targeting a ship carrying military cargo near Odesa, Ukraine.",
+          "headline": "Iran Army targets US Ahmad al-Jaber airbase in Kuwait",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T06:49+00:00"
+            "newest": "2026-07-31T06:40+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US terrorists wounded in Iran war rise to 653: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T06:20+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
+            "Mehr News"
           ],
           "camps": [
             "iranian"
@@ -1292,7 +1338,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Colonists stormed the village of Tell and the western area of Nablus under the protection of occupat",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T06:33+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1310,7 +1374,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-31T10:36:53.548274+00:00",
+    "last_success": "2026-07-31T11:08:16.744828+00:00",
     "last_failure": null
   },
   "ok": true
