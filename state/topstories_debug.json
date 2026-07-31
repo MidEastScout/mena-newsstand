@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T15:07:28.646648+00:00",
+  "updated": "2026-07-31T15:42:39.589510+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-31T15:05:33.604799+00:00"
+      "headlines_updated": "2026-07-31T15:40:30.310238+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 18,
-        "title_snippet": 37,
+        "title_snippet": 31,
+        "dropped_no_english": 6,
         "title_native": 80,
         "in": 135,
-        "kept": 117
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -275,12 +276,42 @@
           "source": "Al-Masirah",
           "title": "المحور: من الشهادة إلى السيادة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "מקור בהנהגת חמאס לעיתון סעודי: ארה\"ב סיפקה ערבויות שיחייבו את ישראל לסגת מעזה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "שבע עם קרן מרציאנו - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "גולדקנופף משווה גיוס חרדים - לפיגוע - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "כ\"ץ חשף: \"מטוסים אמריקניים ממריאים מישראל\" - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מבזק 07:00: צה\"ל מתגבר כוחות ביו\"ש - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "פגוש את העיתונות עם בן ועמית - 25.07.2026 - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 82,
+      "in": 111,
+      "kept": 76,
       "dropped": [
         {
           "source": "Channel 13",
@@ -347,7 +378,14 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Spain's PM blames Ceuta migrant influx on criminal networks",
+          "title": "Samsung operating profit up 1,800% in second quarter on AI boom",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Trump says US to hit Iran hard",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -355,6 +393,13 @@
         {
           "source": "L'Orient Today",
           "title": "INVESTIGATIVE PORTRAIT Antoun Sehnaoui: The golden boy's golden years (2/5)",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
+          "title": "INVESTIGATIVE PORTRAIT Inside the Sehnaoui family: The rise of Antoun (1/5)",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -402,13 +447,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "President Abbas expresses solidarity with Tunisia over wildfire damage",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "Oil prices have decreased amid continued supply flow.",
           "sec": 0,
@@ -451,8 +489,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "'Constructive step toward peace': EU welcomes Gaza disarmament agreement",
+          "source": "Daily Sabah",
+          "title": "Future Gaza administration to review up to $400M in financial commitments",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -519,23 +557,17 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "TRT World",
-          "title": "US State Department apologises over Africa map blunder at AIDS conference: report",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 53,
+      "clusters": 46,
       "sizes": [
         10,
         7,
         6,
+        3,
         3,
         2,
         2,
@@ -543,14 +575,6 @@
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -599,9 +623,10 @@
           "rank_key": {
             "outlets": 10,
             "camps": 5,
-            "newest": "2026-07-31T14:45+00:00"
+            "newest": "2026-07-31T15:09+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Al Jazeera",
             "Al-Akhbar",
             "Anadolu Agency",
@@ -609,7 +634,6 @@
             "Channel 13",
             "Jordan Times",
             "Kan 11",
-            "N12",
             "TRT World",
             "The New Arab"
           ],
@@ -651,15 +675,14 @@
           "selected_rank": 2,
           "headline": "Geographical analysis reveals attack scenarios on Egypt’s Damietta Port",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 4,
-            "newest": "2026-07-31T10:23+00:00"
+            "newest": "2026-07-31T15:26+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Egypt Independent",
             "Gulf News",
-            "Jordan Times",
             "TRT World",
             "WAFA News"
           ],
@@ -688,11 +711,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Jordan Times",
-                "title": "Fire at Egypt's Damietta port caused by drone attack: PM's office",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Egypt Independent",
                 "title": "Amr Adib calls for ‘firm response’ to Damietta Port drone attack",
                 "rejected_by": "older than the story's newest wave"
@@ -701,13 +719,18 @@
                 "source": "WAFA News",
                 "title": "Palestine condemns drone attack on vessels at Egypt's Damietta Port",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Egypt denies drone attack after fire at Damietta Port",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 3,
-          "headline": "IRGC strikes US targets in Kuwait a day after US hits Iran: Latest events",
+          "headline": "China says attacks on non-military targets ‘unacceptable’ after Iranian strike hits Chinese company ",
           "rank_key": {
             "outlets": 5,
             "camps": 4,
@@ -730,8 +753,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Jazeera",
-            "title": "IRGC strikes US targets in Kuwait a day after US hits Iran: Latest events",
+            "source": "Anadolu Agency",
+            "title": "China says attacks on non-military targets ‘unacceptable’ after Iranian strike hits Chinese company building in Kuwait",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -743,6 +766,11 @@
               {
                 "source": "Al Jazeera",
                 "title": "Hamas agree peace plan on Gaza; Iran hits Kuwait after US strikes",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "IRGC strikes US targets in Kuwait a day after US hits Iran: Latest events",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -760,6 +788,50 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Israeli defense minister says government approved 104 illegal settlements in the West Bank since 202",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-07-31T15:25+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Israeli defense minister says government approved 104 illegal settlements in the West Bank since 2022",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Canada condemns escalating Israeli colonist violence in the occupied West Bank",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "TRT World",
+                "title": "Illegal Israeli settler remained free after killing Palestinian in occupied West",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Jordan condemns drone attack on vessels at Egypt's Damietta Port",
           "rank_key": {
             "outlets": 3,
@@ -803,7 +875,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "US Treasury sanctions networks in China, India, Russia and Iran supporting IRGC, Mahan Air",
           "rank_key": {
             "outlets": 2,
@@ -916,6 +988,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Coffins now integral part of US military equipment in region",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-07-31T12:49+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Coffins now integral part of US military equipment in region",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Top Iranian commander: Coffins are now part of US equipment in region",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "IRGC targets, stops two violating oil tankers in Strait of Hormuz",
           "rank_key": {
             "outlets": 2,
@@ -953,63 +1061,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Reports indicate that the US and Israel are discussing imposing a land blockade on Iran.",
+          "headline": "Clashes resume at Spain’s Ceuta border as 49,000 migrants cross in 24 hours",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T10:04+00:00"
+            "newest": "2026-07-31T15:08+00:00"
           },
           "outlet_names": [
-            "Kan 11",
-            "N12"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Reports indicate that the US and Israel are discussing imposing a land blockade on Iran.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Fourteen leaders of a mutiny within the Giv'ati Brigade's Tsa'ar Battalion have been sentenced to…",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-31T09:46+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Fourteen leaders of a mutiny within the Giv'ati Brigade's Tsa'ar Battalion have been sentenced to…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1103,24 +1169,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Spain brands Ceuta migrant influx 'attack,' vows swift repatriations, full state response",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T12:19+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Türkiye's homegrown Kaan fighter jet completes pre-flight taxi test",
           "rank_key": {
             "outlets": 1,
@@ -1132,42 +1180,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Türk Telekom builds AI-powered shield against rising cyber threats",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T11:45+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A preliminary poll in the Security Council suggests that a female economist, a former Vice President",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T11:20+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1211,14 +1223,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "A mother was killed and her daughter was moderately injured after being hit by a taxi in Nahariya.",
+          "headline": "Leaders of the mutiny in the Giv'ati Brigade have been sentenced to 30 days of detention and removed",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T10:14+00:00"
+            "newest": "2026-07-31T09:46+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Channel 13"
           ],
           "camps": [
             "israeli"
@@ -1228,7 +1240,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Fourteen soldiers from the Givati Brigade have been sentenced to 30 days in prison and removed from ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T09:36+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Following the attack on Damietta, the Egyptian Prime Minister stated that alternative energy sources",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T09:18+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1246,7 +1294,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-31T15:07:30.001395+00:00",
+    "last_success": "2026-07-31T15:42:59.824022+00:00",
     "last_failure": null
   },
   "ok": true
