@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T12:51:29.165026+00:00",
+  "updated": "2026-07-31T13:22:37.342522+00:00",
   "stages": {
     "fetch": {
       "items": 134,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-07-31T12:49:21.283481+00:00"
+      "headlines_updated": "2026-07-31T13:20:59.926833+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 16,
-        "title_snippet": 37,
+        "dropped_no_english": 7,
+        "title_snippet": 30,
         "title_native": 81,
         "in": 134,
-        "kept": 118
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -265,20 +266,48 @@
           "source": "TRT World",
           "title": "US will hit Iran 'hard' after attack on bases in Jordan: Trump",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "איראן: הרשויות במדינה הודיעו כי המעבר במצר הורמוז אינו אפשרי עקב תקיפות אמריקניות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "גורם ישראלי ל-CNN על מפת הדרכים לעזה: \"לא ניסוג מהקו הצהוב עד לפירוק מלא של חמאס מנשק\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "פקיסטן: 4 הרוגים ו-6 נעדרים במפולת שלגים שאירעה בהר ברוד פיק, מהפסגות הגבוהות בעולם",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מבזק 7:00 - ההסלמה במפרץ הפרסי - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "דיסינ - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "ترامب لـ\"فايننشل تايمز\": غير متأكد من السماح لأوكرانيا بتصنيع صواريخ \"باتريوت\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«حماس»: التزام الاحتلال المدخل الأساس لتنفيذ ما تمّ التوافق عليه",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 73,
+      "in": 111,
+      "kept": 68,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "In Pakistan, a snow slide on Broad Peak, one of the world's highest mountains, resulted in four deaths and…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Kan 11",
           "title": "The Spanish Ministry of the Interior reported that over 25,000 individuals voluntarily returned to Morocco…",
@@ -303,20 +332,6 @@
         {
           "source": "N12",
           "title": "This entry pertains to news and updates about Kuwait.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "This entry contains articles by Massimo Gross, a content editor for the mako website.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Liel Eli revealed that she auditioned for 'Dancing with the Stars', suggesting a potential future appearance.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -380,13 +395,6 @@
         {
           "source": "Middle East Eye",
           "title": "Israeli election campaign billboards in Cyprus spark debate",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Why Kuwait is turning to Pakistan as Gulf security shifts east",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -469,6 +477,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Released Palestinian detainee says he was tortured and starved in Israeli custody",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "Oil prices decreased with the continued flow of supplies.",
           "sec": 0,
@@ -512,7 +527,21 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Fed officials backing rate hikes urge immediate action against inflation",
+          "title": "Japan protests alleged Chinese structure in East China Sea, urges revival of 2008 resource pact",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Extreme weather grips Asia with heat wave, heavy rain",
+          "sec": 0,
+          "off": 1,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Türkiye continues humanitarian support for Lebanon",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -533,14 +562,7 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Archaeologists uncover 2,000-year-old Roman mosaic in Türkiye",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Anthropic says its AI models hacked 3 companies during tests",
+          "title": "Extended maternity leave reaches 67,000 mothers in Türkiye",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -582,29 +604,26 @@
         },
         {
           "source": "TRT World",
-          "title": "US State Department apologises over Africa map blunder at AIDS conference: report",
+          "title": "Spain lambasts Italy's call for its suspension from Schengen zone as migrants flood Ceuta enclave",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 46,
       "sizes": [
         7,
-        7,
+        5,
         4,
-        4,
+        3,
         3,
         3,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -651,61 +670,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Hamas agrees to disarm under Trump-backed Gaza peace plan",
-          "rank_key": {
-            "outlets": 7,
-            "camps": 4,
-            "newest": "2026-07-31T12:44+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Arab News",
-            "Daily Sabah",
-            "Kan 11",
-            "TRT World",
-            "The New Arab"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "panarab",
-            "turkish"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Hamas agrees to disarm under Trump-backed Gaza peace plan",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Hamas reaches Gaza disarmament agreement with Trump’s Board of Peace",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Hamas moving toward Gaza disarmament deal, Israel says won’t withdraw until full",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Gaza peace board reaches deal on Hamas disarmament, says Trump",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Geographical analysis reveals attack scenarios on Egypt’s Damietta Port",
           "rank_key": {
             "outlets": 6,
@@ -763,6 +727,58 @@
           }
         },
         {
+          "selected_rank": 2,
+          "headline": "Hope follows Hamas's disarmament plan, but Israel remains silent",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-07-31T12:44+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency",
+            "Arab News",
+            "TRT World",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Hope follows Hamas's disarmament plan, but Israel remains silent",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Hamas reaches Gaza disarmament agreement with Trump’s Board of Peace",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Hamas moving toward Gaza disarmament deal, Israel says won’t withdraw until full",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Gaza peace board reaches deal on Hamas disarmament, says Trump",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 3,
           "headline": "Iran's IRGC says it hit 2 tankers, forced 4 others to turn back in Strait of Hormuz",
           "rank_key": {
@@ -804,45 +820,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Palestinian injured after Israeli forces open fire on vehicle south of Nablus",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-07-31T11:55+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Palestinian injured after Israeli forces open fire on vehicle south of Nablus",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Hamas agree draft peace plan on Gaza, as Israeli settlers raid West Bank",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "IRGC strikes US targets in Kuwait a day after US hits Iran: Latest events",
           "rank_key": {
             "outlets": 3,
@@ -874,14 +851,14 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "IRGC claims attack on Kuwait; Trump announces peace deal in Gaza",
+                "title": "Hamas agree peace plan on Gaza; Iran hits Kuwait after US strikes",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Jordan condemns drone attack on vessels at Egypt's Damietta Port",
           "rank_key": {
             "outlets": 3,
@@ -926,6 +903,44 @@
         },
         {
           "selected_rank": null,
+          "headline": "Settlers stormed the village of Tal and the western area of Nablus under protection from occupation ",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-07-31T06:33+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "Settlers stormed the village of Tal and the western area of Nablus under protection from occupation forces.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Gaza updates: Hamas agree draft peace plan, as settlers raid West Bank",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "US Treasury sanctions networks in China, India, Russia and Iran supporting IRGC, Mahan Air",
           "rank_key": {
             "outlets": 2,
@@ -963,17 +978,18 @@
         },
         {
           "selected_rank": null,
-          "headline": "Gaza administration committee says it is ready to govern enclave under ceasefire roadmap",
+          "headline": "Saudi Arabia seeks coalition to protect Red Sea shipping from Houthi attacks",
           "rank_key": {
             "outlets": 2,
-            "camps": 1,
-            "newest": "2026-07-31T11:21+00:00"
+            "camps": 2,
+            "newest": "2026-07-30T03:10+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
+            "Al Manar",
             "TRT World"
           ],
           "camps": [
+            "levant",
             "turkish"
           ],
           "members": 2,
@@ -981,48 +997,54 @@
           "why_not": null,
           "representative": {
             "source": "TRT World",
-            "title": "Gaza administration committee says it is ready to govern enclave under ceasefire roadmap",
+            "title": "Saudi Arabia seeks coalition to protect Red Sea shipping from Houthi attacks",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Sayyed Al-Houthi offered condolences to the Iraqi people for the martyrs of the ",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
           }
         },
         {
           "selected_rank": null,
-          "headline": "NATO aims to expand nuclear deterrence in Europe amid Russian threats: Report",
+          "headline": "UK condemns escalating Israeli colonist violence in the West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T12:24+00:00"
+            "newest": "2026-07-31T13:12+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Lebanese beekeepers turn to satellite images to track hives stranded under Israeli occupation",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T13:00+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran joins world AI cooperation organization",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T12:14+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1048,24 +1070,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Three Palestinians, including two children, killed in Israeli strikes across Gaza",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T11:55+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Egypt to launch new e-visa system in August to hit 30 million tourism target",
           "rank_key": {
             "outlets": 1,
@@ -1077,24 +1081,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The commander of Kata'ib al-Mujahideen, who participated in the abduction of Avinatan Or, Noa Argama",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T10:42+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1138,6 +1124,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Methane blast kills at least 34 miners in southwestern Pakistan",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T10:12+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Death toll rises to at least 34 after blast at Pakistan coal mine complex",
           "rank_key": {
             "outlets": 1,
@@ -1174,24 +1178,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Spain: The death toll of migrants attempting to cross from Morocco to Ceuta has risen to 18.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T08:11+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Baqaei stated that the American attack on homes in Qeshm is reminiscent of ISIS terrorist crimes.",
           "rank_key": {
             "outlets": 1,
@@ -1209,7 +1195,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Russia claims to have targeted a ship carrying military cargo near Odesa, Ukraine.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T06:49+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US terrorists wounded in Iran war rise to 653: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T06:20+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1227,7 +1249,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-31T12:51:48.308173+00:00",
+    "last_success": "2026-07-31T13:22:58.295568+00:00",
     "last_failure": null
   },
   "ok": true
