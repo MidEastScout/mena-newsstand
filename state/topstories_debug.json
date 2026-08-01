@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T03:21:13.132800+00:00",
+  "updated": "2026-08-01T03:52:54.262138+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -167,28 +167,33 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-01T03:19:17.979976+00:00"
+      "headlines_updated": "2026-08-01T03:51:27.437066+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 15,
+        "dropped_stale": 17,
         "title_translated": 38,
-        "title_native": 82,
+        "title_native": 80,
         "in": 135,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 5,
-        "translated": 5,
-        "cached": 49,
+        "requested": 1,
+        "translated": 1,
+        "cached": 54,
         "error": null
       },
       "dropped": [
         {
           "source": "The New Arab",
           "title": "Netanyahu, Trump hold first White House talks since Iran war",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Yemen govt says Houthis planning to impose fees for Red Sea transit",
           "reason": "stale (older than 48h)"
         },
         {
@@ -243,6 +248,11 @@
         },
         {
           "source": "Arab News",
+          "title": "Yemen govt says Houthis planning to impose fees for Red Sea transit",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
           "title": "Saudi Arabia strikes Iran-backed Iraqi militia",
           "reason": "stale (older than 48h)"
         },
@@ -264,8 +274,8 @@
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 82,
+      "in": 118,
+      "kept": 80,
       "dropped": [
         {
           "source": "N12",
@@ -290,16 +300,16 @@
         },
         {
           "source": "Channel 13",
-          "title": "The day that was 30.07.26 - the full program for streaming -",
+          "title": "Oleh Kravchenko in a special interview: \"Maybe now they will know who the murderer is\"",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Essenheim, Season 1, Episode 8: Yair Golan Watch Online -",
+          "title": "The day that was 30.07.26 - the full program for streaming -",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -352,15 +362,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Iran International",
-          "title": "3 From cafes to buskers, Tehran tightens its grip on the fabric of everyday life",
+          "source": "IRNA",
+          "title": "Ghalibaf: US will ‘pay the price’ for killing civilians on Iran’s Qeshm Island",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Iran International",
-          "title": "5 Iranian agents cut protester's royalist tattoos before killing him",
+          "title": "3 From cafes to buskers, Tehran tightens its grip on the fabric of everyday life",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -444,9 +454,9 @@
         },
         {
           "source": "Gulf News",
-          "title": "UK singer Boy George pulls out of musical after pro-Israel song backlash",
+          "title": "Gold buyers shifted to lighter jewellery as prices stayed high in Q2",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -537,21 +547,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 58,
+      "clusters": 54,
       "sizes": [
-        8,
+        13,
         6,
-        4,
+        3,
         3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -606,17 +612,19 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Hope follows Hamas's disarmament plan, but Israel remains silent",
+          "headline": "Trump announces agreement for disarmament of Hamas",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 8,
             "camps": 5,
             "newest": "2026-07-31T14:30+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al Jazeera",
             "Arab News",
             "Channel 13",
             "Falastin al-Youm",
+            "Jordan Times",
             "TRT World",
             "The New Arab"
           ],
@@ -627,58 +635,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Hope follows Hamas's disarmament plan, but Israel remains silent",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Hamas agrees to deal for disarmament, Israel’s withdrawal from Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Hamas moving toward Gaza disarmament deal, Israel says won’t withdraw until full",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas: Handing over the weapons file is linked to the cessation of forms of aggr",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Trump announces agreement for disarmament of Hamas",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-07-31T12:11+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Falastin al-Youm",
-            "Jordan Times",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -698,15 +655,25 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "TRT World",
-                "title": "Gaza peace board reaches deal on Hamas disarmament, says Trump",
+                "source": "Al Jazeera",
+                "title": "World reacts with cautious optimism to Hamas disarmament agreement",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Hamas agrees to deal for disarmament, Israel’s withdrawal from Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Hamas moving toward Gaza disarmament deal, Israel says won’t withdraw until full",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 2,
           "headline": "Geographical analysis reveals attack scenarios on Egypt’s Damietta Port",
           "rank_key": {
             "outlets": 4,
@@ -760,7 +727,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Israeli strikes against Gaza kill 2 Palestinians, others injured",
           "rank_key": {
             "outlets": 2,
@@ -798,12 +765,12 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Iran redraws the rules of engagement... From the Strait of Hormuz to the US bases",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-07-31T20:33+00:00"
+            "newest": "2026-07-31T22:41+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
@@ -813,7 +780,7 @@
             "panarab",
             "iranian"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -828,6 +795,11 @@
             ],
             "passed_over": [
               {
+                "source": "Al Mayadeen",
+                "title": "Video. The Revolutionary Guards warn ships and force them to change course as th",
+                "rejected_by": "bare stub headline"
+              },
+              {
                 "source": "IRNA",
                 "title": "IRGC targets, stops two violating oil tankers in Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
@@ -836,7 +808,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Russia appears to infiltrate first ‘fortress city’ as Ukraine changes guard",
           "rank_key": {
             "outlets": 2,
@@ -965,33 +937,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran warns US to \"pay heavy price\" for killing civilians",
+          "headline": "Tanker struck by unknown projectile off Oman, engine room damaged: UK maritime agency",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-07-31T05:46+00:00"
+            "newest": "2026-08-01T03:40+00:00"
           },
           "outlet_names": [
-            "IRNA",
-            "Mehr News"
+            "Anadolu Agency"
           ],
           "camps": [
-            "iranian"
+            "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "Iran warns US to \"pay heavy price\" for killing civilians",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1008,24 +968,6 @@
             "turkish"
           ],
           "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "In land of figs, olives, Israeli occupiers’ violence turns harvest season bitter for West Bank villa",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-01T02:52+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1085,24 +1027,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Video. The Revolutionary Guards warn ships and force them to change course as they try to take an il",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T22:41+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump is considering a new attack on Iran; Energy Targets in Focus",
           "rank_key": {
             "outlets": 1,
@@ -1114,24 +1038,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US, Israel planning to bombard energy-related targets in Iran, CBS reports",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-07-31T21:35+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1210,7 +1116,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "36 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iranian, British top diplomats discuss bilateral ties and international developments",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T19:37+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hamas: Qatari Prime Minister Congratulated Khalil Al-Hayya, the new head of the organization's polit",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-07-31T19:35+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "34 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1228,7 +1170,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-01T03:21:36.022502+00:00",
+    "last_success": "2026-08-01T03:53:23.157328+00:00",
     "last_failure": null
   },
   "ok": true
