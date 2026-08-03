@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T18:35:35.311919+00:00",
+  "updated": "2026-08-03T19:08:20.323215+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,23 +167,24 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-03T18:34:26.640028+00:00"
+      "headlines_updated": "2026-08-03T19:06:18.758605+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_translated": 40,
+        "dropped_no_english": 7,
+        "title_translated": 33,
         "title_native": 86,
         "in": 135,
-        "kept": 126
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 5,
-        "translated": 5,
-        "cached": 557,
-        "error": null
+        "requested": 7,
+        "translated": 0,
+        "cached": 562,
+        "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
         {
@@ -230,12 +231,47 @@
           "source": "TRT World",
           "title": "Türkiye, Iraq sign deal to maximise Kirkuk-Ceyhan oil pipeline use",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בשל התנגדותו לחיזבאללה: שר החוץ הלבנוני הודר מהמו\"מ עם ישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צה\"ל: לוחם במילואים נפצע קל בתאונה מבצעית בדרום לבנון ופונה לטיפול רפואי בבית חולים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צה\"ל: לוחם במילואים נפצע קל בתאונה מבצעית בדרום לבנון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "איראן: \"אין שיחות עם ארה\"ב\"; טראמפ: \"זו ההזדמנות האחרונה שלהם\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "בליכוד הציעו שריון לאבידע בכר, שאיבד את אשתו ובנו ב-7.10",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"גל מקיאה בשירותים\": הדרמה בחופשה של גל גדות, רותם סלע, לירון ויצמן ויעל גולדמן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الرئيس الصومالي: سنمنع إسرائيل من ترسيخ نفوذها في «أرض الصومال»",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 126,
-      "kept": 78,
+      "in": 119,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
@@ -266,6 +302,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "N12",
+          "title": "Two months after he left his position as head of the Mossad: Dedi Barnea's new job",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Channel 13",
           "title": "The police car is documenting, the report will be waiting for you in the mail: The \"camera revolution\" in the police",
           "sec": 0,
@@ -275,20 +318,6 @@
         {
           "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Record immigration: Almost 100,000 left the country for a period of at least 3 months",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Former Knesset member and well-known businessmen investigated on suspicion of real estate offenses",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -344,6 +373,13 @@
         },
         {
           "source": "Al Arabiya",
+          "title": "Trump tells ‘duplicitous’ Iran to make deal or surrender",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
           "title": "Trump demands lower gas prices from oil companies, chides Chevron CEO",
           "sec": 0,
           "off": 0,
@@ -351,14 +387,7 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Firefighting Helicopters Battle Wildfire In Greece",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Ceuta unable to absorb thousands of migrants after wave of mass crossings",
+          "title": "Syria’s al-Sharaa Receives Iraqi Kurdistan Region Leader",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -371,6 +400,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "Ceuta unable to absorb thousands of migrants after wave of mass crossings",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "IRNA",
           "title": "Islamabad hosts 10th meeting of Pakistan–Iran Joint Trade Committee",
           "sec": 0,
@@ -378,15 +414,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Iran International",
-          "title": "ANALYSIS China helps Iran chip away at US air superiority despite Xi’s no-arms pledge",
+          "source": "Mehr News",
+          "title": "Iran executes two Mossad spies",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "Brazil's Lula launches fourth term bid as Trump looms over campaign",
+          "source": "Iran International",
+          "title": "ANALYSIS China helps Iran chip away at US air superiority despite Xi’s no-arms pledge",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -441,13 +477,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Cyprus curses: Don't back down in front of Turkey",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "The enemy's media: a serious security violation on the ground! 10:28",
           "sec": 0,
@@ -476,32 +505,11 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Meteorological monitor: The heat wave will decline and the intensity of the heat will break starting tomorrow, Tuesday",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Colonizers storm Al-Aqsa Mosque",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "SANA",
           "title": "President Ahmad al-Sharaa receives Iraqi Kurdistan Region President Barzani",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Two firefighting helicopters collide while battling Greece wildfire",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al-Masirah",
@@ -518,8 +526,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Trump urges oil companies to cut retail fuel prices",
+          "source": "Daily Sabah",
+          "title": "Boeing's 737 Max 7 plane gets FAA approval after years of delays",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -533,7 +541,7 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Driven by cloud, AI growth, Amazon hits $3 trillion in market value",
+          "title": "Turkish defense exports continue to rise, reach $1.12B in July",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -577,11 +585,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 55,
+      "clusters": 50,
       "sizes": [
-        8,
-        5,
+        9,
         4,
+        4,
+        3,
         3,
         2,
         2,
@@ -590,12 +599,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -645,7 +648,7 @@
           "selected_rank": 1,
           "headline": "Israel conveys 'concerns' to US on Gaza plan and keeps striking",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 8,
             "camps": 3,
             "newest": "2026-08-03T18:25+00:00"
           },
@@ -654,6 +657,7 @@
             "Arab News",
             "Daily Sabah",
             "Egypt Independent",
+            "Falastin al-Youm",
             "Jordan Times",
             "SANA",
             "TRT World"
@@ -663,7 +667,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -702,59 +706,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Hormuz back in focus as Trump suspends planned strike on Iran",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-08-03T17:38+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen",
-            "Gulf News",
-            "Jordan Times",
-            "Mehr News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Hormuz back in focus as Trump suspends planned strike on Iran",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Mayadeen",
-                "title": "Tehran: No talks with Washington. The Strait of Hormuz is the priority of unders",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "Iran-Oman talks on Strait of Hormuz near finalization",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Iran rejects US-backed deal to reopen Strait of Hormuz: What UAE residents need ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "5.6-magnitude earthquake strikes north of Egypt’s Suez, no damage reported",
           "rank_key": {
             "outlets": 4,
@@ -801,6 +752,52 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "Hormuz back in focus as Trump suspends planned strike on Iran",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-08-03T17:38+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al Mayadeen",
+            "Gulf News",
+            "Jordan Times"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Hormuz back in focus as Trump suspends planned strike on Iran",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Mayadeen",
+                "title": "Tehran: No talks with Washington. The Strait of Hormuz is the priority of unders",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Iran rejects US-backed deal to reopen Strait of Hormuz: What UAE residents need ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 4,
           "headline": "Suicide attack kills 14 during protest in northern Pakistan: police",
           "rank_key": {
@@ -835,6 +832,80 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Iraqi Kurdish leader in Damascus for talks on Syria Kurds' deal: sources to AFP",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-03T16:30+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Jordan Times"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Iraqi Kurdish leader in Damascus for talks on Syria Kurds' deal: sources to AFP",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iranian foreign minister discusses regional developments with Pakistani, Omani counterparts",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-03T15:42+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "IRNA"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Iranian foreign minister discusses regional developments with Pakistani, Omani counterparts",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Iran, Iraq foreign ministers discuss regional developments",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Iranian, Saudi foreign ministers discuss regional developments",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Explosion reported in tanker off Oman coast, crew safe: UKMTO",
           "rank_key": {
             "outlets": 2,
@@ -977,24 +1048,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump: \"Talks with Iran are continuing, and this is its last chance to sign an agreement\"",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-03T18:11+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "4 injured after drone strike hits Turkish cargo ship in Black Sea",
           "rank_key": {
             "outlets": 1,
@@ -1024,42 +1077,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US unveils voluntary cybersecurity testing for advanced AI",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-03T16:53+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A 21-year-old man was killed in an ATV rollover near Neve Erez in Judea and Samaria, another young m",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-03T16:46+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1103,24 +1120,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran: \"No talks with the US\"; Trump: \"They are begging for a meeting\"",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-03T15:49+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Speaker of the Shura Council: Yemen adheres to its right to end the blockade and rejects the militar",
           "rank_key": {
             "outlets": 1,
@@ -1134,24 +1133,6 @@
             "panarab"
           ],
           "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A man in his 30s was seriously injured by gunfire in Kafr Qasim",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-03T15:27+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1192,7 +1173,97 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "35 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Foreign Minister: Settler violence and settlement expansion are twin pillars of Israel's colonial pr",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T13:13+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "This is not the first time Trump has called off strikes on Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T12:39+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Deadly bomb explosion at Moscow restaurant was ‘terrorist attack,’ mayor says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T12:32+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Prisoners' Authority: The occupation issues new administrative detention orders for 41 prisoners",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T12:28+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "A severe financial crisis ravages the occupation army and a paralysis in the budget",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T12:03+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1210,7 +1281,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03T18:35:52.457632+00:00",
+    "last_success": "2026-08-03T19:08:38.547728+00:00",
     "last_failure": null
   },
   "ok": true
