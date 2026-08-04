@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T08:52:51.126522+00:00",
+  "updated": "2026-08-04T09:08:47.282367+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,22 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-04T08:51:04.227615+00:00"
+      "headlines_updated": "2026-08-04T09:06:54.226869+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "dropped_no_english": 8,
-        "title_snippet": 21,
+        "dropped_no_english": 10,
+        "title_snippet": 18,
+        "title_translated": 12,
         "title_native": 81,
-        "title_translated": 11,
         "in": 135,
-        "kept": 113
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 29,
+        "requested": 28,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -275,7 +275,17 @@
         },
         {
           "source": "N12",
-          "title": "המרד בגבעתי: נגזר עונשם של 4 הלוחמים האחרונים; אחד נשפט בחופשת השחרור",
+          "title": "בכיר חמאס נשאל על זוועות הטבח ב-7 באוקטובר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הגיעה להתייעצות לגבי טיפול שיניים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מצבי חירום באיטליה ולונדון, ענני הסערה מחדשים את השרפות: \"המצב הקשה ביותר\" מאז מלחמת העולם השנייה",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -285,7 +295,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "המהדורה המרכזית 03.08.26 - המהדורה המלאה לצפייה ישירה -",
+          "title": "עומרי קנדה בווידוי: \"אני כל יום קם בבוקר, מסתכל במראה ואומר – היום אני לא משקר\"",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -301,8 +311,8 @@
       ]
     },
     "relevance": {
-      "in": 113,
-      "kept": 65,
+      "in": 111,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -321,13 +331,6 @@
         {
           "source": "N12",
           "title": "According to The New York Times, the deal between Iran and Oman involves \"service fees\" to be paid to Iran.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The article discusses the Israeli Armored Corps, highlighting a shift in perception from questioning its…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -362,7 +365,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "Petrol prices strain US households as oil giants Chevron, Exxon profits soar",
+          "title": "From Trump to El-Sayed: US Arabs in Michigan centre Palestine in politics",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -579,6 +582,13 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Ceuta crisis reflects Türkiye’s indiscriminate humanitarian approach",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "Apple restores Telegram after brief removal due to content violations",
           "sec": 0,
           "off": 2,
@@ -587,13 +597,6 @@
         {
           "source": "Daily Sabah",
           "title": "Türkiye sees decline in child-related security cases in 2025",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "25 US states sue Trump administration over latest global tariffs",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -644,22 +647,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 45,
       "sizes": [
         7,
-        6,
+        4,
+        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -761,15 +761,59 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-08-04T07:23+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Egypt Independent",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "N12",
+                "title": "Documentation: Seven killed in Ukrainian UAV strike at resort in Russia",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Russia says Ukrainian drone attack on holiday-makers killed six, including three",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Israeli army, illegal settlers carried out 2,256 attacks in occupied West Bank in July",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-08-04T08:07+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "SANA",
             "TRT World",
             "WAFA News"
           ],
@@ -777,7 +821,7 @@
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -797,56 +841,13 @@
               },
               {
                 "source": "WAFA News",
-                "title": "UPDATE: Three Palestinians injured as Israeli forces raid eastern Nablus to secu",
+                "title": "Colonists burn three vehicles, attack homes and damage power grid south of Nablu",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "SANA",
-                "title": "Israeli forces detain 9 Palestinians, demolish structures in West Bank raids",
-                "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Anadolu Agency",
-                "title": "4 Palestinians injured as Israeli forces and occupiers intensify West Bank opera",
+                "title": "Israeli occupiers burn 3 Palestinian vehicles, damage power grid in West Bank",
                 "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-04T07:23+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Egypt Independent"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Russia says Ukrainian drone attack on holiday-makers killed six, including three",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -890,38 +891,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Hormuz back in focus as Trump suspends planned strike on Iran",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-03T21:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Hormuz back in focus as Trump suspends planned strike on Iran",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "6 Saudi tankers divert via southern Africa for fear of Yemen",
           "rank_key": {
             "outlets": 2,
@@ -950,6 +919,82 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hormuz back in focus as Trump suspends planned strike on Iran",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-03T15:53+00:00"
+          },
+          "outlet_names": [
+            "Iran International",
+            "Jordan Times"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Hormuz back in focus as Trump suspends planned strike on Iran",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "4 Diplomatic window reopens as shadow of Iran war lingers",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "5.6-magnitude earthquake strikes near Egypt’s Suez; no damage reported",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-03T07:56+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "SANA"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "5.6-magnitude earthquake strikes near Egypt’s Suez; no damage reported",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (earthquake)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Magnitude 5.5 earthquake strikes near Egypt’s Suez",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -992,21 +1037,63 @@
         },
         {
           "selected_rank": null,
-          "headline": "Aramco reports higher revenue as US-Iran war boosts oil prices",
+          "headline": "Aramco net profits jump 44% as US-Iran war boosts oil prices",
           "rank_key": {
-            "outlets": 1,
+            "outlets": 2,
             "camps": 1,
             "newest": "2026-08-04T07:36+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Anadolu Agency",
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
           ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Aramco net profits jump 44% as US-Iran war boosts oil prices",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran has ‘total intelligence superiority’ in northwest",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-03T20:33+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Iran has ‘total intelligence superiority’ in northwest",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
         },
         {
           "selected_rank": null,
@@ -1028,11 +1115,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Aramco posts 44 percent rise in net profit as Iran war drives up oil prices",
+          "headline": "Singapore bans 2 Massive Attack members after pro-Palestinian display at concert",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T06:53+00:00"
+            "newest": "2026-08-04T06:31+00:00"
           },
           "outlet_names": [
             "Arab News"
@@ -1064,35 +1151,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Jewish individuals set fire to several vehicles between the villages of Jalud and Telafit in Benjami",
+          "headline": "Drone strike kills at least 5 in Russia’s Moscow region: Governor",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T06:17+00:00"
+            "newest": "2026-08-04T04:23+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Four female soldiers from the \"Lions of the Jordan\" battalion requested to see a psychologist but we",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T05:20+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1190,24 +1259,60 @@
         },
         {
           "selected_rank": null,
-          "headline": "IRGC commander: Iran has total intelligence superiority in northwestern part",
+          "headline": "Saudi crown prince, Turkish president discuss regional security, Red Sea attacks",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-03T19:35+00:00"
+            "newest": "2026-08-03T18:32+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Arab News"
           ],
           "camps": [
-            "iranian"
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Oil prices drop 5 percent to three-week low after Trump cancels attack on Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T17:21+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iraqi Kurdish leader in Damascus for talks on Syria Kurds' deal: sources to AFP",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T16:30+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1225,7 +1330,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-04T08:53:23.611742+00:00",
+    "last_success": "2026-08-04T09:09:11.117888+00:00",
     "last_failure": null
   },
   "ok": true
