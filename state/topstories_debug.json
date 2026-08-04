@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T20:47:20.049738+00:00",
+  "updated": "2026-08-04T20:53:32.678107+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-04T20:44:36.732787+00:00"
+      "headlines_updated": "2026-08-04T20:51:14.561282+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 35,
+        "title_snippet": 32,
+        "dropped_no_english": 3,
         "title_translated": 5,
         "title_native": 83,
         "in": 135,
-        "kept": 123
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -246,12 +247,27 @@
           "source": "TRT World",
           "title": "Türkiye, Iraq sign deal to maximise Kirkuk-Ceyhan oil pipeline use",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "טראמפ מאיים: הסכם היום או מלחמה מחר - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "12 בצוהריים - 04.08.2026 - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بينيت يُقرّ: هرّبنا أجهزة «ستارلينك» إلى إيران لدعم الاحتجاجات",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 66,
+      "in": 120,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
@@ -263,13 +279,6 @@
         {
           "source": "Kan 11",
           "title": "Four years before the current investigation, a couple suspected of theft in Eilat was convicted of a series…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Omri Cosmetics offers a wide range of news and updates, including photos, videos, and articles.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -471,13 +480,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "This piece follows 'Rafqa's' journey to the screen, from Ehden to Deir el Qamar.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Egypt | Official Statement Regarding the Suez Earthquake 05:09",
           "sec": 0,
@@ -656,17 +658,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 46,
       "sizes": [
         9,
         4,
         4,
+        3,
         2,
         2,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -861,26 +861,27 @@
         },
         {
           "selected_rank": 4,
-          "headline": "US mulls closing 5 diplomatic posts, expands Libya, Syria presence",
+          "headline": "Israeli forces launch new incursion into Syria's Daraa province",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-08-04T17:54+00:00"
           },
           "outlet_names": [
             "Daily Sabah",
-            "Jordan Times"
+            "Jordan Times",
+            "TRT World"
           ],
           "camps": [
             "levant",
             "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "US mulls closing 5 diplomatic posts, expands Libya, Syria presence",
+            "source": "TRT World",
+            "title": "Israeli forces launch new incursion into Syria's Daraa province",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -1173,24 +1174,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "This article discusses the potential extension of mandatory military service in the IDF.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T16:43+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "FM Fidan holds talks with Libyan officials in Ankara",
           "rank_key": {
             "outlets": 1,
@@ -1226,7 +1209,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The article explores the shift from the illusion of a decisive strike to considering long-term war…",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-04T12:49+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1244,7 +1245,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-04T20:47:41.380406+00:00",
+    "last_success": "2026-08-04T20:54:04.373132+00:00",
     "last_failure": null
   },
   "ok": true
