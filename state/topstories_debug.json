@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T15:33:33.304406+00:00",
+  "updated": "2026-08-04T15:44:21.156874+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,15 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-04T15:31:32.466762+00:00"
+      "headlines_updated": "2026-08-04T15:42:25.407804+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 15,
-        "title_snippet": 30,
-        "dropped_no_english": 4,
+        "dropped_stale": 14,
+        "title_snippet": 29,
+        "dropped_no_english": 5,
         "title_translated": 4,
-        "title_native": 82,
+        "title_native": 83,
         "in": 135,
         "kept": 116
       },
@@ -254,11 +254,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Israeli forces establish checkpost in fresh S. Syria incursion",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "TRT World",
           "title": "Türkiye, Iraq sign deal to maximise Kirkuk-Ceyhan oil pipeline use",
           "reason": "stale (older than 48h)"
@@ -271,6 +266,11 @@
         {
           "source": "Channel 13",
           "title": "עו\"ד נרצח במשרדו בראשל\"צ, החשוד הסגיר את עצמו: \"יריתי בו\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الرقمية مستمرة في طهران رغم المواجهات السيبرانية",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -347,7 +347,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "US primaries: What to watch in Kansas, Missouri, Virginia, Washington",
+          "title": "‘One last chance’: The times Trump threatened Iran, said deal imminent",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -361,7 +361,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "‘One last chance’: The times Trump threatened Iran, said deal imminent",
+          "title": "US primaries: What to watch in Kansas, Missouri, Virginia, Washington",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -446,6 +446,13 @@
         {
           "source": "Jordan Times",
           "title": "US Treasury Secretary says chance of Hormuz deal with Iran by Wednesday",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Mediator Qatar says efforts 'ongoing' for Iran-US resolution",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -557,7 +564,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "Professional EV Charger Installation for All Electric Vehicles",
+          "title": "Steel cupboard and semi manual washing machines",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -606,14 +613,7 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Israeli court halts Ben Gvir's crocodile prison plan over animal rights",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Trump accuses Iran of duplicity, urges deal or 'total surrender'",
+          "title": "Bangladesh media asked not to cover Hasina's speech from exile",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -664,11 +664,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 49,
       "sizes": [
-        4,
-        3,
-        3,
+        5,
+        5,
         3,
         2,
         2,
@@ -725,38 +724,40 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "At least 35 killed when Sudanese army attacks RSF-held Darfur",
+          "headline": "US Treasury boss claims Hormuz deal with Iran set for Wednesday",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 4,
             "camps": 3,
-            "newest": "2026-08-03T10:00+00:00"
+            "newest": "2026-08-04T14:19+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "Daily Sabah"
+            "Daily Sabah",
+            "Falastin al-Youm",
+            "N12",
+            "SANA"
           ],
           "camps": [
-            "gulf",
-            "panarab",
+            "israeli",
+            "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Daily Sabah",
-            "title": "At least 35 killed when Sudanese army attacks RSF-held Darfur",
+            "title": "US Treasury boss claims Hormuz deal with Iran set for Wednesday",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Arab News",
-                "title": "Drone strike in Sudan’s Darfur kills 35: rights group",
+                "source": "Falastin al-Youm",
+                "title": "An \"unknown projectile\" struck a cargo ship in the Strait of Hormuz.",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -764,46 +765,14 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Uncertainty clouds U.S.-Iran talks as vessel hit near Strait of Hormuz",
+          "headline": "Over 600 Palestinians detained by Israel in West Bank raids last month: Advocacy group",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 4,
             "camps": 2,
-            "newest": "2026-08-04T13:21+00:00"
+            "newest": "2026-08-04T13:56+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm",
-            "N12",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Uncertainty clouds U.S.-Iran talks as vessel hit near Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Israeli forces detain Palestinians as settler attacks intensify across West Bank",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-04T09:22+00:00"
-          },
-          "outlet_names": [
+            "Anadolu Agency",
             "SANA",
             "TRT World",
             "WAFA News"
@@ -812,17 +781,17 @@
             "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "SANA",
-            "title": "Israeli forces detain Palestinians as settler attacks intensify across West Bank",
+            "source": "Anadolu Agency",
+            "title": "Over 600 Palestinians detained by Israel in West Bank raids last month: Advocacy group",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -830,6 +799,11 @@
                 "source": "WAFA News",
                 "title": "Protest held outside Israeli consulate in Chicago condemning colonists' attacks ",
                 "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "SANA",
+                "title": "Israeli forces detain 9 Palestinians, demolish structures in West Bank raids",
+                "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "TRT World",
@@ -840,12 +814,12 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Arab League chief condemns Israeli attacks on Gaza, warns against undermining ceasefire roadmap",
+          "selected_rank": 3,
+          "headline": "Qatar, Egypt, Turkey condemn Israel over Gaza ‘violations’",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-08-04T03:31+00:00"
+            "newest": "2026-08-03T22:20+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -856,72 +830,24 @@
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Arab League chief condemns Israeli attacks on Gaza, warns against undermining ceasefire roadmap",
+            "source": "Al Arabiya",
+            "title": "Qatar, Egypt, Turkey condemn Israel over Gaza ‘violations’",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
+              "names 2 of the story's dominant entities (gaza, qatar)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Qatar, Egypt, Turkey condemn Israel over Gaza ‘violations’",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Qatar, Egypt, Türkiye condemn Israeli violations, demand Gaza ceasefire implemen",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Mohsen Rezaei stated that Iran thwarted an American plan for a ground offensive and will not permit ",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-04T10:00+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Mohsen Rezaei stated that Iran thwarted an American plan for a ground offensive and will not permit a second…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Iranian Foreign Ministry spokesperson Ismail Baghaei stated that threats from th",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
           "rank_key": {
             "outlets": 2,
@@ -953,6 +879,43 @@
               {
                 "source": "Al Arabiya",
                 "title": "Russia says Ukrainian drone attack on holiday-makers killed six, including three",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Sudanese army drone strike hits Darfur civil court, killing at least 35, rights group says",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-03T10:00+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Sudanese army drone strike hits Darfur civil court, killing at least 35, rights group says",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Drone strike in Sudan’s Darfur kills 35: rights group",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1027,6 +990,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Syria to restore Iraq oil pipeline damaged during US invasion",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-04T15:27+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Israel commits 6 ceasefire violations in Lebanon despite Rome talks",
           "rank_key": {
             "outlets": 1,
@@ -1035,6 +1016,24 @@
           },
           "outlet_names": [
             "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "FM Fidan holds talks with Libyan officials in Ankara",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-04T15:00+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1074,24 +1073,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Over 600 Palestinians detained by Israel in West Bank raids last month: Advocacy group",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T13:56+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1189,32 +1170,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "A woman in her 80s died and two women in their 70s were seriously injured and hospitalized after a f",
+          "headline": "Israeli forces bulldoze farmland, destroy water network south of Bethlehem",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T11:31+00:00"
+            "newest": "2026-08-04T11:38+00:00"
           },
           "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Jordan condemns continued Israeli attacks on Gaza, calls for ceasefire compliance",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T11:25+00:00"
-          },
-          "outlet_names": [
-            "SANA"
+            "WAFA News"
           ],
           "camps": [
             "levant"
@@ -1225,14 +1188,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "In a fatal accident involving three buses on David Remez Street in Ashkelon, a woman was killed and ",
+          "headline": "A woman in her 80s died and two women in their 70s were seriously injured and hospitalized after a f",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T11:16+00:00"
+            "newest": "2026-08-04T11:31+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -1260,7 +1223,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-04T15:33:53.414619+00:00",
+    "last_success": "2026-08-04T15:44:50.780060+00:00",
     "last_failure": null
   },
   "ok": true
