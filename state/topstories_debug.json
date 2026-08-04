@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T17:21:39.803581+00:00",
+  "updated": "2026-08-04T17:24:29.165346+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-04T17:19:41.193960+00:00"
+      "headlines_updated": "2026-08-04T17:22:39.602170+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
+        "dropped_stale": 13,
         "title_snippet": 34,
         "title_translated": 6,
-        "title_native": 84,
+        "title_native": 82,
         "in": 135,
-        "kept": 124
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -187,6 +187,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Iraq, Turkey strike a 1-year oil pipeline deal to boost exports",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "WAFA News",
           "title": "Trump cancels planned strike on Iran, easing fears of renewed confrontation",
@@ -223,6 +228,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Arab News",
+          "title": "Israeli strikes kill 13 in Gaza, minister says no deal to halt attacks",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Gulf News",
           "title": "Saudi Crown Prince, Trump Discuss Regional Tensions and Diplomatic Solutions in Phone Call",
           "reason": "stale (older than 48h)"
@@ -245,8 +255,8 @@
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 68,
+      "in": 122,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -432,7 +442,21 @@
         },
         {
           "source": "Jordan Times",
+          "title": "US Treasury Secretary says chance of Hormuz deal with Iran by Wednesday",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
           "title": "Mediator Qatar says efforts 'ongoing' for Iran-US resolution",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Israel conveys 'concerns' to US on Gaza plan and keeps striking",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -644,20 +668,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 45,
       "sizes": [
-        7,
+        6,
         6,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -704,7 +726,7 @@
           "selected_rank": 1,
           "headline": "Iran says Hormuz talks with Oman continue 'positively'",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-08-04T16:53+00:00"
           },
@@ -713,7 +735,6 @@
             "Al Mayadeen",
             "Anadolu Agency",
             "Falastin al-Youm",
-            "Jordan Times",
             "SANA"
           ],
           "camps": [
@@ -721,7 +742,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -738,11 +759,6 @@
               {
                 "source": "Al Jazeera",
                 "title": "Iran says talks with Oman on Hormuz proceeding ‘positively’",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Hormuz back in focus as Trump suspends planned strike on Iran",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -839,49 +855,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Sudanese army drone strike hits Darfur civil court, killing at least 35, rights group says",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-03T10:00+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Sudanese army drone strike hits Darfur civil court, killing at least 35, rights group says",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Sudan army drone attack on Darfur court kills 35",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Drone strike in Sudan’s Darfur kills 35: rights group",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Syria to restore Iraq oil pipeline damaged during US invasion",
           "rank_key": {
             "outlets": 2,
@@ -919,7 +892,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Gaza holds mass funeral for 112 killed nearly 3 years ago by Israel",
           "rank_key": {
             "outlets": 2,
@@ -989,6 +962,44 @@
               {
                 "source": "Al-Masirah",
                 "title": "Speaker of the Shura Council: Yemen adheres to its right to end the blockade and",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-04T07:23+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Russia says Ukrainian drone attack on holiday-makers killed six, including three",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1309,7 +1320,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1327,7 +1338,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-04T17:22:02.787025+00:00",
+    "last_success": "2026-08-04T17:24:42.747778+00:00",
     "last_failure": null
   },
   "ok": true
