@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T06:16:46.209984+00:00",
+  "updated": "2026-08-04T06:47:48.209429+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-04T06:14:19.455432+00:00"
+      "headlines_updated": "2026-08-04T06:46:21.506728+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 14,
-        "title_snippet": 28,
-        "title_native": 81,
-        "title_translated": 12,
+        "dropped_stale": 13,
+        "dropped_no_english": 6,
+        "title_snippet": 21,
+        "title_native": 82,
+        "title_translated": 13,
         "in": 135,
-        "kept": 121
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 28,
+        "requested": 27,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -233,11 +234,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "Turkiye, Iraq sign one-year oil pipeline deal",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Gulf News",
           "title": "US embassies urge Americans to consider leaving Middle East",
           "reason": "stale (older than 48h)"
@@ -256,23 +252,46 @@
           "source": "TRT World",
           "title": "Türkiye, Iraq sign deal to maximise Kirkuk-Ceyhan oil pipeline use",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הקבינט יכונס הערב בצל ההסכם בעזה והמתיחות מול איראן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בנט הכריז על 4 מצטרפות חדשות למפלגת \"ביחד\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "توجّه إلى الإطاحة بالزنداني: معركة «باب المندب» تُسرِّع التغيير الحكومي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "أحمد داود أوغلو: «السياسي» الذي اغتال «المثقّف»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بيان لمدعي عام التمييز حول حقيقة الحالة الصحية لرياض سلامة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "كرامي تغيب مجدداً والإفادات على طاولة الهيئة العامة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
+      "in": 116,
       "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "The IDF arrested two suspects near the Egyptian border in connection with arms and drug smuggling.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Members of the Knesset from the Likud party supported Netanyahu's reservation proposal.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -300,6 +319,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "Supermarkets are reported to have disrupted the pricing of clothing and footwear.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "The forecast predicts a slight decrease in temperatures.",
           "sec": 0,
           "off": 1,
@@ -324,13 +350,6 @@
           "title": "Omri Kanda shares a personal reflection, stating, 'Every morning I wake up, look in the mirror, and say –…",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Supermarkets are reported to have disrupted the pricing of clothing and footwear.",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -384,14 +403,14 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "A study by the Israeli Institute for National Security Studies identifies four existential threats facing…",
+          "title": "Six in the morning bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "The battle for succession within the Republican party is beginning early.",
+          "title": "A study by the Israeli Institute for National Security Studies identifies four existential threats facing…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -440,6 +459,13 @@
         },
         {
           "source": "Egypt Independent",
+          "title": "Chinese investments in Egypt exceed US$ 10 billion",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
           "title": "National Training Academy launches virtual program for Egyptian youth abroad",
           "sec": 0,
           "off": 0,
@@ -455,41 +481,6 @@
         {
           "source": "Egypt Independent",
           "title": "Tragedy at the Nile – father drowns in attempt to save son’s life",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "Anthropic said its AI models hacked into other companies’ systems during testing",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The battle for Bab al-Mandab is accelerating governmental change, potentially leading to the ousting of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "This article provides a profile of Ahmet Davutoğlu, exploring his transition from academia to politics.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Britain is investigating the possibility that Epstein used an airport in London for human trafficking.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The public prosecutor's office issued a statement clarifying the health status of Riad Salameh.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -531,16 +522,16 @@
         },
         {
           "source": "Gulf News",
-          "title": "Trump says Iran facing 'last chance before decapitation'",
+          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
+          "title": "Selfies, handshakes and smiles as Sheikh Mohammed surprises people in London",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -624,18 +615,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 48,
       "sizes": [
-        9,
+        8,
         5,
         4,
+        3,
         3,
         2,
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -686,7 +676,7 @@
           "selected_rank": 1,
           "headline": "Arab League chief condemns Israeli attacks on Gaza, warns against undermining ceasefire roadmap",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-08-04T03:31+00:00"
           },
@@ -694,7 +684,6 @@
             "Al Arabiya",
             "Al Jazeera",
             "Daily Sabah",
-            "Falastin al-Youm",
             "SANA",
             "TRT World",
             "WAFA News"
@@ -704,7 +693,7 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -729,13 +718,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Falastin al-Youm",
-                "title": "Hamas or Israel... Who will start implementing the draft agreement?",
+                "source": "SANA",
+                "title": "Qatar, Egypt, Türkiye condemn Israeli violations, demand Gaza ceasefire implemen",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "SANA",
-                "title": "Qatar, Egypt, Türkiye condemn Israeli violations, demand Gaza ceasefire implemen",
+                "source": "Daily Sabah",
+                "title": "Türkiye, Egypt, Qatar condemn ongoing Israeli violations in Gaza",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -884,6 +873,82 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Erdogan reaffirms support for Saudi Arabia, condemns Houthi Red Sea attacks",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-03T18:40+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al-Masirah",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Erdogan reaffirms support for Saudi Arabia, condemns Houthi Red Sea attacks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Mehr News",
+                "title": "Trump forced to retreat from Iran's threat due to deterrence",
+                "rejected_by": "stale anticipatory framing"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pakistan invites Iranian negotiators to Islamabad amid renewed diplomatic efforts",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-04T06:35+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "IRNA"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Pakistan invites Iranian negotiators to Islamabad amid renewed diplomatic efforts",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Pakistan’s foreign minister invites Iranian counterpart to visit Islamabad",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Sudanese army drone strike hits Darfur civil court, killing at least 35, rights group says",
           "rank_key": {
             "outlets": 2,
@@ -1085,24 +1150,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Authorities in Gaza claim two individuals were killed in a vehicle strike in the central part of the",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T04:14+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "An American Satmar Hasid is at the center of a severe espionage case, allegedly documenting sensitiv",
           "rank_key": {
             "outlets": 1,
@@ -1157,24 +1204,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Salvadoran man dies in ICE custody at New Jersey detention center",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-03T23:46+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran dealt heavy blow to US army in recent 17-day battle",
           "rank_key": {
             "outlets": 1,
@@ -1210,7 +1239,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Hamas stated its commitment, along with other factions, to what was agreed upon for the second phase",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T20:34+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "IRGC commander: Iran has total intelligence superiority in northwestern part",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T19:35+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1228,7 +1293,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-04T06:17:13.068960+00:00",
+    "last_success": "2026-08-04T06:48:33.942150+00:00",
     "last_failure": null
   },
   "ok": true
