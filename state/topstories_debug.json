@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T13:54:32.125569+00:00",
+  "updated": "2026-08-04T14:25:46.283651+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,27 +167,37 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-04T13:52:50.349436+00:00"
+      "headlines_updated": "2026-08-04T14:24:07.329014+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "dropped_no_english": 7,
-        "title_snippet": 25,
-        "title_translated": 8,
-        "title_native": 83,
+        "dropped_stale": 14,
+        "title_snippet": 19,
+        "dropped_no_english": 15,
+        "title_translated": 5,
+        "title_native": 82,
         "in": 135,
-        "kept": 116
+        "kept": 106
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 34,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Jordan Times",
+          "title": "Trump says US, Israel to hold off on Iran strikes",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الحرس الثوري في ذكرى استشهاد هنية: مؤامرة نزع سلاح «حماس» فشلت",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "WAFA News",
           "title": "Trump cancels planned strike on Iran, easing fears of renewed confrontation",
@@ -250,12 +260,47 @@
         },
         {
           "source": "Kan 11",
+          "title": "בשל אלימות נגד נהגים: חברת סופרבוס תשבית מחר בצהריים את הקווים באזור ירושלים למשך שעה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שר החוץ האמריקני: חלה התקדמות בשיחות על מצר הורמוז, מקווה שהעניין יסוכם בקרוב מאוד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "אחרי בלימת האש בשריפה בבן שמן: כבישים 1 ו-6 נפתחו לתנועה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
           "title": "דיווח סעודי: הודעה בנושא פתיחת מצר הורמוז צפויה להתקבל בשעות הקרובות",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "N12",
-          "title": "מבזק 8:00: תוגברה האבטחה על הח\"כים גפני ואשר - mako",
+          "title": "התאונה הקטלנית באשקלון: אישה נהרגה, 2 נפצעו קשה ובינוני",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "בכיר איראני לרויטרס: המשטר הבין שעליו להקשיח עמדות מול ארה\"ב",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "המועמד שהשווה את ישראל לחמאס והמועמדת שיצאה נגד \"הטיהור האתני\": יום גורלי במפלגה הדמוקרטית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "דיווח: טראמפ לוחץ על איראן להגיע להבנות על מצר הורמוז בקרוב",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "שרפה גדולה ביער בן שמן: מטוסי כיבוי הוזנקו",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -279,6 +324,11 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "محسن رضائي: إيران أحبطت مخططاً أميركياً لهجوم بري.. ولن نسمح بفتح ممر ثانٍ في هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al-Akhbar",
           "title": "بينيت يُقرّ: هرّبنا أجهزة «ستارلينك» إلى إيران لدعم الاحتجاجات",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -286,47 +336,12 @@
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 64,
+      "in": 106,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "A fire in Ben Shemen has been contained, but roads 1 and 6 remain closed in both directions.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
           "title": "A fatal accident involving three buses in Ashkelon resulted in the death of an approximately 80-year-old…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "This news item is about Yarkon Cemetery and includes various updates, photos, and videos related to it.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The Young Edition - Mako",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "This entry provides news and updates, including photos, videos, and articles, related to Ami Barda.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The provided text is a quote stating: \"I met with Osher Kadoshim because he owed me money.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -340,6 +355,13 @@
         },
         {
           "source": "Al Jazeera",
+          "title": "US’s Bessent says deal to open Hormuz possible ‘today or tomorrow’",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
           "title": "Why does Spain have ‘enclaves’ in North Africa?",
           "sec": 0,
           "off": 0,
@@ -347,14 +369,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "US primaries: What to watch in Kansas, Missouri, Virginia, Washington",
+          "title": "‘One last chance’: The times Trump threatened Iran, said deal imminent",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "‘One last chance’: The times Trump threatened Iran, said deal imminent",
+          "title": "US primaries: What to watch in Kansas, Missouri, Virginia, Washington",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -382,13 +404,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Cuba’s power grid collapses again during restoration efforts after nationwide blackout",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Trump tells ‘duplicitous’ Iran to make deal or surrender",
           "sec": 0,
           "off": 0,
@@ -397,13 +412,6 @@
         {
           "source": "The New Arab",
           "title": "Israel halts crocodile plan over animal, not Palestinian rights",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Bulletin 8 a.m.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -514,20 +522,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Cabinet warns of escalating Israeli aggression in Gaza, reports on Israeli “voluntary migration” plans",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "WAFA News",
-          "title": "Education Ministry: Israeli demolition of part of Shaab al-Butum school is new crime against Palestinian education",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "A meeting of the \"the cabinet\" to discuss a Gaza agreement has been postponed without a stated reason.",
           "sec": 0,
@@ -550,14 +544,7 @@
         },
         {
           "source": "SANA",
-          "title": "Nationwide blackout leaves Cuba without power",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "25 U.S. states sue Trump administration over tariffs on 60 countries",
+          "title": "President al-Sharaa appreciates Iraq Kurdistan Region’s support for Syria",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -571,14 +558,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Professional EV Charger Installation for All Electric Vehicles",
+          "title": "Trump says Iran facing 'last chance before decapitation'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Best Kids Indoor Play Area at Bawabat Al Sharq Mall, Abu Dhabi",
+          "title": "Professional EV Charger Installation for All Electric Vehicles",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -599,14 +586,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Ex-Polish premier set to form new party, signaling major reset of country's right wing",
+          "title": "EU says no onward movement from Spanish enclave of Ceuta as migrants returned to Morocco",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Daily Sabah",
-          "title": "World's top 15 most beautiful words include Turkish 'yakamoz'",
+          "source": "Anadolu Agency",
+          "title": "UN food agency seeks urgent funding for child malnutrition crisis in Afghanistan",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -657,9 +644,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 53,
+      "clusters": 50,
       "sizes": [
-        4,
+        5,
         3,
         2,
         2,
@@ -667,10 +654,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -721,15 +705,64 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israel allocates $37M to develop Jewish heritage sites in occupied West Bank amid illegal settlement",
+          "headline": "Arab League chief condemns Israeli attacks on Gaza, warns against undermining ceasefire roadmap",
           "rank_key": {
             "outlets": 4,
+            "camps": 2,
+            "newest": "2026-08-04T03:31+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Falastin al-Youm",
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Arab League chief condemns Israeli attacks on Gaza, warns against undermining ceasefire roadmap",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Qatar, Egypt, Turkey condemn Israel over Gaza ‘violations’",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "Hamas: Israeli escalation is an attempt to prevent the implementation of the cea",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Qatar, Egypt, Türkiye condemn Israeli violations, demand Gaza ceasefire implemen",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Israel allocates $37M to develop Jewish heritage sites in occupied West Bank amid illegal settlement",
+          "rank_key": {
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-08-04T13:10+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "SANA",
             "TRT World",
             "WAFA News"
           ],
@@ -737,7 +770,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -765,49 +798,16 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Qatar, Egypt, Turkey condemn Israel over Gaza ‘violations’",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-03T22:20+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Qatar, Egypt, Turkey condemn Israel over Gaza ‘violations’",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, qatar)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
           "selected_rank": 3,
-          "headline": "US, Iran may reach Hormuz deal by Tuesday or Wednesday: Treasury chief",
+          "headline": "Over 600 Palestinians detained by Israel in West Bank raids last month: Advocacy group",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-04T12:43+00:00"
+            "newest": "2026-08-04T13:56+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "Jordan Times"
+            "SANA"
           ],
           "camps": [
             "levant",
@@ -818,7 +818,45 @@
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "US, Iran may reach Hormuz deal by Tuesday or Wednesday: Treasury chief",
+            "title": "Over 600 Palestinians detained by Israel in West Bank raids last month: Advocacy group",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "SANA",
+                "title": "Israeli forces detain 9 Palestinians, demolish structures in West Bank raids",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "US Treasury boss claims Hormuz deal with Iran set for tomorrow",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-04T13:22+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "US Treasury boss claims Hormuz deal with Iran set for tomorrow",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -836,45 +874,77 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "The Houthis claimed responsibility for an attack on a sensitive target at the Najran Airport in Saud",
+          "selected_rank": 5,
+          "headline": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-04T10:31+00:00"
+            "newest": "2026-08-04T07:23+00:00"
           },
           "outlet_names": [
-            "Al-Masirah",
-            "Kan 11"
+            "Al Arabiya",
+            "Egypt Independent"
           ],
           "camps": [
-            "israeli",
-            "panarab"
+            "panarab",
+            "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "The Houthis claimed responsibility for an attack on a sensitive target at the Najran Airport in Saudi Arabia.",
-            "title_source": "snippet",
+            "source": "Egypt Independent",
+            "title": "Russia says seven killed as Ukrainian drone hits crowded Russian beach",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al-Masirah",
-                "title": "Speaker of the Shura Council: Yemen adheres to its right to end the blockade and",
+                "source": "Al Arabiya",
+                "title": "Russia says Ukrainian drone attack on holiday-makers killed six, including three",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
+          "headline": "6 Saudi tankers divert via southern Africa for fear of Yemen",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-03T16:04+00:00"
+          },
+          "outlet_names": [
+            "Al-Masirah",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "6 Saudi tankers divert via southern Africa for fear of Yemen",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Sudanese army drone strike hits Darfur civil court, killing at least 35, rights group says",
           "rank_key": {
             "outlets": 2,
@@ -906,44 +976,6 @@
                 "source": "Arab News",
                 "title": "Drone strike in Sudan’s Darfur kills 35: rights group",
                 "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran's Revolutionary Guards: Revenge for Ismail Haniyeh is inevitable and the plot to disarm Hamas f",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-02T14:40+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Iran's Revolutionary Guards: Revenge for Ismail Haniyeh is inevitable and the plot to disarm Hamas fails",
-            "title_source": "translated",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
-              "machine-translated from the outlet's language"
-            ],
-            "passed_over": [
-              {
-                "source": "Al-Akhbar",
-                "title": "The IRGC on the anniversary of Haniyeh's martyrdom: The plot to disarm Hamas has",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -1035,11 +1067,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Türkiye promotes officers, replaces air force chief in annual reshuffle",
+          "headline": "AI gives lifeline to developing nations in weak growth era: World Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T13:00+00:00"
+            "newest": "2026-08-04T13:13+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1053,17 +1085,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "A suspect believed to be the client of a murdered lawyer in Rishon LeZion was arrested.",
+          "headline": "Türkiye promotes officers, replaces air force chief in annual reshuffle",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T12:51+00:00"
+            "newest": "2026-08-04T13:00+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Daily Sabah"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1125,24 +1157,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Lebanon says Beirut port blast indictment to be issued ‘within months’",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T12:32+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Ship attacks prompt Türkiye to renew call for Black Sea safety",
           "rank_key": {
             "outlets": 1,
@@ -1161,17 +1175,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "France shuts 3 more nuclear reactors as Europe battles heat wave",
+          "headline": "Palestinian Prisoner's Society: 630 Palestinians detained in West Bank, including Jerusalem, in July",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T11:52+00:00"
+            "newest": "2026-08-04T11:43+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "WAFA News"
           ],
           "camps": [
-            "turkish"
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Jordan condemns continued Israeli attacks on Gaza, calls for ceasefire compliance",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-04T11:25+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1232,7 +1264,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "33 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1250,7 +1282,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-04T13:54:53.780973+00:00",
+    "last_success": "2026-08-04T14:26:03.075828+00:00",
     "last_failure": null
   },
   "ok": true
