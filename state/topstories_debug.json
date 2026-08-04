@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T04:06:51.827513+00:00",
+  "updated": "2026-08-04T04:38:13.600544+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-04T04:04:57.759843+00:00"
+      "headlines_updated": "2026-08-04T04:36:32.905416+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 25,
-        "title_translated": 15,
-        "title_native": 82,
+        "dropped_stale": 14,
+        "dropped_no_english": 8,
+        "title_snippet": 19,
+        "title_translated": 13,
+        "title_native": 81,
         "in": 135,
-        "kept": 122
+        "kept": 113
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 25,
+        "requested": 27,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -224,6 +225,11 @@
         },
         {
           "source": "Arab News",
+          "title": "Saudi crown prince, Trump hold call as president says he will hold off on Iran attack",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
           "title": "Israeli strikes kill 13 in Gaza, minister says no deal to halt attacks",
           "reason": "stale (older than 48h)"
         },
@@ -251,12 +257,52 @@
           "source": "TRT World",
           "title": "Türkiye, Iraq sign deal to maximise Kirkuk-Ceyhan oil pipeline use",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בעזה טוענים: שני בני אדם נהרגו בתקיפת רכב במרכז הרצועה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מקורבי שר הביטחון נגד הרמטכ\"ל: \"חמור ביותר\" - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "ראש אמ\"ן במלחמת יום כיפור הלך לעולמו - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "חופש - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מבזק 8 | עונש מוות למחבלים עבר בקריאה ראשונה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מדוע הוחלט לסגור את גלי צה\"ל - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "كرامي تغيب مجدداً والإفادات على طاولة الهيئة العامة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "تهديدات واشنطن تتآكل أمام صلابة طهران.. إيران تكسر معادلة الابتزاز وتُعيد الردع الهجومي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 77,
+      "in": 113,
+      "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
@@ -275,13 +321,6 @@
         {
           "source": "Kan 11",
           "title": "Emergency services performed resuscitation efforts on an individual rescued from a fire in an Ashdod…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Exclusive | Satellite images reveal widespread destruction in southern Lebanon",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -316,7 +355,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "The Likud party reportedly offered a security detail to Avida Keren, who lost his wife and son on October 7.",
+          "title": "The police car is documenting, the report will be waiting for you in the mail: The \"camera revolution\" in the police",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -358,7 +397,7 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Trump tells ‘duplicitous’ Iran to make deal or surrender",
+          "title": "Trump says Iran facing ‘last chance before decapitation’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -442,13 +481,6 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Britain is investigating the possibility that Epstein used an airport in London for human trafficking.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "The public prosecutor issued a statement regarding the health condition of Riad Salameh.",
           "sec": 0,
           "off": 0,
@@ -484,7 +516,7 @@
         },
         {
           "source": "SANA",
-          "title": "President al-Sharaa appreciates Iraq Kurdistan Region’s support for Syria",
+          "title": "Turkish president, Saudi crown prince discuss regional developments",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -577,10 +609,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 48,
       "sizes": [
-        12,
-        4,
+        9,
+        5,
         4,
         3,
         2,
@@ -588,9 +620,6 @@
         2,
         2,
         2,
-        2,
-        2,
-        1,
         1,
         1,
         1,
@@ -641,16 +670,14 @@
           "selected_rank": 1,
           "headline": "Arab League chief condemns Israeli attacks on Gaza, warns against undermining ceasefire roadmap",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-08-04T03:31+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Anadolu Agency",
             "Daily Sabah",
-            "Egypt Independent",
             "SANA",
             "TRT World",
             "WAFA News"
@@ -660,7 +687,7 @@
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -685,13 +712,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Egypt Independent",
-                "title": "FM, Gaza envoy discuss implementation of US-backed peace plan",
+                "source": "WAFA News",
+                "title": "Two Palestinians killed, others injured in Israeli strike southwest of Gaza City",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "WAFA News",
-                "title": "Two Palestinians killed, others injured in Israeli strike southwest of Gaza City",
+                "source": "SANA",
+                "title": "Qatar, Egypt, Türkiye condemn Israeli violations, demand Gaza ceasefire implemen",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -701,13 +728,14 @@
           "selected_rank": 2,
           "headline": "Battle over Strait of Hormuz",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 4,
             "newest": "2026-08-03T23:24+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
             "Daily Sabah",
+            "Egypt Independent",
             "IRNA",
             "Jordan Times"
           ],
@@ -717,7 +745,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -739,6 +767,11 @@
               {
                 "source": "Jordan Times",
                 "title": "Hormuz back in focus as Trump suspends planned strike on Iran",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Egypt Independent",
+                "title": "Iran appears indifferent to latest Trump talk on negotiations",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -836,43 +869,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Iran denies holding talks with the US, while Trump claims it is their 'last chance' for a deal.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-03T15:49+00:00"
-          },
-          "outlet_names": [
-            "N12",
-            "The New Arab"
-          ],
-          "camps": [
-            "israeli",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Iran denies holding talks with the US, while Trump claims it is their 'last chance' for a deal.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Iran denies holding talks with US as Trump touts imminent deal",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Sudanese army drone strike hits Darfur civil court, killing at least 35, rights group says",
           "rank_key": {
             "outlets": 2,
@@ -1015,17 +1011,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "A US citizen, described as a Satmar Hasid, is at the center of a significant espionage case involvin",
+          "headline": "Drone strike kills at least 5 in Russia’s Moscow region: Governor",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T04:00+00:00"
+            "newest": "2026-08-04T04:23+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1069,17 +1065,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iranian reports mention explosions heard in Kuwait, though the country has not yet commented.",
+          "headline": "Salvadoran man dies in ICE custody at New Jersey detention center",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-03T23:51+00:00"
+            "newest": "2026-08-03T23:46+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1177,24 +1173,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Italy and London are experiencing states of emergency due to a severe heatwave and ongoing wildfires",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-03T18:42+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Oil prices drop 5 percent to three-week low after Trump cancels attack on Iran",
           "rank_key": {
             "outlets": 1,
@@ -1230,7 +1208,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iraqi Kurdish leader in Damascus for talks on Syria Kurds' deal: sources to AFP",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-03T16:30+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1248,7 +1244,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-04T04:07:21.946639+00:00",
+    "last_success": "2026-08-04T04:38:27.497760+00:00",
     "last_failure": null
   },
   "ok": true
