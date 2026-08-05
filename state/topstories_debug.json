@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T07:25:07.412758+00:00",
+  "updated": "2026-08-05T07:27:58.619638+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-05T07:22:42.787781+00:00"
+      "headlines_updated": "2026-08-05T07:26:07.292600+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 39,
-        "title_native": 85,
+        "dropped_stale": 11,
+        "dropped_no_english": 6,
+        "title_snippet": 33,
+        "title_native": 84,
         "title_translated": 1,
         "in": 135,
-        "kept": 125
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -190,6 +191,11 @@
         {
           "source": "The New Arab",
           "title": "Trump says Iran talks set for Monday, no deadline for deal",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Trump threatens to hit Iran 'very hard'",
           "reason": "stale (older than 48h)"
         },
         {
@@ -236,12 +242,42 @@
           "source": "TRT World",
           "title": "US-Iran talks to restart on Monday, Trump announces",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח בארה\"ב: מועמד אנטי-ישראלי ניצח בפריימריז המפלגה הדמוקרטית לסנאט במישיגן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "שנת שירות למבוגרים - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "ישראל מתעדכנת על המו\"מ בעקיפין - ושומרת על דריכות: \"המרחק בין שלום ומלחמה קרוב אצל טראמפ\" - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "זה חיל שמנצח מלחמות\": עם השריונרים החדשים של צה\"ל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "شهيد متأثرًا بإصابته في مدينة غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "عشرات المستوطنين يقتحمون المسجد الأقصى وينفذون جولات استفزازية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 125,
-      "kept": 59,
+      "in": 118,
+      "kept": 57,
       "dropped": [
         {
           "source": "Kan 11",
@@ -253,20 +289,6 @@
         {
           "source": "Kan 11",
           "title": "A stun grenade was thrown at a medical center in Herzliya, causing no injuries.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Michael Kleiner, president of the Likud tribunal, and contractor Dudi Apple are suspected of multi-million…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The business partner of a murdered lawyer recounts the events.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -288,20 +310,6 @@
         {
           "source": "N12",
           "title": "This entry provides a link to Basmeta on mako, offering a variety of news and updates.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "This entry references the program 'Seven with Gideon Oko' from August 4, 2026, on mako, which is part of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This entry references 'The documentation and testimony of the partner of the murdered lawyer: 'I saw blood…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -372,13 +380,6 @@
         {
           "source": "Al Arabiya",
           "title": "Trump says Iran facing ‘last chance before decapitation’",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Cuba’s power grid collapses again during restoration efforts after nationwide blackout",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -711,8 +712,8 @@
       "method": "heuristic",
       "clusters": 33,
       "sizes": [
-        13,
-        5,
+        14,
+        4,
         3,
         2,
         2,
@@ -720,8 +721,8 @@
         2,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -753,7 +754,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "‘US interference’ delaying Strait of Hormuz deal with Oman: Report",
+          "headline": "Trump warns Iran to open Strait of Hormuz or get ‘hit very hard’",
           "rank_key": {
             "outlets": 10,
             "camps": 4,
@@ -777,12 +778,12 @@
             "levant",
             "turkish"
           ],
-          "members": 13,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "‘US interference’ delaying Strait of Hormuz deal with Oman: Report",
+            "source": "Al Arabiya",
+            "title": "Trump warns Iran to open Strait of Hormuz or get ‘hit very hard’",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -818,12 +819,11 @@
           "selected_rank": 2,
           "headline": "Israeli forces detained four Palestinians in Jenin, turn home into military barracks",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-08-05T07:20+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm",
             "SANA",
             "TRT World",
             "WAFA News"
@@ -832,7 +832,7 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -850,11 +850,6 @@
                 "source": "WAFA News",
                 "title": "Protest held outside Israeli consulate in Chicago condemning colonists' attacks ",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "The occupation authorities notified of the demolition of three tourist facilitie",
-                "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "SANA",
@@ -922,12 +917,12 @@
             "newest": "2026-08-05T07:14+00:00"
           },
           "outlet_names": [
-            "Kan 11",
-            "Mehr News"
+            "Jordan Times",
+            "Kan 11"
           ],
           "camps": [
             "israeli",
-            "iranian"
+            "levant"
           ],
           "members": 2,
           "qualified": true,
@@ -944,8 +939,8 @@
             ],
             "passed_over": [
               {
-                "source": "Mehr News",
-                "title": "Yemen attacks Saudi Arabia's airport in Najran",
+                "source": "Jordan Times",
+                "title": "Israel conveys 'concerns' to US on Gaza plan and keeps striking",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1022,44 +1017,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israel launches incursions into southern Syria",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-04T21:06+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Israel launches incursions into southern Syria",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Jordan Times",
-                "title": "Iraqi Kurdish leader in Damascus for talks on Syria Kurds' deal: sources to AFP",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Seventh round of Lebanon-Israel talks begins in Rome to implement framework agreement",
           "rank_key": {
             "outlets": 2,
@@ -1124,43 +1081,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Hebrew media reports instructions received to halt attacks in Gaza.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-04T17:12+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Hebrew media reports instructions received to halt attacks in Gaza.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Jordan Times",
-                "title": "Israel conveys 'concerns' to US on Gaza plan and keeps striking",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -1230,6 +1150,24 @@
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israel launches incursions into southern Syria",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-04T21:06+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1345,42 +1283,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "South Korea heatwave kills 16 as Seoul issues first highest-level heat alert",
+          "headline": "Yemen attacks Saudi Arabia's airport in Najran",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-04T10:52+00:00"
+            "newest": "2026-08-04T11:34+00:00"
           },
           "outlet_names": [
-            "TRT World"
+            "Mehr News"
           ],
           "camps": [
-            "turkish"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "US has used ‘virtually all’ of its long-range precision missiles during Iran war: Sources",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T10:14+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1398,7 +1318,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-05T07:25:22.521127+00:00",
+    "last_success": "2026-08-05T07:28:13.527839+00:00",
     "last_failure": null
   },
   "ok": true
