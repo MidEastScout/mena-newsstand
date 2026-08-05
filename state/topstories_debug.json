@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T02:03:01.328336+00:00",
+  "updated": "2026-08-05T02:34:11.032087+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-05T02:00:51.843889+00:00"
+      "headlines_updated": "2026-08-05T02:32:30.600167+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 36,
-        "title_translated": 4,
+        "title_snippet": 32,
+        "dropped_no_english": 6,
+        "title_translated": 2,
         "title_native": 82,
         "in": 135,
-        "kept": 122
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 36,
+        "requested": 38,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -251,12 +252,42 @@
           "source": "TRT World",
           "title": "Trump cancels planned attack against Iran",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "פוריו - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "שנת שירות למבוגרים - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מודל לבנון בעזה - חיסולים באישור הרמטכ\"ל בל - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: \"فارس\" عن المصدر: لو لم تقم الولايات المتحدة وبعض شركائها بعرقلة التفاوض الإيراني العماني لكانت المفاوضات وصلت إل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بسبب موجة الحر والجفاف... فرنسا توقف تشغيل 3 مفاعلات نووية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "طهران تحيي أربعينية الإمام الحسين (ع)… مسيرة حاشدة تجدد العهد مع نهضة كربلاء 09:31",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 62,
+      "in": 116,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -289,27 +320,6 @@
         {
           "source": "N12",
           "title": "Bsamta - mako offers a wide variety of news and updates, including photos, videos, and articles about Bsamta.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Tremors within the Likud party indicate that 22 Knesset members are heading home.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Omri Cosmetics - mako features a diverse selection of news and updates, complete with images, videos, and…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Following reporting by mako, the Ministry of Health is warning about 'Magic Honey'.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -393,13 +403,6 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Somali President: We will prevent Israel from consolidating its influence in Somaliland",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
           "title": "The Turkish Parliament is preparing to launch a draft law concerning a peace process with the Kurdistan…",
           "sec": 0,
           "off": 0,
@@ -428,7 +431,7 @@
         },
         {
           "source": "Iran International",
-          "title": "5 Economic crisis drives Iranians to sell hair, rent laptops",
+          "title": "EXCLUSIVE Iran's president met Mojtaba Khamenei in the back seat of a car",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -477,13 +480,6 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "The Somali president stated that Somalia will prevent Israel from consolidating its influence in \"Somaliland.\"",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "Cyprus curses: Don't back down in front of Turkey",
           "sec": 0,
           "off": 0,
@@ -509,13 +505,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "Egypt | Official Statement Regarding the Suez Earthquake 05:09",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al Manar",
@@ -581,8 +570,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Arab News",
+          "title": "Sri Lanka closes schools as floods and mudslides triggered by heavy rains kill 7",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
           "source": "Gulf News",
           "title": "Trump says Iran facing 'last chance before decapitation'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Heavy Truck (Trailer) Driver",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -670,13 +673,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Make a deal or surrender, Trump tells Iran",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
@@ -684,7 +680,7 @@
       "method": "heuristic",
       "clusters": 39,
       "sizes": [
-        9,
+        8,
         4,
         4,
         4,
@@ -732,7 +728,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "US says deal on reopening Hormuz close as Iran, Oman hold ‘positive’ talks",
+          "headline": "Baqaei: Iran-Oman talks on Strait of Hormuz progressing positively",
           "rank_key": {
             "outlets": 7,
             "camps": 3,
@@ -752,17 +748,17 @@
             "iranian",
             "levant"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Jazeera",
-            "title": "US says deal on reopening Hormuz close as Iran, Oman hold ‘positive’ talks",
+            "source": "IRNA",
+            "title": "Baqaei: Iran-Oman talks on Strait of Hormuz progressing positively",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -773,7 +769,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "Iran says talks with Oman on Hormuz proceeding ‘positively’",
+                "title": "Iran war updates: Tehran says Oman talks on Hormuz advancing ‘positively’",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -968,44 +964,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Indian vessel sinks after projectile strike off Yemen, all 14 crew rescued",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-04T17:34+00:00"
-          },
-          "outlet_names": [
-            "Gulf News",
-            "Mehr News"
-          ],
-          "camps": [
-            "gulf",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "Indian vessel sinks after projectile strike off Yemen, all 14 crew rescued",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "Yemen attacks Saudi Arabia's airport in Najran",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "US has used ‘virtually all’ of its long-range precision missiles during Iran war: Sources",
           "rank_key": {
             "outlets": 2,
@@ -1035,7 +993,7 @@
             "passed_over": [
               {
                 "source": "Iran International",
-                "title": "4 US depleted 'virtually all' long-range precision missiles in Iran war - Reuter",
+                "title": "5 US depleted 'virtually all' long-range precision missiles in Iran war - Reuter",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1112,21 +1070,33 @@
         },
         {
           "selected_rank": null,
-          "headline": "Cuba blames US sanctions for nationwide power grid failures",
+          "headline": "Cuba blames US blockade for nationwide power outages",
           "rank_key": {
-            "outlets": 1,
+            "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-05T00:12+00:00"
+            "newest": "2026-08-05T01:29+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Anadolu Agency",
+            "TRT World"
           ],
           "camps": [
             "turkish"
           ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Cuba blames US blockade for nationwide power outages",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
         },
         {
           "selected_rank": null,
@@ -1327,6 +1297,24 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
+          "selected_rank": null,
+          "headline": "The article explores why Trump retreated from bombing Iran, questioning the illusion of a decisive s",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-04T12:49+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
           "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1345,7 +1333,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-05T02:03:23.908455+00:00",
+    "last_success": "2026-08-05T02:34:33.975301+00:00",
     "last_failure": null
   },
   "ok": true
