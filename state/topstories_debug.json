@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T08:31:40.389981+00:00",
+  "updated": "2026-08-05T09:03:04.218808+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Arab News": {
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-05T08:28:50.912540+00:00"
+      "headlines_updated": "2026-08-05T09:00:57.369059+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 38,
-        "title_native": 84,
+        "dropped_stale": 10,
+        "title_snippet": 33,
+        "dropped_no_english": 5,
+        "title_native": 85,
         "title_translated": 2,
         "in": 135,
-        "kept": 124
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -233,28 +234,41 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Rare total solar eclipse to captivate millions on August 12",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "TRT World",
           "title": "US-Iran talks to restart on Monday, Trump announces",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "אחרי שהושעה מכיתת הכוננות: יואב אליאסי (\"הצל\") נחקר במח\"ש",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "רגע לפני החתונה: עומר וסשה כמו שמעולם לא ראינו - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ארבל פלדמן הוא עורך הדין שנרצח בראשון לציון: \"דגל שחור\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "זה חיל שמנצח מלחמות\": עם השריונרים החדשים של צה\"ל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "بالصور | كربلاء تحتضن حشود الأربعين… ملايين الزائرين عند مرقد الإمام الحسين (ع) 09:25",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
+      "in": 120,
       "kept": 63,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "The president of the Likud tribunal, Michael Kleiner, and contractor Dudi Appel are under investigation for…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Kan 11",
           "title": "A deputy mayor in the Shfela region has been arrested on suspicion of committing sexual offenses.",
@@ -279,27 +293,6 @@
         {
           "source": "N12",
           "title": "B'Smeta is a platform offering a wide range of news and updates, including photos, videos, and articles.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The program 'Sheva with Gideon Oku' from August 4, 2026, is available, along with other programs from News…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Arbel Feldman is the lawyer who was murdered in Rishon LeZion.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Michael Kleiner, Dudi Appel, and the Dayan brothers are suspected of real estate offenses.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -417,13 +410,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "IRNA",
-          "title": "In photos: Tehran rallies mark Arbaeen for those unable to travel to Karbala in Iraq",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "President Pezeshkian rejects rumors of his resignation",
           "sec": 0,
@@ -515,15 +501,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Manar",
-          "title": "Iraq's Security Media Cell announced that over 4.8 million visitors have entered the country to commemorate…",
+          "source": "WAFA News",
+          "title": "Israel approves transfer of 4.5 billion shekels in excess Palestinian bank currency holdings, says PMA governor",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "WAFA News",
-          "title": "Israel approves transfer of 4.5 billion shekels in excess Palestinian bank currency holdings, says PMA governor",
+          "title": "PCBS: Industrial production volume index rises in June",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -558,13 +544,6 @@
         },
         {
           "source": "Arab News",
-          "title": "Sri Lanka closes schools as floods and mudslides triggered by heavy rains kill 7",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Arab News",
           "title": "Israel to accept 4.5bn shekels in excess cash from Palestinian banks",
           "sec": 0,
           "off": 0,
@@ -573,6 +552,20 @@
         {
           "source": "Arab News",
           "title": "Heat kills 16 in South Korea this summer: interior ministry",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Trump says Iran facing ‘last chance before decapitation’",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Armed man arrested at Trump LA golf course before president's visit",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -614,21 +607,21 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Yen intervention aimed at averting wider Asian instability: US",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "When Rabindranath Tagore first visited Istanbul",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "Lawmaker of Türkiye’s YP under spotlight over corruption allegations",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Kashmir after 2019: Demography, identity and international law",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Back channel in Baku, political problem for Merz",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -679,16 +672,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 36,
+      "clusters": 37,
       "sizes": [
-        15,
-        5,
+        16,
         4,
+        3,
         3,
         2,
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -728,7 +722,7 @@
           "selected_rank": 1,
           "headline": "Trump warns Iran to open Strait of Hormuz or get ‘hit very hard’",
           "rank_key": {
-            "outlets": 11,
+            "outlets": 12,
             "camps": 5,
             "newest": "2026-08-05T07:21+00:00"
           },
@@ -742,6 +736,7 @@
             "IRNA",
             "Iran International",
             "Jordan Times",
+            "Mehr News",
             "SANA",
             "The New Arab"
           ],
@@ -752,7 +747,7 @@
             "levant",
             "turkish"
           ],
-          "members": 15,
+          "members": 16,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -791,11 +786,11 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israeli forces detained four Palestinians in Jenin, turn home into military barracks",
+          "headline": "Israeli forces detain Palestinians as settler attacks intensify across West Bank",
           "rank_key": {
             "outlets": 4,
             "camps": 2,
-            "newest": "2026-08-05T07:20+00:00"
+            "newest": "2026-08-04T10:43+00:00"
           },
           "outlet_names": [
             "Falastin al-Youm",
@@ -807,12 +802,12 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces detained four Palestinians in Jenin, turn home into military barracks",
+            "source": "SANA",
+            "title": "Israeli forces detain Palestinians as settler attacks intensify across West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -827,16 +822,6 @@
                 "rejected_by": "loaded/partisan wording"
               },
               {
-                "source": "Falastin al-Youm",
-                "title": "Dozens of settlers stormed the Al-Aqsa Mosque, conducting provocative tours.",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Israeli forces detain Palestinians as settler attacks intensify across West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "TRT World",
                 "title": "Israeli army, illegal settlers carried out 2,256 attacks in occupied West Bank i",
                 "rejected_by": "older than the story's newest wave"
@@ -848,21 +833,20 @@
           "selected_rank": 3,
           "headline": "Iran has emerged victorious against US, Israeli regimes: Hezbollah chief",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-08-04T12:21+00:00"
           },
           "outlet_names": [
             "Al Manar",
             "IRNA",
-            "L'Orient Today",
-            "Mehr News"
+            "L'Orient Today"
           ],
           "camps": [
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -876,11 +860,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "Iran-US MoU stopped Israeli aggression: Hezbollah chief",
-                "rejected_by": "loaded/partisan wording"
-              },
               {
                 "source": "L'Orient Today",
                 "title": "Salam accuses Hezbollah of 'serving Israel,' slams Qassem’s criticism of state",
@@ -1076,6 +1055,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Islamic Human Rights Day symbol of Muslim countries’ resistance against Western hegemony: Statement",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-05T08:46+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The IDF released its investigation into a fatal incident in the village of Tal.",
           "rank_key": {
             "outlets": 1,
@@ -1123,6 +1120,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "SpaceX posts revenue surge in 1st quarterly report as public firm",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-05T07:44+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1238,24 +1253,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "New phase in terror-free Türkiye initiative begins",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T21:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "A suspect, 23, confessed to shooting and killing a lawyer in Rishon LeZion after an argument over mo",
           "rank_key": {
             "outlets": 1,
@@ -1273,25 +1270,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Qatar hopeful US-Iran deal be reached in coming hours, days",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-04T14:13+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1309,7 +1288,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-05T08:31:57.181660+00:00",
+    "last_success": "2026-08-05T09:03:27.199323+00:00",
     "last_failure": null
   },
   "ok": true
