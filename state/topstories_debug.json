@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T23:10:56.971892+00:00",
+  "updated": "2026-08-05T23:18:30.328689+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,22 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-05T23:08:53.947202+00:00"
+      "headlines_updated": "2026-08-05T23:16:39.905378+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
+        "dropped_stale": 9,
         "title_snippet": 27,
-        "dropped_no_english": 12,
-        "title_translated": 1,
+        "dropped_no_english": 11,
         "title_native": 87,
+        "title_translated": 1,
         "in": 135,
         "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 38,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -191,6 +191,11 @@
         {
           "source": "The New Arab",
           "title": "Israel halts crocodile plan over animal, not Palestinian rights",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Michigan's El-Sayed vs AIPAC: most expensive Dem senate primary",
           "reason": "stale (older than 48h)"
         },
         {
@@ -230,12 +235,12 @@
         },
         {
           "source": "Kan 11",
-          "title": "דוברת צה\"ל בערבית לתושבי כפר בדרום לבנון: פנו את בתיכם, חיזבאללה הפר את הפסקת האש",
+          "title": "גלעד ארדן יכריז מחר על הקמת מפלגה חדשה בראשותו, אדלשטיין במקום השני",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "N12",
-          "title": "הסלמה בצפון: חיזבאללה הפר את הפסקת האש - mako",
+          "title": "מחר: ארדן ואדלשטיין יכריזו על מפלגה חדשה - mako",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -246,11 +251,6 @@
         {
           "source": "N12",
           "title": "ארבל פלדמן הוא עורך הדין שנורה למוות בראשון לציון - mako",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "עצמות סבו וסבתו של הרצל נטמנו בירושלים - mako",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -292,11 +292,18 @@
     },
     "relevance": {
       "in": 115,
-      "kept": 70,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "The victim in Taybeh has been identified as Ziad Bashara, 57.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "BioCatch - mako",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -338,9 +345,9 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "What’s behind US Representative Massie’s claims over crisis at Ceuta?",
+          "title": "Ex-PM Sheikh Hasina announces plan to return to Bangladesh",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -386,8 +393,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "As Abdul El-Sayed wins Michigan primary, is it the end of AIPAC?",
+          "source": "Al Arabiya",
+          "title": "Iran president says communication with supreme leader ‘very difficult’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -613,14 +620,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 40,
       "sizes": [
         16,
         5,
         3,
         3,
-        2,
-        2,
+        3,
         2,
         2,
         2,
@@ -958,29 +964,29 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russian drone factory chief wounded in car blast: state media",
+          "headline": "Indian ship sinks in Red Sea off Yemen after attack",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-05T12:34+00:00"
+            "camps": 1,
+            "newest": "2026-08-04T17:34+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Arab News"
+            "Arab News",
+            "Gulf News"
           ],
           "camps": [
-            "gulf",
-            "panarab"
+            "gulf"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Arab News",
-            "title": "Russian drone factory chief wounded in car blast: state media",
+            "title": "Indian ship sinks in Red Sea off Yemen after attack",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -1204,7 +1210,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1222,7 +1228,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-05T23:11:18.029560+00:00",
+    "last_success": "2026-08-05T23:18:31.348700+00:00",
     "last_failure": null
   },
   "ok": true
