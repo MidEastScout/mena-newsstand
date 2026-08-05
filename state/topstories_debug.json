@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T20:22:12.820597+00:00",
+  "updated": "2026-08-05T20:48:52.788991+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-05T20:20:03.845864+00:00"
+      "headlines_updated": "2026-08-05T20:46:39.385142+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 37,
+        "dropped_stale": 10,
+        "title_snippet": 31,
         "title_translated": 2,
-        "title_native": 87,
+        "title_native": 86,
+        "dropped_no_english": 6,
         "in": 135,
-        "kept": 126
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -187,6 +188,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Israel halts crocodile plan over animal, not Palestinian rights",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Syria Direct",
           "title": "‘Waiting for chaos’: IS adapts under pressure, betting on the failure of Syria’s transition",
@@ -224,19 +230,49 @@
         },
         {
           "source": "Al-Masirah",
-          "title": "تواصل فعاليات إحياء ذكرى المولد النبوي الشريف 1448هـ في العاصمة والمحافظات",
+          "title": "ضربات موجعة تفرض معادلة جديدة",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
           "title": "Israeli army, illegal settlers carried out 2,256 attacks in occupied West Bank in July",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "كوريا الشمالية تحذّر: اليابان تتحول بسرعة إلى دولة حرب",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "رسمياً... طرابزون سبور يُوقّع مع محمد صلاح",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تقرير: استنزاف حاد لمخزونات الدفاع الأميركية خلال الحرب مع إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "ميلاد يوسف أمام «الاختيار»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "طلبة عالقون بغزة: افتحوا معبر رفح لضمان حق التعليم الجامعي في الخارج",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "اليمن في قلب المعادلة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 126,
-      "kept": 68,
+      "in": 119,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
@@ -373,6 +409,13 @@
         },
         {
           "source": "Al Arabiya",
+          "title": "Iran and Oman reach understanding on coordinates of route through Hormuz",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
           "title": "Netanyahu says Israel did not agree to US-backed Gaza plan",
           "sec": 0,
           "off": 0,
@@ -486,27 +529,6 @@
         {
           "source": "Egypt Independent",
           "title": "Ministries of Communication, higher education conclude AI university initiative, honor innovation hackathon winners",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "North Korea warned that Japan is rapidly turning into a 'warring state'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Trabzonspor has officially signed Mohamed Salah.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Milad Yousef is appearing in 'Al Ekhtiyar'.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -648,18 +670,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 38,
       "sizes": [
-        15,
+        13,
         5,
         3,
         3,
         3,
-        3,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -701,12 +721,11 @@
           "selected_rank": 1,
           "headline": "Iran says new Hormuz route agreed with Oman",
           "rank_key": {
-            "outlets": 12,
+            "outlets": 10,
             "camps": 5,
             "newest": "2026-08-05T20:05+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Al Jazeera",
             "Arab News",
             "Daily Sabah",
@@ -716,8 +735,7 @@
             "Iran International",
             "Jordan Times",
             "Mehr News",
-            "SANA",
-            "The New Arab"
+            "SANA"
           ],
           "camps": [
             "gulf",
@@ -726,7 +744,7 @@
             "levant",
             "turkish"
           ],
-          "members": 15,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -868,7 +886,13 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "US authorities say at least 3 killed in North Carolina mass shooting",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1108,7 +1132,7 @@
           "camps": [
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1203,7 +1227,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1221,7 +1245,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-05T20:22:29.615593+00:00",
+    "last_success": "2026-08-05T20:48:53.128367+00:00",
     "last_failure": null
   },
   "ok": true
