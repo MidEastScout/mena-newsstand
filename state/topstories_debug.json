@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T13:09:27.971477+00:00",
+  "updated": "2026-08-06T13:18:20.164313+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-06T13:07:33.797626+00:00"
+      "headlines_updated": "2026-08-06T13:16:27.503500+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 3,
-        "title_snippet": 31,
+        "title_snippet": 29,
+        "dropped_no_english": 8,
         "title_translated": 3,
         "title_native": 88,
-        "dropped_no_english": 6,
         "in": 131,
-        "kept": 122
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -202,6 +202,11 @@
           "source": "Gulf News",
           "title": "Trump says Iran facing 'last chance before decapitation'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אמידים ובשיא הקריירה: שינוי דרמטי בפרופיל האזרחים העוזבים",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
@@ -229,6 +234,11 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
+          "source": "Falastin al-Youm",
+          "title": "روسيا تحرر بلدتين جديتين في أوكرانيا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al-Masirah",
           "title": "من البحر إلى العمق",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -236,8 +246,8 @@
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 74,
+      "in": 120,
+      "kept": 73,
       "dropped": [
         {
           "source": "Channel 13",
@@ -268,13 +278,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Parking fees in major cities across the country are set to increase.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "Cambridge professor Jason Arday quits amid plagiarism allegations",
           "sec": 0,
@@ -300,6 +303,13 @@
           "title": "‘Let Palestinians live’: Egypt coach wins global praise after emotional speech",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Netanyahu says Israel did not agree to US-backed Gaza plan",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -388,6 +398,13 @@
         },
         {
           "source": "Egypt Independent",
+          "title": "Unpaid wages and deadly risk: Why health workers are threatening to abandon the Ebola response",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
           "title": "Open vs. closed: The debate shaping the future of AI",
           "sec": 0,
           "off": 0,
@@ -443,13 +460,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Palestinian students stuck in Gaza are calling for the opening of the Rafah crossing to ensure their right to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "EU allocates €1.4 billion from frozen Russian assets to support Ukraine",
           "sec": 0,
@@ -465,7 +475,7 @@
         },
         {
           "source": "Arab News",
-          "title": "Iran says close to Hormuz plan with Oman, but reopening depends on US",
+          "title": "Woman arrested as four people stabbed in central London: UK media",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -494,13 +504,6 @@
         {
           "source": "Al-Masirah",
           "title": "This title suggests a change in the equation or balance of power, possibly in a geopolitical context.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Israel fired 113 projectiles into southern Lebanon Wednesday, highest since June 21: UN peacekeepers",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -579,9 +582,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 45,
       "sizes": [
-        15,
+        14,
+        5,
         4,
         2,
         2,
@@ -591,9 +595,6 @@
         2,
         2,
         2,
-        2,
-        2,
-        1,
         1,
         1,
         1,
@@ -663,7 +664,7 @@
             "levant",
             "turkish"
           ],
-          "members": 15,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -694,7 +695,7 @@
               },
               {
                 "source": "IRNA",
-                "title": "Gharibabadi: Agreement between Iran and Oman on arrangements for Strait of Hormu",
+                "title": "Iran says joint statement with Oman on Hormuz in final stage; warns of third par",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -702,6 +703,61 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Shabjdeed's Saint Levant diss track: Who gets to represent Palestine?",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-08-06T12:38+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "IRNA",
+            "L'Orient Today",
+            "Middle East Eye",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Middle East Eye",
+            "title": "Shabjdeed's Saint Levant diss track: Who gets to represent Palestine?",
+            "title_source": "native",
+            "why": [
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Iran and Oman near deal on Hormuz as Israel continues strikes on Lebanon",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Arab, Islamic nations condemn continued Israeli aggression in Gaza",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "'We watched the fields burn, helpless and in tears': In Yaroun, Israel reduces c",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli occupation forces raid al-Far'a refugee camp south of Tubas, search home",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Israeli forces continue assault on Qalandiya refugee camp for second day, demolish shops and raid do",
           "rank_key": {
             "outlets": 3,
@@ -749,7 +805,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Israel-Lebanon talks end early as Israel renews southern Lebanon strikes",
           "rank_key": {
             "outlets": 2,
@@ -781,7 +837,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Türkiye, 7 others condemn 'in strongest terms' Israeli strikes on Gaza healthcare, civilian infrastr",
           "rank_key": {
             "outlets": 2,
@@ -813,7 +869,44 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
+          "headline": "Lebanon, Israel begin final day of 7th round of negotiations in Rome",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-06T10:01+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Lebanon, Israel begin final day of 7th round of negotiations in Rome",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Lebanon and Israel begin new round of direct talks in Rome",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Tanker reports hearing two explosions in Strait of Hormuz but vessel and crew safe: UKMTO",
           "rank_key": {
             "outlets": 2,
@@ -838,75 +931,6 @@
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemen's Houthis say attacked two Saudi oil tankers",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-05T21:19+00:00"
-          },
-          "outlet_names": [
-            "Gulf News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Yemen's Houthis say attacked two Saudi oil tankers",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Gulf News",
-                "title": "Yemen's Houthis claim attacks on two Saudi oil tankers",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Russian drone factory chief wounded in car blast: state media",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-05T12:34+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Russian drone factory chief wounded in car blast: state media",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -1012,54 +1036,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces continue demolitions and raids across West Bank, shell Gaza areas",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-05T12:09+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Israeli forces continue demolitions and raids across West Bank, shell Gaza areas",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Israeli occupation forces raid al-Far'a refugee camp south of Tubas, search home",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Arab, Islamic nations condemn continued Israeli aggression in Gaza",
+          "headline": "Turkish intelligence chief, Syrian foreign minister meet in Ankara",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-06T12:38+00:00"
+            "newest": "2026-08-06T13:05+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Anadolu Agency"
           ],
           "camps": [
-            "iranian"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1175,60 +1162,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Lebanon, Israel begin final day of 7th round of negotiations in Rome",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-06T10:01+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Egypt’s FM participates in 5th R-4 group meeting",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-06T09:37+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Sheikh Hasina vows to return, but will Bangladesh accept convicted ex-PM?",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-06T09:06+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The Trump administration prevented a significant response after the deaths of soldiers, leading to a",
           "rank_key": {
             "outlets": 1,
@@ -1264,7 +1197,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Eight armed suspects linked to terrorist groups arrested in southeast Iran: IRGC",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-06T06:56+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Harel Birnshtok and Tamir Waknin, both fallen soldiers, were killed by an explosive device in southe",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-06T06:14+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump pressed Hegseth over US weapons shortages amid Iran tensions: report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-06T06:11+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1282,7 +1269,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-06T13:09:50.008700+00:00",
+    "last_success": "2026-08-06T13:18:42.760927+00:00",
     "last_failure": null
   },
   "ok": true
