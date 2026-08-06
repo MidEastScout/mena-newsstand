@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T23:50:08.293464+00:00",
+  "updated": "2026-08-06T00:16:48.311302+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-05T23:47:49.438108+00:00"
+      "headlines_updated": "2026-08-06T00:15:00.850335+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 39,
+        "dropped_stale": 8,
+        "title_snippet": 31,
+        "dropped_no_english": 8,
         "title_translated": 1,
-        "title_native": 88,
+        "title_native": 87,
         "in": 135,
-        "kept": 128
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -187,6 +188,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Israel halts crocodile plan over animal, not Palestinian rights",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Syria Direct",
           "title": "‘Waiting for chaos’: IS adapts under pressure, betting on the failure of Syria’s transition",
@@ -221,12 +227,52 @@
           "source": "TRT World",
           "title": "Israeli army, illegal settlers carried out 2,256 attacks in occupied West Bank in July",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "כמה עולה להזדקן בישראל? - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "המחאה והתקיפה בכנס הגיוס לחרדים - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "חשד לאונס קבוצתי של קטינה במסיבה צפון, שניים נעצרו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ארבל פלדמן הוא עורך הדין שנרצח בראשון לציון: \"דגל שחור\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "התיעוד ועדות השותף של עורך הדין שנרצח: \"ראיתי דם, החשוד ברח\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "פאוור קאפל, עונה 1, פרק 12: החתונה שהשתבשה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إدارة ترامب تعتزم إغلاق 5 بعثات دبلوماسية بينها المكتب الفرعي للسفارة في الكاميرون",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "ميلاد يوسف أمام «الاختيار»",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 128,
-      "kept": 82,
+      "in": 119,
+      "kept": 80,
       "dropped": [
         {
           "source": "N12",
@@ -236,38 +282,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "The remains of Herzl's grandparents have been interred in Jerusalem.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "A former star has been identified and documented.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
-          "title": "Two individuals have been arrested in connection with the suspected gang rape of a minor at a party in the…",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This entry refers to \"Power Couple,\" season 1, episode 12, specifically a wedding that went wrong, available…",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -321,13 +339,6 @@
         },
         {
           "source": "The New Arab",
-          "title": "As Abdul El-Sayed wins Michigan primary, is it the end of AIPAC?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
           "title": "Abdul El-Sayed scoops Michigan's Senate Democratic primary race",
           "sec": 0,
           "off": 0,
@@ -343,13 +354,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The Iranian leadership has affirmed that there will be no new agreements before previous understandings are…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Lebanon is experiencing a series of official visits to the South.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -392,13 +396,6 @@
         {
           "source": "Al-Akhbar",
           "title": "The article discusses the issue of assassinations in Gaza, suggesting Israel is \"selling\" a commitment to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Mohammad Marandi's commentary is highlighted, suggesting the \"Zionist narrative\" collapsed on air.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -545,7 +542,7 @@
         },
         {
           "source": "TRT World",
-          "title": "South Korea heatwave kills 16 as Seoul issues first highest-level heat alert",
+          "title": "Trump tells Iran to reopen Hormuz or be 'hit very hard'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -554,9 +551,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 44,
       "sizes": [
-        17,
+        15,
         5,
         4,
         3,
@@ -570,8 +567,7 @@
         2,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -612,7 +608,7 @@
           "selected_rank": 1,
           "headline": "Iran says has agreed new Hormuz route with Oman",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 8,
             "camps": 4,
             "newest": "2026-08-05T20:05+00:00"
           },
@@ -621,7 +617,6 @@
             "Al Jazeera",
             "Arab News",
             "Egypt Independent",
-            "Gulf News",
             "IRNA",
             "Iran International",
             "Jordan Times",
@@ -633,7 +628,7 @@
             "iranian",
             "levant"
           ],
-          "members": 17,
+          "members": 15,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -649,11 +644,6 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "Iran says it agreed coordinates of Hormuz route with Oman",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
                 "title": "Iran, Oman, US ‘close’ to Hormuz deal: What do they all want?",
                 "rejected_by": "older than the story's newest wave"
               },
@@ -665,6 +655,11 @@
               {
                 "source": "Mehr News",
                 "title": "Hormuz transit talks progressing positively",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "US interference delaying Iran-Oman deal on Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -721,7 +716,7 @@
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-08-05T18:45+00:00"
+            "newest": "2026-08-05T17:46+00:00"
           },
           "outlet_names": [
             "Al Manar",
@@ -909,6 +904,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "Multiple people killed in North Carolina shooting",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-05T20:02+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Multiple people killed in North Carolina shooting",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli forces raid Palestinian refugee camp near Jerusalem",
           "rank_key": {
             "outlets": 2,
@@ -981,6 +1007,44 @@
               {
                 "source": "TRT World",
                 "title": "Over 800,000 displaced Lebanese begin returning home amid reduced violence: UN",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Netanyahu says Israel did not agree to US-backed Gaza plan",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-05T14:57+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Jordan Times"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Netanyahu says Israel did not agree to US-backed Gaza plan",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Iran war updates: Tehran, Oman agree on route coordinates in Hormuz Strait",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1081,36 +1145,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Arbel Feldman is the lawyer who was shot and killed in Rishon Lezion.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-05T07:01+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Channel 13",
-            "title": "Arbel Feldman is the lawyer who was shot and killed in Rishon Lezion.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Israel weighs further strikes in Lebanon amid Rome talks: Reports",
           "rank_key": {
             "outlets": 1,
@@ -1176,24 +1210,6 @@
           ],
           "camps": [
             "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Bangladesh's ousted leader Hasina says she will return home in December",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-05T20:48+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1273,24 +1289,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Netanyahu says Israel did not agree to US-backed Gaza plan",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-05T14:57+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "China hits US with sanctions, drone export curbs ahead of Xi visit",
           "rank_key": {
             "outlets": 1,
@@ -1326,7 +1324,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran supports Palestinian leaders’ decisions in negotiations: President Pezeshkian",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-05T10:37+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump says U.S.-Iran talks made progress, warns Tehran against backing away",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-05T09:31+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1344,7 +1378,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-05T23:50:25.439710+00:00",
+    "last_success": "2026-08-06T00:16:49.326604+00:00",
     "last_failure": null
   },
   "ok": true
