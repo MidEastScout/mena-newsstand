@@ -329,78 +329,78 @@ jobs:
             *) echo "No stuck deployment to clear." ;;
           esac
 
-      - name: Note when the deploy started
-        id: deploy_start
-        run: echo "epoch=$(date -u +%s)" >> "$GITHUB_OUTPUT"
-
-      # THE TIMEOUT IS NOT A "GIVE UP" KNOB — READ THIS BEFORE LOWERING IT.
-      # When `timeout` expires, deploy-pages CANCELS the deployment it just
-      # created, and GitHub holds that cancellation against the COMMIT: every
-      # later attempt at the same SHA then dies instantly with "Deployment
-      # cancelled." So a too-short timeout does not just give up on one attempt,
-      # it makes the commit undeployable until a new commit comes along.
+      # 600000 ms (10 min) IS THE MAXIMUM. Anything larger is silently clamped:
+      #   "Warning: timeout value is greater than the allowed maximum -
+      #    timeout set to the maximum of 600000 milliseconds."
+      # (Observed 2026-08-06 run 31113488247, where a 1800000 setting produced
+      # exactly that warning and then timed out at 601 s anyway.) So "just wait
+      # longer" is not available as a fix — when the Pages backend takes more
+      # than 10 minutes, the first attempt WILL time out, and on the way out
+      # deploy-pages cancels the deployment it created.
       #
-      # History: 5 min (self-cancelled while the deployment was merely slow,
-      # 2026-08-06 run 31094331422) -> 10 min (still short of the 606 s the
-      # backend was taking that day; runs 31107797192 / 31105326890 burned BOTH
-      # attempts on timeouts and failed) -> 30 min here. Waiting costs nothing
-      # on a public repo, and a slow deployment is not a stuck one: the stuck
-      # case is handled by the "clear any stuck deployment" step above.
+      # The retry below is therefore not optional garnish, it is the mechanism.
       - name: Deploy to GitHub Pages
         id: deployment
         continue-on-error: true
         uses: actions/deploy-pages@v4
         with:
-          timeout: 1800000   # 30 minutes — see the note above before changing
+          timeout: 600000   # the action's hard maximum; larger values are clamped
 
-      # Retry ONLY a fast failure. A fast failure means a real, recoverable
-      # error (typically "another deployment is in progress"), which settles in
-      # under a minute. A failure that consumed the whole timeout means
-      # deploy-pages cancelled this commit's deployment on the way out, and a
-      # same-SHA retry is guaranteed to fail — the old workflow retried anyway
-      # and spent 25 minutes per run proving it.
-      - name: Decide whether a retry can possibly help
-        id: retry_check
+      # Always retry once — including after a timeout.
+      #
+      # The previous workflow believed a timed-out attempt made the commit
+      # permanently undeployable ("Deployment cancelled." on the same SHA) and
+      # waited 300 s before retrying. Run 31113488247 disproved that: attempt 1
+      # timed out at 601 s and cancelled its deployment, the retry started 60 s
+      # later and reported success after 236 s. A short wait recreates the
+      # deployment cleanly; a long one just gives the next scheduled run time to
+      # collide with this one.
+      - name: Let the previous attempt settle
         if: steps.deployment.outcome == 'failure'
-        run: |
-          started="${{ steps.deploy_start.outputs.epoch }}"
-          elapsed=$(( $(date -u +%s) - ${started:-0} ))
-          echo "First deploy attempt ran ${elapsed}s."
-          if [ "$elapsed" -ge 1740 ]; then
-            echo "It exhausted the 30-min timeout, so deploy-pages cancelled this"
-            echo "commit's deployment on the way out. A same-SHA retry cannot"
-            echo "succeed — skipping it and letting the next commit redeploy."
-            echo "retry=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "It failed fast, so the deployment was not self-cancelled —"
-            echo "most likely a conflicting deployment. Worth one retry."
-            echo "retry=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Let the conflicting deployment settle
-        if: steps.retry_check.outputs.retry == 'true'
         run: sleep 60
 
       - name: Deploy to GitHub Pages (retry)
         id: deployment_retry
-        if: steps.retry_check.outputs.retry == 'true'
+        if: steps.deployment.outcome == 'failure'
         continue-on-error: true
         uses: actions/deploy-pages@v4
         with:
-          timeout: 1800000
+          timeout: 600000
 
-      # The verdict comes from what the live site is ACTUALLY serving, not from
-      # whether our polling loop happened to win its race. Two things this
-      # catches that the old step-outcome check did not:
-      #   - a deploy that timed out here but finished server-side moments later
-      #     (that is exactly why a "retry" used to succeed in 6 seconds), and
-      #   - our commit being superseded by a newer one that already deployed —
-      #     the live site matches main, which is the invariant we care about.
+      # THE ORDER OF EVIDENCE HERE MATTERS — do not reorder it.
+      #
+      # `deploy-pages` prints "Reported success!" only after the PAGES API has
+      # told it the deployment succeeded. That is the authoritative answer and it
+      # must win outright. The repo Deployments API is NOT a second opinion on
+      # it: GitHub sets this commit's deployment status from THIS JOB's own
+      # conclusion, so a check that fails the job because the Deployments API
+      # has not caught up will then cause the very "failure" it claimed to find.
+      #
+      # That is exactly what happened on run 31113488247: the retry reported
+      # success at 15:13:28, this step polled the Deployments API for 32 s, still
+      # saw the older commit as the newest success, exited 1 at 15:14:00 — and
+      # at 15:14:03 GitHub stamped the 2cde17df deployment `failure` because the
+      # job had failed. A green deploy was turned red by its own verification.
+      #
+      # So: trust the deploy steps first, and only fall back to asking the API
+      # what is live when BOTH attempts genuinely failed. In that case the
+      # question worth asking is not "did our commit deploy" but "is the live
+      # site current" — a newer commit that already deployed is a fine outcome.
       - name: Verify the live site matches main
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          if [ "${{ steps.deployment.outcome }}" = "success" ] \
+             || [ "${{ steps.deployment_retry.outcome }}" = "success" ]; then
+            echo "deploy-pages reported success — the Pages API confirmed this"
+            echo "commit is deployed. Nothing further to check."
+            exit 0
+          fi
+
+          echo "Both deploy attempts failed. Asking whether the live site is"
+          echo "nevertheless current (a newer commit may already have deployed)…"
+
           repo="https://api.github.com/repos/${{ github.repository }}"
           hdr=(-H "Accept: application/vnd.github+json"
                -H "Authorization: Bearer $GH_TOKEN"
@@ -432,19 +432,6 @@ jobs:
             exit 0
           fi
 
-          # If the API itself would not answer, we have no evidence the site is
-          # behind — only that we could not look. Fall back to what the deploy
-          # steps reported rather than turning a GitHub API blip into a red run.
-          if [ -z "$live" ] || [ -z "$head" ]; then
-            if [ "${{ steps.deployment.outcome }}" = "success" ] \
-               || [ "${{ steps.deployment_retry.outcome }}" = "success" ]; then
-              echo "::warning::Could not read the Pages deployment state from the API"
-              echo "::warning::(live='${live:-?}' main='${head:-?}'), but the deploy step"
-              echo "::warning::reported success — treating this commit as published."
-              exit 0
-            fi
-          fi
-
           echo "::error title=Live site is behind main::The newest successful Pages"
           echo "deployment is ${live:-none} but main is at ${head:0:8}."
           echo "::warning::The next refresh's dispatch (and the schedule backstop)"
@@ -452,10 +439,12 @@ jobs:
           echo "::warning::self-heals within ~30 minutes."
           echo "::warning::If it repeats, check in this order:"
           echo "::warning::  1. Settings -> Pages -> Source is 'GitHub Actions'."
-          echo "::warning::  2. The deploy step's log: 'Timeout reached, aborting!'"
-          echo "::warning::     means the Pages backend is taking longer than the"
-          echo "::warning::     30-min cap — raise the cap, never lower it (expiry"
-          echo "::warning::     cancels this commit's deployment and blocks retries)."
-          echo "::warning::  3. The size-check step above: a site near 1 GB deploys"
-          echo "::warning::     slowly and then not at all."
+          echo "::warning::  2. 'Timeout reached, aborting!' in BOTH deploy steps"
+          echo "::warning::     means the Pages backend needed more than 10 min"
+          echo "::warning::     twice over. Raising the timeout is NOT available:"
+          echo "::warning::     600000 ms is the action's hard maximum. The lever"
+          echo "::warning::     is making the payload smaller."
+          echo "::warning::  3. The size-check step above — the published tree is"
+          echo "::warning::     almost entirely the front-page archive, and deploy"
+          echo "::warning::     time scales with it."
           exit 1
