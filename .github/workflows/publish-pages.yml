@@ -209,20 +209,39 @@ jobs:
       # fatal to the point of needing intervention. BOTH attempts use
       # continue-on-error (an earlier version left the retry fatal, and because a
       # timed-out first attempt CANCELS its own deployment, the same-commit retry
-      # always saw "Deployment cancelled" and failed). `timeout` caps the wait on
-      # a wedged deployment so a bad cycle fails fast instead of burning 10 min.
+      # always saw "Deployment cancelled" and failed).
+      #
+      # TIMEOUT — why 10 minutes and not 5:
+      # `timeout` is not a "give up on a wedged deployment" cap, which is how it
+      # was set. On expiry deploy-pages CANCELS THE DEPLOYMENT IT JUST CREATED,
+      # and that cancel is keyed to the commit — so it also poisons every later
+      # attempt at the same SHA. Observed 2026-08-06 (run 31094331422): the
+      # deployment sat in `deployment_queued` for the full 5 minutes, hit
+      # "Timeout reached, aborting!", cancelled itself, and the retry 75s later
+      # died in 5 seconds with "Deployment cancelled." — main sat undeployed at
+      # 5574fc26 while the live site served a commit 25 minutes older.
+      # A slow deployment is not a stuck one: the artifact is ~285 MB and grows
+      # ~6 MB/day, so the queue phase gets longer every week. Waiting is free
+      # here (public repo) and strictly safer than self-cancelling.
       - name: Deploy to GitHub Pages
         id: deployment
         continue-on-error: true
         uses: actions/deploy-pages@v4
         with:
-          timeout: 300000
+          timeout: 600000
 
       # A deployment still building when we started makes our create fail with
       # "in progress deployment". Wait for it to settle, then try once more.
+      #
+      # 75s was too short to be worth anything: when the first attempt has
+      # self-cancelled, GitHub still holds that cancellation against the SHA and
+      # the retry fails instantly rather than deploying. The same commit DID
+      # deploy cleanly from a later run ~7 minutes after such a failure
+      # (c8f00d7b: 10:10:42 failed, 10:17:46 succeeded), so give the retry a
+      # comparable gap instead of firing it into a state that cannot succeed.
       - name: Wait, then retry the deploy if the first attempt failed
         if: steps.deployment.outcome == 'failure'
-        run: sleep 75
+        run: sleep 300
 
       - name: Deploy to GitHub Pages (retry)
         id: deployment_retry
@@ -230,7 +249,7 @@ jobs:
         continue-on-error: true
         uses: actions/deploy-pages@v4
         with:
-          timeout: 300000
+          timeout: 600000
 
       - name: Report deploy result
         if: always()
@@ -239,10 +258,17 @@ jobs:
              || [ "${{ steps.deployment_retry.outcome }}" = "success" ]; then
             echo "Deploy succeeded — live site now matches main."
           else
-            echo "::warning::Both deploy attempts failed this cycle; the next ~30-min"
-            echo "::warning::refresh (and the schedule backstop) will redeploy"
-            echo "::warning::automatically. If this persists, confirm Settings ->"
-            echo "::warning::Pages -> Source is 'GitHub Actions'."
+            echo "::error title=Live site is behind main::Neither deploy attempt"
+            echo "published ${GITHUB_SHA:0:8}; the live site is still serving the"
+            echo "previous commit until a later cycle redeploys."
+            echo "::warning::The next ~30-min refresh (and the schedule backstop)"
+            echo "::warning::will redeploy automatically. If this persists, confirm"
+            echo "::warning::Settings -> Pages -> Source is 'GitHub Actions'."
+            echo "::warning::If the log above shows 'Timeout reached, aborting!',"
+            echo "::warning::the deployment was still queued when the timeout"
+            echo "::warning::expired — raise the deploy step's timeout rather than"
+            echo "::warning::retrying, since that abort cancels this commit's"
+            echo "::warning::deployment and blocks retries of the same SHA."
             # Surface a genuinely broken publish path (both attempts failed) as a
             # failed run so a persistent problem is visible, rather than hiding it
             # behind the step-level continue-on-error above. Transient setup-phase
