@@ -246,6 +246,11 @@ jobs:
           git add frontpages 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Nothing changed — skipping commit."
+            # No commit means the live site is already serving what we would
+            # publish, so the deploy dispatch below is skipped too. Deploying
+            # re-uploads the whole ~300 MB published tree, and a no-op deploy
+            # is what used to queue behind (and time out against) the real ones.
+            echo "committed=no" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore: refresh data $(date -u +%Y-%m-%dT%H:%MZ)"
             # A failed `git pull --rebase` leaves a rebase IN PROGRESS, which
@@ -270,6 +275,7 @@ jobs:
               echo "::error title=Data refresh could not push::5 attempts failed; the site is serving the previous cycle's data."
               exit 1
             fi
+            echo "committed=yes" >> "$GITHUB_OUTPUT"
           fi
 
       # Publish the freshly-committed data to GitHub Pages. This runs in its OWN
@@ -284,7 +290,13 @@ jobs:
       # re-trigger the deploy, so a dropped dispatch self-heals. Reuses the same
       # DISPATCH_PAT self-dispatch pattern as `rearm` (the default GITHUB_TOKEN
       # cannot trigger a workflow_dispatch that actually runs).
+      #
+      # Only fires when the step above actually committed. publish-pages.yml
+      # independently refuses to republish a commit the live site already
+      # serves, so this is a belt-and-braces saving — but it is the cheaper of
+      # the two, because it never starts the workflow at all.
       - name: Trigger the Pages deploy
+        if: steps.commit.outputs.committed == 'yes'
         continue-on-error: true
         env:
           DISPATCH_PAT: ${{ secrets.DISPATCH_PAT }}

@@ -20,31 +20,58 @@ name: Publish to GitHub Pages
 #
 # Running the deploy in its OWN workflow means such a hiccup fails only this
 # best-effort publish — it can never redden or email the data-refresh pipeline
-# again. The publish steps below are unchanged from the old inline deploy job.
+# again.
 #
 # HOW IT FIRES:
 #   - PRIMARY: the `run` job of fetch-headlines.yml dispatches this workflow
-#     (workflow_dispatch) right after it commits fresh data, so the live site
+#     (workflow_dispatch) right after it COMMITS fresh data, so the live site
 #     updates within a minute of every ~30-min refresh. That dispatch reuses the
-#     same DISPATCH_PAT self-dispatch pattern that keeps the refresh loop alive.
+#     same DISPATCH_PAT self-dispatch pattern that keeps the refresh loop alive,
+#     and only fires when there was actually something to commit.
 #   - BACKSTOP: the schedule below, in case a dispatch is ever dropped or
 #     DISPATCH_PAT is absent. GitHub's cron is unreliable for this repo, so it is
-#     only a safety net; the dispatch above is what keeps the site prompt.
-#   - workflow_dispatch also allows a manual "redeploy now".
+#     only a safety net; the dispatch above is what keeps the site prompt. The
+#     `check` job below makes a backstop run that has nothing new to publish cost
+#     a few seconds instead of a full deploy.
+#   - workflow_dispatch also allows a manual "redeploy now" (tick `force` to
+#     republish even when the live site is already current).
+#
+# WHY THE `check` JOB EXISTS (added 2026-08-06)
+# =============================================
+# Every deploy re-uploads the ENTIRE published tree — ~300 MB, of which ~290 MB
+# is the immutable front-page archive that by definition did not change. Before
+# this guard the workflow deployed ~70 times a day (a dispatch per refresh plus
+# a cron every 20 min), and roughly a third of those republished a commit the
+# live site was ALREADY serving: e.g. 2026-08-06, commit 3efb26d5 was deployed
+# in full at 14:21 and again at 14:38.
+#
+# That redundancy is what turned a slow Pages backend into red runs. On
+# 2026-08-06 at ~07:51Z the Pages deployment phase went from 5–20 s to 175–606 s
+# per deploy; overlapping same-commit deploys then queued behind each other,
+# each one timing out at the 10-min cap, and a timing-out attempt CANCELS its
+# own deployment — which poisons the same-commit retry ("Deployment cancelled.")
+# and leaves the next scheduled run to clean up. 8 of 37 runs that day failed.
+# Publishing only what is actually new removes the pile-up at the source.
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Redeploy even if the live site already serves this commit'
+        type: boolean
+        default: false
   schedule:
     # Backstop ONLY — the fetch-headlines `run` job dispatches this workflow
     # promptly after each commit (primary). This bounds how stale the live site
-    # can get if a dispatch is ever dropped or DISPATCH_PAT lapses.
+    # can get if a dispatch is ever dropped or DISPATCH_PAT lapses. Firing every
+    # 20 min is cheap now that `check` short-circuits the runs with nothing new.
     - cron: '*/20 * * * *'
 
 permissions:
   contents: read
   pages: write
   id-token: write
-  deployments: write   # lets the "clear stuck deployment" step read/cancel
+  deployments: write   # read deployment statuses; cancel a stuck deployment
 
 # Serialise deploys; never cancel one mid-publish. Overlapping triggers (a
 # per-refresh dispatch landing near a scheduled backstop) queue behind one
@@ -54,6 +81,57 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # ---------------------------------------------------------------------------
+  # Is there anything to publish? Costs ~5 seconds and needs no checkout.
+  #
+  # `github.sha` is the commit this run was triggered for, and it is also the
+  # commit `actions/deploy-pages` labels its deployment with. So if the newest
+  # github-pages deployment that reached "success" carries the same SHA, the
+  # live site is already serving exactly what this run would publish, and
+  # re-uploading ~300 MB to arrive at a byte-identical site is pure waste.
+  # ---------------------------------------------------------------------------
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      needed: ${{ steps.guard.outputs.needed }}
+    steps:
+      - name: Does the live site already serve this commit?
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          repo="https://api.github.com/repos/${{ github.repository }}"
+          hdr=(-H "Accept: application/vnd.github+json"
+               -H "Authorization: Bearer $GH_TOKEN"
+               -H "X-GitHub-Api-Version: 2022-11-28")
+
+          # Walk the github-pages deployments newest-first and stop at the first
+          # one that actually reached "success" — that is what the live site is
+          # serving. (The newest deployment is NOT necessarily it: a cancelled
+          # or failed attempt still shows up in this list.)
+          live=""
+          while read -r id sha; do
+            [ -n "$id" ] || continue
+            state=$(curl -sS "${hdr[@]}" "$repo/deployments/$id/statuses?per_page=1" \
+                    | jq -r '.[0].state // "none"')
+            echo "  deployment $id ${sha:0:8} -> $state"
+            if [ "$state" = "success" ]; then live="$sha"; break; fi
+          done < <(curl -sS "${hdr[@]}" "$repo/deployments?environment=github-pages&per_page=10" \
+                   | jq -r '.[]? | "\(.id) \(.sha)"')
+
+          echo "live=${live:-<none>}  this run=${GITHUB_SHA}"
+          if [ "${{ inputs.force }}" = "true" ]; then
+            echo "Forced redeploy requested — publishing regardless."
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          elif [ -n "$live" ] && [ "$live" = "$GITHUB_SHA" ]; then
+            echo "Live site already serves ${GITHUB_SHA:0:8} — nothing to publish."
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Live site is behind (or has never deployed) — publishing ${GITHUB_SHA:0:8}."
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          fi
+
   # ---------------------------------------------------------------------------
   # Publish to GitHub Pages ourselves.
   # WHY we deploy from a workflow at all: GitHub's legacy "deploy from branch"
@@ -77,7 +155,11 @@ jobs:
   # Source → "GitHub Actions".
   # ---------------------------------------------------------------------------
   deploy:
+    needs: check
+    if: needs.check.outputs.needed == 'true'
     runs-on: ubuntu-latest
+    # Worst realistic case is one 30-min deploy attempt plus a 30-min retry.
+    timeout-minutes: 75
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
@@ -160,6 +242,49 @@ jobs:
             ./ _site/
           echo "Published tree: $(du -sh _site | cut -f1) across $(find _site -type f | wc -l) files"
 
+      # GitHub Pages refuses to serve a site larger than 1 GB, and deploy time
+      # grows with the payload — so the archive's steady growth is a scheduled
+      # outage unless someone acts on it. This step turns "we will hit a wall
+      # eventually" into a dated warning in the log, months ahead of the wall.
+      #
+      # The archive is append-only: every published day adds ~6 MB of front-page
+      # scans that never change again, and the site keeps a year of them
+      # (ARCHIVE_RETENTION_DAYS in scripts/fetch_frontpages.py). A full year at
+      # the current per-day size is ~2.2 GB — twice what Pages will serve.
+      - name: Check the published tree against the 1 GB Pages limit
+        run: |
+          limit=$((1024 * 1024 * 1024))
+          bytes=$(du -sb _site | cut -f1)
+          # `du | cut` reports the pipeline's status from `cut`, which succeeds
+          # even when `du` found nothing — so a missing archive yields an EMPTY
+          # string, not the 0 an `|| echo 0` would suggest, and every later
+          # `[ "$arch" -gt 0 ]` would abort the step. Default it explicitly.
+          arch=$(du -sb _site/frontpages/archive 2>/dev/null | cut -f1 || true)
+          arch=${arch:-0}
+          days=$(find _site/frontpages/archive -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)
+          pct=$(( bytes * 100 / limit ))
+          echo "Published tree: $((bytes / 1000000)) MB — ${pct}% of the 1 GB Pages limit."
+          echo "  front-page archive: $((arch / 1000000)) MB across ${days} day(s)"
+          echo "  everything else:    $(( (bytes - arch) / 1000000 )) MB"
+          if [ "$days" -gt 0 ] && [ "$arch" -gt 0 ]; then
+            per_day=$(( arch / days ))
+            left=$(( (limit - bytes) / per_day ))
+            echo "  archive growth:     $((per_day / 1000000)) MB/day"
+            echo "  headroom:           ~${left} days at that rate"
+            if [ "$left" -lt 90 ]; then
+              echo "::warning title=Pages size limit approaching::The published site is"
+              echo "::warning::$((bytes / 1000000)) MB and the front-page archive adds"
+              echo "::warning::~$((per_day / 1000000)) MB/day, so it reaches GitHub Pages'"
+              echo "::warning::1 GB ceiling in roughly ${left} days. Shrink the archive"
+              echo "::warning::(recompress the stored covers) or lower"
+              echo "::warning::ARCHIVE_RETENTION_DAYS in scripts/fetch_frontpages.py."
+            fi
+          fi
+          if [ "$pct" -ge 90 ]; then
+            echo "::error title=Published site nearly at the Pages limit::${pct}% of 1 GB."
+            echo "::error::Deploys will start failing outright once the site exceeds 1 GB."
+          fi
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -204,75 +329,133 @@ jobs:
             *) echo "No stuck deployment to clear." ;;
           esac
 
-      # Deploy is best-effort: a fresh deploy happens after every ~30-min refresh
-      # (and on the schedule backstop), so a transient Pages hiccup must not be
-      # fatal to the point of needing intervention. BOTH attempts use
-      # continue-on-error (an earlier version left the retry fatal, and because a
-      # timed-out first attempt CANCELS its own deployment, the same-commit retry
-      # always saw "Deployment cancelled" and failed).
+      - name: Note when the deploy started
+        id: deploy_start
+        run: echo "epoch=$(date -u +%s)" >> "$GITHUB_OUTPUT"
+
+      # THE TIMEOUT IS NOT A "GIVE UP" KNOB — READ THIS BEFORE LOWERING IT.
+      # When `timeout` expires, deploy-pages CANCELS the deployment it just
+      # created, and GitHub holds that cancellation against the COMMIT: every
+      # later attempt at the same SHA then dies instantly with "Deployment
+      # cancelled." So a too-short timeout does not just give up on one attempt,
+      # it makes the commit undeployable until a new commit comes along.
       #
-      # TIMEOUT — why 10 minutes and not 5:
-      # `timeout` is not a "give up on a wedged deployment" cap, which is how it
-      # was set. On expiry deploy-pages CANCELS THE DEPLOYMENT IT JUST CREATED,
-      # and that cancel is keyed to the commit — so it also poisons every later
-      # attempt at the same SHA. Observed 2026-08-06 (run 31094331422): the
-      # deployment sat in `deployment_queued` for the full 5 minutes, hit
-      # "Timeout reached, aborting!", cancelled itself, and the retry 75s later
-      # died in 5 seconds with "Deployment cancelled." — main sat undeployed at
-      # 5574fc26 while the live site served a commit 25 minutes older.
-      # A slow deployment is not a stuck one: the artifact is ~285 MB and grows
-      # ~6 MB/day, so the queue phase gets longer every week. Waiting is free
-      # here (public repo) and strictly safer than self-cancelling.
+      # History: 5 min (self-cancelled while the deployment was merely slow,
+      # 2026-08-06 run 31094331422) -> 10 min (still short of the 606 s the
+      # backend was taking that day; runs 31107797192 / 31105326890 burned BOTH
+      # attempts on timeouts and failed) -> 30 min here. Waiting costs nothing
+      # on a public repo, and a slow deployment is not a stuck one: the stuck
+      # case is handled by the "clear any stuck deployment" step above.
       - name: Deploy to GitHub Pages
         id: deployment
         continue-on-error: true
         uses: actions/deploy-pages@v4
         with:
-          timeout: 600000
+          timeout: 1800000   # 30 minutes — see the note above before changing
 
-      # A deployment still building when we started makes our create fail with
-      # "in progress deployment". Wait for it to settle, then try once more.
-      #
-      # 75s was too short to be worth anything: when the first attempt has
-      # self-cancelled, GitHub still holds that cancellation against the SHA and
-      # the retry fails instantly rather than deploying. The same commit DID
-      # deploy cleanly from a later run ~7 minutes after such a failure
-      # (c8f00d7b: 10:10:42 failed, 10:17:46 succeeded), so give the retry a
-      # comparable gap instead of firing it into a state that cannot succeed.
-      - name: Wait, then retry the deploy if the first attempt failed
+      # Retry ONLY a fast failure. A fast failure means a real, recoverable
+      # error (typically "another deployment is in progress"), which settles in
+      # under a minute. A failure that consumed the whole timeout means
+      # deploy-pages cancelled this commit's deployment on the way out, and a
+      # same-SHA retry is guaranteed to fail — the old workflow retried anyway
+      # and spent 25 minutes per run proving it.
+      - name: Decide whether a retry can possibly help
+        id: retry_check
         if: steps.deployment.outcome == 'failure'
-        run: sleep 300
+        run: |
+          started="${{ steps.deploy_start.outputs.epoch }}"
+          elapsed=$(( $(date -u +%s) - ${started:-0} ))
+          echo "First deploy attempt ran ${elapsed}s."
+          if [ "$elapsed" -ge 1740 ]; then
+            echo "It exhausted the 30-min timeout, so deploy-pages cancelled this"
+            echo "commit's deployment on the way out. A same-SHA retry cannot"
+            echo "succeed — skipping it and letting the next commit redeploy."
+            echo "retry=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "It failed fast, so the deployment was not self-cancelled —"
+            echo "most likely a conflicting deployment. Worth one retry."
+            echo "retry=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Let the conflicting deployment settle
+        if: steps.retry_check.outputs.retry == 'true'
+        run: sleep 60
 
       - name: Deploy to GitHub Pages (retry)
         id: deployment_retry
-        if: steps.deployment.outcome == 'failure'
+        if: steps.retry_check.outputs.retry == 'true'
         continue-on-error: true
         uses: actions/deploy-pages@v4
         with:
-          timeout: 600000
+          timeout: 1800000
 
-      - name: Report deploy result
+      # The verdict comes from what the live site is ACTUALLY serving, not from
+      # whether our polling loop happened to win its race. Two things this
+      # catches that the old step-outcome check did not:
+      #   - a deploy that timed out here but finished server-side moments later
+      #     (that is exactly why a "retry" used to succeed in 6 seconds), and
+      #   - our commit being superseded by a newer one that already deployed —
+      #     the live site matches main, which is the invariant we care about.
+      - name: Verify the live site matches main
         if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ "${{ steps.deployment.outcome }}" = "success" ] \
-             || [ "${{ steps.deployment_retry.outcome }}" = "success" ]; then
-            echo "Deploy succeeded — live site now matches main."
-          else
-            echo "::error title=Live site is behind main::Neither deploy attempt"
-            echo "published ${GITHUB_SHA:0:8}; the live site is still serving the"
-            echo "previous commit until a later cycle redeploys."
-            echo "::warning::The next ~30-min refresh (and the schedule backstop)"
-            echo "::warning::will redeploy automatically. If this persists, confirm"
-            echo "::warning::Settings -> Pages -> Source is 'GitHub Actions'."
-            echo "::warning::If the log above shows 'Timeout reached, aborting!',"
-            echo "::warning::the deployment was still queued when the timeout"
-            echo "::warning::expired — raise the deploy step's timeout rather than"
-            echo "::warning::retrying, since that abort cancels this commit's"
-            echo "::warning::deployment and blocks retries of the same SHA."
-            # Surface a genuinely broken publish path (both attempts failed) as a
-            # failed run so a persistent problem is visible, rather than hiding it
-            # behind the step-level continue-on-error above. Transient setup-phase
-            # 503s (which never reach this step) are already isolated to THIS
-            # workflow and can no longer affect the data-refresh pipeline.
-            exit 1
+          repo="https://api.github.com/repos/${{ github.repository }}"
+          hdr=(-H "Accept: application/vnd.github+json"
+               -H "Authorization: Bearer $GH_TOKEN"
+               -H "X-GitHub-Api-Version: 2022-11-28")
+
+          head=$(curl -sS "${hdr[@]}" "$repo/commits/main" | jq -r '.sha // empty')
+
+          # Deployment statuses can lag the action by a few seconds; give them a
+          # moment before concluding the site is behind.
+          live=""
+          for attempt in 1 2 3; do
+            while read -r id sha; do
+              [ -n "$id" ] || continue
+              state=$(curl -sS "${hdr[@]}" "$repo/deployments/$id/statuses?per_page=1" \
+                      | jq -r '.[0].state // "none"')
+              if [ "$state" = "success" ]; then live="$sha"; break; fi
+            done < <(curl -sS "${hdr[@]}" "$repo/deployments?environment=github-pages&per_page=10" \
+                     | jq -r '.[]? | "\(.id) \(.sha)"')
+            if [ "$live" = "$GITHUB_SHA" ] || [ "$live" = "$head" ]; then break; fi
+            # NB: `[ … ] && sleep` would be the last command of the loop body and
+            # its non-zero status on the final pass would abort the whole step
+            # under the default `bash -e`. Keep it an `if`.
+            if [ "$attempt" -lt 3 ]; then sleep 15; fi
+          done
+
+          echo "live=${live:-<none>}  this run=${GITHUB_SHA:0:8}  main=${head:0:8}"
+          if [ -n "$live" ] && { [ "$live" = "$GITHUB_SHA" ] || [ "$live" = "$head" ]; }; then
+            echo "Deploy confirmed — the live site is serving ${live:0:8}."
+            exit 0
           fi
+
+          # If the API itself would not answer, we have no evidence the site is
+          # behind — only that we could not look. Fall back to what the deploy
+          # steps reported rather than turning a GitHub API blip into a red run.
+          if [ -z "$live" ] || [ -z "$head" ]; then
+            if [ "${{ steps.deployment.outcome }}" = "success" ] \
+               || [ "${{ steps.deployment_retry.outcome }}" = "success" ]; then
+              echo "::warning::Could not read the Pages deployment state from the API"
+              echo "::warning::(live='${live:-?}' main='${head:-?}'), but the deploy step"
+              echo "::warning::reported success — treating this commit as published."
+              exit 0
+            fi
+          fi
+
+          echo "::error title=Live site is behind main::The newest successful Pages"
+          echo "deployment is ${live:-none} but main is at ${head:0:8}."
+          echo "::warning::The next refresh's dispatch (and the schedule backstop)"
+          echo "::warning::will republish automatically, so a one-off failure here"
+          echo "::warning::self-heals within ~30 minutes."
+          echo "::warning::If it repeats, check in this order:"
+          echo "::warning::  1. Settings -> Pages -> Source is 'GitHub Actions'."
+          echo "::warning::  2. The deploy step's log: 'Timeout reached, aborting!'"
+          echo "::warning::     means the Pages backend is taking longer than the"
+          echo "::warning::     30-min cap — raise the cap, never lower it (expiry"
+          echo "::warning::     cancels this commit's deployment and blocks retries)."
+          echo "::warning::  3. The size-check step above: a site near 1 GB deploys"
+          echo "::warning::     slowly and then not at all."
+          exit 1
