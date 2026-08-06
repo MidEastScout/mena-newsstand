@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T02:55:21.270889+00:00",
+  "updated": "2026-08-06T03:26:25.392411+00:00",
   "stages": {
     "fetch": {
       "items": 135,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-06T02:53:33.277949+00:00"
+      "headlines_updated": "2026-08-06T03:24:21.016360+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 38,
-        "title_native": 89,
+        "dropped_stale": 8,
+        "title_snippet": 32,
+        "dropped_no_english": 7,
         "title_translated": 1,
+        "title_native": 87,
         "in": 135,
-        "kept": 128
+        "kept": 120
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 39,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -218,54 +219,59 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "Trump says Iran facing 'last chance before decapitation'",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "Israeli army, illegal settlers carried out 2,256 attacks in occupied West Bank in July",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "גלעד ארדן יכריז מחר על הקמת מפלגה חדשה בראשותו, אדלשטיין במקום השני",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רס\"ן במיל' הראל בירנשטוק ורס\"ם במיל' תמיר וקנין נפלו בדרום לבנון, 4 לוחמים נפצעו קשה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מחר: ארדן ואדלשטיין יכריזו על מפלגה חדשה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "השותף של עורך הדין שנרצח משחזר | בלעדי - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "המחאה והתקיפה בכנס הגיוס לחרדים - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "התיעוד ועדות השותף של עורך הדין שנרצח: \"ראיתי דם, החשוד ברח\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "ميلاد يوسف أمام «الاختيار»",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 128,
-      "kept": 75,
+      "in": 120,
+      "kept": 71,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "The victim in Taybeh has been identified as Ziad Bashara, 57.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Iran's president told state television that communication with the supreme leader is very difficult at this…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "N12",
           "title": "This article discusses the cost of aging in Israel and features various programs from Channel 12 News.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "This item details how a former star was identified and filmed.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "BioCatch - mako",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "This entry provides news and updates about investigation recordings, including photos and videos.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -299,10 +305,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Asi and Adi are criticized by Elad and Shir, described as the dictionary definition of how not to play…",
+          "source": "Al Jazeera",
+          "title": "Ex-PM Sheikh Hasina announces plan to return to Bangladesh",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -447,13 +453,6 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Disney and TikTok have announced a first-time collaboration to produce short-form content.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "Mohamed Salah has officially signed with Trabzonspor.",
           "sec": 0,
           "off": 0,
@@ -483,6 +482,13 @@
         {
           "source": "SANA",
           "title": "Salah arrives in Türkiye ahead of expected Trabzonspor move after huge fan welcome",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Trump says Iran facing ‘last chance before decapitation’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -598,12 +604,19 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Man arrested at Trump golf course faces federal firearm charges in California",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 40,
       "sizes": [
         17,
         6,
@@ -612,9 +625,6 @@
         3,
         3,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -936,42 +946,49 @@
         },
         {
           "selected_rank": null,
-          "headline": "Indian ship sinks in Red Sea off Yemen after attack",
+          "headline": "The IDF reported that an interceptor missile was launched at a suspected target in southern Lebanon,",
           "rank_key": {
             "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-04T17:34+00:00"
+            "camps": 2,
+            "newest": "2026-08-05T20:12+00:00"
           },
           "outlet_names": [
-            "Arab News",
-            "Gulf News"
+            "Kan 11",
+            "L'Orient Today"
           ],
           "camps": [
-            "gulf"
+            "israeli",
+            "levant"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Indian ship sinks in Red Sea off Yemen after attack",
-            "title_source": "native",
+            "source": "Kan 11",
+            "title": "The IDF reported that an interceptor missile was launched at a suspected target in southern Lebanon, which…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "'We watched the fields burn, helpless and in tears': In Yaroun, Israel reduces c",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
           "selected_rank": null,
-          "headline": "Israel weighs further strikes in Lebanon amid Rome talks: Reports",
+          "headline": "Trump confronted Hegseth over US munitions shortages amid Iran war: Report",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-05T23:29+00:00"
+            "newest": "2026-08-06T02:04+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1021,24 +1038,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "US officials push back on reports of dangerously low munitions supplies",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-05T22:00+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "This headline translates to 'From siege to imposing reciprocity.'",
           "rank_key": {
             "outlets": 1,
@@ -1052,24 +1051,6 @@
             "panarab"
           ],
           "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The IDF reported that an interceptor missile was launched at a suspected target in southern Lebanon,",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-05T20:12+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1182,7 +1163,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran supports Palestinian leaders’ decisions in negotiations: President Pezeshkian",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-05T10:37+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Mohamed Salah arrives in Türkiye, tells Trabzonspor fans 'see you very soon' amid transfer talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-05T10:37+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1200,7 +1217,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-06T02:55:22.278857+00:00",
+    "last_success": "2026-08-06T03:26:26.735726+00:00",
     "last_failure": null
   },
   "ok": true
