@@ -98,6 +98,12 @@ jobs:
     steps:
       - name: Does the live site already serve this commit?
         id: guard
+        # Fail OPEN. This step is an optimisation, not a gate: if the API blips
+        # or jq chokes, the right outcome is a redundant deploy, not a site that
+        # quietly stops publishing. On any error the output is never written and
+        # `deploy` (which runs unless it reads an explicit 'false') goes ahead.
+        # This also keeps the watchdog below reachable when the guard dies.
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -234,7 +240,10 @@ jobs:
   # ---------------------------------------------------------------------------
   deploy:
     needs: check
-    if: needs.check.outputs.needed == 'true'
+    # Publish unless the guard explicitly said there is nothing to publish.
+    # `!= 'false'` rather than `== 'true'` so an unset output — a guard that
+    # errored — still deploys. See the fail-open note on that step.
+    if: needs.check.outputs.needed != 'false'
     runs-on: ubuntu-latest
     # Worst realistic case is one 30-min deploy attempt plus a 30-min retry.
     timeout-minutes: 75
