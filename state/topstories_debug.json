@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T13:37:16.754645+00:00",
+  "updated": "2026-08-07T14:08:36.229696+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-07T13:35:17.552742+00:00"
+      "headlines_updated": "2026-08-07T14:06:49.204507+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 3,
-        "title_snippet": 39,
+        "dropped_stale": 4,
+        "title_snippet": 33,
         "title_translated": 1,
         "title_native": 88,
+        "dropped_no_english": 5,
         "in": 131,
-        "kept": 128
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -187,6 +188,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Falastin al-Youm",
+          "title": "هيئة بحرية: \"مقذوف مجهول\" يصيب سفينة شحن في مضيق هرمز",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Gulf News",
           "title": "Yemen's Houthis claim attacks on two Saudi oil tankers",
@@ -201,12 +207,37 @@
           "source": "TRT World",
           "title": "Trump tells Iran to reopen Hormuz or be 'hit very hard'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "هيئة بريطانية بحرية: حادث أمني لناقلة نفط قرب عُمان خلال عبورها مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تماسك الداخل الإيراني يُربك رهانات الحرب المركّبة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "قلق إسرائيلي من مسار التسوية: هرمز في صلب المفاوضات ومكاسب مرتقبة لطهران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "كيف غيّرت التجارة الإلكترونية وجه الريف الصيني؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "من البحر إلى العمق",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 128,
-      "kept": 71,
+      "in": 122,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -287,7 +318,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "How Abdul El-Sayed’s ‘extraordinary’ win stunned pro-Israel establishment",
+          "title": "Turkiye, Saudi Arabia, Pakistan sign joint defence agreement: What’s in it?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -343,14 +374,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "As Abdul El-Sayed wins Michigan primary, is it the end of AIPAC?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Israeli media outlet \"Walla!\" reports that two senior officials and the dismissed deputy head of the Mossad…",
+          "title": "Mossad officials sacked over failed Iran regime change plot",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -364,14 +388,14 @@
         },
         {
           "source": "Mehr News",
-          "title": "US strategy of bullying and broken promises has failed",
+          "title": "Iranian pilots bombed US bases without using GPS",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Mehr News",
-          "title": "Iranian pilots bombed US bases without using GPS",
+          "title": "US strategy of bullying and broken promises has failed",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -531,8 +555,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Masirah",
-          "title": "The Yemeni people's stance on confronting the Saudi regime.",
+          "source": "Anadolu Agency",
+          "title": "Turkish vice president hails Mecca Joint Defense Agreement as ‘historic step’ for regional security",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Türkiye’s CHP seeks to expel raunchy mayor amid corruption woes",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -547,20 +578,6 @@
         {
           "source": "Daily Sabah",
           "title": "Navy candidates prepare for Türkiye's 'Blue Homeland' on land, sea",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Türkiye captures 104 Daesh suspects in nationwide operations",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "25 years of AK Party and a changing Türkiye",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -611,13 +628,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 44,
       "sizes": [
         8,
-        7,
+        6,
         5,
         4,
-        3,
         2,
         2,
         2,
@@ -667,61 +683,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Houthi attacks kill 58 Saudi-backed Yemeni govt forces",
-          "rank_key": {
-            "outlets": 7,
-            "camps": 4,
-            "newest": "2026-08-07T12:35+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Arab News",
-            "TRT World",
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Houthi attacks kill 58 Saudi-backed Yemeni govt forces",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "At least 45 Yemeni government troops killed in Houthi attacks: Sources",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Houthi attacks wound 11 in Saudi Arabia after deadly strike on Yemen troops",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Iran not to allow opening of second corridor in Hormuz",
           "rank_key": {
             "outlets": 7,
@@ -780,15 +741,68 @@
           }
         },
         {
+          "selected_rank": 2,
+          "headline": "Houthi attacks kill 58 Saudi-backed Yemeni govt forces",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-08-07T12:35+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Arab News",
+            "TRT World",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Houthi attacks kill 58 Saudi-backed Yemeni govt forces",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "At least 45 Yemeni government troops killed in Houthi attacks: Sources",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Houthi attacks wound 11 in Saudi Arabia after deadly strike on Yemen troops",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 3,
           "headline": "Jordan, Arab, Islamic countries denounce Israeli violations in Gaza, West Bank",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 2,
             "newest": "2026-08-06T13:36+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm",
             "IRNA",
             "Jordan Times",
             "SANA",
@@ -798,7 +812,7 @@
             "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -807,7 +821,7 @@
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
+              "names 2 of the story's dominant entities (gaza, westbank)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -815,11 +829,6 @@
               {
                 "source": "IRNA",
                 "title": "Arab, Islamic nations condemn continued Israeli aggression in Gaza",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "A statement from 8 Arab countries condemned the continued aggression against Gaz",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
@@ -831,7 +840,7 @@
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-08-07T13:24+00:00"
+            "newest": "2026-08-07T13:53+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
@@ -842,7 +851,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -859,79 +868,37 @@
         },
         {
           "selected_rank": 5,
-          "headline": "South Korean orbiter captures crater formed by Falcon 9 debris striking Moon",
+          "headline": "Russia drops record number of glide bombs on Ukraine as casualties pile up",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-07T12:35+00:00"
+            "newest": "2026-08-07T13:12+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "South Korean orbiter captures crater formed by Falcon 9 debris striking Moon",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Gulf News",
-                "title": "South Korean satellite captures before and after views of SpaceX rocket's moon c",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "A Yemeni source told Al Mayadeen that Sana'a is imposing a new equation: any Saudi military presence",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-07T11:10+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Al Mayadeen"
+            "Al Jazeera",
+            "Jordan Times"
           ],
           "camps": [
             "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Mayadeen",
-            "title": "A Yemeni source told Al Mayadeen that Sana'a is imposing a new equation: any Saudi military presence or…",
-            "title_source": "snippet",
+            "source": "Al Jazeera",
+            "title": "Russia drops record number of glide bombs on Ukraine as casualties pile up",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Manar",
-                "title": "The Yemeni armed forces announced they targeted the Saudi oil tanker \"Daisy\" in ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "The Yemeni armed forces announced a large-scale military operation targeting Sau",
+                "source": "Jordan Times",
+                "title": "Explosive drone found near Ukrainian plane at German airport",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -942,16 +909,15 @@
           "headline": "The US assesses that Russia may test NATO before the Ukraine war ends, potentially through cyberatta",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
+            "camps": 1,
             "newest": "2026-08-07T09:34+00:00"
           },
           "outlet_names": [
-            "Jordan Times",
-            "Kan 11"
+            "Kan 11",
+            "N12"
           ],
           "camps": [
-            "israeli",
-            "levant"
+            "israeli"
           ],
           "members": 2,
           "qualified": true,
@@ -966,14 +932,26 @@
               "neutral-by-default outlet",
               "derived from the outlet's English snippet"
             ],
-            "passed_over": [
-              {
-                "source": "Jordan Times",
-                "title": "Explosive drone found near Ukrainian plane at German airport",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Sister accused of aiding FETÖ assassin nabbed in Türkiye",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-07T13:19+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1031,24 +1009,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Turkish President Erdogan, Saudi Crown Prince Mohammed bin Salman meet in Mecca",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-07T11:08+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Pakistan's Foreign Ministry, as reported by Reuters, stated that the defense agreement stipulates th",
           "rank_key": {
             "outlets": 1,
@@ -1079,7 +1039,7 @@
           "camps": [
             "panarab"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1175,17 +1135,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Intelligence assessments suggest Vladimir Putin may conduct a limited attack on a NATO ally in the c",
+          "headline": "Lebanon, Israel report progress in Rome talks as border violence escalates",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-07T04:07+00:00"
+            "newest": "2026-08-07T03:59+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Arab News"
           ],
           "camps": [
-            "israeli"
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1210,7 +1170,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-07T13:37:37.422494+00:00",
+    "last_success": "2026-08-07T14:09:11.088983+00:00",
     "last_failure": null
   },
   "ok": true
