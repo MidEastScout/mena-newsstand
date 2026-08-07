@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T09:24:51.615054+00:00",
+  "updated": "2026-08-07T09:52:05.068841+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-07T09:22:48.346483+00:00"
+      "headlines_updated": "2026-08-07T09:50:21.446931+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 3,
-        "title_snippet": 39,
+        "dropped_no_english": 4,
+        "title_snippet": 35,
         "title_translated": 1,
         "title_native": 88,
         "in": 131,
-        "kept": 128
+        "kept": 124
       },
       "translator": {
         "configured": true,
@@ -193,20 +194,40 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Yemen's Houthis claim attacks on two Saudi oil tankers",
+          "source": "WAFA News",
+          "title": "Israeli occupation forces raid al-Far'a refugee camp south of Tubas, search homes",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
           "title": "Trump tells Iran to reopen Hormuz or be 'hit very hard'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: בארה\"ב מעריכים שרוסיה תפעל נגד נאט\"ו עד 2029",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "באופוזיציה באיראן טוענים: \"סין ורוסיה העבירו לאחרונה מאות טילי כתף נגד מטוסים למשטר\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "דיווח: בארה\"ב מעריכים כי פוטין צפוי לבצע מתקפה מוגבלת על אחת מבעלות ברית נאט\"ו בשנים הקרובות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "هل يمهّد تاكر كارلسون لولادة مشروع سياسي جديد ينافس نفوذ ترامب؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 128,
-      "kept": 75,
+      "in": 124,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
@@ -272,13 +293,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "Turkiye’s Erdogan visits Saudi Arabia: What to expect",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Turkey: Mo Salah welcomed by fans chanting ‘Allahu Akbar’ after move to Trabzonspor",
           "sec": 0,
@@ -321,13 +335,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "Uganda authorises Gaza troop deployment under disarmament plan",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Mayadeen",
           "title": "Delayed salaries in the public sector reignite debate about American influence on the Iraqi financial system.",
           "sec": 0,
@@ -358,6 +365,13 @@
         {
           "source": "Jordan Times",
           "title": "Ceuta warns of 'unsustainable' situation for child migrants after influx",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Netanyahu says Israel did not agree to US-backed Gaza plan",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -517,6 +531,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Pakistan premier kicks off Saudi Arabia visit",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Meta ordered to pay $567M to address kids' mental health online",
           "sec": 0,
@@ -528,13 +549,6 @@
           "title": "Too hot to fly? Why heat waves can delay your journey",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Türkiye set to sign defense pact with Saudi Arabia, Pakistan",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -583,15 +597,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 53,
       "sizes": [
         10,
-        6,
-        5,
+        4,
+        4,
         3,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -707,24 +722,21 @@
           "selected_rank": 2,
           "headline": "Jordan, Arab, Islamic countries denounce Israeli violations in Gaza, West Bank",
           "rank_key": {
-            "outlets": 6,
-            "camps": 3,
+            "outlets": 4,
+            "camps": 2,
             "newest": "2026-08-06T13:36+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Falastin al-Youm",
             "IRNA",
             "Jordan Times",
-            "SANA",
-            "WAFA News"
+            "SANA"
           ],
           "camps": [
-            "panarab",
             "iranian",
             "levant"
           ],
-          "members": 6,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -769,7 +781,7 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -789,11 +801,6 @@
               },
               {
                 "source": "WAFA News",
-                "title": "16 Palestinians injured since start of Israeli raid on Qalandia refugee camp nor",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
                 "title": "Israeli forces continue assault on Qalandiya refugee camp for second day, demoli",
                 "rejected_by": "older than the story's newest wave"
               }
@@ -802,15 +809,15 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
+          "headline": "Yemen’s fragile calm up in smoke as Houthi strikes kill 58 troops",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-08-06T23:52+00:00"
+            "newest": "2026-08-07T07:12+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
             "Arab News",
+            "Daily Sabah",
             "TRT World"
           ],
           "camps": [
@@ -821,8 +828,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "TRT World",
-            "title": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
+            "source": "Daily Sabah",
+            "title": "Yemen’s fragile calm up in smoke as Houthi strikes kill 58 troops",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -830,7 +837,18 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Houthi attacks wound 11 in Saudi Arabia after deadly strike on Yemen troops",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -872,55 +890,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces arrest 11 Palestinians in West Bank; Gaza casualties top 247,000",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-06T14:32+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Israeli forces arrest 11 Palestinians in West Bank; Gaza casualties top 247,000",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Binyao Raz's mother after the indictments were filed: 'I feel threatened.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-07T09:04+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Report from Italy: The Israeli \"Rafael\" company's win of security for Rome's airport has been cancel",
           "rank_key": {
             "outlets": 1,
@@ -950,24 +919,6 @@
           ],
           "camps": [
             "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Senior Iranian opposition figures claim: The regime received hundreds of shoulder-fired anti-aircraf",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-07T08:42+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1047,24 +998,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "First publication: A Nohba terrorist who participated in the October 7 massacre was arrested as a tr",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-07T07:23+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "8 killed as student opens fire, commits suicide at Thai high school",
           "rank_key": {
             "outlets": 1,
@@ -1101,24 +1034,78 @@
         },
         {
           "selected_rank": null,
-          "headline": "\"The Telegraph\": The United States and \"Israel\" lost the war while Iran emerged victorious.",
+          "headline": "Turkish president arrives in Saudi Arabia for talks with Saudi crown prince, Pakistani premier",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-07T06:41+00:00"
+            "newest": "2026-08-07T06:01+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
+            "Anadolu Agency"
           ],
           "camps": [
-            "panarab"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "34 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Trump admits to serious ammunition shortages in US army",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-07T05:59+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "How much US ammo is left after 6 months of war with Iran? Trump says ‘massive amounts’ remain",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-07T04:32+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Lebanon, Israel report progress in Rome talks as border violence escalates",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-07T03:59+00:00"
+          },
+          "outlet_names": [
+            "Arab News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "36 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1136,7 +1123,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-07T09:25:07.514643+00:00",
+    "last_success": "2026-08-07T09:52:23.333888+00:00",
     "last_failure": null
   },
   "ok": true
