@@ -132,6 +132,84 @@ jobs:
             echo "needed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      # WATCHDOG for the data-refresh loop — nothing to do with publishing.
+      #
+      # fetch-headlines keeps itself alive by dispatching its own next run from
+      # its `rearm` job (~28 min sleep, then dispatch). That chain has exactly
+      # one failure mode: if `rearm` never finishes — cancelled, no runner, an
+      # Actions incident — nothing dispatches the next run and the loop simply
+      # stops. Its only recovery is fetch-headlines' own `*/15` cron, and
+      # GitHub's cron is unreliable for this repo (documented on that workflow).
+      #
+      # Observed 2026-08-06: an Actions incident cancelled three refresh runs
+      # before any step ran (16:52 rearm cancelled mid-sleep, 17:19 and 18:45
+      # both cancelled outright). The `*/15` cron then fired twice in six hours
+      # and both of those were cancelled too, so the site served 16:5xZ data
+      # until 00:39Z — a 6-hour stall that nothing reported.
+      #
+      # This workflow is on a SEPARATE `*/20` cron, so it is an independent path
+      # back to life: it fired at 18:13 during that stall and could have
+      # restarted the loop five hours early. Riding an existing, different
+      # schedule is the whole value — a new workflow with its own cron would be
+      # just as likely to be skipped as the one it is backing up.
+      #
+      # Strictly best-effort: never fails this workflow, and never dispatches
+      # while a recent run is alive.
+      - name: Watchdog — restart the data refresh if its loop has stalled
+        continue-on-error: true
+        env:
+          DISPATCH_PAT: ${{ secrets.DISPATCH_PAT }}
+        run: |
+          if [ -z "$DISPATCH_PAT" ]; then
+            echo "DISPATCH_PAT not set — cannot dispatch; skipping watchdog."
+            exit 0
+          fi
+          api="https://api.github.com/repos/${{ github.repository }}"
+          hdr=(-H "Accept: application/vnd.github+json"
+               -H "Authorization: Bearer $DISPATCH_PAT"
+               -H "X-GitHub-Api-Version: 2022-11-28")
+
+          # Newest refresh run of any status. If the loop is healthy this is at
+          # most ~30 min old (it re-dispatches every ~28 min).
+          newest=$(curl -sS "${hdr[@]}" \
+            "$api/actions/workflows/fetch-headlines.yml/runs?per_page=1" \
+            | jq -r '.workflow_runs[0] | "\(.run_started_at // .created_at) \(.status)"')
+          started=${newest%% *}
+          status=${newest##* }
+          if [ -z "$started" ] || [ "$started" = "null" ]; then
+            echo "Could not read the refresh history — leaving the loop alone."
+            exit 0
+          fi
+
+          age=$(( $(date -u +%s) - $(date -u -d "$started" +%s) ))
+          echo "Newest refresh run: started $started ($status), ${age}s ago."
+
+          # 45 min = a missed ~30-min cycle plus generous slack for a slow queue.
+          # Below that, a run is either working or about to be re-armed by its
+          # own timer, and dispatching would only make the two collide.
+          if [ "$age" -lt 2700 ]; then
+            echo "Refresh loop is alive — nothing to do."
+            exit 0
+          fi
+
+          echo "::warning title=Refresh loop stalled::No MENA Newsstand run has"
+          echo "::warning::started for ${age}s (last: $started, $status). The"
+          echo "::warning::self-dispatch chain is broken; restarting it."
+          for attempt in 1 2 3; do
+            code=$(curl -sS -o /tmp/wd.json -w '%{http_code}' -X POST "${hdr[@]}" \
+              "$api/actions/workflows/fetch-headlines.yml/dispatches" \
+              -d '{"ref":"main"}') || code=000
+            echo "Watchdog dispatch attempt $attempt: HTTP $code"
+            if [ "$code" = "204" ]; then
+              echo "Refresh loop restarted."
+              exit 0
+            fi
+            cat /tmp/wd.json 2>/dev/null || true
+            sleep $(( attempt * 5 ))
+          done
+          echo "::warning::Watchdog could not dispatch a refresh run. Check that"
+          echo "::warning::DISPATCH_PAT is valid and has Actions: Read and write."
+
   # ---------------------------------------------------------------------------
   # Publish to GitHub Pages ourselves.
   # WHY we deploy from a workflow at all: GitHub's legacy "deploy from branch"
