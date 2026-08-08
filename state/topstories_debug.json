@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T05:43:15.750645+00:00",
+  "updated": "2026-08-08T05:56:11.379530+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-08T05:41:22.959047+00:00"
+      "headlines_updated": "2026-08-08T05:54:25.397342+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 39,
+        "title_snippet": 35,
         "title_native": 88,
+        "dropped_no_english": 4,
         "in": 131,
-        "kept": 127
+        "kept": 123
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 38,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -205,12 +206,32 @@
           "source": "Al-Masirah",
           "title": "من الحصار إلى فرض المعاملة بالمثل",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"التلغراف\": الولايات المتحدة و\"إسرائيل\" خسرتا الحرب بينما خرجت إيران منتصرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"التلغراف\": الولايات المتحدة و\"إسرائيل\" خسرتا الحرب بينما خرجت إيران منتصرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الذهب يتجه لتحقيق أكبر مكاسب أسبوعية له منذ كانون الثاني/يناير",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أسعار الذهب تتجه لتسجيل أكبر مكاسب أسبوعية منذ يناير",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 127,
-      "kept": 62,
+      "in": 123,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -291,14 +312,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "What could the Mecca defence pact mean for the US role in the Middle East?",
+          "title": "Will Pakistan-Saudi-Turkiye alliance actually create a new regional order?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "Will Pakistan-Saudi-Turkiye alliance actually create a new regional order?",
+          "title": "What could the Mecca defence pact mean for the US role in the Middle East?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -369,20 +390,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The US Senate has approved the appointment of 74 nominees for Trump, including ambassadors and State…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The regions of Puntland and Jubaland have warned Turkish ships and rejected a fishing agreement between…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Ninth Bulletin.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -671,17 +678,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 38,
       "sizes": [
-        11,
+        12,
         6,
         3,
         2,
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -724,12 +729,13 @@
           "selected_rank": 1,
           "headline": "EU condemns latest Houthi attacks on Saudi Arabia, Yemen",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 11,
             "camps": 4,
             "newest": "2026-08-07T18:54+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al Jazeera",
             "Al Manar",
             "Anadolu Agency",
             "Arab News",
@@ -746,7 +752,7 @@
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -761,6 +767,11 @@
             ],
             "passed_over": [
               {
+                "source": "Al Jazeera",
+                "title": "Houthi attacks on gov’t forces hint that a major battle in Yemen is brewing",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Al Arabiya",
                 "title": "Houthi attack on Saudi Arabia wounds 11 civilians",
                 "rejected_by": "older than the story's newest wave"
@@ -773,11 +784,6 @@
               {
                 "source": "SANA",
                 "title": "Gulf Cooperation Council condemns Houthi attacks on Najran, backs Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Houthi attacks wound 11 in Saudi Arabia after deadly strike on Yemen troops",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -917,43 +923,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Attack on one is attack on all, say Türkiye, Saudi Arabia and Pakistan in joint defence pact",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-07T11:47+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Attack on one is attack on all, say Türkiye, Saudi Arabia and Pakistan in joint defence pact",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Saudi ⁠Arabia, Pakistan and Turkiye sign defence deal amid regional turmoil",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "300 children killed in Gaza in 300 days, UNICEF says; West Bank settler attacks continue",
           "rank_key": {
             "outlets": 2,
@@ -1073,24 +1042,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iranian President Masoud Pezeshkian stated that those who condemn the atomic bombings of Hiroshima a",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-07T20:51+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Syria condemns Houthi militia attack on Najran, reaffirms solidarity with Saudi Arabia",
           "rank_key": {
             "outlets": 1,
@@ -1181,24 +1132,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Lebanon says Israel talks make 'positive progress' on borders, prisoners",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-07T18:25+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iraqi Resistance 'delays' planned retaliatory strikes",
           "rank_key": {
             "outlets": 1,
@@ -1210,6 +1143,24 @@
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US Senate passes Russia sanctions bill in bipartisan vote",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-07T17:43+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1253,6 +1204,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Attack on one is attack on all, say Türkiye, Saudi Arabia and Pakistan in joint defence pact",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-07T11:47+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Egypt targets record-breaking 20+ million tourists in 2026",
           "rank_key": {
             "outlets": 1,
@@ -1270,7 +1239,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1288,7 +1257,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-08T05:43:31.850706+00:00",
+    "last_success": "2026-08-08T05:56:43.227836+00:00",
     "last_failure": null
   },
   "ok": true
