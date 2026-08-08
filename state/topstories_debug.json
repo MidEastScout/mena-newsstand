@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T02:26:58.659718+00:00",
+  "updated": "2026-08-08T02:51:38.578843+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-08T02:25:07.807279+00:00"
+      "headlines_updated": "2026-08-08T02:49:27.202190+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 38,
+        "title_snippet": 37,
         "title_translated": 1,
         "title_native": 87,
+        "dropped_no_english": 1,
         "in": 131,
-        "kept": 126
+        "kept": 125
       },
       "translator": {
         "configured": true,
@@ -211,12 +212,17 @@
           "source": "Al-Masirah",
           "title": "من الحصار إلى فرض المعاملة بالمثل",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مصدر لبناني للميادين: لا موافقة بعد على قائمة واشنطن لدول التحقق في \"المناطق التجريبية\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 126,
-      "kept": 67,
+      "in": 125,
+      "kept": 68,
       "dropped": [
         {
           "source": "Kan 11",
@@ -332,13 +338,6 @@
         },
         {
           "source": "The New Arab",
-          "title": "Saudi Arabia, Turkey and Pakistan to sign joint defence deal",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
           "title": "Spain imposes border checks on Italy as migrant showdown grows",
           "sec": 0,
           "off": 0,
@@ -361,13 +360,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The Puntland and Jubaland regions have warned Turkish ships and rejected a fishing agreement between…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Ninth Bulletin.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -635,17 +627,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 45,
       "sizes": [
         12,
-        5,
+        6,
         3,
         2,
         2,
         2,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -753,29 +746,30 @@
         },
         {
           "selected_rank": 2,
-          "headline": "US official: We expect a deal soon between Iran and Oman on Strait of Hormuz",
+          "headline": "US expects deal 'soon' on Strait of Hormuz between Iran and Oman",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 3,
-            "newest": "2026-08-07T19:12+00:00"
+            "newest": "2026-08-08T02:26+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
             "Gulf News",
-            "Mehr News"
+            "Mehr News",
+            "The New Arab"
           ],
           "camps": [
             "gulf",
             "panarab",
             "iranian"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "US official: We expect a deal soon between Iran and Oman on Strait of Hormuz",
+            "source": "The New Arab",
+            "title": "US expects deal 'soon' on Strait of Hormuz between Iran and Oman",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -795,13 +789,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Mehr News",
-                "title": "Iran not to allow opening of second corridor in Hormuz",
+                "source": "Al Arabiya",
+                "title": "US official: We expect a deal soon between Iran and Oman on Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Gulf News",
-                "title": "Why Iran-Oman deal alone won’t reopen Strait of Hormuz",
+                "source": "Mehr News",
+                "title": "Iran not to allow opening of second corridor in Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -853,31 +847,31 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Russia is targeting 34 Ukrainian ships.",
+          "headline": "US intelligence assessments anticipate Russia will test NATO before the war in Ukraine concludes.",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-07T17:43+00:00"
+            "newest": "2026-08-07T12:55+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
-            "Falastin al-Youm"
+            "Falastin al-Youm",
+            "Kan 11"
           ],
           "camps": [
-            "levant",
-            "turkish"
+            "israeli",
+            "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Russia is targeting 34 Ukrainian ships.",
+            "source": "Kan 11",
+            "title": "US intelligence assessments anticipate Russia will test NATO before the war in Ukraine concludes.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "state/partisan outlet (last resort)",
+              "names 2 of the story's dominant entities (nato, ukraine)",
+              "neutral-by-default outlet",
               "derived from the outlet's English snippet"
             ],
             "passed_over": []
@@ -1023,34 +1017,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "US intelligence assessments anticipate Russia will test NATO before the war in Ukraine concludes.",
+          "headline": "Trump's top general seeks path out of Iran war as military options narrow: Report",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-07T09:34+00:00"
+            "newest": "2026-08-08T02:44+00:00"
           },
           "outlet_names": [
-            "Kan 11",
-            "N12"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "US intelligence assessments anticipate Russia will test NATO before the war in Ukraine concludes.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (nato, ukraine)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1251,25 +1232,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Egypt targets record-breaking 20+ million tourists in 2026",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-07T08:39+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1287,7 +1250,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-08T02:27:13.494486+00:00",
+    "last_success": "2026-08-08T02:52:01.843574+00:00",
     "last_failure": null
   },
   "ok": true
