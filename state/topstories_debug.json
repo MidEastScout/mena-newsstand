@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T19:47:20.865507+00:00",
+  "updated": "2026-08-08T20:05:05.458562+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-08T19:45:25.616343+00:00"
+      "headlines_updated": "2026-08-08T20:03:08.361795+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 37,
-        "title_native": 88,
+        "dropped_stale": 7,
+        "title_snippet": 36,
+        "title_translated": 1,
+        "title_native": 87,
         "in": 131,
-        "kept": 125
+        "kept": 124
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 37,
+        "requested": 36,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -194,6 +195,11 @@
         {
           "source": "Channel 13",
           "title": "פעוטה כבת שנה וחצי טבעה למוות בבריכה ביתית באשקלון",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Iran says has agreed new Hormuz route with Oman",
           "reason": "stale (older than 48h)"
         },
         {
@@ -219,61 +225,47 @@
       ]
     },
     "relevance": {
-      "in": 125,
-      "kept": 74,
+      "in": 124,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "Around one thousand secular individuals gathered at Cafe \"B'Simta\" in Jerusalem, which remained open on the…",
+          "title": "Around a thousand secular individuals gathered at Cafe \"Basimta\" in Jerusalem, which remained open on Shabbat.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "A singer from the central region of Israel is under investigation on suspicion of assaulting his partner.",
+          "title": "A singer from the central region of Israel is under investigation.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "Dozens of Haredi protesters attempted to forcibly close a cafe open on the Sabbath in Jerusalem's Agrippas…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Two travelers were arrested at Manila airport following a violent altercation.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The widow of Emmanuel Moreno stated she had expected the Prime Minister to take responsibility for the events…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "During the Sabbath in Jerusalem, Haredi individuals protested and attempted to breach a cafe named \"B'Simta.\"",
+          "title": "Dozens of Haredi protesters attempted to force the closure of a cafe on Agrippas Street in Jerusalem, while…",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Following a recent statement, 50% of Haredi respondents do not believe the Prime Minister will enact a full…",
+          "title": "\"The Voice\" Season 6, Episode 11 features guest appearances by stars from the past.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "Israel mulls Saudi, Turkiye, Pakistan pact as elections loom",
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "The widow of Emmanuel Moreno stated that she had expected the prime minister to take responsibility for the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -281,6 +273,13 @@
         {
           "source": "Al Jazeera",
           "title": "‘Debilitating’: Hunter Biden speaks out about father Joe Biden’s cancer",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Israel mulls Saudi, Turkiye, Pakistan pact as elections loom",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -307,13 +306,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Middle East Eye",
-          "title": "Shabjdeed's Saint Levant diss track: Who gets to represent Palestine?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Arabiya",
           "title": "Saudi Arabia, Pakistan And Turkey Sign Defense Pact",
           "sec": 0,
@@ -328,15 +320,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Gold prices are on track to achieve their largest weekly gain since January.",
+          "source": "The New Arab",
+          "title": "Spain imposes border checks on Italy as migrant showdown grows",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "Russia has reportedly taken control of Ivanovka in Kharkiv and is advancing on multiple fronts.",
+          "title": "Gold prices are on track to achieve their largest weekly gains since January.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Russia has taken control of Ivanovka in Kharkiv and continues to advance on multiple fronts.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -385,6 +384,13 @@
         },
         {
           "source": "Egypt Independent",
+          "title": "Iran displays wreckage of downed US and Israeli aircraft",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
           "title": "FM delivers written message from President of Republic to Chadian president",
           "sec": 0,
           "off": 0,
@@ -392,42 +398,42 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "American expectations suggest the reopening of Hormuz is imminent, as Muscat sends the agreement draft to…",
+          "title": "This article is about the courageous journalist Kristina Assi.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Christina Assi is described as a courageous journalist.",
+          "title": "This section contains opinion pieces from the newspaper.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "This entry contains newspaper articles.",
+          "title": "The article discusses the potential link between gum disease and heart health.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "The article discusses whether gum disease can impact heart health.",
+          "title": "This article examines whether the framework agreement between Lebanon and Israel could lead to Lebanon…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "The article examines the potential for the Lebanese-Israeli framework agreement to lead to Lebanon becoming…",
+          "title": "U.S.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Video footage documents Israeli bulldozing operations in the southern Lebanese areas of Al-Tiri and Hadded.",
+          "title": "Iranian news agency Fars has published photos of downed U.S.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -448,14 +454,7 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Muscat has sent the draft agreement to Washington, and American expectations point to the imminent opening of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Gold prices are on track to register their largest weekly gains since January.",
+          "title": "Gold prices are on track to record their largest weekly gains since January.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -470,6 +469,13 @@
         {
           "source": "SANA",
           "title": "Yemen: Mecca mutual defense pact a strategic step to enhance regional security",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "World Bank Approves $100 Million Grant for Financial Sector Modernization in Syria",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -504,14 +510,21 @@
         },
         {
           "source": "Al-Masirah",
-          "title": "The article describes Saudi Arabia as a 'poisoned dagger' in the back of the Ummah.",
+          "title": "This article describes Saudi Arabia as a 'poisoned and deadly dagger in the back of the nation.'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Masirah",
-          "title": "The article suggests that paper alliances are failing, creating internal problems for Riyadh.",
+          "title": "The article suggests that fragile alliances are failing and causing internal problems for Riyadh.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Yemen welcomes defense agreement among Türkiye, Saudi Arabia, Pakistan",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -583,18 +596,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 41,
       "sizes": [
         19,
-        8,
+        6,
         3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -638,14 +650,15 @@
           "selected_rank": 1,
           "headline": "Iran says Hormuz deal close but will not open the strait",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 11,
             "camps": 5,
-            "newest": "2026-08-08T17:03+00:00"
+            "newest": "2026-08-08T16:52+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
             "Anadolu Agency",
+            "Falastin al-Youm",
             "Gulf News",
             "IRNA",
             "Iran International",
@@ -700,17 +713,15 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Yemen welcomes defense agreement among Türkiye, Saudi Arabia, Pakistan",
+          "headline": "Arab and regional condemnations of Houthi attacks on Saudi Arabia’s Najran",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 6,
             "camps": 4,
-            "newest": "2026-08-08T16:18+00:00"
+            "newest": "2026-08-07T17:49+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
             "Arab News",
             "Gulf News",
-            "Jordan Times",
             "SANA",
             "TRT World",
             "The New Arab",
@@ -722,17 +733,17 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Yemen welcomes defense agreement among Türkiye, Saudi Arabia, Pakistan",
+            "source": "SANA",
+            "title": "Arab and regional condemnations of Houthi attacks on Saudi Arabia’s Najran",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -742,18 +753,18 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Jordan Times",
-                "title": "Houthi attack kills three members of Yemen govt forces: military source",
+                "source": "Arab News",
+                "title": "Houthi attacks wound 11 in Saudi Arabia after deadly strike on Yemen troops",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "WAFA News",
-                "title": "Presidency condemns Houthi attacks targeting Saudi Arabia and Yemeni government",
+                "source": "Gulf News",
+                "title": "Houthi missile attacks kill 58 Saudi-backed Yemeni govt forces: source",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "SANA",
-                "title": "Arab and regional condemnations of Houthi attacks on Saudi Arabia’s Najran",
+                "source": "TRT World",
+                "title": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -761,38 +772,78 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Saudi Arabia turns to Muslim military heavyweights in landmark defense pact as Iran war closes in",
+          "headline": "Israeli occupation forces have issued orders to remove trees from 316 dunams in the West Bank, pavin",
           "rank_key": {
             "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-08T18:10+00:00"
+            "camps": 3,
+            "newest": null
           },
           "outlet_names": [
-            "Egypt Independent",
-            "Kan 11",
-            "N12"
+            "Al Manar",
+            "Iran International",
+            "Middle East Eye"
           ],
           "camps": [
-            "israeli",
+            "panarab",
+            "iranian",
             "levant"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Egypt Independent",
-            "title": "Saudi Arabia turns to Muslim military heavyweights in landmark defense pact as Iran war closes in",
-            "title_source": "native",
+            "source": "Al Manar",
+            "title": "Israeli occupation forces have issued orders to remove trees from 316 dunams in the West Bank, paving the way…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "names 1 of the story's dominant entities (westbank)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": []
           }
         },
         {
           "selected_rank": 4,
+          "headline": "The Israeli military believes a drone launched towards southern Lebanon was intended to assist milit",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-08T18:17+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "The Israeli military believes a drone launched towards southern Lebanon was intended to assist militants in…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Video footage shows Israeli forces conducting land clearing operations in southe",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Russian attacks kill 4 as Kyiv intensifies strikes on oil facilities",
           "rank_key": {
             "outlets": 2,
@@ -824,7 +875,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Oil prices are rising amid concerns about navigation in the Strait of Hormuz.",
           "rank_key": {
             "outlets": 2,
@@ -855,7 +906,7 @@
             "passed_over": [
               {
                 "source": "Al Mayadeen",
-                "title": "Oil prices have risen amid concerns surrounding proposals to reopen the Strait o",
+                "title": "Oil prices have risen amidst concerns regarding navigation proposals for the Str",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -863,31 +914,29 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli occupation forces issued orders to uproot trees in 316 dunams in the West Bank, paving the w",
+          "headline": "Turkey's foreign minister stated that Egypt might join an existing defense alliance.",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": null
+            "camps": 1,
+            "newest": "2026-08-08T18:10+00:00"
           },
           "outlet_names": [
-            "Al Manar",
-            "Iran International"
+            "Kan 11",
+            "N12"
           ],
           "camps": [
-            "iranian",
-            "levant"
+            "israeli"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Manar",
-            "title": "Israeli occupation forces issued orders to uproot trees in 316 dunams in the West Bank, paving the way for…",
+            "source": "Kan 11",
+            "title": "Turkey's foreign minister stated that Egypt might join an existing defense alliance.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "state/partisan outlet (last resort)",
+              "neutral-by-default outlet",
               "derived from the outlet's English snippet"
             ],
             "passed_over": []
@@ -943,14 +992,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Israeli military believes a recent drone launch targeting forces in southern Lebanon was intende",
+          "headline": "Two travelers were detained at Manila airport following a violent altercation.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-08T18:17+00:00"
+            "newest": "2026-08-08T18:50+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "N12"
           ],
           "camps": [
             "israeli"
@@ -961,7 +1010,25 @@
         },
         {
           "selected_rank": null,
-          "headline": "Despite Iran's threats and perceived hesitation from the United States, the Israeli military is prep",
+          "headline": "Fidan stated that the defense agreement does not target Iran and that no country will be targeted un",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-08T18:08+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "While Iran issues threats and the U.S.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1015,7 +1082,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "The article questions whether Israel has been cornered following the factions' approval of a ceasefi",
+          "headline": "The article questions if Israel is cornered following the approval of a ceasefire proposal by factio",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1051,11 +1118,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran displays wreckage of downed US and Israeli aircraft",
+          "headline": "Saudi Arabia turns to Muslim military heavyweights in landmark defense pact as Iran war closes in",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-08T12:30+00:00"
+            "newest": "2026-08-08T12:37+00:00"
           },
           "outlet_names": [
             "Egypt Independent"
@@ -1122,25 +1189,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Gharibabadi: Caspian Sea convention does not affect delimitation of seabed, subsoil",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-08T10:56+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1158,7 +1207,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-08T19:47:49.338507+00:00",
+    "last_success": "2026-08-08T20:05:26.350855+00:00",
     "last_failure": null
   },
   "ok": true
