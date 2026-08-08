@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T20:37:03.306842+00:00",
+  "updated": "2026-08-08T20:47:49.466306+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-08T20:34:40.845274+00:00"
+      "headlines_updated": "2026-08-08T20:45:52.727765+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 35,
+        "dropped_stale": 10,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_native": 87,
         "in": 131,
-        "kept": 122
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -199,6 +200,11 @@
         {
           "source": "Jordan Times",
           "title": "Iran says has agreed new Hormuz route with Oman",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "العدو يصعّد في جنوب لبنان: غارات وقصف مدفعي على قضاء صور",
           "reason": "stale (older than 48h)"
         },
         {
@@ -230,12 +236,22 @@
           "source": "Al-Masirah",
           "title": "من الحصار إلى فرض المعاملة بالمثل",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "נעצר חשוד שהניח סכינים וקליעים בבנקים וסניף רשת מזון במרכז",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "موافقة الفصائل على مقترح وقف الحرب.. هل حُشرت \"إسرائيل\" في الزاوية؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 77,
+      "in": 119,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
@@ -301,6 +317,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Jazeera",
+          "title": "British Columbia issues evacuation orders ahead of fast-moving wildfires",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
           "source": "Middle East Eye",
           "title": "Turkey: Mo Salah welcomed by fans chanting ‘Allahu Akbar’ after move to Trabzonspor",
           "sec": 0,
@@ -338,6 +361,13 @@
         {
           "source": "Al Arabiya",
           "title": "Saudi Arabia, Pakistan and Turkey sign Mecca Joint Defense Agreement",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Saudi Arabia, Turkey and Pakistan to sign joint defence deal",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -556,11 +586,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 41,
       "sizes": [
-        22,
+        19,
         7,
-        2,
         2,
         2,
         2,
@@ -609,16 +638,15 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iran says Hormuz deal close but will not open the strait",
+          "headline": "Jordan condemns Iranian attack on UAE tanker in Strait of Hormuz",
           "rank_key": {
-            "outlets": 12,
+            "outlets": 11,
             "camps": 5,
             "newest": "2026-08-08T16:52+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Al-Akhbar",
             "Anadolu Agency",
             "Falastin al-Youm",
             "Gulf News",
@@ -636,12 +664,12 @@
             "levant",
             "turkish"
           ],
-          "members": 22,
+          "members": 19,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Iran says Hormuz deal close but will not open the strait",
+            "source": "Jordan Times",
+            "title": "Jordan condemns Iranian attack on UAE tanker in Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -773,38 +801,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Russian attacks kill 4 as Kyiv intensifies strikes on oil facilities",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-08T12:30+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Russian attacks kill 4 as Kyiv intensifies strikes on oil facilities",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Oil prices are increasing amid concerns about navigation in the Strait of Hormuz.",
           "rank_key": {
             "outlets": 2,
@@ -842,7 +838,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "The Israeli army has issued orders to uproot trees in 316 dunams in the West Bank, paving the way fo",
           "rank_key": {
             "outlets": 2,
@@ -1019,24 +1015,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israel is reportedly preparing to act alone in Iran, as Iran issues threats and the United States ap",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-08T16:56+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "178,000+ migrants leave South Africa amid deportations, attacks",
           "rank_key": {
             "outlets": 1,
@@ -1180,6 +1158,24 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
+          "selected_rank": null,
+          "headline": "Russian attacks kill 4 as Kyiv intensifies strikes on oil facilities",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-08T11:20+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
           "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1198,7 +1194,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-08T20:37:20.796114+00:00",
+    "last_success": "2026-08-08T20:48:03.489754+00:00",
     "last_failure": null
   },
   "ok": true
