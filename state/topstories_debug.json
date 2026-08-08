@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T23:51:33.758040+00:00",
+  "updated": "2026-08-08T23:54:03.461487+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-08T23:49:07.232114+00:00"
+      "headlines_updated": "2026-08-08T23:52:14.744724+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
+        "dropped_stale": 11,
         "title_snippet": 32,
         "title_translated": 1,
-        "title_native": 86,
+        "title_native": 85,
         "dropped_no_english": 2,
         "in": 131,
-        "kept": 119
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -239,6 +239,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "TRT World",
+          "title": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "حرس الثورة: لم نهاجم دول الخليج بل استهدفنا القواعد التي انطلقت منها الهجمات",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -251,8 +256,8 @@
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 71,
+      "in": 118,
+      "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
@@ -594,11 +599,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 44,
       "sizes": [
         19,
-        5,
         3,
+        2,
+        2,
         2,
         2,
         2,
@@ -712,59 +718,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Arab and regional condemnations of Houthi attacks on Saudi Arabia’s Najran",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-08-07T17:49+00:00"
-          },
-          "outlet_names": [
-            "Gulf News",
-            "SANA",
-            "TRT World",
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Arab and regional condemnations of Houthi attacks on Saudi Arabia’s Najran",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Houthi attacks kill 58 Saudi-backed Yemeni govt forces",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Houthi missile attacks kill 58 Saudi-backed Yemeni govt forces: source",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Saudi Arabia, Pakistan and Turkey sign Mecca Joint Defense Agreement",
           "rank_key": {
             "outlets": 3,
@@ -797,7 +750,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Israeli military orders have been issued for the uprooting of trees in the West Bank, covering 316 d",
           "rank_key": {
             "outlets": 2,
@@ -834,7 +787,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Oil prices are rising amidst concerns over maritime navigation in the Strait of Hormuz.",
           "rank_key": {
             "outlets": 2,
@@ -866,6 +819,44 @@
               {
                 "source": "Al Mayadeen",
                 "title": "Oil prices have increased amid concerns about proposals for reopening the Strait",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Houthi attacks kill 58 Saudi-backed Yemeni govt forces",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-07T08:11+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Houthi attacks kill 58 Saudi-backed Yemeni govt forces",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Gulf News",
+                "title": "Houthi missile attacks kill 58 Saudi-backed Yemeni govt forces: source",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -927,6 +918,37 @@
               "passed every gate (neutral, current, fresh, not a stub)",
               "neutral-by-default outlet",
               "derived from the outlet's English snippet"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Arab and regional condemnations of Houthi attacks on Saudi Arabia’s Najran",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-07T17:49+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Arab and regional condemnations of Houthi attacks on Saudi Arabia’s Najran",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
             ],
             "passed_over": []
           }
@@ -1166,7 +1188,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-08T23:51:34.788783+00:00",
+    "last_success": "2026-08-08T23:54:20.953042+00:00",
     "last_failure": null
   },
   "ok": true
