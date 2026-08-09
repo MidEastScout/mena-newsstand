@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T10:01:30.190177+00:00",
+  "updated": "2026-08-09T10:06:10.449711+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-09T09:59:31.697385+00:00"
+      "headlines_updated": "2026-08-09T10:04:31.279428+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 16,
-        "title_snippet": 31,
+        "title_snippet": 28,
+        "dropped_no_english": 3,
         "title_translated": 2,
         "title_native": 81,
         "in": 130,
-        "kept": 114
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -266,12 +267,27 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers intensify attacks on Bedouin community in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נדחה ערעורו של אלוף פיקוד המרכז בלוט: דרדיק יישאר במעצר בית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "كريستينا عاصي... الصحافية الشجاعة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مؤسسة هند رجب تقدّم شكوى في فيتنام ضد جندي احتياط إسرائيلي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 61,
+      "in": 111,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -283,13 +299,6 @@
         {
           "source": "Kan 11",
           "title": "An 18-year-old woman was admitted to TLV MEDICAL for cosmetic nose surgery, but during preparation, her nose…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The political parties Hadash, Ta'al, and Balad are expected to announce a merger today.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -373,14 +382,14 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Fire extinguished at Aramco refinery in Jazan, Saudi Arabia says",
+          "title": "Saudi Arabia, Pakistan And Turkey Sign Defense Pact",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Arabiya",
-          "title": "Spain starts border checks on Italy after migrant row",
+          "title": "Fire extinguished at Aramco refinery in Jazan, Saudi Arabia says",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -519,13 +528,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Muscat has sent a draft agreement to Washington, and American expectations indicate a potential early…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Fire extinguished at Saudi Aramco facility in Jazan, no injuries reported",
           "sec": 0,
@@ -541,21 +543,21 @@
         },
         {
           "source": "SANA",
-          "title": "Wildfire forces 20,000 evacuations in British Columbia, western Canada",
-          "sec": 1,
+          "title": "Indonesia closes Mount Bromo park as wildfire burns 176 hectares",
+          "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Arab News",
-          "title": "Saudi landmarks illuminated with flags of Saudi Arabia, Türkiye, and Pakistan to mark defence agreement",
+          "title": "Saudi Arabia, Turkiye and Pakistan sign Makkah joint defense agreement",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Arab News",
-          "title": "Saudi Arabia, Turkiye and Pakistan sign Makkah joint defense agreement",
+          "title": "Saudi landmarks illuminated with flags of Saudi Arabia, Türkiye, and Pakistan to mark defence agreement",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -648,13 +650,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 28,
+      "clusters": 29,
       "sizes": [
-        28,
+        26,
         3,
         3,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -689,14 +692,13 @@
           "selected_rank": 1,
           "headline": "Egypt condemns attack on UAE oil tanker in Strait of Hormuz",
           "rank_key": {
-            "outlets": 15,
+            "outlets": 14,
             "camps": 5,
             "newest": "2026-08-09T09:54+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Al-Akhbar",
             "Arab News",
             "Egypt Independent",
             "Falastin al-Youm",
@@ -717,7 +719,7 @@
             "iranian",
             "levant"
           ],
-          "members": 28,
+          "members": 26,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -737,11 +739,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Jazeera",
-                "title": "Iran deliberates Hormuz arrangement amid uncertain prospects with US",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Arabiya",
                 "title": "Saudi Arabia condemns Iranian attack on UAE tanker",
                 "rejected_by": "older than the story's newest wave"
@@ -749,6 +746,11 @@
               {
                 "source": "Al Arabiya",
                 "title": "Iran says ‘very close’ to Oman deal on temporary Strait of Hormuz shipping route",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "US official: We expect a deal soon between Iran and Oman on Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -999,6 +1001,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Saudi Arabia says fire extinguished at Aramco facility in Jizan",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-09T07:58+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Palestinians suffer suffocation as Israeli forces raid Dheisheh camp and towns east of Bethlehem",
           "rank_key": {
             "outlets": 1,
@@ -1106,25 +1126,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "There are warnings against renewing the order to prevent family visits for prisoners in Israeli jail",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-08T05:40+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1142,7 +1144,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-09T10:01:45.198838+00:00",
+    "last_success": "2026-08-09T10:06:10.660718+00:00",
     "last_failure": null
   },
   "ok": true
