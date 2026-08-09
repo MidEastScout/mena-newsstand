@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T23:54:03.461487+00:00",
+  "updated": "2026-08-09T00:25:31.196032+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,37 +167,27 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-08T23:52:14.744724+00:00"
+      "headlines_updated": "2026-08-09T00:23:26.153633+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 32,
+        "dropped_stale": 9,
+        "title_snippet": 25,
+        "dropped_no_english": 11,
         "title_translated": 1,
         "title_native": 85,
-        "dropped_no_english": 2,
         "in": 131,
-        "kept": 118
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 36,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "N12",
-          "title": "תינוקת בת שנה וחצי טבעה למוות בבית פרטי באשקלון",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "פעוטה כבת שנה וחצי טבעה למוות בבריכה ביתית באשקלון",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "WAFA News",
           "title": "UNICEF: At least 300 children reportedly killed in Gaza in past 300 days",
@@ -244,6 +234,51 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Kan 11",
+          "title": "קנדה: מצב חירום הוכרז בפרובינציית קולומביה הבריטית שבמערב המדינה בעקבות שריפות יער",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "זמר מאזור המרכז נחקר בחשד לאלימות נגד בת זוגו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בצה\"ל מעריכים: שיגור הרחפן לעבר הכוחות בדרום לבנון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "תחזית מזג האוויר - 07.08.26 - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הרמטכ\"ל האמריקני: צריך נקודת יציאה מהמלחמה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מרלה גרושתו של טראמפ בריאיון בלעדי - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "חדשות סוף השבוע עם דנה ויס - 08.08.2026 - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "כותרות חדשות סוף השבוע - 8.8.2026 - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אלמנתו של עמנואל מורנו: \"ציפיתי שרה\"מ ייקח אחריות על 7.10\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "حرس الثورة: لم نهاجم دول الخليج بل استهدفنا القواعد التي انطلقت منها الهجمات",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -256,23 +291,9 @@
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 70,
+      "in": 111,
+      "kept": 65,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "In Jerusalem, about 50 ultra-Orthodox protesters demonstrated outside a cafe that remained open on the…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "A tense confrontation occurred in Jerusalem over Sabbath observance, with dozens of ultra-Orthodox protesters…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
@@ -599,7 +620,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 41,
       "sizes": [
         19,
         3,
@@ -607,9 +628,6 @@
         2,
         2,
         2,
-        2,
-        2,
-        1,
         1,
         1,
         1,
@@ -695,7 +713,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "Iran sets new conditions to reopen Hormuz, wants US to ‘correct behaviour’",
+                "title": "Iran war updates: IRGC says Hormuz to open after US accepts conditions",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -864,66 +882,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Turkey's Foreign Minister suggested that Egypt might join the defense alliance, noting its current d",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-08T18:10+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Turkey's Foreign Minister suggested that Egypt might join the defense alliance, noting its current de facto…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Chairman of the Joint Chiefs of Staff reportedly discussed ending the war with Iran with senior ",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-08T00:05+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The Chairman of the Joint Chiefs of Staff reportedly discussed ending the war with Iran with senior U.S.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Arab and regional condemnations of Houthi attacks on Saudi Arabia’s Najran",
           "rank_key": {
             "outlets": 2,
@@ -981,24 +939,6 @@
           },
           "outlet_names": [
             "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Due to the war with Iran, the Pentagon is pressuring defense industries to significantly accelerate ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-08T22:46+00:00"
-          },
-          "outlet_names": [
-            "N12"
           ],
           "camps": [
             "israeli"
@@ -1170,7 +1110,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Russian attacks kill 4 as Kyiv intensifies strikes on oil facilities",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-08T11:20+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1188,7 +1146,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-08T23:54:20.953042+00:00",
+    "last_success": "2026-08-09T00:25:32.292267+00:00",
     "last_failure": null
   },
   "ok": true
