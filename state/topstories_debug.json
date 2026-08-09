@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-09T20:04:35.856683+00:00",
+  "updated": "2026-08-09T20:36:09.137146+00:00",
   "stages": {
     "fetch": {
-      "items": 128,
+      "items": 129,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -137,7 +137,7 @@
           "error": null
         },
         "Al-Masirah": {
-          "headlines": 2,
+          "headlines": 3,
           "lang": "ar",
           "stale": false,
           "error": null
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-09T20:02:38.215469+00:00"
+      "headlines_updated": "2026-08-09T20:33:59.518727+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 17,
-        "title_snippet": 30,
-        "title_translated": 1,
-        "title_native": 80,
-        "in": 128,
-        "kept": 111
+        "dropped_stale": 19,
+        "title_snippet": 22,
+        "dropped_no_english": 7,
+        "title_translated": 2,
+        "title_native": 79,
+        "in": 129,
+        "kept": 103
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 30,
+        "requested": 29,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -195,6 +196,11 @@
         {
           "source": "The New Arab",
           "title": "Yemen: Houthi attacks kill 10 as rebels target oil-rich Marib",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Houthi attacks kill 58 Saudi-backed Yemeni govt forces",
           "reason": "stale (older than 48h)"
         },
         {
@@ -253,6 +259,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Al-Masirah",
+          "title": "شُوَاظُ اليَقِين",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "Houthi attacks kill 58 Yemen troops, wound civilians in Saudi Arabia",
           "reason": "stale (older than 48h)"
@@ -271,12 +282,47 @@
           "source": "TRT World",
           "title": "Deadly Houthi attacks hit Yemen's Mokha",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "תפתח 6 סניפים: ענקית הביוטי \"ספורה\" מגיעה לישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "ילד כבן 12 אותר ללא רוח חיים בנהר הירדן - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "ענקית מוצרי הביוטי ספורה בדרך לישראל - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "טראמפ לחדשות 12: מורידים פרופיל לגבי איראן - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הגל החדש של מסעדות השף על הים | המוסף - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אזור בחירה 09.08.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "حركة الجهاد الإسلامي: إعلان نتنياهو رفض للخطة الأميركية واستكمال للإبادة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 111,
-      "kept": 62,
+      "in": 103,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -286,57 +332,15 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "Kan 11",
-          "title": "Firefighters have gained full control of a blaze that erupted in an underground parking lot at a construction…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "N12",
-          "title": "Elhanan Carney, a teenager from Modi'in Illit, has been found dead in the Jordan River after his boat…",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "N12",
-          "title": "A four-year-old Israeli child has tragically drowned in a swimming pool in Mexico.",
+          "title": "Weather Forecast - Mako",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Firefighters have gained control of a fire that broke out in the underground parking area of a construction…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Ed Case has won the Democratic primaries in Hawaii, despite criticism for his support of Israel.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The Director-General of the Peace Council told News 12 that if Gaza is disarmed, Israel will withdraw from…",
-          "sec": 0,
-          "off": 0,
+          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
           "title": "A child who fell from a boat in the Jordan River has been found deceased after an extensive search.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A four-year-old child from Jerusalem has tragically drowned in a swimming pool in Mexico.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,14 +354,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "UAE extradites alleged international crime boss Daniel Kinahan to Ireland",
+          "title": "Where does Iran stand on Saudi-Pakistan-Turkiye pact?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "Where does Iran stand on Saudi-Pakistan-Turkiye pact?",
+          "title": "UAE extradites alleged international crime boss Daniel Kinahan to Ireland",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -625,9 +629,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 33,
       "sizes": [
-        17,
+        16,
         6,
         3,
         2,
@@ -635,7 +639,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -672,7 +675,7 @@
           "selected_rank": 1,
           "headline": "Egypt condemns attack on UAE oil tanker in Strait of Hormuz",
           "rank_key": {
-            "outlets": 13,
+            "outlets": 12,
             "camps": 4,
             "newest": "2026-08-09T09:54+00:00"
           },
@@ -688,7 +691,6 @@
             "IRNA",
             "Iran International",
             "SANA",
-            "The New Arab",
             "WAFA News"
           ],
           "camps": [
@@ -697,7 +699,7 @@
             "iranian",
             "levant"
           ],
-          "members": 17,
+          "members": 16,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -727,8 +729,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "The New Arab",
-                "title": "US expects deal 'soon' on Strait of Hormuz between Iran and Oman",
+                "source": "IRNA",
+                "title": "Iran, Oman close to deal on temporary Strait of Hormuz shipping route: Araghchi",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -807,7 +809,7 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Iran’s supreme leader appoints Mohsen Rezaee as representative to top security body",
+          "headline": "Iran appoints former IRGC chief Mohsen Rezaee secretary of top security body",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
@@ -826,11 +828,10 @@
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Iran’s supreme leader appoints Mohsen Rezaee as representative to top security body",
+            "title": "Iran appoints former IRGC chief Mohsen Rezaee secretary of top security body",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (khamenei)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -871,43 +872,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Three Palestinians wounded by Israeli gunfire in Gaza, arrests reported in West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-09T19:55+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Three Palestinians wounded by Israeli gunfire in Gaza, arrests reported in West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Colonists and Israeli forces raid Nablus-area village",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Reports suggest that Trump is preparing to declare victory in the war with Iran, even without a nucl",
           "rank_key": {
             "outlets": 2,
@@ -939,11 +903,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli artillery shelling and heavy gunfire reported in northern and central Gaza Strip",
+          "headline": "Palestinians injured by Israeli gunfire northeast of Gaza City",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-09T19:45+00:00"
+            "newest": "2026-08-09T20:08+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -951,7 +915,7 @@
           "camps": [
             "levant"
           ],
-          "members": 1,
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -975,14 +939,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "The occupation authorities released 37 prisoners from Gaza through the International Committee of th",
+          "headline": "Three Palestinians wounded by Israeli gunfire in Gaza, arrests reported in West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-09T15:26+00:00"
+            "newest": "2026-08-09T17:33+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm"
+            "SANA"
           ],
           "camps": [
             "levant"
@@ -1172,7 +1136,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-09T20:04:49.743404+00:00",
+    "last_success": "2026-08-09T20:36:26.561825+00:00",
     "last_failure": null
   },
   "ok": true
