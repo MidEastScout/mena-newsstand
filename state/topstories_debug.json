@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T19:32:31.882404+00:00",
+  "updated": "2026-08-09T19:36:07.578479+00:00",
   "stages": {
     "fetch": {
       "items": 129,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-09T19:30:14.180020+00:00"
+      "headlines_updated": "2026-08-09T19:33:44.306157+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 17,
-        "title_snippet": 31,
-        "title_native": 81,
+        "dropped_stale": 18,
+        "title_snippet": 28,
+        "dropped_no_english": 3,
+        "title_native": 80,
         "in": 129,
-        "kept": 112
+        "kept": 108
       },
       "translator": {
         "configured": true,
@@ -268,14 +269,34 @@
         },
         {
           "source": "TRT World",
+          "title": "Regional countries welcome Mecca pact between Türkiye, Saudi Arabia and Pakistan",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
           "title": "Deadly Houthi attacks hit Yemen's Mokha",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ארה\"ב: שני כלי טיס הוסטו על ידי מטוסי F-16 לאחר שטסו מעל מועדון הגולף שבו שהה טראמפ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "توقعات أميركية بفتح «هرمز» قريباً: مسقط ترسل مسودة الاتفاق إلى واشنطن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مسقط ترسل مسودة الاتفاق إلى واشنطن وتوقعات أمريكية بفتح هرمز قريبا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 112,
-      "kept": 63,
+      "in": 108,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -502,13 +523,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Morocco and Algeria have qualified for the Women's World Cup by reaching the semi-finals of the 'CAN'…",
-          "sec": 0,
-          "off": 2,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "MP Hussein Jishi stated that the framework agreement is not in Lebanon's interest.",
           "sec": 0,
@@ -539,13 +553,6 @@
         {
           "source": "Gulf News",
           "title": "What to know about Trump's new attempt to limit birthright citizenship",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Trump signals shift toward economic pressure on Iran: Report",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -608,13 +615,6 @@
         },
         {
           "source": "TRT World",
-          "title": "Regional countries welcome Mecca pact between Türkiye, Saudi Arabia and Pakistan",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
           "title": "Iran releases rare video of Mojtaba Khamenei amid reports of critical condition",
           "sec": 0,
           "off": 0,
@@ -624,7 +624,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 33,
       "sizes": [
         17,
         8,
@@ -633,7 +633,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -817,30 +816,30 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Houthi Attacks Target Mokha port in Yemen",
+          "headline": "Iran’s supreme leader appoints Mohsen Rezaee as representative to top security body",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-09T13:08+00:00"
+            "newest": "2026-08-09T17:40+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Arab News"
+            "Anadolu Agency",
+            "IRNA"
           ],
           "camps": [
-            "gulf",
-            "panarab"
+            "iranian",
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Houthi Attacks Target Mokha port in Yemen",
+            "source": "Anadolu Agency",
+            "title": "Iran’s supreme leader appoints Mohsen Rezaee as representative to top security body",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
+              "names 1 of the story's dominant entities (khamenei)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -912,24 +911,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Two aircraft were intercepted by F-16 fighter jets after flying over a golf club where Trump was pre",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-09T19:25+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Pakistan, Canada discuss Mecca Joint Defense Agreement, regional issues",
           "rank_key": {
             "outlets": 1,
@@ -959,24 +940,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Leader appoints Mohsen Rezaei as his envoy to Iran’s top security body",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-09T17:18+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1020,17 +983,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Prisoners' Affairs media called for an international investigation following the revelation of t",
+          "headline": "Houthi Attacks Target Mokha port in Yemen",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-09T13:16+00:00"
+            "newest": "2026-08-09T13:08+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm"
+            "Al Arabiya"
           ],
           "camps": [
-            "levant"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1127,7 +1090,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran not currently engage in talks with US: FM Araghchi",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-09T09:31+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US admitted defeat in war against Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-09T08:52+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1145,7 +1144,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-09T19:32:53.588342+00:00",
+    "last_success": "2026-08-09T19:36:21.686499+00:00",
     "last_failure": null
   },
   "ok": true
