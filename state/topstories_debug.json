@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T15:10:09.424011+00:00",
+  "updated": "2026-08-10T15:16:35.723539+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-10T15:08:14.886688+00:00"
+      "headlines_updated": "2026-08-10T15:14:36.786186+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 35,
+        "title_snippet": 34,
         "title_native": 79,
+        "dropped_no_english": 1,
         "title_translated": 1,
         "in": 128,
-        "kept": 115
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -251,12 +252,17 @@
           "source": "TRT World",
           "title": "Regional countries welcome Mecca pact between Türkiye, Saudi Arabia and Pakistan",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"نيوزويك\": نسبة تأييد ترامب ترتفع لدى البروتستانت وتنخفض لدى الكاثوليك",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 46,
+      "in": 114,
+      "kept": 45,
       "dropped": [
         {
           "source": "Kan 11",
@@ -450,13 +456,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Ten a.m. bulletin",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Poetry in Iran serves as a historical record for the nation and a source of wisdom passed down through…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -673,6 +672,13 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Türkiye set to host global space community at IAC 2026 in Antalya",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "Shein finds China hard to replace as Vietnam experiment fails",
           "sec": 0,
           "off": 1,
@@ -745,7 +751,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 33,
+      "clusters": 32,
       "sizes": [
         8,
         3,
@@ -753,7 +759,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -1054,24 +1059,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "‘Terror-free Türkiye model’: Parliament set to pass key law",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-10T13:06+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran’s supreme leader in ‘full physical health,’ president says",
           "rank_key": {
             "outlets": 1,
@@ -1233,7 +1220,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "CNN highlights that Trump faces a separate but related domestic issue, as the war's impact on energy",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-10T06:02+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1251,7 +1256,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-10T15:10:22.147783+00:00",
+    "last_success": "2026-08-10T15:16:35.907726+00:00",
     "last_failure": null
   },
   "ok": true
