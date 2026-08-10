@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T15:49:03.226296+00:00",
+  "updated": "2026-08-10T16:11:08.078377+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-10T15:46:51.693499+00:00"
+      "headlines_updated": "2026-08-10T16:09:09.085406+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 32,
-        "dropped_no_english": 4,
-        "title_native": 80,
+        "dropped_stale": 13,
+        "title_snippet": 29,
+        "dropped_no_english": 6,
+        "title_translated": 1,
+        "title_native": 79,
         "in": 128,
-        "kept": 112
+        "kept": 109
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 36,
+        "requested": 35,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -210,6 +211,11 @@
         {
           "source": "WAFA News",
           "title": "Saudi Arabia, Türkiye and Pakistan sign joint defense pact",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Presidency condemns Houthi attacks targeting Saudi Arabia and Yemeni government",
           "reason": "stale (older than 48h)"
         },
         {
@@ -259,7 +265,17 @@
         },
         {
           "source": "Al Mayadeen",
+          "title": "صنعاء تؤكد امتلاك بنك أهداف وقدرات استخبارية تتيح لها ملاحقة التحركات السعودية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
           "title": "صنعاء: ضربات متصاعدة نجحت في إجهاض المخططات العدوانية في مهدها",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"نيوزويك\": نسبة تأييد ترامب ترتفع لدى البروتستانت وتنخفض لدى الكاثوليك",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -270,7 +286,7 @@
       ]
     },
     "relevance": {
-      "in": 112,
+      "in": 109,
       "kept": 47,
       "dropped": [
         {
@@ -338,6 +354,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "Odeya Azoulay has taken on a new role, described as \"this time for all.\" No further details about the nature…",
           "sec": 0,
           "off": 0,
@@ -351,11 +374,11 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Ami Eil discusses a technological combination that aims to rejuvenate the skin, suggesting that scars may not…",
+          "source": "Al Jazeera",
+          "title": "Earthquake with 7.4 magnitude hits Colombia, killing at least 20",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al Jazeera",
@@ -437,13 +460,6 @@
         {
           "source": "The New Arab",
           "title": "Syria and Russia reach deal on future of Tartous, Hmeimim bases",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "CNN reports that Trump faces two challenges that could impact the Republican Party before the midterm…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -603,13 +619,6 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "SANA",
-          "title": "Copernicus: Western Europe records record-breaking heat in June and July",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Syria Direct",
           "title": "The Plunder of Syria: Syria’s Greatest Archaeological Losses Came After IS",
           "sec": 0,
@@ -638,13 +647,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Top Saudi, Pakistani diplomats discuss regional issues amid Mecca defense pact",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Erdoğan urges stronger Türkiye-Austria ties, deeper EU cooperation",
           "sec": 0,
@@ -661,13 +663,6 @@
         {
           "source": "Daily Sabah",
           "title": "Türkiye set to host global space community at IAC 2026 in Antalya",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Chinese shipping firm launches 1st regular Arctic service",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -873,6 +868,44 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Russia says Ukrainian drone attacks kill 19, injure 66 in Belgorod, Tatarstan",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-10T15:56+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "SANA"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Russia says Ukrainian drone attacks kill 19, injure 66 in Belgorod, Tatarstan",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "SANA",
+                "title": "Three killed in Ukrainian drone attack on Belgorod as Russia strikes Odesa",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Israeli military closes Palestinian Christian village Taybeh, citing settler attacks",
           "rank_key": {
             "outlets": 2,
@@ -909,7 +942,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "UN force removes war remnants, unexploded ordnance in Syria’s Quneitra",
           "rank_key": {
             "outlets": 2,
@@ -941,7 +974,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Houthi Attacks Target Mokha port in Yemen",
           "rank_key": {
             "outlets": 2,
@@ -967,37 +1000,6 @@
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Three Palestinians wounded by Israeli gunfire in Gaza, arrests reported in West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-09T19:45+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Three Palestinians wounded by Israeli gunfire in Gaza, arrests reported in West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": []
@@ -1072,6 +1074,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israel pushes 3 major illegal settlement projects in East Jerusalem",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-10T14:34+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "A UN report warns of continued massacres in Gaza and escalating settler terrorism in the West Bank.",
           "rank_key": {
             "outlets": 1,
@@ -1083,24 +1103,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Why Netanyahu’s ‘coup’ against Gaza plan risks endless war",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-10T13:59+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1126,11 +1128,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran’s supreme leader in ‘full physical health,’ president says",
+          "headline": "At least 21 killed after magnitude 7.4 earthquake strikes Colombia",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-10T13:01+00:00"
+            "newest": "2026-08-10T13:33+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1269,7 +1271,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-10T15:49:17.813816+00:00",
+    "last_success": "2026-08-10T16:11:39.096059+00:00",
     "last_failure": null
   },
   "ok": true
