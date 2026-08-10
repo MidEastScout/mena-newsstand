@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T16:43:11.527626+00:00",
+  "updated": "2026-08-10T17:07:37.595280+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-10T16:40:44.962327+00:00"
+      "headlines_updated": "2026-08-10T17:05:55.635103+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 35,
+        "title_snippet": 28,
+        "dropped_no_english": 7,
         "title_translated": 1,
         "title_native": 80,
         "in": 128,
-        "kept": 116
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -246,12 +247,47 @@
           "source": "TRT World",
           "title": "Regional countries welcome Mecca pact between Türkiye, Saudi Arabia and Pakistan",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "טראמפ: איראן מבקשת פיצויים עבור נזקים שנעשו להם במלחמה; גם אנחנו נדרוש פיצויים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "תיעודים דרמטיים: רעידת אדמה בעוצמה 7.4 הכתה בקולומביה, לפחות 47 בני אדם נהרגו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "صنعاء: ضربات متصاعدة نجحت في إجهاض المخططات العدوانية في مهدها",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "موسكو: تخلي اليابان عن وضعها كدولة غير نووية سيثير ردود فعل من الدول المجاورة 04:45",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "خبراء أمميون: الإبادة الجماعية مستمرة بلا هوادة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "استطلاع: خُمس الإسرائيليين يفكرون بالهجرة وسط قلق وتداعيات اقتصادية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "المعارضة \"الاسرائيلية\" تطلب جلسة لبحث خطة \"رفح الخضراء\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 53,
+      "in": 109,
+      "kept": 50,
       "dropped": [
         {
           "source": "Kan 11",
@@ -268,25 +304,11 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Kan 11",
-          "title": "Member of Knesset Moshe Gafni stated that the hatred from the Religious Zionism party towards his party is…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "N12",
           "title": "Sixteen-year-old Yehonatan Efraim Kalimi'an, a yeshiva student and Bnei Akiva guide, died after falling while…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "A magnitude 7.4 earthquake struck Colombia, resulting in at least 20 deaths.",
-          "sec": 2,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "N12",
@@ -332,14 +354,28 @@
         },
         {
           "source": "Channel 13",
-          "title": "Odia Azulai has a new job titled 'This Time It's For Everyone'.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "Odia Azulai has a new job titled 'This Time It's For Everyone'.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Iran changed the rules in Hormuz. The Gulf is changing the rules for Iran",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Solar eclipse tracker: What time will it hit your location on August 12?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,13 +386,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "Solar eclipse tracker: What time will it hit your location on August 12?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
@@ -443,13 +472,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Bozorgian revealed details of his meeting with Sayyid Mojtaba Khamenei.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "The Mecca Pact: A threat or an opportunity?",
           "sec": 0,
@@ -486,7 +508,7 @@
         },
         {
           "source": "Iran International",
-          "title": "Iran’s president meets Supreme Leader, Khamenei’s channel says",
+          "title": "Mohsen Rezaei appointed Supreme Leader’s representative at Iran’s SNSC",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -578,20 +600,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Hebrew media reports that Israel is implementing the '15-point' document on the ground while publicly…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The World Health Organization is warning of Ebola getting out of control.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "It is possible to contract chickenpox more than once.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -698,9 +706,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 36,
+      "clusters": 35,
       "sizes": [
-        10,
+        8,
         2,
         2,
         2,
@@ -709,7 +717,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -747,12 +754,11 @@
           "selected_rank": 1,
           "headline": "Rather than capitulating to the US, Iran toughens its demands over the vital Strait of Hormuz",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 4,
             "newest": "2026-08-10T16:09+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
             "Al Mayadeen",
             "Egypt Independent",
             "Gulf News",
@@ -766,7 +772,7 @@
             "iranian",
             "levant"
           ],
-          "members": 10,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -781,11 +787,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "Who is Mohsen Rezaee; how significant is his appointment as security chief?",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "IRNA",
                 "title": "Iran, Oman continue talks on safe shipping route through Strait of Hormuz: FM sp",
                 "rejected_by": "older than the story's newest wave"
@@ -799,12 +800,49 @@
                 "source": "SANA",
                 "title": "Oil prices rise amid uncertainty over reopening of Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Iran, Oman ‘very close’ to deal: Why Strait of Hormuz reopening may still wait",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
+          "headline": "UN experts condemn escalation in attacks against Palestinians in Gaza and West Bank",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-10T17:01+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "UN experts condemn escalation in attacks against Palestinians in Gaza and West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (gaza, westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Iran appoints Abdollahi Armed Forces chief, Vahidi IRGC commander",
           "rank_key": {
             "outlets": 2,
@@ -835,7 +873,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Russia says Ukrainian drone attacks kill 19, injure 66 in Belgorod, Tatarstan",
           "rank_key": {
             "outlets": 2,
@@ -873,7 +911,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Israeli military closes Palestinian Christian village Taybeh, citing settler attacks",
           "rank_key": {
             "outlets": 2,
@@ -907,38 +945,6 @@
                 "rejected_by": "loaded/partisan wording"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Israel pushes 3 major illegal settlement projects in East Jerusalem",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-10T14:34+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Israel pushes 3 major illegal settlement projects in East Jerusalem",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1069,6 +1075,60 @@
         },
         {
           "selected_rank": null,
+          "headline": "President al-Sharaa receives UN High Commissioner for Refugees Barham Salih",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-10T16:57+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Leader appoints Gen. Vahidi as IRGC chief commander",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-10T16:51+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Turkcell-backed Teknofest AI, 5G road safety competition draws 745 teams",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-10T16:45+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Colombia's Ministry of Foreign Affairs has announced its recognition of Israeli sovereignty over the",
           "rank_key": {
             "outlets": 1,
@@ -1195,42 +1255,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "UN experts condemn escalation in attacks against Palestinians in Gaza and West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-10T13:59+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "At least 21 killed after magnitude 7.4 earthquake strikes Colombia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-10T13:33+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Accused Thai school shooter had watched violent content online, police say",
           "rank_key": {
             "outlets": 1,
@@ -1266,25 +1290,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Syria agrees deal with Russia over future use of two key Mediterranean bases",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-10T12:30+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1302,7 +1308,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-10T16:43:31.651872+00:00",
+    "last_success": "2026-08-10T17:07:59.251697+00:00",
     "last_failure": null
   },
   "ok": true
