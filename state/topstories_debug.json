@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T22:38:23.932292+00:00",
+  "updated": "2026-08-10T22:56:46.247691+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-10T22:36:30.530664+00:00"
+      "headlines_updated": "2026-08-10T22:54:47.582887+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 34,
+        "dropped_stale": 12,
+        "title_snippet": 31,
         "title_translated": 2,
-        "title_native": 79,
+        "dropped_no_english": 3,
+        "title_native": 80,
         "in": 128,
-        "kept": 115
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -208,11 +209,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "WAFA News",
-          "title": "Presidency condemns Houthi attacks targeting Saudi Arabia and Yemeni government",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Arab News",
           "title": "UAE condemns Iran missile attack on ADNOC tanker in Strait of Hormuz",
           "reason": "stale (older than 48h)"
@@ -229,7 +225,7 @@
         },
         {
           "source": "Arab News",
-          "title": "300 children killed in Gaza in 300 days, UNICEF says; West Bank settler attacks continue",
+          "title": "Leaking tanker off Omani coast is sinking deeper, satellite images show",
           "reason": "stale (older than 48h)"
         },
         {
@@ -251,12 +247,27 @@
           "source": "TRT World",
           "title": "Attack on one is attack on all, say Türkiye, Saudi Arabia and Pakistan in joint defence pact",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "סקר חדשות 12: איזנקוט שוב מוביל על נתניהו - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "»اتفاق مكة«",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "قوات الاحتلال تعتقل شابًا وتحتجز آخرين برام الله",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 46,
+      "in": 113,
+      "kept": 48,
       "dropped": [
         {
           "source": "Kan 11",
@@ -289,13 +300,6 @@
         {
           "source": "N12",
           "title": "This report discusses the fate of political parties that fall below the electoral threshold.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "This is a full broadcast of the \"Seven with Gideon Oku\" program from August 10, 2026.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -355,13 +359,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "Earthquake with 7.4 magnitude hits Colombia, killing at least 111",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Middle East Eye",
@@ -533,13 +530,6 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Reports mention \"Mecca Pact\".",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "The journey of \"Children of the Alley\" to the screen is fraught with risks due to time constraints and…",
           "sec": 0,
           "off": 0,
@@ -597,13 +587,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "European natural gas prices have jumped by 6.4%, with reserves at their lowest level since 2011.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "A poll indicates that one-fifth of Israelis are considering emigration due to anxiety and economic…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -745,15 +728,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 31,
+      "clusters": 33,
       "sizes": [
-        7,
-        4,
+        6,
+        6,
         3,
         2,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -789,7 +774,7 @@
           "selected_rank": 1,
           "headline": "Germany urges Iran to engage in talks, reopen Strait of Hormuz unconditionally",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 5,
             "newest": "2026-08-10T21:31+00:00"
           },
@@ -799,8 +784,7 @@
             "Egypt Independent",
             "Gulf News",
             "IRNA",
-            "Jordan Times",
-            "SANA"
+            "Jordan Times"
           ],
           "camps": [
             "gulf",
@@ -809,7 +793,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -850,22 +834,24 @@
           "selected_rank": 2,
           "headline": "Iran supreme leader names IRGC general new military chief",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-08-10T21:50+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al Jazeera",
             "Al Manar",
             "Al Mayadeen",
-            "Iran International"
+            "Iran International",
+            "Mehr News"
           ],
           "camps": [
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -925,38 +911,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "UN experts condemn escalation in attacks against Palestinians in Gaza and West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-10T18:34+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "UN experts condemn escalation in attacks against Palestinians in Gaza and West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Trump stated that Iran is seeking compensation for war damages, and the United States will also dema",
           "rank_key": {
             "outlets": 2,
@@ -993,7 +947,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Israeli military closes Palestinian Christian village Taybeh, citing settler attacks",
           "rank_key": {
             "outlets": 2,
@@ -1080,6 +1034,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Occupation authorities advance efforts to turn outposts around Sinjil into permanent colonial settle",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-10T22:12+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Trump says Iran must pay compensation for those it has killed and wounded",
           "rank_key": {
             "outlets": 1,
@@ -1109,6 +1081,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "According to Reuters, a roadmap concerning Gaza is under discussion between the Peace Council and Ha",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-10T18:34+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1224,14 +1214,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "UN experts state that genocide is continuing relentlessly.",
+          "headline": "UN experts condemn escalation in attacks against Palestinians in Gaza and West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-10T13:41+00:00"
+            "newest": "2026-08-10T13:59+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm"
+            "WAFA News"
           ],
           "camps": [
             "levant"
@@ -1241,43 +1231,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Accused Thai school shooter had watched violent content online, police say",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-10T12:32+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "AI agents fake identities, target real people in new security incident",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-10T12:32+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1295,7 +1249,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-10T22:38:43.728805+00:00",
+    "last_success": "2026-08-10T22:57:00.931026+00:00",
     "last_failure": null
   },
   "ok": true
