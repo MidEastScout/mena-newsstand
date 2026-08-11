@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T19:41:28.384157+00:00",
+  "updated": "2026-08-11T19:45:18.926327+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-11T19:39:37.201054+00:00"
+      "headlines_updated": "2026-08-11T19:43:25.287183+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 34,
+        "title_snippet": 33,
         "title_translated": 1,
         "title_native": 82,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 117
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -236,12 +237,17 @@
           "source": "TRT World",
           "title": "Israel 'rejects' Trump's 15-point plan for Gaza, PM Netanyahu says",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "ثاني دولة بعد الولايات المتحدة.. كولومبيا تعترف بسيادة الاحتلال على الجولان المحتل",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 68,
+      "in": 116,
+      "kept": 66,
       "dropped": [
         {
           "source": "N12",
@@ -295,6 +301,13 @@
         {
           "source": "Al Jazeera",
           "title": "Total solar eclipse 2026: Where, when and how to watch on Wednesday?",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Solar eclipse tracker: What time will it hit your location on August 12?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -596,7 +609,7 @@
         5,
         4,
         4,
-        4,
+        3,
         3,
         2,
         2,
@@ -605,7 +618,7 @@
         2,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -879,7 +892,7 @@
             "gulf",
             "panarab"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -896,11 +909,6 @@
               {
                 "source": "Al Jazeera",
                 "title": "Iran, US set new conditions during Hormuz talks: What does this mean?",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "Iran changed the rules in Hormuz. The Gulf is changing the rules for Iran",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1139,40 +1147,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli radio reported that Israel is intensifying its blockade on Hezbollah elements in the Al-Tahe",
+          "headline": "US forces disable cargo ship breaching Iran blockade",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-11T08:55+00:00"
+            "newest": "2026-08-11T19:27+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm",
-            "L'Orient Today"
+            "Daily Sabah"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Israeli radio reported that Israel is intensifying its blockade on Hezbollah elements in the Al-Taher area in…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "FOCUS Robots, gas in tunnels: Ali Taher battle takes shape, Hezbollah and Irania",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1356,24 +1345,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "FM Fidan holds high-level talks in Libya's Tripoli",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-11T16:10+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Pakistan Interior Minister arrives in Tehran for talks",
           "rank_key": {
             "outlets": 1,
@@ -1391,7 +1362,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1409,7 +1380,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-11T19:41:42.286755+00:00",
+    "last_success": "2026-08-11T19:45:32.845556+00:00",
     "last_failure": null
   },
   "ok": true
