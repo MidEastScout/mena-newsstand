@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T22:04:01.337666+00:00",
+  "updated": "2026-08-11T22:35:40.155259+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-11T22:01:56.995579+00:00"
+      "headlines_updated": "2026-08-11T22:33:43.181269+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 33,
+        "dropped_stale": 15,
+        "title_snippet": 30,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 80,
+        "title_native": 78,
         "in": 127,
-        "kept": 114
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -195,6 +196,11 @@
         {
           "source": "Jordan Times",
           "title": "Syria, Russia reach deal on future of Hmeimim, Tartous bases - SANA",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Saudi Arabia, Turkey, Pakistan sign joint defence agreement",
           "reason": "stale (older than 48h)"
         },
         {
@@ -229,6 +235,11 @@
         },
         {
           "source": "Gulf News",
+          "title": "Iran fires cruise missiles at oil tanker in Strait of Hormuz setting vessel ablaze near Oman: Report",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
           "title": "Iran, Oman ‘very close’ to deal: Why Strait of Hormuz reopening may still wait",
           "reason": "stale (older than 48h)"
         },
@@ -251,12 +262,27 @@
           "source": "TRT World",
           "title": "Israel 'rejects' Trump's 15-point plan for Gaza, PM Netanyahu says",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ראש המוסד לשעבר חושף: \"טיילנו באתר הגרעין בפורדו פעמים רבות\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "בג\"ץ: על המדינה לפעול בדחיפות לספק קלפיות נגישות בבתי אבות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "اليمين يكشّر عن أنيابه: «حرب إعلامية» على عبد الرحمن السيد",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 56,
+      "in": 109,
+      "kept": 55,
       "dropped": [
         {
           "source": "Kan 11",
@@ -274,14 +300,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "The Voice, Season 6, Episode 13: 'Voices from the Past' is available for direct viewing on Reshet 13.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Yair Nahon stated, 'I do everything with albinism – it doesn't stop me,' during his audition on Reshet 13.",
+          "title": "The Voice, Season 6, Episode 13: 'Voices from the Past' is available for direct viewing on Reshet 13.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -294,8 +320,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "source": "Al Jazeera",
+          "title": "Solar eclipse tracker: What time will it hit your location on August 12?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -303,13 +329,6 @@
         {
           "source": "Al Jazeera",
           "title": "Total solar eclipse 2026: Where, when and how to watch on Wednesday?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "Solar eclipse tracker: What time will it hit your location on August 12?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -345,13 +364,6 @@
         {
           "source": "Al Arabiya",
           "title": "Victims’ Families Celebrate Death Sentences for al-Assad Brothers, Najib",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Colombia recognizes Israeli claim over the Golan Heights",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -441,13 +453,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "Colombia recognizes Israeli claim over the Golan Heights",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "L'Orient Today",
           "title": "PARLIAMENT Lebanon takes historic step, votes to abolish death penalty",
           "sec": 0,
@@ -504,13 +509,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Trump defended the FIFA president, calling the potential replacement of Infantino a 'grave mistake.'",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Fires in the forests of Western Beqaa, Kfarhunah, and Toumat Niha have been extinguished after hours of…",
           "sec": 0,
@@ -560,6 +558,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "SANA",
+          "title": "Pakistan, Saudi Arabia and Kuwait discuss cooperation on regional developments",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Syria Direct",
           "title": "The Plunder of Syria: Syria’s Greatest Archaeological Losses Came After IS",
           "sec": 0,
@@ -576,13 +581,6 @@
         {
           "source": "Anadolu Agency",
           "title": "Syrian officials hail death sentences against Assad regime figures as victory for justice",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Qatar welcomes new Saudi-Turkish-Pakistani defense pact",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -668,9 +666,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 36,
+      "clusters": 35,
       "sizes": [
-        7,
+        6,
         4,
         4,
         3,
@@ -678,8 +676,7 @@
         3,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -717,27 +714,25 @@
           "selected_rank": 1,
           "headline": "Iran parliament prepares Hormuz bill to restrict ‘hostile’ vessels in Gulf",
           "rank_key": {
-            "outlets": 7,
-            "camps": 5,
+            "outlets": 6,
+            "camps": 4,
             "newest": "2026-08-11T20:55+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
             "Anadolu Agency",
             "Egypt Independent",
-            "Gulf News",
             "IRNA",
             "Iran International",
             "Mehr News"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -943,6 +938,44 @@
         },
         {
           "selected_rank": null,
+          "headline": "Lebanese man dies after Israeli drone strike in southern Lebanon",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-11T19:21+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Lebanese man dies after Israeli drone strike in southern Lebanon",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "WAR ON LEBANON Israeli map riddled with errors sows confusion before being delet",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "An Israeli official told N12 that there is significant American pressure to advance operations in Ga",
           "rank_key": {
             "outlets": 2,
@@ -1103,24 +1136,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The assassination of the 'King of Slot Machines' in Prague is described as a story that 'couldn't ha",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-11T18:17+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran, Malaysia defense ministers discuss stronger defense cooperation",
           "rank_key": {
             "outlets": 1,
@@ -1264,7 +1279,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Pakistan’s Interior Minister leaves for Tehran for talks with Iranian officials",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-11T11:54+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1282,7 +1315,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-11T22:04:30.580348+00:00",
+    "last_success": "2026-08-11T22:35:40.478475+00:00",
     "last_failure": null
   },
   "ok": true
