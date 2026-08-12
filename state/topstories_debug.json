@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T01:14:40.422109+00:00",
+  "updated": "2026-08-12T01:45:36.003654+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-12T01:12:38.253692+00:00"
+      "headlines_updated": "2026-08-12T01:43:47.371948+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 24,
-        "dropped_no_english": 10,
+        "title_snippet": 21,
+        "dropped_no_english": 11,
+        "title_translated": 2,
         "title_native": 79,
         "in": 127,
-        "kept": 103
+        "kept": 102
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 32,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -224,17 +225,17 @@
         },
         {
           "source": "Arab News",
+          "title": "7 killed in Houthi drone, missile attacks on Yemen’s Red Sea port of Mocha",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
           "title": "UAE condemns Iran missile attack on ADNOC tanker in Strait of Hormuz",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Gulf News",
           "title": "Iran fires cruise missiles at oil tanker in Strait of Hormuz setting vessel ablaze near Oman: Report",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Hormuz shut, Red Sea under threat: Saudi Arabia faces a new Houthi front",
           "reason": "stale (older than 48h)"
         },
         {
@@ -298,20 +299,25 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
-          "source": "Channel 13",
-          "title": "מתמודד העבר שהגיע להיבחן שוב: האודישן של בניה שאנני",
+          "source": "Al Mayadeen",
+          "title": "الإعلان عن جائزة منى خليل للالتزام البيئي",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
-          "title": "الإعلان عن جائزة منى خليل للالتزام البيئي",
+          "title": "الوزير السابق وليد فياض",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "اليمين يكشّر عن أنيابه: «حرب إعلامية» على عبد الرحمن السيد",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 103,
-      "kept": 54,
+      "in": 102,
+      "kept": 51,
       "dropped": [
         {
           "source": "Kan 11",
@@ -319,6 +325,13 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
@@ -344,6 +357,13 @@
         {
           "source": "Al Jazeera",
           "title": "Solar eclipse tracker: What time will it hit your location on August 12?",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Total solar eclipse 2026: Where, when and how to watch on Wednesday?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -413,6 +433,13 @@
         },
         {
           "source": "Al Mayadeen",
+          "title": "Midnight Bulletin",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
           "title": "This piece analyzes the Arab-Iranian dialogue and the strategic choices for regional countries.",
           "sec": 0,
           "off": 0,
@@ -421,13 +448,6 @@
         {
           "source": "Mehr News",
           "title": "Who are the six newly-appointed Iranian commanders?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "Pakistani interior minister arrives in Tehran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -660,19 +680,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 33,
       "sizes": [
-        5,
+        9,
         4,
         4,
-        3,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -708,6 +724,66 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "SNSC chief: Strait of Hormuz will reopen only when US accepts Iran’s conditions",
+          "rank_key": {
+            "outlets": 7,
+            "camps": 4,
+            "newest": "2026-08-11T20:55+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al Manar",
+            "Egypt Independent",
+            "Gulf News",
+            "IRNA",
+            "Iran International",
+            "Mehr News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 9,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "SNSC chief: Strait of Hormuz will reopen only when US accepts Iran’s conditions",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Trump says US in ‘total control’ of Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "Iran war updates: Pakistan minister in Tehran as Hormuz talks advance",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "Iran, US set new conditions during Hormuz talks: What does this mean?",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Trump's war fails to break Iran's resolve",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Türkiye 'strongly' condemns Colombia’s move to legitimize Israel’s Golan Heights occupation",
           "rank_key": {
             "outlets": 4,
@@ -752,7 +828,7 @@
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Iran’s Mojtaba Khamenei makes major military changes amid US conflict, health speculation",
           "rank_key": {
             "outlets": 3,
@@ -802,100 +878,7 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "SNSC chief: Strait of Hormuz will reopen only when US accepts Iran’s conditions",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-11T20:55+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "IRNA",
-            "Iran International"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "SNSC chief: Strait of Hormuz will reopen only when US accepts Iran’s conditions",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "US fires missiles at cargo ship violating Strait of Hormuz blockade",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "Iran war updates: Pakistan minister in Tehran as Hormuz talks advance",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "Iran, US set new conditions during Hormuz talks: What does this mean?",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Iran International",
-                "title": "4 Iran parliament advances Hormuz bill targeting US, Israeli transit",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 4,
-          "headline": "Trump says the US has “mine swept the entire” Strait of Hormuz",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-11T12:30+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Egypt Independent",
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Trump says the US has “mine swept the entire” Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "US military officials informed President Donald Trump that attempting to control",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Israeli forces shell agricultural land in Syria’s Quneitra countryside",
           "rank_key": {
             "outlets": 2,
@@ -933,39 +916,7 @@
           }
         },
         {
-          "selected_rank": null,
-          "headline": "Russian barrage on Ukraine kills 9, wounds dozens",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-11T11:11+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Egypt Independent"
-          ],
-          "camps": [
-            "gulf",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Russian barrage on Ukraine kills 9, wounds dozens",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Turkish parliament approves ‘Terror-Free Türkiye’ law",
           "rank_key": {
             "outlets": 2,
@@ -1052,78 +1003,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The right wing is escalating a 'media war' against Abdel Rahman Al-Sayed.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-11T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "UN says 2 staff arrested by Afghan intelligence agency",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-11T20:51+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Lebanon is experiencing a dispute between the Prime Minister and the Defense Minister regarding a ge",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-11T20:34+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US military fires on cargo vessel it said sought to break Iran blockade",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-11T19:58+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "West Bank at breaking point, UN Deputy coordinator warns",
           "rank_key": {
             "outlets": 1,
@@ -1137,6 +1016,24 @@
             "levant"
           ],
           "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US has no warship left in Persian Gulf region: IRGC spox",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-11T19:31+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1196,14 +1093,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Mohsen Rezaei announced the strengthening of deterrence and readiness for the next phase following I",
+          "headline": "Yemen coastguard: Six killed in Houthi strike on ship in Red Sea",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
             "newest": "2026-08-11T17:59+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
+            "The New Arab"
           ],
           "camps": [
             "panarab"
@@ -1249,7 +1146,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Jordan condemns Colombia’s recognition of Israeli sovereignty over Occupied Golan Heights",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-11T16:52+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pakistan interior minister meets Foreign Minister Araghchi in Tehran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-11T16:25+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pakistan Interior Minister arrives in Tehran for talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-11T15:01+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1267,7 +1218,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-12T01:14:40.759205+00:00",
+    "last_success": "2026-08-12T01:45:54.991757+00:00",
     "last_failure": null
   },
   "ok": true
