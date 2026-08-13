@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T06:31:25.021863+00:00",
+  "updated": "2026-08-13T07:02:35.456915+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,31 +167,27 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-13T06:29:30.515427+00:00"
+      "headlines_updated": "2026-08-13T07:01:05.083598+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 34,
+        "dropped_stale": 3,
+        "title_snippet": 31,
+        "dropped_no_english": 4,
         "title_translated": 1,
         "title_native": 88,
         "in": 127,
-        "kept": 123
+        "kept": 120
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 562,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Falastin al-Youm",
-          "title": "بحماية شرطة الاحتلال.. مستوطنون يقتحمون الأقصى",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Syria Direct",
           "title": "The Plunder of Syria: Syria’s Greatest Archaeological Losses Came After IS",
@@ -206,11 +202,31 @@
           "source": "TRT World",
           "title": "Trump demands Iran pay 'compensation' in any peace deal",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: אנת'רופיק במגעים לרכישת הסטארט-אפ ישראלי \"דקראט AI\" ב-6 מיליארד דולר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "בעקבות הריאיון אצל \"הבוחשת\": אסי בוזגלו נגד קנדה – \"הוא איבד אותי\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«القسام»: للوقوف صفاً واحداً في وجه المخططات الصهيونية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "كسوف كلي للشمس اليوم .. هل ستشهده المنطقة العربية !",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
+      "in": 120,
       "kept": 67,
       "dropped": [
         {
@@ -277,20 +293,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This title suggests a developing romantic connection between Shir and a person named Kanda.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "Karoline Leavitt to step down as White House press secretary",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "Zimbabwe’s land reform enters a new chapter",
           "sec": 0,
@@ -299,7 +301,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "Why have several nations raised red flags over Indian farm exports?",
+          "title": "Karoline Leavitt to step down as White House press secretary",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -404,7 +406,7 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "ASTRONOMY Look up! The Perseids will light up Lebanon's sky tonight L'Orient Today staff",
+          "title": "MEDIA Information law in Lebanon: What changes and what raises concerns? Philippe HAGE BOUTROS",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -516,14 +518,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Trump announces Karoline Leavitt's departure as White House press secretary",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Istanbul Airport breaks all-time daily passenger record in Türkiye, Europe",
+          "title": "Polls open in Zambia’s general election with large voter turnout",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -609,9 +604,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 50,
       "sizes": [
-        6,
+        5,
+        3,
+        3,
         3,
         3,
         2,
@@ -619,9 +616,6 @@
         2,
         2,
         2,
-        2,
-        2,
-        1,
         1,
         1,
         1,
@@ -689,7 +683,7 @@
             "panarab",
             "iranian"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -720,7 +714,7 @@
               },
               {
                 "source": "Gulf News",
-                "title": "Strait of Hormuz remains blocked; claims don't change reality: Iran dismisses Tr",
+                "title": "Trump says US will 'keep' Hormuz strait control",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -773,6 +767,48 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Israeli settlers burn Palestinian homes and crops",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-13T06:57+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Israeli settlers burn Palestinian homes and crops",
+            "title_source": "native",
+            "why": [
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Settlers besiege Palestinian home as Israeli army blocks help",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Israeli army enforces curfew on West Bank town amid occupiers' siege of Palestin",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Russia reports intercepting 362 drones launched by Ukraine towards several of its regions.",
           "rank_key": {
             "outlets": 2,
@@ -810,7 +846,39 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
+          "headline": "Israeli rights group warns ‘ethnic cleansing’ is accelerating in West Bank",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-12T20:38+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Israeli rights group warns ‘ethnic cleansing’ is accelerating in West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Pakistan condemns Houthi strike that killed 3 of its citizens",
           "rank_key": {
             "outlets": 2,
@@ -848,12 +916,12 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Trump confirms secret plane 'switch' after Nato summit in Turkey amid Iran threat",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-12T03:27+00:00"
+            "newest": "2026-08-12T08:51+00:00"
           },
           "outlet_names": [
             "Gulf News",
@@ -863,7 +931,7 @@
             "gulf",
             "levant"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -884,6 +952,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli offensive continues in southern Lebanon unabated, with airstrikes, burning homes",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T06:59+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -910,24 +996,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-08-13T05:58+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Prime Minister of Iraq has issued an ultimatum to pro-Iranian militias, demanding they surrender",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T05:52+00:00"
           },
           "outlet_names": [
             "Kan 11"
@@ -970,24 +1038,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "CIA had ‘low confidence’ in Iranian threat before Trump switched planes in Türkiye: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T02:28+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1085,14 +1135,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Spain has stated it will not discuss the status of Ceuta and Melilla with Morocco.",
+          "headline": "Israeli minister vows troops to stay in Lebanon, Syria, Gaza",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-12T18:02+00:00"
+            "newest": "2026-08-12T16:05+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar"
+            "Jordan Times"
           ],
           "camps": [
             "levant"
@@ -1102,7 +1152,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "34 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "This title likely refers to a segment or discussion about maritime conflicts or naval warfare.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-12T15:51+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1120,7 +1188,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-13T06:31:39.185556+00:00",
+    "last_success": "2026-08-13T07:02:54.679308+00:00",
     "last_failure": null
   },
   "ok": true
