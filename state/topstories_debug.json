@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T09:22:25.579627+00:00",
+  "updated": "2026-08-13T09:55:09.191863+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-13T09:20:43.882386+00:00"
+      "headlines_updated": "2026-08-13T09:53:22.477170+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 34,
+        "dropped_stale": 6,
+        "title_snippet": 26,
+        "dropped_no_english": 8,
         "title_translated": 2,
-        "title_native": 87,
+        "title_native": 85,
         "in": 127,
-        "kept": 123
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -189,12 +190,22 @@
       "dropped": [
         {
           "source": "SANA",
+          "title": "Syrian court issues death sentences against Bashar al-Assad, former officials",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
           "title": "Fakhr al-Din al-Aryan: Court convicts Bashar al-Assad, sentences him to death",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Syria Direct",
           "title": "The Plunder of Syria: Syria’s Greatest Archaeological Losses Came After IS",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "Syria says IAEA delegation will visit to announce ‘significant progress’",
           "reason": "stale (older than 48h)"
         },
         {
@@ -206,12 +217,52 @@
           "source": "TRT World",
           "title": "Trump demands Iran pay 'compensation' in any peace deal",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ביהמ\"ש אישר את צו ההגבלה המנהלי נגד ראש ארגון הפשע יוסי מוסלי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הצינור 12.08.2026 - התוכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"واشنطن بوست\" عن مسؤول: التقارير عن تهديد حياة ترامب في تركيا إسرائيلية المصدر",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "دعوى قضائية ضد ترامب بسبب خدمة تتيح الاطلاع المبكر على منشوراته مقابل رسوم",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عن جنازة الأمس وجنازات الغد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "عشرات المستوطنين يقتحمون المسجد الأقصى وينفذون جولات استفزازية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "من ترامب إلى لبنان: الوهم جزء من صناعة القرار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "النفط يتراجع والذهب يصعد إلى أعلى مستوى",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 60,
+      "in": 113,
+      "kept": 51,
       "dropped": [
         {
           "source": "Kan 11",
@@ -277,15 +328,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This entry appears to be a placeholder or a generic title for a TV show.",
+          "source": "Al Jazeera",
+          "title": "Zimbabwe’s land reform enters a new chapter",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "Zimbabwe’s land reform enters a new chapter",
+          "title": "Why have several nations raised red flags over Indian farm exports?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -354,15 +405,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Bulletin 8 a.m.",
+          "source": "The New Arab",
+          "title": "K2, firm tied to US-Israel, likely spying on PMF in Iraq",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "Lebanon's press and editors' syndicates have rejected the new media law and affirmed their intention to…",
+          "title": "Bulletin 8 a.m.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -439,14 +490,21 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Colombia limits foreign rescue teams as earthquake survival window narrows",
+          "title": "President Sisi directs boosting local manufacturing of black sand, rare earth elements",
           "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "This title appears to be a placeholder or a generic news title related to the Russia-Ukraine conflict.",
+          "source": "Egypt Independent",
+          "title": "Al-Azhar Grand Imam, Qatar ambassador discuss expanding academic, religious cooperation",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Egypt calls for more responsive global financial system for emerging economies",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -494,6 +552,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "School year 2026/2027 to begin on September 6",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "The price of the dollar decreased against the shekel.",
           "sec": 0,
@@ -501,22 +566,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "This title appears to be a question about the protein content of eggs based on preparation method.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Damascus court sentences Bashar, Maher al-Assad, and Atef Najib to death",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Syrian court issues death sentences against Bashar al-Assad, former officials",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -565,6 +616,13 @@
         },
         {
           "source": "Anadolu Agency",
+          "title": "New Zealand, Vietnam agree on new steps to deepen strategic partnership",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
           "title": "Trump administration plans at least $900M White House overhaul: Report",
           "sec": 0,
           "off": 0,
@@ -573,13 +631,6 @@
         {
           "source": "Anadolu Agency",
           "title": "Polls open in Zambia’s general election with large voter turnout",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "US senator demands answers on USS Abraham Lincoln’s extended deployment",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -646,35 +697,22 @@
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "US lawmaker seeks answers over prolonged USS Abraham Lincoln Middle East deployment",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 32,
       "sizes": [
         8,
         6,
-        6,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -707,79 +745,21 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israeli settlers’ siege of Palestinian homes in West Bank enters fourth day",
-          "rank_key": {
-            "outlets": 7,
-            "camps": 4,
-            "newest": "2026-08-13T06:57+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen",
-            "Anadolu Agency",
-            "Arab News",
-            "SANA",
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 8,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "Israeli settlers’ siege of Palestinian homes in West Bank enters fourth day",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Israeli settlers burn Palestinian homes and crops",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "Extensive attacks by occupation forces and settlers in the West Bank have led to",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli human rights group warns of escalating ethnic cleansing in the West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli forces detain three Palestinians, conduct field interrogations in Jenin-",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Trump keeps saying the US controls the Strait of Hormuz. Does it?",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 8,
             "camps": 4,
             "newest": "2026-08-13T09:06+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Al Jazeera",
             "Al Manar",
             "Daily Sabah",
             "Egypt Independent",
             "IRNA",
-            "Iran International"
+            "Iran International",
+            "SANA"
           ],
           "camps": [
             "panarab",
@@ -787,7 +767,7 @@
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -803,7 +783,12 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "Iran’s Araghchi warns US of ‘bigger miscalculation’ over Hormuz",
+                "title": "Iran’s Araghchi says US risks making ‘bigger miscalculation’ over Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Trump says US has ‘total control’ over Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -820,7 +805,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 2,
           "headline": "The Israeli army reported that forces fired at a militant who crossed the yellow line in the souther",
           "rank_key": {
             "outlets": 5,
@@ -878,7 +863,76 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "Israeli settlers’ siege of Palestinian homes in West Bank enters fourth day",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-13T06:57+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Jazeera",
+            "title": "Israeli settlers’ siege of Palestinian homes in West Bank enters fourth day",
+            "title_source": "native",
+            "why": [
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Anadolu Agency",
+                "title": "Israeli army enforces curfew on West Bank town amid occupiers' siege of Palestin",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 4,
+          "headline": "Israeli rights group warns ‘ethnic cleansing’ is accelerating in West Bank",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-12T20:38+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Israeli rights group warns ‘ethnic cleansing’ is accelerating in West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Pakistan condemns Houthi strike that killed 3 of its citizens",
           "rank_key": {
             "outlets": 2,
@@ -916,40 +970,34 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Sell Ukraine 10% of US Patriots and ‘we will destroy all the Russians’ ballistic missiles,’ Zelensky",
+          "selected_rank": null,
+          "headline": "Israeli offensive continues in southern Lebanon unabated, with airstrikes, burning homes",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
             "newest": "2026-08-13T09:14+00:00"
           },
           "outlet_names": [
-            "Egypt Independent",
-            "Falastin al-Youm"
+            "Anadolu Agency",
+            "Daily Sabah"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Egypt Independent",
-            "title": "Sell Ukraine 10% of US Patriots and ‘we will destroy all the Russians’ ballistic missiles,’ Zelensky tells CNN",
+            "source": "Anadolu Agency",
+            "title": "Israeli offensive continues in southern Lebanon unabated, with airstrikes, burning homes",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "Russian forces liberated a new town and destroyed Ukrainian missiles, drones, an",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -991,24 +1039,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Lebanon’s president seeks to allay concerns over negotiations with Israel",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T09:18+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Family evacuates home in Al-Jalazone refugee camp ahead of Israeli demolition",
           "rank_key": {
             "outlets": 1,
@@ -1027,29 +1057,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces force residents to evacuate two homes and turn 16 others into military barracks in Qu",
+          "headline": "Red Sea ship attack leaves three Pakistani citizens dead: Pakistan’s Foreign Minister",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-13T09:12+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Robber referred to urgent criminal trial after quintuple homicide in Fifth Settlement",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T08:58+00:00"
+            "newest": "2026-08-13T08:44+00:00"
           },
           "outlet_names": [
             "Egypt Independent"
@@ -1081,24 +1093,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Regarding the events in Qusra, a minister stated that not all residents are righteous and some need ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T08:16+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "‘Embarrassing hypocrisy’: Araghchi blasts France for lecturing world on human rights, international ",
           "rank_key": {
             "outlets": 1,
@@ -1110,42 +1104,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "President Erdoğan, DEM Party delegation to meet after framework law",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T07:08+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli offensive continues in southern Lebanon unabated, with airstrikes, burning homes",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T06:59+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1171,24 +1129,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran says no progress on reviving interim peace deal with US",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T04:38+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The US State Department, responding to a statement by Katz, affirmed support for Lebanon's sovereign",
           "rank_key": {
             "outlets": 1,
@@ -1206,7 +1146,115 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Russia reported targeting two ships and infrastructure facilities in Odesa and Chornomorsk.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-12T19:36+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Kuwait foils Daesh terror plot targeting 'vital facility'",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-12T14:36+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces detain three Palestinians, conduct field interrogations in Jenin-area villages and to",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-12T12:00+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump confirms secret plane 'switch' after Nato summit in Turkey amid Iran threat",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-12T08:51+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The grave of fallen soldier Shlomo Haimson, who was killed in Cyprus in 1948, has been located in Ha",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-12T07:46+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The burial site of soldier Shlomo Haimson, who was shot and killed in Cyprus in 1948, has been locat",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-12T07:45+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1224,7 +1272,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-13T09:22:55.468795+00:00",
+    "last_success": "2026-08-13T09:55:37.884997+00:00",
     "last_failure": null
   },
   "ok": true
