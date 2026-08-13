@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T17:12:29.177789+00:00",
+  "updated": "2026-08-13T17:44:54.390240+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-13T17:10:18.901747+00:00"
+      "headlines_updated": "2026-08-13T17:42:29.469940+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 34,
+        "dropped_stale": 9,
+        "title_snippet": 29,
+        "dropped_no_english": 5,
         "title_translated": 2,
-        "title_native": 83,
+        "title_native": 82,
         "in": 127,
-        "kept": 119
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -187,6 +188,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Arab states reject Colombia's recognition of Golan as 'Israeli'",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Jordan condemns Colombia’s recognition of Israeli sovereignty over occupied Golan Heights",
@@ -204,12 +210,12 @@
         },
         {
           "source": "Arab News",
-          "title": "Israeli military closes Palestinian Christian village Taybeh, citing settler attacks",
+          "title": "Trump says will demand conflict compensation from Iran",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Arab News",
-          "title": "Trump says will demand conflict compensation from Iran",
+          "title": "Israeli military closes Palestinian Christian village Taybeh, citing settler attacks",
           "reason": "stale (older than 48h)"
         },
         {
@@ -226,12 +232,37 @@
           "source": "TRT World",
           "title": "Mecca defence pact could be the blueprint for a new regional security architecture",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בווינה מעריכים: הנעדרות מלי וליאל עזבו את העיר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القصيفي ينتقد ترحيب سفارات غربية بقانون الإعلام: تدخل بسيادة لبنان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "روسيا: مقتل ضابط بتفجير في القرم.. واعتقال امرأة بتهمة تنفيذ الاغتيال",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "طهران تؤكد أن مضيق هرمز يخضع للسيطرة الايرانية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الليلة: شهب كثيفة في سماء فلسطين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 65,
+      "in": 113,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -319,7 +350,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "Japan protests as Russia’s Putin visits disputed Kuril Islands",
+          "title": "Oman says massive oil spill reaches coastline: What damage could it do?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -375,28 +406,14 @@
         },
         {
           "source": "The New Arab",
-          "title": "Arab states reject Colombia's recognition of Golan as 'Israeli'",
+          "title": "Algeria Hirak activist arrested over TikTok live stream",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "CIA doubts Israeli claims of Iranian plot to assassinate Trump",
-          "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
           "title": "\"China Daily\" reports that BRICS is building an independent healthcare network to break Western monopolies.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The \"Washington Post,\" citing an official, reported that reports of a threat to Trump's life in Turkey…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -521,13 +538,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "An article titled 'From Trump to Lebanon: Illusion is Part of Decision Making' is featured.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Türkiye says Mecca defense pact with Saudi Arabia, Pakistan not aimed at any country",
           "sec": 0,
@@ -556,17 +566,17 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Debut 'GITEX Ai Türkiye' event to be held in Istanbul next month",
+          "source": "Anadolu Agency",
+          "title": "Ebola outbreak spreads to 6th Congolese province",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
-          "title": "Official says AK Party transformed Türkiye into global actor",
+          "title": "Türkiye plans to launch lunar spacecraft in early 2027, minister says",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -615,18 +625,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 40,
       "sizes": [
-        14,
+        13,
         3,
         3,
-        3,
-        3,
         2,
         2,
         2,
         2,
         2,
+        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -667,14 +678,13 @@
           "selected_rank": 1,
           "headline": "Iran says it manages Strait of Hormuz after Trump claims US control",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 8,
             "camps": 4,
             "newest": "2026-08-13T14:53+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Al Mayadeen",
             "Egypt Independent",
             "Gulf News",
             "IRNA",
@@ -688,7 +698,7 @@
             "iranian",
             "levant"
           ],
-          "members": 14,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -713,13 +723,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Mayadeen",
-                "title": "A Basij commander stated that the Strait of Hormuz is under Iran's administratio",
+                "source": "IRNA",
+                "title": "Iran says future administration of Strait of Hormuz must address its environment",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Iran says future administration of Strait of Hormuz must address its environment",
+                "source": "Mehr News",
+                "title": "US environ. damage must be addressed in Hormuz arrangements",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -727,40 +737,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israel trucks out Gaza’s rubble to ‘hide genocide’ and ‘redraw the map’",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-13T11:29+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Falastin al-Youm",
-            "Mehr News"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "Israel trucks out Gaza’s rubble to ‘hide genocide’ and ‘redraw the map’",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "EU and allies condemn Iran over executions of protesters",
           "rank_key": {
             "outlets": 3,
@@ -798,38 +774,7 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "FM Fidan meets Arab League chief, Egypt intel head in el-Alamein",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 1,
-            "newest": "2026-08-13T16:48+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Daily Sabah",
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "FM Fidan meets Arab League chief, Egypt intel head in el-Alamein",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
+          "selected_rank": 3,
           "headline": "US ambassador to Israel denounces settler siege on Palestinians as 'terror'",
           "rank_key": {
             "outlets": 2,
@@ -867,7 +812,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "‘Ethnic cleansing’ of Palestinians is accelerating in West Bank, Israeli human rights group warns",
           "rank_key": {
             "outlets": 2,
@@ -899,7 +844,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "INSIGHT Iran hardliners tout offensive posture as Khamenei reshapes military command",
           "rank_key": {
             "outlets": 2,
@@ -933,6 +878,36 @@
                 "rejected_by": "loaded/partisan wording"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Turkish foreign minister meets Arab League secretary-general in Egypt",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-13T16:48+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Turkish foreign minister meets Arab League secretary-general in Egypt",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1012,6 +987,60 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "More than 110,000 Canadians want US envoy ousted",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T17:23+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Türkiye, Egypt vow to enhance cooperation as FMs meet",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T17:14+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Reports of US sailors in Middle East trying to jump ship spark outcry",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T16:44+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1141,42 +1170,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The US Secretary of War stated that a blockade on Iran can continue for as long as necessary.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T15:22+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Palestinian Christian-majority Taybeh in occupied West Bank caught between Israeli army restrictions",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T13:01+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Hackers used autonomous AI agents to attack Taiwan. Is this the future of cyberwarfare?",
           "rank_key": {
             "outlets": 1,
@@ -1212,25 +1205,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "US-Iran talks in deadlock – what’s the latest?",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T11:56+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1248,7 +1223,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-13T17:13:01.753353+00:00",
+    "last_success": "2026-08-13T17:45:08.542039+00:00",
     "last_failure": null
   },
   "ok": true
