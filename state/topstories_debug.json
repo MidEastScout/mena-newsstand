@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T18:08:59.463735+00:00",
+  "updated": "2026-08-13T18:44:33.263080+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-13T18:07:21.657313+00:00"
+      "headlines_updated": "2026-08-13T18:42:28.198003+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 35,
+        "title_snippet": 26,
+        "dropped_no_english": 9,
         "title_translated": 1,
         "title_native": 83,
         "in": 128,
-        "kept": 119
+        "kept": 110
       },
       "translator": {
         "configured": true,
@@ -231,12 +232,57 @@
           "source": "TRT World",
           "title": "Mecca defence pact could be the blueprint for a new regional security architecture",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "קצין חקירות במשטרה חשוד בהטרדה מינית של אישה שהגיעה להגיש תלונה בתחנה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ציון אמיר חושף את השיחה האחרונה עם דודו טופז: \"אני לא אעמוד בזה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيطاليا: قتلى وجرحى بانفجار ضخم داخل مصنع ذخيرة قرب العاصمة روما",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "روسيا: مقتل ضابط بتفجير في القرم.. واعتقال امرأة بتهمة تنفيذ الاغتيال",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "رفض دعوى لإدارة ترامب تتهم «هارفارد» بعدم حماية الطلاب اليهود",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "سيف نبيل يطرق أبواب حلب",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بعد استقالته من «الشعب الجمهوري»... إمام أوغلو ينضم من سجنه إلى «الحزب الجديد»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "بالفيديو | تواجد للعدو الاسرائيلي في بلدة زوطر الشرقية جنوبي لبنان 14:00",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الليلة: شهب كثيفة في سماء فلسطين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 65,
+      "in": 110,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -258,13 +304,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Oren Nahari was laid to rest, with a farewell letter read that expressed his regret over the time lost as a…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
@@ -303,13 +342,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "A delivery driver's reckless driving resulted in fines being issued to an innocent individual, in a case…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "Footage shows the arrest of Linor Sasson, who is accused in the murder case of Binyamin Razi.",
           "sec": 0,
           "off": 0,
@@ -325,6 +357,13 @@
         {
           "source": "Al Jazeera",
           "title": "Ebola outbreak caused by new ‘animal transmission’: What that means",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Japan protests as Russia’s Putin visits disputed Kuril Islands",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -379,15 +418,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "China Daily reports that BRICS is building an independent healthcare network to challenge Western monopolies.",
+          "source": "The New Arab",
+          "title": "Algeria Hirak activist arrested over TikTok live stream",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "The Washington Post reported, citing an official, that reports of a threat to Trump's life in Turkey…",
+          "title": "China Daily reports that BRICS is building an independent healthcare network to challenge Western monopolies.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -449,38 +488,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "This item refers to the emergence of 'Samidoon' in the absence of state presence.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Suicide attempts aboard the aircraft carrier 'Lincoln' raise questions about the crises faced by its sailors.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The actor Moatasem Al-Nahar will appear in an Egyptian production for the first time.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Members of the 'Free Patriotic Movement' bloc and 'Loyalty to the Resistance' withdrew from a parliamentary…",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "A legislative session concluded with the cancellation of the death penalty and the approval of the media law…",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -493,6 +504,13 @@
         {
           "source": "Al Manar",
           "title": "The Lebanese Parliament approved amended drafts of the general amnesty law and banking reform.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Colonists dismantle agricultural fence and steal construction materials northeast of Ramallah",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -562,14 +580,14 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Türkiye, Egypt urge stronger measures for Gaza, vow to boost cooperation",
+          "title": "UK records year's hottest day as Europe swelters once again",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
-          "title": "Türkiye plans to launch lunar spacecraft in early 2027, minister says",
+          "title": "Türkiye, Egypt urge stronger measures for Gaza, vow to boost cooperation",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -620,18 +638,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 41,
       "sizes": [
         13,
         3,
-        3,
-        3,
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -722,7 +737,7 @@
               },
               {
                 "source": "IRNA",
-                "title": "Iran says future administration of Strait of Hormuz must address its environment",
+                "title": "SNSC chief: Strait of Hormuz will reopen only when US accepts Iran’s conditions",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -777,7 +792,7 @@
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-13T17:51+00:00"
+            "newest": "2026-08-12T20:38+00:00"
           },
           "outlet_names": [
             "Arab News",
@@ -787,7 +802,7 @@
             "gulf",
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -795,22 +810,12 @@
             "title": "‘Ethnic cleansing’ of Palestinians is accelerating in West Bank, Israeli human rights group warns",
             "title_source": "native",
             "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Israeli human rights group warns of escalating ethnic cleansing in the West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "UN rights office says colonist attacks on Palestinians have reached intolerable ",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -896,7 +901,7 @@
           "camps": [
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -911,17 +916,66 @@
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "Israeli forces detain three Palestinians, conduct field interrogations in Jenin-",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "SANA",
                 "title": "Israeli occupation forces detain 28 Palestinians in West Bank raids",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saudi Arabia reaffirms support for Iraq's security, stability",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T17:56+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hundreds of tourists evacuated as forest fire threatens Greek beaches",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T17:52+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "UN rights office says colonist attacks on Palestinians have reached intolerable levels",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T17:51+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1051,42 +1105,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli strikes in Gaza kill two including senior policeman",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T16:05+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "President Erdoğan meets DEM Party delegation, families of fallen soldiers",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T15:41+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Al-Qosaifi criticized the welcome given by Western embassies to the media law, calling it interferen",
           "rank_key": {
             "outlets": 1,
@@ -1122,25 +1140,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Powerful blast rocks ammunition plant southeast of Rome",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T15:24+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1158,7 +1158,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-13T18:09:23.798180+00:00",
+    "last_success": "2026-08-13T18:44:46.543355+00:00",
     "last_failure": null
   },
   "ok": true
