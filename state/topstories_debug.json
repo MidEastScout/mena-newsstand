@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T02:49:46.332891+00:00",
+  "updated": "2026-08-14T03:20:59.921804+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-14T02:48:03.554182+00:00"
+      "headlines_updated": "2026-08-14T03:19:16.974489+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 35,
+        "dropped_no_english": 6,
+        "title_snippet": 29,
         "title_native": 85,
         "in": 128,
-        "kept": 120
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -225,12 +226,42 @@
           "source": "TRT World",
           "title": "Mecca defence pact could be the blueprint for a new regional security architecture",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "תרגיל צבאי ייערך בשעות הבוקר ליד הקריה בתל אביב",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דיווח באוסטריה: המוסד מעורב בחקירת היעלמות מלי וליאל יהלומי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אותר בחיפה קברו של החלל שלמה חיימסון, שנפל ב-1948 בקפריסין",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המהדורה המרכזית 13.08.26 – המהדורה המלאה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אסנהיים, עונה 1, פרק 11: ציון אמיר לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "העוקץ הגיע קר: שליח וולט רכב בפראות - הקנסות הגיעו לאזרח תמים",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 75,
+      "in": 114,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
@@ -259,34 +290,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Channel 13",
-          "title": "An Austrian report indicates that the Mossad is involved in the investigation into the disappearance of Mally…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The main edition of August 13, 2026.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Asenhaim, Season 1, Episode 11: Ziyon Amir for direct viewing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The \"sting\" arrived cold: A Wolt delivery rider rode recklessly, leading to fines being issued to an innocent…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
@@ -354,13 +357,6 @@
         {
           "source": "Mehr News",
           "title": "Iran calls for setting up dedicated BRICS financial corridor",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Japan protests Putin's first visit to disputed islands",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -551,10 +547,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 47,
       "sizes": [
-        14,
-        4,
+        12,
+        5,
         3,
         2,
         2,
@@ -563,12 +559,9 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
         1,
         1,
         1,
@@ -614,7 +607,7 @@
           "selected_rank": 1,
           "headline": "Hormuz and the war's extensions: Tehran is applying pressure while Washington faces difficult calcul",
           "rank_key": {
-            "outlets": 11,
+            "outlets": 10,
             "camps": 4,
             "newest": "2026-08-13T23:02+00:00"
           },
@@ -628,8 +621,7 @@
             "IRNA",
             "Iran International",
             "Jordan Times",
-            "Mehr News",
-            "SANA"
+            "Mehr News"
           ],
           "camps": [
             "gulf",
@@ -637,7 +629,7 @@
             "iranian",
             "levant"
           ],
-          "members": 14,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -676,7 +668,7 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israeli forces issue demolition notices for four homes in Kafr Sur",
+          "headline": "Family evacuates home in Al-Jalazone refugee camp ahead of Israeli demolition",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
@@ -691,19 +683,25 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "WAFA News",
-            "title": "Israeli forces issue demolition notices for four homes in Kafr Sur",
+            "title": "Family evacuates home in Al-Jalazone refugee camp ahead of Israeli demolition",
             "title_source": "native",
             "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
               "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces issue demolition notices for four homes in Kafr Sur",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "WAFA News",
                 "title": "Israeli forces raid Qalandia refugee camp, issue demolition notices",
@@ -825,6 +823,69 @@
         },
         {
           "selected_rank": null,
+          "headline": "After days enabling settler terror, Israel acts in Qusra",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-13T19:17+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "After days enabling settler terror, Israel acts in Qusra",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Explosion rocks ammunition factory near Rome",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-13T17:53+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Explosion rocks ammunition factory near Rome",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Japan summons Russian envoy after Putin visits disputed islands",
           "rank_key": {
             "outlets": 2,
@@ -884,6 +945,44 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Kuwait foils Daesh terror plot targeting 'vital facility'",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-12T16:44+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "TRT World"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Kuwait foils Daesh terror plot targeting 'vital facility'",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (kuwait)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "SANA",
+                "title": "Kuwait foils terrorist plot targeting vital facility",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
           }
         },
         {
@@ -1004,17 +1103,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump has imposed tariffs of up to 100% on drone imports to the United States, while the European Un",
+          "headline": "Israeli army opens fire on civilian areas in Daraa, southern Syria: State TV",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-13T22:25+00:00"
+            "newest": "2026-08-14T01:27+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1112,42 +1211,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "11 injured as passenger train derails in southern England",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T20:23+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "After days enabling settler terror, Israel acts in Qusra",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-13T19:17+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Record-low Danube forces Romania to shut its only nuclear plant",
           "rank_key": {
             "outlets": 1,
@@ -1165,7 +1228,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Ukraine reportedly offers Russia Black Sea truce as food supply fears grow",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T18:43+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Lookouts from two different sectors are warning about Hamas operatives adapting to the new reality a",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-13T17:10+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1183,7 +1282,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-14T02:49:59.606389+00:00",
+    "last_success": "2026-08-14T03:21:12.532065+00:00",
     "last_failure": null
   },
   "ok": true
