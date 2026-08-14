@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T20:23:13.813089+00:00",
+  "updated": "2026-08-14T20:54:49.604376+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-14T20:21:19.476101+00:00"
+      "headlines_updated": "2026-08-14T20:52:48.743915+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 9,
-        "title_translated": 26,
-        "title_native": 86,
+        "dropped_stale": 8,
+        "title_snippet": 8,
+        "dropped_no_english": 4,
+        "title_translated": 23,
+        "title_native": 84,
         "in": 127,
-        "kept": 121
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 9,
+        "requested": 12,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Lebanon condemns 'systematic' Israeli destruction in south",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Jordan condemns Colombia’s recognition of Israeli sovereignty over occupied Golan Heights",
@@ -195,6 +201,11 @@
         {
           "source": "WAFA News",
           "title": "Israeli human rights group warns of escalating ethnic cleansing in the West Bank",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "‘Ethnic cleansing’ of Palestinians is accelerating in West Bank, Israeli human rights group warns",
           "reason": "stale (older than 48h)"
         },
         {
@@ -216,12 +227,32 @@
           "source": "Al-Masirah",
           "title": "اللواء وحيدي: اغتيال القائد الشهيد خامنئي لن ينجح في إسقاط راية المقاومة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "משפחתן של הנעדרות מלי וליאל יהלומי: \"דורשים להמשיך לבדוק את כל התרחישים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "על רכבת בבואנוס איירס: אותרו הנעדרות מלי וליאל יהלומי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "משטרת אוסטריה מאשרת: מלי וליאל יהלומי עזבו את המדינה מרצונן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ברקע התבססות ארדואן: ישראל ביקשה לתקוף בסוריה - וטראמפ בלם",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 65,
+      "in": 115,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -236,13 +267,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "An Israeli delegation landed in Colombia to assist in the rescue efforts after the earthquake",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "N12",
@@ -275,27 +299,6 @@
         {
           "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A week since the disappearance of Mali and Liel Yahalomi: The investigation in Austria branches out",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Bumble's next move might revitalize the dating app and potentially change the online dating landscape.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Main Edition 13.08.26 – Full Edition",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,20 +353,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "The Ceuta 'crisis' is the cost of deadly EU's policies",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "August 14th, 2026",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Mayadeen",
           "title": "United States: Trump administration rejects lawsuit accusing Harvard University of failing to protect Jewish students",
           "sec": 0,
@@ -394,13 +383,6 @@
         {
           "source": "Iran International",
           "title": "ANALYSIS Security by design: why Tehran is tearing up cobblestones",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Domestic revenues rise 1.9% to JD5.625b in first seven months of 2026",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -505,7 +487,7 @@
         },
         {
           "source": "SANA",
-          "title": "Syrian weightlifter Ali Mohammad wins gold at Asian Youth Championships",
+          "title": "Türkiye says Mecca defense pact with Saudi Arabia, Pakistan not aimed at any country",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -596,44 +578,34 @@
         },
         {
           "source": "TRT World",
+          "title": "Türkiye-Pakistan-Saudi defensive pact aims to boost joint capabilities, regional security: Ankara",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
           "title": "US lawmaker seeks answers over prolonged USS Abraham Lincoln Middle East deployment",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Saudi Arabia thanks Türkiye's Erdogan as Riyadh Season-sponsored Spanish Super Cup heads to Istanbul",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "25 years of AK Party and Türkiye’s rise as a regional and global actor",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 42,
       "sizes": [
-        8,
+        9,
+        7,
         4,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -675,15 +647,16 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Jordan condemns Iranian attack on UAE tankers in Strait of Hormuz",
+          "headline": "Trump says he will declare Strait of Hormuz US territory",
           "rank_key": {
-            "outlets": 8,
-            "camps": 4,
-            "newest": "2026-08-14T19:58+00:00"
+            "outlets": 9,
+            "camps": 5,
+            "newest": "2026-08-14T20:37+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
+            "Anadolu Agency",
             "Egypt Independent",
             "IRNA",
             "Jordan Times",
@@ -695,14 +668,15 @@
             "israeli",
             "panarab",
             "iranian",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Jordan Times",
-            "title": "Jordan condemns Iranian attack on UAE tankers in Strait of Hormuz",
+            "source": "Anadolu Agency",
+            "title": "Trump says he will declare Strait of Hormuz US territory",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -713,7 +687,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "US pledges more economic measures to isolate Iran amid Hormuz deadlock",
+                "title": "Trump says will declare Strait of Hormuz US territory ‘pretty soon’",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -736,6 +710,58 @@
         },
         {
           "selected_rank": 2,
+          "headline": "West Bank settler attacks continue despite international uproar",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-08-14T19:30+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "SANA",
+            "TRT World",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 7,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "West Bank settler attacks continue despite international uproar",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "France condemns colonists’ seizure of Palestinian homes in Qusra",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Arab League condemns colonists’ storming of Al-Aqsa Mosque",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "SANA",
+                "title": "UN urges Israel to end settler attacks, protect Palestinians in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Yemen's Houthis claim drone attack on Saudi Aramco site",
           "rank_key": {
             "outlets": 4,
@@ -775,47 +801,51 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "West Bank settler attacks continue despite international uproar",
+          "selected_rank": 4,
+          "headline": "The Mecca Defence Pact, Netanyahu refuses Gaza withdrawal, Houthis escalate in Yemen",
           "rank_key": {
             "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-14T18:57+00:00"
+            "camps": 2,
+            "newest": "2026-08-14T18:37+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
-            "SANA",
+            "Al Manar",
+            "Falastin al-Youm",
             "The New Arab"
           ],
           "camps": [
             "panarab",
-            "levant",
-            "turkish"
+            "levant"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "The New Arab",
-            "title": "West Bank settler attacks continue despite international uproar",
+            "title": "The Mecca Defence Pact, Netanyahu refuses Gaza withdrawal, Houthis escalate in Yemen",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "names 1 of the story's dominant entities (gaza)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "SANA",
-                "title": "UN urges Israel to end settler attacks, protect Palestinians in West Bank",
+                "source": "Al Manar",
+                "title": "A martyr in Gaza and disagreements within the occupation leadership over the wit",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "Hamas warns of the occupation's decisions to change the legal and political situ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Mangione pleads guilty to federal charges in UnitedHealthcare CEO killing",
           "rank_key": {
             "outlets": 2,
@@ -846,7 +876,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Saudi Arabia, Iraq discuss military, defense cooperation",
           "rank_key": {
             "outlets": 2,
@@ -982,15 +1012,15 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hamas warns of the occupation's decisions to change the legal and political situation in the West Ba",
+          "headline": "Lebanon condemns 'systematic' Israeli destruction in south",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-14T12:37+00:00"
+            "newest": "2026-08-13T14:53+00:00"
           },
           "outlet_names": [
-            "Al Manar",
-            "Falastin al-Youm"
+            "Jordan Times",
+            "L'Orient Today"
           ],
           "camps": [
             "levant"
@@ -999,41 +1029,22 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Hamas warns of the occupation's decisions to change the legal and political situation in the West Bank",
-            "title_source": "translated",
+            "source": "Jordan Times",
+            "title": "Lebanon condemns 'systematic' Israeli destruction in south",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "state/partisan outlet (last resort)",
-              "machine-translated from the outlet's language"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Manar",
-                "title": "A martyr in Gaza and disagreements within the occupation leadership over the wit",
-                "rejected_by": "loaded/partisan wording"
+                "source": "L'Orient Today",
+                "title": "FOCUS Israel escalates pressure at Ali Taher, Berri launches last-ditch mediatio",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-14T19:30+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 3,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1084,24 +1095,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Palestinian presidency warns rising occupier attacks risk igniting situation in West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-14T17:32+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1234,7 +1227,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Attacked by an anti-Semite in the Philippines - and arrested along with him: \"I repented him\"",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-14T09:08+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The desperation of the aggressors coming to surface",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-14T08:17+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1252,7 +1281,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-14T20:23:29.086598+00:00",
+    "last_success": "2026-08-14T20:55:55.637521+00:00",
     "last_failure": null
   },
   "ok": true
