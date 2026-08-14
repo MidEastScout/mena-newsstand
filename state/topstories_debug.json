@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T23:14:05.468011+00:00",
+  "updated": "2026-08-14T23:36:25.316745+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-14T23:11:54.988569+00:00"
+      "headlines_updated": "2026-08-14T23:34:37.332322+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 16,
-        "title_translated": 20,
+        "title_snippet": 15,
+        "dropped_no_english": 2,
+        "title_translated": 19,
         "title_native": 85,
         "in": 128,
-        "kept": 121
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 16,
+        "requested": 17,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -221,12 +222,22 @@
           "source": "Al-Masirah",
           "title": "اللواء وحيدي: اغتيال القائد الشهيد خامنئي لن ينجح في إسقاط راية المقاومة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שבעה פצועים בקטטה בתל אביב, אחד באורח קשה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "هيئة المعابر بغزة: 1472 شاحنة دخلت القطاع خلال الأسبوع الماضي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 65,
+      "in": 119,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
@@ -328,14 +339,14 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "France’s top court blocks social media ban for under-15s",
+          "title": "Trump Says He Will Soon Declare Hormuz ‘US Territory’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Arabiya",
-          "title": "US backs Japan over Putin trip to disputed islands",
+          "title": "France’s top court blocks social media ban for under-15s",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -349,7 +360,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "The Ceuta 'crisis' is the cost of deadly EU's policies",
+          "title": "Trump urges US to accept higher prices, escalates Iran rhetoric",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -624,18 +635,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 41,
       "sizes": [
         12,
         3,
         3,
         3,
-        3,
         2,
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -741,46 +751,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "UAE says tanker belonging to national oil company targeted in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-14T23:08+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Kan 11",
-            "Mehr News"
-          ],
-          "camps": [
-            "israeli",
-            "iranian",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "UAE says tanker belonging to national oil company targeted in Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "Oil tanker targeted near Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "West Bank settler attacks continue despite international uproar",
           "rank_key": {
             "outlets": 3,
@@ -820,7 +790,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "The Mecca Defence Pact, Netanyahu refuses Gaza withdrawal, Houthis escalate in Yemen",
           "rank_key": {
             "outlets": 3,
@@ -858,6 +828,44 @@
               {
                 "source": "Falastin al-Youm",
                 "title": "Hamas warns of the occupation's decisions to change the legal and political situ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "UAE says tanker belonging to national oil company targeted in Strait of Hormuz",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-14T23:08+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "UAE says tanker belonging to national oil company targeted in Strait of Hormuz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Mehr News",
+                "title": "Oil tanker targeted near Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1209,7 +1217,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1227,7 +1235,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-14T23:14:18.613689+00:00",
+    "last_success": "2026-08-14T23:36:45.669700+00:00",
     "last_failure": null
   },
   "ok": true
