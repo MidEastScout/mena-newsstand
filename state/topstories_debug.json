@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T21:17:17.268021+00:00",
+  "updated": "2026-08-14T21:44:06.152695+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-14T21:15:36.338070+00:00"
+      "headlines_updated": "2026-08-14T21:42:17.646923+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 16,
-        "title_translated": 19,
-        "title_native": 85,
+        "dropped_stale": 8,
+        "title_snippet": 11,
+        "dropped_no_english": 4,
+        "title_translated": 20,
+        "title_native": 84,
         "in": 127,
-        "kept": 120
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 16,
+        "requested": 15,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Lebanon condemns 'systematic' Israeli destruction in south",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Jordan condemns Colombia’s recognition of Israeli sovereignty over occupied Golan Heights",
@@ -221,12 +227,32 @@
           "source": "Al-Masirah",
           "title": "اللواء وحيدي: اغتيال القائد الشهيد خامنئي لن ينجح في إسقاط راية المقاومة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "גורם במשטרה: מלי וליאל יהלומי משכו 50,000 ש\"ח ורכשו טלפונים חדשים לפני שטסו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ח\"כ אלעזר שטרן עוזב את יש עתיד: \"נכונים לנו עוד שיתופי פעולה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: مجلس الشورى يقرّ مبادئ مشروع لتأمين مضيق هرمز وحظر مرور معدات الدول المعادية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«رويترز»: واشنطن تضغط على نتنياهو للتنديد بحصار مستوطنين لمنازل فلسطينيين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 64,
+      "in": 115,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -238,13 +264,6 @@
         {
           "source": "Kan 11",
           "title": "The family of the missing Mali and Liel Yehalami stated they want all scenarios, including chemical weapons…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The Yehalami family expressed immense relief upon learning that Mali and Liel Yehalami were found alive.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -293,7 +312,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "Israeli PM Netanyahu calls UK ‘the Islamic Republic of Britain’",
+          "title": "Engine debris shattered Ryanair window, pulling passenger out, NTSB says",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -327,22 +346,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Kushner to visit Israel to bridge gaps on Gaza plan",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "Two slicks appear in Gulf amid huge oil spill off Oman",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "The Ceuta 'crisis' is the cost of deadly EU's policies",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -390,15 +395,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "Domestic revenues rise 1.9% to JD5.625b in first seven months of 2026",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "L'Orient Today",
-          "title": "Washington slams Katz’s refusal to withdraw from southern Lebanon; Israel continues demolitions",
+          "title": "FOCUS Despite the general amnesty law, Lebanese in Israel are in no hurry to return",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -460,13 +458,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "'Lebanon Electricity' has warned of power cuts for administrative offices with outstanding debts.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Suicide attempts aboard the aircraft carrier \"Lincoln\" 13:04",
           "sec": 0,
@@ -483,13 +474,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Maariv poll: Eisenkot leads Netanyahu and loses majority",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The Crossings Authority in Gaza reported that 1,472 trucks entered the Strip last week.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -612,13 +596,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Pro-Palestinian protesters rally against Israeli cruise ship at Greece's Piraeus Port",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
@@ -627,10 +604,10 @@
       "clusters": 41,
       "sizes": [
         10,
-        4,
+        7,
         4,
         3,
-        3,
+        2,
         2,
         2,
         2,
@@ -739,6 +716,58 @@
         },
         {
           "selected_rank": 2,
+          "headline": "West Bank settler attacks continue despite international uproar",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-08-14T19:30+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "SANA",
+            "TRT World",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 7,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "West Bank settler attacks continue despite international uproar",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "France condemns colonists’ seizure of Palestinian homes in Qusra",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Arab League condemns colonists’ storming of Al-Aqsa Mosque",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "SANA",
+                "title": "UN urges Israel to end settler attacks, protect Palestinians in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Yemen's Houthis claim drone attack on Saudi Aramco site",
           "rank_key": {
             "outlets": 4,
@@ -778,46 +807,6 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "West Bank settler attacks continue despite international uproar",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-14T18:57+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "SANA",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "West Bank settler attacks continue despite international uproar",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "UN urges Israel to end settler attacks, protect Palestinians in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 4,
           "headline": "The Mecca Defence Pact, Netanyahu refuses Gaza withdrawal, Houthis escalate in Yemen",
           "rank_key": {
@@ -834,7 +823,7 @@
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -848,11 +837,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Israeli attacks on Hamas officials 'destabilises' Gaza ceasefire",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "Al Manar",
                 "title": "A martyr in Gaza and disagreements within the occupation leadership over the wit",
@@ -936,15 +920,15 @@
         },
         {
           "selected_rank": null,
-          "headline": "Lavrov stated that Moscow believes Washington supports Ukrainian attacks and will destroy any Wester",
+          "headline": "Iraqi daily oil exports in August highest since start of war",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-14T16:19+00:00"
+            "newest": "2026-08-14T17:50+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen"
+            "Al Arabiya",
+            "The New Arab"
           ],
           "camps": [
             "panarab"
@@ -953,19 +937,48 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Mayadeen",
-            "title": "Lavrov stated that Moscow believes Washington supports Ukrainian attacks and will destroy any Western…",
-            "title_source": "snippet",
+            "source": "The New Arab",
+            "title": "Iraqi daily oil exports in August highest since start of war",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Lebanon condemns 'systematic' Israeli destruction in south",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-13T14:53+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Lebanon condemns 'systematic' Israeli destruction in south",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "Russian ballistic attacks intensify as Kyiv claims Dnipropetrovsk advance",
+                "source": "L'Orient Today",
+                "title": "FOCUS Israel escalates pressure at Ali Taher, Berri launches last-ditch mediatio",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1032,42 +1045,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-14T19:30+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 3,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A military source reported that armed forces targeted Aramco in Najran with a drone.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-14T18:15+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1201,6 +1178,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Palestinian factions warn: The occupation has placed the security of the West Bank settlements in th",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-14T13:38+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran rejects US claims of sending arms to Yemen by flights",
           "rank_key": {
             "outlets": 1,
@@ -1218,7 +1213,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The desperation of the aggressors coming to surface",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-14T08:17+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1236,7 +1249,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-14T21:17:31.073078+00:00",
+    "last_success": "2026-08-14T21:44:20.335119+00:00",
     "last_failure": null
   },
   "ok": true
