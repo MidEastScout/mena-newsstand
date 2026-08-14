@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T22:00:03.554167+00:00",
+  "updated": "2026-08-14T22:20:55.828564+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-14T21:58:10.272431+00:00"
+      "headlines_updated": "2026-08-14T22:18:56.728035+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 17,
-        "title_translated": 19,
-        "title_native": 85,
+        "dropped_stale": 8,
+        "title_snippet": 13,
+        "title_translated": 17,
+        "dropped_no_english": 6,
+        "title_native": 84,
         "in": 128,
-        "kept": 121
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 17,
+        "requested": 19,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Lebanon condemns 'systematic' Israeli destruction in south",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Jordan condemns Colombia’s recognition of Israeli sovereignty over occupied Golan Heights",
@@ -221,12 +227,42 @@
           "source": "Al-Masirah",
           "title": "اللواء وحيدي: اغتيال القائد الشهيد خامنئي لن ينجح في إسقاط راية المقاومة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "פאנל אולפן שישי המלא - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "שיר פתיחה - 14.08.2026 - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "משפחת פרקש מדברת על השכול ועל שרה נתניהו - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "קימולוס - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "مصر تترقّب زيارة كوشنر: رهان على «الوضوح» الأميركي في غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "اقتلاع السكان لمصلحة المستثمرين: «علم الروم» تَلحق بـ«رأس الحكمة»",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 64,
+      "in": 114,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -244,23 +280,9 @@
         },
         {
           "source": "N12",
-          "title": "First Publication: Mali and Liel Yahalomi were found on the list of passengers on a flight from Germany to Argentina",
+          "title": "Weather Forecast - Mako",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Mali and Liel Yahalomie, who had been missing for a week, were located on a bus in Argentina after traveling…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Tragedy on vacation in Greece: 17-year-old electrocuted to death in shower",
-          "sec": 0,
-          "off": 0,
+          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -321,6 +343,13 @@
         },
         {
           "source": "Al Arabiya",
+          "title": "US backs Japan over Putin trip to disputed islands",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
           "title": "France’s top court blocks social media ban for under-15s",
           "sec": 0,
           "off": 0,
@@ -328,7 +357,7 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "US backs Japan over Putin trip to disputed islands",
+          "title": "Putin Visits Japan-Claimed Islands for First Time",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -398,14 +427,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Domestic revenues rise 1.9% to JD5.625b in first seven months of 2026",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "FOCUS Despite the general amnesty law, Lebanese in Israel are in no hurry to return",
+          "title": "Japan protests Putin's first visit to disputed islands",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -462,13 +484,6 @@
         {
           "source": "Al-Akhbar",
           "title": "Paris Saint-Germain crowned European Super Cup champion",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Trump is reportedly unsure of Netanyahu's victory.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -565,13 +580,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Hun-Turkic gathering brings over 27 communities to Hungary",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Hürriyet Daily News",
           "title": "PHOTO Best restaurants in Istanbul, ranked",
           "sec": 0,
@@ -631,20 +639,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 37,
       "sizes": [
         12,
-        4,
-        4,
+        3,
         3,
         3,
         3,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
         1,
         1,
         1,
@@ -683,15 +689,16 @@
           "selected_rank": 1,
           "headline": "Trump says he will declare Strait of Hormuz US territory",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 11,
             "camps": 5,
-            "newest": "2026-08-14T21:57+00:00"
+            "newest": "2026-08-14T22:02+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
             "Al Mayadeen",
             "Anadolu Agency",
+            "Daily Sabah",
             "Egypt Independent",
             "IRNA",
             "Jordan Times",
@@ -731,13 +738,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Saudi Arabia condemns Iran targeting of two ADNOC tankers in Hormuz",
+                "source": "IRNA",
+                "title": "Iran: No ship can transit Hormuz without authorization",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Iran: No ship can transit Hormuz without authorization",
+                "source": "Jordan Times",
+                "title": "Jordan condemns Iranian attack on UAE tankers in Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -829,45 +836,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Yemen's Houthis claim drone attack on Saudi Aramco site",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-14T19:07+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Daily Sabah",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Yemen's Houthis claim drone attack on Saudi Aramco site",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "LIVE Houthis claim Aramco strike in Saudi Arabia; 6 killed in Mokha attack | LIV",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "The Mecca Defence Pact, Netanyahu refuses Gaza withdrawal, Houthis escalate in Yemen",
           "rank_key": {
             "outlets": 3,
@@ -883,7 +851,7 @@
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -898,11 +866,6 @@
             ],
             "passed_over": [
               {
-                "source": "The New Arab",
-                "title": "Israeli attacks on Hamas officials 'destabilises' Gaza ceasefire",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Manar",
                 "title": "A martyr in Gaza and disagreements within the occupation leadership over the wit",
                 "rejected_by": "loaded/partisan wording"
@@ -916,7 +879,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Mangione pleads guilty to federal charges in UnitedHealthcare CEO killing",
           "rank_key": {
             "outlets": 2,
@@ -985,42 +948,67 @@
         },
         {
           "selected_rank": null,
-          "headline": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
+          "headline": "Yemen's Houthis claim drone attack on Saudi Aramco site",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-14T20:03+00:00"
+            "newest": "2026-08-14T19:07+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "WAFA News"
+            "Anadolu Agency",
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Yemen's Houthis claim drone attack on Saudi Aramco site",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Lebanon condemns 'systematic' Israeli destruction in south",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-13T14:53+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "L'Orient Today"
           ],
           "camps": [
             "levant"
           ],
-          "members": 4,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
+            "source": "Jordan Times",
+            "title": "Lebanon condemns 'systematic' Israeli destruction in south",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "France condemns colonists’ seizure of Palestinian homes in Qusra",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Arab League condemns colonists’ storming of Al-Aqsa Mosque",
-                "rejected_by": "loaded/partisan wording"
+                "source": "L'Orient Today",
+                "title": "FOCUS Israel escalates pressure at Ali Taher, Berri launches last-ditch mediatio",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -1045,19 +1033,19 @@
         },
         {
           "selected_rank": null,
-          "headline": "Mali and Liel Yahalomie have been located in South America, ending a week-long search after contact ",
+          "headline": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-14T20:07+00:00"
+            "newest": "2026-08-14T19:30+00:00"
           },
           "outlet_names": [
-            "N12"
+            "WAFA News"
           ],
           "camps": [
-            "israeli"
+            "levant"
           ],
-          "members": 1,
+          "members": 3,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1071,24 +1059,6 @@
           },
           "outlet_names": [
             "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Putin's Secret War: The Plan to Overthrow Moldova",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-14T17:45+00:00"
-          },
-          "outlet_names": [
-            "N12"
           ],
           "camps": [
             "israeli"
@@ -1242,7 +1212,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran links Qeshm Island oil pollution to foreign military aggression in region",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-14T06:10+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1260,7 +1248,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-14T22:00:16.551522+00:00",
+    "last_success": "2026-08-14T22:21:09.907682+00:00",
     "last_failure": null
   },
   "ok": true
