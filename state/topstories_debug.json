@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T01:02:48.638924+00:00",
+  "updated": "2026-08-15T01:05:46.745834+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-15T01:00:54.995871+00:00"
+      "headlines_updated": "2026-08-15T01:03:52.444746+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
         "title_snippet": 18,
-        "title_translated": 17,
+        "title_translated": 15,
+        "dropped_no_english": 2,
         "title_native": 85,
         "in": 127,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 18,
+        "requested": 20,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -221,12 +222,22 @@
           "source": "Al-Masirah",
           "title": "اللواء وحيدي: اغتيال القائد الشهيد خامنئي لن ينجح في إسقاط راية المقاومة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "רעידת אדמה בעוצמה 7.7 הכתה באינדונזיה, פורסמה אזהרת צונאמי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "هيئة المعابر بغزة: 1472 شاحنة دخلت القطاع خلال الأسبوع الماضي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 66,
+      "in": 118,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
@@ -266,13 +277,6 @@
         {
           "source": "N12",
           "title": "First Publication: Mali and Liel Yahalomi were found on the list of passengers on a flight from Germany to Argentina",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Tragedy on vacation in Greece: 17-year-old electrocuted to death in shower",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -610,7 +614,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 38,
       "sizes": [
         16,
         4,
@@ -620,7 +624,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -940,6 +943,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T00:45+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 4,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "A gunman in Michigan, USA, fatally shot five people and injured one more before being killed.",
           "rank_key": {
             "outlets": 1,
@@ -1084,24 +1105,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-14T17:38+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 4,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "France's top court strikes down under-15 social media ban",
           "rank_key": {
             "outlets": 1,
@@ -1155,7 +1158,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1173,7 +1176,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-15T01:03:05.633586+00:00",
+    "last_success": "2026-08-15T01:05:47.873839+00:00",
     "last_failure": null
   },
   "ok": true
