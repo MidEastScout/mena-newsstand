@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T17:18:12.950925+00:00",
+  "updated": "2026-08-15T17:43:17.109897+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-15T17:16:27.522883+00:00"
+      "headlines_updated": "2026-08-15T17:41:38.309995+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 31,
-        "title_translated": 5,
-        "title_native": 84,
+        "dropped_stale": 9,
+        "title_snippet": 27,
+        "dropped_no_english": 5,
+        "title_translated": 4,
+        "title_native": 82,
         "in": 127,
-        "kept": 120
+        "kept": 113
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 31,
+        "requested": 32,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -204,6 +205,11 @@
         },
         {
           "source": "Arab News",
+          "title": "Turkiye, Pakistan, Saudi Arabia will form political, military mechanisms to coordinate under defense pact, Ankara says",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
           "title": "‘Ethnic cleansing’ of Palestinians is accelerating in West Bank, Israeli human rights group warns",
           "reason": "stale (older than 48h)"
         },
@@ -221,12 +227,42 @@
           "source": "Gulf News",
           "title": "Watch: Solar eclipse darkens Arctic Russia on course for Spain",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Türkiye-Pakistan-Saudi defensive pact aims to boost joint capabilities, regional security: Ankara",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "המשטרה: הנעדר יונס אבו גנם, בן 4 מרהט, אותר לאחר כשעה של חיפושים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: مساعد وزير الخارجية الإيراني للشؤون القانونية والدولية كاظم غريب آبادي: مضيق هرمز لا يمكن الاستيلاء عليه بتغريدة ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بقائي: تم التوصل إلى اتفاق بشأن خريطة حركة الملاحة بين إيران وسلطنة عمان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "الرئيس بري تابع مع السفير الأميركي وكليرفيلد أوضاع الجنوب ووقع قوانين : مفتاح الإستقرار يبقى بإلزام “إسرائيل” وقف حربها ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "إيران: مضيق هرمز لا يُنتزع بتغريدة ولا بإصدار أمر",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 85,
+      "in": 113,
+      "kept": 77,
       "dropped": [
         {
           "source": "Kan 11",
@@ -308,6 +344,13 @@
         {
           "source": "Al Jazeera",
           "title": "Indian PM Modi warns about left-wing activists in Independence Day speech",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Erdogan says Egypt could join Turkiye-Saudi-Pakistan defence pact",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -477,20 +520,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 38,
       "sizes": [
-        21,
-        8,
-        6,
+        20,
+        7,
         5,
-        4,
+        5,
+        3,
         3,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -556,7 +595,7 @@
             "iranian",
             "levant"
           ],
-          "members": 21,
+          "members": 20,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -582,12 +621,12 @@
               },
               {
                 "source": "Al Arabiya",
-                "title": "Saudi Arabia condemns Iran targeting of two ADNOC tankers in Hormuz",
+                "title": "Trump Says He Will Soon Declare Hormuz ‘US Territory’",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al Arabiya",
-                "title": "Trump Says He Will Soon Declare Hormuz ‘US Territory’",
+                "title": "Trump says will ‘soon’ declare Hormuz Strait US territory",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -595,122 +634,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Four killed and five injured in Israeli strike on southern Lebanon",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 3,
-            "newest": "2026-08-15T15:36+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Al-Akhbar",
-            "Kan 11",
-            "L'Orient Today",
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant"
-          ],
-          "members": 8,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Four killed and five injured in Israeli strike on southern Lebanon",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Lebanon: Israel strike on south kills seven in latest escalation",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "Reports indicate martyrs and wounded individuals in two Israeli attacks in south",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "SOUTH LEBANON 11 killed and 19 wounded in Israeli strikes on Ansar and Deir Zahr",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al-Akhbar",
-                "title": "Israeli escalation in southern Lebanon has resulted in martyrs and wounded in An",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Israel reopens once-closed West Bank settlement",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-08-15T15:58+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "IRNA",
-            "Jordan Times",
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Israel reopens once-closed West Bank settlement",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "West Bank settler attacks continue despite international uproar",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "OIC warns of rising Israeli regime’s crimes in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "US demands Netanyahu condemn ‘terrorist’ settlers in West Bank",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Israeli strikes kill 11 in Lebanon as Hezbollah vows response",
           "rank_key": {
             "outlets": 5,
@@ -762,25 +685,136 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "Four killed and five injured in Israeli strike on southern Lebanon",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 2,
+            "newest": "2026-08-15T15:05+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "Al-Akhbar",
+            "L'Orient Today",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 7,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Four killed and five injured in Israeli strike on southern Lebanon",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Lebanon: Israel strike on south kills seven in latest escalation",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Mayadeen",
+                "title": "Reports indicate martyrs and wounded individuals in two Israeli attacks in south",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "SOUTH LEBANON 11 killed and 19 wounded in Israeli strikes on Ansar and Deir Zahr",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al-Akhbar",
+                "title": "Israeli escalation in southern Lebanon has resulted in martyrs and wounded in An",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Palestinian Central Elections Commission launches field voter registration in West Bank",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 4,
+            "newest": "2026-08-15T12:51+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "IRNA",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Palestinian Central Elections Commission launches field voter registration in West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "West Bank settler attacks continue despite international uproar",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "OIC warns of rising Israeli regime’s crimes in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Daily Sabah",
+                "title": "US demands Netanyahu condemn ‘terrorist’ settlers in West Bank",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 5,
           "headline": "3 Palestinians injured in Israeli drone strike in central Gaza despite ceasefire",
           "rank_key": {
-            "outlets": 4,
-            "camps": 3,
+            "outlets": 3,
+            "camps": 2,
             "newest": "2026-08-15T16:57+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "Falastin al-Youm",
             "Kan 11",
             "N12"
           ],
           "camps": [
             "israeli",
-            "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -793,13 +827,7 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "Three individuals, including two children, were injured when the occupation forc",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -869,29 +897,30 @@
         },
         {
           "selected_rank": null,
-          "headline": "Ukraine hits Russian Starlink-style network, Moscow tracks arms package",
+          "headline": "6.9 magnitude earthquake strikes North Sumatra, Indonesia",
           "rank_key": {
             "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-15T15:50+00:00"
+            "camps": 2,
+            "newest": "2026-08-15T12:12+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen"
+            "Anadolu Agency",
+            "SANA"
           ],
           "camps": [
-            "panarab"
+            "levant",
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Jazeera",
-            "title": "Ukraine hits Russian Starlink-style network, Moscow tracks arms package",
+            "source": "Anadolu Agency",
+            "title": "6.9 magnitude earthquake strikes North Sumatra, Indonesia",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
+              "names 1 of the story's dominant entities (earthquake)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -926,6 +955,42 @@
           },
           "outlet_names": [
             "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Ukraine hits Russian Starlink-style network, Moscow tracks arms package",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T15:50+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "South Korea president proposes talks with North to formally end Korean War",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T14:57+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
           ],
           "camps": [
             "levant"
@@ -1008,42 +1073,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "6.9 magnitude earthquake strikes North Sumatra, Indonesia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T12:12+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Speaker of the Lebanese Parliament condemned the aggression against the south, stating that Isra",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T11:26+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "UAE strongly condemns Iranian attack on ADNOC vessel",
           "rank_key": {
             "outlets": 1,
@@ -1115,7 +1144,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1133,7 +1162,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-15T17:18:27.166800+00:00",
+    "last_success": "2026-08-15T17:43:35.978629+00:00",
     "last_failure": null
   },
   "ok": true
