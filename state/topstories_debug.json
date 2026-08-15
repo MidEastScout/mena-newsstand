@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T15:01:03.676479+00:00",
+  "updated": "2026-08-15T15:22:06.829732+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-15T14:59:26.906482+00:00"
+      "headlines_updated": "2026-08-15T15:20:21.301045+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 25,
-        "title_translated": 10,
-        "title_native": 85,
+        "dropped_stale": 8,
+        "title_snippet": 20,
+        "title_translated": 8,
+        "dropped_no_english": 7,
+        "title_native": 84,
         "in": 127,
-        "kept": 120
+        "kept": 112
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 25,
+        "requested": 27,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Jordan Times",
+          "title": "Israeli minister vows troops to stay in Lebanon, Syria, Gaza",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Jordan condemns Colombia’s recognition of Israeli sovereignty over occupied Golan Heights",
@@ -221,12 +227,47 @@
           "source": "Gulf News",
           "title": "Trump says US will 'keep' Hormuz strait control",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "מלי וליאל יהלומי אותרו בדרום אמריקה, צה\"ל תקף בדרום לבנון וברצועת עזה | סיכום חדשות השבת",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "באמצע הקיץ: שיא גשם לחודש אוגוסט נשבר בירושלים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "أميركا اللاتينية بين ضغوط واشنطن وصراع السيادة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "حزب الله: اعتداءات العدو ستُقابل بما يناسبها... وعلى السلطة التوقف عن اللهاث خلف المفاوضات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إيران: تقدم في المباحثات مع عُمان بشأن مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "سلام: على إسرائيل وقف التصعيد والدولة اللبنانية مسؤولة عن التعامل مع البنى العسكرية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عمليات دهم وتفتيش إسرائيلية في ريف درعا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 82,
+      "in": 112,
+      "kept": 79,
       "dropped": [
         {
           "source": "Kan 11",
@@ -264,13 +305,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "The Iranian Army announced that three of its pilots are being held alive in captivity in Qatar.",
-          "sec": 2,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
@@ -287,13 +321,6 @@
         {
           "source": "Channel 13",
           "title": "Mali and Lial were found on a bus in Buenos Aires, Argentina.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A special investigation team utilized AI to piece together the events leading to the discovery of Mali and…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -349,13 +376,6 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "United States: Trump administration rejects lawsuit accusing Harvard University of failing to protect Jewish students",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
           "title": "Twelfth Bulletin",
           "sec": 0,
           "off": 0,
@@ -364,13 +384,6 @@
         {
           "source": "IRNA",
           "title": "Tehran, Dushanbe to ink long‑term energy cooperation agreement",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Domestic revenues rise 1.9% to JD5.625b in first seven months of 2026",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -401,13 +414,6 @@
           "title": "Paris Saint-Germain is the champion of the European Super League... A new harvest for a successful project",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Trump administration rejects lawsuit accusing Harvard University of failing to protect Jewish students",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -498,11 +504,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 45,
       "sizes": [
-        21,
-        6,
+        19,
         5,
+        4,
         3,
         3,
         2,
@@ -510,6 +516,7 @@
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -555,7 +562,7 @@
           "selected_rank": 1,
           "headline": "Strait of Hormuz traffic remains at a fraction of pre-war levels",
           "rank_key": {
-            "outlets": 13,
+            "outlets": 12,
             "camps": 5,
             "newest": "2026-08-15T14:30+00:00"
           },
@@ -563,7 +570,6 @@
             "Al Arabiya",
             "Al Jazeera",
             "Al Mayadeen",
-            "Al-Akhbar",
             "Anadolu Agency",
             "Arab News",
             "Egypt Independent",
@@ -581,7 +587,7 @@
             "levant",
             "turkish"
           ],
-          "members": 21,
+          "members": 19,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -622,13 +628,12 @@
           "selected_rank": 2,
           "headline": "Israeli strikes kill 11 in Lebanon as Hezbollah vows response",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
             "newest": "2026-08-15T14:57+00:00"
           },
           "outlet_names": [
             "Al Manar",
-            "Al-Akhbar",
             "Daily Sabah",
             "Kan 11",
             "L'Orient Today"
@@ -638,7 +643,7 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -683,7 +688,7 @@
             "panarab",
             "levant"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -995,6 +1000,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump recognized Resistance Front in MoU signed with Iran: Ghalibaf",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T12:35+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Ex-Cambridge professor Jason Arday found dead after plagiarism row",
           "rank_key": {
             "outlets": 1,
@@ -1103,24 +1126,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Naim stated that Israel must cease its escalation, and the Lebanese state is responsible for dealing",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T09:07+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Naim stated that the events in the West Bank and Jerusalem are dangerous and will lead to a major ex",
           "rank_key": {
             "outlets": 1,
@@ -1138,7 +1143,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1156,7 +1161,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-15T15:01:17.642543+00:00",
+    "last_success": "2026-08-15T15:22:38.991679+00:00",
     "last_failure": null
   },
   "ok": true
