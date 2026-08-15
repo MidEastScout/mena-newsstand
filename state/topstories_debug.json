@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T19:35:14.686122+00:00",
+  "updated": "2026-08-15T19:55:09.041761+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,14 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-15T19:33:38.921183+00:00"
+      "headlines_updated": "2026-08-15T19:53:28.539260+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 33,
+        "dropped_stale": 8,
+        "title_snippet": 31,
+        "dropped_no_english": 2,
         "title_translated": 3,
-        "title_native": 81,
+        "title_native": 83,
         "in": 127,
         "kept": 117
       },
@@ -209,11 +210,6 @@
         },
         {
           "source": "Arab News",
-          "title": "Turkiye, Pakistan, Saudi Arabia will form political, military mechanisms to coordinate under defense pact, Ankara says",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
           "title": "‘Ethnic cleansing’ of Palestinians is accelerating in West Bank, Israeli human rights group warns",
           "reason": "stale (older than 48h)"
         },
@@ -233,9 +229,14 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Türkiye-Pakistan-Saudi defensive pact aims to boost joint capabilities, regional security: Ankara",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "מקור בחמאס: משלחת מטעם הארגון תצא הלילה למצרים במטרה לקיים שם דיונים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "هيئة بحرية بريطانية: إصابة سفينة شحن بمقذوف مجهول في مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
@@ -513,7 +514,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 40,
       "sizes": [
         20,
         8,
@@ -523,7 +524,8 @@
         3,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -883,38 +885,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "3 Palestinians injured in Israeli drone strike in central Gaza despite ceasefire",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-15T12:40+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "3 Palestinians injured in Israeli drone strike in central Gaza despite ceasefire",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Ukraine hits Russian Starlink-style network, Moscow tracks arms package",
           "rank_key": {
             "outlets": 2,
@@ -943,24 +913,6 @@
             ],
             "passed_over": []
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Due to IDF activity, explosions are expected along the northern border throughout the evening and ni",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T18:49+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -993,6 +945,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "UK PM Burnham reacts to death of former Cambridge professor",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T17:19+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1090,6 +1060,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "3 Palestinians injured in Israeli drone strike in central Gaza despite ceasefire",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T12:40+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Nine killed in Israeli strikes on Lebanon, as Huthi attacks continue in Yemen. Catch up here",
           "rank_key": {
             "outlets": 1,
@@ -1143,25 +1131,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Egyptian, Cypriot FMs praise growing momentum in bilateral relations",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T10:28+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1179,7 +1149,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-15T19:35:14.927961+00:00",
+    "last_success": "2026-08-15T19:55:10.053006+00:00",
     "last_failure": null
   },
   "ok": true
