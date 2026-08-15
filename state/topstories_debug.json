@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T21:37:20.683898+00:00",
+  "updated": "2026-08-15T21:57:10.108376+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-15T21:35:38.882612+00:00"
+      "headlines_updated": "2026-08-15T21:55:15.311995+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 32,
-        "title_translated": 4,
+        "title_snippet": 30,
+        "dropped_no_english": 3,
+        "title_translated": 3,
         "title_native": 82,
         "in": 127,
-        "kept": 118
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 33,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -231,12 +232,27 @@
           "source": "TRT World",
           "title": "Türkiye-Pakistan-Saudi defensive pact aims to boost joint capabilities, regional security: Ankara",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רוכב אופנוע החליק בכביש סמוך למחלף בר-אילן, מצבו קשה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מהדורת השבת 15.08.26 - המהדורה המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مصر من الإخوان إلى السيسي... هل أصبحت العلاقة بين القاهرة وطهران ضرورة أم خياراً؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 77,
+      "in": 115,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -297,13 +313,6 @@
         {
           "source": "Channel 13",
           "title": "Mali and Liel were found on a bus in Buenos Aires after a week of searching.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A week since the disappearance of Mali and Liel Yahalomi: The investigation in Austria branches out",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -386,15 +395,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The statement \"Israel is swallowing us...",
+          "source": "IRNA",
+          "title": "Trump recognized Resistance Front in MoU signed with Iran: Ghalibaf",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "IRNA",
-          "title": "Trump recognized Resistance Front in MoU signed with Iran: Ghalibaf",
+          "source": "Mehr News",
+          "title": "Iran urges ICRC's probe into fate of 3 pilots held in Qatar",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -517,29 +526,20 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Palestinian voter registration begins ahead of the first legislative elections in 20 years",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 37,
       "sizes": [
-        20,
-        11,
+        21,
+        10,
         5,
-        3,
+        4,
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -583,7 +583,7 @@
           "rank_key": {
             "outlets": 12,
             "camps": 5,
-            "newest": "2026-08-15T19:25+00:00"
+            "newest": "2026-08-15T21:51+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -606,7 +606,7 @@
             "levant",
             "turkish"
           ],
-          "members": 20,
+          "members": 21,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -647,8 +647,8 @@
           "selected_rank": 2,
           "headline": "Hezbollah vows ‘appropriate’ response to Israeli escalation in southern Lebanon",
           "rank_key": {
-            "outlets": 8,
-            "camps": 4,
+            "outlets": 7,
+            "camps": 3,
             "newest": "2026-08-15T17:32+00:00"
           },
           "outlet_names": [
@@ -656,18 +656,16 @@
             "Al-Akhbar",
             "Anadolu Agency",
             "Daily Sabah",
-            "Kan 11",
             "L'Orient Today",
             "The New Arab",
             "WAFA News"
           ],
           "camps": [
-            "israeli",
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -763,27 +761,29 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Qatar rejects Iran's claim it detained 3 fighter pilots after March attack",
+          "headline": "Qatar denies it is detaining three Iranian bomber pilots",
           "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-15T20:06+00:00"
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-08-15T20:55+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Anadolu Agency",
             "Daily Sabah",
             "IRNA"
           ],
           "camps": [
+            "panarab",
             "iranian",
             "turkish"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Qatar rejects Iran's claim it detained 3 fighter pilots after March attack",
+            "source": "Al Jazeera",
+            "title": "Qatar denies it is detaining three Iranian bomber pilots",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -1124,7 +1124,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1142,7 +1142,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-15T21:37:34.872730+00:00",
+    "last_success": "2026-08-15T21:57:58.683601+00:00",
     "last_failure": null
   },
   "ok": true
