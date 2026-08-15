@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T23:36:25.316745+00:00",
+  "updated": "2026-08-14T23:59:56.936957+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,27 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-14T23:34:37.332322+00:00"
+      "headlines_updated": "2026-08-14T23:58:05.062453+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 15,
-        "dropped_no_english": 2,
-        "title_translated": 19,
-        "title_native": 85,
+        "dropped_stale": 8,
+        "title_snippet": 12,
+        "dropped_no_english": 6,
+        "title_translated": 18,
+        "title_native": 84,
         "in": 128,
-        "kept": 119
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 17,
+        "requested": 18,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Lebanon condemns 'systematic' Israeli destruction in south",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Jordan condemns Colombia’s recognition of Israeli sovereignty over occupied Golan Heights",
@@ -229,26 +234,46 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "هيئة المعابر بغزة: 1472 شاحنة دخلت القطاع خلال الأسبوع الماضي",
+          "source": "Kan 11",
+          "title": "חברת האנרגיה של ממשלת אבו דאבי: ספינה שלנו הותקפה במצר הורמוז, אין נפגעים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחרי שבוע של חיפושים: מלי וליאל אותרו על אוטובוס בבואנוס איירס",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "أميركا اللاتينية تحت زلزال الهيمنة.. واشنطن و\"تل أبيب\" تدفعان القارة نحو اليمين واليسار يواجه التراجع",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "رغم استهدافه بستة صواريخ.. مستشفى أطفال السرطان في الأهواز يستأنف نشاطه",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: مساعد وزير الخارجية الإيراني للشؤون القانونية والدولية كاظم غريب آبادي: مضيق هرمز لا يمكن الاستيلاء عليه بتغريدة ",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 63,
+      "in": 114,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "Mali and Liel Yahalomi have been located in Argentina.",
+          "title": "Mali and Liel Yahalomi were found on a bus in South America after reportedly flying from Germany.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "Mali and Liel Yahalomi were found on a bus in South America after reportedly flying from Germany.",
+          "title": "Mali and Liel Yahalomi have been located in Argentina.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -262,13 +287,6 @@
         },
         {
           "source": "N12",
-          "title": "First Publication: Mali and Liel Yahalomi were found on the list of passengers on a flight from Germany to Argentina",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
           "title": "Authorities state Mali and Liel Yahalomi had debts and may have faked their phone's location.",
           "sec": 0,
           "off": 0,
@@ -276,14 +294,14 @@
         },
         {
           "source": "N12",
-          "title": "Tragedy on vacation in Greece: 17-year-old electrocuted to death in shower",
+          "title": "First Publication: Mali and Liel Yahalomi were found on the list of passengers on a flight from Germany to Argentina",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Mali and Liel Yahalomi, who were reported missing, have been located on a train in Buenos Aires.",
+          "source": "N12",
+          "title": "Tragedy on vacation in Greece: 17-year-old electrocuted to death in shower",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -346,7 +364,7 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "France’s top court blocks social media ban for under-15s",
+          "title": "US backs Japan over Putin trip to disputed islands",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -368,27 +386,6 @@
         {
           "source": "Al Mayadeen",
           "title": "United States: Trump administration rejects lawsuit accusing Harvard University of failing to protect Jewish students",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The article discusses why the estrangement between Egypt and Iran has persisted and the rapprochement has not…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Russia on Ankara's proposal: Return to the Black Sea Initiative is futile",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Closing Yahya Saree's account on \"X\". Double standards or a battle over the digital narrative?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -416,7 +413,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Domestic revenues rise 1.9% to JD5.625b in first seven months of 2026",
+          "title": "Japan protests Putin's first visit to disputed islands",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -630,23 +627,29 @@
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "US threatens Iran with economic isolation 'like the world has never seen before'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 40,
       "sizes": [
         12,
         3,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -791,50 +794,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "The Mecca Defence Pact, Netanyahu refuses Gaza withdrawal, Houthis escalate in Yemen",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-14T18:37+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Falastin al-Youm",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "The Mecca Defence Pact, Netanyahu refuses Gaza withdrawal, Houthis escalate in Yemen",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "A martyr in Gaza and disagreements within the occupation leadership over the wit",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas warns of the occupation's decisions to change the legal and political situ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "UAE says tanker belonging to national oil company targeted in Strait of Hormuz",
           "rank_key": {
             "outlets": 2,
@@ -872,7 +831,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Saudi Arabia, Iraq discuss military, defense cooperation",
           "rank_key": {
             "outlets": 2,
@@ -909,38 +868,7 @@
           }
         },
         {
-          "selected_rank": null,
-          "headline": "Japan summons Russian envoy after Putin visits disputed islands",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-13T12:01+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Japan summons Russian envoy after Putin visits disputed islands",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Yemen's Houthis claim drone attack on Saudi Aramco site",
           "rank_key": {
             "outlets": 2,
@@ -968,6 +896,79 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hamas warns of the occupation's decisions to change the legal and political situation in the West Ba",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-14T12:37+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "Hamas warns of the occupation's decisions to change the legal and political situation in the West Bank",
+            "title_source": "translated",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (gaza, westbank)",
+              "state/partisan outlet (last resort)",
+              "machine-translated from the outlet's language"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "A martyr in Gaza and disagreements within the occupation leadership over the wit",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Lebanon condemns 'systematic' Israeli destruction in south",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-13T14:53+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Lebanon condemns 'systematic' Israeli destruction in south",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "FOCUS Israel escalates pressure at Ali Taher, Berri launches last-ditch mediatio",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1110,24 +1111,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The family of the missing Mali and Liel Yahalomi is demanding that all scenarios, including a \"chemi",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-14T15:25+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "France's top court strikes down under-15 social media ban",
           "rank_key": {
             "outlets": 1,
@@ -1217,7 +1200,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The desperation of the aggressors coming to surface",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-14T08:17+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1235,7 +1236,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-14T23:36:45.669700+00:00",
+    "last_success": "2026-08-15T00:00:10.170429+00:00",
     "last_failure": null
   },
   "ok": true
