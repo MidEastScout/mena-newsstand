@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T19:54:44.394371+00:00",
+  "updated": "2026-08-16T20:11:58.557376+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-16T19:52:20.742443+00:00"
+      "headlines_updated": "2026-08-16T20:10:10.530329+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 34,
-        "title_native": 88,
+        "dropped_stale": 3,
+        "title_snippet": 29,
+        "dropped_no_english": 5,
         "title_translated": 1,
+        "title_native": 89,
         "in": 127,
-        "kept": 123
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -203,14 +204,34 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Saudi crown prince, US CENTCOM chief discuss efforts to ease regional tensions",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "במכתב חריג: רב ישיבה הביע תמיכה ב-16 מתמודדים בפריימריז לליכוד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הליכוד נגד איזנקוט - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"رويترز\": وفد حماس برئاسة خليل الحية يلتقي كوشنر في مصر لبحث اتفاق غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "طهران وواشنطن... اتفاق لم يصمد طويلاً وحرب لم تُحسم بعد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "لبحث خطة ترامب واتفاق غزة: الحية يلتقي رئيس المخابرات المصرية في القاهرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
+      "in": 119,
       "kept": 78,
       "dropped": [
         {
@@ -223,13 +244,6 @@
         {
           "source": "Kan 11",
           "title": "Gantz is in discussions with Shaked to potentially join his party as the second-in-command.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Following an investigation by the Police Internal Investigations Department, 'Hatzal' has been officially…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -256,13 +270,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "Jared Kushner is traveling to Israel, raising concerns among Americans about the implications.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
           "title": "The singer Shimon Buskila is under investigation for allegedly harassing his former partner.",
           "sec": 0,
@@ -278,7 +285,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "An Israeli man was arrested in Crete on suspicion of arson due to an unextinguished barbecue.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -335,13 +342,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The Democratic Party in the US has approved its schedule for the 2028 presidential primary elections.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Six in the morning bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -431,13 +431,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "This item refers to protests against the Netanyahu government.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Syria Direct",
           "title": "Syria’s wells run dry, old grievances run deep",
           "sec": 0,
@@ -460,14 +453,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Iran calls for release of three pilots allegedly held in Qatar",
+          "title": "US CENTCOM chief ends high-stakes 10-day West Asia tour as USS Lincoln prepares to depart",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "US CENTCOM chief ends high-stakes 10-day West Asia tour as USS Lincoln prepares to depart",
+          "title": "OET Preparation Course Near Me | Al Qasimia, Sharjah",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -532,12 +525,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 38,
       "sizes": [
         18,
+        9,
         7,
-        5,
-        3,
         3,
         2,
         2,
@@ -546,7 +538,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -649,6 +640,64 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Pope calls for end to Israeli violence against Palestinians in occupied West Bank",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 3,
+            "newest": "2026-08-16T20:01+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Egypt Independent",
+            "SANA",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 9,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Pope calls for end to Israeli violence against Palestinians in occupied West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Spain condemns colonists’ siege of Palestinian families in Qusra",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "SANA",
+                "title": "Spain condemns Israeli settlers’ blockade of Palestinian families in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Israeli occupiers erect tents for new illegal outpost in occupied West Bank: Pal",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Pope renews call to end violence against Palestinians in occupied West Bank",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Hamas, Egypt spy chief hold talks on Gaza plan",
           "rank_key": {
             "outlets": 6,
@@ -682,52 +731,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Pope renews call to end violence against Palestinians in occupied West Bank",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-08-16T19:15+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "TRT World",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Pope renews call to end violence against Palestinians in occupied West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli occupiers erect tents for new illegal outpost in occupied West Bank: Pal",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Pope calls for an end to West Bank violence against Palestinians",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -771,44 +774,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Trapped and cut off: Palestinian families under settler siege in the West Bank",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 1,
-            "newest": "2026-08-16T12:21+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Trapped and cut off: Palestinian families under settler siege in the West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Spain condemns colonists’ siege of Palestinian families in Qusra",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "A political source in Lebanon claims that Hezbollah is escalating its actions on the ground to sabot",
           "rank_key": {
             "outlets": 2,
@@ -843,6 +808,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran offers $30,000 bounty for killing, capturing US soldiers",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-16T15:24+00:00"
+          },
+          "outlet_names": [
+            "TRT World",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Iran offers $30,000 bounty for killing, capturing US soldiers",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -930,12 +926,12 @@
             "newest": "2026-08-16T05:43+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "IRNA"
+            "IRNA",
+            "L'Orient Today"
           ],
           "camps": [
-            "panarab",
-            "iranian"
+            "iranian",
+            "levant"
           ],
           "members": 2,
           "qualified": true,
@@ -950,38 +946,13 @@
               "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Libya's Haftar played role in release of US hostage held by IS",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-15T01:48+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Libya's Haftar played role in release of US hostage held by IS",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "FOCUS Ali Taher, yellow line and Iran’s return: South Lebanon on the brink of fu",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1237,7 +1208,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1255,7 +1226,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-16T19:54:57.980129+00:00",
+    "last_success": "2026-08-16T20:12:18.740396+00:00",
     "last_failure": null
   },
   "ok": true
