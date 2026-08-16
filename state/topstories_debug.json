@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T23:35:11.778444+00:00",
+  "updated": "2026-08-16T23:55:55.619357+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-16T23:33:01.940500+00:00"
+      "headlines_updated": "2026-08-16T23:54:04.467191+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 34,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_native": 86,
         "in": 127,
-        "kept": 120
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -220,12 +221,27 @@
           "source": "TRT World",
           "title": "Trump vows to declare Strait of Hormuz as US territory; Iran dismisses threats as empty",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "טרגדיה בפינלנד: ישראלי יצא לטיול אופניים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "לקראת אפשרות של הסלמה: בישראל נערכים לכמה ימי קרב בלבנון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אין מקום אחר\": איך ישראל נמצאת מדי שנה בפסגת מדד האושר?",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 78,
+      "in": 117,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -296,13 +312,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "New satellite images show Europe’s disappearing rivers due to drought",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Middle East Eye",
@@ -446,6 +455,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "US-Iran tensions: CENTCOM chief hails USS Abraham Lincoln’s resilient crew, low mental health cases",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "Qatar categorically denies claims it is detaining Iranian pilots",
           "sec": 0,
           "off": 0,
@@ -454,13 +470,6 @@
         {
           "source": "Gulf News",
           "title": "Donald Trump posts Kim Jong-un photo, says ties remain ‘great’",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "UAE-India travel advisory: Airport security checks, delays and what passengers need to know",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -525,17 +534,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 37,
       "sizes": [
         14,
-        12,
+        13,
         9,
-        4,
         3,
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -576,12 +584,13 @@
           "selected_rank": 1,
           "headline": "Hamas chief, Kushner in Egypt for talks on stalled Gaza plan",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 10,
             "camps": 5,
             "newest": "2026-08-16T20:00+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al Jazeera",
             "Al Mayadeen",
             "Al-Akhbar",
             "Anadolu Agency",
@@ -598,7 +607,7 @@
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -754,21 +763,19 @@
           "selected_rank": 4,
           "headline": "Israel vows to go after Hizbollah as it names another killed",
           "rank_key": {
-            "outlets": 4,
-            "camps": 2,
+            "outlets": 3,
+            "camps": 1,
             "newest": "2026-08-16T14:55+00:00"
           },
           "outlet_names": [
             "Al Manar",
             "Jordan Times",
-            "L'Orient Today",
-            "N12"
+            "L'Orient Today"
           ],
           "camps": [
-            "israeli",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -781,11 +788,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "N12",
-                "title": "Three soldiers were severely wounded in Lebanon, and Maly and Lial Yahalomi were",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "L'Orient Today",
                 "title": "FOCUS Banking reforms: What we know about the sanctions being considered in the ",
@@ -801,50 +803,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Israeli forces launch air, artillery, phosphorus attacks on southern Lebanon",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-16T05:43+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "IRNA",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "iranian"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Israeli forces launch air, artillery, phosphorus attacks on southern Lebanon",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Channel 13",
-                "title": "Three soldiers were seriously wounded in southern Lebanon.",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "N12",
-                "title": "An officer and two soldiers were severely injured by an explosive drone in south",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran offers $30,000 bounty for killing, capturing US soldiers",
           "rank_key": {
             "outlets": 2,
@@ -872,6 +830,44 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces launch air, artillery, phosphorus attacks on southern Lebanon",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-16T05:43+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "Israeli forces launch air, artillery, phosphorus attacks on southern Lebanon",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "FOCUS Ali Taher, yellow line and Iran’s return: South Lebanon on the brink of fu",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1164,7 +1160,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1182,7 +1178,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-16T23:35:12.874606+00:00",
+    "last_success": "2026-08-16T23:56:09.907638+00:00",
     "last_failure": null
   },
   "ok": true
