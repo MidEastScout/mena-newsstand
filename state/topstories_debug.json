@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T04:33:14.083177+00:00",
+  "updated": "2026-08-16T05:02:43.434712+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-16T04:31:25.223351+00:00"
+      "headlines_updated": "2026-08-16T05:00:59.605621+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 31,
-        "title_native": 84,
+        "dropped_stale": 10,
+        "title_snippet": 25,
+        "dropped_no_english": 6,
+        "title_native": 83,
         "title_translated": 2,
         "in": 126,
-        "kept": 117
+        "kept": 110
       },
       "translator": {
         "configured": true,
@@ -231,12 +232,47 @@
           "source": "Gulf News",
           "title": "Watch: Solar eclipse darkens Arctic Russia on course for Spain",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Israel carries out first Gaza strike in more than week, one killed",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "גבר נפצע קשה מירי ביפו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إيران: تقدم في المباحثات مع عُمان بشأن مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "سلام: على إسرائيل وقف التصعيد والدولة اللبنانية مسؤولة عن التعامل مع البنى العسكرية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عمليات دهم وتفتيش إسرائيلية في ريف درعا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "طهران تردّ على ترامب: مضيق هرمز سيبقى إيرانياً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "هيئة بحرية بريطانية: إصابة سفينة شحن بمقذوف مجهول في مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 76,
+      "in": 110,
+      "kept": 73,
       "dropped": [
         {
           "source": "Kan 11",
@@ -318,13 +354,6 @@
         {
           "source": "Al Jazeera",
           "title": "Canadian petition to expel US ambassador gains over 170,000 signatures",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "Indian PM Modi warns about left-wing activists in Independence Day speech",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -422,13 +451,6 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Israel does not forget its founders, but what about the Arabs?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
           "title": "A look into Israeli psychological warfare through Hebrew media.",
           "sec": 0,
           "off": 0,
@@ -444,13 +466,6 @@
         {
           "source": "SANA",
           "title": "Arab Parliament rejects moves to revoke recognition of Palestine",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Iran calls for release of three pilots allegedly held in Qatar",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -513,13 +528,6 @@
         },
         {
           "source": "TRT World",
-          "title": "Egypt may join Mecca Pact, pledges continued Gaza support and plans Syria visit: Erdogan",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
           "title": "Palestinian voter registration begins ahead of the first legislative elections in 20 years",
           "sec": 0,
           "off": 0,
@@ -529,18 +537,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 36,
       "sizes": [
-        21,
+        19,
         6,
         5,
-        5,
+        4,
         4,
         2,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -579,7 +586,7 @@
           "selected_rank": 1,
           "headline": "Trump says will 'soon' declare Hormuz strait US territory",
           "rank_key": {
-            "outlets": 12,
+            "outlets": 11,
             "camps": 5,
             "newest": "2026-08-15T21:51+00:00"
           },
@@ -587,7 +594,6 @@
             "Al Arabiya",
             "Al Jazeera",
             "Al Mayadeen",
-            "Al-Akhbar",
             "Arab News",
             "Egypt Independent",
             "Falastin al-Youm",
@@ -604,7 +610,7 @@
             "levant",
             "turkish"
           ],
-          "members": 21,
+          "members": 19,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -634,8 +640,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Saudi Arabia condemns Iran targeting of two ADNOC tankers in Hormuz",
+                "source": "Al Mayadeen",
+                "title": "Iranian Deputy Foreign Minister for Legal and International Affairs Kazem Gharib",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -643,63 +649,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Following threats from Hezbollah against Israel, an announcement was made to residents of the northe",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-08-15T20:26+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Al-Akhbar",
-            "Daily Sabah",
-            "L'Orient Today",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Following threats from Hezbollah against Israel, an announcement was made to residents of the northern region.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "LIVE After deadly strikes in South Lebanon, Israel seeks ‘more serious’ talks wi",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al-Akhbar",
-                "title": "Hezbollah stated that enemy attacks will be met with appropriate responses and u",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Hezbollah stated that the Israeli enemy must understand that its attacks cannot ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "Israeli strikes kill 11 in Lebanon as Hezbollah vows response",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Palestinian Central Elections Commission launches field voter registration in West Bank",
           "rank_key": {
             "outlets": 4,
@@ -756,20 +705,21 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Qatar rejects Iran's claim it detained 3 fighter pilots after March attack",
+          "selected_rank": 3,
+          "headline": "Qatar denies Tehran’s claim it is detaining Iranian bomber pilots",
           "rank_key": {
             "outlets": 4,
-            "camps": 2,
-            "newest": "2026-08-15T20:06+00:00"
+            "camps": 3,
+            "newest": "2026-08-15T20:55+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
+            "Al Jazeera",
             "Daily Sabah",
             "IRNA",
             "Mehr News"
           ],
           "camps": [
+            "panarab",
             "iranian",
             "turkish"
           ],
@@ -777,8 +727,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Qatar rejects Iran's claim it detained 3 fighter pilots after March attack",
+            "source": "Al Jazeera",
+            "title": "Qatar denies Tehran’s claim it is detaining Iranian bomber pilots",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -800,6 +750,57 @@
               {
                 "source": "Daily Sabah",
                 "title": "Iran accuses Qatar of holding 3 pilots as POWs, turns to ICRC",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Following threats from Hezbollah against Israel, an announcement was made to residents of the northe",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-08-15T20:26+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Daily Sabah",
+            "L'Orient Today",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "Following threats from Hezbollah against Israel, an announcement was made to residents of the northern region.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "LIVE After deadly strikes in South Lebanon, Israel seeks ‘more serious’ talks wi",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "Hezbollah stated that the Israeli enemy must understand that its attacks cannot ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Daily Sabah",
+                "title": "Israeli strikes kill 11 in Lebanon as Hezbollah vows response",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -964,21 +965,33 @@
         },
         {
           "selected_rank": null,
-          "headline": "In response to an antisemitic shooting attack at Bondi Beach, Australia will launch a national gun…",
+          "headline": "Libya's Haftar played role in release of US hostage held by IS",
           "rank_key": {
-            "outlets": 1,
+            "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-16T04:19+00:00"
+            "newest": "2026-08-14T20:25+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Al Arabiya",
+            "The New Arab"
           ],
           "camps": [
-            "israeli"
+            "panarab"
           ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Libya's Haftar played role in release of US hostage held by IS",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
         },
         {
           "selected_rank": null,
@@ -1011,6 +1024,42 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces enter Syria’s Quneitra countryside, raid homes",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T22:42+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Gulf allies growing frustrated with US over prolonged Iran war: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T20:40+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1054,7 +1103,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "Araghchi stresses necessity of expanding economic and trade ties between Iran and Tajikistan",
+          "headline": "Araghchi stresses necessity of expanding economic, trade ties between Iran, Tajikistan",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1065,24 +1114,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "'Terror-Free Türkiye' process to pave way for terror-free region: Turkish parliament speaker",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T17:07+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1179,7 +1210,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1197,7 +1228,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-16T04:33:15.382955+00:00",
+    "last_success": "2026-08-16T05:03:08.640327+00:00",
     "last_failure": null
   },
   "ok": true
