@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T22:12:15.335271+00:00",
+  "updated": "2026-08-16T22:36:17.217936+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-16T22:10:25.391592+00:00"
+      "headlines_updated": "2026-08-16T22:34:28.066703+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 34,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_native": 86,
         "in": 127,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -217,14 +218,24 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "Iran’s deputy foreign minister says won’t be intimidated by US threats after Trump’s statements on Hormuz",
+          "source": "TRT World",
+          "title": "Trump vows to declare Strait of Hormuz as US territory; Iran dismisses threats as empty",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אודיה פינטו חוזרת לסגור חשבון ולנקום: מה היא מכינה לזוגות?",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مصر وإيران... هل تتحول عقلنة العلاقة إلى تقاطع استراتيجي؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
+      "in": 118,
       "kept": 79,
       "dropped": [
         {
@@ -284,13 +295,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Israel consistently ranks at the top of the World Happiness Index.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "US-Iran agreement is set to expire: What to know",
           "sec": 0,
@@ -335,13 +339,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The presidential election campaign in Brazil has commenced, with intense competition between Lula da Silva…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The US Democratic Party has approved the primary election schedule for the 2028 presidential race.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -439,6 +436,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "Trump vows Hormuz will become US territory ‘pretty soon’; Iran says 'it will remain Iranian'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "Qatar categorically denies claims it is detaining Iranian pilots",
           "sec": 0,
           "off": 0,
@@ -447,13 +451,6 @@
         {
           "source": "Gulf News",
           "title": "Donald Trump posts Kim Jong-un photo, says ties remain ‘great’",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Latest MENA News & Top Stories",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -520,9 +517,9 @@
       "method": "heuristic",
       "clusters": 37,
       "sizes": [
-        12,
-        12,
-        12,
+        13,
+        13,
+        10,
         4,
         3,
         3,
@@ -566,11 +563,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Hamas chief, Kushner in Egypt for talks on stalled Gaza plan",
+          "headline": "Kushner meets Hamas leaders in Egypt to push Trump’s Gaza plan",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 10,
             "camps": 5,
-            "newest": "2026-08-16T20:00+00:00"
+            "newest": "2026-08-16T21:26+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -580,6 +577,7 @@
             "Arab News",
             "Falastin al-Youm",
             "Jordan Times",
+            "Kan 11",
             "N12",
             "The New Arab"
           ],
@@ -590,12 +588,12 @@
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Hamas chief, Kushner in Egypt for talks on stalled Gaza plan",
+            "source": "Al Jazeera",
+            "title": "Kushner meets Hamas leaders in Egypt to push Trump’s Gaza plan",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -611,12 +609,17 @@
               },
               {
                 "source": "The New Arab",
+                "title": "Hamas chief, Kushner in Egypt for talks on stalled Gaza plan",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
                 "title": "Hamas, Egypt spy chief hold talks on Gaza plan",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Falastin al-Youm",
-                "title": "Al-Hayya met with the head of Egyptian intelligence in Cairo to discuss the Trum",
+                "source": "Jordan Times",
+                "title": "Hamas delegation, Egypt intelligence chief hold talks on Gaza plan",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -624,9 +627,69 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Israeli settler boys filmed harassing Palestinian family in West Bank village: rights advocate",
+          "rank_key": {
+            "outlets": 7,
+            "camps": 4,
+            "newest": "2026-08-16T20:56+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Arab News",
+            "Egypt Independent",
+            "SANA",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 13,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Israeli settler boys filmed harassing Palestinian family in West Bank village: rights advocate",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Occupation forces raid vicinity of Palestinian family home threatened with force",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Spain condemns colonists’ siege of Palestinian families in Qusra",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "SANA",
+                "title": "Spain condemns Israeli settlers’ blockade of Palestinian families in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Israeli occupation forces detain 19 Palestinians in West Bank raids",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Arab states condemn attack on UAE ADNOC tanker in Strait of Hormuz",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 7,
             "camps": 4,
             "newest": "2026-08-16T14:42+00:00"
           },
@@ -635,7 +698,6 @@
             "Al-Akhbar",
             "Falastin al-Youm",
             "IRNA",
-            "Jordan Times",
             "Mehr News",
             "SANA",
             "TRT World"
@@ -646,7 +708,7 @@
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -678,64 +740,6 @@
               {
                 "source": "Mehr News",
                 "title": "Iran parliament to hold session on Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "UK condemns escalating Israeli settler violence in West Bank",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 3,
-            "newest": "2026-08-16T20:56+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Egypt Independent",
-            "SANA",
-            "TRT World",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 12,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "UK condemns escalating Israeli settler violence in West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Occupation forces raid vicinity of Palestinian family home threatened with force",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Spain condemns colonists’ siege of Palestinian families in Qusra",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "SANA",
-                "title": "Spain condemns Israeli settlers’ blockade of Palestinian families in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Israeli occupation forces detain 19 Palestinians in West Bank raids",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -961,24 +965,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hamas emphasized its commitment to the \"Roadmap\" agreement during a meeting in Egypt with American…",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-16T21:26+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Kızılelma’s strategic edge: Stealth, sensors and internal weapons",
           "rank_key": {
             "outlets": 1,
@@ -1123,6 +1109,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israel vows to go after Hizbollah as it names another killed",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-16T14:55+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Türkiye has no room for separatists, discrimination: Parliament Speaker",
           "rank_key": {
             "outlets": 1,
@@ -1176,7 +1180,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-16T22:12:29.430225+00:00",
+    "last_success": "2026-08-16T22:36:36.047380+00:00",
     "last_failure": null
   },
   "ok": true
