@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T20:11:58.557376+00:00",
+  "updated": "2026-08-16T20:37:14.040930+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-16T20:10:10.530329+00:00"
+      "headlines_updated": "2026-08-16T20:35:23.735096+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 3,
-        "title_snippet": 29,
-        "dropped_no_english": 5,
+        "dropped_stale": 6,
+        "title_snippet": 28,
+        "dropped_no_english": 6,
         "title_translated": 1,
-        "title_native": 89,
+        "title_native": 86,
         "in": 127,
-        "kept": 119
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -189,6 +189,11 @@
       },
       "dropped": [
         {
+          "source": "Al Arabiya",
+          "title": "Trump says will ‘soon’ declare Hormuz Strait US territory",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Jordan Times",
           "title": "Jordan condemns Iranian attack on UAE tankers in Strait of Hormuz",
           "reason": "stale (older than 48h)"
@@ -196,6 +201,16 @@
         {
           "source": "Syria Direct",
           "title": "Rushed justice won’t bury Syria’s past",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "Trump says will 'soon' declare Hormuz strait US territory",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "Trump says will ‘soon’ declare Hormuz strait US territory",
           "reason": "stale (older than 48h)"
         },
         {
@@ -210,7 +225,7 @@
         },
         {
           "source": "N12",
-          "title": "הליכוד נגד איזנקוט - mako",
+          "title": "מה שקורה בצ'אט - לא נשאר בצ'אט - mako",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -227,12 +242,17 @@
           "source": "Falastin al-Youm",
           "title": "لبحث خطة ترامب واتفاق غزة: الحية يلتقي رئيس المخابرات المصرية في القاهرة",
           "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "إعلام عبري: انفجار المسيرة بالجنود من أخطر الحوادث منذ الاتفاق",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 78,
+      "in": 115,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
@@ -368,13 +388,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "Fast-growing Belgium wildfire burns at least 1,600 hectares",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "L'Orient Today",
           "title": "TAXATION Waste fees: What was taxed, and by how much? Alexander HADDAD with the editorial staff",
           "sec": 0,
@@ -453,7 +466,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "US CENTCOM chief ends high-stakes 10-day West Asia tour as USS Lincoln prepares to depart",
+          "title": "UAE-India travel advisory: Airport security checks, delays and what passengers need to know",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -525,12 +538,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 40,
       "sizes": [
-        18,
-        9,
+        14,
+        10,
         7,
-        3,
         2,
         2,
         2,
@@ -538,6 +550,9 @@
         2,
         2,
         2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -576,8 +591,8 @@
           "selected_rank": 1,
           "headline": "Arab states condemn attack on UAE ADNOC tanker in Strait of Hormuz",
           "rank_key": {
-            "outlets": 12,
-            "camps": 5,
+            "outlets": 11,
+            "camps": 4,
             "newest": "2026-08-16T14:42+00:00"
           },
           "outlet_names": [
@@ -585,7 +600,6 @@
             "Al Jazeera",
             "Al Mayadeen",
             "Al-Akhbar",
-            "Arab News",
             "Falastin al-Youm",
             "IRNA",
             "Iran International",
@@ -595,13 +609,12 @@
             "TRT World"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 18,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -622,11 +635,6 @@
               },
               {
                 "source": "Al Arabiya",
-                "title": "Trump says will ‘soon’ declare Hormuz Strait US territory",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
                 "title": "Trump Says He Will Soon Declare Hormuz ‘US Territory’",
                 "rejected_by": "older than the story's newest wave"
               },
@@ -634,22 +642,75 @@
                 "source": "Al Mayadeen",
                 "title": "Iran states that the Strait of Hormuz cannot be seized with a tweet, an aircraft",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Trump must be worried for his security: Senior Iranian MP",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Pope calls for end to Israeli violence against Palestinians in occupied West Bank",
+          "headline": "Hamas, Egypt spy chief hold talks on Gaza plan",
           "rank_key": {
             "outlets": 6,
+            "camps": 4,
+            "newest": "2026-08-16T18:28+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Arab News",
+            "Daily Sabah",
+            "Jordan Times",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 10,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Hamas, Egypt spy chief hold talks on Gaza plan",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Hamas delegation, Egypt spy chief hold talks on Gaza plan",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Hamas says talks in Egypt aim to ensure Israel's adherence to Gaza roadmap",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Pope calls for end to Israeli violence against Palestinians in occupied West Bank",
+          "rank_key": {
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-08-16T20:01+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Anadolu Agency",
-            "Egypt Independent",
             "SANA",
             "TRT World",
             "WAFA News"
@@ -659,7 +720,7 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -674,11 +735,6 @@
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "Spain condemns colonists’ siege of Palestinian families in Qusra",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
                 "source": "SANA",
                 "title": "Spain condemns Israeli settlers’ blockade of Palestinian families in West Bank",
                 "rejected_by": "older than the story's newest wave"
@@ -692,88 +748,17 @@
                 "source": "Anadolu Agency",
                 "title": "Pope renews call to end violence against Palestinians in occupied West Bank",
                 "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Hamas, Egypt spy chief hold talks on Gaza plan",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 3,
-            "newest": "2026-08-16T14:53+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Daily Sabah",
-            "Falastin al-Youm",
-            "Jordan Times",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Hamas, Egypt spy chief hold talks on Gaza plan",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Qatar denies holding Iranian pilots​​ after Tehran claimed three pilots detained by Doha",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-16T07:28+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al-Akhbar",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Qatar denies holding Iranian pilots​​ after Tehran claimed three pilots detained by Doha",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (qatar)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
+              },
               {
-                "source": "The New Arab",
-                "title": "Iran calls for release of pilots captured in Qatar during war",
+                "source": "Al Arabiya",
+                "title": "Pope calls for an end to West Bank violence against Palestinians",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "A political source in Lebanon claims that Hezbollah is escalating its actions on the ground to sabot",
           "rank_key": {
             "outlets": 2,
@@ -811,7 +796,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Iran offers $30,000 bounty for killing, capturing US soldiers",
           "rank_key": {
             "outlets": 2,
@@ -919,6 +904,44 @@
         },
         {
           "selected_rank": null,
+          "headline": "Tehran asserts that Qatar should not waste time denying the alleged detention of Iranian pilots.",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-16T07:28+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al-Akhbar",
+            "title": "Tehran asserts that Qatar should not waste time denying the alleged detention of Iranian pilots.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (qatar)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Iran calls for release of pilots captured in Qatar during war",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli forces launch air, artillery, phosphorus attacks on southern Lebanon",
           "rank_key": {
             "outlets": 2,
@@ -993,6 +1016,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Colonists attack and injure a Palestinian doctor from Jerusalem in Bethlehem",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-16T20:15+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The escalation in Lebanon is attributed to a violation of the ceasefire.",
           "rank_key": {
             "outlets": 1,
@@ -1024,24 +1065,6 @@
             "israeli"
           ],
           "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Türkiye, 7 countries condemn Israel's rejection of roadmap to end Gaza war",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-16T18:24+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1155,6 +1178,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trapped and cut off: Palestinian families under settler siege in the West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-16T12:21+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli occupation forces detain 19 Palestinians in West Bank raids",
           "rank_key": {
             "outlets": 1,
@@ -1190,25 +1231,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Should Iran negotiate with U.S. again?",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-16T08:31+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1226,7 +1249,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-16T20:12:18.740396+00:00",
+    "last_success": "2026-08-16T20:37:27.328353+00:00",
     "last_failure": null
   },
   "ok": true
