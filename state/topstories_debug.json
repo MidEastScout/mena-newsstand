@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T06:31:28.101452+00:00",
+  "updated": "2026-08-16T06:38:54.062412+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-16T06:29:38.103808+00:00"
+      "headlines_updated": "2026-08-16T06:37:10.886958+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 30,
+        "dropped_stale": 8,
+        "title_snippet": 26,
         "title_translated": 3,
-        "title_native": 83,
+        "dropped_no_english": 4,
+        "title_native": 85,
         "in": 126,
-        "kept": 116
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -228,20 +229,30 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Watch: Solar eclipse darkens Arctic Russia on course for Spain",
-          "reason": "stale (older than 48h)"
+          "source": "Channel 13",
+          "title": "התווכח עם זוגתו - וניפץ את שמשות הרכב: עו\"ד מהצפון נעצר",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
-          "source": "TRT World",
-          "title": "Türkiye-Pakistan-Saudi defensive pact aims to boost joint capabilities, regional security: Ankara",
-          "reason": "stale (older than 48h)"
+          "source": "Al Mayadeen",
+          "title": "ملتقى فكري شهدته بغداد لمناقشة كتاب \"بزوغ نظام عالمي جديد\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "طهران تردّ على ترامب: مضيق هرمز سيبقى إيرانياً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"إسرائيل\" لا تنسى مؤسسيها.. فماذا عن العرب؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 82,
+      "in": 114,
+      "kept": 80,
       "dropped": [
         {
           "source": "Kan 11",
@@ -281,13 +292,6 @@
         {
           "source": "Channel 13",
           "title": "The fourteenth episode of the sixth season of 'The Voice' is available for direct viewing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Gilad Hillel (Gigi), son of a well-known drummer, auditioned for the show.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -335,8 +339,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The article examines whether Baghdad and Erbil can agree on a unified strategy for Iraq's role in the…",
+          "source": "Mehr News",
+          "title": "Iran, Tajikistan to sign long-term agreement in energy field",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -398,13 +402,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "An analysis of Israeli psychological warfare conducted through Hebrew media.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "UPDATE: Indonesia earthquake death toll rises to 38, disaster agency says",
           "sec": 1,
@@ -424,6 +421,20 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "US CENTCOM chief ends high-stakes 10-day West Asia tour as USS Lincoln prepares to depart",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Colombian president asks Trump to suspend high tariffs following earthquake",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
@@ -485,17 +496,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 35,
+      "clusters": 37,
       "sizes": [
-        21,
-        15,
-        5,
-        5,
+        20,
+        14,
+        6,
         2,
         2,
         2,
         2,
         2,
+        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -558,7 +571,7 @@
             "levant",
             "turkish"
           ],
-          "members": 21,
+          "members": 20,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -599,14 +612,13 @@
           "selected_rank": 2,
           "headline": "Israeli army claims it killed senior Hezbollah commander in southern Lebanon",
           "rank_key": {
-            "outlets": 11,
+            "outlets": 10,
             "camps": 4,
             "newest": "2026-08-16T06:01+00:00"
           },
           "outlet_names": [
             "Al Manar",
             "Al Mayadeen",
-            "Al-Akhbar",
             "Anadolu Agency",
             "Channel 13",
             "Daily Sabah",
@@ -622,7 +634,7 @@
             "levant",
             "turkish"
           ],
-          "members": 15,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -663,11 +675,12 @@
           "selected_rank": 3,
           "headline": "Iran calls for release of pilots captured in Qatar during war",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 6,
             "camps": 3,
-            "newest": "2026-08-15T20:06+00:00"
+            "newest": "2026-08-15T20:55+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Anadolu Agency",
             "Daily Sabah",
             "IRNA",
@@ -679,7 +692,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -713,63 +726,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Palestinian Central Elections Commission launches field voter registration in West Bank",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-08-15T12:51+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "IRNA",
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Palestinian Central Elections Commission launches field voter registration in West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "West Bank settler attacks continue despite international uproar",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "OIC warns of rising Israeli regime’s crimes in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "US demands Netanyahu condemn ‘terrorist’ settlers in West Bank",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Hamas chief heads to Cairo for talks ahead of Kushner visit",
           "rank_key": {
             "outlets": 2,
@@ -801,27 +757,65 @@
           }
         },
         {
-          "selected_rank": null,
-          "headline": "Houthi attacks halt operations at Yemen’s Mocha port, cause $16M in damage",
+          "selected_rank": 5,
+          "headline": "Qatar condemns escalating Israeli settler attacks in occupied West Bank",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-15T16:53+00:00"
+            "newest": "2026-08-15T16:00+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency"
+            "SANA",
+            "The New Arab"
           ],
           "camps": [
             "panarab",
-            "turkish"
+            "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Houthi attacks halt operations at Yemen’s Mocha port, cause $16M in damage",
+            "source": "SANA",
+            "title": "Qatar condemns escalating Israeli settler attacks in occupied West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (qatar, westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "West Bank settler attacks continue despite international uproar",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Yemen’s Mokha port halts operations after Houthi attacks, port director says",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-15T15:33+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Manar"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Yemen’s Mokha port halts operations after Houthi attacks, port director says",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -829,7 +823,13 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "The Yemeni army announced a significant military operation targeting Saudi gathe",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -968,6 +968,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Two Palestinians shot, eight beaten in attack by colonists in Hebron",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-16T05:33+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Who killed Tupac? What to know about the trial of Duane ‘Keffe D’ Davis",
           "rank_key": {
             "outlets": 1,
@@ -1022,24 +1040,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Qatar condemns escalating Israeli settler attacks in occupied West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T16:00+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "South Korea president proposes talks with North to formally end Korean War",
           "rank_key": {
             "outlets": 1,
@@ -1051,6 +1051,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US demands Netanyahu condemn ‘terrorist’ settlers in West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T12:51+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1094,6 +1112,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Palestinian Central Elections Commission launches field voter registration in West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T11:53+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "UAE strongly condemns Iranian attack on ADNOC vessel",
           "rank_key": {
             "outlets": 1,
@@ -1111,43 +1147,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Egyptian, Cypriot FMs praise growing momentum in bilateral relations",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T10:28+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran warns France after diplomats detained in Tehran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T09:20+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1165,7 +1165,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-16T06:31:56.978959+00:00",
+    "last_success": "2026-08-16T06:39:07.228902+00:00",
     "last_failure": null
   },
   "ok": true
