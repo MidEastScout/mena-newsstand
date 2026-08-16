@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T23:56:27.274360+00:00",
+  "updated": "2026-08-16T00:27:29.876104+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-15T23:54:30.892802+00:00"
+      "headlines_updated": "2026-08-16T00:25:41.122616+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 33,
+        "title_snippet": 32,
         "title_translated": 3,
         "title_native": 81,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 117
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -236,12 +237,17 @@
           "source": "TRT World",
           "title": "Türkiye-Pakistan-Saudi defensive pact aims to boost joint capabilities, regional security: Ankara",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"إسرائيل\" تبتلعنا… ونحن نتفرّج",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 86,
+      "in": 116,
+      "kept": 85,
       "dropped": [
         {
           "source": "Kan 11",
@@ -328,13 +334,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "This entry appears to be a placeholder for general news.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "L'Orient Today",
           "title": "ZOOM OUT From Mount Lebanon to New York, the long history of Arab Americans",
           "sec": 0,
@@ -396,6 +395,13 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "SANA",
+          "title": "Arab Parliament rejects moves to revoke recognition of Palestine",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
@@ -464,17 +470,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 39,
       "sizes": [
         22,
         15,
         5,
-        3,
-        3,
+        4,
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -517,13 +522,12 @@
           "selected_rank": 1,
           "headline": "Trump says will 'soon' declare Hormuz strait US territory",
           "rank_key": {
-            "outlets": 12,
+            "outlets": 11,
             "camps": 5,
             "newest": "2026-08-15T21:51+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Al Mayadeen",
             "Al-Akhbar",
             "Arab News",
@@ -557,11 +561,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "Iran says Hormuz under its control; Lebanon president slams Israeli attacks",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Arabiya",
                 "title": "Trump Says He Will Soon Declare Hormuz ‘US Territory’",
                 "rejected_by": "older than the story's newest wave"
@@ -574,6 +573,11 @@
               {
                 "source": "Al Arabiya",
                 "title": "Saudi Arabia condemns Iran targeting of two ADNOC tankers in Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Mayadeen",
+                "title": "Iran's Deputy Foreign Minister stated that the Strait of Hormuz cannot be seized",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -645,30 +649,85 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Qatar denies it is detaining three Iranian bomber pilots",
+          "headline": "Palestinian Central Elections Commission launches field voter registration in West Bank",
           "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-08-15T20:55+00:00"
+            "outlets": 4,
+            "camps": 4,
+            "newest": "2026-08-15T12:51+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency",
             "Daily Sabah",
             "IRNA",
-            "Mehr News"
+            "The New Arab",
+            "WAFA News"
           ],
           "camps": [
             "panarab",
             "iranian",
+            "levant",
             "turkish"
           ],
           "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Jazeera",
-            "title": "Qatar denies it is detaining three Iranian bomber pilots",
+            "source": "WAFA News",
+            "title": "Palestinian Central Elections Commission launches field voter registration in West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "West Bank settler attacks continue despite international uproar",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "OIC warns of rising Israeli regime’s crimes in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Daily Sabah",
+                "title": "US demands Netanyahu condemn ‘terrorist’ settlers in West Bank",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Qatar rejects Iran's claim it detained 3 fighter pilots after March attack",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 2,
+            "newest": "2026-08-15T20:06+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Daily Sabah",
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Qatar rejects Iran's claim it detained 3 fighter pilots after March attack",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -696,80 +755,41 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Qatar condemns escalating Israeli settler attacks in occupied West Bank",
+          "selected_rank": 5,
+          "headline": "A Hamas source indicated that a delegation from the organization would travel to Egypt for discussio",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-15T16:00+00:00"
+            "newest": "2026-08-15T19:40+00:00"
           },
           "outlet_names": [
-            "SANA",
-            "The New Arab",
-            "WAFA News"
+            "Al Jazeera",
+            "Kan 11"
           ],
           "camps": [
-            "panarab",
-            "levant"
+            "israeli",
+            "panarab"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "SANA",
-            "title": "Qatar condemns escalating Israeli settler attacks in occupied West Bank",
-            "title_source": "native",
+            "source": "Kan 11",
+            "title": "A Hamas source indicated that a delegation from the organization would travel to Egypt for discussions.",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "names 1 of the story's dominant entities (gaza)",
               "neutral-by-default outlet",
-              "outlet's own English headline"
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "Presidency condemns escalating Israeli terrorism in occupied West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "The New Arab",
-                "title": "West Bank settler attacks continue despite international uproar",
+                "source": "Al Jazeera",
+                "title": "Iran war updates: Iran says Hormuz under its control, Israel bombs Lebanon",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Bulk carrier hit by projectile in Strait of Hormuz: UKMTO",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-15T09:56+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Falastin al-Youm",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Bulk carrier hit by projectile in Strait of Hormuz: UKMTO",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -964,24 +984,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Hamas source indicated that a delegation from the organization would travel to Egypt for discussio",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T19:40+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "'Terror-Free Türkiye' process to pave way for terror-free region: Turkish parliament speaker",
           "rank_key": {
             "outlets": 1,
@@ -1011,6 +1013,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Qatar condemns escalating Israeli settler attacks in occupied West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T16:00+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1054,24 +1074,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "US demands Netanyahu condemn ‘terrorist’ settlers in West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T12:51+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump recognized Resistance Front in MoU signed with Iran: Ghalibaf",
           "rank_key": {
             "outlets": 1,
@@ -1089,7 +1091,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Ex-Cambridge professor Jason Arday found dead after plagiarism row",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T12:32+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1107,7 +1127,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-15T23:56:41.626795+00:00",
+    "last_success": "2026-08-16T00:27:51.054490+00:00",
     "last_failure": null
   },
   "ok": true
