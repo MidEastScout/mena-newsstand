@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T00:40:53.913944+00:00",
+  "updated": "2026-08-16T01:12:08.623397+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-16T00:39:11.368904+00:00"
+      "headlines_updated": "2026-08-16T01:10:11.744519+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
+        "dropped_stale": 10,
         "title_snippet": 32,
         "title_translated": 3,
-        "title_native": 83,
+        "title_native": 81,
         "dropped_no_english": 1,
         "in": 127,
-        "kept": 118
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -201,6 +201,11 @@
         {
           "source": "Arab News",
           "title": "Iran says it manages Strait of Hormuz after Trump claims US control",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "Turkiye, Pakistan, Saudi Arabia will form political, military mechanisms to coordinate under defense pact, Ankara says",
           "reason": "stale (older than 48h)"
         },
         {
@@ -229,15 +234,20 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "TRT World",
+          "title": "Türkiye-Pakistan-Saudi defensive pact aims to boost joint capabilities, regional security: Ankara",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Al Mayadeen",
-          "title": "\"إسرائيل\" تبتلعنا… ونحن نتفرّج",
+          "title": "مصر وإيران... هل تتقاطع الرؤى بين البلدين؟ وكيف تعثر بناء العلاقات بعد حقبة مبارك؟",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 87,
+      "in": 116,
+      "kept": 86,
       "dropped": [
         {
           "source": "Kan 11",
@@ -448,13 +458,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Palestinian voter registration begins ahead of the first legislative elections in 20 years",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
@@ -462,12 +465,12 @@
       "method": "heuristic",
       "clusters": 40,
       "sizes": [
-        24,
+        23,
         9,
-        6,
+        5,
         5,
         4,
-        2,
+        3,
         2,
         2,
         2,
@@ -538,7 +541,7 @@
             "levant",
             "turkish"
           ],
-          "members": 24,
+          "members": 23,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -638,14 +641,13 @@
           "selected_rank": 3,
           "headline": "Israeli strikes kill 11 in Lebanon as Hezbollah vows response",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-08-15T20:15+00:00"
           },
           "outlet_names": [
             "Al Manar",
             "Al-Akhbar",
-            "Anadolu Agency",
             "Daily Sabah",
             "L'Orient Today",
             "N12"
@@ -655,7 +657,7 @@
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -796,32 +798,34 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Hamas source indicated that a delegation from the organization would travel to Egypt for discussio",
+          "headline": "Hamas delegation led by al-Hayya heads to Cairo to discuss Gaza ceasefire agreement",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-15T19:40+00:00"
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-08-15T22:53+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
+            "Anadolu Agency",
             "Kan 11"
           ],
           "camps": [
             "israeli",
-            "panarab"
+            "panarab",
+            "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "A Hamas source indicated that a delegation from the organization would travel to Egypt for discussions.",
-            "title_source": "snippet",
+            "source": "Anadolu Agency",
+            "title": "Hamas delegation led by al-Hayya heads to Cairo to discuss Gaza ceasefire agreement",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
@@ -1078,24 +1082,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Ukraine hits Russian Starlink-style network, Moscow tracks arms package",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T15:50+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "South Korea president proposes talks with North to formally end Korean War",
           "rank_key": {
             "outlets": 1,
@@ -1149,6 +1135,24 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
+          "selected_rank": null,
+          "headline": "UAE strongly condemns Iranian attack on ADNOC vessel",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T11:16+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
           "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1167,7 +1171,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-16T00:41:07.152375+00:00",
+    "last_success": "2026-08-16T01:12:22.672792+00:00",
     "last_failure": null
   },
   "ok": true
