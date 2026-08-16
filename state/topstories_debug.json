@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T13:43:44.516626+00:00",
+  "updated": "2026-08-16T14:00:15.274900+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-16T13:41:55.812619+00:00"
+      "headlines_updated": "2026-08-16T13:58:23.255581+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 33,
+        "title_snippet": 31,
+        "dropped_no_english": 2,
         "title_translated": 2,
         "title_native": 85,
         "in": 126,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -216,34 +217,23 @@
           "source": "TRT World",
           "title": "Saudi crown prince, US CENTCOM chief discuss efforts to ease regional tensions",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "אלימות קשה בפארק המים: קטטה המונית ב\"ימית 2000\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "קטטה המונית בימית 2000: שני מאבטחים נפצעו ו-12 נעצרו",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 78,
+      "in": 118,
+      "kept": 77,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "Twelve suspects were arrested at the Yamit 2000 water park in Holon after a brawl.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Two children, aged 5 and 6, were hospitalized after consuming chocolate containing hallucinogenic mushrooms…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "An Israeli man was arrested in Greece for starting a wildfire by lighting a barbecue in a forest, despite…",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
         {
           "source": "Kan 11",
           "title": "Singer Shimon Buskila is being investigated on suspicion of threatening his ex-partner.",
@@ -252,15 +242,36 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "Two young children were admitted to intensive care after eating chocolate contaminated with hallucinogenic…",
+          "source": "Kan 11",
+          "title": "Two children, aged 5 and 6, were rushed to the emergency department after consuming chocolate containing…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "A tourist from Israel, aged 35, was arrested in Crete on suspicion of negligent arson for using a barbecue…",
+          "title": "Two children, aged five and a half and six and a half, were hospitalized in intensive care after eating…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "A tourist, about 35 years old from Israel, was arrested in Crete on suspicion of arson due to negligence.",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "The Shin Bet security agency is warning of an increase in Iranian attempts to recruit Israeli journalists.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "Singer Shimon Buskila is being investigated on suspicion of harassing his ex-partner.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
@@ -268,20 +279,6 @@
         {
           "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This news item refers to a reservist who received another opportunity and does not contain specific event…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This news item describes an individual who survived for 23 minutes without a pulse after three resuscitation…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -298,13 +295,6 @@
           "title": "Pro-Israel Emirati influencers mocked for claims of Islamic plot to take over West",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Middle East Eye",
-          "title": "Dua Lipa backs Albania’s ‘Flamingo Revolution’ against Kushner-backed resort",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -330,21 +320,21 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Tehran is urging Doha to permit its experts to enter the country to investigate the fate of Iranian pilots.",
+          "title": "A poll indicates that most American voters believe their financial situation worsened under Trump.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "The American Democratic Party has approved its schedule for the 2028 presidential primary elections.",
+          "title": "Tehran is demanding that Doha allow its experts to enter the country to investigate the fate of Iranian…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "IRNA",
-          "title": "Iran urges Qatar to allow Air Force fact-finding team over missing pilots",
+          "source": "Al Mayadeen",
+          "title": "The US Democratic Party has approved its primary election schedule for the 2028 presidential race.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -406,6 +396,20 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Manar",
+          "title": "Sheikh Qasem: What is happening is surrender and we do not accept surrender and we will remain steadfast 19:17",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Manar",
+          "title": "The article reflects on twenty years since the July victory, recounting the steadfastness of the resistance's…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "WAFA News",
           "title": "Arab Parliament Speaker urges Slovenia and European Parliament to reject any move to withdraw recognition of Palestine",
           "sec": 0,
@@ -414,14 +418,14 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "An expert revealed the cause of skin pustules, providing a medical explanation.",
+          "title": "An expert revealed the reason for the appearance of skin pustules.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "An Israeli-funded campaign is reportedly disseminating content supporting the Israeli narrative on Gaza.",
+          "title": "An Israeli-funded campaign aims to spread content supporting the Israeli narrative regarding Gaza.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -524,14 +528,14 @@
       "clusters": 32,
       "sizes": [
         21,
+        9,
         8,
-        7,
-        5,
-        4,
-        4,
+        6,
+        3,
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -631,7 +635,7 @@
           "selected_rank": 2,
           "headline": "Israeli forces launch air, artillery, phosphorus attacks on southern Lebanon",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 8,
             "camps": 5,
             "newest": "2026-08-16T05:43+00:00"
           },
@@ -641,6 +645,7 @@
             "Channel 13",
             "IRNA",
             "Kan 11",
+            "L'Orient Today",
             "N12",
             "WAFA News"
           ],
@@ -651,7 +656,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -667,23 +672,23 @@
             "passed_over": [
               {
                 "source": "Kan 11",
-                "title": "Three soldiers were seriously injured in southern Lebanon's Ali Taher ridge by a",
+                "title": "Three soldiers were seriously injured in southern Lebanon's Al-Taher Ridge by an",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "N12",
-                "title": "A drone carrying explosives targeted Israeli forces in southern Lebanon, serious",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "N12",
-                "title": "Three soldiers were seriously injured by an explosive drone in southern Lebanon.",
+                "title": "Three soldiers were seriously injured in southern Lebanon.",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Channel 13",
-                "title": "Three soldiers sustained serious injuries in southern Lebanon due to an explosiv",
-                "rejected_by": "stale anticipatory framing"
+                "title": "Three soldiers were seriously injured in southern Lebanon; the IDF assesses that",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "FOCUS Ali Taher, yellow line and Iran’s return: South Lebanon on the brink of fu",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -692,11 +697,12 @@
           "selected_rank": 3,
           "headline": "Qusra's Palestinians recall months of militant Israeli settler violence",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 3,
             "newest": "2026-08-16T12:21+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Daily Sabah",
             "Egypt Independent",
             "Falastin al-Youm",
@@ -709,7 +715,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -723,6 +729,11 @@
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Iran-Oman talks on Hormuz continue; UN delivers aid to West Bank families",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "The New Arab",
                 "title": "West Bank settler attacks continue despite international uproar",
@@ -762,7 +773,7 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -806,7 +817,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -819,13 +830,7 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Anadolu Agency",
-                "title": "Hamas delegation led by al-Hayya heads to Cairo to discuss Gaza ceasefire agreem",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -868,71 +873,38 @@
         },
         {
           "selected_rank": null,
-          "headline": "A large-scale fight occurred at the Yamit 2000 water park, resulting in two injured security guards ",
+          "headline": "Haniyeh met with the Egyptian intelligence chief in Cairo to discuss Trump's plan and the Gaza agree",
           "rank_key": {
             "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-15T17:39+00:00"
+            "camps": 2,
+            "newest": "2026-08-16T10:14+00:00"
           },
           "outlet_names": [
-            "Channel 13",
-            "N12"
+            "Anadolu Agency",
+            "Falastin al-Youm"
           ],
           "camps": [
-            "israeli"
+            "levant",
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Channel 13",
-            "title": "A large-scale fight occurred at the Yamit 2000 water park, resulting in two injured security guards and…",
+            "source": "Falastin al-Youm",
+            "title": "Haniyeh met with the Egyptian intelligence chief in Cairo to discuss Trump's plan and the Gaza agreement.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
+              "names 1 of the story's dominant entities (gaza)",
+              "state/partisan outlet (last resort)",
               "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "FOCUS Banking reforms: What we know about the sanctions being considered in the US Mounir YOUNES",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Manar",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "L'Orient Today",
-            "title": "FOCUS Banking reforms: What we know about the sanctions being considered in the US Mounir YOUNES",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "L'Orient Today",
-                "title": "LIVE After deadly strikes in South Lebanon, Israel seeks ‘more serious’ talks wi",
-                "rejected_by": "bare stub headline"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Hezbollah stated that the enemy (Israel) must understand that its attacks cannot",
-                "rejected_by": "loaded/partisan wording"
+                "source": "Anadolu Agency",
+                "title": "Hamas delegation led by al-Hayya heads to Cairo to discuss Gaza ceasefire agreem",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -957,7 +929,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "A political figure stated that resistance is a strong bargaining chip in negotiations and should not",
+          "headline": "Lahoud told the authorities that resistance is a bargaining chip in negotiations and they should not",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -965,24 +937,6 @@
           },
           "outlet_names": [
             "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Haniyeh is scheduled to meet with the Egyptian intelligence chief in Cairo to discuss Trump's plan a",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-16T10:14+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
           ],
           "camps": [
             "levant"
@@ -1047,7 +1001,43 @@
         },
         {
           "selected_rank": null,
-          "headline": "This summary covers weekly developments including stalled negotiations, Israeli escalation, and othe",
+          "headline": "An Israeli man was arrested in Greece for starting a fire by lighting a barbecue in a forest during ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-16T07:47+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israel's Shin Bet security agency and the National Cyber Directorate are warning of an increase in p",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-16T07:23+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The weekly summary highlights stalled negotiations, Israeli escalation, and other significant develo",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1058,24 +1048,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "There is an Israeli escalation occurring from Gaza to southern Lebanon, coinciding with differing st",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T20:34+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1119,6 +1091,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "A drone carrying explosives was launched towards IDF forces early this morning in Al-Taher Ridge.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-15T14:00+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "UAE strongly condemns Iranian attack on ADNOC vessel",
           "rank_key": {
             "outlets": 1,
@@ -1136,25 +1126,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iran’s economic problems worsened as Israel-US war damaged factories, cut oil sales: Pezeshkian",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-15T10:32+00:00"
-          },
-          "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1172,7 +1144,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-16T13:43:59.918675+00:00",
+    "last_success": "2026-08-16T14:00:15.704788+00:00",
     "last_failure": null
   },
   "ok": true
