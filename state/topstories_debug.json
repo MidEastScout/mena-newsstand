@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T05:58:38.692982+00:00",
+  "updated": "2026-08-17T06:29:50.692089+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-17T05:56:59.492454+00:00"
+      "headlines_updated": "2026-08-17T06:27:59.996414+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 33,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_native": 85,
-        "dropped_no_english": 1,
         "in": 127,
-        "kept": 118
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -228,6 +228,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "N12",
+          "title": "פדיחה בערוץ 14: האמת על העימות עם \"הפצ\"רית\" - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "ترامب يرحّب باتفاق الدفاع المشترك بين السعودية وتركيا وباكستان",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -235,8 +240,8 @@
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 72,
+      "in": 117,
+      "kept": 71,
       "dropped": [
         {
           "source": "Kan 11",
@@ -276,13 +281,6 @@
         {
           "source": "N12",
           "title": "August 16, 2026, edition of \"Five with Almog\"; includes news broadcasts, the main edition, weekend news…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "\"Six with Oded Ben Ami\" is a news program from Channel 12, featuring various news broadcasts and special…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -381,6 +379,13 @@
         {
           "source": "IRNA",
           "title": "Iran’s space industry presses ahead despite wartime damage: Official",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Six Iranian universities make Shanghai Ranking’s top 1,000",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -564,17 +569,20 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 43,
       "sizes": [
-        12,
+        11,
         7,
         7,
         4,
-        3,
         2,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -615,66 +623,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "West Bank at a ‘breaking point’ as settler violence, military raids escalate",
-          "rank_key": {
-            "outlets": 7,
-            "camps": 4,
-            "newest": "2026-08-17T01:25+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Arab News",
-            "Jordan Times",
-            "SANA",
-            "TRT World",
-            "WAFA News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 12,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "West Bank at a ‘breaking point’ as settler violence, military raids escalate",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Occupation forces raid vicinity of Palestinian family home threatened with force",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "SANA",
-                "title": "More than 3,000 Israeli settler attacks recorded in West Bank since 2025",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Spain condemns Israeli settlers’ blockade of Palestinian families in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Israeli occupation forces detain 19 Palestinians in West Bank raids",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Arab states condemn attack on UAE ADNOC tanker in Strait of Hormuz",
           "rank_key": {
             "outlets": 7,
@@ -728,6 +676,65 @@
               {
                 "source": "Falastin al-Youm",
                 "title": "Iran stated that the Strait of Hormuz cannot be taken by a tweet or an order.",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "UK condemns escalating Israeli settler violence in West Bank",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-08-17T01:25+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Arab News",
+            "SANA",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 11,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "UK condemns escalating Israeli settler violence in West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Occupation forces raid vicinity of Palestinian family home threatened with force",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "SANA",
+                "title": "More than 3,000 Israeli settler attacks recorded in West Bank since 2025",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Spain condemns Israeli settlers’ blockade of Palestinian families in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Israeli occupation forces detain 19 Palestinians in West Bank raids",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -898,73 +905,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump says US to ‘substantially reduce’ military drills with South Korea",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-17T00:11+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "Trump says US to ‘substantially reduce’ military drills with South Korea",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Tehran, Qom, Mashhad to host ceremonies marking 40th day after martyred Leader’s funeral",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-16T09:59+00:00"
-          },
-          "outlet_names": [
-            "IRNA",
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Tehran, Qom, Mashhad to host ceremonies marking 40th day after martyred Leader’s funeral",
-            "title_source": "native",
-            "why": [
-              "names 2 of the story's dominant entities (funeral, khamenei)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "Tehran, Mashhad to host ceremonies honoring martyred Leader",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "FOCUS Banking reforms: What we know about the sanctions being considered in the US Mounir YOUNES",
           "rank_key": {
             "outlets": 2,
@@ -978,7 +918,7 @@
           "camps": [
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -991,11 +931,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "LIVE Renewed attacks on the Ali Taher heights, targeted by explosive materials |",
-                "rejected_by": "bare stub headline"
-              },
               {
                 "source": "Al Manar",
                 "title": "Hezbollah stated that Israeli aggression cannot continue and will be met with an",
@@ -1096,6 +1031,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Zambia incumbent takes early election lead as opposition alleges armed raid",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-17T02:27+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump orders reduction in US-South Korea military drills, citing ties with Kim Jong Un",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-16T21:58+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Kızılelma’s strategic edge: Stealth, sensors and internal weapons",
           "rank_key": {
             "outlets": 1,
@@ -1185,43 +1156,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Hebrew media reported that the drone explosion on soldiers is one of the most serious incidents sinc",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-16T17:08+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "An Arab-Islamic statement condemned the entity's rejection of the Trump plan.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-16T16:34+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1239,7 +1174,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-17T05:58:58.110064+00:00",
+    "last_success": "2026-08-17T06:30:13.667239+00:00",
     "last_failure": null
   },
   "ok": true
