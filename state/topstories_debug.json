@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T23:59:52.154692+00:00",
+  "updated": "2026-08-18T00:31:28.790012+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-17T23:57:54.443773+00:00"
+      "headlines_updated": "2026-08-18T00:29:23.207186+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 21,
-        "dropped_no_english": 10,
+        "title_snippet": 20,
+        "dropped_no_english": 11,
         "title_translated": 1,
         "title_native": 84,
         "in": 126,
-        "kept": 106
+        "kept": 105
       },
       "translator": {
         "configured": true,
@@ -245,6 +245,11 @@
         },
         {
           "source": "Kan 11",
+          "title": "התקרית האנטישמית בסוף השבוע בבית כנסת בניו יורק: התוקף",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
           "title": "לאחר ספירת 13% מהקולות בפריימריז הליכוד: אלי כהן בראש, אוחנה ולוין אחריו",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
@@ -291,19 +296,12 @@
       ]
     },
     "relevance": {
-      "in": 106,
-      "kept": 65,
+      "in": 105,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Police have arrested two suspects in connection with a brawl that preceded the death of Alder Dayan.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "An unmarried woman who underwent fertility treatments at Assuta Hospital claims her two children, who were…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -332,6 +330,13 @@
         {
           "source": "Al Jazeera",
           "title": "Trump’s approval rating sinks to new low at 33 percent",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Trump rejects MoU extension with Iran as US claims total control of Hormuz",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -415,7 +420,7 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "ENERGY A look back at the Hawk III’s journey, the ship still seized in Lebanon",
+          "title": "LEBANON-ISRAEL 'We must bomb Beirut and crush them,' says Ben-Gvir",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -585,9 +590,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 34,
       "sizes": [
-        13,
+        12,
+        5,
         5,
         5,
         3,
@@ -596,10 +602,6 @@
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -633,15 +635,14 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "‘We will not allow Gaza to be rebuilt’ until Hamas disarms, Kushner says",
+          "headline": "Trump envoy discusses Gaza plan with Netanyahu after rare Hamas meeting",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 9,
             "camps": 4,
-            "newest": "2026-08-17T23:25+00:00"
+            "newest": "2026-08-17T19:09+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Al Mayadeen",
             "Al-Akhbar",
             "Arab News",
@@ -657,12 +658,12 @@
             "panarab",
             "levant"
           ],
-          "members": 13,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Jazeera",
-            "title": "‘We will not allow Gaza to be rebuilt’ until Hamas disarms, Kushner says",
+            "source": "Arab News",
+            "title": "Trump envoy discusses Gaza plan with Netanyahu after rare Hamas meeting",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -796,6 +797,62 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Israeli forces raid hospital premises, assault patients in southern West Bank",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 2,
+            "newest": "2026-08-17T19:32+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Falastin al-Youm",
+            "L'Orient Today",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Israeli forces raid hospital premises, assault patients in southern West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "LIVE Trump says US not seeking to extend interim deal with Iran | LIVE",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Pope renews call to end violence against Palestinians in West Bank, urges two-st",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "The Ministry of Awqaf announced the opening of registration for the Hajj season ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Pope calls for end to Israeli violence against Palestinians in occupied West Ban",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Trump says US will reduce joint military exercises with key ally South Korea",
           "rank_key": {
             "outlets": 3,
@@ -833,7 +890,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Turkish, Iranian foreign ministers discuss talks on reopening Strait of Hormuz, ceasefire",
           "rank_key": {
             "outlets": 2,
@@ -858,38 +915,6 @@
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces raid hospital premises, assault patients in southern West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-17T19:32+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli forces raid hospital premises, assault patients in southern West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -1224,24 +1249,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Ministry of Awqaf announced the opening of registration for the Hajj season 1448 AH in the gover",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-17T11:56+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Drones launched from Iran target Iraqi Kurdistan officials’ offices, authorities say",
           "rank_key": {
             "outlets": 1,
@@ -1259,7 +1266,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Tehran rejects negotiations on extension of MoU btw Iran, US",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-17T08:39+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1277,7 +1302,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-18T00:00:06.229430+00:00",
+    "last_success": "2026-08-18T00:31:42.964278+00:00",
     "last_failure": null
   },
   "ok": true
