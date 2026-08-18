@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T20:39:44.561894+00:00",
+  "updated": "2026-08-18T21:00:34.936896+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-18T20:38:00.613161+00:00"
+      "headlines_updated": "2026-08-18T20:58:06.662375+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 35,
-        "title_native": 84,
+        "dropped_stale": 8,
+        "title_snippet": 34,
+        "dropped_no_english": 1,
+        "title_native": 83,
         "in": 126,
-        "kept": 119
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -202,6 +203,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Jordan Times",
+          "title": "Jordan, Arab, Islamic countries condemn Israel’s rejection of Gaza peace deal, Palestinian statehood",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "WAFA News",
           "title": "Pope renews call to end violence against Palestinians in West Bank, urges two-state solution",
           "reason": "stale (older than 48h)"
@@ -220,11 +226,16 @@
           "source": "TRT World",
           "title": "Iran offers $30,000 bounty for capturing or killing US soldiers",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המהדורה המרכזית 18.08.26 - המהדורה המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
+      "in": 117,
       "kept": 78,
       "dropped": [
         {
@@ -272,13 +283,6 @@
         {
           "source": "Channel 13",
           "title": "Two additional suspects have been arrested by police in connection with the murder of Eldar Dayan.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The sixteenth episode of the sixth season of 'The Voice' is available for direct viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -459,13 +463,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "France to expel 2 Iranian diplomats in response to 'deliberate assault' on 2 French diplomats",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "OpenAI slows AI push after rogue agent hacks rival firm",
           "sec": 0,
@@ -518,10 +515,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 44,
       "sizes": [
         11,
-        7,
+        8,
         5,
         5,
         3,
@@ -531,7 +528,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -655,7 +651,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -985,6 +981,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "UAE suspends all trade, financial activity with Iran 'until further notice'",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-18T20:36+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Araghchi: 40-day war shattered illusion of US-provided security",
           "rank_key": {
             "outlets": 1,
@@ -1182,25 +1196,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Barrack calls Israeli strikes on Abu al-Duhur airbase unjustified escalation",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-18T13:18+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1218,7 +1214,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-18T20:40:06.143266+00:00",
+    "last_success": "2026-08-18T21:00:36.102663+00:00",
     "last_failure": null
   },
   "ok": true
