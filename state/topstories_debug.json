@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T16:52:00.290821+00:00",
+  "updated": "2026-08-18T16:57:15.653643+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-18T16:50:03.967723+00:00"
+      "headlines_updated": "2026-08-18T16:55:21.453968+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 35,
-        "title_native": 84,
+        "dropped_stale": 8,
+        "title_snippet": 33,
+        "title_native": 83,
+        "dropped_no_english": 2,
         "in": 126,
-        "kept": 119
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -202,6 +203,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Jordan Times",
+          "title": "Hamas delegation, Egypt intelligence chief hold talks on Gaza plan",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "WAFA News",
           "title": "Pope renews call to end violence against Palestinians in West Bank, urges two-state solution",
           "reason": "stale (older than 48h)"
@@ -213,19 +219,29 @@
         },
         {
           "source": "TRT World",
-          "title": "Iran offers $30,000 bounty for capturing or killing US soldiers",
+          "title": "Pope calls for end to Israeli violence against Palestinians in occupied West Bank",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "Iran rejects Trump's statement on Strait of Hormuz, saying waterway 'will remain Iranian'",
+          "title": "Iran offers $30,000 bounty for capturing or killing US soldiers",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أزمة الزيوت وقطع الغيار تنذران بوقف مجمع الشفاء الطبي بغزة عن العمل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "لماذا نلجأ للطعام عند الحزن والقلق؟ دراسة تجيب",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 72,
+      "in": 116,
+      "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
@@ -382,13 +398,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "UN says only 3% of Gaza cropland accessible and undamaged",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "L'Orient Today",
           "title": "FOCUS Turkey takes initiative in Lebanon: Arms monopoly, Israeli withdrawal",
           "sec": 0,
@@ -440,13 +449,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Russia liberated two Ukrainian towns in Donetsk.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The deadline for registering for the legislative elections is tomorrow.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -515,6 +517,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "European stocks close mostly lower amid Middle East tensions",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "From Palmyra to Venice: When Syria reclaims its narrative through art",
           "sec": 0,
@@ -560,7 +569,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 42,
       "sizes": [
         9,
         8,
@@ -569,7 +578,6 @@
         3,
         3,
         3,
-        2,
         2,
         2,
         1,
@@ -714,6 +722,52 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Strait of Hormuz: Bulk carrier hit by unknown projectile, crew casualty reported",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-08-18T14:30+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "Gulf News",
+            "SANA"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Strait of Hormuz: Bulk carrier hit by unknown projectile, crew casualty reported",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Vessel struck by unknown projectile in Strait of Hormuz, casualty reported, UKMT",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Vessel struck by unknown projectile in Strait of Hormuz, crew casualty reported,",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Why is Russia threatening UK with ‘consequences’ over Ukraine drones?",
           "rank_key": {
             "outlets": 3,
@@ -730,7 +784,7 @@
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -743,53 +797,7 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Putin’s ‘illusion of victory:’ Russia ramps up missile attacks on Ukraine",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Bulk Carrier Hit by Unknown Projectile in Strait of Hormuz, Crew Casualty Reported: UKMTO Issues Cau",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-18T14:30+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Gulf News",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "Bulk Carrier Hit by Unknown Projectile in Strait of Hormuz, Crew Casualty Reported: UKMTO Issues Caution Advisory",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Vessel struck by unknown projectile in Strait of Hormuz, casualty reported, UKMT",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -827,44 +835,6 @@
               {
                 "source": "Gulf News",
                 "title": "Kushner meets with Hamas in push to revive Gaza plan",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli drone strike on crowded Gaza cafe kills 6 Palestinians, eyewitnesses say",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-18T16:44+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli drone strike on crowded Gaza cafe kills 6 Palestinians, eyewitnesses say",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Mediators wait for Iran-Oman Hormuz deal; Israel kills six people in Gaza",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -983,6 +953,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran prepares to keep economy alive as US threatens further sanctions",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-18T16:21+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1169,24 +1157,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "S. Korea President Lee to host China's top diplomat amid US row",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-18T13:28+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1205,7 +1175,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-18T16:52:22.182966+00:00",
+    "last_success": "2026-08-18T16:57:57.309137+00:00",
     "last_failure": null
   },
   "ok": true
