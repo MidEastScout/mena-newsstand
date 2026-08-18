@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T19:00:40.417796+00:00",
+  "updated": "2026-08-18T19:07:39.884792+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-18T18:58:47.533179+00:00"
+      "headlines_updated": "2026-08-18T19:05:34.965148+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 35,
+        "title_snippet": 33,
+        "dropped_no_english": 2,
         "title_native": 85,
         "in": 126,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -215,12 +216,22 @@
           "source": "TRT World",
           "title": "Iran offers $30,000 bounty for capturing or killing US soldiers",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "העימות בין איראן לצרפת עולה מדרגה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "هيئة عمليات التجارة البحرية البريطانية: مقذوف مجهول أصاب ناقلة في مضيق هرمز ما أدى إلى إصابة بين طاقمها وأضرار في السفين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 78,
+      "in": 118,
+      "kept": 77,
       "dropped": [
         {
           "source": "Kan 11",
@@ -302,13 +313,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Following 40 days since the passing of Ayatollah Khamenei, Iran is recalling the leader's legacy and renewing…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Turkey is calling for the dissolution of the PKK and the disarmament and cutting of funding sources for the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -520,7 +524,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 43,
       "sizes": [
         13,
         7,
@@ -534,7 +538,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -1149,24 +1152,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Air Force eliminated four Hamas commanders in the Shati refugee camp in Gaza.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-18T17:15+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "UAE says it detected 2 incoming ballistic missiles launched from Iran",
           "rank_key": {
             "outlets": 1,
@@ -1274,7 +1259,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Data of 1.2M people, 200,000 firms stolen in Latvia cyber attack",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-18T14:48+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1292,7 +1295,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-18T19:00:54.650468+00:00",
+    "last_success": "2026-08-18T19:08:01.844161+00:00",
     "last_failure": null
   },
   "ok": true
