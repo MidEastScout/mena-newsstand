@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T02:48:04.114535+00:00",
+  "updated": "2026-08-18T03:10:52.108941+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-18T02:46:14.479626+00:00"
+      "headlines_updated": "2026-08-18T03:09:06.929531+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 33,
-        "title_native": 84,
+        "dropped_stale": 7,
+        "title_snippet": 32,
+        "dropped_no_english": 1,
+        "title_native": 86,
         "in": 126,
-        "kept": 117
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -186,11 +187,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "Iran calls for release of pilots captured in Qatar during war",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Al Mayadeen",
           "title": "من غزة إلى جنوب لبنان... تصعيد إسرائيلي وسط تباين في المواقف الأمريكية",
@@ -227,15 +223,15 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Egypt may join Mecca Pact, pledges continued Gaza support and plans Syria visit: Erdogan",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "דיווחים בלבנון: חיל האוויר תקף הלילה בכמה כפרים בדרום המדינה",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 68,
+      "in": 118,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -350,6 +346,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Arabiya",
+          "title": "Trump says Iran won’t make deal he thinks is needed, threatens to bomb Oman",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "The New Arab",
           "title": "Trump welcomes defence pact between Saudi, Turkey and Pakistan",
           "sec": 0,
@@ -359,6 +362,13 @@
         {
           "source": "The New Arab",
           "title": "Egypt could join Mecca defence pact, Turkey's Erdogan says",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Trump says Iran should surrender, threatens to bomb Oman",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -586,7 +596,7 @@
       "method": "heuristic",
       "clusters": 39,
       "sizes": [
-        13,
+        12,
         5,
         5,
         3,
@@ -636,7 +646,7 @@
           "selected_rank": 1,
           "headline": "‘We will not allow Gaza to be rebuilt’ until Hamas disarms, Kushner says",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 9,
             "camps": 4,
             "newest": "2026-08-17T23:48+00:00"
           },
@@ -649,7 +659,6 @@
             "Channel 13",
             "Falastin al-Youm",
             "Gulf News",
-            "Kan 11",
             "The New Arab"
           ],
           "camps": [
@@ -658,7 +667,7 @@
             "panarab",
             "levant"
           ],
-          "members": 13,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -1175,6 +1184,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump threatens to bomb Oman if it 'gets in the way' of US-Iran talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-17T12:45+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Russia's chief economist criticized the country's handling of the war, leading to his dismissal.",
           "rank_key": {
             "outlets": 1,
@@ -1186,24 +1213,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli strikes on Lebanon highlight cracks in US-Iran Memorandum of Understanding",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-17T12:07+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1228,7 +1237,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-18T02:48:37.603463+00:00",
+    "last_success": "2026-08-18T03:10:53.139964+00:00",
     "last_failure": null
   },
   "ok": true
