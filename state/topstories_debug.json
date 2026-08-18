@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T19:49:13.051347+00:00",
+  "updated": "2026-08-18T20:04:59.894696+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-18T19:47:17.936241+00:00"
+      "headlines_updated": "2026-08-18T20:03:10.876350+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 27,
-        "dropped_no_english": 8,
+        "title_snippet": 26,
+        "dropped_no_english": 9,
         "title_native": 85,
         "in": 126,
-        "kept": 112
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -216,6 +216,11 @@
           "source": "TRT World",
           "title": "Iran offers $30,000 bounty for capturing or killing US soldiers",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "המטרות שהותקפו בסוריה, והמסר לארדואן: \"לא נוותר על מה שהשגנו\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "N12",
@@ -260,8 +265,8 @@
       ]
     },
     "relevance": {
-      "in": 112,
-      "kept": 78,
+      "in": 111,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -453,6 +458,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Landmark Meta trial begins in US over alleged harm to children from social media",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "OpenAI slows AI push after rogue agent hacks rival firm",
           "sec": 0,
@@ -505,23 +517,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 41,
       "sizes": [
         13,
-        7,
+        8,
+        4,
         4,
         4,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -627,8 +635,8 @@
           "selected_rank": 2,
           "headline": "Syria accuses Israel of striking military air base",
           "rank_key": {
-            "outlets": 7,
-            "camps": 3,
+            "outlets": 8,
+            "camps": 4,
             "newest": "2026-08-18T19:34+00:00"
           },
           "outlet_names": [
@@ -636,16 +644,18 @@
             "Al Jazeera",
             "Al-Akhbar",
             "Anadolu Agency",
+            "Arab News",
             "Jordan Times",
             "SANA",
             "TRT World"
           ],
           "camps": [
+            "gulf",
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -679,6 +689,53 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Hamas remains committed to Gaza deal after Kushner talks in Israel: Report",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 4,
+            "newest": "2026-08-18T10:14+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al-Akhbar",
+            "Gulf News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Hamas remains committed to Gaza deal after Kushner talks in Israel: Report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al-Akhbar",
+                "title": "Netanyahu met with Kushner after meeting with Hamas leaders in Cairo, emphasizin",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Kushner meets with Hamas in push to revive Gaza plan",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Israeli drone strike on Gaza cafe kills 6 Palestinians, child",
           "rank_key": {
             "outlets": 4,
@@ -719,7 +776,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Bulk Carrier Hit by Unknown Projectile in Strait of Hormuz, Crew Casualty Reported: UKMTO Issues Cau",
           "rank_key": {
             "outlets": 4,
@@ -765,46 +822,6 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "UKMTO says vessel struck by unknown projectiles off Yemen’s Mokha",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-18T18:23+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Manar",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "UKMTO says vessel struck by unknown projectiles off Yemen’s Mokha",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "The official spokesperson for the Yemeni armed forces announced the targeting of",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": null,
           "headline": "Why is Russia threatening UK with ‘consequences’ over Ukraine drones?",
           "rank_key": {
@@ -834,44 +851,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "A US call for action against settlers surrounding Palestinian homes in the West Bank was issued.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-18T13:09+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "gulf",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "A US call for action against settlers surrounding Palestinian homes in the West Bank was issued.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Palestinian American returns to West Bank to defend his home under siege by Isra",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -937,6 +916,43 @@
                 "source": "N12",
                 "title": "The IDF and intelligence services have brought the remains of Sergeant Major Yeh",
                 "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "A US call for action against settlers surrounding Palestinian homes in the West Bank was issued.",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-18T14:04+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "A US call for action against settlers surrounding Palestinian homes in the West Bank was issued.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "For second consecutive day, colonists block roads in Beit Imrin in Nablus",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -1063,24 +1079,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Sweden's Minister of Education, whose parents are Palestinian and Lebanese, displayed a Star of Davi",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-18T17:45+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump, Canada's Carney hold talks as US tariff deadline nears",
           "rank_key": {
             "outlets": 1,
@@ -1171,14 +1169,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "For second consecutive day, colonists block roads in Beit Imrin in Nablus",
+          "headline": "Barrack calls Israeli strikes on Abu al-Duhur airbase unjustified escalation",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-18T14:04+00:00"
+            "newest": "2026-08-18T13:18+00:00"
           },
           "outlet_names": [
-            "WAFA News"
+            "SANA"
           ],
           "camps": [
             "levant"
@@ -1188,7 +1186,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iraq’s Kurdistan leader accuses Iran of drone attacks; Tehran denies the allegation",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-18T13:14+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1206,7 +1222,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-18T19:49:27.251373+00:00",
+    "last_success": "2026-08-18T20:05:13.301430+00:00",
     "last_failure": null
   },
   "ok": true
