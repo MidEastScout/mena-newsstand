@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T01:34:48.448455+00:00",
+  "updated": "2026-08-18T02:06:23.547863+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-18T01:32:24.677179+00:00"
+      "headlines_updated": "2026-08-18T02:04:28.725104+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 32,
+        "dropped_stale": 8,
+        "title_snippet": 29,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 84,
+        "title_native": 85,
         "in": 126,
-        "kept": 117
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -193,18 +194,13 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Jordan Times",
-          "title": "Trump says will 'soon' declare Hormuz strait US territory",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Al-Akhbar",
           "title": "تصعيد إسرائيلي في جنوب لبنان: شهداء وجرحى في أنصار",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Arab News",
-          "title": "Trump says will ‘soon’ declare Hormuz strait US territory",
+          "title": "Iran defiant on strait as Trump tells Americans to accept high gas prices",
           "reason": "stale (older than 48h)"
         },
         {
@@ -219,23 +215,38 @@
         },
         {
           "source": "TRT World",
-          "title": "Trump vows to declare Strait of Hormuz as US territory; Iran dismisses threats as empty",
+          "title": "Iran rejects Trump's statement on Strait of Hormuz, saying waterway 'will remain Iranian'",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "Iran rejects Trump's statement on Strait of Hormuz, saying waterway 'will remain Iranian'",
+          "title": "Trump vows to declare Strait of Hormuz as US territory; Iran dismisses threats as empty",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
           "title": "Egypt may join Mecca Pact, pledges continued Gaza support and plans Syria visit: Erdogan",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "לאחר ספירת 40% מהקולות בליכוד: קרב על המקום השני ברשימה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "كيف تغيرت العلاقات الإيرانية العربية بعد الثورة الإسلامية في إيران؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "محللون إسرائيليون: زيارة كوشنر كانت للضغط على نتنياهو لتجاوزاته في قطاع غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
+      "in": 115,
       "kept": 71,
       "dropped": [
         {
@@ -255,13 +266,6 @@
         {
           "source": "Kan 11",
           "title": "A man arrested for attacking a worshiper and a guard at a New York synagogue holds pro-Israel views and is a…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Following the count of 15% of votes in the Likud primaries, Eli Cohen is leading, followed by Ohana and Levin.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -317,7 +321,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "USS Lincoln crisis: How it compares to past aircraft carrier deployments",
+          "title": "How China-India border tensions are rising again over encroachment claims",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -366,14 +370,14 @@
         },
         {
           "source": "Iran International",
-          "title": "OPINION The three snakes of Zahhak",
+          "title": "3 Iran’s new infiltration bill could make ordinary contact a crime",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Iran International",
-          "title": "4 Iran’s new infiltration bill could make ordinary contact a crime",
+          "title": "OPINION The three snakes of Zahhak",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -395,13 +399,6 @@
         {
           "source": "L'Orient Today",
           "title": "LEBANON-ISRAEL 'We must bomb Beirut and crush them,' says Ben-Gvir",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "VOICES FROM THE MIDDLE EAST Nationality for the family of a Lebanese mother is a right, not a courtesy",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -564,17 +561,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 43,
       "sizes": [
         12,
         5,
         5,
-        5,
         3,
         3,
+        3,
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -780,13 +779,12 @@
           "selected_rank": 4,
           "headline": "Turkish, Iranian foreign ministers discuss talks on reopening Strait of Hormuz, ceasefire",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
-            "newest": "2026-08-17T23:33+00:00"
+            "newest": "2026-08-17T22:03+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Al Mayadeen",
             "Anadolu Agency",
             "IRNA"
           ],
@@ -795,7 +793,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 5,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -1221,7 +1219,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1239,7 +1237,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-18T01:35:11.714855+00:00",
+    "last_success": "2026-08-18T02:06:37.576347+00:00",
     "last_failure": null
   },
   "ok": true
