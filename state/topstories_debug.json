@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T01:46:52.598605+00:00",
+  "updated": "2026-08-19T02:08:30.406779+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-19T01:45:05.204225+00:00"
+      "headlines_updated": "2026-08-19T02:06:52.797497+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 32,
+        "title_snippet": 26,
         "title_translated": 1,
         "title_native": 81,
+        "dropped_no_english": 6,
         "in": 126,
-        "kept": 114
+        "kept": 108
       },
       "translator": {
         "configured": true,
@@ -246,12 +247,42 @@
           "source": "TRT World",
           "title": "Iran offers $30,000 bounty for capturing or killing US soldiers",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تصعيد إسرائيلي مستمر.. إلى أين تتجه المواجهة؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "نتنياهو يلتقي كوشنر: لا انسحاب ولا إعادة إعمار قبل نزع سلاح «حماس» بالكامل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "قوات العدو تتوغل في ريف درعا وتعتقل 4 شبان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "من حساب وهمي إلى التورّط في الاغتيالات: اعترافات العميل «م.م» في غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "لماذا انضمّت تركيا إلى «اتفاقية مكّة»؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "شؤون القدس تدين شرعنة الطقوس التلمودية في الأقصى",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 73,
+      "in": 108,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
@@ -296,13 +327,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "Quebec separatist says no independence referendum while Trump in office",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Pro-Israel Emirati influencers mocked for claims of Islamic plot to take over West",
           "sec": 0,
@@ -319,13 +343,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The relationship between Arab countries and Iran is discussed, focusing on managing differences and building…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Washington Post reported a divergence between Trump and Vance regarding US priorities towards Iran.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -401,20 +418,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Confessions of agent 'M.M.' in Gaza detail involvement in assassinations stemming from a fake account.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The reasons for Turkey's joining of the 'Mecca Agreement' are discussed.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Foreign Ministry spokesperson Ismail Baqai stated that there is no '60-day deadline' in the text of the…",
           "sec": 0,
@@ -440,13 +443,6 @@
           "title": "Palestinian film wins Ciné+OCS Special Jury Prize in Switzerland",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "This entry is a general news category for sports.",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -544,21 +540,20 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 45,
       "sizes": [
         8,
-        8,
+        7,
         3,
         3,
         3,
+        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -678,7 +673,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -789,6 +784,45 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Top Russian economist replaced after warning of economic costs of Ukraine war",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-18T14:12+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Egypt Independent",
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Top Russian economist replaced after warning of economic costs of Ukraine war",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Why is Russia threatening UK with ‘consequences’ over Ukraine drones?",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "The remains of Sergeant Major Yehuda Katz, the last missing soldier from the Battle of Sultan Yacoub",
           "rank_key": {
             "outlets": 3,
@@ -901,38 +935,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Netanyahu met with Kushner, stating there will be no withdrawal or reconstruction before Hamas is fu",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-17T18:13+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "Netanyahu met with Kushner, stating there will be no withdrawal or reconstruction before Hamas is fully…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "LIVE Israeli army carries out demolition operations in 3 villages in south Lebanon this evening | LI",
           "rank_key": {
             "outlets": 2,
@@ -994,33 +996,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "Top Russian economist replaced after warning of economic costs of Ukraine war",
+          "headline": "Hamas remains committed to Gaza deal after Kushner talks in Israel: Report",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-18T14:12+00:00"
+            "newest": "2026-08-18T09:09+00:00"
           },
           "outlet_names": [
-            "Egypt Independent",
-            "Falastin al-Youm"
+            "Al Arabiya",
+            "Al Mayadeen"
           ],
           "camps": [
-            "levant"
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Egypt Independent",
-            "title": "Top Russian economist replaced after warning of economic costs of Ukraine war",
+            "source": "Al Arabiya",
+            "title": "Hamas remains committed to Gaza deal after Kushner talks in Israel: Report",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
+              "names 1 of the story's dominant entities (gaza)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Mayadeen",
+                "title": "Kushner met with Netanyahu following his meeting with Hamas leaders in Cairo.",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1053,24 +1061,6 @@
             ],
             "passed_over": []
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Enemy forces entered the countryside of Daraa and arrested four young men.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-19T00:34+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1271,7 +1261,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "UKMTO says vessel struck by unknown projectiles off Yemen’s Mokha",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-18T17:07+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1289,7 +1297,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-19T01:47:06.852547+00:00",
+    "last_success": "2026-08-19T02:08:46.447786+00:00",
     "last_failure": null
   },
   "ok": true
