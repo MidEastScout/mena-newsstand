@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T03:57:39.604376+00:00",
+  "updated": "2026-08-19T04:29:07.002132+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-19T03:55:57.036663+00:00"
+      "headlines_updated": "2026-08-19T04:27:07.592807+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 35,
+        "title_snippet": 24,
+        "dropped_no_english": 11,
         "title_native": 81,
         "in": 126,
-        "kept": 116
+        "kept": 105
       },
       "translator": {
         "configured": true,
@@ -235,27 +236,68 @@
           "source": "TRT World",
           "title": "Iran offers $30,000 bounty for capturing or killing US soldiers",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בכיר ישראלי לפוקס ניוז: ישראל שיתפה מידע מודיעיני רגיש ביותר עם ארה\"ב טרם התקיפה בסוריה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הנדל תוקף את ארדן: \"הקים מפלגה שלא מתקרבת לאחוז החסימה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "יו\"ר הכנסת אמיר אוחנה התגאה באוזניי חברי ליכוד: \"הכנסת מפירה פסק דין של בג\"ץ\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "התקיפה החריגה בסוריה: ארה\"ב גינתה את ישראל - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הותר לפרסום: בדואי מהנגב חשוד שתכנן פיגוע תופת במועדון \"הפורום\" - עם רכב ממולכד - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "התגובות של הליכוד ליום שאחרי הפריימריז - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "תחקיר המבקר - הדירות הסודיות של קק\"ל - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "כותרות המהדורה המוקדמת - 18.08.26 - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "שאלת רב: המקורבים לפינטו - והסיוע לח\"כ בפריימריז הליכוד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "قاليباف: مضيق هرمز لن يُفتح قبل رفع الحصار.. ومستعدون لإلحاق هزيمة أشد بالمعتدين",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الرياضة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 76,
+      "in": 105,
+      "kept": 68,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "Reports in the United States suggest that Trump is considering a meeting with Kim Jong Un during an upcoming…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "A secret apartment complex in Tel Aviv and jobs for associates illustrate how the Jewish National Fund became…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Channel 13",
           "title": "The remains of Yehuda Katz, the last missing person from the Battle of Sultan Yacoub, have been returned to…",
@@ -278,24 +320,17 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The US Ambassador to Israel stated that an international force is operating in Judea and Samaria against…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "US, Canada reach deal to pause steep tariffs",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "US refineries taking in half of Venezuela’s oil output, official says",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "Trump pauses 50 percent tariff on Canada in last-minute deal",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -526,19 +561,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 45,
       "sizes": [
-        9,
-        9,
-        5,
+        7,
+        7,
+        6,
         3,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        2,
+        1,
         1,
         1,
         1,
@@ -584,58 +617,57 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Trump says no talks planned with Iran amid anger over Iran-Oman Hormuz deal",
+          "headline": "Palestinian Reacts After Israeli Strike Kills Six in Gaza",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 3,
-            "newest": "2026-08-18T21:03+00:00"
+            "newest": "2026-08-19T00:55+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
-            "IRNA",
-            "Kan 11",
-            "Mehr News",
-            "N12",
-            "The New Arab"
+            "Al Mayadeen",
+            "Al-Akhbar",
+            "Anadolu Agency",
+            "SANA",
+            "WAFA News"
           ],
           "camps": [
-            "israeli",
             "panarab",
-            "iranian"
+            "levant",
+            "turkish"
           ],
-          "members": 9,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Jazeera",
-            "title": "Trump says no talks planned with Iran amid anger over Iran-Oman Hormuz deal",
+            "source": "Al Arabiya",
+            "title": "Palestinian Reacts After Israeli Strike Kills Six in Gaza",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
+              "names 1 of the story's dominant entities (gaza)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Kan 11",
-                "title": "President Trump stated on the Truth network that the Strait of Hormuz is new ter",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "N12",
-                "title": "Amidst escalation in the Gulf, sirens sounded in the United Arab Emirates due to",
-                "rejected_by": "stale anticipatory framing"
-              },
-              {
                 "source": "Al Arabiya",
-                "title": "Hormuz Strait to remain closed until US meets interim deal conditions: Ghalibaf",
+                "title": "Hamas remains committed to Gaza deal after Kushner talks in Israel: Report",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "The New Arab",
-                "title": "Iran says Hormuz stays closed until US meets its demands",
+                "source": "Al Mayadeen",
+                "title": "Kushner met with Netanyahu after meeting with Hamas leaders in Cairo.",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al-Akhbar",
+                "title": "Netanyahu met with Kushner, stating there would be no withdrawal or reconstructi",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Six killed, several others wounded in Israeli strike on Gaza City port",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -645,13 +677,12 @@
           "selected_rank": 2,
           "headline": "Türkiye rejects Israeli claims on Syria, condemns 'unlawful' air strikes",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 3,
-            "newest": "2026-08-19T03:06+00:00"
+            "newest": "2026-08-18T23:44+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Mayadeen",
             "Anadolu Agency",
             "Jordan Times",
             "SANA",
@@ -662,7 +693,7 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -701,51 +732,54 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Hamas accuses Netanyahu of undermining talks, ceasefire deal after Gaza strike",
+          "headline": "Persian Gulf post-Hormuz: Is regional security order changing?",
           "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-08-19T00:55+00:00"
+            "outlets": 4,
+            "camps": 2,
+            "newest": "2026-08-18T18:56+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Mayadeen",
-            "Al-Akhbar",
-            "Anadolu Agency",
-            "SANA"
+            "IRNA",
+            "Mehr News",
+            "The New Arab"
           ],
           "camps": [
             "panarab",
-            "levant",
-            "turkish"
+            "iranian"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Hamas accuses Netanyahu of undermining talks, ceasefire deal after Gaza strike",
+            "source": "IRNA",
+            "title": "Persian Gulf post-Hormuz: Is regional security order changing?",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Al Arabiya",
-                "title": "Hamas remains committed to Gaza deal after Kushner talks in Israel: Report",
+                "title": "Hormuz Strait to remain closed until US meets interim deal conditions: Ghalibaf",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Mayadeen",
-                "title": "Kushner met with Netanyahu after meeting with Hamas leaders in Cairo.",
+                "source": "The New Arab",
+                "title": "Iran says Hormuz stays closed until US meets its demands",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al-Akhbar",
-                "title": "Netanyahu met with Kushner, stating there would be no withdrawal or reconstructi",
+                "source": "IRNA",
+                "title": "Hormuz Strait will not reopen until US blockade, oil sanctions on Iran stop: Gha",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Hormuz Strait not to be reopened before oil sanctions lifted",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -824,43 +858,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Reports indicate that Trump is pushing for a meeting with Kim Jong Un in the coming months.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-18T23:45+00:00"
-          },
-          "outlet_names": [
-            "Mehr News",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Reports indicate that Trump is pushing for a meeting with Kim Jong Un in the coming months.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "Iran to continue nuclear tech. scientific progress with power",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Yemeni armed forces carry out 133 military operations against Houthi sites",
           "rank_key": {
             "outlets": 2,
@@ -930,79 +927,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The remains of Sergeant Major Yehuda Katz, the last missing person from the Battle of Sultan Yacoub ",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-18T16:59+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The remains of Sergeant Major Yehuda Katz, the last missing person from the Battle of Sultan Yacoub in 1982…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "N12",
-                "title": "The bodies of Sergeant Major Yehuda Yekutiel Katz, who fell in the First Lebanon",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "A US call was made for action against settlers besieging Palestinian homes in the West Bank.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-18T15:09+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "A US call was made for action against settlers besieging Palestinian homes in the West Bank.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "US lawmaker urges action against colonists besieging Palestinian homes in West B",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Hezbollah vows not to abandon Ali Taher hills as Israel targets area",
           "rank_key": {
             "outlets": 2,
@@ -1034,17 +958,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Foreign Minister of South Korea stated that the purpose of Trump's message is to pressure South ",
+          "headline": "UAE imposes indefinite trade embargo on Iran over alleged missile attacks",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-19T03:00+00:00"
+            "newest": "2026-08-19T03:34+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Al Jazeera"
           ],
           "camps": [
-            "israeli"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1249,7 +1173,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1267,7 +1191,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-19T03:57:53.632783+00:00",
+    "last_success": "2026-08-19T04:29:36.601713+00:00",
     "last_failure": null
   },
   "ok": true
