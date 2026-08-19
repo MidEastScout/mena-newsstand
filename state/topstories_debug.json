@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T15:33:15.300318+00:00",
+  "updated": "2026-08-19T15:37:14.217638+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-19T15:31:11.175750+00:00"
+      "headlines_updated": "2026-08-19T15:35:30.261667+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 34,
+        "title_snippet": 32,
+        "dropped_no_english": 1,
+        "title_translated": 2,
         "title_native": 87,
-        "title_translated": 1,
         "in": 126,
-        "kept": 122
+        "kept": 121
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -206,12 +207,17 @@
           "source": "Gulf News",
           "title": "Iran 60-day deadline has passed. What does Trump do now?",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הרמטכ\"ל בסוריה: \"לא נאפשר לכוח עוין להתבסס בגבולותינו, נדע להפעיל את עוצמתנו כשצריך\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 79,
+      "in": 121,
+      "kept": 78,
       "dropped": [
         {
           "source": "N12",
@@ -229,6 +235,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "This entry is about a contestant named Kanda reflecting on difficult moments before an elimination…",
           "sec": 0,
           "off": 0,
@@ -237,13 +250,6 @@
         {
           "source": "Channel 13",
           "title": "This entry mentions Moshe Menashe and Abigail Ephraim Kokhavi being seen together in Thailand despite their…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This entry is titled \"The Great Tomb Robbery\" and provides no further details.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -348,7 +354,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Copper powers profit rise at mining giant BHP",
+          "title": "UN says only 3% of Gaza cropland accessible and undamaged",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -518,18 +524,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 43,
       "sizes": [
         11,
         9,
-        8,
+        9,
         6,
+        3,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -575,6 +578,66 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "The United States asserts that the Strait of Hormuz remains open for navigation, presenting data tha",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 5,
+            "newest": "2026-08-19T14:38+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Gulf News",
+            "Iran International",
+            "Jordan Times",
+            "N12",
+            "The New Arab"
+          ],
+          "camps": [
+            "israeli",
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 9,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "The United States asserts that the Strait of Hormuz remains open for navigation, presenting data that…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Trump posts map declaring Strait of Hormuz 'new US territory'",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Iran says Hormuz stays closed until US meets its demands",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "5 Trump calls off Iran talks as Tehran doubles down on Hormuz leverage",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Jordan Times",
+                "title": "Trump posts map showing Strait of Hormuz as US territory",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Israel’s Gaza airstrike undermines stalled peace plan, Hamas says",
           "rank_key": {
             "outlets": 6,
@@ -614,71 +677,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Palestinian Reacts After Israeli Strike Kills Six in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "SANA",
                 "title": "Six killed, several others wounded in Israeli strike on Gaza City port",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "The United States asserts that the Strait of Hormuz remains open for navigation, presenting data tha",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-08-19T14:38+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Gulf News",
-            "Jordan Times",
-            "N12",
-            "The New Arab"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 8,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "The United States asserts that the Strait of Hormuz remains open for navigation, presenting data that…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Trump posts map declaring Strait of Hormuz 'new US territory'",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "The New Arab",
-                "title": "Iran says Hormuz stays closed until US meets its demands",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Trump posts map showing Strait of Hormuz as US territory",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Iran negotiator Ghalibaf says Hormuz will not open until US meets demands",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -743,7 +743,7 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Occupation forces detain female doctor in Ramallah following raid on her house",
+          "headline": "Palestinian Prisoner’s Society: Israeli forces detain at least 30 Palestinians in West Bank",
           "rank_key": {
             "outlets": 4,
             "camps": 2,
@@ -764,7 +764,7 @@
           "why_not": null,
           "representative": {
             "source": "WAFA News",
-            "title": "Occupation forces detain female doctor in Ramallah following raid on her house",
+            "title": "Palestinian Prisoner’s Society: Israeli forces detain at least 30 Palestinians in West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -784,6 +784,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "WAFA News",
+                "title": "Occupation forces detain female doctor in Ramallah following raid on her house",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Arab News",
                 "title": "Palestinian American returns to West Bank to defend his home under siege by Isra",
                 "rejected_by": "older than the story's newest wave"
@@ -793,6 +798,40 @@
         },
         {
           "selected_rank": 5,
+          "headline": "In Ukraine, forcible military recruitment efforts escalate into violence",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-08-19T13:58+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Daily Sabah",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Jazeera",
+            "title": "In Ukraine, forcible military recruitment efforts escalate into violence",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "This entry covers expanded attacks into Idlib's countryside and frames Israel's actions in Syria as ",
           "rank_key": {
             "outlets": 2,
@@ -819,37 +858,6 @@
               "names 1 of the story's dominant entities (syria)",
               "neutral-by-default outlet",
               "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Ukrainian suspect arrested in Croatia over Nord Stream pipeline blasts",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-19T13:58+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Ukrainian suspect arrested in Croatia over Nord Stream pipeline blasts",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
             ],
             "passed_over": []
           }
@@ -883,6 +891,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pakistan asks Google to take into account South Asian nation’s ‘specific circumstances’",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T15:30+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1012,24 +1038,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The U.S.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-19T13:41+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "ICC lashes out at 'flagrant attack' after US sanctions President Akane",
           "rank_key": {
             "outlets": 1,
@@ -1101,7 +1109,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1119,7 +1127,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-19T15:33:38.492115+00:00",
+    "last_success": "2026-08-19T15:37:28.433824+00:00",
     "last_failure": null
   },
   "ok": true
