@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T16:36:17.530398+00:00",
+  "updated": "2026-08-19T16:51:50.447323+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-19T16:34:07.581484+00:00"
+      "headlines_updated": "2026-08-19T16:50:05.735636+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 31,
+        "dropped_stale": 3,
+        "title_snippet": 30,
+        "dropped_no_english": 3,
         "title_translated": 2,
-        "dropped_no_english": 2,
-        "title_native": 87,
+        "title_native": 88,
         "in": 126,
         "kept": 120
       },
@@ -204,9 +204,9 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Iran 60-day deadline has passed. What does Trump do now?",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "צה\"ל: מפקד פלוגה ושלושה מפקדי מחלקת נוח'בה חוסלו בתקיפה בשאטי אתמול",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Channel 13",
@@ -222,7 +222,7 @@
     },
     "relevance": {
       "in": 120,
-      "kept": 71,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
@@ -267,6 +267,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Jazeera",
+          "title": "Seven decades of US regime change efforts: What have they achieved?",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Middle East Eye",
           "title": "Dua Lipa backs Albania’s ‘Flamingo Revolution’ against Kushner-backed resort",
           "sec": 0,
@@ -276,13 +283,6 @@
         {
           "source": "Middle East Eye",
           "title": "Pro-Israel Emirati influencers mocked for claims of Islamic plot to take over West",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Pakistan Govt. to Challenge Court Order to Move ex-PM Khan to Hospital",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -505,6 +505,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Gulf News",
+          "title": "Flying from the UAE today? Emirates, Etihad, Air Arabia flights impacted by regional disruptions",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Anadolu Agency",
           "title": "Kim's ties with Trump excellent but hostile US policy has not changed: North Korea",
           "sec": 0,
@@ -513,16 +520,23 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Trump says US, Canada have reached trade deal",
+          "title": "Bodies of 2 Belgian mountaineers missing since 1992 found in Swiss Alps",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "European stocks end mixed as inflation, bond-market volatility weigh on sentiment",
+          "title": "China, Ecuador agree to expand cooperation in trade, digital economy",
           "sec": 0,
-          "off": 1,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Erdoğan vows Türkiye will keep extending helping hand worldwide",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -571,7 +585,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 39,
       "sizes": [
         11,
         6,
@@ -579,11 +593,9 @@
         5,
         3,
         3,
-        3,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -829,40 +841,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "In Ukraine, forcible military recruitment efforts escalate into violence",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-19T13:58+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Daily Sabah",
-            "Egypt Independent"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "In Ukraine, forcible military recruitment efforts escalate into violence",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Palestinian Prisoner’s Society: Israeli forces detain at least 30 Palestinians in West Bank",
           "rank_key": {
             "outlets": 3,
@@ -907,6 +885,69 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russian court jails Kremlin critic for 11 years for opposing the war in Ukraine",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-19T13:58+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Russian court jails Kremlin critic for 11 years for opposing the war in Ukraine",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "ICC: US sanctions ‘flagrant attack’ on court independence",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-19T11:30+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "ICC: US sanctions ‘flagrant attack’ on court independence",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1112,42 +1153,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A wildfire is spreading towards the settlement of Afeka in the southern Hebron Hills, prompting the ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-19T14:24+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "ICC lashes out at 'flagrant attack' after US sanctions President Akane",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-19T13:14+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "UAE trade embargo could shut Iran’s key economic escape route: Here’s why",
           "rank_key": {
             "outlets": 1,
@@ -1201,7 +1206,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "A commentary on a speech by Bennett, stating 'Hezbollah will launch?",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T09:15+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Civil defense teams recovered the bodies of seven martyrs in the Zeitoun neighborhood.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T08:10+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1219,7 +1260,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-19T16:36:32.741342+00:00",
+    "last_success": "2026-08-19T16:52:13.016377+00:00",
     "last_failure": null
   },
   "ok": true
