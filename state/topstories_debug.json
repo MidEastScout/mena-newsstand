@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T19:36:50.094721+00:00",
+  "updated": "2026-08-19T19:39:57.702981+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-19T19:34:47.890307+00:00"
+      "headlines_updated": "2026-08-19T19:37:48.268688+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 3,
-        "dropped_no_english": 11,
-        "title_snippet": 22,
+        "dropped_no_english": 12,
+        "title_snippet": 21,
         "title_translated": 2,
         "title_native": 88,
         "in": 126,
-        "kept": 112
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -257,11 +257,16 @@
           "source": "Al Mayadeen",
           "title": "نشرة الثانية عشر",
           "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "17 شهيدًا جراء الغارات الاسرائيلية على غزة منذ أمس",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 112,
+      "in": 111,
       "kept": 68,
       "dropped": [
         {
@@ -295,13 +300,6 @@
         {
           "source": "Al Jazeera",
           "title": "Iran’s hardline parliament raises concerns with ‘foreign infiltration’ plan",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "‘Tit for tat’: Why is Trump cosying up to North Korea’s Kim Jong Un again?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -378,14 +376,14 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Amman City Airport handles 200,000 passengers on 1,650 flights — JAC",
+          "title": "Scientists discover how narwhals grow nature's only straight tusk",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "Chinese companies eye expanded pharmaceutical, food partnerships with Jordan",
+          "title": "Amman City Airport handles 200,000 passengers on 1,650 flights — JAC",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -576,17 +574,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 40,
       "sizes": [
         10,
         8,
         5,
+        4,
         3,
-        3,
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -801,6 +798,47 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Russian court jails Kremlin critic for 11 years for opposing the war in Ukraine",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-08-19T18:06+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al-Akhbar",
+            "Anadolu Agency",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Russian court jails Kremlin critic for 11 years for opposing the war in Ukraine",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "In Ukraine, forcible military recruitment efforts escalate into violence",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Iran considers attacking US military targets in Europe if Trump escalates: Report",
           "rank_key": {
             "outlets": 3,
@@ -836,39 +874,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Russian court jails Kremlin critic for 11 years for opposing the war in Ukraine",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-19T18:06+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Anadolu Agency",
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Russian court jails Kremlin critic for 11 years for opposing the war in Ukraine",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1157,7 +1162,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1175,7 +1180,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-19T19:37:06.156911+00:00",
+    "last_success": "2026-08-19T19:40:13.707986+00:00",
     "last_failure": null
   },
   "ok": true
