@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T11:50:38.946613+00:00",
+  "updated": "2026-08-20T11:54:26.589466+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-20T11:48:53.450126+00:00"
+      "headlines_updated": "2026-08-20T11:51:54.348494+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 3,
-        "title_snippet": 34,
+        "dropped_stale": 4,
+        "title_snippet": 32,
         "title_translated": 1,
-        "title_native": 89,
+        "title_native": 88,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 124
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -189,7 +190,12 @@
       "dropped": [
         {
           "source": "Syria Direct",
-          "title": "Syria’s wells run dry, old grievances run deep",
+          "title": "أكراد سوريا Archives",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Syria Direct",
+          "title": "Syria’s wells run dry as old grievances run deep",
           "reason": "stale (older than 48h)"
         },
         {
@@ -201,12 +207,22 @@
           "source": "Gulf News",
           "title": "Tupac Shakur's accused killer was out for 'revenge', jury hears",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "كيف تسيطر \"إسرائيل\" على الأراضي الخصبة في الضفة المحتلة؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الأمين العام للأمم المتحدة يدعو إسرائيل لوقف مشروع E1 الاستعماري",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 70,
+      "in": 121,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
@@ -328,13 +344,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Pakistan govt. says to challenge court order to move ex-PM Khan to hospital",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "US to provide $206 million for Gaza peacekeeping force",
           "sec": 0,
@@ -393,6 +402,13 @@
         {
           "source": "Jordan Times",
           "title": "Tupac Shakur's accused killer was out for 'revenge', jury hears",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Lights out, crowds gone: Havana waits for what comes next",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -489,22 +505,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Gold prices have declined while global oil prices remain stable.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "UAE suspends trade and financial transactions with Iran",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Syria Direct",
-          "title": "Ties of blood: The afterlife of Syria’s jihadist networks from Aleppo to Berlin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -590,10 +592,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 46,
       "sizes": [
         7,
-        4,
+        6,
         3,
         3,
         3,
@@ -603,8 +605,7 @@
         2,
         2,
         2,
-        2,
-        2,
+        1,
         1,
         1,
         1,
@@ -648,6 +649,55 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Trump says no Iran talks planned, claims Hormuz 'new US territory'",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-08-19T15:40+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "Gulf News",
+            "IRNA",
+            "Jordan Times",
+            "Mehr News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Trump says no Iran talks planned, claims Hormuz 'new US territory'",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Trump says no Iran talks planned, claims Hormuz ‘new US territory’",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Strait of Hormuz: Bulk carrier hit by unknown projectile, crew casualty reported",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Turkey stated it had no forces at the airport before the Israeli attack and will continue to support",
           "rank_key": {
             "outlets": 6,
@@ -705,91 +755,7 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Chinese tanker reverses course in Hormuz after Iran warning",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-08-19T15:17+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Gulf News",
-            "IRNA",
-            "Mehr News"
-          ],
-          "camps": [
-            "gulf",
-            "iranian"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "Chinese tanker reverses course in Hormuz after Iran warning",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Trump says no Iran talks planned, claims Hormuz ‘new US territory’",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Strait of Hormuz: Bulk carrier hit by unknown projectile, crew casualty reported",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
-          "headline": "UAE says Iran fired ballistic missiles at shipping",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-19T15:44+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "Jordan Times"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "UAE says Iran fired ballistic missiles at shipping",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "UAE accuses Tehran of firing ballistic missiles at shipping, halts all trade wit",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Iran considers attacking US military targets in Europe if Trump escalates: Report",
           "rank_key": {
             "outlets": 3,
@@ -822,6 +788,49 @@
               {
                 "source": "Iran International",
                 "title": "1 Iran weighs attacks on military targets in Europe – FT",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "ICC says US sanctions 'flagrant attack' on court independence",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-19T21:34+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "TRT World",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "ICC says US sanctions 'flagrant attack' on court independence",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "ICC: US sanctions ‘flagrant attack’ on court independence",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "ICC rejects new US sanctions as 'flagrant attack' on judicial independence",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -979,36 +988,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "TEKNOFEST Blue Homeland maritime event showcases Türkiye's naval power",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-20T10:19+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "TEKNOFEST Blue Homeland maritime event showcases Türkiye's naval power",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Hind Rajab Foundation voices lack of confidence in Israeli army investigations into deaths of child ",
           "rank_key": {
             "outlets": 2,
@@ -1100,42 +1079,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russia, Ukraine exchange 103 captured soldiers each",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-19T17:48+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Russia, Ukraine exchange 103 captured soldiers each",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "In about-face, US Army phasing out Ukraine-inspired drone assault battalion: Report",
+          "headline": "Nearly 50 killed in gold mine collapse in Central African Republic",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-20T11:36+00:00"
+            "newest": "2026-08-20T11:45+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1221,24 +1169,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israel admits firing on Hind Rajab. Her family rejects its probe",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T10:22+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "With US diplomacy at standstill Iran shifts to offensive posturing",
           "rank_key": {
             "outlets": 1,
@@ -1293,6 +1223,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Türkiye's premier maritime event TEKNOFEST Blue Homeland opens with 37 Turkish naval platforms on di",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-20T09:07+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Are ships through more willing to defy Iran or the US? What the data shows",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-20T08:43+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran to use more destructive weapons if a new war starts",
           "rank_key": {
             "outlets": 1,
@@ -1328,25 +1294,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Israeli forces raid Balata refugee camp, east of Nablus",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T07:01+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1364,7 +1312,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-20T11:50:55.590266+00:00",
+    "last_success": "2026-08-20T11:56:34.229593+00:00",
     "last_failure": null
   },
   "ok": true
