@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T08:32:35.925448+00:00",
+  "updated": "2026-08-20T09:06:45.832304+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-20T08:31:00.005345+00:00"
+      "headlines_updated": "2026-08-20T09:05:04.129375+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 32,
+        "dropped_stale": 3,
+        "dropped_no_english": 8,
+        "title_snippet": 26,
+        "title_translated": 1,
         "title_native": 88,
-        "dropped_no_english": 2,
         "in": 126,
-        "kept": 120
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -188,18 +189,13 @@
       },
       "dropped": [
         {
-          "source": "Al Mayadeen",
-          "title": "ارتفاع طفيف في حركة السفن عبر مضيق هرمز.. ولا عبور لناقلات النفط العملاقة والغاز المسال",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Syria Direct",
           "title": "Syria’s wells run dry, old grievances run deep",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Arab News",
-          "title": "Palestinian American returns to West Bank to defend his home under siege by Israeli settlers",
+          "title": "Hamas says committed to Gaza deal after Kushner talks in Israel",
           "reason": "stale (older than 48h)"
         },
         {
@@ -208,20 +204,50 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Kan 11",
+          "title": "המרכז הרפואי הדסה עדכן: הילד בן ה-4 שנפצע באירוע הדקירה בבית שמש שוחרר לביתו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "לשכת רה\"מ: \"בניגוד לדיווחים, הדרג המדיני לא אישר כניסה של הכוח הבין-לאומי לרצועת עזה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "عراقتشي: الإرهاب الاقتصادي الأميركي يهدد الاقتصاد والسيادة عالمياً",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
-          "title": "روسيا تعلن اقتراب حصاد الحبوب من 100 مليون طن",
+          "title": "أستراليا تستدعي سفير \"إسرائيل\" وتُعرب عن غضبها لرفض محاسبة قتلة عاملة إغاثة بغزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "قاليباف في بغداد: تعزيز الشراكة الإيرانية العراقية وتنسيق أمني لضبط الحدود",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "قاليباف في بغداد ورسائل إسرائيلية تتجاوز غزة وسوريا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "بالفيديو| عدد من الضحايا والجرحى جراء الحادث المروع الذي وقع على مفرق سبلين وادي الزينة في لبنان 23:24",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "ترامب يتوعد إيران بحرب اقتصادية ومعاقبة أي دولة داعمة",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 60,
+      "in": 115,
+      "kept": 58,
       "dropped": [
         {
           "source": "Kan 11",
@@ -267,6 +293,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "Ahead of the finale, a conflict erupted between contestants Asi and Adi, and Omri and Dorin, with one…",
           "sec": 0,
           "off": 0,
@@ -282,13 +315,6 @@
         {
           "source": "Channel 13",
           "title": "Following a dramatic elimination ceremony, the final trio for 'Power Couple' was revealed.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Oren Smadja emphasized the importance of everyone sitting together, rather than focusing on who becomes prime…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,13 +376,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Iranian calls for regional cooperation away from US intervention were made, alongside Ghalibaf meeting the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Ghalibaf meets Iraq’s judicial council chief in Baghdad",
           "sec": 0,
@@ -393,14 +412,21 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Lights out, crowds gone: Havana waits for what comes next",
+          "title": "King meets with Shanghai mayor",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "Jordan sends 12th relief convoy to Lebanon",
+          "title": "Scientists discover how narwhals grow nature's only straight tusk",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "SSC, Education for Employment sign MoU to support job seekers",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -414,7 +440,7 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "FOCUS In Syria, a detainee's death under torture reopens wounds from the Assad era",
+          "title": "ELECTRICITY EDL emerges from brief blackout after fuel ship unloading Philippe HAGE BOUTROS",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -422,13 +448,6 @@
         {
           "source": "L'Orient Today",
           "title": "TAXATION Environmental waste fee: What will the cost be for Lebanese households? Alexander HADDAD",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "JUSTICE Salameh sent back to Roumieh after prosecutor rejects transfer to Bhannes L'Orient Today staff",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -485,13 +504,6 @@
         {
           "source": "Al Manar",
           "title": "A special episode titled '204 Road to Liberation' on Al-Manar TV focused on the Shiqif Arnon site…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "Residents of the Southern Suburb are maintaining resilience despite a lack of official support following the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -568,6 +580,13 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Türkiye's top maritime showcase Teknofest Blue Homeland kicks off",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "Trump proclaims unprecedented 'economic warfare' against Iran",
           "sec": 0,
           "off": 0,
@@ -583,20 +602,6 @@
         {
           "source": "Daily Sabah",
           "title": "How did Germany's economic engine hit the brakes?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "US national debt tops $40T for 1st time, doubles in under decade",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Troy imperative: Card isn’t the point but control is",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -647,22 +652,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 36,
       "sizes": [
-        6,
+        5,
         5,
         4,
         3,
         3,
+        3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -699,7 +701,7 @@
           "selected_rank": 1,
           "headline": "Israeli strike kills Gaza City police chief",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
             "newest": "2026-08-19T18:57+00:00"
           },
@@ -707,7 +709,6 @@
             "Al Arabiya",
             "Arab News",
             "Egypt Independent",
-            "Falastin al-Youm",
             "The New Arab"
           ],
           "camps": [
@@ -715,7 +716,7 @@
             "panarab",
             "levant"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -738,11 +739,6 @@
                 "source": "Egypt Independent",
                 "title": "Israel’s Gaza airstrike undermines stalled peace plan, Hamas says",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas stated that the Gaza port massacre confirms the occupation's rejection of ",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -876,39 +872,110 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Australia is angered by the decision to close the criminal case against those involved in the attack",
+          "headline": "Israeli forces raid Balata refugee camp, east of Nablus",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-20T07:14+00:00"
+            "newest": "2026-08-20T08:52+00:00"
+          },
+          "outlet_names": [
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Israeli forces raid Balata refugee camp, east of Nablus",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Israeli settlers attacked +160 water sites in West Bank in 2026",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Bodies of 2 Pakistanis killed in Houthi attacks repatriated",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-20T08:34+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "Kan 11"
+            "Mehr News"
           ],
           "camps": [
-            "israeli",
+            "iranian",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Australia is angered by the decision to close the criminal case against those involved in the attack on World…",
-            "title_source": "snippet",
+            "source": "Anadolu Agency",
+            "title": "Bodies of 2 Pakistanis killed in Houthi attacks repatriated",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Anadolu Agency",
-                "title": "Australia condemns Israel’s decision to close probe into World Central Kitchen s",
+                "source": "Mehr News",
+                "title": "56 Saudi ships targeted, blocked in Bab al-Mandab",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Zelenskyy urges global response as Russian strikes kill 13 in Kyiv",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-20T08:15+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Zelenskyy urges global response as Russian strikes kill 13 in Kyiv",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1033,6 +1100,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iranian Central Bank says oil exports have fallen to zero amid war, sanctions",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-20T08:37+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Hind Rajab Foundation voices lack of confidence in Israeli army investigations into deaths of child ",
           "rank_key": {
             "outlets": 1,
@@ -1087,24 +1172,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russian attack on Kyiv kills at least 12, damages children’s hospital, says city mayor",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T07:39+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "South Korean President Lee hopes Trump's reduction of joint military drills leads to peace on Korean",
           "rank_key": {
             "outlets": 1,
@@ -1118,42 +1185,6 @@
             "turkish"
           ],
           "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iranian parliamentary voices suggest that the best response to Trump is to withdraw from the nuclear",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T07:10+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces raid Balata refugee camp, east of Nablus",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T07:01+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1231,24 +1262,60 @@
         },
         {
           "selected_rank": null,
-          "headline": "Magnitude 5.9 earthquake strikes Indonesia’s Flores region",
+          "headline": "Following Florida election results, the war against Iran's impact on American voters is being examin",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-20T03:17+00:00"
+            "newest": "2026-08-20T01:15+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Al Mayadeen"
           ],
           "camps": [
-            "turkish"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Egyptian intelligence informed Sisi that America does not want to rebuild Gaza.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Ghalibaf urges stronger Iran-Iraq economic partnership during Baghdad talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T15:19+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1266,7 +1333,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-20T08:32:59.387701+00:00",
+    "last_success": "2026-08-20T09:07:02.428711+00:00",
     "last_failure": null
   },
   "ok": true
