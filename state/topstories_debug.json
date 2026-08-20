@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T23:59:59.560707+00:00",
+  "updated": "2026-08-20T00:31:12.497583+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-19T23:58:09.751705+00:00"
+      "headlines_updated": "2026-08-20T00:29:04.029456+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 33,
+        "title_snippet": 32,
         "title_translated": 2,
         "title_native": 87,
+        "dropped_no_english": 1,
         "in": 126,
-        "kept": 122
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -206,12 +207,17 @@
           "source": "Gulf News",
           "title": "Iran 60-day deadline has passed. What does Trump do now?",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "كوريا الجنوبية: إنهاء المناورات مع الولايات المتحدة قبل أسبوع من موعدها بقرار من ترامب",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 76,
+      "in": 121,
+      "kept": 78,
       "dropped": [
         {
           "source": "Kan 11",
@@ -306,13 +312,6 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "A commemoration event was held in Tehran for the passing of Ayatollah Ali Khamenei, marked by renewed…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
           "title": "Four p.m. bulletin",
           "sec": 0,
           "off": 0,
@@ -327,21 +326,14 @@
         },
         {
           "source": "Jordan Times",
+          "title": "King discusses tourism, cultural cooperation opportunities in Shanghai",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
           "title": "King meets with Shanghai mayor",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Scientists discover how narwhals grow nature's only straight tusk",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Amman City Airport handles 200,000 passengers on 1,650 flights — JAC",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -438,8 +430,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Pakistan government to challenge court on moving ex-PM Khan to private hospital",
+          "source": "Gulf News",
+          "title": "UAE suspends all trade and financial transactions with Iran until further notice",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -453,16 +445,9 @@
         },
         {
           "source": "Gulf News",
-          "title": "UAE suspends all trade and financial transactions with Iran until further notice",
+          "title": "Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Flying from the UAE today? Emirates, Etihad, Air Arabia flights impacted by regional disruptions",
-          "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -539,7 +524,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 46,
       "sizes": [
         11,
         7,
@@ -552,6 +537,8 @@
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -630,7 +617,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "Trump to reopen Iran talks ‘at some point’; Israel kills 10 in Gaza",
+                "title": "Iran war updates: Trump to reopen talks ‘at some point’; Israel pounds Gaza",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -1095,6 +1082,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Hind Rajab’s grandmother rejects Israeli military investigation into her killing",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T22:56+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Egyptian intelligence informed Sisi that America does not want to rebuild Gaza.",
           "rank_key": {
             "outlets": 1,
@@ -1113,24 +1118,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Syrian foreign minister arrives in Pakistan for 1st such visit in 19 years",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-19T21:08+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "USS Lincoln woes highlight US Navy limits in prolonged Iran war: Experts",
           "rank_key": {
             "outlets": 1,
@@ -1142,6 +1129,24 @@
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Army chief, German defence official review cooperation",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T20:59+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1221,24 +1226,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "NATO ‘prepared’ to defend allies amid report of Iranian strike plans",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-19T17:50+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Ghalibaf urges stronger Iran-Iraq economic partnership during Baghdad talks",
           "rank_key": {
             "outlets": 1,
@@ -1274,7 +1261,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1292,7 +1279,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-20T00:00:00.667579+00:00",
+    "last_success": "2026-08-20T00:31:13.495491+00:00",
     "last_failure": null
   },
   "ok": true
