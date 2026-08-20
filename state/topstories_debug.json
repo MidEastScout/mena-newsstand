@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T02:23:45.257354+00:00",
+  "updated": "2026-08-20T02:55:07.277859+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-20T02:21:44.111391+00:00"
+      "headlines_updated": "2026-08-20T02:53:08.757621+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 34,
-        "title_translated": 1,
+        "dropped_no_english": 4,
+        "title_snippet": 31,
         "title_native": 87,
         "in": 126,
-        "kept": 122
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -204,14 +204,34 @@
         },
         {
           "source": "Gulf News",
-          "title": "Iran 60-day deadline has passed. What does Trump do now?",
+          "title": "Tupac Shakur's accused killer was out for 'revenge', jury hears",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "גורם אמריקני ל-CNN: טראמפ הורה להפסיק את השיחות עם איראן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מבזק 09:00 - טראמפ הורה להפסיק את השיחות - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אורן סמדג'ה: \"חשוב שכולם יישבו יחד, לא מי יהיה רה\"מ\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة الثالثة فجراً",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 67,
+      "in": 118,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -271,13 +291,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "An explosive argument occurred between Assi and Adi, and Omri and Dorin, just before the finale, with one…",
           "sec": 0,
           "off": 0,
@@ -326,15 +339,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Trump says will meet North Korea’s Kim later this year",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
-          "title": "Syria arrests two Assad-era officers accused of abuses",
+          "title": "US to provide $206 million for Gaza peacekeeping force",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -383,6 +389,13 @@
         },
         {
           "source": "Jordan Times",
+          "title": "Tupac Shakur's accused killer was out for 'revenge', jury hears",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
           "title": "Copper powers profit rise at mining giant BHP",
           "sec": 0,
           "off": 0,
@@ -397,23 +410,9 @@
         },
         {
           "source": "Jordan Times",
-          "title": "King meets with Shanghai mayor",
+          "title": "King discusses tourism, cultural cooperation opportunities in Shanghai",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Scientists discover how narwhals grow nature's only straight tusk",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "SSC, Education for Employment sign MoU to support job seekers",
-          "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -604,7 +603,7 @@
       "method": "heuristic",
       "clusters": 40,
       "sizes": [
-        12,
+        11,
         6,
         3,
         3,
@@ -655,13 +654,12 @@
           "selected_rank": 1,
           "headline": "Israeli strike kills Gaza City police chief",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 7,
             "camps": 3,
             "newest": "2026-08-19T18:57+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Al-Akhbar",
             "Arab News",
             "Egypt Independent",
@@ -674,7 +672,7 @@
             "panarab",
             "levant"
           ],
-          "members": 12,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -689,11 +687,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "Iran war updates: Trump to reopen talks ‘at some point’; Israel pounds Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Arabiya",
                 "title": "Israeli airstrike kills six Palestinians at police post in Gaza, medics say",
                 "rejected_by": "older than the story's newest wave"
@@ -706,6 +699,11 @@
               {
                 "source": "Egypt Independent",
                 "title": "Israel’s Gaza airstrike undermines stalled peace plan, Hamas says",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Nine killed, 15 injured in Israeli airstrike on Gaza City",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -995,7 +993,7 @@
             "passed_over": [
               {
                 "source": "Iran International",
-                "title": "2 Iran weighs attacks on military targets in Europe – FT",
+                "title": "1 Iran weighs attacks on military targets in Europe – FT",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1071,24 +1069,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Following Florida election results, the impact of the war against Iran on American voters is being e",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T01:15+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "2 Palestinian women injured as Israeli raids, occupier attacks escalate across West Bank",
           "rank_key": {
             "outlets": 1,
@@ -1143,35 +1123,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Aylet Shahar is highlighted as a new star in combat fitness.",
+          "headline": "Army chief, German defence official review cooperation",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-19T19:52+00:00"
+            "newest": "2026-08-19T20:59+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Jordan Times"
           ],
           "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The IDF is considering the removal of the checkpoint on the road from Modi'in to Jerusalem to allevi",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-19T19:49+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1251,6 +1213,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Annexation is out of question; Israeli collapse is certain",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T14:25+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran rejects UAE claim it launched two missiles toward the Gulf nation",
           "rank_key": {
             "outlets": 1,
@@ -1262,6 +1242,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Germany’s Merz strongly condemns remarks by Israel’s Ben-Gvir, spokesperson says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-19T10:24+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1304,7 +1302,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-20T02:24:01.114455+00:00",
+    "last_success": "2026-08-20T02:55:08.265137+00:00",
     "last_failure": null
   },
   "ok": true
