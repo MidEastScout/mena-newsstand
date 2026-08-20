@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T14:46:08.026641+00:00",
+  "updated": "2026-08-20T14:54:14.841709+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-20T14:44:08.409735+00:00"
+      "headlines_updated": "2026-08-20T14:52:20.108255+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 34,
+        "title_snippet": 31,
         "title_translated": 1,
         "title_native": 84,
+        "dropped_no_english": 3,
         "in": 127,
-        "kept": 119
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -226,12 +227,27 @@
           "source": "Gulf News",
           "title": "Tupac Shakur's accused killer was out for 'revenge', jury hears",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "روسيا تعلن اقتراب حصاد الحبوب من 100 مليون طن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بعد نتائج انتخابات فلوريدا... كيف أثرت الحرب ضد إيران على الناخب الأمريكي؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "فرّقهما نزاع المصالح وتجمعهما الأجندة الإبراهيمية: mtv و «الجديد»... أبلسة المقاومة أوّلاً",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 70,
+      "in": 116,
+      "kept": 68,
       "dropped": [
         {
           "source": "Kan 11",
@@ -320,13 +336,6 @@
         {
           "source": "The New Arab",
           "title": "US to provide $206 million for Gaza peacekeeping force",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Ghalibaf, during a meeting with Al-Aboudi in Baghdad, stated that Iran supports the Iraqi government's…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -582,17 +591,17 @@
       "method": "heuristic",
       "clusters": 46,
       "sizes": [
-        6,
+        7,
         5,
         5,
         3,
-        3,
-        3,
         2,
         2,
         2,
         2,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -637,16 +646,73 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Are ships passing Hormuz more willing to defy Iran or US? What data shows",
+          "headline": "Syria rejects Israeli justification for strike on airbase over alleged Turkish military buildup: Rep",
           "rank_key": {
             "outlets": 6,
             "camps": 3,
-            "newest": "2026-08-20T12:39+00:00"
+            "newest": "2026-08-20T13:38+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Jordan Times",
+            "Kan 11",
+            "L'Orient Today",
+            "N12",
+            "TRT World"
+          ],
+          "camps": [
+            "israeli",
+            "levant",
+            "turkish"
+          ],
+          "members": 7,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Syria rejects Israeli justification for strike on airbase over alleged Turkish military buildup: Report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Kan 11",
+                "title": "According to Reuters, the head of Mossad held a warning conversation with the Sy",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "N12",
+                "title": "The head of Mossad spoke with the Syrian foreign minister about Turkey's presenc",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Jordan Times",
+                "title": "Foreign minister condemns Israeli attack on Syrian military airport",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "LIVE Turkey says it 'will not fall into Netanyahu’s trap' and 'is not considerin",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Are ships passing Hormuz more willing to defy Iran or US? What data shows",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-08-20T08:43+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Al Mayadeen",
             "IRNA",
             "Jordan Times",
             "Mehr News"
@@ -656,7 +722,7 @@
             "iranian",
             "levant"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -688,52 +754,6 @@
               {
                 "source": "Jordan Times",
                 "title": "Trump says no Iran talks planned, claims Hormuz 'new US territory'",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Foreign minister condemns Israeli attack on Syrian military airport",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-08-19T19:34+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "Kan 11",
-            "N12",
-            "TRT World"
-          ],
-          "camps": [
-            "israeli",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Foreign minister condemns Israeli attack on Syrian military airport",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Türkiye rejects Israeli claims on Syria, condemns 'unlawful' air strikes",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Türkiye 'strongly' condemns Israeli strikes on Syria's Abu al-Duhur airbase",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -831,116 +851,40 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Iran considers attacking US military targets in Europe if Trump escalates: Report",
+          "headline": "HRW: Israeli-backed settler violence drives Palestinian displacement in West Bank",
           "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-19T10:29+00:00"
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-20T13:10+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Iran International",
-            "TRT World"
+            "SANA"
           ],
           "camps": [
             "panarab",
-            "iranian",
-            "turkish"
+            "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Iran considers attacking US military targets in Europe if Trump escalates: Report",
+            "source": "SANA",
+            "title": "HRW: Israeli-backed settler violence drives Palestinian displacement in West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "1 Iran weighs attacks on military targets in Europe – FT",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces raid Balata refugee camp, east of Nablus",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-20T14:37+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces raid Balata refugee camp, east of Nablus",
-            "title_source": "native",
-            "why": [
               "names 1 of the story's dominant entities (westbank)",
               "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Falastin al-Youm",
-                "title": "The occupation forces are moving mobile homes to a settlement outpost south of H",
+                "source": "Al Arabiya",
+                "title": "Israeli settler violence in West Bank amounts to ‘terror’: Huckabee",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli occupiers besiege 3 West Bank homes for 12th consecutive day",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "UNIFIL hands over position in southern Lebanon to Lebanese army",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-20T14:01+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "SANA"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "UNIFIL hands over position in southern Lebanon to Lebanese army",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -977,15 +921,52 @@
         },
         {
           "selected_rank": null,
-          "headline": "Attacks by settlers have displaced 107 Palestinian communities since 2023.",
+          "headline": "Iran weighs potential strikes on US military targets in Europe if war escalates: report",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-19T10:29+00:00"
+          },
+          "outlet_names": [
+            "Iran International",
+            "TRT World"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Iran weighs potential strikes on US military targets in Europe if war escalates: report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "1 Iran weighs attacks on military targets in Europe – FT",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces raid Balata refugee camp, east of Nablus",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-20T08:23+00:00"
+            "newest": "2026-08-20T07:01+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Falastin al-Youm"
+            "Falastin al-Youm",
+            "WAFA News"
           ],
           "camps": [
             "levant"
@@ -994,22 +975,16 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Attacks by settlers have displaced 107 Palestinian communities since 2023.",
-            "title_source": "snippet",
+            "source": "WAFA News",
+            "title": "Israeli forces raid Balata refugee camp, east of Nablus",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "neutral-by-default outlet",
+              "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al-Akhbar",
-                "title": "Settlers in the north represent the most complex electoral front for Netanyahu.",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -1045,11 +1020,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "China urges US to drop drone tariffs",
+          "headline": "Pakistan premier Sharif calls for enhanced cooperation with Syria, invites President al-Sharaa to vi",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-20T14:37+00:00"
+            "newest": "2026-08-20T14:43+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1074,6 +1049,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "UNIFIL hands over position in southern Lebanon to Lebanese army",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-20T14:01+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1242,25 +1235,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Israeli military admits for first time to firing on car carrying 5-year-old Hind Rajab as it opens c",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T12:24+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1278,7 +1253,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-20T14:46:21.700622+00:00",
+    "last_success": "2026-08-20T14:54:29.225588+00:00",
     "last_failure": null
   },
   "ok": true
