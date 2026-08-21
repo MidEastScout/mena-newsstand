@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T19:36:59.139893+00:00",
+  "updated": "2026-08-21T19:57:12.086971+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-21T19:35:03.104142+00:00"
+      "headlines_updated": "2026-08-21T19:55:01.747256+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 34,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_translated": 1,
         "title_native": 84,
         "in": 127,
-        "kept": 119
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -226,12 +227,22 @@
           "source": "TRT World",
           "title": "UAE suspends all trade, financial activity with Iran 'until further notice'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"חסר תקדים\": השר קיש טס לחופשה על חשבון כנסי היערכות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "رئيس \"صوماليلاند\": نريد أن نصبح \"جيبوتي جديدة\" ومستعدون لاستضافة قواعد أميركية وإسرائيلية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 64,
+      "in": 117,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
@@ -311,13 +322,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This entry refers to a religious singer who has reportedly broken stereotypes and impressed judges on a…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "Trump’s ‘economic D-Day’ claims first victim: Not Iran, but US markets",
           "sec": 0,
@@ -362,13 +366,6 @@
         {
           "source": "The New Arab",
           "title": "West Ham urges fans to stop anti-Palestine Solomon chant",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Under the name \"Falcon Shield 2026,\" China and the UAE are conducting joint air exercises.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -445,14 +442,14 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "ELECTRICITY Saddi launches audit of power barges and fuel imports between 2012 and 2021 L'Orient Today staff",
+          "title": "LEBANESE ECONOMY World Bank sees Lebanese GDP shrinking by more than 6% in 2026 L'Orient Today staff",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
-          "title": "ELECTRIC CARS Eleven car brands, including Tesla and Xiaomi, affected by record wave of recalls in China L'Orient Today ",
+          "title": "ELECTRICITY Saddi launches audit of power barges and fuel imports between 2012 and 2021 L'Orient Today staff",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -556,6 +553,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "US Supreme Court temporarily allows Trump's White House ballroom project to proceed",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "'Israel's Netanyahu using Türkiye as threat for cheap election politics'",
           "sec": 0,
@@ -622,16 +626,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 44,
       "sizes": [
         9,
-        6,
         5,
         2,
         2,
         2,
         2,
         2,
+        2,
+        2,
+        1,
         1,
         1,
         1,
@@ -679,7 +685,7 @@
           "rank_key": {
             "outlets": 7,
             "camps": 4,
-            "newest": "2026-08-21T18:22+00:00"
+            "newest": "2026-08-21T19:49+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -735,58 +741,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "29-year-old Palestinian killed by Israeli forces in southern Gaza",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 2,
-            "newest": "2026-08-21T18:22+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Al-Akhbar",
-            "Falastin al-Youm",
-            "Middle East Eye",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "29-year-old Palestinian killed by Israeli forces in southern Gaza",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "According to a reporter from Almayadeen, Israeli artillery shelled west of Beit ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Islamic Jihad stated that the assassination of \"Fathi Khazem\" is an extrajudicia",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Iran, Oman discuss resuming talks, Strait of Hormuz navigation",
           "rank_key": {
             "outlets": 5,
@@ -825,6 +779,38 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Israeli forces shoot Palestinian man to death in Gaza's Khan Younis",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-21T19:33+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Israeli forces shoot Palestinian man to death in Gaza's Khan Younis",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1001,35 +987,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Prague court upholds expulsion of Belarusian journalist accused of working for Russian intelligence",
+          "headline": "UK, Australia and Canada condemn Israel’s closure of Gaza aid convoy investigation",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-21T19:25+00:00"
+            "newest": "2026-08-21T18:22+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "SANA"
           ],
           "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces advance into southwestern Syria's Quneitra province: State media",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-21T19:21+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1073,24 +1041,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Why Iran is threatening Europe’s ‘strategically important’ southeast",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-21T17:29+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Erdoğan targeted for standing up to Netanyahu's genocide: AK Part spox",
           "rank_key": {
             "outlets": 1,
@@ -1120,6 +1070,24 @@
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Egyptian intelligence reportedly informed President Sisi that America does not intend to rebuild Gaz",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-21T16:33+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1163,29 +1131,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russian expert warns of impending social crisis as Ukraine death toll rises",
+          "headline": "Turkey asks Interpol to issue red notices for Netanyahu, former Israeli intelligence officer",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-21T15:13+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "UK, Australia and Canada denounce Israel’s closure of World Central Kitchen strike investigation",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-21T15:00+00:00"
+            "newest": "2026-08-21T13:19+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -1198,7 +1148,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "No clause in Islamabad MoU signals Iran's surrender",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-21T12:21+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Tens of thousands participated in Friday prayers at Al-Aqsa Mosque.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-21T11:44+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1216,7 +1202,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-21T19:37:24.962858+00:00",
+    "last_success": "2026-08-21T19:57:25.537120+00:00",
     "last_failure": null
   },
   "ok": true
