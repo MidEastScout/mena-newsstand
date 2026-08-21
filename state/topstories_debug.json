@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T23:22:12.966787+00:00",
+  "updated": "2026-08-21T23:46:34.859301+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-21T23:20:12.010151+00:00"
+      "headlines_updated": "2026-08-21T23:44:47.653394+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 33,
+        "title_snippet": 32,
         "title_translated": 1,
         "title_native": 84,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 118
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -231,12 +232,17 @@
           "source": "TRT World",
           "title": "UAE suspends all trade, financial activity with Iran 'until further notice'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "قصف مدفعي إسرائيلي يستهدف أراضٍ زراعية في القنيطرة بسوريا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 70,
+      "in": 117,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -288,6 +294,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Jazeera",
+          "title": "Why Iran is threatening Europe’s ‘strategically important’ southeast",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Middle East Eye",
           "title": "Iranian-American comedian Max Amini sparks backlash over 'species' remarks on Iranian people",
           "sec": 0,
@@ -324,7 +337,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "West Ham urges fans to stop anti-Palestine Solomon chant",
+          "title": "Turkey says it will not fall into Israeli 'trap' in Syria",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -401,13 +414,6 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Trump vows 'tremendous' economic costs on Iran partners",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
           "title": "King meets with China NPC standing committee chairman Zhao Leji in Beijing",
           "sec": 0,
           "off": 0,
@@ -416,6 +422,13 @@
         {
           "source": "Jordan Times",
           "title": "King meets with China’s State-Owned Assets Supervision and Administration Commission of the State Council (SASAC) in Bei",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "JAF medical team arrives at South Gaza field hospital",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -493,6 +506,13 @@
         {
           "source": "Syria Direct",
           "title": "Ties of blood: The afterlife of Syria’s jihadist networks from Aleppo to Berlin",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Netanyahu calls Turkish president ‘antisemitic dictator’ after Turkiye issues arrest warrant",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -578,18 +598,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 47,
       "sizes": [
         10,
         5,
-        3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -739,50 +758,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Security officials warn that attacks on Erdogan could escalate tensions between countries.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-21T18:20+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Arab News",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Security officials warn that attacks on Erdogan could escalate tensions between countries.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "A special report details how an Israeli strike on the Abu al-Duhur military airp",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Mossad chief, Syrian foreign minister discussed Turkish military deployments bef",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "At least 15 people were killed and over 130 injured in a Russian attack on a shopping mall in Ukrain",
           "rank_key": {
             "outlets": 2,
@@ -797,7 +772,7 @@
             "israeli",
             "panarab"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -815,17 +790,12 @@
                 "source": "Al Jazeera",
                 "title": "Russian expert warns of impending social crisis as Ukraine death toll rises",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "Russia says ready for ‘new ideas’ on Ukraine war that match Putin’s goals",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Israeli forces shoot Palestinian man to death in Gaza's Khan Younis",
           "rank_key": {
             "outlets": 2,
@@ -857,7 +827,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "UK, Canada, Australia blast Israel over 'shameful' Gaza aid worker probe",
           "rank_key": {
             "outlets": 2,
@@ -886,6 +856,43 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Security officials warn that attacks on Erdogan could escalate tensions between countries.",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-21T18:20+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "Security officials warn that attacks on Erdogan could escalate tensions between countries.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "A special report details how an Israeli strike on the Abu al-Duhur military airp",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1202,7 +1209,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1220,7 +1227,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-21T23:22:27.066220+00:00",
+    "last_success": "2026-08-21T23:46:48.162292+00:00",
     "last_failure": null
   },
   "ok": true
