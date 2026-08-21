@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T02:45:03.394058+00:00",
+  "updated": "2026-08-21T03:16:01.093271+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,22 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-21T02:43:12.529997+00:00"
+      "headlines_updated": "2026-08-21T03:14:16.874369+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
         "title_snippet": 27,
-        "dropped_no_english": 7,
-        "title_translated": 1,
+        "dropped_no_english": 8,
         "title_native": 79,
         "in": 127,
-        "kept": 107
+        "kept": 106
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -284,6 +283,11 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
+          "source": "Channel 13",
+          "title": "\"יש לך קול מאוד שונה\": האודישן של רוני כץ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "قاليباف يرسم من بغداد ملامح معادلة التوازن الجديدة: طهران متمسكة بالمقاومة، والعراق في صلب تحالفاتها.",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -291,8 +295,8 @@
       ]
     },
     "relevance": {
-      "in": 107,
-      "kept": 57,
+      "in": 106,
+      "kept": 59,
       "dropped": [
         {
           "source": "Kan 11",
@@ -321,13 +325,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
@@ -449,13 +446,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "King visits Shenzhen showcase of Chinese companies operating in advanced air mobility, robotics, meets their senior exec",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "L'Orient Today",
           "title": "FOCUS Ali Taher: Israel turns against the US-backed compromise",
           "sec": 0,
@@ -561,13 +551,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Colonists set fire to ancient olive trees in Burqa, east of Ramallah",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Al-Shaibani, Pakistani interior minister discuss security, regional developments",
           "sec": 0,
@@ -648,21 +631,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 39,
       "sizes": [
-        4,
-        3,
-        3,
+        12,
         3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -702,6 +681,67 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Jordan condemns Israeli settlement plans in occupied Jerusalem",
+          "rank_key": {
+            "outlets": 8,
+            "camps": 4,
+            "newest": "2026-08-21T02:49+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Falastin al-Youm",
+            "Jordan Times",
+            "Kan 11",
+            "SANA",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 12,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Jordan condemns Israeli settlement plans in occupied Jerusalem",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "France, Germany, UK and Italy condemn Israel’s ‘E1’ West Bank plan",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "France, Germany, Italy and UK reject Israel's new E1 settlement tenders",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Jordan condemns Israeli tenders for 1,234 settlement units east Jerusalem",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces raid Balata refugee camp, east of Nablus",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Iran considers attacking US military targets in Europe if Trump escalates: Report",
           "rank_key": {
             "outlets": 3,
@@ -745,134 +785,7 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Oman says lasting security in Strait of Hormuz requires regional peace",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-20T10:33+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Arab News",
-            "IRNA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Oman says lasting security in Strait of Hormuz requires regional peace",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "Are ships passing Hormuz more willing to defy Iran or US? What data shows",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Strait of Hormuz will remain under Iranian control: Leader’s adviser",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
-          "headline": "France, Germany, UK and Italy condemn Israel’s ‘E1’ West Bank plan",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-20T20:11+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "France, Germany, UK and Italy condemn Israel’s ‘E1’ West Bank plan",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "The Secretary-General of the United Nations has called on Israel to halt the E1 ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Israeli army kills Palestinian near Jenin during West Bank raid: Report",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-21T02:04+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli army kills Palestinian near Jenin during West Bank raid: Report",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Anadolu Agency",
-                "title": "3 Palestinians injured in Israeli occupier attack on homes in occupied West Bank",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli army commanders warn of ‘widespread escalation’ in West Bank amid occupi",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Doctors Without Borders condemns Israel for closing cases over killings of its Gaza staff without cr",
           "rank_key": {
             "outlets": 2,
@@ -910,7 +823,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Canada condemns Israel’s decision to close investigation into World Central Kitchen strike",
           "rank_key": {
             "outlets": 2,
@@ -941,7 +854,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Palestinian American confronts Israeli settler at West Bank home",
           "rank_key": {
             "outlets": 2,
@@ -1038,6 +951,82 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Mossad chief, Syrian foreign minister discussed Turkish military deployments before strikes, sources",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-20T04:41+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Mossad chief, Syrian foreign minister discussed Turkish military deployments before strikes, sources say",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Mossad director, Syria FM discussed Turkish military deployments before strikes:",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Strait of Hormuz will remain under Iranian control: Leader’s adviser",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-19T14:15+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "IRNA"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "Strait of Hormuz will remain under Iranian control: Leader’s adviser",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Are ships passing Hormuz more willing to defy Iran or US? What data shows",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1204,42 +1193,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Jordan, Egypt condemn Israel’s E1 settlement plan, warn of West Bank division",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T12:48+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Strike at Israel’s Ben Gurion causes travel chaos leaving passengers stranded",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-20T12:40+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "US-bound oil tanker targeted in cyberattack",
           "rank_key": {
             "outlets": 1,
@@ -1257,7 +1210,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Israeli military admits for first time to firing on car carrying 5-year-old Hind Rajab as it opens c",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-20T12:24+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Human Rights Watch reported a record year for settler attacks.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-20T11:49+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1275,7 +1264,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-21T02:45:17.198525+00:00",
+    "last_success": "2026-08-21T03:16:18.621576+00:00",
     "last_failure": null
   },
   "ok": true
