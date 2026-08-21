@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T18:26:40.544503+00:00",
+  "updated": "2026-08-21T18:58:20.526114+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-21T18:24:40.173507+00:00"
+      "headlines_updated": "2026-08-21T18:56:17.880608+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 34,
+        "dropped_stale": 8,
+        "title_snippet": 27,
+        "dropped_no_english": 7,
         "title_translated": 1,
-        "title_native": 83,
+        "title_native": 84,
         "in": 127,
-        "kept": 118
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -208,11 +209,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "A Palestinian American’s journey to his West Bank home under settler siege",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Gulf News",
           "title": "UAE suspends all trade and financial transactions with Iran until further notice",
           "reason": "stale (older than 48h)"
@@ -224,19 +220,54 @@
         },
         {
           "source": "TRT World",
-          "title": "Iran weighs potential strikes on US military targets in Europe if war escalates: report",
+          "title": "UAE suspends all trade, financial activity with Iran 'until further notice'",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "UAE suspends all trade, financial activity with Iran 'until further notice'",
+          "title": "Iran weighs potential strikes on US military targets in Europe if war escalates: report",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צעיר כבן 20 נפצע קשה מדקירה בחיפה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "المعارضة التونسية إلى الشارع من جديد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الكشف عن 5 حقائق طبية صادمة وغير معروفة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الولايات المتحدة تدرس فرض عقوبات على مستوطنين بالضفة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"هيومان رايتس ووتش\": عام قياسي لاعتداءات المستوطنين",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مصر وقطر تدعوان لإنهاء الحرب على غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "يديعوت: نتنياهو يخالف الكابينت ويتراجع بشأن دخول قوات دولية لغزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 72,
+      "in": 112,
+      "kept": 67,
       "dropped": [
         {
           "source": "N12",
@@ -282,9 +313,9 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "El Nino set to be most intense ‘for over a century’: UK forecasters",
+          "title": "Why Iran is threatening Europe’s ‘strategically important’ southeast",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -299,13 +330,6 @@
           "title": "Israel admits firing on Hind Rajab. Her family rejects its probe",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "West Ham urges fans to stop anti-Palestine Solomon chant",
-          "sec": 0,
-          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -463,20 +487,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Gold prices have stabilized for the third week, heading towards gains.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "This refers to the illusion of Arab reliance on Trump's plan.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Syria Direct",
           "title": "Ties of blood: The afterlife of Syria’s jihadist networks from Aleppo to Berlin",
           "sec": 0,
@@ -484,8 +494,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Arab News",
+          "title": "Turkiye issues arrest warrant for Israel’s Netanyahu",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Anadolu Agency",
-          "title": "Australia vaccinates thousands of little penguins against bird flu",
+          "title": "UN allocates $3M for Ebola preparedness in Central African Republic",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -500,6 +517,13 @@
         {
           "source": "Daily Sabah",
           "title": "'Israel's Netanyahu using Türkiye as threat for cheap election politics'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "UN urges US to ensure Palestinian access amid Abbas visa reports",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -564,9 +588,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 45,
       "sizes": [
-        11,
+        10,
         3,
         3,
         2,
@@ -578,10 +602,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -624,16 +644,15 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "8 nations reject Israel's E1 settlement plan, urge sanctions",
+          "headline": "UAE, Saudi Arabia and six other countries condemn Israel’s E1 settlement plan",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 8,
             "camps": 5,
             "newest": "2026-08-21T18:17+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Anadolu Agency",
-            "Daily Sabah",
             "Gulf News",
             "Jordan Times",
             "N12",
@@ -648,12 +667,12 @@
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "8 nations reject Israel's E1 settlement plan, urge sanctions",
+            "source": "Gulf News",
+            "title": "UAE, Saudi Arabia and six other countries condemn Israel’s E1 settlement plan",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -687,27 +706,28 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iran, Oman discuss resuming talks, Strait of Hormuz navigation",
+          "headline": "Oman, Iran discuss means of restoring navigation through Hormuz Strait",
           "rank_key": {
             "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-21T16:40+00:00"
+            "camps": 3,
+            "newest": "2026-08-21T18:39+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Al Mayadeen",
+            "Anadolu Agency",
             "Iran International"
           ],
           "camps": [
             "panarab",
-            "iranian"
+            "iranian",
+            "turkish"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Iran, Oman discuss resuming talks, Strait of Hormuz navigation",
+            "source": "Anadolu Agency",
+            "title": "Oman, Iran discuss means of restoring navigation through Hormuz Strait",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -726,16 +746,16 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Islamic Jihad stated that the assassination of 'Fathi Hazem' is a field execution crime that will no",
+          "headline": "29-year-old Palestinian killed by Israeli forces in southern Gaza",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-08-21T08:58+00:00"
+            "newest": "2026-08-21T18:22+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Falastin al-Youm",
-            "Middle East Eye"
+            "Middle East Eye",
+            "SANA",
+            "WAFA News"
           ],
           "camps": [
             "panarab",
@@ -745,24 +765,19 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Islamic Jihad stated that the assassination of 'Fathi Hazem' is a field execution crime that will not go…",
-            "title_source": "snippet",
+            "source": "WAFA News",
+            "title": "29-year-old Palestinian killed by Israeli forces in southern Gaza",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "neutral-by-default outlet",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Middle East Eye",
                 "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "A person was injured by occupation forces' gunfire east of Khan Yunis in the Gaz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -770,38 +785,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Syrian rights group says survivors of 2013 Ghouta chemical attack still suffering",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-21T16:36+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "SANA"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Syrian rights group says survivors of 2013 Ghouta chemical attack still suffering",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Trump warns Iran allies of ‘tremendous’ economic consequences",
           "rank_key": {
             "outlets": 2,
@@ -838,7 +821,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Russian expert warns of impending social crisis as Ukraine death toll rises",
           "rank_key": {
             "outlets": 2,
@@ -965,6 +948,36 @@
         },
         {
           "selected_rank": null,
+          "headline": "Turkey issues ‘genocide’ warrant for Israel’s Netanyahu",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-21T13:43+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Turkey issues ‘genocide’ warrant for Israel’s Netanyahu",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "A 31-year-old man was found dead in the open area of Arava and is suspected to have been murdered.",
           "rank_key": {
             "outlets": 2,
@@ -1026,17 +1039,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "A young man, around 20 years old, was seriously injured in a brawl in Haifa.",
+          "headline": "Israel preventing foreign support for Lebanese army, deputy PM says",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-21T18:20+00:00"
+            "newest": "2026-08-21T18:48+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1188,17 +1201,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Canada, US continue trade talks as midnight tariff deadline looms",
+          "headline": "UK, Australia and Canada denounce Israel’s closure of World Central Kitchen strike investigation",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-21T15:23+00:00"
+            "newest": "2026-08-21T15:00+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "WAFA News"
           ],
           "camps": [
-            "turkish"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1224,24 +1237,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Tens of thousands performed Friday prayers in the courtyards of Al-Aqsa Mosque.",
+          "headline": "China and the UAE are conducting joint air drills under the name 'Falcon Shield 2026'.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-21T11:44+00:00"
+            "newest": "2026-08-21T11:03+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm"
+            "Al Mayadeen"
           ],
           "camps": [
-            "levant"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1259,7 +1272,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-21T18:26:59.039866+00:00",
+    "last_success": "2026-08-21T18:58:34.334126+00:00",
     "last_failure": null
   },
   "ok": true
