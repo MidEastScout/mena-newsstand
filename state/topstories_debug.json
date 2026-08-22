@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T16:15:54.873752+00:00",
+  "updated": "2026-08-22T16:42:27.911856+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-22T16:14:15.814717+00:00"
+      "headlines_updated": "2026-08-22T16:40:50.634044+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 31,
-        "title_translated": 1,
-        "title_native": 83,
+        "dropped_stale": 10,
+        "title_snippet": 28,
+        "dropped_no_english": 4,
+        "title_native": 85,
         "in": 127,
-        "kept": 115
+        "kept": 113
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 31,
+        "requested": 32,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -213,11 +213,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Jordan Times",
-          "title": "King meets with communist party secretary of Shenzhen",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Syria Direct",
           "title": "Ties of blood: The afterlife of Syria’s jihadist networks from Aleppo to Berlin",
           "reason": "stale (older than 48h)"
@@ -243,15 +238,30 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "UAE suspends all trade, financial activity with Iran 'until further notice'",
-          "reason": "stale (older than 48h)"
+          "source": "Channel 13",
+          "title": "התחזית לשבת: ירידה הדרגתית במידות החום בכל הארץ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القوات المسلحة اليمنية تنشر مشاهد عمليات استهداف لتجمعات وآليات سعودية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"إسرائيل\" وتركيا... حسابات سياسية ورسائل من نار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "نجت من القصف.. مركبة اسعاف تحمل بدل الجراح ألعابًا وبدل الخوف حكايات!",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 76,
+      "in": 113,
+      "kept": 77,
       "dropped": [
         {
           "source": "Kan 11",
@@ -284,13 +294,6 @@
         {
           "source": "Channel 13",
           "title": "Balloons were detected again in the Gaza envelope, with a demand for a response beyond mere assurances.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -331,15 +334,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "'Axios' reported that oil markets are ignoring Trump's statements as their impact wanes over time.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
-          "title": "Air Force commander says defense industry has become symbol of self-reliance",
+          "title": "Aref says US economic pressure will not change Iranian nation’s resolve",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -450,13 +446,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The article questions the implications of Kushner's meetings with Haniyeh and Netanyahu.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "UK, Canada, Australia and Poland slam Israel ending probe into aid worker killings",
           "sec": 0,
@@ -530,7 +519,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 54,
       "sizes": [
         9,
         3,
@@ -544,7 +533,9 @@
         2,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -653,6 +644,46 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Strait of Hormuz traffic this week was 20% of pre-war average, though US says “oil is flowing”",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-08-22T12:51+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "Egypt Independent",
+            "IRNA"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Strait of Hormuz traffic this week was 20% of pre-war average, though US says “oil is flowing”",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Tehran, Muscat discuss resuming dialogue, shipping in Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Russian strike on Ukraine's Kryvyi Rih shopping complex kills 16",
           "rank_key": {
             "outlets": 3,
@@ -691,7 +722,40 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
+          "headline": "Israeli drone strike injures 1 in southwestern Syria",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-22T11:59+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Israeli drone strike injures 1 in southwestern Syria",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "The Israeli army carried out extensive bombings in southern Lebanon.",
           "rank_key": {
             "outlets": 3,
@@ -734,50 +798,7 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Hezbollah warns of proper ‘response’ to new Israeli occupation",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T15:49+00:00"
-          },
-          "outlet_names": [
-            "IRNA",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Hezbollah warns of proper ‘response’ to new Israeli occupation",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "FOCUS The US adopts a new classification and Israel plans its offensive, tighten",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "ANALYSIS US sanctions: Washington wants to 'neutralize the political economy' li",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Israeli army briefly holds Palestinian mayor, municipal council members in West Bank raid",
           "rank_key": {
             "outlets": 2,
@@ -802,70 +823,6 @@
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli drone strike injures 1 in southwestern Syria",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T15:30+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli drone strike injures 1 in southwestern Syria",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Strait of Hormuz traffic this week was 20% of pre-war average, though US says “oil is flowing”",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T12:51+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Egypt Independent"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Strait of Hormuz traffic this week was 20% of pre-war average, though US says “oil is flowing”",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -906,44 +863,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Tehran, Muscat discuss resuming dialogue, shipping in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T06:10+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "IRNA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Tehran, Muscat discuss resuming dialogue, shipping in Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Iran, Oman discuss resuming talks, Strait of Hormuz navigation",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran president says time to end war while in position of strength",
           "rank_key": {
             "outlets": 2,
@@ -971,6 +890,43 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump’s ‘economic D-Day’ for Iran: A path to peace or the war’s next phase?",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-21T09:52+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "Iran International"
+          ],
+          "camps": [
+            "gulf",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Trump’s ‘economic D-Day’ for Iran: A path to peace or the war’s next phase?",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "5 Iran leaders sound economic alarms under Trump’s Economic D-Day",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1036,39 +992,57 @@
         },
         {
           "selected_rank": null,
-          "headline": "Georgia refuses to join EU sanctions against Iran",
+          "headline": "Iran will never succumb to pressure: Acting defense minister",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-22T05:13+00:00"
+            "newest": "2026-08-22T16:33+00:00"
           },
           "outlet_names": [
-            "IRNA",
-            "Mehr News"
+            "IRNA"
           ],
           "camps": [
             "iranian"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "Georgia refuses to join EU sanctions against Iran",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "IRNA",
-                "title": "Georgia refuses to join EU’s anti-Iran sanctions",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Senior Iranian cleric congratulates new head of Supreme National Security Council",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-22T16:30+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israel has expressed concerns to the United States that Turkey may be preparing to deploy an air def",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-22T15:30+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1144,6 +1118,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Macron says Russia seeks to 'break Ukraine through terror’",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-22T13:53+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The Syrian Ministry of Foreign Affairs condemned the Israeli attack, calling it a violation of Syria",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-22T13:31+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Myanmar airstrike on monastery kills 14 during Buddhist retreat",
           "rank_key": {
             "outlets": 1,
@@ -1197,97 +1207,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iran: Trump’s economic threat paves the way for “return to full-scale classic colonialism”",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-22T12:32+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "NATO weighs allied support for Strait of Hormuz navigation",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-22T11:58+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump’s ‘peacemaker’ promise faces growing test as Iran war drags on",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-22T11:46+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli military officials suspect Netanyahu may seek escalation to delay elections: Israeli media",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-22T11:13+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "An Israeli incursion into the Quneitra countryside prevented shepherds from approaching the separati",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-22T10:55+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1305,7 +1225,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-22T16:16:53.007069+00:00",
+    "last_success": "2026-08-22T16:42:41.101171+00:00",
     "last_failure": null
   },
   "ok": true
