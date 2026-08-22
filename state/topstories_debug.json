@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T03:25:49.848480+00:00",
+  "updated": "2026-08-22T03:58:27.416749+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-22T03:23:51.598125+00:00"
+      "headlines_updated": "2026-08-22T03:56:36.318378+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 34,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_native": 83,
         "title_translated": 1,
         "in": 127,
-        "kept": 118
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -188,8 +189,8 @@
       },
       "dropped": [
         {
-          "source": "Jordan Times",
-          "title": "Iran negotiator Ghalibaf says Hormuz will not open until US meets demands",
+          "source": "IRNA",
+          "title": "Iranian, Mauritanian FMs discuss regional developments over phone",
           "reason": "stale (older than 48h)"
         },
         {
@@ -231,12 +232,22 @@
           "source": "TRT World",
           "title": "UAE suspends all trade, financial activity with Iran 'until further notice'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "גבר כבן 25 נפצע קשה מירי בכביש 40, סמוך לקרית גת",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "قصف مدفعي إسرائيلي يستهدف أراضٍ زراعية في القنيطرة بسوريا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 68,
+      "in": 116,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -244,13 +255,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A man, approximately 25 years old, sustained serious injuries in a road accident on Route 40, near Kiryat Gat.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
@@ -309,15 +313,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Middle East Eye",
-          "title": "Pro-Israel Emirati influencers mocked for claims of Islamic plot to take over West",
+          "source": "Al Jazeera",
+          "title": "El Nino set to be most intense ‘for over a century’: UK forecasters",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Trump warns Iran allies of ‘tremendous’ economic consequences",
+          "source": "Middle East Eye",
+          "title": "Pro-Israel Emirati influencers mocked for claims of Islamic plot to take over West",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -428,6 +432,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Jordan Times",
+          "title": "Jordan Super Cup kicks off 2026/27 season",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "L'Orient Today",
           "title": "LEBANESE ECONOMY World Bank sees Lebanese GDP shrinking by more than 6% in 2026 L'Orient Today staff",
           "sec": 0,
@@ -491,13 +502,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Gold has stabilized for the third week, heading towards gains.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Syria Direct",
           "title": "Ties of blood: The afterlife of Syria’s jihadist networks from Aleppo to Berlin",
           "sec": 0,
@@ -507,6 +511,13 @@
         {
           "source": "Arab News",
           "title": "Netanyahu calls Turkish president ‘antisemitic dictator’ after Turkiye issues arrest warrant",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Abu Dhabi Police warn pedestrians of Dh400 fine for crossing at undesignated areas",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -592,11 +603,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 46,
       "sizes": [
         10,
         3,
-        3,
         2,
         2,
         2,
@@ -605,7 +615,7 @@
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -724,7 +734,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -740,11 +750,6 @@
               {
                 "source": "Al Jazeera",
                 "title": "Trump says Iran not ready for right deal, sees Hormuz as American territory",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "Iran updates: Iran, Oman discuss Hormuz; Tehran dismisses Trump’s threats",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1121,24 +1126,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Ghalibaf: Iran-Iraq economic cooperation enters operational phase",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-21T20:39+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Ship traffic in the Strait of Hormuz has decreased by 90%.",
           "rank_key": {
             "outlets": 1,
@@ -1228,7 +1215,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Georgia refuses to join EU’s anti-Iran sanctions",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-21T15:46+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1246,7 +1251,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-22T03:25:51.085360+00:00",
+    "last_success": "2026-08-22T03:58:27.737071+00:00",
     "last_failure": null
   },
   "ok": true
