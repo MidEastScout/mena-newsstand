@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T07:08:46.644618+00:00",
+  "updated": "2026-08-22T07:40:08.931274+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-22T07:07:16.473063+00:00"
+      "headlines_updated": "2026-08-22T07:38:10.699954+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 33,
-        "title_native": 83,
+        "dropped_stale": 12,
+        "dropped_no_english": 3,
+        "title_snippet": 30,
+        "title_native": 82,
         "in": 127,
-        "kept": 116
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -199,6 +200,11 @@
         {
           "source": "The New Arab",
           "title": "NGOs urge release of Palestinian-American detained in Israel",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Israeli forces raid Palestinian wedding in East Jerusalem",
           "reason": "stale (older than 48h)"
         },
         {
@@ -240,12 +246,27 @@
           "source": "TRT World",
           "title": "UAE suspends all trade, financial activity with Iran 'until further notice'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "איראן אישרה למספר מכליות נפט עיראקיות לעבור במצר הורמוז",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "واشنطن وأوتاوا تفشلان في التوصل إلى اتفاق تجاري",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "للأسبوع الثالث: الذهب يستقر مُتجهاً صوب مكاسب",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 68,
+      "in": 112,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -297,22 +318,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Trump warns Iran allies of ‘tremendous’ economic consequences",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "Israel admits firing on Hind Rajab. Her family rejects its probe",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Turkey says it will not fall into Israeli 'trap' in Syria",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -389,13 +396,6 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Trump vows 'tremendous' economic costs on Iran partners",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
           "title": "King meets with China NPC standing committee chairman Zhao Leji in Beijing",
           "sec": 0,
           "off": 0,
@@ -416,6 +416,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Jordan Times",
+          "title": "Australia says relations with Israel 'difficult' after aid worker death",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "L'Orient Today",
           "title": "LEBANESE ECONOMY World Bank sees Lebanese GDP shrinking by more than 6% in 2026 L'Orient Today staff",
           "sec": 0,
@@ -431,16 +438,16 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Melania Trump prioritizes policy over public presence this term",
+          "title": "US returns 48 smuggled artifacts from 3 different eras to Egypt",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
-          "title": "World’s top humanoid robot maker surges in blockbuster market debut in China",
+          "title": "Melania Trump prioritizes policy over public presence this term",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -493,6 +500,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "SANA",
+          "title": "At least 13 Tunisians missing after migrant boat sinks off Tunisia",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Syria Direct",
           "title": "Ties of blood: The afterlife of Syria’s jihadist networks from Aleppo to Berlin",
           "sec": 0,
@@ -518,13 +532,6 @@
           "title": "TikTok to pay $400M to settle US children’s privacy lawsuit: US Justice Department",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Trump temporarily lifts tariffs on ground beef imports",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -587,15 +594,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 42,
       "sizes": [
         10,
-        5,
+        4,
         4,
         3,
         3,
-        2,
-        2,
+        3,
         2,
         2,
         2,
@@ -700,26 +706,76 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Ukraine says death toll from Russian drone strike in Kryvyi Rih rises to 16",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 4,
+            "newest": "2026-08-22T07:07+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "N12",
+            "SANA"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Ukraine says death toll from Russian drone strike in Kryvyi Rih rises to 16",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "N12",
+                "title": "At least 15 people were killed and over 130 injured in a Russian attack on a sho",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Two killed in Russian strike on shopping center in Ukraine’s Kryvyi Rig",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Russian strikes kill 19 across Ukraine, hit shopping mall in Kryvyi Rih",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Tehran, Muscat discuss resuming dialogue, shipping in Strait of Hormuz",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 4,
+            "camps": 3,
             "newest": "2026-08-22T06:10+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Al-Akhbar",
             "Anadolu Agency",
             "IRNA"
           ],
           "camps": [
             "panarab",
             "iranian",
-            "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -746,51 +802,6 @@
               {
                 "source": "Anadolu Agency",
                 "title": "Trump says Iran still not ready for ‘right deal’ amid tightening economic pressu",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al-Akhbar",
-                "title": "Ship traffic in the Strait of Hormuz has decreased by 90%.",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "UK, Canada, Australia blast Israel over 'shameful' Gaza aid worker probe",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-08-21T19:22+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Egypt Independent",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "UK, Canada, Australia blast Israel over 'shameful' Gaza aid worker probe",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Egypt Independent",
-                "title": "Israeli military admits for first time to firing on car carrying 5-year-old Hind",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -842,6 +853,45 @@
         },
         {
           "selected_rank": 5,
+          "headline": "UK, Canada, Australia blast Israel over 'shameful' Gaza aid worker probe",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-21T19:22+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "Egypt Independent",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "UK, Canada, Australia blast Israel over 'shameful' Gaza aid worker probe",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Egypt Independent",
+                "title": "Israeli military admits for first time to firing on car carrying 5-year-old Hind",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Explosion kill 3 civilians, wound 6 more in Syrian countryside",
           "rank_key": {
             "outlets": 2,
@@ -914,38 +964,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Russian strikes kill 19 across Ukraine, hit shopping mall in Kryvyi Rih",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-21T22:04+00:00"
-          },
-          "outlet_names": [
-            "N12",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Russian strikes kill 19 across Ukraine, hit shopping mall in Kryvyi Rih",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1210,24 +1228,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "In a stabbing incident in Ramla, a mother and her daughter were moderately and seriously injured…",
+          "headline": "Islamic Jihad stated that the occupation's plans will not succeed in erasing the identity of Al-Aqsa",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-21T21:15+00:00"
+            "newest": "2026-08-21T20:52+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Falastin al-Youm"
           ],
           "camps": [
-            "israeli"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1245,7 +1263,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-22T07:09:06.022207+00:00",
+    "last_success": "2026-08-22T07:40:36.356643+00:00",
     "last_failure": null
   },
   "ok": true
