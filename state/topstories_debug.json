@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T19:17:20.462393+00:00",
+  "updated": "2026-08-22T19:38:25.072376+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-22T19:15:36.007751+00:00"
+      "headlines_updated": "2026-08-22T19:36:23.109305+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 34,
-        "title_translated": 1,
+        "title_snippet": 32,
+        "title_translated": 2,
+        "dropped_no_english": 1,
         "title_native": 83,
         "in": 127,
-        "kept": 118
+        "kept": 117
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -231,12 +232,17 @@
           "source": "TRT World",
           "title": "UAE suspends all trade, financial activity with Iran 'until further notice'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "פאנל מוצ\"ש: המשבר בגוש השינוי - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 74,
+      "in": 117,
+      "kept": 73,
       "dropped": [
         {
           "source": "Kan 11",
@@ -268,16 +274,9 @@
         },
         {
           "source": "N12",
-          "title": "Meir Shamziz is the subject of various news and updates, including photos, videos, and articles.",
+          "title": "Weather Forecast - Mako",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Spicy hummus is featured in various news and updates, including photos, videos, and articles.",
-          "sec": 0,
-          "off": 0,
+          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -296,13 +295,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "Regarding kite incidents in the Gaza envelope, the news states: \"We will not accept 'it will be fine'; this…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
@@ -311,6 +303,13 @@
         {
           "source": "Channel 13",
           "title": "Ben Gurion Airport is slowly returning to normal operations two days after a period of chaos, with efforts…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "Regarding kite incidents in the Gaza envelope, the news states: \"We will not accept 'it will be fine'; this…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -470,6 +469,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Former French, British diplomats urge Paris and London to hold Israel accountable",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "A US judge has canceled Trump's decisions and suspended the issuance of immigrant visas for citizens of 75…",
           "sec": 0,
@@ -550,7 +556,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 44,
       "sizes": [
         15,
         4,
@@ -564,7 +570,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -1032,7 +1037,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "General Talaei-Nik: Sanctions turned into opportunity for localization and a leap in Iran’s defense ",
+          "headline": "General Talaei-Nik: Sanctions turned into opportunity for localization and leap in Iran’s defense in",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1247,7 +1252,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1265,7 +1270,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-22T19:18:16.163391+00:00",
+    "last_success": "2026-08-22T19:38:26.153810+00:00",
     "last_failure": null
   },
   "ok": true
