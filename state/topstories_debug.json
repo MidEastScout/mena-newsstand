@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T22:16:20.899848+00:00",
+  "updated": "2026-08-22T22:40:26.176949+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-22T22:14:49.087510+00:00"
+      "headlines_updated": "2026-08-22T22:38:36.400166+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 33,
+        "dropped_stale": 10,
+        "title_snippet": 30,
         "title_translated": 2,
-        "title_native": 81,
+        "dropped_no_english": 3,
+        "title_native": 82,
         "in": 127,
-        "kept": 116
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -187,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Al Arabiya",
-          "title": "France, Germany, UK and Italy condemn Israel’s ‘E1’ West Bank plan",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "The New Arab",
           "title": "Trump threatens states trading with Iran in new 'economic war'",
@@ -241,12 +237,27 @@
           "source": "TRT World",
           "title": "Australia condemns Israel's decision to close probe into aid workers' deaths",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "חדשות סוף השבוע - 22.08.2026 - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מבזק 08:00 - צעיר מבני ברק נעדר כבר יומיים - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "قصف مدفعي إسرائيلي يستهدف أراضٍ زراعية في القنيطرة بسوريا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 72,
+      "in": 114,
+      "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
@@ -278,13 +289,6 @@
         },
         {
           "source": "N12",
-          "title": "Eyal Golan and his children's babysitter are vacationing abroad again.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
           "title": "Panel Motzah Shefi focuses on the crisis within the change bloc in Israeli politics.",
           "sec": 0,
           "off": 0,
@@ -292,14 +296,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "The full viewing of the Saturday evening broadcast from August 22, 2026, is available.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "The full viewing of the Saturday evening broadcast from August 22, 2026, is available.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -397,14 +401,14 @@
         },
         {
           "source": "Iran International",
-          "title": "ANALYSIS Turkey’s gas pivot leaves Iran with fewer cards to play",
+          "title": "INSIGHT Ghalibaf's hunger warning sparks hardline backlash over showing weakness",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Iran International",
-          "title": "INSIGHT Ghalibaf's hunger warning sparks hardline backlash over showing weakness",
+          "title": "ANALYSIS Turkey’s gas pivot leaves Iran with fewer cards to play",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -555,25 +559,30 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Charter plane crash in Alaska kills all 8 people on board: report",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 47,
       "sizes": [
         10,
         4,
-        4,
+        3,
+        3,
         3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -678,58 +687,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Hamas informed mediators that they blamed Israel for violations.",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-08-22T18:20+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Middle East Eye",
-            "N12",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Hamas informed mediators that they blamed Israel for violations.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "UK, Australia and Canada condemn Israel’s closure of Gaza aid convoy investigati",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "Trump’s ‘peacemaker’ promise faces growing test as Iran war drags on",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Trump claims Strait of Hormuz as 'American territory'",
           "rank_key": {
             "outlets": 4,
@@ -775,7 +732,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Blast targets security forces’ bus near Damascus, causing injuries",
           "rank_key": {
             "outlets": 3,
@@ -815,7 +772,91 @@
           }
         },
         {
+          "selected_rank": 4,
+          "headline": "Russian strike on Ukraine's Kryvyi Rih shopping complex kills 16",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-08-22T12:52+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Daily Sabah",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Russian strike on Ukraine's Kryvyi Rih shopping complex kills 16",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Two killed in Russian strike on shopping center in Ukraine’s Kryvyi Rig",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 5,
+          "headline": "Trump’s ‘peacemaker’ promise faces growing test as Iran war drags on",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-08-22T11:46+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "Middle East Eye",
+            "SANA"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Trump’s ‘peacemaker’ promise faces growing test as Iran war drags on",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "UK, Australia and Canada condemn Israel’s closure of Gaza aid convoy investigati",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Hezbollah warns of proper ‘response’ to new Israeli occupation",
           "rank_key": {
             "outlets": 2,
@@ -850,38 +891,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Russian strike on Ukraine's Kryvyi Rih shopping complex kills 16",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T12:52+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Russian strike on Ukraine's Kryvyi Rih shopping complex kills 16",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1039,11 +1048,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iranian, Egyptian FMs discuss latest regional developments",
+          "headline": "Araghchi and Pakistani Army chief discuss regional developments over phone",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-22T20:48+00:00"
+            "newest": "2026-08-22T20:37+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1236,7 +1245,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1254,7 +1263,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-22T22:16:34.102357+00:00",
+    "last_success": "2026-08-22T22:40:40.100550+00:00",
     "last_failure": null
   },
   "ok": true
