@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T20:12:31.192521+00:00",
+  "updated": "2026-08-23T20:38:34.348862+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-23T20:10:47.355007+00:00"
+      "headlines_updated": "2026-08-23T20:36:46.478393+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 33,
-        "title_translated": 2,
+        "dropped_stale": 13,
+        "title_snippet": 31,
+        "title_translated": 1,
+        "dropped_no_english": 2,
         "title_native": 80,
         "in": 127,
-        "kept": 115
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -200,6 +201,11 @@
         {
           "source": "Jordan Times",
           "title": "Trump vows 'tremendous' economic costs on Iran partners",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "قصف مدفعي إسرائيلي يستهدف أراضٍ زراعية في القنيطرة بسوريا",
           "reason": "stale (older than 48h)"
         },
         {
@@ -246,11 +252,21 @@
           "source": "TRT World",
           "title": "Australia condemns Israel's decision to close probe into aid workers' deaths",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הפגישה הטעונה וההתנגדות של ליברמן לדרישת איזנקוט",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مسؤول أمني إسرائيلي: اتصالات سرية مع تركيا لمنع الاحتكاك في سوريا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
+      "in": 112,
       "kept": 73,
       "dropped": [
         {
@@ -303,13 +319,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The program 'Grandstand Test' examines whether a new train line in Jerusalem will shorten travel times for…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Dua Lipa backs Albania’s ‘Flamingo Revolution’ against Kushner-backed resort",
           "sec": 0,
@@ -352,13 +361,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Bulletin 8 a.m.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Iran International",
           "title": "INSIGHT Iran's central bank says it is not hyperinflation. Economists are not convinced",
           "sec": 0,
@@ -382,13 +384,6 @@
         {
           "source": "Jordan Times",
           "title": "Turkey issues arrest warrant for Israel's Netanyahu",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Gov’t approves 5 new technical schools as 86 already open nationwide",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -472,9 +467,9 @@
         },
         {
           "source": "Gulf News",
-          "title": "Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
+          "title": "UAE archaeological discoveries reveal new chapters in 60,000 years of human history",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -486,10 +481,10 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Tunisia recovers 8 bodies after migrant boat sinks off Ben Gardane coast",
+          "title": "Ukraine, Norway sign defense cooperation, strategic partnership agreements",
           "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
@@ -1034,6 +1029,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Dozens of attacks in Thailand's restive south leave 3 wounded",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-23T19:04+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Israel's escalation against Ankara has triggered an internal debate regarding the extent of confront",
           "rank_key": {
             "outlets": 1,
@@ -1177,24 +1190,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Four injured by Israeli drone fire north of Khan Yunis",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-23T15:00+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1213,7 +1208,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-23T20:13:02.917677+00:00",
+    "last_success": "2026-08-23T20:38:35.441004+00:00",
     "last_failure": null
   },
   "ok": true
