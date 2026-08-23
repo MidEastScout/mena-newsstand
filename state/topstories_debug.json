@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T19:36:59.694064+00:00",
+  "updated": "2026-08-23T19:55:58.250270+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-23T19:35:23.207081+00:00"
+      "headlines_updated": "2026-08-23T19:54:01.510728+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 33,
+        "dropped_no_english": 4,
+        "title_snippet": 29,
         "title_translated": 2,
         "title_native": 80,
         "in": 127,
-        "kept": 115
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -246,12 +247,32 @@
           "source": "TRT World",
           "title": "Australia condemns Israel's decision to close probe into aid workers' deaths",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שגריר ארה\"ב לטורקיה: ההכרה האמריקנית בריבונות ישראל ברמת הגולן לא השתנתה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הסוד של מסעדות הפועלים - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "זיני, איזנקוט - והאבטחה שלא אושרה - mako",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "التصعيد الإسرائيلي ضد أنقرة يثير سجالاً داخلياً بشأن حدود المواجهة مع تركيا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 70,
+      "in": 111,
+      "kept": 68,
       "dropped": [
         {
           "source": "Kan 11",
@@ -261,10 +282,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Kan 11",
-          "title": "Residents of Kibbutz Nir Yitzhak in the Gaza envelope were instructed to enter protected areas due to a…",
+          "source": "N12",
+          "title": "Weather Forecast - Mako",
           "sec": 0,
-          "off": 0,
+          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -277,20 +298,6 @@
         {
           "source": "N12",
           "title": "A dramatic development has occurred in the investigation into the death of Alder Dayan.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "News 12 has uncovered a potential new case of mistaken embryo transfer.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "There is a high demand for alternative service years, referred to as 'Children of Hope'.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -345,6 +352,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Arabiya",
+          "title": "Zelenskyy rejects wartime elections, says would ‘split’ Ukraine",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "The New Arab",
           "title": "Australia anger over Israel dropping aid worker case",
           "sec": 0,
@@ -368,13 +382,6 @@
         {
           "source": "Al Mayadeen",
           "title": "An Israeli security official mentioned secret communications with Turkey to prevent friction in Syria.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Bulletin 8 a.m.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -507,7 +514,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Tunisia recovers 8 bodies after migrant boat sinks off Ben Gardane coast",
+          "title": "Venezuela braces for two new tropical waves after heavy rains cause flooding",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
@@ -572,10 +579,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 47,
       "sizes": [
         5,
-        4,
+        5,
         4,
         4,
         3,
@@ -584,8 +591,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -634,11 +639,12 @@
           "selected_rank": 1,
           "headline": "Iranian parliamentary committee approves fees on ships using Strait of Hormuz",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 4,
             "newest": "2026-08-23T19:04+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Anadolu Agency",
             "Egypt Independent",
             "IRNA",
@@ -650,7 +656,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -664,6 +670,11 @@
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "Iran’s parliament advances plans on charging Hormuz service fees",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "Egypt Independent",
                 "title": "A closer look at the Strait of Hormuz after Iran issues new threat",
@@ -958,37 +969,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "US judge strikes down Trump’s 75-country visa ban",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T12:25+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "US judge strikes down Trump’s 75-country visa ban",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Gaza death toll rises to 73,420 since October 2023",
           "rank_key": {
             "outlets": 2,
@@ -1023,24 +1003,6 @@
               }
             ]
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The assassination of a high-ranking figure in the Caucasian mafia has led to fears of retaliation.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-23T18:38+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1241,7 +1203,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran won’t let ‘a drop of oil’ leave Persian Gulf if US blockade continues: Top security official",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-23T13:12+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1259,7 +1239,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-23T19:37:21.003186+00:00",
+    "last_success": "2026-08-23T19:55:59.350585+00:00",
     "last_failure": null
   },
   "ok": true
