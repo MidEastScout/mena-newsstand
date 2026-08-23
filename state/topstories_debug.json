@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T00:28:19.863457+00:00",
+  "updated": "2026-08-23T00:41:54.340685+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-23T00:26:32.618366+00:00"
+      "headlines_updated": "2026-08-23T00:40:01.325476+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 34,
+        "dropped_stale": 11,
+        "title_snippet": 32,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 81,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 117
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -208,6 +209,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Jordan Times",
+          "title": "Tax revenues rise 1.6% to JD3.457b in H1 — Finance Ministry",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Syria Direct",
           "title": "Ties of blood: The afterlife of Syria’s jihadist networks from Aleppo to Berlin",
           "reason": "stale (older than 48h)"
@@ -236,11 +242,21 @@
           "source": "TRT World",
           "title": "Australia condemns Israel's decision to close probe into aid workers' deaths",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "العراق يحاول رسم مستقبل بعيد عن التصادم والتدخلات الخارجية... ما فرص نجاح بغداد؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الضفة الغربية: اعتقالات ومواجهات.. واعتداء للمستوطنين على شبكة كهرباء مادما",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
+      "in": 114,
       "kept": 76,
       "dropped": [
         {
@@ -344,13 +360,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Mehdi Rahimi stated that Iran received an invitation to join the Mecca agreement and is considering it.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Regional transformations and their impact on Lebanon and its relationship with Iran are discussed.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -515,28 +524,14 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Charter plane crash in Alaska kills all 8 people on board: report",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "TRT World",
-          "title": "Pakistan shifts ex-PM Imran Khan back to prison after brief hospital visit",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 50,
       "sizes": [
-        15,
+        12,
         4,
         3,
         3,
@@ -546,6 +541,8 @@
         2,
         2,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -593,11 +590,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Illegal Israeli settlements, outposts in West Bank reach 592, says Palestinian body",
+          "headline": "Israeli army briefly holds Palestinian mayor, municipal council members in West Bank raid",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 7,
             "camps": 4,
-            "newest": "2026-08-22T22:51+00:00"
+            "newest": "2026-08-22T19:39+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
@@ -605,7 +602,6 @@
             "Arab News",
             "Egypt Independent",
             "SANA",
-            "TRT World",
             "The New Arab",
             "WAFA News"
           ],
@@ -615,12 +611,12 @@
             "levant",
             "turkish"
           ],
-          "members": 15,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Illegal Israeli settlements, outposts in West Bank reach 592, says Palestinian body",
+            "title": "Israeli army briefly holds Palestinian mayor, municipal council members in West Bank raid",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -968,6 +964,36 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump says Iran is not ready for a deal as U.S. weighs new sanctions",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-22T11:20+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Trump says Iran is not ready for a deal as U.S. weighs new sanctions",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Continued Israeli escalation in southern Lebanon is reported.",
           "rank_key": {
             "outlets": 2,
@@ -1004,6 +1030,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iran wants end to 'no war, no peace' situation, rejects concessions: Pezeshkian",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-23T00:39+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Police in East Jerusalem reported that a man was murdered due to a dispute in the Silwan neighborhoo",
           "rank_key": {
             "outlets": 1,
@@ -1022,17 +1066,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran warns nearby nations against joining US ‘economic war’ efforts",
+          "headline": "Illegal Israeli settlements, outposts in West Bank reach 592, says Palestinian body",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-22T23:26+00:00"
+            "newest": "2026-08-22T22:51+00:00"
           },
           "outlet_names": [
-            "Al Jazeera"
+            "Anadolu Agency"
           ],
           "camps": [
-            "panarab"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1076,11 +1120,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iranian, Egyptian FMs discuss latest regional developments",
+          "headline": "Araghchi and Pakistani Army chief discuss regional developments over phone",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-22T20:48+00:00"
+            "newest": "2026-08-22T20:37+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1148,24 +1192,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Jordan, Arab, Islamic countries condemn Israel’s settlement expansion",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-22T19:07+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "General Talaei-Nik: Sanctions turned into opportunity for localization and leap in Iran’s defense in",
           "rank_key": {
             "outlets": 1,
@@ -1219,7 +1245,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1237,7 +1263,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-23T00:28:36.841832+00:00",
+    "last_success": "2026-08-23T00:42:19.208204+00:00",
     "last_failure": null
   },
   "ok": true
