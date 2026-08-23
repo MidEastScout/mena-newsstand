@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T13:43:40.917220+00:00",
+  "updated": "2026-08-23T13:46:34.451108+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-23T13:41:51.188708+00:00"
+      "headlines_updated": "2026-08-23T13:44:49.340747+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 33,
+        "title_snippet": 31,
+        "dropped_no_english": 2,
         "title_translated": 2,
         "title_native": 80,
         "in": 127,
-        "kept": 115
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -246,12 +247,22 @@
           "source": "TRT World",
           "title": "Australia condemns Israel's decision to close probe into aid workers' deaths",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שר הביטחון כ\"ץ יקיים הערכת מצב עם צמרת צה\"ל בנושא העפיפונים ששוגרו מעזה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "היום העמוס ביותר בקיץ: האם שוב צפוי כאוס בנמל התעופה?",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 76,
+      "in": 113,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
@@ -277,13 +288,6 @@
         {
           "source": "N12",
           "title": "Iranian hackers have successfully disabled a UK power station for four days in an unprecedented cyberattack.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Shelly Yachimovich revealed her diagnosis of pancreatic cancer and is undergoing intensive chemotherapy.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -375,6 +379,13 @@
         {
           "source": "Iran International",
           "title": "3 Iran leaders sound economic alarms under Trump’s Economic D-Day",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "RJ, Air China sign MoU to boost air connectivity",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -530,7 +541,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 47,
       "sizes": [
         11,
         5,
@@ -541,8 +552,6 @@
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -1151,24 +1160,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Shelly Yachimovich revealed she has been diagnosed with pancreatic cancer and is undergoing intensiv",
+          "headline": "One Palestinian killed, two injured in Israeli airstrike in central Gaza",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-23T08:01+00:00"
+            "newest": "2026-08-23T07:27+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "WAFA News"
           ],
           "camps": [
-            "israeli"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1186,7 +1195,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-23T13:44:06.342352+00:00",
+    "last_success": "2026-08-23T13:46:34.704157+00:00",
     "last_failure": null
   },
   "ok": true
