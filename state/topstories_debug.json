@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T17:36:24.745545+00:00",
+  "updated": "2026-08-23T17:56:13.554078+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-23T17:34:42.699547+00:00"
+      "headlines_updated": "2026-08-23T17:54:20.604974+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 11,
-        "title_snippet": 33,
+        "title_snippet": 31,
+        "dropped_no_english": 2,
         "title_translated": 2,
         "title_native": 81,
         "in": 127,
-        "kept": 116
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -241,11 +242,21 @@
           "source": "TRT World",
           "title": "Australia condemns Israel's decision to close probe into aid workers' deaths",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אתה יכול לקבל 'לא' ולצלול, או לקום מחר בבוקר ולעבוד עוד יותר קשה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"معاريف\" تكشف عمق أزمة جيش الاحتلال بعد 3 سنوات من الحرب",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
+      "in": 114,
       "kept": 72,
       "dropped": [
         {
@@ -300,13 +311,6 @@
         {
           "source": "Channel 13",
           "title": "Statik defended Eden Ben Zaken against calls for her removal from 'The Voice,' suggesting that a scapegoat is…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This item appears to be promotional content about hair care and does not contain specific news content to…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -475,13 +479,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Kats has ordered strong action against the launch of incendiary balloons from Gaza.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "There is a warning about a shortage of medical oxygen in Gaza.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -944,6 +941,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "The head of a Caucasian mafia group was killed in a shooting near Caesarea.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-23T17:25+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli officials threatened to intensify targeted killings and evacuate areas from which balloons a",
           "rank_key": {
             "outlets": 1,
@@ -1052,24 +1067,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The head of a Caucasian mafia group was killed in a shooting near Caesarea.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-23T13:08+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Russia likely to mobilize at least 300,000 more troops to Ukraine war, Zelensky warns",
           "rank_key": {
             "outlets": 1,
@@ -1159,7 +1156,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-23T17:36:40.251752+00:00",
+    "last_success": "2026-08-23T17:56:13.800548+00:00",
     "last_failure": null
   },
   "ok": true
