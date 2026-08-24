@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T04:07:24.059536+00:00",
+  "updated": "2026-08-24T04:38:52.233817+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-24T04:05:51.257501+00:00"
+      "headlines_updated": "2026-08-24T04:37:01.090984+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 34,
-        "title_native": 80,
-        "title_translated": 1,
+        "dropped_stale": 13,
+        "title_snippet": 30,
+        "dropped_no_english": 3,
+        "title_translated": 2,
+        "title_native": 79,
         "in": 127,
-        "kept": 115
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 32,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -233,6 +234,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "Benjamin Netanyahu calls Turkey's Erdogan 'antisemitic dictator'",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Al-Masirah",
           "title": "122 خرقا لقوى العدوان في الحديدة خلال الـ 24 ساعة الماضية",
           "reason": "stale (older than 48h)"
@@ -246,12 +252,27 @@
           "source": "TRT World",
           "title": "Australia condemns Israel's decision to close probe into aid workers' deaths",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רוכב אופניים חשמליים נפצע קשה ברכיבה בכביש 4, סמוך לצומת לוחמי הגטאות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רוכב קורקינט חשמלי נפצע קשה ברכיבה בבאר שבע",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צה״ל תקף בחאן יונס מפקד בנוח'בה שפשט לישראל ב-7 באוקטובר",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 65,
+      "in": 111,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -290,6 +311,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "The final mission is underway to determine who will become Israel's Power Couple.",
           "sec": 0,
           "off": 0,
@@ -305,13 +333,6 @@
         {
           "source": "Channel 13",
           "title": "The nineteenth episode of the sixth season of 'The Voice' includes a critical audition.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Eden made a difficult decision, choosing who will remain and who will be eliminated.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -339,7 +360,7 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Saudi Crown Prince’s France visit to focus on energy, investment: French source",
+          "title": "Zelenskyy rejects wartime elections, says would ‘split’ Ukraine",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -520,13 +541,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Iran currency plunges to record low as US dollar breaks 2 million rials on open market",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Israel threatens assassinations, evacuations in Gaza over children’s kites",
           "sec": 0,
@@ -607,12 +621,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 43,
       "sizes": [
-        6,
-        4,
+        7,
         3,
         3,
+        3,
         2,
         2,
         2,
@@ -620,8 +634,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -663,11 +675,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iranian parliamentary committee approves fees on ships using Strait of Hormuz",
+          "headline": "Iran warns that ships violating Hormuz transit rules risk detention, seizure",
           "rank_key": {
             "outlets": 6,
             "camps": 4,
-            "newest": "2026-08-23T19:59+00:00"
+            "newest": "2026-08-23T23:22+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
@@ -683,12 +695,12 @@
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Iranian parliamentary committee approves fees on ships using Strait of Hormuz",
+            "title": "Iran warns that ships violating Hormuz transit rules risk detention, seizure",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -700,6 +712,11 @@
               {
                 "source": "Al Jazeera",
                 "title": "Iran updates: Iranian parliament advances plans for Hormuz service fees",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Charges for services in Hormuz approved in Iranian parliament",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -750,14 +767,45 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Israeli drone strike kills 2 Palestinians in displacement tent in central Gaza",
+          "headline": "US judge strikes down Trump’s 75-country visa ban",
           "rank_key": {
             "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-22T12:25+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "US judge strikes down Trump’s 75-country visa ban",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Israeli drone strike kills 2 Palestinians in displacement tent in central Gaza",
+          "rank_key": {
+            "outlets": 2,
             "camps": 2,
             "newest": "2026-08-24T00:15+00:00"
           },
           "outlet_names": [
-            "Al Manar",
             "Anadolu Agency",
             "WAFA News"
           ],
@@ -765,7 +813,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -780,20 +828,15 @@
             ],
             "passed_over": [
               {
-                "source": "Al Manar",
-                "title": "Israeli occupation forces are continuing to violate the ceasefire in Gaza for th",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "WAFA News",
-                "title": "Child killed, six injured in Israeli airstrike on central Gaza's Al-Zawaida",
+                "title": "One Palestinian killed, two injured in Israeli airstrike in central Gaza",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Three killed in Kharkiv as Russia, Ukraine trade strikes",
           "rank_key": {
             "outlets": 2,
@@ -831,7 +874,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Iran’s president says US MoU is best path out of stalled war",
           "rank_key": {
             "outlets": 2,
@@ -897,69 +940,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Canada hits back with new tariffs after trade talks with US fail",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T20:17+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Canada hits back with new tariffs after trade talks with US fail",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Blast targets security forces’ bus near Damascus, causing injuries",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T19:16+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Blast targets security forces’ bus near Damascus, causing injuries",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1135,42 +1115,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hamas states that Israel's fear of kites is merely a pretext to continue its aggression in Gaza.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-23T19:54+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The U.S.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-23T19:51+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Tehran is implementing a new deterrence strategy in response to the American economic war.",
           "rank_key": {
             "outlets": 1,
@@ -1243,24 +1187,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Mansour Abbas stated that the 'change bloc' will not demand recognition of Palestine in coalition…",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-23T18:31+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump’s economic war against Iran will boomerang on US economy: Ghalibaf",
           "rank_key": {
             "outlets": 1,
@@ -1278,7 +1204,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Four injured by Israeli drone fire north of Khan Yunis",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-23T15:00+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran has plans to tackle US economic warfare: IRGC spox",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-23T13:39+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran won’t let ‘a drop of oil’ leave Persian Gulf if US blockade continues: Top security official",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-23T13:12+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1296,7 +1276,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-24T04:07:42.103499+00:00",
+    "last_success": "2026-08-24T04:39:02.797121+00:00",
     "last_failure": null
   },
   "ok": true
