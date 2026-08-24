@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T05:32:44.965579+00:00",
+  "updated": "2026-08-24T05:38:40.885376+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,22 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-24T05:30:34.969129+00:00"
+      "headlines_updated": "2026-08-24T05:36:52.165606+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "dropped_no_english": 13,
-        "title_translated": 2,
+        "dropped_stale": 13,
+        "dropped_no_english": 14,
+        "title_translated": 1,
         "title_snippet": 20,
-        "title_native": 80,
+        "title_native": 79,
         "in": 127,
-        "kept": 102
+        "kept": 100
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -226,6 +226,11 @@
         {
           "source": "Gulf News",
           "title": "Trump’s ‘economic D-Day’ for Iran: A path to peace or the war’s next phase?",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Benjamin Netanyahu calls Turkey's Erdogan 'antisemitic dictator'",
           "reason": "stale (older than 48h)"
         },
         {
@@ -309,15 +314,20 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "لبنان: مراسل الميادين: مدفعية الاحتلال تعتدي على محيط مرتفع علي الطاهر وبلدة المنصوري جنوب لبنان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Falastin al-Youm",
-          "title": "تحذير من نقص الأكسجين الطبي في غزة",
+          "title": "القضاء الأمريكي يُلغي قرار ترمب بتعليق تأشيرات الهجرة لمواطني 75 دولة",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 102,
-      "kept": 56,
+      "in": 100,
+      "kept": 57,
       "dropped": [
         {
           "source": "Channel 13",
@@ -370,13 +380,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Zelenskyy rejects wartime elections, says would ‘split’ Ukraine",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Saudi Crown Prince’s France visit to focus on energy, investment: French source",
           "sec": 0,
           "off": 0,
@@ -392,13 +395,6 @@
         {
           "source": "Al Mayadeen",
           "title": "There have been developments on the Syrian front, alongside Israeli steps aimed at provoking Ankara.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Sixth Bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -558,13 +554,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Iran currency plunges to record low as US dollar breaks 2 million rials on open market",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Israel threatens assassinations, evacuations in Gaza over children’s kites",
           "sec": 0,
@@ -645,10 +634,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 40,
       "sizes": [
         6,
-        4,
         3,
         3,
         3,
@@ -656,6 +644,9 @@
         2,
         2,
         2,
+        2,
+        2,
+        1,
         1,
         1,
         1,
@@ -753,57 +744,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israeli drone strike kills 2 Palestinians in displacement tent in central Gaza",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-08-24T00:15+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Anadolu Agency",
-            "Middle East Eye",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli drone strike kills 2 Palestinians in displacement tent in central Gaza",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Israeli occupation forces are continuing to violate the ceasefire in Gaza for th",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Gaza death toll rises to 73,420 since October 2023",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Iran says Pakistan’s army chief to visit Tehran on Monday",
           "rank_key": {
             "outlets": 3,
@@ -836,7 +776,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Syria is experiencing frequent Israeli incursions and targeting; the question is whether diplomacy c",
           "rank_key": {
             "outlets": 3,
@@ -880,7 +820,77 @@
           }
         },
         {
+          "selected_rank": 4,
+          "headline": "US judge strikes down Trump’s 75-country visa ban",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-22T12:25+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "US judge strikes down Trump’s 75-country visa ban",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
           "selected_rank": 5,
+          "headline": "Three killed in Kharkiv as Russia, Ukraine trade strikes",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-24T00:01+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent",
+            "TRT World"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Three killed in Kharkiv as Russia, Ukraine trade strikes",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Egypt Independent",
+                "title": "Russia likely to mobilize at least 300,000 more troops to Ukraine war, Zelensky ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran’s president says US MoU is best path out of stalled war",
           "rank_key": {
             "outlets": 2,
@@ -926,7 +936,7 @@
             "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -944,44 +954,45 @@
                 "source": "TRT World",
                 "title": "Israeli forces arrest 14 Palestinians as illegal settlers escalate attacks in oc",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Illegal Israeli settlements, outposts in occupied West Bank reach 592",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": null,
-          "headline": "Canada hits back with new tariffs after trade talks with US fail",
+          "headline": "Gaza death toll rises to 73,420 since October 2023",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-22T20:17+00:00"
+            "camps": 1,
+            "newest": "2026-08-23T17:48+00:00"
           },
           "outlet_names": [
-            "Arab News",
-            "SANA"
+            "SANA",
+            "WAFA News"
           ],
           "camps": [
-            "gulf",
             "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Canada hits back with new tariffs after trade talks with US fail",
+            "source": "SANA",
+            "title": "Gaza death toll rises to 73,420 since October 2023",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Gaza death toll rises to 73,420 since October 2023",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1022,6 +1033,24 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-08-24T05:05+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli drone strike kills 2 Palestinians in displacement tent in central Gaza",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-24T00:15+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1197,24 +1226,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Austria calls on Israel to immediately halt settlement plans",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-23T13:48+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran has plans to tackle US economic warfare: IRGC spox",
           "rank_key": {
             "outlets": 1,
@@ -1232,7 +1243,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1250,7 +1261,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-24T05:32:55.422945+00:00",
+    "last_success": "2026-08-24T05:38:54.127370+00:00",
     "last_failure": null
   },
   "ok": true
