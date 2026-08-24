@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T16:20:15.715690+00:00",
+  "updated": "2026-08-24T16:24:12.819538+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-24T16:18:18.004707+00:00"
+      "headlines_updated": "2026-08-24T16:22:15.675880+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 35,
+        "title_snippet": 34,
         "title_native": 82,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 117
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -228,19 +229,24 @@
         },
         {
           "source": "TRT World",
-          "title": "Palestinians facing 'new Nakba' as Israel eyes occupied West Bank annexation: Barghouti",
+          "title": "Pakistan shifts ex-PM Imran Khan back to prison after brief hospital visit",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "Pakistan shifts ex-PM Imran Khan back to prison after brief hospital visit",
+          "title": "Palestine urges firms to refrain from participating in Israel's illegal E1 project in West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "حرس الثورة: مستعدون للتعاون مع الحكومة لمواجهة الحرب الاقتصادية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 60,
+      "in": 116,
+      "kept": 58,
       "dropped": [
         {
           "source": "Kan 11",
@@ -328,7 +334,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , US threat of ‘economic D-Day’ for Iran tests Trump’s China detente",
+          "title": "3 , US threat of ‘economic D-Day’ for Iran tests Trump’s China detente",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -580,7 +586,21 @@
         },
         {
           "source": "Anadolu Agency",
+          "title": "US strategic oil reserve continues decline, hits lowest level since 1982",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
           "title": "Israel blocks 2 Swedish European parliamentarians from entering country",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Aging population drives Germany's social spending to record high",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -595,13 +615,6 @@
         {
           "source": "Daily Sabah",
           "title": "President Erdoğan, Lithuanian PM discuss defense ties, Ukraine peace",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Trump vows to double tariffs on Canadian autos as tensions mount",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -645,18 +658,23 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 48,
       "sizes": [
-        5,
         4,
-        4,
+        3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -741,55 +759,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Gaza death toll rises to 73,422 since October 2023",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-24T15:27+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "Middle East Eye",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Gaza death toll rises to 73,422 since October 2023",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas stated that Arab and international betrayal emboldened the occupation to t",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Raising the number since morning to three...",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "The Kremlin stated that Britain is 'pouring oil on the fire' by supplying Ukraine with 'Scalp' missi",
           "rank_key": {
             "outlets": 3,
@@ -805,7 +774,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -825,11 +794,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Jazeera",
-                "title": "5 , Ukraine’s offensive against Russia causes petrol panic across Central Asia",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "TRT World",
                 "title": "Three killed in Kharkiv as Russia, Ukraine trade strikes",
                 "rejected_by": "older than the story's newest wave"
@@ -838,45 +802,7 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Israel bars 2 Swedish EU lawmakers from occupied West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-24T14:42+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Israel bars 2 Swedish EU lawmakers from occupied West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Over Gaza: Israel bars two Swedish MEPs from entering occupied Palestinian terri",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
+          "selected_rank": 3,
           "headline": "Syria’s Former Grand Mufti Ahmad Hassoun Gets Life in Prison",
           "rank_key": {
             "outlets": 2,
@@ -908,7 +834,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Oil falls as US prepares to unveil new Iran sanctions",
           "rank_key": {
             "outlets": 2,
@@ -945,7 +871,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Chinese ships transit via Iranian side of Strait of Hormuz",
           "rank_key": {
             "outlets": 2,
@@ -980,37 +906,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran’s president says US MoU is best path out of stalled war",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-23T11:28+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Iran’s president says US MoU is best path out of stalled war",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1089,17 +984,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "Malaysia to launch cloud seeding to combat haze as Indonesia battles forest fires",
+          "headline": "Two Palestinians succumb to wounds sustained in Israeli attacks across Gaza",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-24T16:08+00:00"
+            "newest": "2026-08-24T15:27+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "WAFA News"
           ],
           "camps": [
-            "turkish"
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saudi Arabia’s national shipping company confirms vessel attacked in Red Sea",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-24T15:04+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1130,6 +1043,24 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-08-24T14:53+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israel bars 2 Swedish EU lawmakers from occupied West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-24T14:42+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1268,43 +1199,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Ahmad Hassoun, mufti under the ousted regime, sentenced to life imprisonment",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-24T10:25+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "FM, Finance Minister discuss boosting economic diplomacy",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-24T10:17+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1322,7 +1217,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-24T16:20:28.930350+00:00",
+    "last_success": "2026-08-24T16:24:26.964860+00:00",
     "last_failure": null
   },
   "ok": true
