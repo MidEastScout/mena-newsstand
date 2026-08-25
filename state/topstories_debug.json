@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25T03:46:09.306998+00:00",
+  "updated": "2026-08-25T03:58:56.520050+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-25T03:44:36.471095+00:00"
+      "headlines_updated": "2026-08-25T03:56:59.771064+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 15,
+        "dropped_stale": 14,
         "title_snippet": 34,
         "title_native": 82,
+        "dropped_no_english": 1,
         "in": 131,
         "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -247,11 +248,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Al-Masirah",
-          "title": "122 خرقا لقوى العدوان في الحديدة خلال الـ 24 ساعة الماضية",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "TRT World",
           "title": "Israeli forces arrest 14 Palestinians as illegal settlers escalate attacks in occupied West Bank",
           "reason": "stale (older than 48h)"
@@ -260,12 +256,17 @@
           "source": "TRT World",
           "title": "Iran wants end to 'no war, no peace' situation, rejects concessions: Pezeshkian",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "ضبط وإتلاف شحنة حلوى محظور استيرادها",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
       "in": 116,
-      "kept": 58,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -328,13 +329,6 @@
           "title": "This segment from Reshet 13 discusses parents who choose to educate their children at home.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , US plans to revoke business, tourism visas of 200,000 asylum seekers",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -417,13 +411,6 @@
         {
           "source": "Jordan Times",
           "title": "Syria sentences Assad-era grand mufti to life imprisonment",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Trump claims Iran 'collapsing' as US threatens 'economic D-Day'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -570,13 +557,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "'Unknown projectile' hits oil tanker off Oman: UKMTO",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "Emmanuel Macron welcomes Saudi Crown Prince Mohammed bin Salman for two-day Paris visit",
           "sec": 0,
           "off": 0,
@@ -668,7 +648,7 @@
         },
         {
           "source": "TRT World",
-          "title": "Why Türkiye is prosecuting Netanyahu, and why the case matters",
+          "title": "Coalition of Willing reiterates Ukraine's 'inherent right' to defend itself against Russia",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -677,7 +657,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 52,
       "sizes": [
         4,
         2,
@@ -686,6 +666,9 @@
         2,
         2,
         2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -1034,6 +1017,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "US set for largest mass visa revocation in history targeting up to 200,000 foreigners, officials say",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-24T23:45+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Washington is escalating economic pressure on Iran concurrently with the Pakistan Army Chief's visit",
           "rank_key": {
             "outlets": 1,
@@ -1159,25 +1160,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Oil falls as markets await new US sanctions on Iran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-24T19:44+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "34 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1195,7 +1178,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-25T03:46:25.465649+00:00",
+    "last_success": "2026-08-25T03:58:57.124556+00:00",
     "last_failure": null
   },
   "ok": true
