@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T04:24:17.541364+00:00",
+  "updated": "2026-08-26T04:55:52.298551+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-26T04:21:57.711683+00:00"
+      "headlines_updated": "2026-08-26T04:53:56.446346+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 36,
+        "dropped_no_english": 5,
+        "title_snippet": 30,
+        "title_translated": 1,
         "title_native": 87,
         "in": 131,
-        "kept": 123
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 36,
+        "requested": 35,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -225,12 +227,37 @@
           "source": "TRT World",
           "title": "Israeli drone strike kills Palestinian, wounds others in latest violation of Gaza ceasefire deal",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ארדן על קריאת רה\"מ שלא להצביע למפלגות קטנות: \"אמירה אנטי-דמוקרטית\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "\"אקסיוס\": שר החוץ האמריקני רוביו במסר לבעלות ברית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: איטליה הציעה להקים כוח חלופה ליוניפי\"ל שיתמוך בצבא לבנון ובמנגנון הפסקת האש",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"أن بي سي نيوز\": أضرار بمليارات الدولارات في مواقع استخباراتية أميركية جراء الهجمات الإيرانية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "ربع مليون طالب حُرموا من التعليم العام الماضي: جيل ما بعد الحرب لا يقرأ ولا يكتب وضعيف في الحساب",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 58,
+      "in": 118,
+      "kept": 56,
       "dropped": [
         {
           "source": "Kan 11",
@@ -276,6 +303,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "The twentieth episode of the sixth season of \"The Voice,\" featuring the start of the duels, is available for…",
           "sec": 0,
           "off": 0,
@@ -291,13 +325,6 @@
         {
           "source": "Channel 13",
           "title": "The full program \"Moriah and Berko\" from August 25, 2026, is available for direct viewing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "An insurance scam involving individuals impersonating agents has resulted in the theft of hundreds of…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -380,22 +407,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Foreign Affairs magazine suggests that the \"maximum pressure\" policy against Iran is destined to fail.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Ghalibaf: Iran, Iraq will play decisive role in emerging regional order as US hegemony fails",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "Islamabad, Tehran discuss restoring US-Iran MoU",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -412,6 +425,13 @@
           "title": "US to have no place in region's future: Rezaei",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Mehr News",
+          "title": "US strategic petroleum reserves fall by 3.7m barrels: report",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -506,13 +526,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "A Syrian-Israeli operations room is reportedly being established in Jordan with US sponsorship.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "In Gaza, returning to normalcy is described as a daily struggle amidst the rubble.",
           "sec": 0,
@@ -576,13 +589,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Israel’s Netanyahu says Iran ‘tried to kill’ one of his sons",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "'Unknown projectile' hits oil tanker off Oman: UKMTO",
           "sec": 0,
@@ -591,14 +597,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Israel's Netanyahu says Iran 'tried to kill' one of his sons",
+          "title": "Dolly Parton dies at 80: Country music icon's life in photos",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Dolly Parton dies at 80: Country music icon's life in photos",
+          "title": "Israel's Netanyahu says Iran 'tried to kill' one of his sons",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -691,18 +697,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 39,
       "sizes": [
-        10,
-        3,
+        12,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -746,7 +749,7 @@
           "selected_rank": 1,
           "headline": "Iran says Hormuz transit route with Oman will be 7 miles wide",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 10,
             "camps": 6,
             "newest": "2026-08-26T03:25+00:00"
           },
@@ -756,6 +759,7 @@
             "Al Manar",
             "Al Mayadeen",
             "Anadolu Agency",
+            "Arab News",
             "Gulf News",
             "IRNA",
             "N12",
@@ -769,7 +773,7 @@
             "levant",
             "turkish"
           ],
-          "members": 10,
+          "members": 12,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -800,7 +804,7 @@
               },
               {
                 "source": "Al Arabiya",
-                "title": "US Navy tells Trump that all mines in Strait of Hormuz have been removed",
+                "title": "Oman, Iran propose temporary shipping lane through Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -808,45 +812,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "US hails YPG dissolution as 'united Syria' takes shape",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-25T21:09+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "US hails YPG dissolution as 'united Syria' takes shape",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Saudi Arabia welcomes US decision to remove Syria from terror sponsor list",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Israel expels Dutch representatives from Gaza coordination center after illegal settlement product b",
           "rank_key": {
             "outlets": 2,
@@ -878,7 +843,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Oil tanker struck by projectile off Oman: UKMTO",
           "rank_key": {
             "outlets": 2,
@@ -915,7 +880,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "The Yemeni armed forces have reportedly targeted a large Saudi oil tanker.",
           "rank_key": {
             "outlets": 2,
@@ -947,7 +912,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Jordan condemns Israeli raid on UNRWA Qalandia centre in Jerusalem",
           "rank_key": {
             "outlets": 2,
@@ -985,21 +950,34 @@
         },
         {
           "selected_rank": null,
-          "headline": "A 45-year-old man sustained moderate injuries from a shooting incident in Jiser al-Zarqa.",
+          "headline": "US hails YPG dissolution as 'united Syria' takes shape",
           "rank_key": {
-            "outlets": 1,
+            "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-26T04:02+00:00"
+            "newest": "2026-08-25T21:09+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Anadolu Agency",
+            "Daily Sabah"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "US hails YPG dissolution as 'united Syria' takes shape",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
         },
         {
           "selected_rank": null,
@@ -1014,42 +992,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A young man, approximately 25 years old, riding an electric scooter was seriously injured after bein",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-26T02:04+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Two men, both around 30 years old, were severely injured in a road accident involving a truck and a ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-26T01:58+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1200,7 +1142,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Hamas has issued a warning that continued Israeli escalation and international silence will lead to ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-25T13:57+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Several journalists were injured during the occupation forces' storming of the UNRWA complex in Qala",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-25T13:46+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US is “not in a position” to limit economic relations, Iran’s top negotiator says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-25T12:32+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1218,7 +1214,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-26T04:24:36.781150+00:00",
+    "last_success": "2026-08-26T04:56:07.824081+00:00",
     "last_failure": null
   },
   "ok": true
