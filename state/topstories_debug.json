@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T10:28:29.453364+00:00",
+  "updated": "2026-08-27T10:59:47.353712+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-27T10:26:12.333390+00:00"
+      "headlines_updated": "2026-08-27T10:58:08.188723+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 36,
+        "title_snippet": 31,
+        "dropped_no_english": 5,
         "title_native": 83,
         "in": 131,
-        "kept": 119
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -245,12 +246,37 @@
           "source": "Gulf News",
           "title": "Trump govt proposes $103k fee for skilled worker visa",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "משרד האוצר לרמטכ\"ל: \"התקציב כמעט שולש, על ראשי המערכת להתייחס בכובד ראש למיליארדים\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אנשי הנדל\"ן, עונה 2, פרק 20 לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "انطلاق المؤتمر الدولي للوحدة الإسلامية في طهران.. وبزشكيان: لا يجب القبول باستهداف أي دولة إسلامية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "وزير الخارجية القطري في طهران غداً لبحث «خفض التصعيد»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "تحضيرات متواصلة لمنتخب الشباب آسيوياً… والأنصار يتمسك بجهازه الفني 16:13",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 48,
+      "in": 114,
+      "kept": 46,
       "dropped": [
         {
           "source": "Kan 11",
@@ -323,15 +349,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "School principals who protested were disconnected from a committee discussion, with one reportedly told to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
-          "title": "1 , ‘Iran not in a weak position’: Pezeshkian calls for Muslim nations’ unity",
+          "title": "1 , Qatar’s PM arrives in Tehran to meet Iranian officials",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -380,10 +399,10 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Hundreds missing after Nepal-Tibet flood kills at least 160",
+          "title": "Iran urges Qatar to clarify fate of missing Iranian pilots",
           "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "The New Arab",
@@ -402,13 +421,6 @@
         {
           "source": "Al Mayadeen",
           "title": "A vehicle ramming incident in France has resulted in one fatality and ten injuries.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The relationship between Arab and Iranian nations is examined, moving from mutual concerns to conflicting…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -540,13 +552,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Tehran and Baghdad are intensifying consultations, emphasizing the prohibition of internal Iraqi conflict.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Enemy media reports suggest the Likud party is preparing for a scenario where no bloc secures 61 seats…",
           "sec": 0,
@@ -611,14 +616,14 @@
         },
         {
           "source": "SANA",
-          "title": "Syria offers condolences to Pakistan over tragic hospital fire in Islamabad",
+          "title": "15 newborns die in Islamabad hospital fire in Pakistan",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "15 newborns die in Islamabad hospital fire in Pakistan",
+          "title": "Syria offers condolences to Pakistan over tragic hospital fire in Islamabad",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -639,7 +644,7 @@
         },
         {
           "source": "Arab News",
-          "title": "Saudi Arabia welcomes US decision to remove Syria from terrorism list",
+          "title": "Fire kills 14 newborns at state-run PIMS hospital in Islamabad, one rescued",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -667,6 +672,20 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Nepal scrambles to find 1,300 missing as floods death toll hits 273",
+          "sec": 2,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Kayaker reaches Bodrum after 83 days of paddling from Istanbul",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "How parents can help kids stay focused on school devices",
           "sec": 0,
           "off": 0,
@@ -675,20 +694,6 @@
         {
           "source": "Daily Sabah",
           "title": "Türkiye's CHP refers 49 members to discipline over ties to rival party",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Dolly Parton’s legacy to live on in Broadway musical, US museum",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "371 Ahıska Turk families receive Turkish identity cards",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -753,17 +758,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 28,
+      "clusters": 30,
       "sizes": [
-        9,
+        7,
         3,
         3,
         3,
         3,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -794,16 +801,14 @@
           "selected_rank": 1,
           "headline": "Iran, Oman close in on interim Hormuz deal, but Tehran says strait to remain closed",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 5,
             "camps": 4,
             "newest": "2026-08-26T14:39+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Al Manar",
             "Arab News",
-            "Gulf News",
             "TRT World",
             "The New Arab"
           ],
@@ -813,7 +818,7 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -974,38 +979,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Russia, Ukraine trade accusations as overnight strikes leave several wounded",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-27T09:50+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Russia, Ukraine trade accusations as overnight strikes leave several wounded",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Qatari PM to visit Tehran on Thu. to revive US-Iran talks",
           "rank_key": {
             "outlets": 2,
@@ -1112,37 +1085,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israel intensifies strikes on south Lebanon; Iran, Oman negotiate Hormuz deal: Everything you need t",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Manar",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "L'Orient Today",
-            "title": "Israel intensifies strikes on south Lebanon; Iran, Oman negotiate Hormuz deal: Everything you need to know this Thursday",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (hezbollah_south, hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Russian intelligence chief confirms meeting with CIA director during Moscow visit",
           "rank_key": {
             "outlets": 1,
@@ -1208,6 +1150,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia, Ukraine trade accusations as overnight strikes leave several wounded",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-27T08:47+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1340,25 +1300,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Hostile West-based Farsi-language media in Iran's target list",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-26T13:57+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "7 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1376,7 +1318,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-27T10:28:53.929468+00:00",
+    "last_success": "2026-08-27T11:00:03.096279+00:00",
     "last_failure": null
   },
   "ok": true
