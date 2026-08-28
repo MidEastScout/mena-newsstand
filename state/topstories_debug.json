@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-28T10:15:22.226191+00:00",
+  "updated": "2026-08-28T10:47:11.194834+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-28T10:13:47.301800+00:00"
+      "headlines_updated": "2026-08-28T10:44:56.208119+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 32,
+        "title_snippet": 31,
         "title_translated": 1,
         "title_native": 81,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 114
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -251,12 +252,17 @@
           "source": "TRT World",
           "title": "Nepal floods: Death toll mounts as rescuers search for hundreds missing",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الولايات المتحدة تقيّم ولاء حلفائها الأوروبيين في استبيان حاد لحلف \"الناتو\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 47,
+      "in": 113,
+      "kept": 50,
       "dropped": [
         {
           "source": "Kan 11",
@@ -406,29 +412,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "A report indicates that a visit to Dubai shows no signs of the 'day of reckoning' that Trump had planned for…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
-          "title": "President: All legal rights of Iranian nation must be recognized",
+          "title": "Iran sympathizes with flood victims in Nepal",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Iran International",
           "title": "ANALYSIS Will Mojtaba Khamenei's absence help the Islamic Republic survive?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Iran International",
-          "title": "5 Iran plotted to assassinate Netanyahu’s son in Florida – Newsmax",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -610,16 +602,16 @@
         },
         {
           "source": "Gulf News",
-          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
+          "title": "Latest MENA News & Top Stories",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "New Balance 1906R review: the tech runner turned icon",
+          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -644,13 +636,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Mecca defense pact has sent ‘message of unity, peace throughout region’: Pakistan premier",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "How Türkiye's local technology brands respond to new era of AI-powered personal computing",
           "sec": 0,
@@ -670,13 +655,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Norway's King Harald dies at 89, Crown Prince Haakon takes over",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Hürriyet Daily News",
@@ -731,14 +709,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 36,
+      "clusters": 39,
       "sizes": [
-        5,
+        4,
         4,
         2,
         2,
         2,
         2,
+        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -845,7 +826,7 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -942,6 +923,44 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Israel continues attacks on southern Lebanon with artillery, machine-gun fire",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-28T07:08+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Israel continues attacks on southern Lebanon with artillery, machine-gun fire",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "The enemy conducted airstrikes on the towns of Arabsalim and Nabatieh Al-Fawqa i",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran, Qatar top diplomats hold talks on Hormuz in Tehran",
           "rank_key": {
             "outlets": 2,
@@ -1009,6 +1028,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Serbia says war criminal Mladic to be buried with 'state honors'",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-28T09:28+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1209,25 +1246,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "According to The Wall Street Journal, Trump has repeatedly told mediators he has no interest in rejo",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-27T19:10+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1245,7 +1264,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-28T10:15:39.967594+00:00",
+    "last_success": "2026-08-28T10:47:26.959857+00:00",
     "last_failure": null
   },
   "ok": true
