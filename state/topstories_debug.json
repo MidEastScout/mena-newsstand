@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T21:49:08.479945+00:00",
+  "updated": "2026-08-29T22:20:17.148701+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-29T21:47:21.898371+00:00"
+      "headlines_updated": "2026-08-29T22:18:30.218395+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 16,
-        "title_snippet": 29,
+        "title_snippet": 27,
         "title_translated": 1,
         "title_native": 81,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 111
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -266,12 +267,22 @@
           "source": "TRT World",
           "title": "Nepal floods: Death toll mounts as rescuers search for hundreds missing",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "محمد مرندي للميادين: إيران لن تقبل بتراجع ترامب عن توقيع المذكرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "العراق: الولايات المتحدة تتجه لوقف تمويل المساعدات العسكرية والأمنية لقوات البيشمركة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 111,
-      "kept": 51,
+      "in": 109,
+      "kept": 50,
       "dropped": [
         {
           "source": "Kan 11",
@@ -324,14 +335,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "This is the full broadcast of the Saturday news edition from August 29, 2026.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "This is the full broadcast of the Saturday news edition from August 29, 2026.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -411,13 +422,6 @@
           "title": "This is a tribute to the artist Suleiman Mansour, who depicted Palestine.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Newcastle defeated Tottenham in a Premier League match.",
-          "sec": 0,
-          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -700,7 +704,7 @@
       "clusters": 40,
       "sizes": [
         5,
-        5,
+        4,
         2,
         2,
         2,
@@ -748,15 +752,14 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Palestinians were injured during an attack by settlers and land bulldozing east of Jenin in the West",
+          "headline": "Two individuals were injured in an attack by settlers south of Jenin.",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 2,
-            "newest": "2026-08-29T19:12+00:00"
+            "newest": "2026-08-29T17:59+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Al Mayadeen",
             "Falastin al-Youm",
             "SANA",
             "WAFA News"
@@ -765,12 +768,12 @@
             "panarab",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Mayadeen",
-            "title": "Palestinians were injured during an attack by settlers and land bulldozing east of Jenin in the West Bank.",
+            "source": "Falastin al-Youm",
+            "title": "Two individuals were injured in an attack by settlers south of Jenin.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -788,11 +791,6 @@
                 "source": "WAFA News",
                 "title": "Israeli colonists attack homes and open fire in Yasuf, central West Bank",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Two individuals were injured in an attack by settlers south of Jenin.",
-                "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "SANA",
@@ -1191,7 +1189,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-29T21:49:21.729231+00:00",
+    "last_success": "2026-08-29T22:20:42.086618+00:00",
     "last_failure": null
   },
   "ok": true
