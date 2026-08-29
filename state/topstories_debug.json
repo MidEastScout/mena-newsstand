@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T20:19:32.164885+00:00",
+  "updated": "2026-08-29T20:51:01.956004+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-29T20:17:38.807187+00:00"
+      "headlines_updated": "2026-08-29T20:49:22.456703+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 16,
-        "title_snippet": 28,
+        "title_snippet": 26,
         "title_translated": 1,
+        "dropped_no_english": 2,
         "title_native": 82,
         "in": 127,
-        "kept": 111
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -266,11 +267,21 @@
           "source": "TRT World",
           "title": "Nepal floods: Death toll mounts as rescuers search for hundreds missing",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המריבות, המשחקים והחברויות: השגרה של ילדי הגן במלחמה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "العراق: المسؤول الامني بكتائب حزب الله: رئيس هيئة الحشد الشعبي فالح الفياض أبلغ قيادة الكتائب بالقصف السعودي الأميركي قب",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 111,
+      "in": 109,
       "kept": 50,
       "dropped": [
         {
@@ -296,6 +307,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "Shabbat broadcast August 29, 2026 - Full broadcast for direct viewing - Reshet 13.",
           "sec": 0,
           "off": 0,
@@ -310,28 +328,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "The Wisdom of Shtreimels: The Complete Guide to the Haredi Society - Reshet 13.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Masked individuals in pickups took refuge in a house in Qusra and threw stones - Reshet 13.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
-          "title": "5 , RSS chief’s visit to US denounced as ‘goodwill tour’ for Hindu nationalism",
+          "title": "4 , RSS chief’s visit to US denounced as ‘goodwill tour’ for Hindu nationalism",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -411,13 +415,6 @@
           "title": "Newcastle deepened Tottenham's woes with a valuable Premier League victory, according to almayadeen.net.",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Iran: Brigadier General Yadollah Javani stated that if the enemy miscalculates again, Iran's power will be…",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -604,9 +601,9 @@
         },
         {
           "source": "Gulf News",
-          "title": "Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
+          "title": "UAE News",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -835,7 +832,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , US says far-right provocateur Milo Yiannopoulos has been deported to UK",
+                "title": "5 , US says far-right provocateur Milo Yiannopoulos has been deported to UK",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1223,7 +1220,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-29T20:19:52.767777+00:00",
+    "last_success": "2026-08-29T20:51:02.898768+00:00",
     "last_failure": null
   },
   "ok": true
