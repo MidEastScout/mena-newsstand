@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T09:18:24.263979+00:00",
+  "updated": "2026-08-29T09:50:12.281563+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-29T09:16:14.496572+00:00"
+      "headlines_updated": "2026-08-29T09:48:37.450204+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 29,
-        "title_native": 87,
-        "title_translated": 1,
+        "dropped_stale": 8,
+        "title_snippet": 25,
+        "dropped_no_english": 3,
+        "title_native": 89,
+        "title_translated": 2,
         "in": 127,
-        "kept": 117
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 29,
+        "requested": 28,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -213,11 +214,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "SANA",
-          "title": "Abdi announces end of SDF mission as forces integrate into Syrian Army",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Arab News",
           "title": "At least 160 killed and hundreds missing after flash floods in Nepal and China",
           "reason": "stale (older than 48h)"
@@ -233,15 +229,25 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "YPG-led SDF terror group announces dissolution to integrate with Syrian army",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "מושל מחוז קייב: לפחות 27 בני אדם נהרגו הלילה ויותר מ-40 נפצעו בתקיפה אווירית רוסית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "6 آلاف بحار عالقون في الخليج لتعطل الملاحة عبر مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "انخفاض أسعار النفط",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 48,
+      "in": 116,
+      "kept": 50,
       "dropped": [
         {
           "source": "Kan 11",
@@ -253,13 +259,6 @@
         {
           "source": "Kan 11",
           "title": "The governor of Tennessee and the management of the Nashville airport have announced their intention to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The municipality of Haifa has lifted the swimming ban at Bat Galim beach, meaning all city beaches are now…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -392,6 +391,13 @@
         },
         {
           "source": "Al Mayadeen",
+          "title": "Ten a.m. bulletin",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
           "title": "Six in the morning bulletin",
           "sec": 0,
           "off": 0,
@@ -414,6 +420,13 @@
         {
           "source": "Mehr News",
           "title": "Leader stresses need for preserving national unity",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Mehr News",
+          "title": "Pezeshkian to meet Putin on September 1: Russian official",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -462,31 +475,17 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Thousands remain missing after catastrophic China-Nepal flood. Here’s the latest",
+          "title": "Al-Azhar offers condolences to Algeria over wildfire victims",
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Egypt Independent",
-          "title": "‘We will retaliate like an earthquake’: How Iran could respond to Trump’s economic ‘D-Day’",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "Six months on, Trump’s Iran ‘excursion’ risks igniting crises far beyond the Middle East",
+          "title": "Egypt, Singapore discuss strengthening investment, trade ties",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "3 dead, 64 injured in Dabaa bus-truck collision in Matrouh",
-          "sec": 2,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al-Akhbar",
@@ -536,13 +535,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "An earthquake measuring 6.1 magnitude struck the Gulf of Aden.",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "SANA",
@@ -650,13 +642,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "US secures majority control of 65B barrels of Venezuelan oil: Trump",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Türkiye rejects legal impact of Greek spatial plan in Aegean",
           "sec": 0,
@@ -730,15 +715,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 35,
+      "clusters": 38,
       "sizes": [
-        5,
-        3,
+        4,
+        4,
         3,
         3,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -776,6 +764,56 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "2 Palestinians, including child, injured by Israeli army fire in occupied West Bank",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 2,
+            "newest": "2026-08-29T09:33+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Daily Sabah",
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "2 Palestinians, including child, injured by Israeli army fire in occupied West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Father and son injured in colonists’ attack in Husan west of Bethlehem",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "SANA",
+                "title": "Three Palestinians killed by Israeli fire in Gaza, two arrested in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Daily Sabah",
+                "title": "3 Palestinians killed in Israeli drone strike in occupied West Bank",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Palestinian man killed by Israeli forces in in central Gaza Strip",
           "rank_key": {
             "outlets": 3,
@@ -819,7 +857,7 @@
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Israeli army carries out 2 explosions on outskirts of southern Lebanon town",
           "rank_key": {
             "outlets": 3,
@@ -863,7 +901,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "IRGC has full control over Strait of Hormuz: Statement",
           "rank_key": {
             "outlets": 3,
@@ -879,7 +917,7 @@
             "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -904,53 +942,9 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Mehr News",
-                "title": "Naval blcokade must be lifted before Iran agreement with Oman",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Manar",
                 "title": "Iranian Supreme National Security Council Secretary General Mohsen Rezaei stated",
                 "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "3 Palestinians killed in Israeli drone strike in occupied West Bank",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-29T03:27+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Daily Sabah",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "3 Palestinians killed in Israeli drone strike in occupied West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Father and son injured in colonists’ attack in Husan west of Bethlehem",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -985,6 +979,42 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Egyptian Ambassador in Moscow, Russian FM discuss strategic partnership, regional, int’l issues",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T09:39+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "FM reaffirms support for Sudan’s unity, sovereignty, territorial integrity",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T09:35+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1024,6 +1054,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iran war drains US military stockpiles, weakens global deterrence: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T05:20+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Two Palestinians, including child, shot during Israeli raid on al-Amari camp",
           "rank_key": {
             "outlets": 1,
@@ -1035,6 +1083,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia says overnight Ukrainian strikes hit Ozon logistics facility in Rostov region",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T04:39+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1071,24 +1137,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The article examines Iran's position six months into the war, moving from decisive action to confron",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-28T23:20+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1149,61 +1197,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Norwegians mourn King Harald as son succeeds to throne",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-28T18:55+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US issues fresh Iran-related sanctions as war marks six months",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-28T14:25+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A quadcopter bomb was used to target children collecting water east of Gaza.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-28T13:38+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1221,7 +1215,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-29T09:18:38.096375+00:00",
+    "last_success": "2026-08-29T09:50:36.411606+00:00",
     "last_failure": null
   },
   "ok": true
