@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T02:31:05.595655+00:00",
+  "updated": "2026-08-29T03:02:37.838926+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-29T02:29:10.346823+00:00"
+      "headlines_updated": "2026-08-29T03:00:36.054626+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 34,
-        "title_translated": 1,
+        "title_snippet": 30,
+        "dropped_no_english": 5,
         "title_native": 83,
         "in": 127,
-        "kept": 118
+        "kept": 113
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -231,12 +231,37 @@
           "source": "TRT World",
           "title": "YPG-led SDF terror group announces dissolution to integrate with Syrian army",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שר החוץ של נפאל: איננו זקוקים לסיוע זר בפעולות החיפוש והחילוץ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "שישי 28.08.26 – המהדורה המלאה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "ستة أشهر من الحرب.. ترامب عالق بين فشل عسكري ومأزق سياسي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بعد ستة أشهر من الحرب.. إيران تهز منظومة الأمن الأميركي في المنطقة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "تسنيم+وكالات",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 52,
+      "in": 113,
+      "kept": 49,
       "dropped": [
         {
           "source": "Kan 11",
@@ -282,13 +307,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "Watch the full episode of 'Making Friday with Arik Weiss' from August 28, 2026, live on Channel 13.",
           "sec": 0,
           "off": 0,
@@ -317,10 +335,17 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , US judge denies injunction against Trump’s new birthright citizenship order",
+          "title": "4 , US judge denies injunction against Trump’s new birthright citizenship order",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Why Nepal faces another flood threat from a new lake on China border",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Middle East Eye",
@@ -360,20 +385,6 @@
         {
           "source": "The New Arab",
           "title": "Sneak Peek: The New Arab Weekly - episode 3",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Morning news bulletin.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Sheikh Qassem stated, 'We are in a state of confrontation and will remain in the field...",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -569,7 +580,7 @@
         },
         {
           "source": "SANA",
-          "title": "President al-Sharaa appoints Mazloum Abdi as adviser",
+          "title": "President al-Sharaa appoints Mazloum Abdi as presidential adviser",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -625,14 +636,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "US House to vote on stopgap government funding bill next week",
+          "title": "US secures majority control of 65B barrels of Venezuelan oil: Trump",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "Gold prices down over 3% after Fed's Warsh's inflation remarks",
+          "title": "US House to vote on stopgap government funding bill next week",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -704,14 +715,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 36,
+      "clusters": 34,
       "sizes": [
         11,
-        5,
+        4,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -831,7 +840,7 @@
             "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -848,11 +857,6 @@
               {
                 "source": "Al Jazeera",
                 "title": "1 , IRGC asserts strict Hormuz control as the US maintains its naval blockade",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "4 , Iran war updates: IRGC says ‘decisive control’ over Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -931,24 +935,6 @@
             ],
             "passed_over": []
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Continuous gunfire and explosions have been reported in various areas of Niamey, the capital of Nige",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T01:40+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1132,24 +1118,42 @@
         },
         {
           "selected_rank": null,
-          "headline": "US issues fresh Iran-related sanctions as war marks six months",
+          "headline": "New weapons prepared for future battle with US: Iran MoU spox",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-28T14:25+00:00"
+            "newest": "2026-08-28T13:26+00:00"
           },
           "outlet_names": [
-            "Al Arabiya"
+            "Mehr News"
           ],
           "camps": [
-            "panarab"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "A seven-year-old boy drowned in the South Park lake in Tel Aviv.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-28T10:50+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1167,7 +1171,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-29T02:31:26.369947+00:00",
+    "last_success": "2026-08-29T03:02:39.032634+00:00",
     "last_failure": null
   },
   "ok": true
