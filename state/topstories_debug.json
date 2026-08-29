@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T14:26:39.054980+00:00",
+  "updated": "2026-08-29T14:57:39.707091+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-29T14:24:52.398239+00:00"
+      "headlines_updated": "2026-08-29T14:56:13.311581+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 34,
+        "dropped_stale": 9,
+        "title_snippet": 29,
+        "dropped_no_english": 5,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 83,
         "in": 127,
-        "kept": 117
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -198,16 +199,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Jordan Times",
-          "title": "Jordan condemns Israeli raid on UNRWA Qalandia centre in Jerusalem",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Search for 1,000 missing after deadly Nepal-Tibet floods",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "SANA",
           "title": "Syria, Saudi Arabia sign transport agreements in Damascus",
           "reason": "stale (older than 48h)"
@@ -224,6 +215,11 @@
         },
         {
           "source": "Arab News",
+          "title": "Iran says Oman deal would share Hormuz revenues, bar military vessels",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
           "title": "Oil prices fall $2 on Iran-Oman talks to reopen Strait of Hormuz",
           "reason": "stale (older than 48h)"
         },
@@ -234,14 +230,39 @@
         },
         {
           "source": "TRT World",
-          "title": "Nepal floods: Death toll mounts as rescuers search for hundreds missing",
+          "title": "Families search for missing loved ones after deadly Nepal floods",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שני הרוגים ופצוע קשה בתאונה בין שני כלי רכב בכביש 854 סמוך למושב לפידות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "\"קטאר הפכה לגורם מפריע\": הציר החשאי של ראש השב\"כ עם חמאס",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הגשם מגיע: התרעות חריגות ונזקים בקפריסין | התחזית המתעדכנת",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران تعلن جاهزيتها لأي تصعيد محتمل وتتوعد برد أقوى على أي خرق لوقف إطلاق النار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الجيش السوداني يدفع بـ\"لواء النخبة\" إلى معارك النيل الأزرق",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 62,
+      "in": 113,
+      "kept": 58,
       "dropped": [
         {
           "source": "Kan 11",
@@ -300,20 +321,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This entry appears to be a placeholder for a news broadcast and does not contain specific news content to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Trump announces ‘biggest oil deal in world history’ with Venezuela",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Girl Scouts USA responds to controversy over 'Islamic' badges",
           "sec": 0,
@@ -340,6 +347,13 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Survivors describe horror of escaping Nepal-Tibet floods as loved ones are swept away",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al Arabiya",
@@ -566,6 +580,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Top diplomats of China, Nepal discuss emergency response amid deadly flash floods",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Nigerian president asks US court to block drug probe records",
           "sec": 0,
@@ -634,16 +655,16 @@
       "method": "heuristic",
       "clusters": 39,
       "sizes": [
-        10,
+        9,
         5,
-        4,
+        3,
+        3,
         2,
         2,
         2,
-        2,
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -684,26 +705,24 @@
           "selected_rank": 1,
           "headline": "Israeli attacks kill Palestinian farmer in Gaza, wound others in occupied West Bank",
           "rank_key": {
-            "outlets": 7,
-            "camps": 4,
+            "outlets": 6,
+            "camps": 3,
             "newest": "2026-08-29T14:12+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
             "Anadolu Agency",
-            "Arab News",
             "Falastin al-Youm",
             "SANA",
             "TRT World",
             "WAFA News"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 10,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -723,19 +742,14 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Falastin al-Youm",
-                "title": "A Palestinian was martyred by occupation fire east of the Al-Masdar village in t",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
                 "source": "SANA",
                 "title": "Three Palestinians killed by Israeli fire in Gaza, two arrested in West Bank",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Arab News",
-                "title": "Israeli strikes kill three people in Gaza, medics say",
-                "rejected_by": "older than the story's newest wave"
+                "source": "Anadolu Agency",
+                "title": "5 Palestinians injured in attacks by Israeli army, occupiers in occupied West Ba",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -786,21 +800,20 @@
           "selected_rank": 3,
           "headline": "IRGC has full control over Strait of Hormuz: Statement",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-08-29T07:59+00:00"
           },
           "outlet_names": [
             "Al Manar",
             "Falastin al-Youm",
-            "IRNA",
             "Mehr News"
           ],
           "camps": [
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -815,48 +828,39 @@
             ],
             "passed_over": [
               {
-                "source": "IRNA",
-                "title": "Iran, Oman agree to open temporary shipping corridor through Strait of Hormuz: T",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Manar",
                 "title": "Iranian Major General Mohsen Rezaei stated that opening the Strait of Hormuz is ",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Approximately 6,000 sailors are stranded in the Gulf due to navigational disrupt",
-                "rejected_by": "stale anticipatory framing"
               }
             ]
           }
         },
         {
           "selected_rank": 4,
-          "headline": "UNRWA says over $5M in assets at Jerusalem training center at risk after Israeli raid",
+          "headline": "Royal Hashemite Court mourns passing of King Harald V, announces three days of mourning",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-29T12:20+00:00"
+            "outlets": 3,
+            "camps": 1,
+            "newest": "2026-08-28T15:35+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
+            "Jordan Times",
+            "SANA",
             "WAFA News"
           ],
           "camps": [
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "UNRWA says over $5M in assets at Jerusalem training center at risk after Israeli raid",
+            "source": "Jordan Times",
+            "title": "Royal Hashemite Court mourns passing of King Harald V, announces three days of mourning",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (funeral)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -902,98 +906,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran’s Araghchi says diplomacy possible if US recognizes pressure doesn’t work",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-28T08:33+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "IRNA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Iran’s Araghchi says diplomacy possible if US recognizes pressure doesn’t work",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "President Abbas offers condolences over death of Norway's King Harald V",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-28T15:35+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "President Abbas offers condolences over death of Norway's King Harald V",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Israeli military and Shin Bet eliminated Kais Bitawi, a senior Hamas figure in Jenin, in an airs",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-28T14:36+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "The Israeli military and Shin Bet eliminated Kais Bitawi, a senior Hamas figure in Jenin, in an airstrike.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "A 7-year-old boy drowned in the lake at Park Darom in Tel Aviv.",
           "rank_key": {
             "outlets": 2,
@@ -1021,6 +933,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "National unity pillar of Iran’s defensive power against enemies: Acting defense minister",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T14:39+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1221,25 +1151,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "How Trump’s illusion of short war against Iran collapsed",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T09:06+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1257,7 +1169,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-29T14:26:59.898277+00:00",
+    "last_success": "2026-08-29T14:58:07.787630+00:00",
     "last_failure": null
   },
   "ok": true
