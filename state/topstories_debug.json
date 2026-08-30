@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T10:39:28.963487+00:00",
+  "updated": "2026-08-30T11:10:48.814630+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -11,7 +11,7 @@
           "error": null
         },
         "N12": {
-          "headlines": 5,
+          "headlines": 4,
           "lang": "he",
           "stale": false,
           "error": null
@@ -71,7 +71,7 @@
           "error": null
         },
         "Jordan Times": {
-          "headlines": 4,
+          "headlines": 5,
           "lang": "en",
           "stale": false,
           "error": null
@@ -167,25 +167,47 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-30T10:37:37.706188+00:00"
+      "headlines_updated": "2026-08-30T11:09:15.022044+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 34,
-        "title_native": 84,
+        "dropped_stale": 11,
+        "title_snippet": 21,
+        "dropped_no_english": 7,
+        "title_translated": 1,
+        "title_native": 86,
         "in": 126,
-        "kept": 118
+        "kept": 108
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 28,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "N12",
+          "title": "שבוע אחרי השביתה בנתב\"ג: מאות מזוודות עדיין ממתינות בשמש",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "משבר דלק באיראן: פקקי ענק, מצוקה לאזרחים והשבתה של מפעלים",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "החשש מהתלקחות",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "הערכה בישראל: הניסיון הטורקי להתבסס בנמל התעופה בסוריה",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Channel 13",
           "title": "חשד לרצח ביפו: גבר כבן 30 נורה למוות",
@@ -194,11 +216,6 @@
         {
           "source": "Jordan Times",
           "title": "220,000 Syrian refugees return to Syria from Jordan since December 2024 - UNHCR",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Crown Prince receives members of Al Hussein Fellowship programme alumni network",
           "reason": "stale (older than 48h)"
         },
         {
@@ -225,37 +242,51 @@
           "source": "TRT World",
           "title": "Syria's al Sharaa appoints ex-SDF/YPG ringleader Mazloum Abdi as presidential adviser",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "מצטרפים למפלגת \"ישר!\" של אייזנקוט: טל אוחנה חכמון ואל״ם (מיל׳) ניר חג׳בי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צה\"ל חיסל אמש שני פעילי חמאס שפעלו להפרת הפסקת האש",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "هجمات متبادلة بين روسيا وأوكرانيا توقع عشرات القتلى والجرحى",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "حكم أميركي ضدّ إلغاء تأشيرات طلاب بسبب تأييدهم للفلسطينيين",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"يابا أنا زهقت من العلاج\".. راما طفلة أنهكها المرض وتنتظر النجدة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "بذكرى اغتياله.. حماس: \"أبو عبيدة\" شكّل حضوراً وصوتًا ارتبط بمرحلة فارقة من تاريخ شعبنا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "إطلاق نار \"إسرائيلي\" على ريف درعا بسوريا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 60,
+      "in": 108,
+      "kept": 51,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "The Shin Bet confirmed that the Prime Minister's son was urgently evacuated to Israel due to significant…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
           "title": "Eli Sharabi and Shani Cohen were chosen to host the October 7th Families Ceremony.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The IDF stated that the rioters in Qusra were masked, but footage shows faces.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A tragic incident occurred in Tel Aviv where a 7-year-old boy drowned in a lake at South Park.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -270,6 +301,13 @@
         {
           "source": "Channel 13",
           "title": "Two close friends are competing against each other.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -374,7 +412,21 @@
         },
         {
           "source": "Jordan Times",
+          "title": "Unstable weather to bring scattered showers, dust to Kingdom — JMD",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
           "title": "Gov't completes 86.4% of digitisation of services — minister",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Jerash receives over 100,000 visitors in 7 months",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -409,14 +461,28 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Flood death toll in Nepal and China reaches 750 people",
-          "sec": 1,
+          "title": "Researcher discusses theft of Queen Nazli’s necklace in Vienna – warns it might have been a fake",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
-          "title": "Researcher discusses theft of Queen Nazli’s necklace in Vienna – warns it might have been a fake",
+          "title": "Transport Minister inspects high-speed rail project ahead of trial operations",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Labor Minister: Egypt prioritizes training to prepare workers for Arab, European markets",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Egypt’s Dar Al-Ifta joins Al-Azhar’s annual Quran Recitation Day",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -433,20 +499,6 @@
           "title": "\"Outlaws\" are reportedly disrupting student exams in Sweida.",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Trump announced American dominance over Venezuelan oil, stating control over a portion of its reserves.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Summer novels explore themes of fantasy, magical realism, and hidden history, offering an escape.",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -478,13 +530,6 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The article discusses what happens to the body when consuming excessive amounts of nuts.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Nepal flood death toll rises to 675 as search for missing continues",
           "sec": 1,
@@ -500,14 +545,14 @@
         },
         {
           "source": "SANA",
-          "title": "Trump announces deal for major US stake in Venezuelan oil reserves",
+          "title": "South Africa submits filing to ICJ over Israel’s non-compliance with its rulings",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "South Africa submits filing to ICJ over Israel’s non-compliance with its rulings",
+          "title": "Trump announces deal for major US stake in Venezuelan oil reserves",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -584,14 +629,14 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Türkiye’s packaging return system reaches 3M users",
+          "title": "Marmara quake survivor helps patients avoid limb loss in Istanbul",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
-          "title": "UK moves to keep $97M Rembrandt portrait at home",
+          "title": "Türkiye’s packaging return system reaches 3M users",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -642,20 +687,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 32,
       "sizes": [
-        8,
+        7,
         6,
         5,
-        3,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -752,13 +792,12 @@
           "selected_rank": 2,
           "headline": "Israeli forces begin bulldozing Palestinian land in Deir Ballut, central West Bank",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 4,
             "newest": "2026-08-30T09:54+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "Falastin al-Youm",
             "IRNA",
             "TRT World",
             "The New Arab",
@@ -770,7 +809,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -851,54 +890,11 @@
         },
         {
           "selected_rank": 4,
-          "headline": "The article questions whether Yair Netanyahu was threatened, leading to his urgent evacuation from A",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-08-30T05:07+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Falastin al-Youm",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "The article questions whether Yair Netanyahu was threatened, leading to his urgent evacuation from America.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "N12",
-                "title": "The Shin Bet clarified that there was a significant threat to Yair Netanyahu, le",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Channel 12 reported that the Shin Bet acknowledged a significant threat to Yair ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Russia prepares massive strikes on Ukraine’s energy infrastructure",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-08-30T09:16+00:00"
+            "newest": "2026-08-30T09:20+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -925,7 +921,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Palestinians mourn iconic artist Sliman Mansour",
           "rank_key": {
             "outlets": 2,
@@ -1032,108 +1028,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A woman around 50 years old died in a road accident near Atlit.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-30T04:16+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "A woman around 50 years old died in a road accident near Atlit.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "A senior journalist in Italy, Sigfrido Ranucci, was dismissed following an explosion outside his hom",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T09:34+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Family of three found dead inside car on Ring Road",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T09:24+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Two Palestinians, including child, shot during Israeli raid on al-Amari camp",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T09:16+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Watch out for these signs of the Lupus disease",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T09:04+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Switzerland launches manhunt after 1 dead in rave shooting",
           "rank_key": {
             "outlets": 1,
@@ -1163,6 +1057,24 @@
           ],
           "camps": [
             "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Far-right Israeli minister Ben-Gvir brags about mistreatment of Palestinian prisoners",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T07:45+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1277,7 +1189,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran to continue building defense capabilities: acting MoD",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T14:47+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "IRGC dismantles terrorist team in southeast Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T13:13+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli media reported that Israel fears an Iranian response in the event of an attack on Ali Al-Tah",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T11:09+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1295,7 +1261,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-30T10:39:47.713875+00:00",
+    "last_success": "2026-08-30T11:11:04.982773+00:00",
     "last_failure": null
   },
   "ok": true
