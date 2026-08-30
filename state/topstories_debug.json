@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-30T22:37:03.283124+00:00",
+  "updated": "2026-08-30T23:08:47.067449+00:00",
   "stages": {
     "fetch": {
-      "items": 124,
+      "items": 127,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -11,7 +11,7 @@
           "error": null
         },
         "N12": {
-          "headlines": 2,
+          "headlines": 5,
           "lang": "he",
           "stale": false,
           "error": null
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-30T22:35:29.499016+00:00"
+      "headlines_updated": "2026-08-30T23:06:35.748474+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 29,
+        "dropped_stale": 8,
+        "dropped_no_english": 9,
+        "title_snippet": 23,
+        "title_translated": 1,
         "title_native": 86,
-        "in": 124,
-        "kept": 115
+        "in": 127,
+        "kept": 110
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 29,
+        "requested": 32,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -188,17 +190,12 @@
       "dropped": [
         {
           "source": "N12",
-          "title": "שבוע אחרי השביתה בנתב\"ג: מאות מזוודות עדיין ממתינות בשמש",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "N12",
-          "title": "משבר דלק באיראן: פקקי ענק, מצוקה לאזרחים והשבתה של מפעלים",
+          "title": "בן שבע טבע למוות באגם בפארק דרום בתל אביב",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Channel 13",
-          "title": "חשד לרצח ביפו: גבר כבן 30 נורה למוות",
+          "title": "אסון בתל אביב: ילד בן 7 טבע למוות באגם בפארק דרום",
           "reason": "stale (older than 48h)"
         },
         {
@@ -230,13 +227,65 @@
           "source": "TRT World",
           "title": "Nepal flood trauma 'enormous' as death toll climbs: IFRC",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שמונה פצועים בתאונת דרכים בין ארבעה כלי רכב בכביש 25 בדרום, מצבה של אישה כבת 25 קשה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "אישה כבת 50 נהרגה בתאונת דרכים סמוך לעתלית, גבר כבן 60 נפצע קשה ו-5 נוספים נפצעו קל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "תאונה קטלנית בכביש החוף: אישה כבת 50 נהרגה, גבר נפצע קשה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "16 לוחמים שסירבו למשימה ברצועת עזה בגלל נוכחות חיילת נשפטו למאסר בכלא צבאי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "אישה בהיריון עברה הפלה לאחר שנפלה בכביש",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הוועדה המייעצת תמליץ לשרים לאשר אבטחה לאיזנקוט",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מוריה וברקו 30.08.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: التلفزيون الإيراني: رصد إطلاق صواريخ من مناطق مختلفة في البلاد باتجاه أهداف أميركية في المنطقة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إعلام عبري: إسرائيل تخشى من ردّ إيراني في حال شنّت هجوماً على علي الطاهر",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 54,
+      "in": 110,
+      "kept": 51,
       "dropped": [
+        {
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
         {
           "source": "Channel 13",
           "title": "Full broadcast of the main edition from August 30, 2026, available for viewing.",
@@ -252,32 +301,18 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Commentary suggests Tair Amram Samuel could be one of the greatest singers, following her duet with Osher…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Described as 'like two angels on stage,' Dvir Ben Shimol and Revana Hovev had a strong duet performance.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
-          "title": "3 , Devastation from the Nepal-China Floods in 30 photos",
+          "title": "4 , Devastation from the Nepal-China Floods in 30 photos",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Google Maps renames Lake Ontario after Trump’s decree on ‘Lake America’",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
+          "title": "5 , Nepal-China floods: What’s the latest death toll, how many remain missing?",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Middle East Eye",
@@ -316,9 +351,9 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Google Maps to Rename Lake Ontario",
+          "title": "Iran supreme leader calls for unity among Muslim countries",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -344,14 +379,14 @@
         },
         {
           "source": "IRNA",
-          "title": "Muslims in Russia celebrate birth anniversary of Prophet Mohammad",
+          "title": "US, Israeli regime are sworn enemies of Muslim unity: Iran Leader",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "IRNA",
-          "title": "US, Israeli regime are sworn enemies of Muslim unity: Iran Leader",
+          "title": "Muslims in Russia celebrate birth anniversary of Prophet Mohammad",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -399,18 +434,18 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "L'Orient Today",
-          "title": "WEATHER Cold air mass hits Lebanon: Heavy rain and strong winds in several regions, hail in Akkar",
+          "source": "Jordan Times",
+          "title": "Japan to survey animal cafes over hygiene, welfare concerns",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
-          "title": "FOCUS What will Nabih Berri say on Aug. 31?",
-          "sec": 0,
+          "title": "NORTH CYPRUS At least six dead in shipwreck off coast of Northern Cyprus",
+          "sec": 1,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "L'Orient Today",
@@ -436,13 +471,6 @@
         {
           "source": "Egypt Independent",
           "title": "Transport Minister inspects high-speed rail project ahead of trial operations",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The fate of Gaza is undecided, influenced by Trump's desires and Netanyahu's calculations.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -526,14 +554,14 @@
         },
         {
           "source": "SANA",
-          "title": "South Africa submits filing to ICJ over Israel’s non-compliance with its rulings",
+          "title": "Trump announces deal for major US stake in Venezuelan oil reserves",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "Trump announces deal for major US stake in Venezuelan oil reserves",
+          "title": "South Africa submits filing to ICJ over Israel’s non-compliance with its rulings",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -561,13 +589,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Latest MENA News & Top Stories",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "US-Iran conflict: What UAE residents need to know today, August 29",
           "sec": 0,
           "off": 0,
@@ -576,6 +597,13 @@
         {
           "source": "Gulf News",
           "title": "US diplomats, families begin return to Middle East embassies",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "5 K-Drama pairs so good, they kept coming back for more: Lee Dong-wook and Yoo In-na, Hyun Bin and Son Ye-jin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -668,7 +696,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 34,
       "sizes": [
         6,
         5,
@@ -677,9 +705,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -1011,24 +1036,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A spokesperson for the Revolutionary Guards stated that the United States will pay for the attack, b",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T20:40+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israeli warplanes reportedly attacked a location in the Nabatieh district of southern Lebanon.",
           "rank_key": {
             "outlets": 1,
@@ -1058,24 +1065,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A Washington Post report states that some US forces are to remain in the Middle East until September",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T18:40+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1155,24 +1144,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "King receives Lebanese army chief",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T15:58+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Libya political parties set 2-year elections roadmap at UN-led talks",
           "rank_key": {
             "outlets": 1,
@@ -1190,7 +1161,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The Lebanese Prime Minister stated that their responsibility is to end the occupation and rebuild.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T15:34+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "French reports indicate that two delegations from the Rapid Support Forces visited Israel secretly i",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T14:27+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump remains vague on sanctions plan for Iran’s partners",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T12:31+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1208,7 +1233,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-30T22:37:21.312529+00:00",
+    "last_success": "2026-08-30T23:08:48.104757+00:00",
     "last_failure": null
   },
   "ok": true
