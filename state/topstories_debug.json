@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T06:12:08.961703+00:00",
+  "updated": "2026-08-30T06:43:47.066350+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-30T06:10:04.326066+00:00"
+      "headlines_updated": "2026-08-30T06:41:39.196099+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 15,
-        "title_snippet": 22,
-        "dropped_no_english": 7,
+        "title_snippet": 28,
+        "title_translated": 1,
         "title_native": 83,
         "in": 127,
-        "kept": 105
+        "kept": 112
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 29,
+        "requested": 28,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -261,72 +261,51 @@
           "source": "TRT World",
           "title": "Syria's al Sharaa appoints ex-SDF/YPG ringleader Mazloum Abdi as presidential adviser",
           "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Kan 11",
-          "title": "צה\"ל חיסל מפקד נוח'בה שפשט לישראל במהלך ה-7 באוקטובר",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Kan 11",
-          "title": "ילד בן 8 פונה לבית החולים בילינסון במצב קשה לאחר שנפל מגובה של כ-12 מטרים בבני ברק",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Kan 11",
-          "title": "שווייץ: דיווחים על מספר נפגעים מירי במהלך מסיבה",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "חשד לרצח: תושב ג'לג'וליה כבן 30 נורה למוות ביפו, המשטרה חוקרת",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "דיווח: צוות של ערוץ NBC הותקף על ידי מתנחלים סמוך לשכם",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "إيران: السيد خامنئي: يجب التفكير بعمق بما يحدث حولنا ولو كان المسلمون يداً واحدة لما حصل ما حصل للفلسطينيين",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "الحزب الحاكم في كيبيك يسمّي ترامب \"خصمه الحقيقي\" مع بدء الحملة الانتخابية",
-          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 105,
-      "kept": 51,
+      "in": 112,
+      "kept": 53,
       "dropped": [
         {
-          "source": "Channel 13",
-          "title": "The 21st episode of \"The Voice\" season 6 features a decisive battle.",
+          "source": "Kan 11",
+          "title": "An 8-year-old boy was taken to Beilinson Hospital in serious condition after falling approximately 12 meters…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Close friends Mai Llor and Eden Hanna Shoval compete head-to-head in \"The Voice.\"",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "The 21st episode of the 6th season of 'The Voice' features a fateful duet.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "Close friends May Lellor and Eden Hana Shoval compete head-to-head in a duet on 'The Voice'.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , What’s behind the US deal to seize control of Venezuelan oil reserves?",
+          "title": "1 , Khamenei calls for Muslim world to confront ‘real enemy’, amid US deadlock",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Six months on, Trump’s Iran strategy is starting to pay off",
+          "title": "4 , What’s behind the US deal to seize control of Venezuelan oil reserves?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -389,14 +368,35 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Polls reveal that Generation Z regrets supporting Trump and is mobilizing to vote.",
+          "title": "Iran's Supreme Leader Khamenei stated that Muslims should deeply consider current events and that unified…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "A U.S.-Venezuela oil deal is reshaping the energy landscape and strengthening Washington's influence.",
+          "title": "Quebec's ruling party identified Trump as their 'real opponent' as the election campaign begins.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "According to 'The Hill' polls, Generation Z regrets supporting Trump and is showing increased engagement in…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "A U.S.-Venezuelan oil deal redraws the energy map and enhances Washington's influence.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Muslims in Russia celebrate birth anniversary of Prophet Mohammad",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -409,25 +409,18 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "IRNA",
-          "title": "Leader’s message marking Unity Week will be released on Sunday",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "President Pezeshkian congratulates Muslims on Prophet Muhammad’s birth anniversary",
+          "source": "Iran International",
+          "title": "ANALYSIS Iran or the dollar? US makes an example of Banque Misr",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "Death toll nears 400, rescuers search for 1,400 missing after Nepal-Tibet floods",
-          "sec": 1,
+          "title": "Gov't completes 86.4% of digitisation of services — minister",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
@@ -438,7 +431,14 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "CENTRAL BANK BDL instructs banks to build unified registry of all depositors",
+          "title": "SECURITY Over 25 bird incidents at Beirut's airport: Farms, slaughterhouses push back against closure order",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
+          "title": "CENTRAL BANK BDL instructs banks to build unified registry of all depositors Stephanie Bechara",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -446,13 +446,6 @@
         {
           "source": "L'Orient Today",
           "title": "FOCUS BDL further tightens rules on money changers Mounir YOUNES",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "ANALYSIS BDL, banks continue to bet on deposit cash-outs at 17 cents on the dollar Mounir YOUNES",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -487,28 +480,35 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Unidentified individuals have disrupted exams for students in Sweida.",
+          "title": "Individuals described as 'outlaws' disrupted student exams in Sweida.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "A U.S.",
+          "title": "An American ruling prevented the cancellation of student visas due to their support for Palestinians.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Netanyahu called for unity to save the right-wing bloc, as polls indicate a decline for the Likud party.",
+          "title": "Sheikh Qassem stated that the 'Greater Israel' project was broken and that they will remain proud and…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Axios reported on a significant media figure with strong ties to the White House during the Trump…",
+          "title": "Netanyahu called for unity to save the right-wing bloc, as polls indicate a decline in the Likud party.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Manar",
+          "title": "Axios is mentioned as a significant media entity responsible for a major scoop from the White House during…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -522,14 +522,14 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Consuming excessive amounts of nuts can have negative effects on the body.",
+          "title": "This question asks what happens to your body when you overeat nuts.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Germany has handed over a truck inspection device to Israel at the Erez crossing.",
+          "title": "Germany delivered a truck inspection device to Israel for the 'Erez' crossing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -585,6 +585,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "‘Aishwarya was cosmetic’: Subhash Ghai recalls casting her in Taal",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "US-Iran conflict: What UAE residents need to know today, August 29",
           "sec": 0,
           "off": 0,
@@ -602,13 +609,6 @@
           "title": "UAE weather alert: Temperatures to hit 48°C with blowing dust and chance of rain",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Dubai records Dh1.2 billion in villa deals in Burj Khalifa area",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -685,18 +685,21 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 35,
+      "clusters": 38,
       "sizes": [
-        7,
+        5,
+        4,
+        3,
         3,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -733,7 +736,7 @@
           "selected_rank": 1,
           "headline": "Another Palestinian killed as Israeli shelling hits Gaza",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 2,
             "newest": "2026-08-30T03:10+00:00"
           },
@@ -741,14 +744,13 @@
             "Anadolu Agency",
             "Falastin al-Youm",
             "SANA",
-            "TRT World",
             "WAFA News"
           ],
           "camps": [
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -773,13 +775,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "WAFA News",
-                "title": "Palestinian killed, others injured in Israeli shelling of displacement tent in G",
-                "rejected_by": "older than the story's newest wave"
+                "source": "Falastin al-Youm",
+                "title": "Two martyrs and several injured were reported following Israeli raids on Gaza Ci",
+                "rejected_by": "loaded/partisan wording"
               },
               {
-                "source": "Falastin al-Youm",
-                "title": "Two Palestinians were killed and injured in Israeli raids on Gaza City and the c",
+                "source": "SANA",
+                "title": "Three Palestinians killed by Israeli fire in Gaza, two arrested in West Bank",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -787,7 +789,46 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iran's Deputy Foreign Minister stated that Qatar and Pakistan are working towards resuming a Memoran",
+          "headline": "Iran's economy strains as war, US sanctions intensify",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-08-29T12:11+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Daily Sabah",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Iran's economy strains as war, US sanctions intensify",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Ayatollah Sayyid Mojtaba Khamenei noted that the government and president have a",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Iran's Deputy Foreign Minister stated that Qatar and Pakistan are working towards reinstating a memo",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
@@ -806,7 +847,7 @@
           "why_not": null,
           "representative": {
             "source": "Kan 11",
-            "title": "Iran's Deputy Foreign Minister stated that Qatar and Pakistan are working towards resuming a Memorandum of…",
+            "title": "Iran's Deputy Foreign Minister stated that Qatar and Pakistan are working towards reinstating a memorandum of…",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -818,44 +859,6 @@
               {
                 "source": "Daily Sabah",
                 "title": "FM Hakan Fidan holds calls with Qatari, Egyptian counterparts",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Gharibabadi: Implementation of Hormuz understanding with Oman hinges on US’s fulfilling its commitme",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-30T04:28+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "IRNA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Gharibabadi: Implementation of Hormuz understanding with Oman hinges on US’s fulfilling its commitments",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran in ‘no rush’ to open Hormuz; settler attacks continue in West Bank",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -965,43 +968,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran's economy strains as war, US sanctions intensify",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-29T12:11+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Iran's economy strains as war, US sanctions intensify",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Ayatollah Sayyid Mojtaba Khamenei stated that the government and president have ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "US issues fresh Iran-related sanctions as war marks six months",
           "rank_key": {
             "outlets": 2,
@@ -1033,11 +999,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Two individuals were injured in an attack by settlers south of Jenin.",
+          "headline": "Israeli forces begin bulldozing Palestinian land in Deir Ballut, central West Bank",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-08-29T17:57+00:00"
+            "newest": "2026-08-30T06:19+00:00"
           },
           "outlet_names": [
             "Falastin al-Youm",
@@ -1046,31 +1012,131 @@
           "camps": [
             "levant"
           ],
-          "members": 2,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Two individuals were injured in an attack by settlers south of Jenin.",
-            "title_source": "snippet",
+            "source": "WAFA News",
+            "title": "Israeli forces begin bulldozing Palestinian land in Deir Ballut, central West Bank",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "neutral-by-default outlet",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "WAFA News",
                 "title": "Israeli colonists attack homes and open fire in Yasuf, central West Bank",
                 "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "The Foreign Ministry called for deterrent and tangible measures against the occu",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "Two individuals were injured in an attack by settlers south of Jenin.",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": null,
-          "headline": "Three mediation efforts have taken place in Tehran within a week, indicating diplomatic activity ami",
+          "headline": "Minab school massacre leaves an eternal wound on Iran: FM Araghchi",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T06:17+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The IDF eliminated a commander from the elite 'Nukhabah' unit who infiltrated Israel during the Octo",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T06:06+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "A shooting incident during a party in Switzerland resulted in one death and five injuries.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T05:37+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "A man from Jaljuliya, in his 30s, was shot and killed in Jaffa.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T04:31+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Gharibabadi: Implementation of Hormuz understanding with Oman hinges on US’s fulfilling its commitme",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T04:28+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Three mediation efforts occurred in Tehran within a week, indicating diplomatic activity and a widen",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1106,7 +1172,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "A man in his 30s was shot and killed on L.",
+          "headline": "A man in his 30s was shot and killed in Jaffa, while a younger man in his 20s was seriously injured ",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1135,24 +1201,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Ministry of Foreign Affairs is calling for decisive and tangible measures against the occupation",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T14:16+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1213,79 +1261,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Hebrew media reports indicate Israel fears an Iranian response to a potential attack on Ali al-Taher",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T11:09+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Mutual attacks between Russia and Ukraine have resulted in dozens of casualties.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T10:24+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "How Trump’s illusion of short war against Iran collapsed",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T09:06+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Enemy achieved none of its goals: Iran army chief",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T08:36+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1303,7 +1279,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-30T06:12:23.140357+00:00",
+    "last_success": "2026-08-30T06:44:01.127309+00:00",
     "last_failure": null
   },
   "ok": true
