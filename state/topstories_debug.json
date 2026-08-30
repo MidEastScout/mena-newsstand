@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T23:53:27.781304+00:00",
+  "updated": "2026-08-30T00:25:27.561744+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,34 +167,55 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-29T23:51:14.073051+00:00"
+      "headlines_updated": "2026-08-30T00:23:01.401920+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 34,
+        "dropped_stale": 13,
+        "title_snippet": 26,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 84,
         "in": 127,
-        "kept": 117
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 29,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
         {
-          "source": "The New Arab",
-          "title": "Israeli settler violence kills 25 Palestinians so far in 2026",
+          "source": "N12",
+          "title": "שבוע אחרי השביתה בנתב\"ג: מאות מזוודות עדיין ממתינות בשמש",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "משבר דלק באיראן: פקקי ענק, מצוקה לאזרחים והשבתה של מפעלים",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "החשש מהתלקחות",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "הערכה בישראל: הניסיון הטורקי להתבסס בנמל התעופה בסוריה",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "האזהרה החריפה: \"לקראת איבוד שליטה ביו\"ש\"",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "The New Arab",
-          "title": "Israeli settlers hit old man with steel pipe in West Bank",
+          "title": "Israeli settler violence kills 25 Palestinians so far in 2026",
           "reason": "stale (older than 48h)"
         },
         {
@@ -223,11 +244,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "Iran says Oman deal would share Hormuz revenues, bar military vessels",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Al-Masirah",
           "title": "الشايف: مليون وخمسمائة ألف مريض فقدوا حياتهم بسبب الحصار على مطار صنعاء الدولي و10 مليون مغترب حرموا من السفر جواً",
           "reason": "stale (older than 48h)"
@@ -236,20 +252,28 @@
           "source": "TRT World",
           "title": "Nepal floods: Death toll mounts as rescuers search for hundreds missing",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח בפינלנד: הממשלה חתמה בחשאי הסכם להארכת שיתוף הפעולה הביטחוני עם ישראל עד 2034",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אחד מהקולות היותר טובים בכל התחרות הזאת\": הדו-קרב של נאור דואני ותומר מזרחי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "نيوكاسل يفوز خارج الديار على توتنهام",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 54,
+      "in": 111,
+      "kept": 52,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "The Shin Bet confirmed the Prime Minister's son was urgently evacuated to Israel due to significant threats…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Kan 11",
           "title": "The leader of the Shas movement harshly criticized the Attorney General, wishing divine retribution upon her.",
@@ -267,20 +291,6 @@
         {
           "source": "Kan 11",
           "title": "A man in his 60s fell from an electric scooter while riding in Haifa and is in serious condition.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "New details have emerged about the disappearance of Mali and Lial Yahalomi, including a concerning debt…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A tragic incident occurred in Tel Aviv where a 7-year-old boy drowned in an artificial lake at South Park.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -363,13 +373,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Russia extends ban on diesel exports until September 30",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "Nepal, China flood missing toll nears 3,000",
           "sec": 0,
@@ -385,7 +388,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "Al-Sharaa makes landmark Visa payment in Damascus",
+          "title": "Palestinians mourn iconic artist Sliman Mansour",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -424,6 +427,13 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Death toll nears 400, rescuers search for 1,400 missing after Nepal-Tibet floods",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Jordan Times",
@@ -491,13 +501,6 @@
         {
           "source": "Al-Akhbar",
           "title": "A U.S.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "This item discusses summer novels, exploring themes of fantasy, magical realism, and delving into suppressed…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -581,13 +584,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "5 K-Drama pairs so good, they kept coming back for more: Lee Dong-wook and Yoo In-na, Hyun Bin and Son Ye-jin",
           "sec": 0,
           "off": 0,
@@ -605,6 +601,13 @@
           "title": "Hrithik Roshan and Sussanne Khan overwhelmed as son Hrehaan debuts, Saba Azad cheers: 'Makes me fearless'",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "What to watch before Avengers Doomsday: 15 MCU films and shows in 15 weeks, from X-Men to Loki. Doable?",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -688,7 +691,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 42,
       "sizes": [
         5,
         3,
@@ -731,23 +734,21 @@
         1,
         1,
         1,
-        1,
-        1,
         1
       ]
     },
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 4,
+      "selected": 5,
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Palestinian killed, another injured in Israeli airstrike in Khan Younis",
+          "headline": "Two Palestinians were killed and injured due to Israeli raids in Gaza City and the central Gaza Stri",
           "rank_key": {
             "outlets": 4,
             "camps": 2,
-            "newest": "2026-08-29T17:58+00:00"
+            "newest": "2026-08-29T15:36+00:00"
           },
           "outlet_names": [
             "Falastin al-Youm",
@@ -763,19 +764,24 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Palestinian killed, another injured in Israeli airstrike in Khan Younis",
-            "title_source": "native",
+            "source": "Falastin al-Youm",
+            "title": "Two Palestinians were killed and injured due to Israeli raids in Gaza City and the central Gaza Strip.",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
                 "source": "WAFA News",
                 "title": "Palestinian killed, others injured in Israeli shelling of displacement tent in G",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Palestinian killed, others injured in Israeli drone strike on Gaza City’s Sabra ",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -797,7 +803,7 @@
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-08-29T17:59+00:00"
+            "newest": "2026-08-29T17:57+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
@@ -875,6 +881,74 @@
         },
         {
           "selected_rank": 4,
+          "headline": "US issues fresh Iran-related sanctions as war marks six months",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-28T14:25+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "US issues fresh Iran-related sanctions as war marks six months",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Netanyahu vows more illegal Israeli settlements in occupied West Bank",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-29T23:50+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Netanyahu vows more illegal Israeli settlements in occupied West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Netanyahu condemns violence in West Bank villages in rare settler criticism",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Ankara summons Ukraine's ambassador over Black Sea attacks",
           "rank_key": {
             "outlets": 2,
@@ -903,24 +977,6 @@
             ],
             "passed_over": []
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Lieutenant Colonel Dor Ben Shimhon, who commanded the 52nd battalion, was killed by an explosive dro",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T03:00+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1032,42 +1088,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Shin Bet clarified that there was a significant threat to Yair Netanyahu's life.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T18:35+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Netanyahu condemns violence in West Bank villages in rare settler criticism",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T17:01+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The Ministry of Foreign Affairs is calling for deterrent and tangible steps against the occupation a",
           "rank_key": {
             "outlets": 1,
@@ -1121,7 +1141,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "IRGC dismantles terrorist team in southeast Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T13:13+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran has pledged to confront U.S.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T12:27+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran's economy strains as war, US sanctions intensify",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-29T12:11+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1139,7 +1213,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-29T23:53:56.829441+00:00",
+    "last_success": "2026-08-30T00:25:50.182348+00:00",
     "last_failure": null
   },
   "ok": true
