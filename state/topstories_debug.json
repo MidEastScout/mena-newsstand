@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T12:13:55.792559+00:00",
+  "updated": "2026-08-30T12:27:46.624923+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-30T12:12:00.047298+00:00"
+      "headlines_updated": "2026-08-30T12:25:58.616107+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 29,
-        "title_native": 85,
+        "dropped_stale": 11,
+        "title_snippet": 24,
+        "title_translated": 1,
+        "title_native": 86,
+        "dropped_no_english": 4,
         "in": 126,
-        "kept": 114
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 29,
+        "requested": 28,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -213,7 +215,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "220,000 Syrian refugees return to Syria from Jordan since December 2024 — UNHCR",
+          "title": "220,000 Syrian refugees return to Syria from Jordan since December 2024 - UNHCR",
           "reason": "stale (older than 48h)"
         },
         {
@@ -224,11 +226,6 @@
         {
           "source": "Arab News",
           "title": "Pakistan, Kuwait sign expanded defense agreement amid regional tensions",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
-          "title": "Saudi Arabia, Syria sign road, rail MoUs as trade ties deepen",
           "reason": "stale (older than 48h)"
         },
         {
@@ -245,12 +242,32 @@
           "source": "TRT World",
           "title": "Syria's al Sharaa appoints ex-SDF/YPG ringleader Mazloum Abdi as presidential adviser",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "وسائل التواصل الاجتماعي تتصدر مؤشرات مرتبطة بالاكتئاب",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أولًا: من الحسم العسكري إلى هندسة البيئة الأمنية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "التنظيف قد يلوث الهواء.. دراسة تكشف مخاطر المنتجات المعطرة على الرئتين",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"الأسرى والمحررين\": تهديد بن غفير لأسيرات الدامون محاولة لإرهابهن وكسر إرادتهن",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 53,
+      "in": 111,
+      "kept": 52,
       "dropped": [
         {
           "source": "Kan 11",
@@ -262,6 +279,13 @@
         {
           "source": "Kan 11",
           "title": "Tal Ohana Hachmon and Lt.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -282,13 +306,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "The daily routines of kindergarten children are depicted amidst the ongoing conflict.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "Information is provided regarding zygomatic implants.",
           "sec": 0,
           "off": 0,
@@ -300,6 +317,20 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "4 , Ferry carrying 260 people capsizes off coast of northern Cyprus",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Israel says Netanyahu’s son ‘urgently evacuated’ from the US after threat",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
@@ -422,7 +453,7 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "SECURITY Over 25 bird incidents at Beirut's airport: Farms, slaughterhouses push back against closure order",
+          "title": "FOCUS What will Nabih Berri say on Aug. 31?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -458,13 +489,6 @@
         {
           "source": "Egypt Independent",
           "title": "Labor Minister: Egypt prioritizes training to prepare workers for Arab, European markets",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "Egypt’s Dar Al-Ifta joins Al-Azhar’s annual Quran Recitation Day",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -519,20 +543,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The emergence of 'New Progressives' signifies a division within a US political current and the rise of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Israeli gunfire was reported in the rural area of Daraa, Syria.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Nepal flood death toll rises to 675 as search for missing continues",
           "sec": 1,
@@ -556,13 +566,6 @@
         {
           "source": "SANA",
           "title": "Trump announces deal for major US stake in Venezuelan oil reserves",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Trump announces deal granting US major share of Venezuelan Oil reserves",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -683,12 +686,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 36,
       "sizes": [
-        8,
+        9,
         4,
         3,
-        2,
         2,
         2,
         2,
@@ -733,13 +735,15 @@
           "selected_rank": 1,
           "headline": "Israeli forces begin bulldozing Palestinian land in Deir Ballut, central West Bank",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 7,
             "camps": 4,
             "newest": "2026-08-30T09:54+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Anadolu Agency",
             "IRNA",
+            "SANA",
             "TRT World",
             "The New Arab",
             "WAFA News"
@@ -750,7 +754,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -765,6 +769,11 @@
             ],
             "passed_over": [
               {
+                "source": "Al Arabiya",
+                "title": "Dozens of Israeli settlers attack flashpoint West Bank village",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "The New Arab",
                 "title": "Netanyahu vows more illegal Israeli settlements in occupied West Bank",
                 "rejected_by": "older than the story's newest wave"
@@ -775,13 +784,8 @@
                 "rejected_by": "loaded/partisan wording"
               },
               {
-                "source": "Anadolu Agency",
-                "title": "Masked Israeli occupiers attack Palestinian woman, NBC News crew in occupied Wes",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli army injures 6 Palestinians in raid on occupied West Bank refugee camp",
+                "source": "SANA",
+                "title": "Settlers attack Qusra as settlement activity escalates across West Bank",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -789,15 +793,59 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iran says understanding with Oman on Strait of Hormuz depends on US fulfilling commitments",
+          "headline": "Islamic Jihad stated that the world witnessed Ben-Gvir hiding during Iranian missile attacks on Isra",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-08-30T09:33+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "Jordan Times",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Mayadeen",
+            "title": "Islamic Jihad stated that the world witnessed Ben-Gvir hiding during Iranian missile attacks on Israel.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "New Israeli strikes kill five in Gaza, authorities say",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Israeli attacks kill Palestinian farmer in Gaza, wound others in occupied West B",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "No, Iran is not winning: In Act IV of the war, it’s losing its leverage in Hormuz",
+          "rank_key": {
+            "outlets": 3,
             "camps": 2,
-            "newest": "2026-08-30T08:40+00:00"
+            "newest": "2026-08-30T12:19+00:00"
           },
           "outlet_names": [
             "Egypt Independent",
-            "Falastin al-Youm",
             "IRNA",
             "Mehr News"
           ],
@@ -810,7 +858,7 @@
           "why_not": null,
           "representative": {
             "source": "Egypt Independent",
-            "title": "Iran says understanding with Oman on Strait of Hormuz depends on US fulfilling commitments",
+            "title": "No, Iran is not winning: In Act IV of the war, it’s losing its leverage in Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -818,42 +866,15 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Israeli strike kills two people including a 3-year-old boy, Gaza medics say",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-08-30T11:28+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Israeli strike kills two people including a 3-year-old boy, Gaza medics say",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "Palestinian killed, two injured in Israeli drone strike in Gaza City",
+                "source": "IRNA",
+                "title": "Gharibabadi: Implementation of Hormuz understanding with Oman hinges on US’s ful",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "No ship can pass Strait of Hormuz without Iran's permission",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -968,43 +989,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Venezuela's energy agreement with Washington is for 25 years and preserves its sovereignty.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-30T05:11+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Venezuela's energy agreement with Washington is for 25 years and preserves its sovereignty.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (venezuela)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Venezuela says it retains ‘sovereignty’ following US oil deal",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Following claims that Israel is committing genocide, a Jewish congressional candidate was attacked b",
           "rank_key": {
             "outlets": 1,
@@ -1041,6 +1025,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Several Palestinians killed and injured in Israeli drone strike west of Gaza City",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T11:28+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Turkish navy assists Somalia in freeing hijacked vessel",
           "rank_key": {
             "outlets": 1,
@@ -1059,24 +1061,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Islamic Jihad stated that the world witnessed Ben-Gvir hiding during Iranian missile attacks on Isra",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T09:33+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Indian Army pilots carry out daring high-altitude rescue at 18,600 feet near Nun Kun",
           "rank_key": {
             "outlets": 1,
@@ -1088,6 +1072,24 @@
           ],
           "camps": [
             "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Far-right Israeli minister Ben-Gvir brags about mistreatment of Palestinian prisoners",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T07:45+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1131,11 +1133,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Partial results in Iceland indicate support for resuming European Union accession talks.",
+          "headline": "Venezuela's energy agreement with Washington is for 25 years and preserves its sovereignty.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-30T04:59+00:00"
+            "newest": "2026-08-30T05:11+00:00"
           },
           "outlet_names": [
             "Al Mayadeen"
@@ -1202,24 +1204,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Ghalibaf calls U.S. Treasury secretary a big liar",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-29T18:07+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1238,7 +1222,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-30T12:14:17.205616+00:00",
+    "last_success": "2026-08-30T12:28:15.542475+00:00",
     "last_failure": null
   },
   "ok": true
