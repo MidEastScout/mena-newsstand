@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T00:10:45.911083+00:00",
+  "updated": "2026-08-31T00:36:15.572716+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-31T00:09:04.866139+00:00"
+      "headlines_updated": "2026-08-31T00:34:26.113606+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 32,
+        "title_snippet": 27,
         "title_translated": 1,
         "title_native": 85,
+        "dropped_no_english": 5,
         "in": 127,
-        "kept": 118
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -231,12 +232,37 @@
           "source": "TRT World",
           "title": "Nepal flood trauma 'enormous' as death toll climbs: IFRC",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: وكالة \"فارس\": بيانات الملاحة الجوية تؤكد أن العدوان الأميركي بطائرة مسيّرة على جزيرة لارك انطلق من قواعد عسكرية ف",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"فوكس نيوز\": إيران تهاجم القوات الأميركية في الأردن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: التلفزيون الإيراني: رصد إطلاق صواريخ من مناطق مختلفة في البلاد باتجاه أهداف أميركية في المنطقة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "صنعاء: وزراة الصحة تحذر من كارثة دوائية نتيجة الحصار الغاشم",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الحرس الثوري الإيراني: سنرد على الهجوم الأميركي على لارك",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 55,
+      "in": 113,
+      "kept": 51,
       "dropped": [
         {
           "source": "N12",
@@ -293,13 +319,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "4 , Trump threatens to report journalist Kristen Welker to broadcast regulator",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
@@ -365,13 +384,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The issue of Arabs and Iran raises questions about whether the disagreement is over the 'enemy' or priorities.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "US, Israeli regime are sworn enemies of Muslim unity: Iran Leader",
           "sec": 0,
@@ -416,6 +428,20 @@
         {
           "source": "Jordan Times",
           "title": "Far-right Israeli minister boasts of worse prison conditions",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Lower debt-service costs give Jordan more room for development spending – economists",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Japan to survey animal cafes over hygiene, welfare concerns",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -671,31 +697,19 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Nepal floods, landslides death toll rises to 623, over 1,100 missing",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 35,
       "sizes": [
-        7,
+        6,
         5,
+        4,
         3,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -755,7 +769,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -780,13 +794,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Falastin al-Youm",
-                "title": "Settlers stormed Al-Aqsa Mosque under the protection of occupation forces.",
+                "source": "Arab News",
+                "title": "British activist detained by armed settlers in occupied West Bank, handed to Isr",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Arab News",
-                "title": "British activist detained by armed settlers in occupied West Bank, handed to Isr",
+                "source": "TRT World",
+                "title": "Israeli forces, illegal settlers attack Palestinians, foreign journalists in occ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -843,19 +857,18 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Iran’s Revolutionary Guards say US attack on Larak Island killed and injured several; vows response",
+          "headline": "US strikes Iran's Larak Island, leaving several dead and injured",
           "rank_key": {
             "outlets": 3,
-            "camps": 3,
-            "newest": "2026-08-30T20:40+00:00"
+            "camps": 2,
+            "newest": "2026-08-30T21:30+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
             "Anadolu Agency",
-            "IRNA"
+            "IRNA",
+            "TRT World"
           ],
           "camps": [
-            "panarab",
             "iranian",
             "turkish"
           ],
@@ -863,21 +876,15 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran’s Revolutionary Guards say US attack on Larak Island killed and injured several; vows response",
+            "source": "TRT World",
+            "title": "US strikes Iran's Larak Island, leaving several dead and injured",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , US strikes Iran’s Larak Island in first attack in weeks",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -934,7 +941,7 @@
             "gulf",
             "panarab"
           ],
-          "members": 2,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -950,7 +957,17 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , IRGC says it has attacked US bases in Jordan after US bombed Larak Island",
+                "title": "1 , IRGC says it has attacked US bases in Jordan after US struck Larak Island",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Iran updates: IRGC attacks US bases in Jordan after US bombs Larak Island",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "4 , Iran attacks US bases in Jordan after US strikes Larak Island",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -999,24 +1016,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-08-30T23:20+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Ben Gvir stormed the cells of Palestinian female prisoners and boasted about denying them their righ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T21:41+00:00"
           },
           "outlet_names": [
             "Al Mayadeen"
@@ -1084,42 +1083,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "In Iraq, weapons are at the heart of a sovereignty battle.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T20:54+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran stated that the aggression on Larak Island was a strategic and fatal mistake by the Trump admin",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T20:46+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Explosion heard near southern Iran’s Larak Island amid reports of US strike",
           "rank_key": {
             "outlets": 1,
@@ -1173,7 +1136,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Tanker struck near Oman while transiting Hormuz: UKMTO",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T17:40+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Palestinians urge action over Israeli siege of West Bank town",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T16:53+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Libya political parties set 2-year elections roadmap at UN-led talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-30T15:35+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1191,7 +1208,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-31T00:11:02.529075+00:00",
+    "last_success": "2026-08-31T00:36:50.918583+00:00",
     "last_failure": null
   },
   "ok": true
