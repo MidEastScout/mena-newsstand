@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T06:42:20.420329+00:00",
+  "updated": "2026-08-31T07:13:46.716010+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-31T06:40:33.642091+00:00"
+      "headlines_updated": "2026-08-31T07:11:49.423261+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 35,
-        "title_native": 85,
+        "dropped_stale": 9,
+        "title_snippet": 34,
+        "title_translated": 1,
+        "title_native": 83,
         "in": 127,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -199,6 +200,16 @@
         {
           "source": "Arab News",
           "title": "US issues fresh Iran-related sanctions as war marks six months",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "Pakistan, Kuwait sign expanded defense agreement amid regional tensions",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Acrid stench, charred walls reveal devastation of Pakistan infant ward fire",
           "reason": "stale (older than 48h)"
         },
         {
@@ -224,33 +235,47 @@
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 62,
+      "in": 118,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "At least 20 people are missing due to flash floods in the Grand Canyon, and over 60 have been rescued.",
+          "title": "At least 20 people are missing due to flash floods in the Grand Canyon.",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Kan 11",
-          "title": "Two brothers, aged 3 and 5, were hospitalized with severe poisoning after eating candy containing cannabis.",
+          "title": "A traffic accident involving four vehicles on Road 25 in southern Israel resulted in eight injuries.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "Dramatic footage shows flash floods at the Grand Canyon, a famous U.S.",
+          "title": "Flash floods in Arizona's Grand Canyon have left at least 15 people missing.",
           "sec": 0,
           "off": 1,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "N12",
-          "title": "A fatal accident on the coastal highway involving four vehicles near Atlit resulted in the death of a woman…",
+          "title": "A fatal accident involving four private vehicles on the coastal road near Atlit claimed the life of a woman…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "A young woman from Turkey residing in Israel faces severe consequences for defending Israel online.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -259,33 +284,26 @@
           "source": "Channel 13",
           "title": "Following localized rain, temperatures are expected to rise, with further warming anticipated.",
           "sec": 0,
-          "off": 0,
+          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The full edition of the main news broadcast from August 30, 2026, is available for viewing.",
+          "title": "This item pertains to episode 22 of season 6 of 'The Voice', featuring critical decisions.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The complete program 'Moriah and Berko' from August 30, 2026, is available for viewing.",
+          "title": "This entry refers to the full broadcast of the 'Central Edition' news program from August 30, 2026.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The full program 'Choice Area' from August 30, 2026, is available for viewing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The \"showdown\" between Tair Amram Samuel and Osher Cohen is described as having the potential to produce one…",
+          "title": "This entry refers to the full broadcast of the 'Moriyah and Barko' program from August 30, 2026.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -305,22 +323,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Middle East Eye",
-          "title": "Iranian-American comedian Max Amini sparks backlash over 'species' remarks on Iranian people",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Arabiya",
           "title": "Nepal flood death toll rises to 734: Disaster authority",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "At least six dead after ferry carrying nearly 270 people capsizes off northern Cyprus",
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
@@ -354,29 +358,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "Venezuela is experiencing protests against an oil agreement with the United States.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "IRNA",
           "title": "US, Israeli regime are sworn enemies of Muslim unity: Iran Leader",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Muslims in Russia celebrate birth anniversary of Prophet Mohammad",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "President Pezeshkian congratulates Muslims on Prophet Muhammad’s birth anniversary",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "Leader urges Muslims to unite against US, Israeli regime",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -453,72 +443,58 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Gaza's fate remains uncertain, caught between the desires of Trump and the calculations of Netanyahu.",
+          "title": "The fate of Gaza is described as 'suspended' amidst Trump's desires and Netanyahu's calculations.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Amidst rising regional tensions, Gulf countries are reportedly considering the purchase of Israeli weaponry.",
+          "title": "Amidst rising regional tensions, Gulf countries are reportedly moving to purchase Israeli weaponry.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Twenty public, free beaches are available on the Lebanese coast.",
+          "title": "Rasimni announced that there will be 20 free public beaches along the Lebanese coast.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Aoun reaffirmed commitment to the exclusive possession of arms, adhering to Resolution 1701, on the…",
+          "title": "Coun Aoun affirmed commitment to the exclusivity of arms, in implementation of Resolution 1701, on the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Axios reported on a prominent figure in the media landscape, responsible for significant scoops from the…",
+          "title": "Axios is noted for having a strong presence in the media landscape and for securing a major scoop from the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "The first part of the program discusses the positions of Imam Moussa Sadr regarding the Palestinian cause and…",
+          "title": "This segment discusses Imam Moussa Sadr's positions on the Palestinian issue and confronting the Israeli…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "The first part of the program analyzes the conflict over oil and gas corridors and attempts to redraw energy…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "WAFA News",
-          "title": "South Africa submits dossier to ICJ on Israel’s non-compliance with provisional measures",
+          "title": "This segment explores the conflict over oil and gas corridors and attempts to reshape energy routes in the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "A question is raised about whether skipping breakfast can cause dementia.",
+          "title": "A question is posed about whether skipping breakfast contributes to dementia.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "An American website estimated the damage to the U.S.",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -562,13 +538,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Gulf News",
-          "title": "UAE fuel prices out today: What to expect at the pump in September",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
@@ -637,14 +606,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 41,
       "sizes": [
         11,
+        6,
         5,
-        5,
-        5,
+        4,
         2,
         2,
+        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -688,12 +660,11 @@
           "selected_rank": 1,
           "headline": "Israeli rabbi calls for Palestinians’ expulsion from occupied West Bank",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 7,
             "camps": 5,
             "newest": "2026-08-31T06:26+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
             "Anadolu Agency",
             "Arab News",
             "Falastin al-Youm",
@@ -751,23 +722,24 @@
           "headline": "IRGC downs US MQ-9 drone over Strait of Hormuz",
           "rank_key": {
             "outlets": 5,
-            "camps": 4,
-            "newest": "2026-08-31T05:53+00:00"
+            "camps": 5,
+            "newest": "2026-08-31T07:00+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Mayadeen",
             "Egypt Independent",
             "Gulf News",
-            "Mehr News"
+            "Mehr News",
+            "N12"
           ],
           "camps": [
+            "israeli",
             "gulf",
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -801,52 +773,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Gaza death toll rises to 73,454 amid continued Israeli attacks",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-08-31T02:17+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "SANA",
-            "TRT World",
-            "WAFA News"
-          ],
-          "camps": [
-            "gulf",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Gaza death toll rises to 73,454 amid continued Israeli attacks",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Israeli strike kills two people including a 3-year-old boy, Gaza medics say",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Israeli attacks kill Palestinian farmer in Gaza, wound others in occupied West B",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Iran fires missiles at US base in Jordan after Larak Island strikes: reports",
           "rank_key": {
             "outlets": 3,
@@ -879,7 +805,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Iran says it attacked bases in Jordan, UAE after US strike on Larak Island",
+                "title": "1 , Iran attacks ‘US targets’ in Jordan, UAE reject claims air base hit",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -890,6 +816,45 @@
               {
                 "source": "Al Jazeera",
                 "title": "3 , Iran updates: IRGC attacks US bases in Jordan after US bombs Larak Island",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Gaza death toll rises to 73,454 amid continued Israeli attacks",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-31T02:17+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Gaza death toll rises to 73,454 amid continued Israeli attacks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "TRT World",
+                "title": "Israeli attacks kill Palestinian farmer in Gaza, wound others in occupied West B",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -967,17 +932,142 @@
         },
         {
           "selected_rank": null,
-          "headline": "A drone from Iran was intercepted over the territorial waters of the United Arab Emirates.",
+          "headline": "4 , Russia, China leaders to meet at Shanghai Cooperation Organisation summit",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-08-29T15:32+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Jazeera",
+            "title": "4 , Russia, China leaders to meet at Shanghai Cooperation Organisation summit",
+            "title_source": "native",
+            "why": [
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Leaders of Russia, China, Iran to attend summit in Kyrgyzstan",
+                "rejected_by": "stale anticipatory framing"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran Army pounds US air base in UAE with retaliatory drone strikes",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-31T06:34+00:00"
+            "newest": "2026-08-31T07:07+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Foreign Ministry condemns US attack on Larak Island, reaffirms Iran’s right to self-defense",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T06:58+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "A 15-year-old boy has been arrested in connection with the assault of a bus driver in Beit Shemesh.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T06:51+00:00"
           },
           "outlet_names": [
             "Kan 11"
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The death toll from a ferry sinking off Cyprus has risen to eight.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T06:47+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "In occupied Palestine, reported by Al Mayadeen, Israeli forces have begun demolishing two residentia",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T06:05+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Shipping data reported by Reuters indicates a decrease in visible cargo ships transiting the Strait ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T05:53+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1021,43 +1111,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "Security officials are observing an increase in attack alerts originating from abroad, primarily fro",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T04:57+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran's Revolutionary Guard stated that a tanker was hit by two naval mines, causing it to come to a ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T04:31+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran's Foreign Ministry declared that Washington and its accomplices bear responsibility for the con",
+          "headline": "Iran's Foreign Ministry stated that Washington and its collaborators bear responsibility for the con",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1075,17 +1129,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Donald Trump shared an AI-generated video depicting the destruction of Iran's main oil artery, Kharg",
+          "headline": "Iran's Army Public Relations stated that they targeted the U.S.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-31T04:11+00:00"
+            "newest": "2026-08-31T04:17+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Al Mayadeen"
           ],
           "camps": [
-            "israeli"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1093,7 +1147,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran fired missiles at U.S.",
+          "headline": "Iran launched missiles targeting U.S.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1104,24 +1158,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iranian news agency 'Fars' reported that flight data confirms a U.S.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T22:50+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1146,43 +1182,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "The Iranian Revolutionary Guard stated that it will respond to the U.S.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T21:22+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Netanyahu stated that the path to eliminating Hamas and Hezbollah is not distant.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-30T21:18+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1200,7 +1200,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-31T06:42:34.430977+00:00",
+    "last_success": "2026-08-31T07:14:00.394015+00:00",
     "last_failure": null
   },
   "ok": true
