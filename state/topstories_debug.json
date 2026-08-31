@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T19:41:50.434297+00:00",
+  "updated": "2026-08-31T20:14:16.718843+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-31T19:40:00.282642+00:00"
+      "headlines_updated": "2026-08-31T20:11:30.078137+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 34,
+        "dropped_stale": 6,
+        "title_snippet": 33,
+        "dropped_no_english": 2,
         "title_translated": 1,
         "title_native": 85,
         "in": 127,
-        "kept": 120
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -203,11 +204,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Al-Masirah",
-          "title": "الشايف: مليون وخمسمائة ألف مريض فقدوا حياتهم بسبب الحصار على مطار صنعاء الدولي و10 مليون مغترب حرموا من السفر جواً",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "TRT World",
           "title": "Israeli attacks kill Palestinian farmer in Gaza, wound others in occupied West Bank",
           "reason": "stale (older than 48h)"
@@ -221,12 +217,22 @@
           "source": "TRT World",
           "title": "Nepal floods, landslides death toll rises to 623, over 1,100 missing",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "הקרע בתנועה הסוציאליסטית בארה\"ב מעמיק: \"אוקסיו-קורטז היא אופורטוניסטית\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "تداعيات العمليات اليمنية على البنية الاقتصادية وقطاع الطاقة السعودي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 65,
+      "in": 119,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -349,7 +355,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "Spain rules out responsibility of Morocco in Ceuta migrant surge",
+          "title": "Lebanon urges Greece to help implement deal with Israel",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -531,35 +537,21 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Türkiye, Pakistan, Saudi Arabia agree to further institutionalize cooperation under Mecca defense pact: Joint statement",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
           "title": "Far-right Israeli minister storms Al-Aqsa Mosque under police protection",
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Türkiye, Pakistan, Saudi Arabia agree to further institutionalize cooperation under Mecca defense pact: Joint statement",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "US, UN hail Libya electoral deal as step toward national vote",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Aliyev, Pashinyan discuss deeper economic, energy ties in Bishkek",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Sony, Warner sue Anthropic over 'theft' of songs for AI training",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -617,15 +609,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 49,
       "sizes": [
         8,
         4,
-        4,
+        3,
         3,
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -734,51 +728,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Arab states condemn Iranian attacks on Jordan and UAE",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-08-31T16:40+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Kan 11",
-            "N12",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Arab states condemn Iranian attacks on Jordan and UAE",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (jordan)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "Iran launched missile attacks targeting American bases in Jordan, with most of t",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "The Revolutionary Guard announced the targeting of the King Hussein and Al-Azraq",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Israel kills 5 in fresh strikes on Gaza City",
           "rank_key": {
             "outlets": 3,
@@ -818,6 +767,50 @@
                 "source": "Al Mayadeen",
                 "title": "Three individuals were martyred and others injured in Gaza when a vehicle was ta",
                 "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Arab states condemn Iranian attacks on Jordan and UAE",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-08-31T14:58+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Kan 11",
+            "SANA"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Arab states condemn Iranian attacks on Jordan and UAE",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Kan 11",
+                "title": "Iran launched missile attacks targeting American bases in Jordan, with most of t",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "The Revolutionary Guard announced the targeting of the King Hussein and Al-Azraq",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -979,6 +972,60 @@
         },
         {
           "selected_rank": null,
+          "headline": "CIA chief's Moscow talks aimed at easing tensions: Lithuania",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T19:42+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "UPDATE: Woman and her 10-year-old child injured in colonists’ attack on Ramallah-area village",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T19:41+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump's approval remains at historic low of 33%: Poll",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T19:31+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Japan is requesting a record defense budget to accelerate military modernization efforts, according ",
           "rank_key": {
             "outlets": 1,
@@ -1015,24 +1062,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "FM Shahin bids farewell to Lithuania’s representative to Palestine",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T18:52+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "India remains bound by and must observe Indus Waters Treaty with Pakistan: Hague-based court",
           "rank_key": {
             "outlets": 1,
@@ -1055,7 +1084,7 @@
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-31T16:38+00:00"
+            "newest": "2026-08-31T17:00+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1109,7 +1138,7 @@
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-31T15:29+00:00"
+            "newest": "2026-08-31T15:40+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1158,43 +1187,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iraq has rejected the extension of the international coalition forces' presence beyond September 30…",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T13:21+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Settlements near Jenin are expanding, accompanied by an increase in settler attacks in the West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T13:09+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1212,7 +1205,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-31T19:42:07.677565+00:00",
+    "last_success": "2026-08-31T20:15:14.024161+00:00",
     "last_failure": null
   },
   "ok": true
