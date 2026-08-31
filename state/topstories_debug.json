@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T21:50:56.055378+00:00",
+  "updated": "2026-08-31T22:23:42.290842+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-08-31T21:48:54.980529+00:00"
+      "headlines_updated": "2026-08-31T22:21:07.868934+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 35,
+        "dropped_stale": 5,
+        "title_snippet": 32,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 86,
+        "dropped_no_english": 3,
         "in": 127,
-        "kept": 121
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -213,15 +214,25 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Nepal floods, landslides death toll rises to 623, over 1,100 missing",
-          "reason": "stale (older than 48h)"
+          "source": "Al Mayadeen",
+          "title": "كيف أعادت المواجهة الكبرى رسم خطوط العلاقات بين العرب وإيران؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الدفاع الروسية: استهدفنا منشآت لوجستية وسفينة تحمل معدات عسكرية في أوكرانيا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الولايات المتحدة الأميركية: جي دي فانس: القلق حيال الاستنزاف بسبب الحرب على إيران نابع من نقص الاستثمار في الجيش لفترة ط",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 67,
+      "in": 119,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -316,13 +327,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Trump was sending message to Iran with Kharg Island post, says Vance",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Turkey says roadmap underway for others to join defense pact with Saudi Arabia, Pakistan",
           "sec": 0,
           "off": 0,
@@ -338,13 +342,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Iran stated that Trump's 'chatter and propaganda exaggerations' are merely expressions of his despair after…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Speaker of the Parliament, Nabih Berri, delivered a speech commemorating the 48th anniversary of the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -383,6 +380,13 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Too small for fries: Drought shrinks Belgian potatoes",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Jordan Times",
@@ -470,13 +474,6 @@
         },
         {
           "source": "SANA",
-          "title": "Nepal flood death toll rises to 734",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "SANA",
           "title": "Türkiye, Pakistan, Saudi Arabia hold first meeting under Mecca Defense Pact",
           "sec": 0,
           "off": 0,
@@ -488,6 +485,13 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "SANA",
+          "title": "Arab League warns Israeli plans threaten Palestinians in Naqap, Galilee",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
@@ -605,17 +609,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 45,
       "sizes": [
         9,
-        8,
+        9,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -701,7 +703,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , Can Iran use rockets to mine the Strait of Hormuz, as US claims?",
+                "title": "2 , Can Iran use rockets to mine the Strait of Hormuz, as US claims?",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -726,13 +728,14 @@
           "selected_rank": 2,
           "headline": "Ex-Israeli officials call West Bank settler violence 'ethnic cleansing'",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 4,
             "newest": "2026-08-31T21:09+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
+            "Al Jazeera",
             "Al-Akhbar",
+            "Anadolu Agency",
             "Arab News",
             "Daily Sabah",
             "Falastin al-Youm",
@@ -744,7 +747,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -759,6 +762,11 @@
             ],
             "passed_over": [
               {
+                "source": "Al Jazeera",
+                "title": "5 , Israel’s Ben-Gvir storms Al-Aqsa mosque in occupied East Jerusalem",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "The New Arab",
                 "title": "Netanyahu vows more illegal Israeli settlements in occupied West Bank",
                 "rejected_by": "older than the story's newest wave"
@@ -766,11 +774,6 @@
               {
                 "source": "The New Arab",
                 "title": "Israel to deport British activist abducted by West Bank settlers",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "In occupied Palestine, reporting from Ramallah indicates that occupation forces ",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -986,42 +989,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "All Christian schools in Jerusalem suspend classes as Israel denies permits to over 70 teachers, sta",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T19:17+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Nepal toll surges as rescuers struggle through 'unimaginable' disaster",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T18:46+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "India remains bound by and must observe Indus Waters Treaty with Pakistan: Hague-based court",
           "rank_key": {
             "outlets": 1,
@@ -1094,24 +1061,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "US Vice President J.D.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T16:00+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "President believes ‘neither war nor peace’ situation not in Iran’s interest: Official",
           "rank_key": {
             "outlets": 1,
@@ -1165,7 +1114,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The number of martyrs from the sports movement in Gaza has risen to 1014.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T12:51+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "How the US and Middle East allies flipped the oil script on Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T12:30+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Eight officials suspended after probe into Pakistan hospital fire that killed 14 newborns",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T12:27+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1183,7 +1186,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-31T21:51:22.603942+00:00",
+    "last_success": "2026-08-31T22:23:42.604260+00:00",
     "last_failure": null
   },
   "ok": true
