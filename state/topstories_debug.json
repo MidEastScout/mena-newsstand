@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T01:56:50.148654+00:00",
+  "updated": "2026-09-01T02:28:37.851286+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-01T01:54:48.706048+00:00"
+      "headlines_updated": "2026-09-01T02:26:32.766528+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 36,
+        "title_snippet": 30,
+        "dropped_no_english": 6,
         "title_native": 85,
         "in": 127,
-        "kept": 121
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -215,12 +216,42 @@
           "source": "TRT World",
           "title": "Israeli forces, illegal settlers attack Palestinians, foreign journalists in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "נהג אוטובוס הוכה עד אובדן הכרה בבית שמש, בן 15 נעצר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "פאוור קאפל, עונה 1, פרק 17: הגמר הסוער! לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "רגע אחרי הזכייה הגדולה – אורי ואנה בנאי מתוודים: \"אני לא חושב שידענו למה אנחנו נכנסים\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אזור בחירה 31.08.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "פיצוץ בין חני נחמיאס לאודיה פינטו: \"את פה גדול ומתנשאת. אין לכם כבוד\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "غزة: ارتقاء 3 شهداء وإصابة آخرين باستهداف مركبة في حي تل الهوا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 65,
+      "in": 115,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -265,41 +296,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "A bus driver was beaten unconscious in Beit Shemesh, and a 15-year-old has been arrested.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Power Couple, Season 1, Episode 17: The Stormy Finale!",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Moments after their big win, Uri and Ana Banai confess: \"I don't think we knew what we were getting into.\"…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Choice Area 31.08.26 - Full program available for immediate viewing - 13tv.co.il.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "An argument between Hani Nachmias and Odia Pinto: \"You are arrogant and condescending.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Girl Scouts USA responds to controversy over 'Islamic' badges",
           "sec": 0,
@@ -336,13 +332,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Saudi Arabia, Turkey and Pakistan to hold first Mecca defense pact meeting in Istanbul",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Turkey says roadmap underway for others to join defense pact with Saudi Arabia, Pakistan",
           "sec": 0,
           "off": 0,
@@ -351,13 +340,6 @@
         {
           "source": "The New Arab",
           "title": "Lebanon urges Greece to help implement deal with Israel",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The first meetings of the \"Mecca Agreement\" have commenced in Istanbul.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -497,13 +479,6 @@
         },
         {
           "source": "SANA",
-          "title": "Eight dead after passenger boat capsizes off northern Cyprus",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "SANA",
           "title": "Arab League warns Israeli plans threaten Palestinians in Naqap, Galilee",
           "sec": 0,
           "off": 1,
@@ -618,7 +593,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 43,
       "sizes": [
         9,
         4,
@@ -631,6 +606,8 @@
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -1325,7 +1302,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1343,7 +1320,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-01T01:57:17.345440+00:00",
+    "last_success": "2026-09-01T02:28:38.133730+00:00",
     "last_failure": null
   },
   "ok": true
