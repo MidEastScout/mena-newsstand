@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T04:34:57.264661+00:00",
+  "updated": "2026-09-01T05:06:28.417604+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-01T04:33:23.055432+00:00"
+      "headlines_updated": "2026-09-01T05:04:28.566566+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 36,
+        "title_snippet": 29,
+        "dropped_no_english": 7,
         "title_native": 85,
         "in": 127,
-        "kept": 121
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -215,12 +216,47 @@
           "source": "TRT World",
           "title": "Israeli forces, illegal settlers attack Palestinians, foreign journalists in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "פיצוץ בין חני נחמיאס לאודיה פינטו: \"את פה גדול ומתנשאת. אין לכם כבוד\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "من جنوب لبنان: عندما تتحوّل سيارة \"خردة\" إلى كهربائية متطورة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "اليابان تطلب ميزانية دفاع قياسية لتسريع التحديث العسكري",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "صفقة دفاعية كبرى بين اليونان وإسرائيل بقيمة 3 مليارات يورو",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بري في ذكرى تغييب الإمام الصدر: جغرافيا الجنوب ليست مناطق تجريبية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عون يطلب من اليونان دعم الجيش لإنهاء الاحتلال وحصر السلاح",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الاحتلال يوسّع الاستيطان قرب جنين... واعتداءات المستوطنين تتصاعد في الضفة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 71,
+      "in": 114,
+      "kept": 68,
       "dropped": [
         {
           "source": "Kan 11",
@@ -274,13 +310,6 @@
         {
           "source": "Channel 13",
           "title": "Power Couple, Season 1, Episode 17: The Stormy Finale!",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The Tube 08.31.2026 - Full Episode",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -356,13 +385,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "IRNA",
-          "title": "Leader agrees to pardon, reduce sentences of 2,500 convicts",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Iran International",
           "title": "1 Poverty pushes Iranian children into hazardous border work",
           "sec": 0,
@@ -433,20 +455,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "A major defense deal between Greece and Israel worth 3 billion euros al-akhbar.com.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Berri on the anniversary of Imam Sadr's disappearance: The geography of the South is not a testing ground…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "As the school year approaches, educational initiatives continue in the South to alleviate the burdens on…",
           "sec": 0,
@@ -490,10 +498,10 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "2 dead, 14 missing after flash floods in US Grand Canyon",
-          "sec": 1,
+          "title": "Duane ‘Keffe D’ Davis found guilty in Tupac Shakur's 1996 murder",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
@@ -576,7 +584,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 44,
       "sizes": [
         9,
         5,
@@ -589,8 +597,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -671,7 +677,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Can Iran use rockets to mine the Strait of Hormuz, as US claims?",
+                "title": "5 , Can Iran use rockets to mine the Strait of Hormuz, as US claims?",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -901,7 +907,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , US Army Secretary Daniel Driscoll submits resignation, media reports say",
+                "title": "2 , US Army Secretary Daniel Driscoll submits resignation, media reports say",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1090,37 +1096,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The occupation expands settlement near Jenin...",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-08-31T13:41+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "The occupation expands settlement near Jenin...",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran warns any new US attack will trigger ‘much heavier’ response",
           "rank_key": {
             "outlets": 1,
@@ -1229,35 +1204,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Japan requests a record defense budget to accelerate military modernization al-akhbar.com.",
+          "headline": "Araghchi: US must return to its commitments and Islamabad MoU",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-31T19:30+00:00"
+            "newest": "2026-08-31T20:59+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar"
+            "IRNA"
           ],
           "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iraq: The Prime Minister rejected a proposal for some coalition forces to remain in the country…",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-08-31T18:53+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1283,14 +1240,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Aoun asks Greece to support the army to end the occupation and consolidate weapons al-akhbar.com.",
+          "headline": "The occupation storms the villages of \"Yabrud\" and \"Dura Al-Qar'\" east of Ramallah paltoday.ps.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-08-31T14:48+00:00"
+            "newest": "2026-08-31T13:41+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar"
+            "Falastin al-Youm"
           ],
           "camps": [
             "levant"
@@ -1336,7 +1293,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Eight officials suspended after probe into Pakistan hospital fire that killed 14 newborns",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-08-31T12:27+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1354,7 +1329,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-01T04:35:14.569282+00:00",
+    "last_success": "2026-09-01T05:06:28.731978+00:00",
     "last_failure": null
   },
   "ok": true
