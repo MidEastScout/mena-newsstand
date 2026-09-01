@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T18:22:59.143577+00:00",
+  "updated": "2026-09-01T18:54:58.631958+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,14 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-01T18:21:22.511590+00:00"
+      "headlines_updated": "2026-09-01T18:52:54.826048+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 35,
+        "dropped_stale": 12,
+        "title_snippet": 34,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 83,
+        "dropped_no_english": 1,
         "in": 131,
         "kept": 118
       },
@@ -228,11 +229,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "Israeli settlers take over Palestinian recreational park in West Bank",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Gulf News",
           "title": "Tanker struck by 'unknown projectile' in Strait of Hormuz: UKMTO warning",
           "reason": "stale (older than 48h)"
@@ -251,12 +247,17 @@
           "source": "TRT World",
           "title": "Israeli forces, illegal settlers attack Palestinians, foreign journalists in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مقاومة الجدار والاستيطان: 2030 اعتداءً للمستوطنين في الضفة خلال \"آب\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
       "in": 118,
-      "kept": 68,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
@@ -309,7 +310,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Bank of America VP identified as victim in Times Square stabbing",
+          "title": "4 , Bank of America VP identified as victim in Times Square stabbing",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -364,6 +365,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "IRNA",
+          "title": "Pezeshkian urges stronger UN role in addressing international crises",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Mehr News",
           "title": "Iran ready to reciprocate if US honours MoU",
           "sec": 0,
@@ -397,13 +405,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Nepal flood death toll rises to 734 — disaster authority",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "L'Orient Today",
@@ -525,13 +526,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Eight dead after passenger boat capsizes off northern Cyprus",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "Arab News",
           "title": "Trump was sending message to Iran with Kharg Island post, says Vance",
           "sec": 0,
@@ -623,7 +617,7 @@
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -809,7 +803,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Germany accuses Russia of drone attack on Leipzig airport",
+                "title": "3 , Germany accuses Russia of drone attack on Leipzig airport",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -957,6 +951,43 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iran FM accuses 'serpent' Netanyahu of tricking US into war",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-08-31T23:17+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Jordan Times"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Iran FM accuses 'serpent' Netanyahu of tricking US into war",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Iran FM accuses Israel’s Netanyahu of tricking US into war",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli forces demolish residential and livestock structures in Tubas",
           "rank_key": {
             "outlets": 2,
@@ -1018,6 +1049,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israel targets Jerusalem’s education system to erase Palestinian identity: Palestinian education min",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-01T18:33+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The IDF announced a military exercise will take place tomorrow morning in the Golan Heights.",
           "rank_key": {
             "outlets": 1,
@@ -1029,24 +1078,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US ‘will regret’ new attacks on Iran, says IRGC",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-01T17:59+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1233,7 +1264,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1251,7 +1282,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-01T18:23:15.035883+00:00",
+    "last_success": "2026-09-01T18:54:59.796223+00:00",
     "last_failure": null
   },
   "ok": true
