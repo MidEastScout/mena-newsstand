@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T21:17:26.341700+00:00",
+  "updated": "2026-09-01T21:49:50.827412+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-01T21:15:45.678028+00:00"
+      "headlines_updated": "2026-09-01T21:48:09.390101+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 36,
+        "title_snippet": 29,
+        "dropped_no_english": 6,
+        "title_translated": 1,
         "title_native": 82,
         "in": 131,
-        "kept": 118
+        "kept": 112
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -250,12 +252,42 @@
           "source": "TRT World",
           "title": "Israeli forces, illegal settlers attack Palestinians, foreign journalists in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צבא ירדן: 13 טילים בליסטיים שוגרו לעבר הממלכה; עשרה יורטו, אין נפגעים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ארה\"ב החלה בגל תקיפות באיראן - שהגיבה בשיגורים לירדן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דיווח פלסטיני: לפחות 8 הרוגים בתקיפת צה\"ל במערב העיר עזה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: حرس الثورة: الهجوم على معسكر مشاة البحرية الأميركية في الأردن أدى إلى تدمير عدد من المنشآت المهمة والمروحيات الهج",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "معاقبة «بنك مصر»: القاهرة نحو تقليص تعاونها الاقتصادي مع طهران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تبريد الأرض على طريقة ماسك: حين يصبح المناخ مختبراً للرأسمالية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 63,
+      "in": 112,
+      "kept": 61,
       "dropped": [
         {
           "source": "N12",
@@ -280,35 +312,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "Abigail Serenga performed in the quarter-finals, with one judge noting they would not have chosen such a song…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Naor Douani received praise for his quarter-final performance, with a judge calling him one of the best…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Ofri Attias's quarter-final performance was described as \"messy but fun to listen to.\"",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "Recordings and documentation related to the murder of a lawyer in Rishon LeZion have been released.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "3 , Bank of America VP identified as victim in Times Square stabbing",
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -476,13 +487,6 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Trump stated it is premature to discuss Higgseth's potential presidential candidacy in 2028.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "The article discusses the intentions and desires of Nadim Qattish.",
           "sec": 0,
           "off": 0,
@@ -538,6 +542,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "SANA",
+          "title": "Arab League warns Israeli plans threaten Palestinians in Naqap, Galilee",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Arab News",
           "title": "Trump was sending message to Iran with Kharg Island post, says Vance",
           "sec": 0,
@@ -560,7 +571,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "UAE Education News & School Updates",
+          "title": "Dubai: dnata Travel opens premium store at One Central",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -568,13 +579,6 @@
         {
           "source": "Al-Masirah",
           "title": "The repercussions of Yemeni operations on Saudi Arabia's economic infrastructure and energy sector are…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Iranian people 'have unforgettable lessons to teach' US: Iran’s supreme leader",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -646,20 +650,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 39,
       "sizes": [
-        7,
+        8,
         5,
         4,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -698,14 +700,15 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Reports from Jordan indicate that Iran has conducted attacks targeting American bases within the cou",
+          "headline": "Jordan says air defenses intercepted 10 of 13 ballistic missiles entering airspace: Reports",
           "rank_key": {
-            "outlets": 6,
-            "camps": 3,
-            "newest": "2026-09-01T20:53+00:00"
+            "outlets": 7,
+            "camps": 4,
+            "newest": "2026-09-01T21:32+00:00"
           },
           "outlet_names": [
             "Al Manar",
+            "Anadolu Agency",
             "Arab News",
             "Gulf News",
             "Jordan Times",
@@ -715,20 +718,21 @@
           "camps": [
             "israeli",
             "gulf",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Reports from Jordan indicate that Iran has conducted attacks targeting American bases within the country.",
-            "title_source": "snippet",
+            "source": "Anadolu Agency",
+            "title": "Jordan says air defenses intercepted 10 of 13 ballistic missiles entering airspace: Reports",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (jordan)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
@@ -858,44 +862,36 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Syria built nuclear reactor under Assad, IAEA confirms",
+          "headline": "Amid escalating US-Iran hostilities, Trump threatened severe retaliation, prompting US strikes in th",
           "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-01T17:39+00:00"
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-01T16:25+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Daily Sabah",
-            "Mehr News"
+            "Al Arabiya",
+            "N12"
           ],
           "camps": [
-            "iranian",
-            "levant",
-            "turkish"
+            "israeli",
+            "panarab"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Syria built nuclear reactor under Assad, IAEA confirms",
-            "title_source": "native",
+            "source": "N12",
+            "title": "Amid escalating US-Iran hostilities, Trump threatened severe retaliation, prompting US strikes in the Strait…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
-                "source": "Mehr News",
-                "title": "Has Trump entered a dangerous nuclear game?",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al-Akhbar",
-                "title": "The United Nations has issued a warning about a new nuclear arms race.",
+                "source": "Al Arabiya",
+                "title": "Tanker hit by ‘three unknown projectiles’ in Hormuz strait: UK maritime agency",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -941,6 +937,38 @@
         },
         {
           "selected_rank": null,
+          "headline": "Has Trump entered a dangerous nuclear game?",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-01T10:28+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Has Trump entered a dangerous nuclear game?",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran stated that the US will face severe punishment for its attacks, while Trump warned against any ",
           "rank_key": {
             "outlets": 2,
@@ -974,38 +1002,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Tanker hit by ‘three unknown projectiles’ in Hormuz strait: UK maritime agency",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-01T07:48+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Tanker hit by ‘three unknown projectiles’ in Hormuz strait: UK maritime agency",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1120,11 +1116,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Sirens sound in Jordan after Iranian missile launches: Report",
+          "headline": "Israeli opposition leader gives Netanyahu’s wife 24-hour apology ultimatum for Oct. 7 claim",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-01T20:34+00:00"
+            "newest": "2026-09-01T21:22+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1192,24 +1188,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iranian air defenses were activated in Jordan, according to Tasnim news agency.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-01T19:38+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran: According to Tasnim, two martyrs and several injuries occurred in an attack targeting a weddin",
           "rank_key": {
             "outlets": 1,
@@ -1264,17 +1242,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Israeli military announced that a training exercise will take place in the Golan Heights tomorro",
+          "headline": "Iran launches retaliatory strikes after latest US airstrikes",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-01T18:07+00:00"
+            "newest": "2026-09-01T18:58+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Mehr News"
           ],
           "camps": [
-            "israeli"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1282,17 +1260,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Amid escalating US-Iran hostilities, Trump threatened severe retaliation, prompting US strikes in th",
+          "headline": "Syria built nuclear reactor under Assad, IAEA confirms",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-01T16:25+00:00"
+            "newest": "2026-09-01T17:39+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Daily Sabah"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1335,7 +1313,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Japan is using AI, drones and wolf robots to keep bears at bay",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-01T12:36+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1353,7 +1349,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-01T21:17:44.591044+00:00",
+    "last_success": "2026-09-01T21:50:04.804167+00:00",
     "last_failure": null
   },
   "ok": true
