@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T22:09:32.600419+00:00",
+  "updated": "2026-09-02T22:40:55.040843+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-02T22:07:46.002812+00:00"
+      "headlines_updated": "2026-09-02T22:39:11.425231+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 34,
-        "title_translated": 1,
-        "title_native": 83,
+        "dropped_stale": 8,
+        "title_snippet": 32,
+        "dropped_no_english": 1,
+        "title_translated": 2,
+        "title_native": 84,
         "in": 127,
         "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -213,11 +214,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "WAFA News",
-          "title": "Qatar condemns storming of Al-Aqsa Mosque by extremist Israeli Minister Ben-Gvir and colonists",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Arab News",
           "title": "Israel to deport British activist seized by West Bank settlers: lawyer",
           "reason": "stale (older than 48h)"
@@ -231,6 +227,11 @@
           "source": "Al-Masirah",
           "title": "تداعيات العمليات اليمنية على البنية الاقتصادية وقطاع الطاقة السعودي",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אזור בחירה 02.09.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
@@ -240,49 +241,42 @@
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "Six passengers who attempted to leave the country illegally were apprehended by security teams at Ben Gurion…",
+          "title": "Six passengers attempting to flee the country were apprehended by security personnel at Ben Gurion Airport.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "Saa has stated that Britain is heading in the wrong direction and is interfering against Israel during…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Two fatalities and one serious injury occurred in a collision between two vehicles on Highway 675 in the…",
+          "title": "A collision between two vehicles on Road 675 in the Jezreel Valley resulted in two fatalities and one serious…",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "N12",
-          "title": "Six Haredi draft evaders were apprehended by security personnel at Ben Gurion Airport just before boarding a…",
+          "title": "Six religious draft evaders were apprehended by security teams at Ben Gurion Airport just before boarding a…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "Difficult testimonies have emerged regarding alleged sexual harassment during examinations at Hadassah…",
+          "title": "Allegations of sexual harassment during examinations have surfaced at Hadassah Hospital.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "A disturbing video shows a climbing guide assaulting a climber at an altitude of 3,000 meters in the Alps.",
+          "title": "A troubling video shows a climbing instructor assaulting a climber at an altitude of 3,000 meters in the Alps.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The Voice, Season 6, Episode 24: The final moments before the finale are available for live viewing on Reshet…",
+          "title": "The Voice, Season 6, Episode 24: Right before the finale, available for live viewing on Reshet 13.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -296,14 +290,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "A car lot is selling vehicles that have been taken off the road, with one report titled 'He took the money…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Recordings from the Water Authority reveal discussions about the desalination crisis and concerns about…",
+          "title": "\"He took the money and left\": The lot selling vehicles taken off the road is featured on Reshet 13.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -345,21 +332,28 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Following a decade-long partnership, Egypt and China are establishing a new framework for cooperation.",
+          "title": "After 10 years, Egypt and China are establishing a new partnership.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "Discussions explore the convergence and divergence of projects involving the left, Arab nationalists, and…",
+          "title": "The left, Arab nationalists, and revolutionary Iran explored converging and diverging project goals.",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Midnight Bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "A strong and destructive Iranian response to recent American aggression is reported.",
+          "title": "A strong and destructive Iranian response was launched against the recent American aggression.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -443,14 +437,14 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Egypt is exploring diversified partnerships, highlighted by an exceptional reception for Xi.",
+          "title": "An exceptional reception for Xi Jinping indicates Egypt is exploring diverse partnerships.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Gaza's vehicles are on the verge of stopping due to a shortage of spare parts, complicating citizens' travel.",
+          "title": "Gaza vehicles are on the verge of halting due to a spare parts shortage, complicating citizen transportation.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -461,6 +455,13 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Syria Direct",
+          "title": "The Libyan odyssey: For Syrians stranded in Libya, Assad’s fall has not ended their journey home",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Arab News",
@@ -499,6 +500,20 @@
         },
         {
           "source": "Anadolu Agency",
+          "title": "Palestinian churches urge international action to save Christian schools in Jerusalem",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "New York City bans AI use for students through 8th grade",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
           "title": "Cuba allows private companies with more than 100 workers, expands rights for small businesses",
           "sec": 0,
           "off": 0,
@@ -512,22 +527,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Estonian parliament elects Ulle Madise as next president",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Greece’s Achilles’ heel",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Why Lebanon should join Mecca pact",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -592,14 +593,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 50,
       "sizes": [
         6,
+        5,
         4,
         3,
         3,
-        3,
-        2,
         2,
         2,
         1,
@@ -654,11 +654,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Trump suggests renaming Strait of Hormuz ‘Trump Strait’",
+          "headline": "Saudi Bahri: Two dead after Monday attack on oil tanker in Hormuz",
           "rank_key": {
             "outlets": 5,
             "camps": 4,
-            "newest": "2026-09-02T20:37+00:00"
+            "newest": "2026-09-02T22:08+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -677,8 +677,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Trump suggests renaming Strait of Hormuz ‘Trump Strait’",
+            "source": "Arab News",
+            "title": "Saudi Bahri: Two dead after Monday attack on oil tanker in Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -687,6 +687,11 @@
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Trump suggests renaming Strait of Hormuz ‘Trump Strait’",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "Al Arabiya",
                 "title": "Saudi shipping carrier confirms security incident in Strait of Hormuz, two kille",
@@ -701,18 +706,13 @@
                 "source": "SANA",
                 "title": "Two tankers carrying Saudi crude oil attacked in Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "2 oil tankers attacked in the last 48 hrs near Hormuz as Iran steps up maritime ",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Two Palestinian youths were killed and another was critically injured by Israeli forces near Ramalla",
+          "headline": "Two Palestinian youths were killed and another critically wounded by Israeli army fire near Ramallah",
           "rank_key": {
             "outlets": 4,
             "camps": 3,
@@ -729,12 +729,12 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Kan 11",
-            "title": "Two Palestinian youths were killed and another was critically injured by Israeli forces near Ramallah.",
+            "title": "Two Palestinian youths were killed and another critically wounded by Israeli army fire near Ramallah.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -749,8 +749,13 @@
                 "rejected_by": "loaded/partisan wording"
               },
               {
+                "source": "WAFA News",
+                "title": "Israeli forces demolish four water wells, greenhouses in Hebron",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Falastin al-Youm",
-                "title": "Occupation forces demolished greenhouses and filled artesian wells in Hebron.",
+                "title": "Occupation forces demolished plastic houses and artesian wells in Hebron.",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -763,6 +768,51 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Germany tests Israeli missile after attempted Russian drone attack",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-02T16:14+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "Jordan Times",
+            "TRT World",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Germany tests Israeli missile after attempted Russian drone attack",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Germany successfully tests Israeli ballistic missile",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Germany alleges Russian role in Leipzig drone plot, announces sanctions",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Qatar, Egypt, Jordan denounce Iranian attacks on Arab neighbours",
           "rank_key": {
             "outlets": 3,
@@ -802,54 +852,16 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Germany tests Israeli missile after attempted Russian drone attack",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-02T16:14+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Jordan Times",
-            "TRT World"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Germany tests Israeli missile after attempted Russian drone attack",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Germany alleges Russian role in Leipzig drone plot, announces sanctions",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 5,
-          "headline": "Two Palestinians killed in Gaza, 18 detained in West Bank",
+          "headline": "UPDATE: Two Palestinian children killed, dozens injured in Israeli drone strikes west of Gaza City",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-09-02T11:57+00:00"
+            "newest": "2026-09-02T13:33+00:00"
           },
           "outlet_names": [
-            "Middle East Eye",
-            "SANA",
+            "Al Mayadeen",
+            "Falastin al-Youm",
             "WAFA News"
           ],
           "camps": [
@@ -860,60 +872,23 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "SANA",
-            "title": "Two Palestinians killed in Gaza, 18 detained in West Bank",
+            "source": "WAFA News",
+            "title": "UPDATE: Two Palestinian children killed, dozens injured in Israeli drone strikes west of Gaza City",
             "title_source": "native",
             "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
               "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
+                "source": "Al Mayadeen",
+                "title": "Gaza reports 8 martyrs and 31 injured due to occupation aggressions within 24 ho",
+                "rejected_by": "loaded/partisan wording"
               },
               {
-                "source": "WAFA News",
-                "title": "UPDATE: Two Palestinian children killed, dozens injured in Israeli drone strikes",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Iranian Red Crescent reported that the American attack on a wedding ceremony in Serik resulted i",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-02T14:13+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Manar",
-            "title": "The Iranian Red Crescent reported that the American attack on a wedding ceremony in Serik resulted in 5…",
-            "title_source": "snippet",
-            "why": [
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Mayadeen",
-                "title": "The Iranian Foreign Ministry reported 70 martyrs and injured in the American agg",
+                "source": "Falastin al-Youm",
+                "title": "A martyr and injured individuals were reported following an Israeli raid on the ",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
@@ -921,7 +896,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russia has been secretly aiding Iran in the development of supersonic cruise missiles since 2023.",
+          "headline": "Russia reportedly provided clandestine assistance to Iran in developing advanced supersonic cruise m",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
@@ -938,8 +913,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "N12",
-            "title": "Russia has been secretly aiding Iran in the development of supersonic cruise missiles since 2023.",
+            "source": "Kan 11",
+            "title": "Russia reportedly provided clandestine assistance to Iran in developing advanced supersonic cruise missiles.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -951,53 +926,53 @@
         },
         {
           "selected_rank": null,
-          "headline": "Palestine accuses Israel of ‘stealing artifacts’ from West Bank Sebastia archaeological site",
+          "headline": "Alexander Polikevich is referred to as 'the terrorist dancer'.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-02T21:53+00:00"
+            "newest": "2026-09-02T21:30+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "What remains of the genocide lawsuit before the International Court of Justice?",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Why Lebanon should join Mecca pact",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T21:05+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The article refers to Aleksandr Polikivich as the 'terrorist dancer'.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The article questions what remains of the genocide lawsuit before the International Court of Justice",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1023,7 +998,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "A senior Israeli official indicated that Israel is prepared to attack national and energy infrastruc",
+          "headline": "A senior Israeli official stated that if necessary, national and energy infrastructure in Iran would",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1041,7 +1016,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "It is alleged that Shuhada signed a 'strategic' agreement with a company linked to the enemy army.",
+          "headline": "Shhada signed a strategic agreement with a company affiliated with the enemy army.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1095,7 +1070,25 @@
         },
         {
           "selected_rank": null,
-          "headline": "A combat-disabled veteran, unable to escort his son to his first day of school, expressed his dream ",
+          "headline": "Addressing sanctions, Britain's stated intention is incorrect, as it is interfering against Israel d",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T18:59+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "A combat veteran unable to accompany his son to the first day of school shares his dream of being a ",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1148,24 +1141,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Hatami stated that Iran is the inevitable victor in the war and will respond to any aggression with ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T14:49+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "32 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1184,7 +1159,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-02T22:09:54.809711+00:00",
+    "last_success": "2026-09-02T22:41:09.254734+00:00",
     "last_failure": null
   },
   "ok": true
