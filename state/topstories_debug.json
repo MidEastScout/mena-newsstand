@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T05:31:17.962193+00:00",
+  "updated": "2026-09-02T06:02:57.261152+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-02T05:29:13.361784+00:00"
+      "headlines_updated": "2026-09-02T06:01:11.613756+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 34,
+        "title_snippet": 30,
+        "dropped_no_english": 4,
         "title_translated": 1,
         "title_native": 83,
         "in": 131,
-        "kept": 118
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -251,12 +252,32 @@
           "source": "TRT World",
           "title": "Israeli forces, illegal settlers attack Palestinians, foreign journalists in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "מצרים: 16 הרוגים ו-26 פצועים בהתהפכות אוטובוס בכביש דהב נוויבע שבדרום סיני",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דה וויס, עונה 6, פרק 23: שלב רבע הגמר לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "دراسة تكشف فوائد الستاتينات لكبار السن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "قطر: لا يمكن تبرير ممارسات الاحتلال في غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 62,
+      "in": 114,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -268,13 +289,6 @@
         {
           "source": "Kan 11",
           "title": "Benny Gantz stated that discussions are ongoing regarding a potential union, emphasizing the critical…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A cyclist sustained serious injuries near the Barakat junction, close to Shoham.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -317,13 +331,6 @@
         {
           "source": "Channel 13",
           "title": "This quote refers to Noyah Arba's quarter-final performance.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This quote refers to Gafen Lovell's quarter-final performance.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -379,7 +386,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "After 14 years, Denmark reopens embassy in Syria",
+          "title": "Iraq sentences kidnapper of US journalist to 15 years in prison",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -554,6 +561,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "Americas News ‚ US & Latin America Reports",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "Why criticism backfires when teenagers are online",
           "sec": 0,
           "off": 0,
@@ -561,21 +575,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Abu Dhabi’s non-oil foreign trade reaches Dh230.6 billion in H1, up 17.9%",
+          "title": "Muneeba backs Pakistan to rise to India challenge after Thailand win",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Need a poster? Google's new AI tool wants you to describe it instead of designing it",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Why quartz watches keep such good time",
+          "title": "Abu Dhabi’s non-oil foreign trade reaches Dh230.6 billion in H1, up 17.9%",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -654,17 +661,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 48,
       "sizes": [
         4,
         3,
         3,
-        3,
         2,
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -765,50 +771,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israeli settlers try to torch occupied West Bank mosque, Palestinians say",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-01T23:52+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Israeli settlers try to torch occupied West Bank mosque, Palestinians say",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "The article details 2,030 settler attacks in the West Bank during 'August' as pa",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli occupiers’ violence in West Bank makes world see us as ‘thugs, criminals",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "IRGC: Attacks resulting from enemy desperation only tighten the lock on the Strait of Hormuz",
           "rank_key": {
             "outlets": 2,
@@ -837,6 +799,43 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Israeli settlers try to torch occupied West Bank mosque, Palestinians say",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-01T23:52+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Israeli settlers try to torch occupied West Bank mosque, Palestinians say",
+            "title_source": "native",
+            "why": [
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Anadolu Agency",
+                "title": "Israeli occupiers’ violence in West Bank makes world see us as ‘thugs, criminals",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
           }
         },
         {
@@ -1027,6 +1026,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "IRGC destroys US surveillance balloon control system in Erbil",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T05:54+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Russia has reportedly been secretly assisting Iran in developing advanced supersonic cruise missiles",
           "rank_key": {
             "outlets": 1,
@@ -1038,24 +1055,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran warns US of heavier regional response if aggression continues",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T04:53+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1242,7 +1241,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1260,7 +1259,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-02T05:31:50.901546+00:00",
+    "last_success": "2026-09-02T06:03:11.936821+00:00",
     "last_failure": null
   },
   "ok": true
