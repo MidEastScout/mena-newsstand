@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T14:10:00.847259+00:00",
+  "updated": "2026-09-02T14:41:52.503614+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,26 +167,37 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-02T14:08:10.275457+00:00"
+      "headlines_updated": "2026-09-02T14:40:08.143877+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 3,
-        "title_snippet": 34,
-        "title_translated": 2,
-        "title_native": 88,
+        "dropped_stale": 4,
+        "title_snippet": 28,
+        "dropped_no_english": 7,
+        "title_translated": 1,
+        "title_native": 87,
         "in": 127,
-        "kept": 124
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Israel and Greece sign 'largest' multi-billion-dollar arms deal",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Israel to deport British activist abducted by West Bank settlers",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Nepal flood death toll rises to 734 — disaster authority",
@@ -194,30 +205,53 @@
         },
         {
           "source": "Arab News",
-          "title": "Israeli settlers take over Palestinian recreational park in West Bank",
+          "title": "Israel to deport British activist seized by West Bank settlers: lawyer",
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Nepal flood death toll climbs past 900 as rescue efforts enter sixth day",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "בישראל נערכים להחלטה בריטית נגד ההתנחלויות, ושוקלים צעדי תגובה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "איראן: תפסנו ספינה שהעבירה נפט בהורמוז, 11 אזרחים זרים שהיו עליה נעצרו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הכוחות המיוחדים הפציצו את הרכב שהשאירו מאחור",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אתגר הטיקטוק שהסתיים בבית חולים: \"תוך חצי שנייה היינו במים\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "باكستان: نواصل الوساطة ومتمسكون بفرص الحوار بين واشنطن وطهران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "قصف مدفعي صهيوني يستهدف مناطق في مدينة رفح جنوبي قطاع غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"البريميرليغ\" يحطم الرقم القياسي للإنفاق في سوق الانتقالات",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
+      "in": 116,
       "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Six passengers attempting to illegally leave the country were apprehended by security teams at Ben Gurion…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Teva Pharmaceuticals announced the successful completion of a clinical trial for its celiac disease antibody.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -231,21 +265,7 @@
         },
         {
           "source": "N12",
-          "title": "Professor Ada Yonath, a Nobel laureate in Chemistry, passed away at the age of 87.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
           "title": "Sailor Hayes, a five-year-old girl with autism, was found deceased in the water in South Carolina after…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Professor Ada Yonath, the recipient of the Nobel Prize in Chemistry, has died at the age of 87.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -328,29 +348,22 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
+          "source": "Al Arabiya",
+          "title": "USS Abraham Lincoln Docks in Thailand",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Israel ready to 'remove Gaza population if US gives approval'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "The New Arab",
           "title": "Jerusalem Christian schools close to protest Israel restrictions",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "After 14 years, Denmark reopens embassy in Syria",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Lebanon urges Greece to help implement deal with Israel",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Iraq sentences kidnapper of US journalist to 15 years in prison",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -372,13 +385,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The article analyzes the outcomes of Trump's approach to managing the conflict with Iran.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Twelfth Bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -468,13 +474,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Manar",
-          "title": "Lebanon's National Union of Agricultural Bodies is demanding the authorities reveal support details for…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "WAFA News",
           "title": "Jerusalem Christian schools suspend classes in protest over Israel’s refusal to renew entry permits for teachers",
           "sec": 0,
@@ -496,20 +495,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The film 'Citizen Osama' from Gaza will represent Palestine in the Best International Feature Film category…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Turkish cargo ship feared sunk after collision with oil tanker off Istanbul",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "Arab News",
           "title": "Iran president offers US olive branch, hails Russian support",
           "sec": 0,
@@ -518,7 +503,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "Complete UAE MOFA Attestation Services – Make Your Documents UAE-Ready",
+          "title": "Matter of Fact: July 24, 2026",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -532,7 +517,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "Breaking News in India & Live Updates",
+          "title": "UAE flight update: Emirates, Etihad, flydubai, Air Arabia cancellations as Iran tensions escalate",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -546,7 +531,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "US 10-year Treasury yield hits highest level since November 2023",
+          "title": "Just Stop Oil returns to streets with protest outside UK Parliament",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -625,18 +610,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 43,
       "sizes": [
-        11,
+        10,
         5,
-        4,
+        5,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -681,11 +664,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Saudi Bahri: Two dead after Monday attack on oil tanker in Hormuz",
+          "headline": "US strikes Iranian targets around the Strait of Hormuz",
           "rank_key": {
             "outlets": 8,
             "camps": 5,
-            "newest": "2026-09-02T13:01+00:00"
+            "newest": "2026-09-02T14:37+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -704,12 +687,12 @@
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Saudi Bahri: Two dead after Monday attack on oil tanker in Hormuz",
+            "source": "Al Arabiya",
+            "title": "US strikes Iranian targets around the Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -724,6 +707,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Al Arabiya",
+                "title": "Saudi shipping carrier confirms security incident in Strait of Hormuz, two kille",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "IRNA",
                 "title": "IRGC: Attacks resulting from enemy desperation only tighten the lock on the Stra",
                 "rejected_by": "older than the story's newest wave"
@@ -732,25 +720,71 @@
                 "source": "L'Orient Today",
                 "title": "LIVE Washington adopts a new 'oiler-for-oil' policy; Iran announces it has a 'st",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "SANA",
-                "title": "Two tankers carrying Saudi crude oil attacked in Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "WFP: Food assistance in West Bank halved amid funding shortfall",
+          "headline": "Qatar, Egypt, Jordan denounce Iranian attacks on Arab neighbours",
           "rank_key": {
             "outlets": 5,
+            "camps": 3,
+            "newest": "2026-09-02T14:03+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Jordan Times",
+            "L'Orient Today",
+            "SANA",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "levant",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Qatar, Egypt, Jordan denounce Iranian attacks on Arab neighbours",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "Arab states condemn renewed Iranian attacks on Jordan, UAE",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "US strikes kill at least 11 in Iran; Tehran claims retaliatory attacks on Bahrai",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Iranian attacks on UAE, Jordan condemned",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "WFP: Food assistance in West Bank halved amid funding shortfall",
+          "rank_key": {
+            "outlets": 4,
             "camps": 2,
             "newest": "2026-09-02T11:39+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Falastin al-Youm",
             "Jordan Times",
             "The New Arab",
@@ -775,11 +809,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Arabiya",
-                "title": "Israeli settlers try to torch occupied West Bank mosque, Palestinians say",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "The New Arab",
                 "title": "UN cuts occupied West Bank food aid by half as funds run short",
                 "rejected_by": "older than the story's newest wave"
@@ -788,55 +817,10 @@
                 "source": "Jordan Times",
                 "title": "Funding cuts force UN's WFP to halve West Bank aid recipients",
                 "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Qatar condemns renewed Iranian attacks on Jordan, Bahrain and Kuwait",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-09-02T08:34+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Jordan Times",
-            "L'Orient Today",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Qatar condemns renewed Iranian attacks on Jordan, Bahrain and Kuwait",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (bahrain, jordan)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
+              },
               {
                 "source": "Jordan Times",
-                "title": "Arab states condemn renewed Iranian attacks on Jordan, UAE",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "US strikes kill at least 11 in Iran; Tehran claims retaliatory attacks on Bahrai",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Iranian attacks on UAE, Jordan condemned",
+                "title": "Israel to deport British activist seized by West Bank settlers- lawyer",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -844,44 +828,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "A person was killed in an Israeli airstrike in Khan Younis, according to reports from the Gaza Strip",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-02T13:50+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "A person was killed in an Israeli airstrike in Khan Younis, according to reports from the Gaza Strip.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "UPDATE: Two Palestinian children killed, dozens injured in Israeli drone strikes",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "10 Syria security personnel wounded in clashes in Sweida- state TV",
           "rank_key": {
             "outlets": 2,
@@ -919,6 +865,79 @@
           }
         },
         {
+          "selected_rank": 5,
+          "headline": "UPDATE: Two Palestinian children killed, dozens injured in Israeli drone strikes west of Gaza City",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-01T08:12+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "UPDATE: Two Palestinian children killed, dozens injured in Israeli drone strikes west of Gaza City",
+            "title_source": "native",
+            "why": [
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Germany identifies 2 Russia-linked suspects in Leipzig drone plot: Reports",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-02T13:28+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Germany identifies 2 Russia-linked suspects in Leipzig drone plot: Reports",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "TRT World",
+                "title": "Germany alleges Russian role in Leipzig drone plot, announces sanctions",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": null,
           "headline": "Russia has reportedly been secretly assisting Iran in developing advanced supersonic cruise missiles",
           "rank_key": {
@@ -950,11 +969,47 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran says international silence on US attacks is ‘not neutrality’",
+          "headline": "Nigeria’s Lassa fever death toll rises to 252 as confirmed cases top 1,000",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-02T14:06+00:00"
+            "newest": "2026-09-02T14:32+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran condemns US strikes, says attack on civilian sites killed, injured dozens",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T14:27+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran condemns US strikes on civilians as war crimes, reaffirms its right to self-defense",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T14:24+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -997,60 +1052,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Belgian interior minister calls for license plates on electric scooters to tackle drug crime",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T14:04+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Over 230 former Dutch officials urge tougher measures against Israel",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T14:00+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Greenland's right to determine own future at stake, foreign minister tells European lawmakers",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T13:55+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1102,6 +1103,24 @@
           },
           "outlet_names": [
             "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Egypt condemns Iranian attacks on Arab countries",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T13:21+00:00"
+          },
+          "outlet_names": [
+            "SANA"
           ],
           "camps": [
             "levant"
@@ -1165,7 +1184,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1183,7 +1202,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-02T14:10:41.053150+00:00",
+    "last_success": "2026-09-02T14:42:25.162923+00:00",
     "last_failure": null
   },
   "ok": true
