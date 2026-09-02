@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T00:11:16.094546+00:00",
+  "updated": "2026-09-02T00:42:19.816639+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-02T00:09:35.434916+00:00"
+      "headlines_updated": "2026-09-02T00:40:28.419352+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 17,
-        "title_snippet": 34,
+        "dropped_stale": 16,
+        "title_snippet": 25,
+        "dropped_no_english": 9,
         "title_translated": 1,
-        "title_native": 79,
+        "title_native": 80,
         "in": 131,
-        "kept": 114
+        "kept": 106
       },
       "translator": {
         "configured": true,
@@ -253,11 +254,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "England thrash Pakistan by 194 runs for series win",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "TRT World",
           "title": "Israeli attacks kill Palestinian farmer in Gaza, wound others in occupied West Bank",
           "reason": "stale (older than 48h)"
@@ -271,12 +267,57 @@
           "source": "TRT World",
           "title": "Israeli forces, illegal settlers attack Palestinians, foreign journalists in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: הצבא האמריקני תקף שתי מכליות בבעלות ממשלת איראן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "איראן: תקפנו בטילים וברחפנים בסיסים אמריקניים בארביל שבעיראק",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الجيش الإيراني: استهدفنا في المرحلة 29 من عملية \"الصاعقة\" منشآت أميركية في البحرين",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«الحرس الثوري» يعلن بدء الرد على الهجوم الأميركي.. وأسعار النفط تتفاعل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "معاقبة «بنك مصر»: القاهرة نحو تقليص تعاونها الاقتصادي مع طهران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إسبانيا تتحرك لاستضافة نهائي مونديال 2030",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تبريد الأرض على طريقة ماسك: حين يصبح المناخ مختبراً للرأسمالية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بالأرقام- هذا ما جناه اللبنانيون من «اتفاق الإطار»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أقلام و آراء",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 65,
+      "in": 106,
+      "kept": 61,
       "dropped": [
         {
           "source": "N12",
@@ -323,13 +364,6 @@
         {
           "source": "Channel 13",
           "title": "This refers to a performance by Gafen Lovell during a quarter-final round, described as their best…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "4 , ‘Hit them hard’: Does Trump have another ‘new’ Iran strategy, can it work?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -461,27 +495,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "A commentary discusses 'cooling the Earth' as a concept being used as a laboratory for capitalism.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "An analysis of the 'Framework Agreement' details the financial gains for Lebanese individuals.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Trump stated that it is too early to discuss Higseth's candidacy for the presidency in 2028.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "The Sultaniyah power station is preparing to resume operations after maintenance work.",
           "sec": 0,
@@ -493,13 +506,6 @@
           "title": "Jerusalem Christian schools suspend classes in protest over Israel’s refusal to renew entry permits for teachers",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "WAFA News",
-          "title": "Arab League warns of the dangers of Israeli plans in the Negev and Galilee",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -547,6 +553,13 @@
         {
           "source": "Gulf News",
           "title": "Pakistan crisis deepens as Misbah-ul-Haq resigns",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Dubai: dnata Travel opens premium store at One Central",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -625,21 +638,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 42,
       "sizes": [
-        5,
+        6,
         5,
         4,
         3,
-        3,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -807,7 +816,7 @@
             "israeli",
             "levant"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -825,46 +834,45 @@
                 "source": "WAFA News",
                 "title": "UPDATE: Two Palestinian children killed, dozens injured in Israeli drone strikes",
                 "rejected_by": "bare stub headline"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Two Palestinians killed, others injured in Israeli airstrike west of Gaza City",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 4,
-          "headline": "Pezeshkian urges Washington back to talks ahead of Putin meeting; Qatar calls for renewed US-Iran ne",
+          "headline": "Bahrain says air defenses intercepted drone attacks from Iran",
           "rank_key": {
-            "outlets": 3,
-            "camps": 1,
-            "newest": "2026-09-01T13:46+00:00"
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-02T00:26+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm",
-            "L'Orient Today",
-            "WAFA News"
+            "Anadolu Agency",
+            "Kan 11"
           ],
           "camps": [
-            "levant"
+            "israeli",
+            "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "L'Orient Today",
-            "title": "Pezeshkian urges Washington back to talks ahead of Putin meeting; Qatar calls for renewed US-Iran negotiations",
+            "source": "Anadolu Agency",
+            "title": "Bahrain says air defenses intercepted drone attacks from Iran",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (qatar)",
+              "names 1 of the story's dominant entities (bahrain)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Qatar condemns storming of Al-Aqsa Mosque by extremist Israeli Minister Ben-Gvir",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -945,6 +953,43 @@
         },
         {
           "selected_rank": null,
+          "headline": "Pezeshkian urges Washington back to talks ahead of Putin meeting; Qatar calls for renewed US-Iran ne",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-01T13:46+00:00"
+          },
+          "outlet_names": [
+            "L'Orient Today",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "L'Orient Today",
+            "title": "Pezeshkian urges Washington back to talks ahead of Putin meeting; Qatar calls for renewed US-Iran negotiations",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (qatar)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Qatar condemns storming of Al-Aqsa Mosque by extremist Israeli Minister Ben-Gvir",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Israel bulldozes, destroys homes in Mansouri, continues its military operations across southern Leba",
           "rank_key": {
             "outlets": 2,
@@ -987,24 +1032,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Bahrain announced that its air defense systems successfully intercepted Iranian drones over the King",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T00:03+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israeli occupiers’ violence in West Bank makes world see us as ‘thugs, criminals’: Police chief",
           "rank_key": {
             "outlets": 1,
@@ -1041,24 +1068,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Kuwait’s army says air defenses intercept drone attacks",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-01T22:31+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "A vehicle struck participants attending a rally in support of the Iranian government in the city of ",
           "rank_key": {
             "outlets": 1,
@@ -1085,42 +1094,6 @@
           },
           "outlet_names": [
             "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Egypt is reportedly moving towards reducing its economic cooperation with Tehran, following sanction",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-01T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Jordanian army reported that thirteen ballistic missiles were launched towards the Kingdom.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-01T21:21+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -1179,30 +1152,102 @@
           "camps": [
             "panarab"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
-          "headline": "The Islamic Revolutionary Guard Corps stated that they launched ballistic missiles targeting a US ba",
+          "headline": "IRGC: Attacks resulting from enemy desperation only tighten the lock on the Strait of Hormuz",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-01T20:53+00:00"
+            "newest": "2026-09-01T19:55+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "IRNA"
           ],
           "camps": [
-            "israeli"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "4 killed after US strike hits wedding in southern Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-01T19:53+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran vows crushing retaliation after latest US attacks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-01T19:06+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran launches retaliatory strikes after latest US airstrikes",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-01T18:58+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Zelenskyy warns Russian airspace now 'completely unsafe' amid war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-01T18:58+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1220,7 +1265,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-02T00:11:16.342845+00:00",
+    "last_success": "2026-09-02T00:42:33.923893+00:00",
     "last_failure": null
   },
   "ok": true
