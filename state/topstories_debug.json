@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T11:43:20.471642+00:00",
+  "updated": "2026-09-03T12:16:41.789618+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -73,7 +73,7 @@
         "Jordan Times": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "L'Orient Today": {
@@ -103,13 +103,13 @@
         "WAFA News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Falastin al-Youm": {
           "headlines": 5,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "SANA": {
@@ -127,7 +127,7 @@
         "Arab News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Gulf News": {
@@ -167,27 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-03T11:41:08.280850+00:00"
+      "headlines_updated": "2026-09-03T12:15:01.048369+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 29,
-        "dropped_no_english": 5,
+        "dropped_stale": 6,
+        "title_snippet": 27,
+        "dropped_no_english": 7,
         "title_translated": 1,
-        "title_native": 87,
+        "title_native": 86,
         "in": 127,
-        "kept": 117
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "After 14 years, Denmark reopens embassy in Syria",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Arab states condemn renewed Iranian attacks on Jordan, UAE",
@@ -215,22 +220,32 @@
         },
         {
           "source": "Kan 11",
-          "title": "בגיל 92: העיתונאית והפעילה הפמיניסטית גלוריה סטיינהם הלכה לעולמה",
+          "title": "ארה\"ב: רעידת אדמה בעוצמה 6.3 התרחשה כ-80 ק\"מ מהאי ניקולסקי שבאלסקה",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Kan 11",
-          "title": "גורם ישראלי: ישראל צפויה לשחרר היום 5 עצורים לבנונים",
+          "title": "בעקבות המחאות האלימות - בית הקפה בירושלים הודיע שיפסיק לפעול בשבת: \"לא נהיה מוקד לשנאה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "גורם במדינות המפרץ ל-N12: \"הסבלנות כלפי איראן אוזלת, משלמים את מחיר ההסלמה\"",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
-          "title": "بعد 10 أعوام.. مصر والصين ترسمان خريطة شراكة جديدة",
+          "title": "كيف خسر \"الصبية الموهوبون\" الحرب؟",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al-Akhbar",
-          "title": "إحكام الجباية بدل الإصلاح",
+          "title": "إسبانيا تتحرك لاستضافة نهائي مونديال 2030",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "نحو رؤية مستقبلية ضد «إسرائيل الكبرى»",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -241,8 +256,8 @@
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 68,
+      "in": 114,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -302,10 +317,17 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Yair Netanyahu, Israeli PM’s son, angers UK right over Falklands",
+          "title": "4 , Yair Netanyahu, Israeli PM’s son, angers UK right over Falklands",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Rescue efforts continue as Nepal-China flood death toll surpasses 1,270",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Middle East Eye",
@@ -330,13 +352,6 @@
         },
         {
           "source": "The New Arab",
-          "title": "Israel ready to 'remove Gaza population if US gives approval'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
           "title": "Xi's Cairo visit tests Egypt's ties with Washington",
           "sec": 0,
           "off": 0,
@@ -345,6 +360,13 @@
         {
           "source": "The New Arab",
           "title": "Jerusalem Christian schools close to protest Israel restrictions",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "A clip from the biography of 'Abu Ali Mustafa' is shown on the 25th anniversary of his martyrdom.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -497,13 +519,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "UAE, U.S. presidents discuss Middle East developments, bilateral ties",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Israel ready to remove Gaza population if US gives approval: minister",
           "sec": 0,
@@ -532,11 +547,18 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Families hold symbolic funerals as Nepal flood death toll hits 1,252, over 4,200 missing",
-          "sec": 1,
+          "source": "Gulf News",
+          "title": "India-Brazil friendly tickets sell out within minutes",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Maduro, wife want US drug charges dismissed on immunity grounds",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
@@ -591,11 +613,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 45,
       "sizes": [
         6,
         6,
-        4,
         3,
         3,
         2,
@@ -648,53 +669,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Qatar, Jordan condemn renewed Iranian attacks on Kuwait",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-09-03T09:34+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Daily Sabah",
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Qatar, Jordan condemn renewed Iranian attacks on Kuwait",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (jordan, kuwait)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran says it targeted bases in Kuwait and UAE over US military support",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Qatar, Egypt, Jordan denounce Iranian attacks on Arab neighbours",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Trump says US ready for more Iran strikes, denies plans to rename Hormuz Strait after himself",
           "rank_key": {
             "outlets": 4,
@@ -746,53 +720,53 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "Israeli military kills 2 Palestinian teens in occupied West Bank",
+          "selected_rank": 2,
+          "headline": "Qatar, Jordan condemn renewed Iranian attacks on Kuwait",
           "rank_key": {
             "outlets": 4,
             "camps": 3,
-            "newest": "2026-09-03T11:02+00:00"
+            "newest": "2026-09-03T09:34+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Daily Sabah",
-            "Falastin al-Youm",
-            "WAFA News"
+            "Al Jazeera",
+            "Anadolu Agency",
+            "SANA",
+            "TRT World"
           ],
           "camps": [
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Israeli military kills 2 Palestinian teens in occupied West Bank",
+            "source": "Anadolu Agency",
+            "title": "Qatar, Jordan condemn renewed Iranian attacks on Kuwait",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "names 2 of the story's dominant entities (jordan, kuwait)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Mayadeen",
-                "title": "Two Palestinians were killed and others injured in attacks by Israeli forces and",
+                "source": "Al Jazeera",
+                "title": "1 , Iran says it targeted bases in Kuwait and UAE over US military support",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "WAFA News",
-                "title": "Palestinian detained as colonists release livestock on Palestinian land in Hebro",
-                "rejected_by": "loaded/partisan wording"
+                "source": "TRT World",
+                "title": "Qatar, Egypt, Jordan denounce Iranian attacks on Arab neighbours",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "PM Mustafa discusses joint efforts with Japan’s assistant Foreign Minister for Gaza Reconstruction a",
           "rank_key": {
             "outlets": 2,
@@ -829,6 +803,44 @@
               {
                 "source": "WAFA News",
                 "title": "Israeli bombing kills Palestinian in southern Gaza Strip",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Israeli occupation forces detain 17 Palestinians in West Bank",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-03T11:33+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "SANA"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Israeli occupation forces detain 17 Palestinians in West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Mayadeen",
+                "title": "Two Palestinians were killed and others injured in attacks by Israeli forces and",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -949,37 +961,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-02T05:25+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "2 arrested after arson attack on German defense company",
           "rank_key": {
             "outlets": 2,
@@ -1010,11 +991,47 @@
         },
         {
           "selected_rank": null,
+          "headline": "Judiciary chief arrives in India for BRICS summit",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T12:12+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Civil Affairs Authority receives slain youth's body killed by Israel after it'd been held since Nove",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
             "newest": "2026-09-03T11:39+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Palestinian detained as colonists release livestock on Palestinian land in Hebron's Masafer Yatta",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T11:02+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -1100,11 +1117,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Drone that destroyed Germany’s last bridge to Moscow",
+          "headline": "Israeli military kills 2 Palestinian teens in occupied West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T09:53+00:00"
+            "newest": "2026-09-03T10:16+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1118,17 +1135,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "US intelligence warns that Russian President Putin may test NATO with limited attacks, citing the…",
+          "headline": "Drone that destroyed Germany’s last bridge to Moscow",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T09:46+00:00"
+            "newest": "2026-09-03T09:53+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Daily Sabah"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1154,47 +1171,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran retaliates with strikes on US bases in region; Israel abducts 15 people in southern Lebanon: Ev",
+          "headline": "US army is grappling with profound crisis",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T06:52+00:00"
-          },
-          "outlet_names": [
-            "L'Orient Today"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "‘War crime’: Iran sends formal letter to UN over deadly US attack on wedding",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T05:56+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Targeting civilians \"clear example of war crimes\"",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T05:40+00:00"
+            "newest": "2026-09-03T07:50+00:00"
           },
           "outlet_names": [
             "Mehr News"
@@ -1208,17 +1189,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Countries helping Iran evade sanctions could themselves face penalties, says Rubio",
+          "headline": "Iran retaliates with strikes on US bases in region; Israel abducts 15 people in southern Lebanon: Ev",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T04:16+00:00"
+            "newest": "2026-09-03T06:52+00:00"
           },
           "outlet_names": [
-            "Gulf News"
+            "L'Orient Today"
           ],
           "camps": [
-            "gulf"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1243,7 +1224,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-03T11:45:27.192655+00:00",
+    "last_success": "2026-09-03T12:16:55.981579+00:00",
     "last_failure": null
   },
   "ok": true
