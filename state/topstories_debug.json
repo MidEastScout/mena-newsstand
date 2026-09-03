@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T18:17:38.140342+00:00",
+  "updated": "2026-09-03T18:50:21.026025+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,31 +167,27 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-03T18:15:38.461523+00:00"
+      "headlines_updated": "2026-09-03T18:47:32.464793+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 35,
+        "dropped_stale": 7,
+        "title_snippet": 30,
+        "dropped_no_english": 4,
         "title_translated": 1,
         "title_native": 85,
         "in": 127,
-        "kept": 121
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "After 14 years, Denmark reopens embassy in Syria",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Jordan Times",
           "title": "Arab states condemn renewed Iranian attacks on Jordan, UAE",
@@ -200,6 +196,11 @@
         {
           "source": "Jordan Times",
           "title": "10 Syria security personnel wounded in clashes in Sweida- state TV",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Jordan condemns storming of Al Aqsa Mosque by far-right Israeli minister",
           "reason": "stale (older than 48h)"
         },
         {
@@ -216,12 +217,37 @@
           "source": "Arab News",
           "title": "Trump vows to hit Iran hard after first exchanges of fire in a month",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Masirah",
+          "title": "الخونة وأدوات المملكة شهود بارزون.. حقيقة الهيمنة والاستكبار السعودي على اليمن",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "בנט: נתניהו ממשיך בכל הכוח שיחשבו שהייתה בגידה. זו עלילת דם",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "משבר ההתפלה: צו סגירה לאזור פיזור הרעל. רשות המים: \"אין סכנה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הערכת מצב בבור וסגירת הגבול - רק ב-09:55: לו\"ז נתניהו ב-7.10",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "עוז דוידיאן שהציל עשרות אנשים ב-7.10: \"צילמתי כי רציתי שיראו את גודל האירוע\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 67,
+      "in": 116,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
@@ -260,35 +286,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "Beni Gantz stated that Netanyahu continues with all his might to make people think there was a betrayal…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A closure order has been issued for the poison dispersion area due to a desalination crisis, but the Water…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The timeline for Netanyahu's situation room assessment and border closure on October 7th was only at 09:55.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Oz Davidian, who saved dozens of people on October 7th, stated that he filmed the events so people would see…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "News 13 | News",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -312,6 +310,13 @@
           "title": "4 , UN warns El Nino could be ‘off the charts’, strongest in decades",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , How much oil is going through Hormuz? Why data doesn’t match US claims",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -345,6 +350,13 @@
         {
           "source": "The New Arab",
           "title": "US hands over ancient sarcophagus fragments to Lebanon",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Lebanon receives first detainee of five to be freed by Israel",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -511,13 +523,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Masirah",
-          "title": "The betrayal and tools of the kingdom are prominent witnesses to the reality of Saudi hegemony and arrogance…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Syria announces 1st chemical materials destruction since fall of Assad regime",
           "sec": 0,
@@ -608,7 +613,7 @@
       "clusters": 46,
       "sizes": [
         5,
-        5,
+        4,
         3,
         3,
         3,
@@ -618,7 +623,7 @@
         2,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -662,46 +667,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israeli bombing kills Palestinian in southern Gaza Strip",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-09-03T16:30+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent",
-            "Falastin al-Youm",
-            "Middle East Eye",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli bombing kills Palestinian in southern Gaza Strip",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Israeli occupation forces detain 17 Palestinians in West Bank",
           "rank_key": {
             "outlets": 4,
@@ -736,6 +701,45 @@
                 "source": "Al Mayadeen",
                 "title": "Two martyrs and several wounded were reported in attacks by the occupation force",
                 "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Mustafa emphasized the importance of coordinating efforts in the Gaza Strip.",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-03T13:22+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent",
+            "Falastin al-Youm",
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "Mustafa emphasized the importance of coordinating efforts in the Gaza Strip.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -854,44 +858,6 @@
               {
                 "source": "Al Arabiya",
                 "title": "Russia summons Germany’s top diplomat over Berlin’s response to Leipzig airport ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Putin sees Ukraine peace deal chance as Kyiv cites 'new dynamic'",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-03T16:08+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Putin sees Ukraine peace deal chance as Kyiv cites 'new dynamic'",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Ukrainian intel agencies in Kyiv firefight: What happened and why?",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1030,6 +996,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Amnesty says Israel's land seizures reflect expanding annexation agenda in occupied West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T18:18+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Civil Affairs Authority receives slain youth's body killed by Israel after it'd been held since Nove",
           "rank_key": {
             "outlets": 1,
@@ -1092,6 +1076,24 @@
           },
           "outlet_names": [
             "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Putin sees Ukraine peace deal chance as Kyiv cites 'new dynamic'",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T16:08+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1209,43 +1211,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Al Akhbar reported on the release of 5 Lebanese prisoners by the occupation.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T12:39+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Lebanon's army received the freed prisoner Malik Ghazi after his release by the occupation.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T12:01+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1263,7 +1229,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-03T18:17:51.444263+00:00",
+    "last_success": "2026-09-03T18:50:49.174168+00:00",
     "last_failure": null
   },
   "ok": true
