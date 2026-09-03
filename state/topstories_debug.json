@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T04:53:21.949994+00:00",
+  "updated": "2026-09-03T05:25:31.119450+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-03T04:51:40.620916+00:00"
+      "headlines_updated": "2026-09-03T05:23:24.426261+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 35,
-        "title_native": 88,
+        "dropped_stale": 6,
+        "dropped_no_english": 12,
+        "title_snippet": 22,
+        "title_translated": 1,
+        "title_native": 86,
         "in": 127,
-        "kept": 123
+        "kept": 109
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -189,6 +191,11 @@
         {
           "source": "The New Arab",
           "title": "Iraq sentences kidnapper of US journalist to 15 years in prison",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Israel to deport British activist abducted by West Bank settlers",
           "reason": "stale (older than 48h)"
         },
         {
@@ -202,15 +209,80 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Arab News",
+          "title": "Iran’s Revolutionary Guards say supertanker struck by mines in Strait of Hormuz",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Al-Masirah",
           "title": "تداعيات العمليات اليمنية على البنية الاقتصادية وقطاع الطاقة السعودي",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שני הרוגים ופצוע קשה בתאונה בין שני כלי רכב בכביש 675 בעמק יזרעאל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "המלחמה באוקראינה: 17 בני אדם נפצעו במתקפה רוסית על אודסה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "העימות יתחדש? שר ההגנה האמריקני האריך את הפריסה המבצעית במזה\"ת",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הסיוט של כל אימא: ארי בן ה-3 ברח מהגן ורץ לכביש - \"שלחו תמונה של הילד שלי בוואטסאפ\" | תיעוד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הקטל בדרכים: שני הרוגים בתאונה בגלבוע, גבר ואישה נפצעו קשה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الكنيسة تضجّ بتعديلات البابا لقوانينها: هل يُعزل البطريرك الراعي؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "ألكسندر بوليكيفيتش... «الراقصة الإرهابية»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "ماذا بقي من دعوى الإبادة أمام محكمة العدل الدولية؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "استقبال استثنائي لشي: مصر تختبر تنويع الشراكات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "شحادة وقّع اتفاقية «استراتيجية» مع شركة شريكة لجيش العدو!",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "التحليلات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "عربي ودولي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 68,
+      "in": 109,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -242,7 +314,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "The Voice, Season 6, Episode 24: Right before the finale, available for live viewing on Reshet 13.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -264,13 +336,6 @@
         {
           "source": "Channel 13",
           "title": "\"I couldn't take my eyes off you throughout the entire song\": Tamir Sari's quarter-final performance on…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "\"I am very proud of you for this performance too\": Efrat Chen's quarter-final performance on Reshet 13.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -306,13 +371,6 @@
         {
           "source": "The New Arab",
           "title": "Israel ready to 'remove Gaza population if US gives approval'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Jerusalem Christian schools close to protest Israel restrictions",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -396,7 +454,7 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "CENTRAL BANK Alvarez & Marsal officially launches new BDL audit",
+          "title": "EDUCATION In the ruins of southern Lebanon, Education minister promises a return to school for all",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -410,7 +468,7 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "BANKS Salim Sfeir set for fourth term at helm of banking lobby Stephanie Bechara",
+          "title": "CENTRAL BANK Alvarez & Marsal officially launches new BDL audit L'Orient Today staff",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -437,31 +495,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "The Church is abuzz with the Pope's amendments to its laws; the question arises whether Patriarch Aridi will…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "An exceptional reception for Xi: Egypt tests the diversification of partnerships.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "Gaza vehicles are on the verge of stopping, with a shortage of spare parts burdening drivers and complicating…",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "General Secondary Education exam results for the second session will be announced tomorrow.",
-          "sec": 0,
-          "off": 3,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -493,8 +530,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Trump vows to hit Iran hard after first exchanges of fire in a month",
+          "source": "Gulf News",
+          "title": "Latest MENA News & Top Stories",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -511,13 +548,6 @@
           "title": "India-Brazil friendly tickets sell out within minutes",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "India to host inaugural Women’s Champions Trophy in 2027",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -601,22 +631,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 41,
       "sizes": [
         9,
         3,
         3,
-        3,
-        3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -716,51 +742,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Kuwait's air defense systems were activated in response to an Iranian attack.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-03T01:48+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "Mehr News",
-            "TRT World"
-          ],
-          "camps": [
-            "israeli",
-            "iranian",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Kuwait's air defense systems were activated in response to an Iranian attack.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (kuwait)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "IRGC strikes US airbase in Kuwait in retaliatory attack",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Iran's IRGC claims US personnel killed and drones destroyed in attack on Kuwait ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Qatar, Egypt, Jordan denounce Iranian attacks on Arab neighbours",
           "rank_key": {
             "outlets": 3,
@@ -800,83 +781,7 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Sources in the US informed The Wall Street Journal that President Donald Trump is considering declar",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-03T03:40+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "panarab"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Sources in the US informed The Wall Street Journal that President Donald Trump is considering declaring an…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "A Palestinian was killed and others were injured in an Israeli raid on the city of Asda, in the Khan",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-02T13:13+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "Middle East Eye",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "A Palestinian was killed and others were injured in an Israeli raid on the city of Asda, in the Khan Younis…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Cabinet urges international action over Israeli measures targeting Jerusalem sch",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
+          "selected_rank": 3,
           "headline": "Two Palestinians were killed and others injured in attacks by Israeli occupation forces and settlers",
           "rank_key": {
             "outlets": 2,
@@ -919,7 +824,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Germany successfully tests Israeli ballistic missile",
           "rank_key": {
             "outlets": 2,
@@ -950,40 +855,66 @@
           }
         },
         {
-          "selected_rank": null,
-          "headline": "Israeli forces demolish residential building in occupied east Jerusalem",
+          "selected_rank": 5,
+          "headline": "Iran's IRGC claims US personnel killed and drones destroyed in attack on Kuwait air base",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-02T10:09+00:00"
+            "newest": "2026-09-02T07:01+00:00"
           },
           "outlet_names": [
-            "TRT World",
-            "WAFA News"
+            "Mehr News",
+            "TRT World"
           ],
           "camps": [
-            "levant",
+            "iranian",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces demolish residential building in occupied east Jerusalem",
+            "source": "TRT World",
+            "title": "Iran's IRGC claims US personnel killed and drones destroyed in attack on Kuwait air base",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
+              "names 1 of the story's dominant entities (kuwait)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Occupied East Jerusalem private, Christian schools strike over Israeli restricti",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-02T05:25+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1014,6 +945,43 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "A Palestinian was killed and others were injured in an Israeli raid on the city of Asda, in the Khan",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-02T13:13+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "A Palestinian was killed and others were injured in an Israeli raid on the city of Asda, in the Khan Younis…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "UPDATE: Two Palestinian children killed, dozens injured in Israeli drone strikes",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1091,6 +1059,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "The United States: According to American officials cited by The Wall Street Journal, Trump expressed",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T03:00+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Kuwait says air defenses responding to Iranian missile, drone threats",
           "rank_key": {
             "outlets": 1,
@@ -1102,42 +1088,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Alexander Polikevich is described as 'the terrorist dancer'.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "What remains of the genocide lawsuit before the International Court of Justice?",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1174,42 +1124,6 @@
           ],
           "camps": [
             "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Following the firing at Jordan and the escalation in the Gulf, Israel is preparing for the possibili",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T19:39+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Shehadeh signed a 'strategic' agreement with a partner company of the enemy army!",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-02T19:35+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1270,7 +1184,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Occupation authorities issued administrative arrest orders against 45 prisoners.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T14:01+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Two Filipino sailors killed in security incident aboard Saudi tanker SIDR",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T13:43+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "This university built an AI curriculum before ChatGPT. Now it wants to help other schools do the sam",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-02T12:26+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1288,7 +1256,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-03T04:53:56.457683+00:00",
+    "last_success": "2026-09-03T05:25:44.473863+00:00",
     "last_failure": null
   },
   "ok": true
