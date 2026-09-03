@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T22:34:28.305252+00:00",
+  "updated": "2026-09-03T23:06:26.107027+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-03T22:32:46.130518+00:00"
+      "headlines_updated": "2026-09-03T23:04:55.289344+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 34,
-        "title_translated": 1,
-        "title_native": 84,
+        "dropped_stale": 9,
+        "title_snippet": 28,
+        "title_translated": 2,
+        "dropped_no_english": 5,
+        "title_native": 83,
         "in": 127,
-        "kept": 119
+        "kept": 113
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 32,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -190,6 +191,11 @@
         {
           "source": "Jordan Times",
           "title": "Arab states condemn renewed Iranian attacks on Jordan, UAE",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Trump warns of 'much harder' action if Iran retaliates to strikes",
           "reason": "stale (older than 48h)"
         },
         {
@@ -226,11 +232,36 @@
           "source": "TRT World",
           "title": "UK slams Israel's 'appalling settler terrorism' in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "נאס דיילי על הזהות שלו אחרי ה-7.10: \"הכי ישראלי שהרגשתי\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "لا تعليق | الإعلام الأميركي يذوق طعم الاستيطان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "56 منظمة أميركية تحذر الكونغرس من توسيع التعاون العسكري مع إسرائيل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الاحتلال يفرج عن 5 أسرى لبنانيين؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إسبانيا تتحرك لاستضافة نهائي مونديال 2030",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
+      "in": 113,
       "kept": 63,
       "dropped": [
         {
@@ -277,13 +308,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "An assessment of the situation at the 'Bure' and border closure was scheduled for 09:55, detailing…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
@@ -312,7 +336,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , UN warns El Nino could be ‘off the charts’, strongest in decades",
+          "title": "5 , UN warns El Nino could be ‘off the charts’, strongest in decades",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -375,6 +399,13 @@
         },
         {
           "source": "Al Mayadeen",
+          "title": "Midnight Bulletin",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
           "title": "The 'Loyalty to the Resistance' bloc stated that the framework agreement has failed to protect Lebanon, and…",
           "sec": 0,
           "off": 0,
@@ -404,20 +435,6 @@
         {
           "source": "Iran International",
           "title": "VOICES FROM IRAN Iranians to Trump: This time you fight, help is on its way",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "2026 JFA Shield Cup kicks off",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Gov’t launches digital spokesperson service ‘Farah’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -460,20 +477,6 @@
         {
           "source": "Egypt Independent",
           "title": "Saudi Arabia’s security remains a red line for Egypt: Sisi",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Spain is taking steps to host the final of the 2030 World Cup.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "This discusses a future vision against 'Greater Israel'.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -563,13 +566,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Trump administration asks Supreme Court to revive mail-in ballot restrictions",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Israel’s far-right allies discover a red line",
           "sec": 0,
@@ -617,31 +613,23 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Senior US official oversees Chevron, ENI, GE offshoot sign 'tens of billions' in Venezuela deals",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 44,
       "sizes": [
-        6,
-        4,
-        4,
+        7,
+        3,
+        3,
         3,
         3,
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -685,9 +673,9 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Security officials described the captured 'chief of Shabak' of Hamas, Mu'een al-Arabi'id, as an inte",
+          "headline": "Israeli strike kills Palestinian, wounds several others west of Gaza",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 6,
             "camps": 4,
             "newest": "2026-09-03T21:05+00:00"
           },
@@ -696,7 +684,8 @@
             "Egypt Independent",
             "Falastin al-Youm",
             "Middle East Eye",
-            "N12"
+            "N12",
+            "WAFA News"
           ],
           "camps": [
             "israeli",
@@ -704,18 +693,18 @@
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "N12",
-            "title": "Security officials described the captured 'chief of Shabak' of Hamas, Mu'een al-Arabi'id, as an intelligence…",
-            "title_source": "snippet",
+            "source": "WAFA News",
+            "title": "Israeli strike kills Palestinian, wounds several others west of Gaza",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
               "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
@@ -782,50 +771,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-03T17:30+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , How much oil is going through Hormuz? Why data doesn’t match US claims",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Israeli occupation forces detain 17 Palestinians in West Bank",
           "rank_key": {
             "outlets": 3,
@@ -840,7 +785,7 @@
           "camps": [
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -854,6 +799,43 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Poland introduces air traffic restrictions along eastern border to strengthen defense",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-03T22:36+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Poland introduces air traffic restrictions along eastern border to strengthen defense",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "4 , Ukraine takes the war to Russia’s space programme in tactical shift",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -885,6 +867,44 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-03T17:30+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -927,6 +947,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-02T05:25+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "The IDF has completed the clearance of Hezbollah's underground infrastructure on the Ali Taher ridge",
           "rank_key": {
             "outlets": 2,
@@ -958,6 +1009,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "Arab League condemns repeated Iranian attacks on Jordan, Bahrain and Kuwait",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-03T11:37+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Arab League condemns repeated Iranian attacks on Jordan, Bahrain and Kuwait",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 3 of the story's dominant entities (bahrain, jordan, kuwait)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Trump warns UK 'on edge of disaster' in sweeping attack on Britain",
           "rank_key": {
             "outlets": 1,
@@ -977,24 +1059,6 @@
         {
           "selected_rank": null,
           "headline": "This refers to the final second part of 'One Hundred Years of Solitude', concerning Macondo's fate a",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "This commentary discusses American media experiencing the reality of settlements.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1173,7 +1237,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "US attack against Iranian civilians to not go unpunished",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T13:15+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1191,7 +1273,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-03T22:35:04.365134+00:00",
+    "last_success": "2026-09-03T23:06:50.296149+00:00",
     "last_failure": null
   },
   "ok": true
