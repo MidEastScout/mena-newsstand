@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T16:50:31.075947+00:00",
+  "updated": "2026-09-03T17:13:33.769805+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -19,7 +19,7 @@
         "Channel 13": {
           "headlines": 5,
           "lang": "he",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Al Jazeera": {
@@ -37,19 +37,19 @@
         "Al Arabiya": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "The New Arab": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Al Mayadeen": {
           "headlines": 5,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "IRNA": {
@@ -73,13 +73,13 @@
         "Jordan Times": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "L'Orient Today": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Egypt Independent": {
@@ -103,7 +103,7 @@
         "WAFA News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Falastin al-Youm": {
@@ -127,19 +127,19 @@
         "Arab News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Gulf News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Al-Masirah": {
           "headlines": 1,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Anadolu Agency": {
@@ -151,37 +151,38 @@
         "Daily Sabah": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Hürriyet Daily News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "TRT World": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         }
       },
-      "headlines_updated": "2026-09-03T16:48:43.221938+00:00"
+      "headlines_updated": "2026-09-03T17:12:12.450948+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 35,
+        "title_snippet": 31,
+        "dropped_no_english": 4,
         "title_translated": 1,
         "title_native": 84,
         "in": 127,
-        "kept": 120
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -221,34 +222,33 @@
           "source": "TRT World",
           "title": "Syria, Denmark discuss strengthening ties as Copenhagen reopens Damascus embassy",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הלו\"ז של נתניהו מוכיח: השיחה הראשונה עם הרמטכ\"ל התקיימה כשלוש שעות לאחר תחילת המתקפה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הליכוד: טלי גוטליב תעבור לעוצמה יהודית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נתניהו: \"משוכנע ביכולתנו להסיר את האיום אחת ולתמיד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "104 مستوطن يقتحمون الأقصى وينظمون جوالات استفزازية في باحاته",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 69,
+      "in": 116,
+      "kept": 65,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "The article discusses Bennett's criticism of Netanyahu regarding alleged actions related to October 7th.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The price of fuel will decrease by half a shekel starting Monday night due to a reduction in the excise tax…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A collision between two vehicles on Highway 675 in the Jezreel Valley has resulted in two fatalities and one…",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
         {
           "source": "N12",
           "title": "A lawyer has been ordered to pay approximately 170,000 shekels for spreading a conspiracy theory against…",
@@ -310,6 +310,20 @@
           "title": "3 , China’s support for Iran shows its limits as US ramps up pressure on Tehran",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "4 , UN warns El Nino could be ‘off the charts’, strongest in decades",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , How much oil is going through Hormuz? Why data doesn’t match US claims",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -446,8 +460,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "This article commemorates the 25th anniversary of the martyrdom of 'Abu Ali Mustafa'.",
+          "source": "SANA",
+          "title": "Al-Shaibani receives copy of credentials from Danish ambassador",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "“The Blessed Olive” brings the land’s memory to life through art",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "“The Blessed Olive” brings the land’s memory to life through art",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -458,20 +486,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "SANA",
-          "title": "Russia warns Germany of firm response over Leipzig Airport measures",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Qatar, Egypt and Türkiye discuss efforts to ease regional tensions",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Arab News",
@@ -525,6 +539,13 @@
         {
           "source": "Anadolu Agency",
           "title": "Italy heat wave to last until at least Sept. 9, forecaster says",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Eisenkot leads Netanyahu as Israeli election blocs remain deadlocked: Poll",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -589,11 +610,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 48,
       "sizes": [
-        6,
         5,
-        3,
+        4,
         2,
         2,
         2,
@@ -602,9 +622,8 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -652,13 +671,12 @@
           "selected_rank": 1,
           "headline": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
             "newest": "2026-09-03T16:00+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Arab News",
             "Gulf News",
             "N12"
@@ -668,7 +686,7 @@
             "gulf",
             "panarab"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -682,11 +700,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "4 , How much oil is going through Hormuz? Why data doesn’t match US claims",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "Al Arabiya",
                 "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait",
@@ -702,94 +715,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Syria announces 1st chemical materials destruction since fall of Assad regime",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-03T16:12+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Kan 11",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "israeli",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Syria announces 1st chemical materials destruction since fall of Assad regime",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "According to a report in the 'Washington Post', approximately 5,000 oil trucks a",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "LIVE Four Lebanese, Syrian prisoners' release in Israel postponed until Friday: ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Israeli occupation forces detain 17 Palestinians in West Bank",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 1,
-            "newest": "2026-09-03T15:48+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Israeli occupation forces detain 17 Palestinians in West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Israeli occupation forces raid Idhna, west of Hebron, detain around 30 Palestini",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli occupation forces raid Idhna, west of Hebron, detain around 30 Palestini",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Russia rejects British allegations of involvement in Leipzig Airport drone incident",
           "rank_key": {
             "outlets": 2,
@@ -826,45 +751,45 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Putin sees Ukraine peace deal chance as Kyiv cites 'new dynamic'",
+          "selected_rank": 3,
+          "headline": "Syria briefs IAEA on efforts to resolve nuclear files linked to deposed regime",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-03T16:08+00:00"
+            "newest": "2026-09-03T16:00+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Daily Sabah"
+            "Iran International",
+            "SANA"
           ],
           "camps": [
-            "panarab",
-            "turkish"
+            "iranian",
+            "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Putin sees Ukraine peace deal chance as Kyiv cites 'new dynamic'",
+            "source": "SANA",
+            "title": "Syria briefs IAEA on efforts to resolve nuclear files linked to deposed regime",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
+              "names 2 of the story's dominant entities (nuclear, syria)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "5 , Ukraine takes the war to Russia’s space programme in tactical shift",
+                "source": "Iran International",
+                "title": "4 Peru cuts diplomatic ties, accuses Iran of escalating Middle East war",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Despite some reports, Israeli security assessments suggest Iran is unlikely to be drawn into a war d",
           "rank_key": {
             "outlets": 2,
@@ -895,6 +820,82 @@
               {
                 "source": "Al Manar",
                 "title": "Hezbollah's media relations denied any connection to a security cell allegedly p",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Jordan condemns Iranian attack on Kuwait",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-03T11:37+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Jordan Times"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Jordan condemns Iranian attack on Kuwait",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (jordan, kuwait)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Iran says it targeted bases in Kuwait and UAE over US military support",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "According to a report in the 'Washington Post', approximately 5,000 oil trucks are transiting throug",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-03T05:30+00:00"
+          },
+          "outlet_names": [
+            "Kan 11",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "According to a report in the 'Washington Post', approximately 5,000 oil trucks are transiting through Syria…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "LIVE Four Lebanese, Syrian prisoners' release in Israel postponed until Friday: ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -933,30 +934,30 @@
         },
         {
           "selected_rank": null,
-          "headline": "Arab League condemns repeated Iranian attacks on Jordan, Bahrain and Kuwait",
+          "headline": "Putin sees Ukraine peace deal chance as Kyiv cites 'new dynamic'",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-09-03T11:37+00:00"
+            "newest": "2026-09-03T16:58+00:00"
           },
           "outlet_names": [
-            "Jordan Times",
-            "SANA"
+            "Anadolu Agency",
+            "Daily Sabah"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "SANA",
-            "title": "Arab League condemns repeated Iranian attacks on Jordan, Bahrain and Kuwait",
+            "source": "Daily Sabah",
+            "title": "Putin sees Ukraine peace deal chance as Kyiv cites 'new dynamic'",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 3 of the story's dominant entities (bahrain, jordan, kuwait)",
-              "neutral-by-default outlet",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": []
@@ -964,17 +965,59 @@
         },
         {
           "selected_rank": null,
-          "headline": "Türkiye slams European Parliament over ‘slander’ targeting Turkish Armed Forces",
+          "headline": "Israeli forces continue land leveling, tree uprooting near Jenin",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-03T15:48+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Israeli forces continue land leveling, tree uprooting near Jenin",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Israeli occupation forces raid Idhna, west of Hebron, detain around 30 Palestini",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli occupation forces raid Idhna, west of Hebron, detain around 30 Palestini",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Need to pivot a wedding to a wake? Outsource to the US, Iran’s London Embassy snipes",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T16:34+00:00"
+            "newest": "2026-09-03T16:53+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "IRNA"
           ],
           "camps": [
-            "turkish"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1179,7 +1222,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1197,7 +1240,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-03T16:51:00.723816+00:00",
+    "last_success": "2026-09-03T17:14:36.082720+00:00",
     "last_failure": null
   },
   "ok": true
