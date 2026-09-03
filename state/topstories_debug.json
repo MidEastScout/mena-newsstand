@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T14:43:09.848214+00:00",
+  "updated": "2026-09-03T15:14:30.036923+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -37,13 +37,13 @@
         "Al Arabiya": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "The New Arab": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Al Mayadeen": {
@@ -73,7 +73,7 @@
         "Jordan Times": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "L'Orient Today": {
@@ -91,7 +91,7 @@
         "Al-Akhbar": {
           "headlines": 5,
           "lang": "ar",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Al Manar": {
@@ -127,19 +127,19 @@
         "Arab News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Gulf News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Al-Masirah": {
           "headlines": 1,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Anadolu Agency": {
@@ -151,13 +151,13 @@
         "Daily Sabah": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Hürriyet Daily News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "TRT World": {
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-03T14:38:19.374558+00:00"
+      "headlines_updated": "2026-09-03T15:12:57.464384+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 34,
+        "dropped_stale": 12,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 86,
+        "title_native": 80,
         "in": 127,
-        "kept": 121
+        "kept": 112
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -190,6 +191,36 @@
         {
           "source": "Jordan Times",
           "title": "Arab states condemn renewed Iranian attacks on Jordan, UAE",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "10 Syria security personnel wounded in clashes in Sweida- state TV",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syrian Foreign Minister receives outgoing Omani ambassador",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Israeli occupation forces carry out new incursion into western Daraa countryside",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria, South Korea sign education grant, media cooperation agreements",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Regional leaders discuss security, cooperation amid Middle East tensions",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria, Egypt discuss expanding economic ties, reviving joint business council",
           "reason": "stale (older than 48h)"
         },
         {
@@ -216,12 +247,27 @@
           "source": "TRT World",
           "title": "Death toll from Nepal-China floods tops 1,000, around 4,500 still missing",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: חיל האוויר תוקף במערב העיר עזה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الاحتلال يفرج عن 5 أسرى لبنانيين؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مصطفى يؤكد على أهمية تنسيق الجهود المبذولة في قطاع غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 69,
+      "in": 112,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -301,6 +347,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Jazeera",
+          "title": "5 , UN warns El Nino could be ‘off the charts’, strongest in decades",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Middle East Eye",
           "title": "Anger rises as ICC member states accused of facilitating Netanyahu’s flight to Washington",
           "sec": 0,
@@ -364,6 +417,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Mehr News",
+          "title": "Iran's PGSA updates list of violating vessels",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Iran International",
           "title": "VOICES FROM IRAN Iranians to Trump: This time you fight, help is on its way",
           "sec": 0,
@@ -376,13 +436,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "ANALYSIS ‘Eastern Mediterranean’ vs. ‘Mecca alliance:’ Lebanon, Syria at the heart of a regional power struggle",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
@@ -400,7 +453,7 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Nile River is matter of national security, Egypt retains right to defend water security: Sisi",
+          "title": "Nile River is matter of national security, Egypt retains right to defend its waters: Sisi",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -441,43 +494,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "The exceptional reception of Xi signifies that Egypt is exploring diversification of partnerships.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "WAFA News",
           "title": "Israel issues demolition and construction-stop orders against four homes in Arraba",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "This item is a segment from the biography of \"Abu Ali Mustafa\" on the 25th anniversary of his martyrdom.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Nepal, Tibet flood death toll rises to 1,273 as thousands remain missing",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "SANA",
-          "title": "Russia warns Germany of firm response over Leipzig Airport measures",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "UAE, U.S. presidents discuss Middle East developments, bilateral ties",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -512,14 +530,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Travelers face up to 3 hour waits at Brussels Airport amid new EU border system rollout",
+          "title": "Kenya's president orders India's Tata Chemicals to leave country",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "US-Türkiye friendship 'incredibly strong,' says US deputy chief of mission to Ankara",
+          "title": "Travelers face up to 3 hour waits at Brussels Airport amid new EU border system rollout",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -591,14 +609,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 46,
       "sizes": [
         7,
         4,
         4,
         3,
-        3,
-        2,
         2,
         2,
         2,
@@ -746,50 +762,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "10 Syria security personnel wounded in clashes in Sweida- state TV",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-03T13:13+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Jordan Times",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "10 Syria security personnel wounded in clashes in Sweida- state TV",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "A report states that approximately 5,000 oil trucks are traversing Syria to bypa",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "Terrorist group YPG hands over arms to Syrian army",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Israel is expected to release five prisoners to Lebanon today, in coordination with the United State",
           "rank_key": {
             "outlets": 3,
@@ -818,6 +790,43 @@
               "derived from the outlet's English snippet"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "A report states that approximately 5,000 oil trucks are traversing Syria to bypass the Strait of Hor",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-03T13:13+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "A report states that approximately 5,000 oil trucks are traversing Syria to bypass the Strait of Hormuz.",
+            "title_source": "snippet",
+            "why": [
+              "names 2 of the story's dominant entities (hormuz, syria)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Daily Sabah",
+                "title": "Terrorist group YPG hands over arms to Syrian army",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
           }
         },
         {
@@ -853,82 +862,6 @@
               {
                 "source": "Al Jazeera",
                 "title": "1 , Iran says it targeted bases in Kuwait and UAE over US military support",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Qatar, Egypt and Türkiye discuss efforts to ease regional tensions",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-03T08:42+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Qatar, Egypt and Türkiye discuss efforts to ease regional tensions",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (qatar)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Qatar, Egypt, Jordan denounce Iranian attacks on Arab neighbours",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Aoun stated that Israel is violating the 'Framework Agreement' and that the army is performing its d",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-03T08:38+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "IRNA"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "Aoun stated that Israel is violating the 'Framework Agreement' and that the army is performing its duties…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (lebanon_israel_deal)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "IRNA",
-                "title": "Israel conducts further attacks in Southern Lebanon despite framework agreement",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1004,6 +937,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Tel Aviv threatens Iran with strikes on energy facilities if it attacks Israel",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T14:37+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Beijing urges US to lift Iran-related sanctions on Chinese companies",
           "rank_key": {
             "outlets": 1,
@@ -1027,24 +978,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-09-03T14:10+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli army conducts drill in occupied Golan Heights",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T13:54+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1112,24 +1045,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Prime Minister of Lebanon described the release of a prisoner from Israel as an important step i",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T12:34+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Third fatal shooting in two hours: Young man killed in Nazareth",
           "rank_key": {
             "outlets": 1,
@@ -1141,6 +1056,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Judiciary chief arrives in India for BRICS summit",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T12:12+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1202,17 +1135,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "US army is grappling with profound crisis",
+          "headline": "Aoun stated that Israel is violating the 'Framework Agreement' and that the army is performing its d",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T07:50+00:00"
+            "newest": "2026-09-03T08:38+00:00"
           },
           "outlet_names": [
-            "Mehr News"
+            "Al-Akhbar"
           ],
           "camps": [
-            "iranian"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1237,7 +1170,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-03T14:43:28.689055+00:00",
+    "last_success": "2026-09-03T15:14:47.808215+00:00",
     "last_failure": null
   },
   "ok": true
