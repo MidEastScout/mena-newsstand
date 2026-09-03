@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T13:35:20.107347+00:00",
+  "updated": "2026-09-03T14:08:36.001691+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -37,7 +37,7 @@
         "Al Arabiya": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "The New Arab": {
@@ -49,7 +49,7 @@
         "Al Mayadeen": {
           "headlines": 5,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "IRNA": {
@@ -79,7 +79,7 @@
         "L'Orient Today": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Egypt Independent": {
@@ -103,7 +103,7 @@
         "WAFA News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Falastin al-Youm": {
@@ -133,13 +133,13 @@
         "Gulf News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Al-Masirah": {
           "headlines": 1,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Anadolu Agency": {
@@ -151,13 +151,13 @@
         "Daily Sabah": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Hürriyet Daily News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "TRT World": {
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-03T13:33:07.530045+00:00"
+      "headlines_updated": "2026-09-03T14:05:23.195259+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 34,
+        "dropped_stale": 11,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 86,
+        "title_native": 81,
         "in": 127,
-        "kept": 121
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -190,6 +191,31 @@
         {
           "source": "Jordan Times",
           "title": "Arab states condemn renewed Iranian attacks on Jordan, UAE",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syrian Foreign Minister receives outgoing Omani ambassador",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Israeli occupation forces carry out new incursion into western Daraa countryside",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria, South Korea sign education grant, media cooperation agreements",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Regional leaders discuss security, cooperation amid Middle East tensions",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria, Egypt discuss expanding economic ties, reviving joint business council",
           "reason": "stale (older than 48h)"
         },
         {
@@ -216,27 +242,28 @@
           "source": "TRT World",
           "title": "Death toll from Nepal-China floods tops 1,000, around 4,500 still missing",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ש״ס עתרה נגד היועמ״שית: ״לא ניתן לה לרמוס חוק של הכנסת ולפגוע במורשת מרן״",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "בת 90 נותרה ללא חשמל בביתה כבר כמה ימים: \"זו סכנת נפשות\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "אחרי חודשיים של מחאות סוערות וונדליזם: קפה \"בסמטה\" בירושלים לא ייפתח יותר בשבת",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
+      "in": 113,
       "kept": 61,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "The wave of resignations in Yesh Atid continues, with MK Karin Elharrar announcing she will not run in the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The trial of Lindsay Clancy, accused of killing her three children, has reached an impasse as the jury…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Channel 13",
           "title": "Drivers can expect a decrease in fuel prices on the night between Sunday and Monday.",
@@ -274,21 +301,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , Why has the Netherlands moved $10bn of its gold from the US?",
+          "title": "3 , Why has the Netherlands moved $10bn of its gold from the US?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , China’s support for Iran shows its limits as US ramps up pressure on Tehran",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , UN warns El Nino could be ‘off the charts’, strongest in decades",
+          "title": "4 , China’s support for Iran shows its limits as US ramps up pressure on Tehran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -344,21 +364,14 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Al Mayadeen shares a segment from the biography of 'Abu Ali Mustafa' on the 25th anniversary of his martyrdom.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Al Mayadeen reports a Republican congressman is demanding Trump dismiss US Defense Secretary Pete Hegseth…",
+          "title": "A segment from the biography of 'Abu Ali Mustafa' is shared on the 25th anniversary of his martyrdom.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Mehr News",
-          "title": "Resistance front united against US: Qalibaf",
+          "source": "Al Mayadeen",
+          "title": "Al Mayadeen reports a Republican congressman is demanding Trump dismiss US Defense Secretary Pete Hegseth…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -421,10 +434,10 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Egypt, Jordan FMs discuss Sinai bus crash, facilitation for Jordanian victims",
-          "sec": 1,
+          "title": "Nile River is matter of national security, Egypt retains right to defend water security: Sisi",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
@@ -436,13 +449,6 @@
         {
           "source": "Egypt Independent",
           "title": "Saudi Arabia’s security remains a red line for Egypt: Sisi",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "Egyptian court halts trial of manual laborer who impersonated judge in housing scam",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -504,27 +510,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Russia warns Germany of firm response over Leipzig Airport measures",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Qatar, Egypt and Türkiye discuss efforts to ease regional tensions",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "UAE, U.S. presidents discuss Middle East developments, bilateral ties",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Saudi Pro League’s Capital Derby moves to King Fahd Sports City Stadium",
           "sec": 0,
@@ -561,7 +546,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Israel's Ben-Gvir plans to relocate 1.86M Palestinians from Gaza over 7 years: Report",
+          "title": "EXPLAINER – What is the Lindsay Clancy case and why has the trial divided the US?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -647,18 +632,23 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 51,
       "sizes": [
         5,
-        4,
+        3,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -700,15 +690,15 @@
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 5,
+      "selected": 4,
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Trump says US ready for more Iran strikes, denies plans to rename Hormuz Strait after himself",
+          "headline": "The US achieved a record transfer of oil through the Strait of Hormuz, with 18 million barrels moved",
           "rank_key": {
             "outlets": 3,
             "camps": 3,
-            "newest": "2026-09-03T06:34+00:00"
+            "newest": "2026-09-03T13:07+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -724,19 +714,24 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Gulf News",
-            "title": "Trump says US ready for more Iran strikes, denies plans to rename Hormuz Strait after himself",
-            "title_source": "native",
+            "source": "N12",
+            "title": "The US achieved a record transfer of oil through the Strait of Hormuz, with 18 million barrels moved in one…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
                 "source": "Al Arabiya",
                 "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Trump says US ready for more Iran strikes, denies plans to rename Hormuz Strait ",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -828,151 +823,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Britain summons Russian charge d’affaires over Leipzig airport attack",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-03T12:06+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Britain summons Russian charge d’affaires over Leipzig airport attack",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Reports suggest Iran warned the US, and the security establishment believes Hezbollah is trying to d",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-03T10:00+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Reports suggest Iran warned the US, and the security establishment believes Hezbollah is trying to drag Iran…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Hezbollah's media relations denied any connection to a security cell allegedly b",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iranian army claims latest attacks on US bases in Kuwait, UAE",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-03T09:34+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iranian army claims latest attacks on US bases in Kuwait, UAE",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (kuwait)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran says it targeted bases in Kuwait and UAE over US military support",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Al Akhbar reports that Aoun stated Israel is violating the 'Framework Agreement' and that the army i",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-03T08:38+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "IRNA"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "Al Akhbar reports that Aoun stated Israel is violating the 'Framework Agreement' and that the army is…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (lebanon_israel_deal)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "IRNA",
-                "title": "Israel conducts further attacks in Southern Lebanon despite framework agreement",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "According to a Washington Post report, 5,000 oil trucks are passing through Syria from the port of D",
           "rank_key": {
             "outlets": 2,
@@ -1011,34 +861,93 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli occupation forces detain 17 Palestinians in West Bank",
+          "headline": "Israeli army conducts drill in occupied Golan Heights",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T11:47+00:00"
+            "newest": "2026-09-03T13:54+00:00"
           },
           "outlet_names": [
-            "SANA",
-            "WAFA News"
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Libya's Tripoli oil depot targeted by suspected drone amid fuel crisis",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T13:54+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Upgraded Su-57 stealth fighter debuts at Egypt International Airshow with new weaponry",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T13:46+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
           ],
           "camps": [
             "levant"
           ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Israeli occupation forces detain 17 Palestinians in West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Yemeni army launches counterattack, killing 18 Houthi militants in western Taiz province",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T13:31+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "15 militants trying to infiltrate through Afghanistan border killed: Pakistan army",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T13:31+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1071,42 +980,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "3 Iranian military pilots killed in recent US attack: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T13:12+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Foreign fighters, weapons networks fuelling Sudan war: UN fact-finding mission",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T13:12+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1168,17 +1041,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Gulf states source told N12 that patience with Iran is running out, and the region is paying the p",
+          "headline": "Britain summons Russian charge d’affaires over Leipzig airport attack",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T11:30+00:00"
+            "newest": "2026-09-03T12:06+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Al Arabiya"
           ],
           "camps": [
-            "israeli"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1186,78 +1059,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Two arrested after arson attack on German defence technology company",
+          "headline": "Israeli forces demolish four water wells, greenhouses in Hebron",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T10:25+00:00"
+            "newest": "2026-09-03T11:47+00:00"
           },
           "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israel is expected to release 5 Lebanese prisoners today in coordination with the US as a gesture wi",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T10:23+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Wedding strike exposes US savagery: Expediency Council chief",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T10:16+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "104 settlers stormed the Al-Aqsa Mosque and conducted provocative tours in its courtyards.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T10:16+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
+            "WAFA News"
           ],
           "camps": [
             "levant"
           ],
-          "members": 1,
+          "members": 3,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "35 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1275,7 +1094,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-03T13:35:41.610042+00:00",
+    "last_success": "2026-09-03T14:08:49.315488+00:00",
     "last_failure": null
   },
   "ok": true
