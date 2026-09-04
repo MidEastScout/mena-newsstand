@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T09:55:30.185074+00:00",
+  "updated": "2026-09-04T10:27:14.956202+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-04T09:53:30.719891+00:00"
+      "headlines_updated": "2026-09-04T10:25:22.434993+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 35,
-        "title_translated": 1,
+        "title_snippet": 32,
+        "title_translated": 2,
         "title_native": 86,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 122
+        "kept": 120
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -209,14 +210,24 @@
         },
         {
           "source": "TRT World",
-          "title": "UK slams Israel's 'appalling settler terrorism' in occupied West Bank",
+          "title": "Germany alleges Russian role in Leipzig drone plot, announces sanctions",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: سرايا القدس: مجاهدونا تمكنوا من اكتشاف قوة صهيونية توغلت في حي القرارة شمال خان يونس لمحاولة اختطاف أحد ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مطالبات أميركية بإلغاء بند تعزيز العلاقات الدفاعية مع \"إسرائيل\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 70,
+      "in": 120,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
@@ -269,6 +280,13 @@
         },
         {
           "source": "Al Jazeera",
+          "title": "2 , How much oil is going through Hormuz? Why data doesn’t match US claims",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
           "title": "5 , Pete Hegseth’s Pentagon: A list of controversies that define his tenure",
           "sec": 0,
           "off": 0,
@@ -303,13 +321,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Israeli minister presents plan to remove Gaza population",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "US hands over ancient sarcophagus fragments to Lebanon",
           "sec": 0,
@@ -332,14 +343,14 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Iran's orbital wings are reportedly stronger than the aggression it faces.",
+          "title": "Ten a.m. bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "Germany is reshaping its Western position, escalating actions against Moscow while maintaining support for…",
+          "title": "Iran's orbital wings are reportedly stronger than the aggression it faces.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -360,9 +371,9 @@
         },
         {
           "source": "IRNA",
-          "title": "Iran’s Soltaninejad wins gold at 2026 World Nomad Games",
+          "title": "Exclusive | Iran’s Foreign Ministry official rejects claims China set conditions for ties",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -527,6 +538,27 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Meloni’s government becomes longest-serving in history of Italian republic",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Spain proposes EU climate fund financed by taxes on oil, gas firms, private jets",
+          "sec": 0,
+          "off": 1,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Add variety to your fall garden with unusual mums",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Fury grows as Israel plans to displace 1.86M Palestinians from Gaza",
           "sec": 0,
@@ -586,20 +618,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 55,
+      "clusters": 50,
       "sizes": [
-        6,
+        5,
         4,
         4,
+        3,
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -654,13 +681,12 @@
           "selected_rank": 1,
           "headline": "Ship traffic through Strait of Hormuz drops sharply, Kpler data shows",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
             "newest": "2026-09-04T08:31+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Arab News",
             "Gulf News",
             "SANA"
@@ -670,7 +696,7 @@
             "panarab",
             "levant"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -685,11 +711,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "3 , How much oil is going through Hormuz? Why data doesn’t match US claims",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Arabiya",
                 "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
                 "rejected_by": "older than the story's newest wave"
@@ -702,6 +723,11 @@
               {
                 "source": "Arab News",
                 "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "40 ships: CentCom escorts record 18 million barrels of oil through Hormuz as US-",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -754,6 +780,49 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Israeli forces advance into southern Lebanon, shell several areas",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 1,
+            "newest": "2026-09-03T09:50+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "L'Orient Today",
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Israeli forces advance into southern Lebanon, shell several areas",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "Israel releases 5 detainees as army announces 'operational control' of Ali Taher",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "Enemy warplanes conducted raids on the vicinity of the Ali Taher area in souther",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Palestinian youth killed by Israeli police gunfire near Damascus Gate in Jerusalem",
           "rank_key": {
             "outlets": 2,
@@ -785,7 +854,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Palestinian killed, three wounded by Israeli occupation fire in Gaza",
           "rank_key": {
             "outlets": 2,
@@ -822,7 +891,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Following the IDF's announcement of clearing the Ali Taher ridge, Israel is bracing for a potential…",
           "rank_key": {
             "outlets": 2,
@@ -899,61 +968,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces advance into southern Lebanon, shell several areas",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-03T09:50+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Israeli forces advance into southern Lebanon, shell several areas",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Enemy warplanes conducted raids on the vicinity of the Ali Taher area in souther",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Finland says surveying drone found near southern coast is Russian-made",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-04T09:52+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran demonstrated strategic resilience despite US attacks, says Judiciary chief",
           "rank_key": {
             "outlets": 1,
@@ -965,24 +979,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Belgium condemns honors for convicted Bosnian Serb war criminal Ratko Mladic",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-04T09:43+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1044,6 +1040,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Police say killed Palestinian in Jerusalem after attempted knife attack",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T08:59+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "4 migrants killed as South Africa’s anti-migrant unrest soars",
           "rank_key": {
             "outlets": 1,
@@ -1098,24 +1112,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Daesh suspect accused of planning terrorist attack killed in Istanbul",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-04T07:44+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Al-Quds Brigades engaged militants in Khan Yunis who allegedly attempted to abduct a resistance figh",
           "rank_key": {
             "outlets": 1,
@@ -1151,7 +1147,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "36 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Two children were among those injured by gunfire directed at refugee tents in Khan Yunis.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T05:48+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "South Korea's security talks with Washington are not making progress.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T03:09+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1169,7 +1201,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-04T09:55:53.731742+00:00",
+    "last_success": "2026-09-04T10:27:31.975667+00:00",
     "last_failure": null
   },
   "ok": true
