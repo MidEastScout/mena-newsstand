@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T04:02:59.864302+00:00",
+  "updated": "2026-09-04T04:34:32.190387+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-04T04:00:31.148313+00:00"
+      "headlines_updated": "2026-09-04T04:32:42.994441+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 34,
-        "title_native": 86,
+        "dropped_stale": 5,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
+        "title_native": 87,
         "title_translated": 1,
         "in": 127,
-        "kept": 121
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -198,11 +199,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Jordan Times",
-          "title": "Jordan condemns storming of Al Aqsa Mosque by far-right Israeli minister",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Syria Direct",
           "title": "The Libyan odyssey: For Syrians stranded in Libya, Assad’s fall has not ended their journey home",
           "reason": "stale (older than 48h)"
@@ -216,23 +212,31 @@
           "source": "TRT World",
           "title": "UK slams Israel's 'appalling settler terrorism' in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "11 מחיילי ההסדר שסירבו לבצע נסיעה מבצעית בחברת פרמדיקית ברכב צה''לי ישוחררו היום מהכלא",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מוריה וברקו 03.09.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "سامي العريان يكتب للميادين نت: حماس بعد الطوفان: حين تتحول المرونة التكتيكية إلى تراجع استراتيجي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 70,
+      "in": 119,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "The price of fuel will decrease by half a shekel starting Monday night.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Meteorological forecasts predict a slight drop in temperatures, particularly in mountainous and inland areas.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -261,13 +265,6 @@
         {
           "source": "Channel 13",
           "title": "The full program for 'Asenheim' Season 1, Episode 13, featuring Avigdor Lieberman, is available for viewing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Nas Daily shared his thoughts on his identity post-October 7, stating he feels \"the most Israeli I've ever…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -323,7 +320,7 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Israeli minister presents plan to remove Gaza population",
+          "title": "US hands over ancient sarcophagus fragments to Lebanon",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -372,7 +369,7 @@
         },
         {
           "source": "IRNA",
-          "title": "Exclusive | Iran’s Foreign Ministry official rejects claims China set conditions for ties",
+          "title": "Qalibaf: Bessent on the brink as oil reserves fall and bond yields surge",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -394,6 +391,13 @@
         {
           "source": "Jordan Times",
           "title": "King receives letter from retired Lt. Gen. Huneiti",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "King receives letter from newly appointed chairman of joint chiefs of staff",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -511,15 +515,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Khorfakkan Port receives one of world’s largest container ships",
+          "source": "Anadolu Agency",
+          "title": "US House approves bill to penalize universities for Israel boycotts",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "US House approves bill to penalize universities for Israel boycotts",
+          "title": "Cathay Pacific cancels flights to Dubai, Riyadh until Dec. 1",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -584,7 +588,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 48,
       "sizes": [
         7,
         5,
@@ -594,7 +598,6 @@
         3,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -891,33 +894,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "US probing alleged Iranian wedding strike but ‘skeptical’: Vance",
+          "headline": "US keeps military, economic and covert options open on Iran",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-03T19:02+00:00"
+            "newest": "2026-09-04T03:21+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency"
+            "Al Jazeera",
+            "Gulf News"
           ],
           "camps": [
-            "panarab",
-            "turkish"
+            "gulf",
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "US probing alleged Iranian wedding strike but ‘skeptical’: Vance",
+            "source": "Gulf News",
+            "title": "US keeps military, economic and covert options open on Iran",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , US’s Vance says all options open for Iran, including military pressure",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1181,14 +1190,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Following the release of Ghazi, it is expected that the occupation will release four Lebanese indivi",
+          "headline": "US probing alleged Iranian wedding strike but ‘skeptical’: Vance",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-03T16:12+00:00"
+            "newest": "2026-09-03T18:17+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
+            "Al Arabiya"
           ],
           "camps": [
             "panarab"
@@ -1198,7 +1207,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1216,7 +1225,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-04T04:03:14.858412+00:00",
+    "last_success": "2026-09-04T04:34:46.378172+00:00",
     "last_failure": null
   },
   "ok": true
