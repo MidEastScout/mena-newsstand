@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T18:23:54.094990+00:00",
+  "updated": "2026-09-04T18:55:51.519644+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -121,7 +121,7 @@
         "Syria Direct": {
           "headlines": 1,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Arab News": {
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-04T18:21:50.173489+00:00"
+      "headlines_updated": "2026-09-04T18:53:51.442326+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 34,
+        "dropped_stale": 10,
+        "title_snippet": 33,
+        "dropped_no_english": 1,
         "title_translated": 2,
-        "title_native": 82,
+        "title_native": 81,
         "in": 127,
-        "kept": 118
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -187,6 +188,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "US strikes wedding party in southern Iran: What we know so far",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "IRNA",
           "title": "Israel conducts further attacks in Southern Lebanon despite framework agreement",
@@ -231,12 +237,17 @@
           "source": "TRT World",
           "title": "Turkish authorities locate ship that sank after collision off Istanbul's Silivri coast",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הנשיא טראמפ בתדרוך לכתבים בבית הלבן: אולי נתקוף בקרוב את הר המכוש באיראן",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 50,
+      "in": 116,
+      "kept": 51,
       "dropped": [
         {
           "source": "Kan 11",
@@ -255,13 +266,6 @@
         {
           "source": "Kan 11",
           "title": "A seven-year-old girl has died from her injuries after being critically hit by a tractor in the village of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A 16-year-old electric bicycle rider sustained moderate injuries in an accident in the Jezreel Valley.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -323,6 +327,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Jazeera",
+          "title": "5 , ‘Winds of change’: How Milei is stirring Falklands claim amid Trump-UK spat",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Middle East Eye",
           "title": "Anger rises as ICC member states accused of facilitating Netanyahu’s flight to Washington",
           "sec": 0,
@@ -349,13 +360,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Red Cross says transferred four people released by Israel to Lebanon",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "The New Arab",
@@ -561,13 +565,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Israeli authorities demolish Palestinian home west of Bethlehem",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "American organizations are calling for the cancellation of a clause promoting defense cooperation with…",
           "sec": 0,
@@ -633,13 +630,6 @@
         {
           "source": "Al-Masirah",
           "title": "Meshimish stated that aggression against Iran threatens global stability and puts Europe and America on the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Lebanon receives 4 more detainees from Israel in Red Cross-mediated handover",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -726,7 +716,7 @@
         3,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -933,6 +923,38 @@
         },
         {
           "selected_rank": 5,
+          "headline": "2 killed in Israeli drone strike in southern Lebanon despite ceasefire",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-04T18:48+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "2 killed in Israeli drone strike in southern Lebanon despite ceasefire",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli police kill Palestinian in occupied East Jerusalem",
           "rank_key": {
             "outlets": 2,
@@ -999,7 +1021,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Russia’s jet-powered drones overwhelm Ukraine, killing dozens",
+                "title": "3 , Russia’s jet-powered drones overwhelm Ukraine, killing dozens",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1007,14 +1029,50 @@
         },
         {
           "selected_rank": null,
-          "headline": "UN urges restraint in Yemen, warns of civilian risks in Gaza, West Bank",
+          "headline": "Trump administration planning post-war Middle East strategy: Report",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-04T18:00+00:00"
+            "newest": "2026-09-04T18:44+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Türkiye pursuing efforts to end Iran-US tensions, Turkish president tells UAE leader in phone call",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T18:37+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "German police hunt suspect over power grid sabotage attacks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T18:34+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1061,24 +1119,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "2 killed in Israeli drone strike in southern Lebanon despite ceasefire",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-04T16:57+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "HMRC threatened with legal action over Israeli settlements trade",
           "rank_key": {
             "outlets": 1,
@@ -1102,24 +1142,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-09-04T16:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Weather, wars send global food prices to nearly 4-year",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-04T15:04+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1187,6 +1209,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Police say killed Palestinian in Jerusalem after attempted knife attack",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T08:59+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran has bypassed US naval blockade: oil minister",
           "rank_key": {
             "outlets": 1,
@@ -1204,25 +1244,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "The United Nations stated that no one is safe from Israeli aggression in the Gaza Strip.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-04T08:07+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1240,7 +1262,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-04T18:24:12.615082+00:00",
+    "last_success": "2026-09-04T18:56:10.473911+00:00",
     "last_failure": null
   },
   "ok": true
