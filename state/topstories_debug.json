@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-04T16:44:46.934630+00:00",
+  "updated": "2026-09-04T17:16:28.101412+00:00",
   "stages": {
     "fetch": {
-      "items": 128,
+      "items": 127,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -37,7 +37,7 @@
         "Al Arabiya": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "The New Arab": {
@@ -137,9 +137,9 @@
           "error": null
         },
         "Al-Masirah": {
-          "headlines": 2,
+          "headlines": 1,
           "lang": "ar",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "Anadolu Agency": {
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-04T16:42:53.315182+00:00"
+      "headlines_updated": "2026-09-04T17:14:44.838779+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 36,
-        "title_translated": 1,
-        "title_native": 84,
-        "in": 128,
-        "kept": 121
+        "dropped_stale": 8,
+        "title_snippet": 31,
+        "title_translated": 2,
+        "title_native": 83,
+        "dropped_no_english": 3,
+        "in": 127,
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 36,
+        "requested": 34,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -204,7 +205,12 @@
         },
         {
           "source": "Arab News",
-          "title": "US military completes latest strikes against Iran, while Trump vows more for Tehran’s retaliation",
+          "title": "‘Massive’ Russian missile, drone attack on Kyiv kills 8",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "Israel ready to remove Gaza population if US gives approval: minister",
           "reason": "stale (older than 48h)"
         },
         {
@@ -221,12 +227,27 @@
           "source": "TRT World",
           "title": "Qatar, Egypt, Jordan denounce Iranian attacks on Arab neighbours",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: سرايا القدس: مجاهدونا تمكنوا من اكتشاف قوة صهيونية توغلت في حي القرارة شمال خان يونس لمحاولة اختطاف أحد ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"سرايا القدس\" تشتبك مع ميليشيات بخانيونس حاولت اختطاف أحد المقاومين قبل اغتياله",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "صحيفة تكشف تفاصيل عملية اختطاف مسؤول بارز في \"حماس\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 54,
+      "in": 116,
+      "kept": 52,
       "dropped": [
         {
           "source": "Kan 11",
@@ -300,7 +321,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , US rejects Israeli suggestions of removing Palestinians from Gaza",
+          "title": "2 , US rejects Israeli suggestions of removing Palestinians from Gaza",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -348,15 +369,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "Algeria’s Wildfires show a state unprepared for climate chaos",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Civil society opposition to Sudan's Burhan-led dialogue mounts",
+          "source": "Al Mayadeen",
+          "title": "Four p.m. bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -371,20 +385,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Israeli athletes have been barred from participating in a triathlon event in Northern Ireland.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "China's President of the Supreme People's Court, Ejei, stated that Iran has demonstrated strategic stability…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "According to 'Maariv', Trump and Netanyahu are leaving behind a 'scorched earth' and an erosion of…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -433,7 +433,7 @@
         },
         {
           "source": "Iran International",
-          "title": "5 Iran drug shortages hit 800 medicines as costs could triple",
+          "title": "4 Iran drug shortages hit 800 medicines as costs could triple",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -538,6 +538,13 @@
         },
         {
           "source": "WAFA News",
+          "title": "EU slams Israeli ministers’ remarks on forced displacement of Gazans as “unacceptable”",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "WAFA News",
           "title": "Warnings over erosion of international legal order amid efforts to isolate ICC",
           "sec": 0,
           "off": 0,
@@ -560,6 +567,20 @@
         {
           "source": "Falastin al-Youm",
           "title": "Oil prices have risen amid gains in gold and a decline in the dollar, according to paltoday.ps.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "Nepal, Tibet flood death toll rises to 1,273 as thousands remain missing",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "SANA",
+          "title": "Scenes from the Damascus International Fair on its final day",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -601,13 +622,6 @@
         },
         {
           "source": "Al-Masirah",
-          "title": "This refers to a commentary on the stance of Imam Zayd regarding corrupt scholars.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Masirah",
           "title": "It is stated that the aggression against Iran threatens global stability and places Europe and America on the…",
           "sec": 0,
           "off": 0,
@@ -615,23 +629,9 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Freedom Flotilla announces new mission to Gaza in October",
+          "title": "Trump urges Fed to ‘get smart,’ cut interest rates",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Turkish President Erdogan congratulates Meloni on becoming Italy's longest-serving prime minister",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Far-right AfD set for historic eastern win, raising pressure on Merz",
-          "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -701,18 +701,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 39,
       "sizes": [
-        4,
         3,
         3,
         3,
+        3,
+        3,
         2,
         2,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -755,23 +753,21 @@
           "selected_rank": 1,
           "headline": "Seoul Korea breaks silence on secret Strait of Hormuz deployment reports",
           "rank_key": {
-            "outlets": 4,
-            "camps": 4,
+            "outlets": 3,
+            "camps": 3,
             "newest": "2026-09-04T12:35+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Arab News",
             "Egypt Independent",
             "Mehr News"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -789,46 +785,52 @@
                 "source": "Al Arabiya",
                 "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Smoke rises in central Kyiv after Russian drone attack",
+          "headline": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
           "rank_key": {
             "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-04T14:28+00:00"
+            "camps": 3,
+            "newest": "2026-09-04T08:07+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Daily Sabah"
+            "Arab News",
+            "Falastin al-Youm",
+            "Middle East Eye"
           ],
           "camps": [
+            "gulf",
             "panarab",
-            "turkish"
+            "levant"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Smoke rises in central Kyiv after Russian drone attack",
+            "source": "Middle East Eye",
+            "title": "Palestinians launch #TheyLiedtoYou campaign to debunk Gaza 'ceasefire' narrative",
             "title_source": "native",
             "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
+              "names 1 of the story's dominant entities (gaza)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Falastin al-Youm",
+                "title": "The United Nations stated that no one is safe from Israeli aggression in the Gaz",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "Arab News",
+                "title": "Extremist Israeli minister Ben Gvir presents plan to remove Palestinians from Ga",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -877,43 +879,70 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Reports indicate a series of Israeli military strikes in the village of Al-Mansouri, located in sout",
+          "headline": "2 killed in Israeli drone strike in southern Lebanon despite ceasefire",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-04T16:38+00:00"
+            "newest": "2026-09-04T16:57+00:00"
           },
           "outlet_names": [
-            "Al Manar",
+            "Anadolu Agency",
             "Kan 11"
           ],
           "camps": [
             "israeli",
-            "levant"
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Reports indicate a series of Israeli military strikes in the village of Al-Mansouri, located in southern…",
-            "title_source": "snippet",
+            "source": "Anadolu Agency",
+            "title": "2 killed in Israeli drone strike in southern Lebanon despite ceasefire",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Enemy warplanes reportedly attacked the vicinity of the Ali Taher area in southe",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
           "selected_rank": 5,
+          "headline": "Smoke rises in central Kyiv after Russian drone attack",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-04T16:56+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Smoke rises in central Kyiv after Russian drone attack",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli police kill Palestinian in occupied East Jerusalem",
           "rank_key": {
             "outlets": 2,
@@ -951,52 +980,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces demolish Palestinian homes in West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-04T00:03+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Israeli forces demolish Palestinian homes in West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "Occupation authorities have issued notices for the demolition and cessation of c",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Palestinian killed, three wounded by Israeli occupation fire in Gaza",
+          "headline": "Palestinian youth killed by Israeli police gunfire near Damascus Gate in Jerusalem",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-09-04T08:49+00:00"
+            "newest": "2026-09-04T05:16+00:00"
           },
           "outlet_names": [
-            "SANA",
+            "Al Manar",
             "WAFA News"
           ],
           "camps": [
@@ -1006,19 +997,19 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "SANA",
-            "title": "Palestinian killed, three wounded by Israeli occupation fire in Gaza",
+            "source": "WAFA News",
+            "title": "Palestinian youth killed by Israeli police gunfire near Damascus Gate in Jerusalem",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
+              "names 1 of the story's dominant entities (syria)",
               "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "Two Palestinian killed, others injured by Israeli gunfire in Gaza's Beit Lahia",
+                "source": "Al Manar",
+                "title": "Hezbollah's media relations denied any connection to a security cell allegedly b",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1057,17 +1048,53 @@
         },
         {
           "selected_rank": null,
-          "headline": "EU slams Israeli ministers’ remarks on forced displacement of Gazans as “unacceptable”",
+          "headline": "Calls for Adidas boycott after brand features Israeli soldier",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-04T16:01+00:00"
+            "newest": "2026-09-04T16:57+00:00"
           },
           "outlet_names": [
-            "WAFA News"
+            "The New Arab"
           ],
           "camps": [
-            "levant"
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "HMRC threatened with legal action over Israeli settlements trade",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T16:47+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli army blocks aid to Palestinians besieged by occupiers",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T16:05+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1119,24 +1146,6 @@
           },
           "outlet_names": [
             "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Arab League condemns Iranian attacks on Kuwait, backs sovereignty",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-04T12:33+00:00"
-          },
-          "outlet_names": [
-            "SANA"
           ],
           "camps": [
             "levant"
@@ -1219,24 +1228,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The United Nations stated that no one is safe from Israeli aggression in the Gaza Strip, according t",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-04T08:07+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "American human rights organizations are calling for the cancellation of a provision that would stren",
           "rank_key": {
             "outlets": 1,
@@ -1255,24 +1246,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Injuries, including two girls, were reported due to gunfire towards displaced persons' tents in Khan",
+          "headline": "US keeps military, economic and covert options open on Iran",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-04T05:48+00:00"
+            "newest": "2026-09-04T03:21+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm"
+            "Gulf News"
           ],
           "camps": [
-            "levant"
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1290,7 +1281,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-04T16:45:16.685518+00:00",
+    "last_success": "2026-09-04T17:16:43.325836+00:00",
     "last_failure": null
   },
   "ok": true
