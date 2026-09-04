@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T00:22:13.712210+00:00",
+  "updated": "2026-09-04T00:53:53.671610+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-04T00:20:18.504605+00:00"
+      "headlines_updated": "2026-09-04T00:52:14.285673+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 33,
+        "title_snippet": 32,
         "title_translated": 2,
         "title_native": 84,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 119
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -226,12 +227,17 @@
           "source": "TRT World",
           "title": "UK slams Israel's 'appalling settler terrorism' in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: قاليباف لبينست: يا بطل ابذل كل ما لديك من قوة للتدخل أكثر في أسعار النفط الآجلة أو استمر في تفريغ النفط من المخزو",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 68,
+      "in": 118,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -291,23 +297,16 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , China’s support for Iran shows its limits as US ramps up pressure on Tehran",
+          "title": "3 , China’s support for Iran shows its limits as US ramps up pressure on Tehran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Why has the Netherlands moved $10bn of its gold from the US?",
+          "title": "4 , Why has the Netherlands moved $10bn of its gold from the US?",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , How much oil is going through Hormuz? Why data doesn’t match US claims",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -397,6 +396,13 @@
         {
           "source": "Jordan Times",
           "title": "2026 JFA Shield Cup kicks off",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Gov’t launches digital spokesperson service ‘Farah’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -535,13 +541,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Canada announces $3.4B manufacturing investment amid US trade tensions",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Israel’s far-right allies discover a red line",
           "sec": 0,
@@ -589,20 +588,26 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Senior US official oversees Chevron, ENI, GE offshoot sign 'tens of billions' in Venezuela deals",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 44,
       "sizes": [
         6,
         5,
         5,
         4,
+        4,
         3,
-        3,
-        2,
         2,
         2,
         1,
@@ -708,6 +713,52 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Israeli forces shell area near Beit Jinn in Syria's Damascus",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-03T20:32+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Anadolu Agency",
+            "Daily Sabah",
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Israeli forces shell area near Beit Jinn in Syria's Damascus",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Kan 11",
+                "title": "According to a Washington Post report, 5,000 oil trucks are transiting through S",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "Hezbollah's media relations denied any connection to a security cell allegedly f",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Israel’s release of the Lebanese prisoners is due to US mediation: Report",
           "rank_key": {
             "outlets": 4,
@@ -752,7 +803,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Trump floats renaming Strait of Hormuz as ‘Trump Strait’",
           "rank_key": {
             "outlets": 4,
@@ -798,7 +849,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Israeli forces demolish Palestinian homes in West Bank",
           "rank_key": {
             "outlets": 4,
@@ -853,45 +904,6 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Israeli forces shell area near Beit Jinn in Syria's Damascus",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-03T20:32+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Daily Sabah",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Israeli forces shell area near Beit Jinn in Syria's Damascus",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "According to a Washington Post report, 5,000 oil trucks are transiting through S",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": null,
           "headline": "US probing alleged Iranian wedding strike but ‘skeptical’: Vance",
           "rank_key": {
@@ -913,37 +925,6 @@
           "representative": {
             "source": "Al Arabiya",
             "title": "US probing alleged Iranian wedding strike but ‘skeptical’: Vance",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-02T05:25+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -1028,6 +1009,24 @@
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump names Adam Telle as acting army secretary",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-04T00:08+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1143,24 +1142,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Safadi, Austrian foreign minister discuss bilateral relations, regional developments",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T18:44+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Fifty-six American organizations have warned Congress against expanding military cooperation with Is",
           "rank_key": {
             "outlets": 1,
@@ -1197,24 +1178,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A political performance video condemns Ben Gvir's policies in prisons.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-03T15:52+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Tunisia top court begins final hearing in mass trial of opposition figures, despite condemnation fro",
           "rank_key": {
             "outlets": 1,
@@ -1226,6 +1189,24 @@
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Upgraded Su-57 stealth fighter debuts at Egypt International Airshow with new weaponry",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-03T13:46+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1250,7 +1231,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-04T00:22:55.180290+00:00",
+    "last_success": "2026-09-04T00:54:17.634715+00:00",
     "last_failure": null
   },
   "ok": true
