@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05T14:14:20.548296+00:00",
+  "updated": "2026-09-05T14:45:50.236151+00:00",
   "stages": {
     "fetch": {
       "items": 132,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-05T14:12:30.012366+00:00"
+      "headlines_updated": "2026-09-05T14:44:04.767807+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 36,
+        "title_snippet": 34,
         "title_translated": 1,
+        "dropped_no_english": 2,
         "title_native": 87,
         "in": 132,
-        "kept": 124
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -226,12 +227,22 @@
           "source": "TRT World",
           "title": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "עושים שישי עם אריק וייס 04.09.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"פרויקט חיי\": איילין יצאה מהאנורקסיה - ומדגמנת מאבק ברזון",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 63,
+      "in": 122,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -262,24 +273,24 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "A child on the autism spectrum was asked to leave a hotel with his family after shouting in the lobby.",
+          "source": "Al Jazeera",
+          "title": "4 , How big is Africa really? Why the UN voted to change the world map",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , How big is Africa really? Why the UN voted to change the world map",
+          "title": "5 , Iran President Pezeshkian calls for unity as US ramps up economic pressure",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , UN votes to adopt new world map that reflects Africa’s true size",
+          "title": "6 , Why has the Trump administration ordered staff to take polygraph tests?",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -514,13 +525,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Syria, Islamic Development Bank Group discuss cooperation to support recovery",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Exciting Raas Almaal to line up for Taif Sprint Cup",
           "sec": 0,
@@ -664,11 +668,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 50,
       "sizes": [
         4,
-        2,
-        2,
+        3,
         2,
         2,
         2,
@@ -774,6 +777,49 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Sanctions or illusion? US claim on Iran’s financial lifeline",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-05T10:19+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Mehr News",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Sanctions or illusion? US claim on Iran’s financial lifeline",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "US issues sanctions on Turkish bank that it calls a ‘critical financial lifeline",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "US sanctions Turkish bank Golden Global over alleged Iran links",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "US missile hits Iranian oil tanker near Kharg Island: Report",
           "rank_key": {
             "outlets": 2,
@@ -804,7 +850,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Israeli forces demolish Palestinian homes in West Bank",
           "rank_key": {
             "outlets": 2,
@@ -841,7 +887,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Media report of huge explosions in Jordan",
           "rank_key": {
             "outlets": 2,
@@ -873,7 +919,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Putin orders 72-hour halt to strikes on Kyiv as US envoys arrive",
           "rank_key": {
             "outlets": 2,
@@ -900,49 +946,7 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Anadolu Agency",
-                "title": "Putin orders 3-day halt to strikes on Kyiv ahead of US envoys’ visit: Kremlin",
-                "rejected_by": "stale anticipatory framing"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Senior US military staff subjeced to polygraphs over Iran leaks",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-05T12:52+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Senior US military staff subjeced to polygraphs over Iran leaks",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "7 , Pentagon polygraphs dozens of US military staff over media leaks",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -977,42 +981,6 @@
               {
                 "source": "SANA",
                 "title": "Palestinian killed, three wounded by Israeli occupation fire in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "US sanctions Turkish bank Golden Global over alleged Iran links",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-04T21:23+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "US sanctions Turkish bank Golden Global over alleged Iran links",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "US issues sanctions on Turkish bank that it calls a ‘critical financial lifeline",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1183,6 +1151,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Senior US military staff subjected to polygraphs over Iran leaks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-05T12:52+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Huckabee urges ‘severe consequences’ over West Bank violence",
           "rank_key": {
             "outlets": 1,
@@ -1290,24 +1276,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Occupation forces arrested two released prisoners from Deir Al-Ghusun, north of Tulkarm.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-05T11:05+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1326,7 +1294,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-05T14:14:40.966631+00:00",
+    "last_success": "2026-09-05T14:46:24.964288+00:00",
     "last_failure": null
   },
   "ok": true
