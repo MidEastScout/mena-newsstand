@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05T16:18:19.251552+00:00",
+  "updated": "2026-09-05T16:50:51.463942+00:00",
   "stages": {
     "fetch": {
       "items": 132,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-05T16:16:21.181285+00:00"
+      "headlines_updated": "2026-09-05T16:48:45.539761+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 36,
+        "title_snippet": 35,
+        "dropped_no_english": 1,
         "title_translated": 1,
         "title_native": 86,
         "in": 132,
-        "kept": 123
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -231,11 +232,16 @@
           "source": "TRT World",
           "title": "Turkish authorities locate ship that sank after collision off Istanbul's Silivri coast",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ראשוני: גבר ירה לעבר שוטרים בנתניה ונוטרל, האירוע בבדיקה",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
+      "in": 122,
       "kept": 63,
       "dropped": [
         {
@@ -289,17 +295,17 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "6 , Iran President Pezeshkian calls for unity as US ramps up economic pressure",
+          "title": "5 , Iran President Pezeshkian calls for unity as US ramps up economic pressure",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "7 , Why has the Trump administration ordered staff to take polygraph tests?",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
+          "title": "7 , Two more rescued in Nepal as 5,000 still missing 10 days after flood",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Middle East Eye",
@@ -401,17 +407,17 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Digital spokesperson ‘Farah’ to offer English-language version",
+          "title": "Personal loans drive rise in individual debt to JD14.3 billion in Q1 — CBJ",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "Prime minister offers condolences over fatal bus crash in Egypt",
+          "title": "Digital spokesperson ‘Farah’ to offer English-language version",
           "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
@@ -498,6 +504,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Rescue teams recover remains of 55 Palestinians from destroyed home in Gaza",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "A bill is being considered to penalize American universities that boycott 'Israel'.",
           "sec": 0,
@@ -527,21 +540,7 @@
         },
         {
           "source": "Arab News",
-          "title": "How Gaza’s collapsing water system is deepening a public health emergency",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Exciting Raas Almaal to line up for Taif Sprint Cup",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Triathlon-Former world and Olympic champion Jonny Brownlee retires aged 36",
+          "title": "Syrian official to Asharq Al-Awsat: Integration process following SDF dissolution is moving toward completion",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -662,10 +661,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 49,
       "sizes": [
         3,
         3,
+        3,
         2,
         2,
         2,
@@ -674,9 +674,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -801,6 +798,50 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Has Israel’s claimed capture of Ali Al-Taher changed military equation in south Lebanon?",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-05T03:46+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Arab News",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Has Israel’s claimed capture of Ali Al-Taher changed military equation in south Lebanon?",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "SOUTH LEBANON Ali Taher capture: 'Buffer zone' in south Lebanon is complete, Kat",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "The Israeli enemy carried out several attacks in southern Lebanon, targeting spe",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Amnesty says Israel's land seizures reflect expanding annexation agenda in occupied West Bank",
           "rank_key": {
             "outlets": 2,
@@ -837,7 +878,39 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
+          "headline": "Yemeni army recaptures strategic positions from Houthis in Taiz",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-05T11:34+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Yemeni army recaptures strategic positions from Houthis in Taiz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "US strikes Iranian oil tanker near Kharg Island",
           "rank_key": {
             "outlets": 2,
@@ -868,7 +941,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Media report of huge explosions in Jordan",
           "rank_key": {
             "outlets": 2,
@@ -1036,37 +1109,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "SOUTH LEBANON Ali Taher capture: 'Buffer zone' in south Lebanon is complete, Katz declares",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Manar",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "L'Orient Today",
-            "title": "SOUTH LEBANON Ali Taher capture: 'Buffer zone' in south Lebanon is complete, Katz declares",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Zelensky spoke with envoys from Trump and agreed to suspend air attacks on Moscow until Monday.",
           "rank_key": {
             "outlets": 1,
@@ -1129,24 +1171,6 @@
           },
           "outlet_names": [
             "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "In response to Iranian launches, the US military struck three oil tankers near the Strait of Hormuz.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-05T14:09+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -1265,24 +1289,42 @@
         },
         {
           "selected_rank": null,
-          "headline": "Yemeni army recaptures strategic positions from Houthis in Taiz",
+          "headline": "The ground forces of the Revolutionary Guard announced dismantling a cell linked to the occupation a",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-05T11:34+00:00"
+            "newest": "2026-09-05T10:53+00:00"
           },
           "outlet_names": [
-            "TRT World"
+            "Al Mayadeen"
           ],
           "camps": [
-            "turkish"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Two killed, Dozens Injured, in Explosion at Military Base in Western Bolivia",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-05T07:00+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1300,7 +1342,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-05T16:18:33.530646+00:00",
+    "last_success": "2026-09-05T16:51:04.613391+00:00",
     "last_failure": null
   },
   "ok": true
