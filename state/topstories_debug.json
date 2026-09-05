@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05T15:11:43.026917+00:00",
+  "updated": "2026-09-05T15:44:29.330400+00:00",
   "stages": {
     "fetch": {
       "items": 132,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-05T15:09:51.131233+00:00"
+      "headlines_updated": "2026-09-05T15:42:06.745889+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 36,
+        "title_snippet": 31,
         "title_translated": 1,
+        "dropped_no_english": 5,
         "title_native": 86,
         "in": 132,
-        "kept": 123
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -231,12 +232,37 @@
           "source": "TRT World",
           "title": "US launches 'large and powerful' strikes as Trump warns Iran against retaliation",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"פרויקט חיי\": איילין יצאה מהאנורקסיה - ומדגמנת מאבק ברזון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القوات البرية في حرس الثورة: فككنا خلية مرتبطة بالاحتلال وواشنطن في سيستان وبلوشستان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "انتخابات ألمانيا المحلية: نهاية مبكرة لعهد ميرتس",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "التصعيد الأميركي لا يعطّل الوساطات: واشنطن تبحث عن «اتفاق شامل»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"الفدائي\" على بُعد خطوة من تأهل تاريخي إلى كأس آسيا تحت 20 عامًا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 65,
+      "in": 118,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -281,13 +307,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This item appears to be a political announcement and does not contain specific news content to summarize.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "4 , How big is Africa really? Why the UN voted to change the world map",
           "sec": 0,
@@ -303,9 +322,9 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "7 , UN votes to adopt new world map that reflects Africa’s true size",
+          "title": "6 , Why has the Trump administration ordered staff to take polygraph tests?",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -324,14 +343,14 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Mudslide kills 1, 11 missing in China after heavy rain brought by tropical storm Saudel",
+          "title": "Greek air force jet crashes at annual aerial show",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al Arabiya",
-          "title": "Greek air force jet crashes at annual aerial show",
+          "title": "Mudslide kills 1, 11 missing in China after heavy rain brought by tropical storm Saudel",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
@@ -463,13 +482,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "In Al-Badawi, battles for survival and memory are taking place.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Lebanese MP Dr.",
           "sec": 0,
@@ -505,8 +517,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Agricultural monitoring indicates that the quantities of fruits and vegetables entering are insufficient to…",
+          "source": "Arab News",
+          "title": "How Gaza’s collapsing water system is deepening a public health emergency",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -526,27 +538,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "stc group, SRMG sign MoU on media production technology in Saudi Arabia",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Sri Lanka arrests ex-president’s son over Airbus deal",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "‘My heart is Emirati’: Why Abu Dhabi feels like home for this Egyptian expat",
           "sec": 0,
@@ -556,6 +547,13 @@
         {
           "source": "Gulf News",
           "title": "Bangladesh measles outbreak nears 1,000 child fatalities",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Mistrial declared in Lindsay Clancy child killings case",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -632,25 +630,24 @@
         },
         {
           "source": "TRT World",
-          "title": "Tropical cyclone Saudel triggers deadly mudslide in China",
-          "sec": 1,
+          "title": "Greek F-4 jet crashes during air show near Athens",
+          "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "TRT World",
-          "title": "Breaking News, Live Coverage, Opinions and Visuals",
-          "sec": 0,
+          "title": "Tropical cyclone Saudel triggers deadly mudslide in China",
+          "sec": 1,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 54,
+      "clusters": 55,
       "sizes": [
-        4,
         3,
         2,
         2,
@@ -658,6 +655,8 @@
         2,
         2,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -713,54 +712,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "UN: West Bank killings surpass 1,100 as ethnic cleansing fears mount",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-05T12:59+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "UN: West Bank killings surpass 1,100 as ethnic cleansing fears mount",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Amnesty says Israel's land seizures reflect expanding annexation agenda in occup",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "US envoy to Israel visits occupied West Bank, calls occupiers attacking Palestin",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli journalist Gideon Levy says attacks by Israeli occupiers in West Bank am",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Sanctions or illusion? US claim on Iran’s financial lifeline",
           "rank_key": {
             "outlets": 3,
@@ -803,7 +754,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 2,
           "headline": "Israeli airstrike kills young woman, injures 9 in southern Lebanon despite ceasefire",
           "rank_key": {
             "outlets": 2,
@@ -841,7 +792,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "IRGC denies reports of attack on nuclear facilities in Isfahan",
           "rank_key": {
             "outlets": 2,
@@ -872,8 +823,45 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Why is Trump threatening to strike Iran’s Pickaxe Mountain again, now?",
+                "title": "3 , Why is Trump threatening to strike Iran’s Pickaxe Mountain again, now?",
                 "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Amnesty says Israel's land seizures reflect expanding annexation agenda in occupied West Bank",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-05T12:00+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Amnesty says Israel's land seizures reflect expanding annexation agenda in occupied West Bank",
+            "title_source": "native",
+            "why": [
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Anadolu Agency",
+                "title": "US envoy to Israel visits occupied West Bank, calls occupiers attacking Palestin",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -1064,6 +1052,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "US military says it destroyed 3 Iranian oil tankers after missile attacks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-05T13:57+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The U.S.",
           "rank_key": {
             "outlets": 1,
@@ -1207,25 +1213,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "According to \"Tasnim\" news agency, a U.S.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-05T09:22+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "34 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "35 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1243,7 +1231,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-05T15:11:56.088348+00:00",
+    "last_success": "2026-09-05T15:45:48.178939+00:00",
     "last_failure": null
   },
   "ok": true
