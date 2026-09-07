@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T08:59:17.461417+00:00",
+  "updated": "2026-09-07T09:31:50.993817+00:00",
   "stages": {
     "fetch": {
       "items": 132,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-07T08:57:15.385274+00:00"
+      "headlines_updated": "2026-09-07T09:29:25.224870+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 35,
+        "dropped_no_english": 7,
+        "title_snippet": 27,
+        "title_translated": 1,
         "title_native": 87,
         "in": 132,
-        "kept": 122
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 597,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -235,23 +237,51 @@
           "source": "Al-Masirah",
           "title": "مشيمش: العدوان على إيران يهدد الاستقرار العالمي ويضع أوروبا وأمريكا على أبواب أزمة كبرى",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "חוסל המחבל מפיגוע הדקירה בשומרון: רכבו אותר ונעצר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הביקורת הקשה כלפי אחד מתומכי ישראל הגדולים ביותר בקונגרס האמריקני",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מסיר הלחץ במזרח התיכון למועדונים: אלפי לוחמי ה\"אברהם לינקולן\" נהנים ב\"עיר החטאים\" של תאילנד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "צעיר כבן 20 נפצע קשה בפיגוע דקירה בשומרון, המחבל חוסל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "רעידת אדמה פוליטית: הלם בגרמניה, זעזוע עמוק בקהילה היהודית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "قوات صنعاء تتصدّى لطائرات الاستطلاع السعودية: إسقاط ثلاثة خلال ساعات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "هل لأدوية تخسيس الوزن علاقة بتساقط الشعر لدى الرجال؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 75,
+      "in": 115,
+      "kept": 67,
       "dropped": [
         {
           "source": "N12",
           "title": "Iran's government is facing severe economic challenges and is struggling to impact the energy market, but has…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Western diplomats have expressed hope for a political shift in Israel, with regional countries anticipating…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -279,35 +309,35 @@
         },
         {
           "source": "Channel 13",
-          "title": "Emma Zipper Cohen expressed being in \"total shock\" during her first interview after winning.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The mentors delivered moving and surprising performances as the season concluded.",
+          "title": "Emma Zipper Cohen expressed being in \"total shock\" during her first interview after winning.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , Can you guess the real size of each country on the new world map?",
+          "title": "3 , Egyptian TV presenter sentenced to death in drugs case",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , German far-right AfD wins Saxony-Anhalt election, falls short of majority",
+          "title": "4 , German far-right AfD wins Saxony-Anhalt election, falls short of majority",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Egyptian TV presenter sentenced to death in drugs case",
+          "title": "5 , Can you guess the real size of each country on the new world map?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -322,13 +352,6 @@
         {
           "source": "Middle East Eye",
           "title": "Israeli election campaign billboards in Cyprus spark debate",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Trump suggests renaming New Mexico state ‘New America’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,6 +373,13 @@
         {
           "source": "IRNA",
           "title": "Iran unveils new domestically-developed antivirus software",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Mehr News",
+          "title": "US seeking to offset its defeats through economic pressures",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -383,6 +413,13 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
+          "source": "Jordan Times",
+          "title": "Personal loans drive rise in individual debt to JD14.3 billion in Q1 — CBJ",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "L'Orient Today",
           "title": "SOCIAL PROTECTION Crisis-era retirees: Proposal to restore 50% of end-of-service indemnities Stephanie Bechara",
           "sec": 0,
@@ -398,16 +435,23 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Volcanic ash leaves 170,000 travelers stranded at eight Indonesian airports",
+          "title": "Petroleum Minister: Five-year plan to expand, drive growth, and enhance competitiveness of coop petroleum",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
-          "title": "Trump shares map that renames New Mexico as ‘New America’",
+          "title": "Transport Minister inspects workflow on first high-speed electric train",
           "sec": 0,
-          "off": 1,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Volcanic ash leaves 170,000 travelers stranded at eight Indonesian airports",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -453,13 +497,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The article discusses the conflict generating hunger and misery, and how hunger and misery, in turn, generate…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Five killed as Amazon cargo plane crashes at Miami airport",
           "sec": 1,
@@ -474,11 +511,11 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Trump suggests renaming New Mexico state ‘New America’",
-          "sec": 0,
+          "source": "SANA",
+          "title": "Death toll from Nepal floods rises to 1,341 as rescue operations continue",
+          "sec": 1,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Gulf News",
@@ -496,7 +533,21 @@
         },
         {
           "source": "Anadolu Agency",
+          "title": "Kathmandu goes after social media abuse of Nepal-China flash floods as death toll climbs to 1,398",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Anadolu Agency",
           "title": "Germany’s right-wing AfD wins Saxony-Anhalt election with record 43.8% vote",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Istanbul welcomes new academic year with 2.7M students",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -512,13 +563,6 @@
           "source": "Daily Sabah",
           "title": "Nepal flood survivor found alive 10 days after presumed death",
           "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "5 killed as Amazon cargo plane crashes at Miami airport",
-          "sec": 2,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
@@ -575,21 +619,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 39,
       "sizes": [
-        11,
-        7,
-        4,
+        10,
+        8,
+        5,
         4,
         3,
-        3,
         2,
         2,
         2,
-        2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -630,11 +669,73 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "1 killed, 2 injured in Israeli strike on ambulance in southern Lebanon",
+          "headline": "Strait of Hormuz traffic dips to lowest since May after US, Iranian strikes on ships",
           "rank_key": {
             "outlets": 8,
+            "camps": 5,
+            "newest": "2026-09-07T06:31+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Arab News",
+            "Gulf News",
+            "IRNA",
+            "Mehr News",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 10,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Strait of Hormuz traffic dips to lowest since May after US, Iranian strikes on ships",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Iran to announce new Hormuz route; Israel kills 11 in attacks on Lebanon",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Iran says new Strait of Hormuz corridor agreement to be signed in coming days",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Iran’s top security official: Trump’s claim that Strait of Hormuz is open ‘a big",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Hormuz Strait fully closed; non-compliant ships to be banned",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "11 killed, including 2 infants, in Israeli airstrikes in southern Lebanon",
+          "rank_key": {
+            "outlets": 7,
             "camps": 3,
-            "newest": "2026-09-07T07:22+00:00"
+            "newest": "2026-09-07T06:49+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -643,20 +744,19 @@
             "L'Orient Today",
             "SANA",
             "TRT World",
-            "The New Arab",
-            "WAFA News"
+            "The New Arab"
           ],
           "camps": [
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "1 killed, 2 injured in Israeli strike on ambulance in southern Lebanon",
+            "title": "11 killed, including 2 infants, in Israeli airstrikes in southern Lebanon",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -689,72 +789,12 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Strait of Hormuz traffic dips to lowest since May after US, Iranian strikes on ships",
-          "rank_key": {
-            "outlets": 7,
-            "camps": 4,
-            "newest": "2026-09-07T06:31+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Arab News",
-            "Gulf News",
-            "IRNA",
-            "Mehr News",
-            "WAFA News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian",
-            "levant"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Strait of Hormuz traffic dips to lowest since May after US, Iranian strikes on ships",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran to announce new Hormuz route; Israel kills 11 in attacks on Lebanon",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Iran’s top security official: Trump’s claim that Strait of Hormuz is open ‘a big",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "Hormuz Strait fully closed; non-compliant ships to be banned",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
           "headline": "2 Palestinians die of wounds from Israeli attacks as army fire injures Gaza fishermen",
           "rank_key": {
             "outlets": 4,
             "camps": 2,
-            "newest": "2026-09-07T07:52+00:00"
+            "newest": "2026-09-07T09:28+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
@@ -766,7 +806,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -885,150 +925,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Security forces have thwarted several terror attacks planned in various countries, including Western",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-07T05:30+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "L'Orient Today",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Security forces have thwarted several terror attacks planned in various countries, including Western nations…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "FOCUS How far do the new Turkey-Hezbollah communication channels reach?",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Hezbollah issued a statement warning that continuing on the current path gives t",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Six Palestinians injured in Israeli attacks on Gaza, West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-07T00:52+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "SANA"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Six Palestinians injured in Israeli attacks on Gaza, West Bank",
-            "title_source": "native",
-            "why": [
-              "names 2 of the story's dominant entities (gaza, westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli occupiers kill Palestinian, injure 3 others in West Bank attacks",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Netanyahu orders removal of illegal West Bank settler outposts",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-06T20:05+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Netanyahu orders removal of illegal West Bank settler outposts",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Egypt and seven key allies condemn Israeli ministers’ Gaza displacement proposals",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-06T13:24+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent",
-            "IRNA"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Egypt and seven key allies condemn Israeli ministers’ Gaza displacement proposals",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "CENTCOM says it struck three Iranian oil tankers after IRGC targeted two US warships",
           "rank_key": {
             "outlets": 2,
@@ -1060,37 +956,74 @@
         },
         {
           "selected_rank": null,
-          "headline": "War criminal Mladic’s funeral draws crowds, EU backlash in Belgrade",
+          "headline": "Israel’s Netanyahu orders removal of West Bank settler outposts, sources say",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-09-07T07:21+00:00"
+            "newest": "2026-09-07T06:24+00:00"
           },
           "outlet_names": [
-            "Daily Sabah",
-            "TRT World"
+            "Al Arabiya",
+            "The New Arab"
           ],
           "camps": [
-            "turkish"
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "War criminal Mladic’s funeral draws crowds, EU backlash in Belgrade",
+            "source": "Al Arabiya",
+            "title": "Israel’s Netanyahu orders removal of West Bank settler outposts, sources say",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (funeral)",
+              "names 1 of the story's dominant entities (westbank)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "TRT World",
-                "title": "Gaza mourns 100 Palestinians, including 60 children, recovered from rubble",
+                "source": "The New Arab",
+                "title": "Netanyahu orders removal of illegal West Bank settler outposts",
                 "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "FOCUS How far do the new Turkey-Hezbollah communication channels reach?",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": null
+          },
+          "outlet_names": [
+            "Al Manar",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "L'Orient Today",
+            "title": "FOCUS How far do the new Turkey-Hezbollah communication channels reach?",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Hezbollah issued a statement warning that continuing on the current path gives t",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -1115,24 +1048,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A stabbing attack occurred in an outpost called 'Ma'oz Yehuda' near the Palestinian village of Uziro",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-07T08:46+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran warns South Korea over military presence in Persian Gulf",
           "rank_key": {
             "outlets": 1,
@@ -1144,24 +1059,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A young man, approximately 20 years old, sustained moderate to severe injuries in a stabbing attack ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-07T07:52+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1259,17 +1156,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Delta Airlines flight has landed in Israel for the first time since the war with Iran, with United",
+          "headline": "Lebanon: 11 killed, including two infants and two paramedics, in Israeli airstrikes on Kfar Rumman",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-07T07:00+00:00"
+            "newest": "2026-09-07T07:22+00:00"
           },
           "outlet_names": [
-            "N12"
+            "WAFA News"
           ],
           "camps": [
-            "israeli"
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "War criminal Mladic’s funeral draws crowds, EU backlash in Belgrade",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-07T07:21+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1312,7 +1227,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "US, South Korea and Japan kick off 5-day joint military exercise",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-07T04:04+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1330,7 +1263,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-07T08:59:39.771881+00:00",
+    "last_success": "2026-09-07T09:32:09.653660+00:00",
     "last_failure": null
   },
   "ok": true
