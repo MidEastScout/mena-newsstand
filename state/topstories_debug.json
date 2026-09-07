@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T12:21:58.094727+00:00",
+  "updated": "2026-09-07T12:54:19.500962+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-07T12:19:51.210871+00:00"
+      "headlines_updated": "2026-09-07T12:52:18.279682+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 34,
+        "dropped_no_english": 3,
+        "title_snippet": 31,
         "title_translated": 1,
         "title_native": 88,
         "in": 128,
-        "kept": 123
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -189,12 +190,12 @@
       "dropped": [
         {
           "source": "The New Arab",
-          "title": "Calls for Adidas boycott after brand features Israeli soldier",
+          "title": "Trump threatens to re-start war on Iran, Greece & Israel sign major deal, West Bank town under siege",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "The New Arab",
-          "title": "Israel hands Lebanon five civilians it had abducted, via ICRC",
+          "title": "Calls for Adidas boycott after brand features Israeli soldier",
           "reason": "stale (older than 48h)"
         },
         {
@@ -211,12 +212,27 @@
           "source": "Al-Masirah",
           "title": "مشيمش: العدوان على إيران يهدد الاستقرار العالمي ويضع أوروبا وأمريكا على أبواب أزمة كبرى",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בשל החשש מהאמבה בכינרת: צליחת הכינרת שתוכננה להתקיים ב-19.9 נדחתה לחודש נובמבר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בעקבות חקירת מח\"ש: שוטר נאשם שתקף נער במעון שיקומי בהרצליה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "قاليباف رداً على تهديد واشنطن بإغراق سفن إيران: اضربوا أصولنا وستُضربون",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 68,
+      "in": 120,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -230,13 +246,6 @@
           "title": "Following the AfD party's victory in Saxony-Anhalt, German Chancellor Olaf Scholz expressed shock and…",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Ilan Dar, known for his role in the Israeli series \"Krovim Krovim,\" has passed away at the age of 89.",
-          "sec": 0,
-          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -311,14 +320,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Can you guess the real size of each country on the new world map?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Egyptian TV presenter sentenced to death in drugs case",
+          "title": "5 , Can you guess the real size of each country on the new world map?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -333,6 +335,13 @@
         {
           "source": "Middle East Eye",
           "title": "Israeli election campaign billboards in Cyprus spark debate",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Trump suggests renaming New Mexico state ‘New America’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -354,13 +363,6 @@
         {
           "source": "Al Mayadeen",
           "title": "A poll indicates a decline in Trump's approval rating to its lowest level two months before the congressional…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "A French minister described the sweeping victory of the far-right in German elections as a \"dangerous moment.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -416,30 +418,37 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Amr Adib calls for urgent decision to regulate tree cutting in Egypt",
+          "title": "When is the trial operation for Egypt’s high-speed electric train?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
-          "title": "Audio recordings of Muslim Brotherhood leaked on Egyptian TV",
+          "title": "This city is one of the world’s most important AI hubs. It’s not where you’d expect",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
-          "title": "PM: Localization key to meeting healthcare sector’s needs",
+          "title": "Cubans are coming up with creative ways to generate power when their island has almost none left",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
-          "title": "PM opens 1st phase of $20 million Designy Doors factory in Sokhna",
-          "sec": 0,
+          "title": "At least 11 killed after avalanche hits climbers in Russia’s North Caucasus",
+          "sec": 3,
           "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Amina Orfi wins London Squash Classic championship",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -493,17 +502,17 @@
         },
         {
           "source": "SANA",
-          "title": "Death toll from Nepal floods rises to 1,341 as rescue operations continue",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "SANA",
           "title": "Palestinians in Gaza bury remains of around 100 victims recovered from rubble",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "Death toll from Nepal floods rises to 1,341 as rescue operations continue",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Syria Direct",
@@ -527,29 +536,43 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Gulf News",
+          "title": "As UAE weighs ‘no homework’ policy, parents debate what children really need after school",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Anadolu Agency",
-          "title": "Kathmandu goes after social media abuse of Nepal-China flash floods as death toll climbs to 1,398",
-          "sec": 1,
+          "title": "Spanish premier warns 'far-right threat' gaining ground after AfD victory in Germany",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "How to choose laptop for university: Practical guide for study and mobility",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Türkiye expands earthquake monitoring network to 1,104 stations",
+          "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
-          "title": "Ebola burial teams endure exhaustion, hostility from communities",
+          "title": "Türkiye prepares new alimony regulations under judicial reform",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
-          "title": "‘Widow’s Bay’ leads early Emmys with 8 wins, 'The Pitt' follows",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Year after cyberattack, Jaguar Land Rover to cut up to 4,000 jobs",
+          "title": "Volkswagen to convert car plant for Israeli defense group Rafael",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -598,16 +621,16 @@
         },
         {
           "source": "TRT World",
-          "title": "Nepal-China border floods death toll climbs to 1,385 as thousands remain missing",
-          "sec": 1,
+          "title": "Germany's far-right AfD set for record win in Saxony-Anhalt vote",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 42,
       "sizes": [
         9,
         8,
@@ -618,10 +641,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -687,7 +706,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -707,6 +726,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Al Jazeera",
+                "title": "4 , Can Iran enforce a restricted zone in the Strait of Hormuz?",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "IRNA",
                 "title": "Iran’s top security official: Trump’s claim that Strait of Hormuz is open ‘a big",
                 "rejected_by": "older than the story's newest wave"
@@ -714,11 +738,6 @@
               {
                 "source": "Mehr News",
                 "title": "Hormuz Strait fully closed; non-compliant ships to be banned",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Iran says it plans to announce a new ‘exclusion zone’ near the Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -748,7 +767,7 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -988,24 +1007,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Microbus driver arrested for ‘Long Live Israel’ prank in Imbaba",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-07T11:44+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Gaza, Palestine death toll from Israeli war rises to 73,658",
           "rank_key": {
             "outlets": 1,
@@ -1050,6 +1051,24 @@
           },
           "outlet_names": [
             "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "9 FETÖ suspects caught trying to flee Türkiye off Muğla coast",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-07T11:30+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1150,24 +1169,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Foreign Minister Saar announced that a tenth embassy will open in Jerusalem next month, following th",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-07T10:17+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Nicaragua has accused Germany of assisting Israel in the \"genocide\" of Gaza before the International",
           "rank_key": {
             "outlets": 1,
@@ -1186,24 +1187,42 @@
         },
         {
           "selected_rank": null,
-          "headline": "Türkiye partners with Danish firm to develop thorium nuclear tech",
+          "headline": "Hamas praised a stabbing operation south of Nablus, affirming it as a response to the occupation's c",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-07T09:55+00:00"
+            "newest": "2026-09-07T09:31+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "Falastin al-Youm"
           ],
           "camps": [
-            "turkish"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Police, Anti-Migrant Protesters Clash in Portsmouth",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-07T09:05+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1221,7 +1240,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-07T12:22:50.897748+00:00",
+    "last_success": "2026-09-07T12:54:19.896724+00:00",
     "last_failure": null
   },
   "ok": true
