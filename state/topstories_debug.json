@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09T20:10:42.340552+00:00",
+  "updated": "2026-09-09T20:25:59.114325+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-09T20:08:18.256692+00:00"
+      "headlines_updated": "2026-09-09T20:23:50.549553+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 3,
         "title_snippet": 32,
-        "title_translated": 3,
+        "title_translated": 2,
         "title_native": 89,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 124
+        "kept": 123
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 31,
+        "requested": 32,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -201,11 +202,16 @@
           "source": "Al-Masirah",
           "title": "كيف نبني جيلاً لا يقبل الذل ولا يبرر الطغيان؟",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"رويترز\": العقود الآجلة لخام برنت ترتفع بأكثر من دولار للبرميل في التعاملات المبكرة بعد إطلاق إيران صواريخ باتجاه الأردن",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
+      "in": 123,
       "kept": 83,
       "dropped": [
         {
@@ -231,14 +237,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "Following the deadline for party list submissions, Netanyahu's standing has weakened, resulting in a tie in…",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "Following the deadline for party list submissions, Netanyahu's standing has weakened, resulting in a tie in…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -440,13 +446,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Gwyneth Paltrow reveals why breakup with Brad Pitt left her with ‘extra shame’: ‘It was love at first sight’",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Study links prenatal Tylenol use to reproductive development",
           "sec": 0,
@@ -499,12 +498,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 49,
       "sizes": [
-        8,
+        9,
+        5,
         5,
         4,
-        4,
         3,
         3,
         3,
@@ -516,10 +515,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -564,7 +560,7 @@
           "selected_rank": 1,
           "headline": "South Korea Sends Team to UAE to Assess Strait of Hormuz Security",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 3,
             "newest": "2026-09-09T12:22+00:00"
           },
@@ -573,6 +569,7 @@
             "Al-Akhbar",
             "Arab News",
             "Falastin al-Youm",
+            "Gulf News",
             "IRNA",
             "SANA"
           ],
@@ -581,7 +578,7 @@
             "iranian",
             "levant"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -612,7 +609,7 @@
               },
               {
                 "source": "Arab News",
-                "title": "Iran, US trade blows as Hormuz impasse deepens",
+                "title": "Iran Guards say seized unmanned US submarine drone in Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -622,11 +619,12 @@
           "selected_rank": 2,
           "headline": "Nuclear watchdog refers Iran to UNSC for first time in 2 decades",
           "rank_key": {
-            "outlets": 4,
-            "camps": 4,
+            "outlets": 5,
+            "camps": 5,
             "newest": "2026-09-09T16:45+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Channel 13",
             "Daily Sabah",
             "Egypt Independent",
@@ -634,11 +632,12 @@
           ],
           "camps": [
             "israeli",
+            "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -708,41 +707,36 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Trump believes the war with Iran will end after the midterm elections and that Iran will collapse.",
+          "headline": "Trump says war with Iran 'will end immediately' after US midterm elections",
           "rank_key": {
             "outlets": 4,
             "camps": 3,
-            "newest": "2026-09-09T18:44+00:00"
+            "newest": "2026-09-09T19:10+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
+            "Anadolu Agency",
             "Kan 11",
             "L'Orient Today",
             "N12"
           ],
           "camps": [
             "israeli",
-            "panarab",
-            "levant"
+            "levant",
+            "turkish"
           ],
           "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Trump believes the war with Iran will end after the midterm elections and that Iran will collapse.",
-            "title_source": "snippet",
+            "source": "Anadolu Agency",
+            "title": "Trump says war with Iran 'will end immediately' after US midterm elections",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Al Mayadeen",
-                "title": "How does the Iran war threaten Trump in the 2026 U.S. midterm elections?",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "L'Orient Today",
                 "title": "LIVE Trump predicts that the war with Iran will end 'immediately' after the Nove",
@@ -940,6 +934,44 @@
               {
                 "source": "TRT World",
                 "title": "Israel to shut British consulate in occupied East Jerusalem over fresh UK sancti",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Thousands gather in Belgrade to mourn convicted war criminal Mladic",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-09T11:29+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Thousands gather in Belgrade to mourn convicted war criminal Mladic",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (funeral)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "King departs for Norway to attend King Harald V’s funeral",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1168,24 +1200,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump to speak with Israel, nations that imposed sanctions on illegal settlements",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T19:54+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "New footage has been released from Qatar showing the moment of impact during an attempted assassinat",
           "rank_key": {
             "outlets": 1,
@@ -1330,24 +1344,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "IAEA board reports Iran to UN Security Council for first time in 20 years",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T16:29+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Netanyahu stated that no army will be allowed to be stationed on its borders.",
           "rank_key": {
             "outlets": 1,
@@ -1383,7 +1379,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Israel-Britain tensions deepen as Western pressure over settlements grows",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T13:18+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump lays out next moves after Canada’s retaliatory tariffs take effect",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T12:36+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1401,7 +1433,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-09T20:10:56.617722+00:00",
+    "last_success": "2026-09-09T20:26:13.485160+00:00",
     "last_failure": null
   },
   "ok": true
