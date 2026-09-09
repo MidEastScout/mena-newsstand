@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09T17:50:01.482082+00:00",
+  "updated": "2026-09-09T18:00:50.067756+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-09T17:48:02.064770+00:00"
+      "headlines_updated": "2026-09-09T17:58:44.052925+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 3,
-        "title_snippet": 33,
-        "title_translated": 2,
+        "title_snippet": 30,
+        "dropped_no_english": 4,
+        "title_translated": 1,
         "title_native": 89,
         "in": 127,
-        "kept": 124
+        "kept": 120
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -201,23 +202,36 @@
           "source": "Al-Masirah",
           "title": "كيف نبني جيلاً لا يقبل الذل ولا يبرر الطغيان؟",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "סקר כאן חדשות: וינטר וגם הנדל וזליכה עוברים את אחוז החסימה, שוויון בין הגושים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "إصابات بغارة \"اسرائيلية\" في شارع الجلاء بمدينة غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الانتخابات الإسرائيلية والانقسامات الداخلية!",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"الأورومتوسطي\": إقصاء بريطانيا من مركز الدعم الدولي لغزة يؤكد خضوعه لمنظومة الاحتلال",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 86,
+      "in": 120,
+      "kept": 84,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Democratic Party Chairman Yair Golan is set to file a lawsuit against Sara Netanyahu.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Ben-Gvir stated that the dispute with the Police Commissioner stems from the belief that the commissioner is…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -322,7 +336,28 @@
         },
         {
           "source": "IRNA",
+          "title": "Iran criticizes IAEA over safeguards expectations amid US, Israeli threats",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
           "title": "Iran, Russia, China reject US-E3 draft resolution against Tehran at IAEA BoG as ‘baseless’",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Shelton stuns Alcaraz in 3:34 am US Open finish, Sabalenka battles on",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Crown Prince chairs National Council for Future Technology meeting",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -337,13 +372,6 @@
         {
           "source": "L'Orient Today",
           "title": "FINANCIAL GAP Financial gap law won't be adopted for another 6 to 8 months, says Souhaid L'Orient Today staff",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "FM, Bahraini counterpart discuss bilateral relations, regional developments over phone",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -372,20 +400,6 @@
         {
           "source": "Al Manar",
           "title": "Field developments are accelerating, with Sana'a warning Saudi Arabia about the cost of intervention.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Current Events",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Al-Shaibani, Barrack discuss bilateral ties, regional developments in Ankara",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -421,13 +435,6 @@
         {
           "source": "Daily Sabah",
           "title": "Study links prenatal Tylenol use to reproductive development",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Over 140 groups urge EU to make digital services safer for children",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -478,12 +485,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 56,
+      "clusters": 54,
       "sizes": [
         7,
-        6,
+        5,
+        5,
         4,
-        4,
         3,
         3,
         3,
@@ -493,8 +500,6 @@
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -604,30 +609,81 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Saudi Foreign Minister says Kingdom won’t hesitate to defend against Houthi attacks",
+          "headline": "Nuclear watchdog refers Iran to UNSC for first time in 2 decades",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 4,
+            "newest": "2026-09-09T16:45+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Daily Sabah",
+            "Egypt Independent",
+            "Iran International",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Nuclear watchdog refers Iran to UNSC for first time in 2 decades",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , ‘Biased’: Iran slams nuclear agency after board refers it to UNSC",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Iran, Russia to build new nuclear power plant",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "5 UK expands Iran sanctions over nuclear program and hostile activity",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Pakistan warns Makkah defense pact could become operational after Houthi attacks on Saudi Arabia",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
             "newest": "2026-09-09T16:57+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Anadolu Agency",
             "Arab News",
             "SANA"
           ],
           "camps": [
             "gulf",
-            "panarab",
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Saudi Foreign Minister says Kingdom won’t hesitate to defend against Houthi attacks",
+            "source": "Arab News",
+            "title": "Pakistan warns Makkah defense pact could become operational after Houthi attacks on Saudi Arabia",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -649,52 +705,6 @@
               {
                 "source": "Arab News",
                 "title": "Houthi attacks on Saudi Arabia wound 73 people, official says",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Nuclear watchdog refers Iran to UNSC for first time in 2 decades",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-09T16:45+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Egypt Independent",
-            "Iran International",
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Nuclear watchdog refers Iran to UNSC for first time in 2 decades",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "Iran, Russia to build new nuclear power plant",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Iran International",
-                "title": "5 UK expands Iran sanctions over nuclear program and hostile activity",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -927,7 +937,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "4 , What is Jordan’s Al-Azraq base and why is Iran targeting it?",
+          "headline": "3 , What is Jordan’s Al-Azraq base and why is Iran targeting it?",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
@@ -946,7 +956,7 @@
           "why_not": null,
           "representative": {
             "source": "Al Jazeera",
-            "title": "4 , What is Jordan’s Al-Azraq base and why is Iran targeting it?",
+            "title": "3 , What is Jordan’s Al-Azraq base and why is Iran targeting it?",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -1069,6 +1079,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Syria, Jordan issue joint statement following Damascus talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T17:45+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "President Erdoğan receives US envoy Barrack, Rep. Issa in Ankara",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T17:37+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Lebanon says Israeli army violated framework deal approximately 7,700 times",
           "rank_key": {
             "outlets": 1,
@@ -1105,17 +1151,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Araghchi calls for deeper economic and consular ties with Armenia",
+          "headline": "IAEA board refers Iran to UN Security Council, diplomats say",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-09T16:27+00:00"
+            "newest": "2026-09-09T16:29+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Al Arabiya"
           ],
           "camps": [
-            "iranian"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1134,42 +1180,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Settlers are expanding a settlement outpost east of occupied Jerusalem.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T14:47+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Netanyahu stated that Israel will not permit any army to establish itself on its borders.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T14:07+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1284,7 +1294,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1302,7 +1312,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-09T17:50:20.770528+00:00",
+    "last_success": "2026-09-09T18:01:14.445008+00:00",
     "last_failure": null
   },
   "ok": true
