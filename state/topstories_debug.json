@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10T16:41:06.706563+00:00",
+  "updated": "2026-09-10T17:12:42.895327+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-10T16:39:17.713754+00:00"
+      "headlines_updated": "2026-09-10T17:10:54.777409+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 34,
+        "dropped_stale": 6,
+        "dropped_no_english": 5,
+        "title_snippet": 29,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 86,
         "in": 127,
-        "kept": 120
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -187,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "UAE's MBZ 'warned Netanyahu' of major Hamas attack before 7 Oct.",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "The New Arab",
           "title": "Iceland summons US ambassador over Trump map absorbing island",
@@ -221,11 +217,36 @@
           "source": "TRT World",
           "title": "UK, France among 12 countries to sanction trade with illegal Israeli settlements",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: איראן חידשה את ייצור הטילים הבליסטיים במתקנים תת-קרקעיים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "לאחר דיווחי \"שיחת האזהרה\": מאמצים בישראל לשמר את היחסים האסטרטגיים עם איחוד האמירויות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "דיווח: איראן חזרה לייצר טילים בליסטיים במתקנים תת-קרקעיים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "المواجهة الكبرى | ملفات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نتيجة الحصار الإسرائيلي... غزة تحول صناديق المساعدات إلى أدوات لتشييد المنازل",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
+      "in": 116,
       "kept": 67,
       "dropped": [
         {
@@ -238,13 +259,6 @@
         {
           "source": "Kan 11",
           "title": "The investigation into Yuval Vilner, suspected of raping Shi-Li Atari and Naama Shahar, has been closed due…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The IAEA announced that there is an indication of activity at Mount Mechkous in Iran.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -272,14 +286,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "IAEA Chairman confirms: \"We have identified activity at Mount Mechkous in Iran.\"",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "IAEA Chairman confirms: \"We have identified activity at Mount Mechkous in Iran.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -307,7 +321,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Trump promises $5,000 payouts if GOP wins midterms: Can the US afford it?",
+          "title": "4 , Trump promises $5,000 payouts if GOP wins midterms: Can the US afford it?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -376,13 +390,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Mehr News",
-          "title": "Iran, China, Russia reject E3, US drafted res. at IAEA Board",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Iran International",
           "title": "EXCLUSIVE Secret documents expose new network selling sanctioned Iranian oil",
           "sec": 0,
@@ -392,13 +399,6 @@
         {
           "source": "Iran International",
           "title": "ANALYSIS Iran’s gasoline price hike may add to revenues, but can it ease fuel shortage?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Iran International",
-          "title": "4 Iran plans new university hijab directive as hardliners press for enforcement",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -502,15 +502,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Latest MENA News & Top Stories",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "East Zone end 13-year wait to clinch Duleep Trophy",
+          "source": "Arab News",
+          "title": "Trump says activity seen at Iran’s Pickaxe Mountain, urges Tehran ‘not to get cute’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -524,21 +517,21 @@
         },
         {
           "source": "Gulf News",
-          "title": "‘Get off our roads, Mr Singh’: US poster sparks racism row",
+          "title": "Pakistan’s Razaullah had no passport when picked for England Test",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Vinicius Jr, Raphinha headline Brazil squad for India, Australia friendlies",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "Nepal-China flash floods death toll climbs to 1,420, at least 5,649 still missing",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "46 days before Israel election, neither bloc assured of forming government",
+          "title": "Secret US-Cuba energy deal collapsed over political demands",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -605,10 +598,10 @@
       "method": "heuristic",
       "clusters": 51,
       "sizes": [
-        5,
+        4,
         4,
         3,
-        2,
+        3,
         2,
         2,
         2,
@@ -665,50 +658,44 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Houthis seize key Yemen city near Bab el-Mandeb Strait",
+          "headline": "Yemeni Armed Forces close to full control of al-Makha port",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
-            "newest": "2026-09-10T14:56+00:00"
+            "newest": "2026-09-10T11:04+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Kan 11",
-            "L'Orient Today",
-            "The New Arab"
+            "Al Manar",
+            "Al Mayadeen",
+            "Mehr News"
           ],
           "camps": [
-            "israeli",
             "panarab",
+            "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Houthis seize key Yemen city near Bab el-Mandeb Strait",
+            "source": "Mehr News",
+            "title": "Yemeni Armed Forces close to full control of al-Makha port",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "1 , Yemen’s Houthis seize strategic city of Mocha in ‘stunning’ blow",
+                "source": "Al Mayadeen",
+                "title": "Yemeni media published footage showing an attack on Saudi-affiliated gatherings ",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "L'Orient Today",
-                "title": "YEMEN Houthis seize Mokha city on Red Sea: Yemen military source",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "3 , Houthis capture Yemeni town of Mocha: Why it matters",
+                "source": "Al Manar",
+                "title": "Video footage shows the Yemeni Armed Forces breaking Saudi-affiliated gatherings",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -755,6 +742,55 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Houthis seize key Yemen city near Bab el-Mandeb Strait",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-10T10:33+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "L'Orient Today",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Houthis seize key Yemen city near Bab el-Mandeb Strait",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Yemen’s Houthis seize strategic city of Mocha in ‘stunning’ blow",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "YEMEN Houthis seize Mokha city on Red Sea: Yemen military source",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Houthis capture Yemeni town of Mocha: Why it’s important",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "The Revolutionary Guards stated that Israel's withdrawal from Lebanon is a condition for opening the",
           "rank_key": {
             "outlets": 3,
@@ -801,45 +837,45 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Former Israeli PM: ‘Being against Jewish terror in the West Bank is not antisemitic’",
+          "selected_rank": 5,
+          "headline": "UN nuclear watchdog confirms activity at Iran’s Pickaxe Mountain",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-10T15:20+00:00"
+            "newest": "2026-09-10T13:44+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Anadolu Agency"
+            "Gulf News"
           ],
           "camps": [
-            "panarab",
-            "turkish"
+            "gulf",
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Al Arabiya",
-            "title": "Former Israeli PM: ‘Being against Jewish terror in the West Bank is not antisemitic’",
+            "title": "UN nuclear watchdog confirms activity at Iran’s Pickaxe Mountain",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "names 1 of the story's dominant entities (nuclear)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Anadolu Agency",
-                "title": "Former Israeli defense minister says violence by occupiers in West Bank amounts ",
-                "rejected_by": "loaded/partisan wording"
+                "source": "Gulf News",
+                "title": "Pentagon explores options for Iran’s deepest nuclear sites: Report",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Israel weighs plans for 1,670 new housing units in illegal West Bank settlements",
           "rank_key": {
             "outlets": 2,
@@ -871,44 +907,6 @@
               {
                 "source": "Al Arabiya",
                 "title": "Twelve countries halt trade with Israeli settlements in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemeni media published footage showing an attack on Saudi-affiliated gatherings east of Al Jawf, res",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-09T22:56+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Yemeni media published footage showing an attack on Saudi-affiliated gatherings east of Al Jawf, resulting in…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Video footage shows the Yemeni Armed Forces breaking Saudi-affiliated gatherings",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1052,6 +1050,78 @@
         },
         {
           "selected_rank": null,
+          "headline": "Russian intelligence claims EU backs discussions on mobilizing women in Ukraine",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-10T17:04+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump says Iran war could end before US midterms, revising forecast",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-10T16:55+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Houthis shell civilian sites, key road in Yemen's Taiz, casualties reported",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-10T16:55+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Çelik urges end to Ukraine war, return to Istanbul talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-10T16:38+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "At least 25 killed, five injured in cargo ship fire in eastern China",
           "rank_key": {
             "outlets": 1,
@@ -1124,42 +1194,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "20 students killed in DR Congo school fire: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-10T15:01+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The IDF has eliminated a Nukhba terrorist who participated in the killing of IDF officer Yehonatan S",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-10T14:42+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The remains of 14 martyrs were recovered from the rubble of the Al-Taj building in the Al-Yarmouk…",
           "rank_key": {
             "outlets": 1,
@@ -1183,24 +1217,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-09-10T13:19+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "ECB hikes rates again to combat Middle East energy shock",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-10T12:50+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1249,24 +1265,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Netanyahu faces backlash over report he was warned of Hamas attack days before October 7",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-10T12:23+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1285,7 +1283,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-10T16:41:25.574003+00:00",
+    "last_success": "2026-09-10T17:12:56.764573+00:00",
     "last_failure": null
   },
   "ok": true
