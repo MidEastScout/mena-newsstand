@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10T23:08:57.282305+00:00",
+  "updated": "2026-09-10T23:40:27.919384+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-10T23:07:08.801711+00:00"
+      "headlines_updated": "2026-09-10T23:38:49.368907+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 34,
+        "title_snippet": 26,
+        "dropped_no_english": 8,
         "title_translated": 1,
         "title_native": 82,
         "in": 127,
-        "kept": 117
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -188,8 +189,13 @@
       },
       "dropped": [
         {
-          "source": "The New Arab",
-          "title": "Iceland summons US ambassador over Trump map absorbing island",
+          "source": "Jordan Times",
+          "title": "Jordan condemns Houthi attacks on Saudi Arabia",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "US says underwater drone 'malfunctioned' after Iranclaimed capture",
           "reason": "stale (older than 48h)"
         },
         {
@@ -209,17 +215,17 @@
         },
         {
           "source": "Arab News",
-          "title": "Netanyahu under fire over report UAE warned of October 7 attack",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
           "title": "Houthi attacks on Saudi Arabia wound 73 people, official says",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Al-Masirah",
           "title": "كيف نبني جيلاً لا يقبل الذل ولا يبرر الطغيان؟",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Israeli forces kill Palestinian man during raid on occupied West Bank town",
           "reason": "stale (older than 48h)"
         },
         {
@@ -233,15 +239,50 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "UK, France among 12 countries to sanction trade with illegal Israeli settlements",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "אנת'רופיק: נחסם שימוש ב-AI שיכל לסייע בפיתוח נשק ביולוגי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "גבן בן 26 נפצע באורח קשה בתאונת דרכים בכביש 31",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "خارجية صنعاء: انقضاء مناوشات الساحل الغربي وملتزمون بالاستحقاقات الدولية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الحرس الثوري: انسحاب إسرائيل من لبنان شرط لفتح مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "المجلس الدستوري يوقف مفعول قانون العفو العام",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«هيومن رايتس» و«هارفرد»: استخدام إسرائيل الفوسفور الأبيض في لبنان يستدعي قانوناً جديداً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "هل ينتهي زمن الاشتراك في الذكاء الاصطناعي؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "التعاون العسكري المصري - التركي يزعج إسرائيل",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 70,
+      "in": 109,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -307,6 +348,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Jazeera",
+          "title": "5 , LG defends smart-TV features amid audio surveillance allegations",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Middle East Eye",
           "title": "Saudi defence pact with Turkey and Pakistan sparks UAE backlash",
           "sec": 0,
@@ -335,6 +383,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Arabiya",
+          "title": "Israel tells British consulate in East Jerusalem to close within 30 days, sources say",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "The New Arab",
           "title": "UAE hits back after Algeria cuts ties over 'hostile' actions",
           "sec": 0,
@@ -344,13 +399,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Israel: When demographics dictate policy.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Guardian reports that Venezuela is paying the price for Trump's arrogance.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -371,28 +419,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Saudi Civil Defence says danger has passed in Khamis Mushait",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "JAF says four conscripts, bus driver killed, 18 injured in Karak bus crash",
-          "sec": 3,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Macron urges Europe to develop 'crewed spaceflight' programme",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Gauff takes inspiration from Tiafoe in US Open fightback win",
+          "title": "Shelton stuns Alcaraz in 3:34 am US Open finish, Sabalenka battles on",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -440,13 +467,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "The Constitutional Council has suspended the effect of the General Amnesty Law.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Absence of denial from the UAE regarding a call between Netanyahu and the UAE president raises questions in…",
           "sec": 0,
@@ -462,7 +482,7 @@
         },
         {
           "source": "WAFA News",
-          "title": "President Abbas offers condolences to Tanzania’s president over husband’s death",
+          "title": "Gaza hospital warns of collapse after main generator stops",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -477,6 +497,20 @@
         {
           "source": "Falastin al-Youm",
           "title": "A recent scientific study links tomato consumption to improved cognitive functions and brain health.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "Türkiye welcomes IAEA decision to close Syria safeguards agenda item",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Happy with the way things are going, says Harmanpreet Kaur as India reach Asia Cup final",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -498,13 +532,6 @@
         {
           "source": "Gulf News",
           "title": "‘Get off our roads, Mr Singh’: US poster sparks racism row",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Pakistan’s Razaullah had no passport when picked for England Test",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -576,10 +603,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 48,
       "sizes": [
         5,
-        4,
         3,
         3,
         2,
@@ -590,8 +616,6 @@
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -638,51 +662,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "IRGC destroys US unmanned vessel in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-09-10T19:00+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Falastin al-Youm",
-            "IRNA",
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "IRGC destroys US unmanned vessel in Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al-Akhbar",
-                "title": "The Revolutionary Guard stated that Israel's withdrawal from Lebanon is a condit",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "The Revolutionary Guard stated it targeted two American vessels, eight oil tanke",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Zelensky’s plane almost hit by drone en route to Oslo: Norway PM",
           "rank_key": {
             "outlets": 3,
@@ -715,7 +694,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 2,
           "headline": "Iran arms, advice helped Yemen's Houthis seize key Red Sea city",
           "rank_key": {
             "outlets": 3,
@@ -762,7 +741,45 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "3 , Houthis capture Yemeni town of Mocha: Why it’s important",
+                "title": "2 , Houthis capture Yemeni town of Mocha: Why it’s important",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Türkiye welcomes IAEA's decision to close Syria's nuclear file",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-10T22:58+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Türkiye welcomes IAEA's decision to close Syria's nuclear file",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (nuclear, syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Gulf News",
+                "title": "Pentagon explores options for Iran’s deepest nuclear sites: Report",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -770,70 +787,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Russian strike on Ukraine shopping centre kills at least four",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-10T22:38+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Russian strike on Ukraine shopping centre kills at least four",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Israel says it destroyed Hezbollah underground infrastructure at Ali al-Taher ridge",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-10T18:24+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Israel says it destroyed Hezbollah underground infrastructure at Ali al-Taher ridge",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran attack on base in Jordan damaged American military aircraft, US official says",
           "rank_key": {
             "outlets": 2,
@@ -871,7 +824,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Pakistan: Houthi attacks on Saudi Arabia could trigger Mecca defense alliance",
           "rank_key": {
             "outlets": 2,
@@ -948,6 +901,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "IRGC destroys US unmanned vessel in Strait of Hormuz",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-10T19:00+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "IRGC destroys US unmanned vessel in Strait of Hormuz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1041,7 +1025,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Algeria cuts diplomatic ties with UAE: What we know",
+                "title": "3 , Algeria cuts diplomatic ties with UAE: What we know",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1085,11 +1069,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Putin arrives in India for BRICS summit",
+          "headline": "Ukraine’s Zelenskyy says Canada ready to join European anti-ballistic missile program",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-10T22:14+00:00"
+            "newest": "2026-09-10T22:38+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1211,32 +1195,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israel has announced the complete destruction of over 5,000 meters of tunnels in the Ali Taher ridge",
+          "headline": "The IDF has destroyed the strategic Ali Taher ridge infrastructure in Lebanon, causing high alert in",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-10T18:35+00:00"
+            "newest": "2026-09-10T17:05+00:00"
           },
           "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The IDF has detonated tunnels in the Ali Taher ridge in Lebanon.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-10T18:23+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
+            "N12"
           ],
           "camps": [
             "israeli"
@@ -1300,7 +1266,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The remains of 14 martyrs were recovered from the rubble of the Al-Taj building in the Yarmouk neigh",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-10T13:59+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1318,7 +1302,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-10T23:09:26.029653+00:00",
+    "last_success": "2026-09-10T23:40:44.349457+00:00",
     "last_failure": null
   },
   "ok": true
