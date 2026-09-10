@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10T05:17:21.045029+00:00",
+  "updated": "2026-09-10T05:49:18.940360+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-10T05:15:33.276333+00:00"
+      "headlines_updated": "2026-09-10T05:47:29.248683+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "dropped_no_english": 10,
-        "title_snippet": 25,
+        "title_snippet": 34,
+        "title_translated": 1,
         "title_native": 88,
         "in": 127,
-        "kept": 113
+        "kept": 123
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -206,101 +206,79 @@
           "source": "Al-Masirah",
           "title": "كيف نبني جيلاً لا يقبل الذل ولا يبرر الطغيان؟",
           "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Kan 11",
-          "title": "שירות שינויי האקלים של האיחוד האירופי: אוגוסט האחרון היה החודש החם ביותר בהיסטוריה",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "רגע לפני החג: לקראת יום שיא של כ-100 אלף נוסעים בנתב\"ג",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "המסר מסעודיה לאיראן, שעבר דרך פקיסטן: תרסנו את המתקפות של החות'ים",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
-          "title": "הפסקנו לבשל לחג? למה הישראלים מעדיפים לעמוד שעות בתור במקום חמש שעות ליד הגז",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "גנץ על ההחלטה לרוץ: \"אעבור את אחוז החסימה, לא מבזבז קולות\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "المواجهة الكبرى | ملفات",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "الإعلام اليمني ينشر مشاهد لضرب تحشيدات تابعة للسعودية شرقي الجوف وقتل وأسر عدد منهم",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "إيران ترفض \"التقارير المسيسة\".. وغروسي يطرح استئناف التفتيش",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "رغم طردها دبلوماسيين روس... موسكو «منفتحة» على تطوير علاقاتها مع المجر",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "بزعم إخلالها بالتزاماتها... مجلس محافظي «الطاقة الذرية» يُحيل إيران إلى مجلس الأمن",
-          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 113,
-      "kept": 73,
+      "in": 123,
+      "kept": 79,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "The forecast predicts a slight cooling trend, with little change expected on Friday and Saturday.",
+          "title": "The European Union's Copernicus Climate Change Service has reported that the past August was the hottest…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Kan 11",
+          "title": "A young man, approximately 20 years old, sustained critical injuries in a road accident near Kibbutz Yaad in…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Kan 11",
+          "title": "The forecast predicts a slight cooling trend, with no significant changes expected for Friday and Saturday.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "Sirens sounded across the north due to a suspected hostile aircraft intrusion, but the IDF later confirmed it…",
+          "title": "Ahead of the holiday, approximately 100,000 travelers are expected at Ben Gurion Airport.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "Many Israelis are opting for prepared foods over home cooking for the holidays, with long queues forming for…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The fifth season, episode seven of 'HaMakor' titled 'The Babchik Method' is available for viewing.",
+          "title": "News 13 | News",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The full program 'Beheira 09.09.26' is available for viewing.",
+          "title": "This entry links to Episode 7 of Season 25 of 'HaMakor,' available for direct viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Time travelers: The trend that brought everyone back to the 80s.",
+          "title": "This entry links to the full program 'Beheira Region' from September 9, 2026, available for direct viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Following the closing of lists, Netanyahu's influence has weakened, resulting in a tie in the bloc map.",
+          "title": "This entry discusses 'Time Travel,' a trend that has brought back the style and atmosphere of the 1980s.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "Following the finalization of candidate lists, the political landscape shows a weakening for Netanyahu and a…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -314,7 +292,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Trump vows to be at centre of US midterms: Republican convention takeaways",
+          "title": "3 , Trump vows to be at centre of US midterms: Republican convention takeaways",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -349,14 +327,14 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "\"Israel\": When demographics dictate policy.",
+          "title": "This article from Al Mayadeen discusses 'Israel': When Demographics Dictate Policy.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "Moscow: We are ready to use all means to confront emerging threats in the Arctic.",
+          "title": "Moscow has declared its readiness to employ all means to counter emerging threats in the Arctic.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -371,13 +349,6 @@
         {
           "source": "IRNA",
           "title": "Iran criticizes IAEA over safeguards expectations amid US, Israeli threats",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Iran, Russia, China reject US-E3 draft resolution against Tehran at IAEA BoG as ‘baseless’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -398,9 +369,16 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Shelton stuns Alcaraz in 3:34 am US Open finish, Sabalenka battles on",
+          "title": "Prime minister chairs Investment Council meeting, reviews opportunities ahead of Jordan-EU conference",
           "sec": 0,
-          "off": 1,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Safadi conveys King’s greetings to Al Sharaa, stresses Jordan’s support for Syria",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -426,28 +404,28 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Oil prices surpassed $100 per barrel amid escalating regional tensions.",
+          "title": "Al Akhbar reports that oil prices exceeded $100 per barrel amid rising regional tensions.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Will the era of AI subscriptions end?",
+          "title": "Al Akhbar discusses corruption under the microscope of narrative.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Special reports: Enemy circles observe worrying indicators of increased resistance operations.",
+          "title": "Special reports indicate that Israeli circles are monitoring concerning signs of increased resistance…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "\"Israel\": When demographics dictate policy.",
+          "title": "Paltoday.ps discusses 'Israel': When Demographics Dictate Policy.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -463,7 +441,7 @@
           "source": "Gulf News",
           "title": "Vinicius Jr, Raphinha headline Brazil squad for India, Australia friendlies",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -481,8 +459,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Medium-Term Program: Building more productive, competitive, resilient Türkiye",
+          "source": "Gulf News",
+          "title": "US-Iran conflict: What UAE residents need to know tonight, September 9",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -547,10 +525,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 50,
       "sizes": [
-        6,
-        6,
+        7,
+        5,
         5,
         4,
         3,
@@ -563,6 +541,11 @@
         2,
         2,
         2,
+        2,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -603,91 +586,42 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "South Korea Sends Team to UAE to Assess Strait of Hormuz Security",
+          "headline": "According to Reuters, Pakistan conveyed a message from Riyadh to Tehran, urging them to curb Houthi ",
           "rank_key": {
             "outlets": 5,
-            "camps": 2,
-            "newest": "2026-09-09T12:22+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Al-Akhbar",
-            "Falastin al-Youm",
-            "Gulf News",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "South Korea Sends Team to UAE to Assess Strait of Hormuz Security",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "First images of the American submarine seized in the Strait of Hormuz by the Rev",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "The Revolutionary Guard stated they targeted two American ships, 8 oil tankers, ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Iran's Revolutionary Guards say seized unmanned US submarine in Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Pakistan pledges ‘unwavering solidarity’ with Saudi Arabia after Houthi attacks",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-09T19:56+00:00"
+            "camps": 4,
+            "newest": "2026-09-10T04:28+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
             "Arab News",
             "Egypt Independent",
+            "N12",
             "SANA"
           ],
           "camps": [
+            "israeli",
             "gulf",
             "panarab",
             "levant"
           ],
-          "members": 6,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Pakistan pledges ‘unwavering solidarity’ with Saudi Arabia after Houthi attacks",
-            "title_source": "native",
+            "source": "N12",
+            "title": "According to Reuters, Pakistan conveyed a message from Riyadh to Tehran, urging them to curb Houthi attacks…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , Houthi attacks on Saudi Arabia could activate defence pact, Pakistan says",
+                "title": "4 , Houthi attacks on Saudi Arabia could activate defence pact, Pakistan says",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -697,19 +631,19 @@
               },
               {
                 "source": "Arab News",
-                "title": "UN condemns Houthi attacks on Saudi Arabia as fresh displacement wave deepens Ye",
+                "title": "Pakistan pledges ‘unwavering solidarity’ with Saudi Arabia after Houthi attacks",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Arab News",
-                "title": "Houthi attacks on Saudi Arabia wound 73 people, official says",
+                "title": "UN condemns Houthi attacks on Saudi Arabia as fresh displacement wave deepens Ye",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 2,
           "headline": "Iran steps up construction at suspected underground nuclear site, analysts say",
           "rank_key": {
             "outlets": 4,
@@ -755,12 +689,12 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Israeli forces beat, injure 2 Palestinians during raid in northern West Bank",
           "rank_key": {
             "outlets": 4,
             "camps": 2,
-            "newest": "2026-09-10T01:25+00:00"
+            "newest": "2026-09-10T05:34+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
@@ -772,7 +706,7 @@
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -797,11 +731,6 @@
                 "rejected_by": "loaded/partisan wording"
               },
               {
-                "source": "WAFA News",
-                "title": "Two Palestinians injured after being assaulted by Israeli forces in Nablus-area ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "SANA",
                 "title": "Israeli forces arrest 21 Palestinians, demolish West Bank structures",
                 "rejected_by": "older than the story's newest wave"
@@ -810,15 +739,103 @@
           }
         },
         {
+          "selected_rank": 4,
+          "headline": "South Korea Sends Team to UAE to Assess Strait of Hormuz Security",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 1,
+            "newest": "2026-09-09T12:22+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Al-Akhbar",
+            "Falastin al-Youm",
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "South Korea Sends Team to UAE to Assess Strait of Hormuz Security",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "The first images of a US submarine reportedly seized in the Strait of Hormuz by ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "The IRGC's naval force reportedly targeted two US ships and eight oil tankers in",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "Paltoday.ps reports that the IRGC targeted two US ships, eight oil tankers, and ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 5,
-          "headline": "Netanyahu’s Likud claims senior Palestinian official was behind Haaretz report on Oct. 7 Hamas attac",
+          "headline": "Several US fighter jets damaged in Iranian strikes on Jordan: Report",
           "rank_key": {
             "outlets": 3,
+            "camps": 3,
+            "newest": "2026-09-10T04:24+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Anadolu Agency",
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Several US fighter jets damaged in Iranian strikes on Jordan: Report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Footage shows the IRGC's aerospace force launching substantial missile strikes t",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Netanyahu’s Likud claims senior Palestinian official was behind Haaretz report on Oct. 7 Hamas attac",
+          "rank_key": {
+            "outlets": 2,
             "camps": 2,
             "newest": "2026-09-10T03:36+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
             "Anadolu Agency",
             "The New Arab"
           ],
@@ -826,7 +843,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -841,48 +858,11 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "4 , Netanyahu to sue Haaretz over claims UAE warned him before October 7 attack",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "The New Arab",
                 "title": "UAE's MBZ 'warned Netanyahu' of major Hamas attack before 7 Oct.",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Several US fighter jets damaged in Iranian strikes on Jordan: Report",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-10T04:24+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Several US fighter jets damaged in Iranian strikes on Jordan: Report",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (jordan)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -918,6 +898,44 @@
               {
                 "source": "Al Arabiya",
                 "title": "Putin told Trump he wants swift end to Ukraine war and US-Russia ties restored: ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "King, Queen attend King Harald V’s funeral in Oslo",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-09T19:29+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "King, Queen attend King Harald V’s funeral in Oslo",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (funeral)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Thousands gather in Belgrade to mourn convicted war criminal Mladic",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1100,35 +1118,36 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iranian airlines warn sanctions must not put civil aviation safety at risk",
+          "headline": "Netanyahu under fire over report UAE warned of October 7 attack",
           "rank_key": {
             "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-09T09:00+00:00"
+            "camps": 2,
+            "newest": "2026-09-08T13:02+00:00"
           },
           "outlet_names": [
-            "IRNA",
-            "Iran International"
+            "Al Jazeera",
+            "Arab News"
           ],
           "camps": [
-            "iranian"
+            "gulf",
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "IRNA",
-            "title": "Iranian airlines warn sanctions must not put civil aviation safety at risk",
+            "source": "Arab News",
+            "title": "Netanyahu under fire over report UAE warned of October 7 attack",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Iran International",
-                "title": "1 US sanctions all Iranian airlines in sweeping aviation crackdown",
+                "source": "Al Jazeera",
+                "title": "5 , Netanyahu to sue Haaretz over claims UAE warned him before October 7 attack",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1136,17 +1155,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Reports indicate that the Houthis are advancing into the strategic port city of Al-Mukha in Yemen.",
+          "headline": "Several Palestinians injured by Israeli gunfire, drone strikes across Gaza Strip",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-10T04:37+00:00"
+            "newest": "2026-09-10T05:34+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "WAFA News"
           ],
           "camps": [
-            "israeli"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1154,11 +1173,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "A young man, around 20 years old, was seriously injured in a traffic accident near Kibbutz Yaad in t",
+          "headline": "Reports indicate that Houthi forces in Yemen are advancing into the strategic port city of Al Mukha.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-10T04:27+00:00"
+            "newest": "2026-09-10T04:37+00:00"
           },
           "outlet_names": [
             "Kan 11"
@@ -1208,6 +1227,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iran strongly rejects false claims contained in the statement issued at Arab League FM meeting",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T23:13+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Occupation helicopters open fire near Jabalia refugee camp as artillery shelling hits northern Gaza",
           "rank_key": {
             "outlets": 1,
@@ -1216,6 +1253,78 @@
           },
           "outlet_names": [
             "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Envoy: War and blockade part of same strategy to weaken Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T22:04+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Air raid sirens sounded across northern Israel due to a suspected hostile aircraft infiltration, but",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T21:42+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Al Akhbar reports that Egyptian-Turkish military cooperation is causing concern for Israel.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Al Akhbar explores the question: Is the era of subscribing to artificial intelligence ending?",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-09T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
           ],
           "camps": [
             "levant"
@@ -1244,47 +1353,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "New footage has been revealed from the assassination attempt on Hamas leadership in Qatar a year ago",
+          "headline": "Medium-Term Program: Building more productive, competitive, resilient Türkiye",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-09T19:25+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Jordan offers condolences to Syria over Idlib ammunition warehouse explosion",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T18:59+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Zelenskyy's plane 'nearly hit' by drone en route to Norway",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T18:09+00:00"
+            "newest": "2026-09-09T21:05+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1297,61 +1370,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Netanyahu stated they will not allow any army to be stationed on their borders.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T14:07+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran military struck US aircraft carrier at 500-km range",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T13:33+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israel-Britain tensions deepen as Western pressure over settlements grows",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-09T13:18+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1369,7 +1388,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-10T05:17:53.883191+00:00",
+    "last_success": "2026-09-10T05:49:39.428996+00:00",
     "last_failure": null
   },
   "ok": true
