@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T14:36:49.141195+00:00",
+  "updated": "2026-09-11T15:08:22.416980+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-11T14:35:00.194045+00:00"
+      "headlines_updated": "2026-09-11T15:06:27.251729+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 32,
+        "dropped_stale": 6,
+        "title_snippet": 29,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 86,
+        "title_native": 88,
         "in": 127,
-        "kept": 119
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -187,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Jordan Times",
-          "title": "Jordan condemns Houthi attacks on Saudi Arabia",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Al-Akhbar",
           "title": "الحرس الثوري: انسحاب إسرائيل من لبنان شرط لفتح مضيق هرمز",
@@ -223,23 +219,26 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "UK, France among 12 countries to sanction trade with illegal Israeli settlements",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "בלבנון דיווחו על 2 תקיפות בדרום המדינה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القوات المسلحة اليمنية تسيطر على الوازعية والخوخة وحيس وتصبح عند مشارف المخا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "70 ألف مصل يؤدون صلاة الجمعة في الأقصى",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 81,
+      "in": 118,
+      "kept": 80,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "Ahead of the Rosh Hashanah holiday meal, significant traffic congestion is expected on highways 1 and 2.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "N12",
           "title": "A planned holiday meal in Thailand has been canceled due to security concerns and local demands amid rising…",
@@ -284,7 +283,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Japan, India, Ukraine: Why some countries are uneasy about new UN map",
+          "title": "4 , Japan, India, Ukraine: Why some countries are uneasy about new UN map",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -332,13 +331,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Somaliland has declared its readiness to dispatch 2,000 peacekeepers to Gaza, according to reports from Al…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Jordan Times",
           "title": "Saudi Civil Defence says danger has passed in Khamis Mushait",
           "sec": 0,
@@ -365,6 +357,13 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "JAF says four conscripts, bus driver killed, 18 injured in Karak bus crash",
+          "sec": 2,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "L'Orient Today",
@@ -437,6 +436,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Arab News",
+          "title": "Iran and Gulf states to meet in push for Hormuz deal, FT reports",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Erdoğan vows to shield Türkiye from regional turmoil",
           "sec": 0,
@@ -503,21 +509,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 55,
+      "clusters": 53,
       "sizes": [
+        6,
         6,
         5,
         5,
         4,
-        3,
-        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -569,7 +573,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Airstrikes target Houthi positions near Yemen’s Bab el-Mandeb Strait: Report",
+          "headline": "Houthis seize key Red Sea island, take control of Bab al Mandeb area: goverment official",
           "rank_key": {
             "outlets": 4,
             "camps": 3,
@@ -577,8 +581,8 @@
           },
           "outlet_names": [
             "Al Mayadeen",
-            "Anadolu Agency",
             "SANA",
+            "TRT World",
             "The New Arab"
           ],
           "camps": [
@@ -590,8 +594,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Airstrikes target Houthi positions near Yemen’s Bab el-Mandeb Strait: Report",
+            "source": "TRT World",
+            "title": "Houthis seize key Red Sea island, take control of Bab al Mandeb area: goverment official",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -620,6 +624,57 @@
         },
         {
           "selected_rank": 2,
+          "headline": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-11T12:19+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Mehr News",
+            "SANA"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Houthis control key shipping route after gains along Yemen’s Red Sea coast",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "IRGC destroys US unmanned vessel in Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "VIDEO: Watch how Iran destroyed US unmanned vessel in Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
           "rank_key": {
             "outlets": 4,
@@ -664,51 +719,6 @@
               {
                 "source": "Arab News",
                 "title": "Pakistan pledges ‘unwavering solidarity’ with Saudi Arabia after Houthi attacks",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "The IDF has released new footage from the extensive tunnel network of Hezbollah, located on the Ali ",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-11T07:00+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "panarab"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "The IDF has released new footage from the extensive tunnel network of Hezbollah, located on the Ali Taher…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Israel says it destroyed Hezbollah underground infrastructure at Ali al-Taher ri",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Israel says it destroyed Hezbollah underground infrastructure at Ali Al-Taher ri",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -768,7 +778,7 @@
           "camps": [
             "levant"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -835,114 +845,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "Strait of Hormuz traffic drops to seven ships as shipping disruptions persist",
+          "headline": "Trump says he does not regret Iran war despite impact it may have on midterm elections",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-11T11:32+00:00"
+            "newest": "2026-09-11T00:50+00:00"
           },
           "outlet_names": [
-            "Mehr News",
-            "SANA"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Strait of Hormuz traffic drops to seven ships as shipping disruptions persist",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "IRGC destroys US unmanned vessel in Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "VIDEO: Watch how Iran destroyed US unmanned vessel in Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Envoy: UN meeting on Iranian nuclear file is abuse of process",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-11T08:10+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "IRNA"
+            "Al Arabiya",
+            "Arab News"
           ],
           "camps": [
             "gulf",
-            "iranian"
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "IRNA",
-            "title": "Envoy: UN meeting on Iranian nuclear file is abuse of process",
+            "source": "Arab News",
+            "title": "Trump says he does not regret Iran war despite impact it may have on midterm elections",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "state/partisan outlet (last resort)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Arab News",
-                "title": "IAEA confirms activity at suspected Iranian nuclear site Pickaxe Mountain",
+                "source": "Al Arabiya",
+                "title": "Trump predicts Iran war to end ‘immediately’ after US midterm elections",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli occupation forces shell outskirts of Beit Jinn in Damascus countryside",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-11T09:31+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Israeli occupation forces shell outskirts of Beit Jinn in Damascus countryside",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1005,6 +940,42 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran, other Persian Gulf littoral states to meet in Oman to discuss regional issues: Foreign Ministr",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T14:53+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Satellite data shows fire activity along Saudi East-West oil pipeline route",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T14:41+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1152,11 +1123,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Enemy forces announced their withdrawal from Ali Al-Taher, as reported by Al Akhbar.",
+          "headline": "Enemy forces arrested three individuals in the Quneitra countryside and shelled agricultural lands i",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-11T08:50+00:00"
+            "newest": "2026-09-11T09:31+00:00"
           },
           "outlet_names": [
             "Al-Akhbar"
@@ -1170,47 +1141,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran, South Korea foreign ministers discuss regional developments",
+          "headline": "Enemy forces announced their withdrawal from Ali Al-Taher, as reported by Al Akhbar.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-11T08:17+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemen weapons cell used Claude to develop missile software: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T07:30+00:00"
-          },
-          "outlet_names": [
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iranian-Pakistani talks are underway to de-escalate tensions, while Trump acknowledged the war's pro",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T06:56+00:00"
+            "newest": "2026-09-11T08:50+00:00"
           },
           "outlet_names": [
             "Al-Akhbar"
@@ -1241,7 +1176,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-11T14:37:11.722420+00:00",
+    "last_success": "2026-09-11T15:08:42.067022+00:00",
     "last_failure": null
   },
   "ok": true
