@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T21:57:39.167252+00:00",
+  "updated": "2026-09-11T22:29:06.235253+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-11T21:55:15.647312+00:00"
+      "headlines_updated": "2026-09-11T22:26:55.991986+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 34,
+        "dropped_stale": 10,
+        "title_snippet": 32,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 82,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 120
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -190,6 +191,11 @@
         {
           "source": "Al Arabiya",
           "title": "Trump predicts Iran war to end ‘immediately’ after US midterm elections",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Syria Direct",
+          "title": "Damascus University’s Political Science Faculty confronts its Baathist past",
           "reason": "stale (older than 48h)"
         },
         {
@@ -208,6 +214,16 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Daily Sabah",
+          "title": "Zelenskyy's plane 'nearly hit' by drone en route to Norway",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Trump predicts Iran war end, says Putin ready for Ukraine deal",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "Iran targets US base in Jordan, claims strikes on American destroyers",
           "reason": "stale (older than 48h)"
@@ -221,11 +237,21 @@
           "source": "TRT World",
           "title": "Houthi attacks on Saudi oil facilities send prices soaring, warn of 'dangerous escalation'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "سريع: 64 غارة سعودية خلال 24 ساعة.. وتصدينا لتشكيل قتالي في تعز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مستوطنون يسرقون قطيع اغنام من بيتا جنوب نابلس",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
+      "in": 115,
       "kept": 79,
       "dropped": [
         {
@@ -425,13 +451,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Syria Direct",
-          "title": "9/11 through Syrian Eyes",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "Inside Dubai’s Rolls-Royce studio where buyers turn personal stories into cars",
           "sec": 0,
@@ -439,29 +458,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Contractor says errors, not vandalism, caused damage to US' Lincoln Memorial Pool: Report",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
-          "title": "North Korea fires unidentified projectile toward eastern sea",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "From village to future",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "How much is Israel-Greece alliance worth?",
+          "title": "Algeria cuts UAE ties alleging domestic, regional affairs meddling",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -507,21 +505,14 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "US pressure on Iran at 'dangerous' stage: Pezeshkian",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 48,
       "sizes": [
-        6,
+        9,
         6,
         5,
         4,
@@ -568,9 +559,6 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
         1
       ]
     },
@@ -583,24 +571,27 @@
           "selected_rank": 1,
           "headline": "The Houthi control of the Bab el-Mandeb strait, a vital global economic artery, may alter the region",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 7,
+            "camps": 5,
             "newest": "2026-09-11T20:25+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
+            "Daily Sabah",
             "Iran International",
             "N12",
             "SANA",
+            "TRT World",
             "The New Arab"
           ],
           "camps": [
             "israeli",
             "panarab",
             "iranian",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 6,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -1096,6 +1087,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iraqi authorities seize 47 drones, 46 projectiles in Anbar",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T22:17+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "A 16-year-old boy has been shot during a brawl in the town of Jaljuliya.",
           "rank_key": {
             "outlets": 1,
@@ -1107,24 +1116,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Tehran’s miscalculation may come back to haunt it in Yemen",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T21:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1161,24 +1152,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "FM Fidan discusses attacks on oil pipeline with Saudi counterpart",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T19:03+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1311,7 +1284,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Yemen weapons cell used Claude to develop missile software: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T07:30+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1329,7 +1320,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-11T21:57:54.929593+00:00",
+    "last_success": "2026-09-11T22:29:06.589512+00:00",
     "last_failure": null
   },
   "ok": true
