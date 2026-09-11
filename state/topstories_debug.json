@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T17:49:17.392683+00:00",
+  "updated": "2026-09-11T18:20:16.617097+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-11T17:46:45.986512+00:00"
+      "headlines_updated": "2026-09-11T18:18:47.285675+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 32,
+        "title_snippet": 30,
+        "dropped_no_english": 2,
         "title_translated": 1,
         "title_native": 87,
         "in": 127,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -221,12 +222,22 @@
           "source": "TRT World",
           "title": "Houthi attacks on Saudi oil facilities send prices soaring, warn of 'dangerous escalation'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "גורם ישראלי ל-N12 על ההתפתחות בתימן: \"זה עוד יותר גרוע מהורמוז, הם יוכלו לירות על ספינות עם טילי נ\"ט\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"בחיים לא הסתכלתי על משחק בתור תרפיה - עד 'המעברה'\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 80,
+      "in": 118,
+      "kept": 79,
       "dropped": [
         {
           "source": "Kan 11",
@@ -265,13 +276,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "Extensive searches are being conducted in Haifa for a 20-year-old diver who has gone missing at sea.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
@@ -300,7 +304,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , ‘Majority do not welcome him’: Trump heads to Ireland amid fury over Gaza",
+          "title": "5 , Japan, India, Ukraine: Why some countries are uneasy about new UN map",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -377,17 +381,17 @@
         },
         {
           "source": "Jordan Times",
-          "title": "US producer inflation tops expectations as diesel costs jump",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
           "title": "JAF says four conscripts, bus driver killed, 18 injured in Karak bus crash",
           "sec": 2,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Gauff takes inspiration from Tiafoe in US Open fightback win",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
@@ -406,13 +410,6 @@
         {
           "source": "L'Orient Today",
           "title": "TELECOMS Prepaid cards: Revenue leak denounced by Telecommunications Ministry Alexander HADDAD",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "‘Gambling with our lives’: Another AI employee quits over safety concerns",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -448,6 +445,13 @@
         {
           "source": "Anadolu Agency",
           "title": "Satellite imagery shows large plume of smoke along Saudi East-West pipeline route",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "British lawmakers vote against legalizing assisted dying bill",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -514,9 +518,9 @@
       "method": "heuristic",
       "clusters": 44,
       "sizes": [
-        7,
         6,
         6,
+        5,
         5,
         5,
         4,
@@ -527,7 +531,7 @@
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -567,65 +571,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 4,
-            "newest": "2026-09-11T14:53+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Anadolu Agency",
-            "IRNA",
-            "Mehr News",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Houthis control key shipping route after gains along Yemen’s Red Sea coast",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "IRGC destroys US unmanned vessel in Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "VIDEO: Watch how Iran destroyed US unmanned vessel in Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Iran says Oman to host regional meeting on Hormuz shipping on Monday",
-                "rejected_by": "stale anticipatory framing"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "The commander of CENTCOM has reportedly traveled to Saudi Arabia amidst the ongoing situation concer",
           "rank_key": {
             "outlets": 5,
@@ -677,6 +622,54 @@
                 "source": "Arab News",
                 "title": "Pakistan pledges ‘unwavering solidarity’ with Saudi Arabia after Houthi attacks",
                 "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 4,
+            "newest": "2026-09-11T14:53+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Anadolu Agency",
+            "IRNA",
+            "SANA"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Houthis control key shipping route after gains along Yemen’s Red Sea coast",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Iran says Oman to host regional meeting on Hormuz shipping on Monday",
+                "rejected_by": "stale anticipatory framing"
               }
             ]
           }
@@ -950,6 +943,44 @@
         },
         {
           "selected_rank": null,
+          "headline": "US admission of Bahrain damage exposes cost of Israel’s wars",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-11T09:56+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "US admission of Bahrain damage exposes cost of Israel’s wars",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (bahrain)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "4 , ‘Blew the hell out of it’: How Iran damaged US bases in Bahrain, Jordan",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Palestinian dies of wounds sustained in Israeli attack in Gaza City",
           "rank_key": {
             "outlets": 2,
@@ -1129,29 +1160,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "EXPLAINER - Anthropic threat intelligence report: What to know",
+          "headline": "Saudi Arabia's key oil pipeline hit by projectiles, sparking fires: Report",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-11T17:36+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "UN voices concern over Houthi seizure of humanitarian compound in Yemen",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T17:15+00:00"
+            "newest": "2026-09-11T18:07+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1212,6 +1225,24 @@
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Egypt Foreign Minister emphasizes unified strategic cooperation with Saudi Arabia",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T13:43+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1327,11 +1358,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Pezeshkian terms BRICS a tool against US pressure",
+          "headline": "Any hostile movement will be targeted: IRGC Navy chief",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-11T05:35+00:00"
+            "newest": "2026-09-11T05:54+00:00"
           },
           "outlet_names": [
             "Mehr News"
@@ -1344,7 +1375,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1362,7 +1393,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-11T17:49:34.563184+00:00",
+    "last_success": "2026-09-11T18:20:35.851223+00:00",
     "last_failure": null
   },
   "ok": true
