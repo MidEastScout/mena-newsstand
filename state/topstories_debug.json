@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T16:42:31.454054+00:00",
+  "updated": "2026-09-11T17:14:46.570738+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-11T16:40:48.587007+00:00"
+      "headlines_updated": "2026-09-11T17:11:57.004325+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 32,
+        "dropped_stale": 7,
+        "title_snippet": 29,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 88,
+        "title_native": 87,
         "in": 127,
-        "kept": 121
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -203,6 +204,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "From Red Sea to Saudi Arabia: How Houthis became a regional menace",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Al-Masirah",
           "title": "صفقات وتواطؤات: من جزيرة إبستين إلى بيع الأوطان",
           "reason": "stale (older than 48h)"
@@ -216,11 +222,26 @@
           "source": "TRT World",
           "title": "Houthi attacks on Saudi oil facilities send prices soaring, warn of 'dangerous escalation'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווחים בתימן: אחרי ההשתלטות על באב אל-מנדאב, הכוחות הפרו-סעודיים פתחו במתקפת נגד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "פקקי הענק לקראת החג: הכבישים שעמוסים במיוחד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بقائي: تقارير الوكالة الدولية للطاقة الذرية تحولت إلى مادة أولية لسرديات التهديد",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
+      "in": 117,
       "kept": 79,
       "dropped": [
         {
@@ -308,22 +329,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The Bab el-Mandeb Strait is intensifying calculations, presenting a crucial test for Netanyahu and Trump.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "Pezeshkian terms BRICS a tool against US pressure",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Saudi Civil Defence says danger has passed in Khamis Mushait",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -434,13 +441,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Snake bite kills guard on duty; widow and son awarded $50,000",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Iran says Oman to host regional meeting on Hormuz shipping on Monday",
           "sec": 0,
@@ -450,13 +450,6 @@
         {
           "source": "Anadolu Agency",
           "title": "Satellite imagery shows large plume of smoke along Saudi East-West pipeline route",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "EU says use of frozen Russian assets for Ukraine remains ‘on the table’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -521,7 +514,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 46,
       "sizes": [
         7,
         6,
@@ -537,7 +530,8 @@
         2,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -613,7 +607,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Houthis control key shipping route after gains along Yemen’s Red Sea coast",
+                "title": "2 , Houthis control key shipping route after gains along Yemen’s Red Sea coast",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -908,38 +902,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russia open to Ukraine talks, expects trilateral meeting with US",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-11T16:30+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Russia open to Ukraine talks, expects trilateral meeting with US",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump says he does not regret Iran war despite impact it may have on midterm elections",
           "rank_key": {
             "outlets": 2,
@@ -973,6 +935,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia open to trilateral talks with US, Ukraine: Kremlin",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-11T16:45+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Russia open to trilateral talks with US, Ukraine: Kremlin",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1075,36 +1068,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran has reportedly resumed ballistic missile production at underground facilities.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-10T16:47+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Iran has reportedly resumed ballistic missile production at underground facilities.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "SOUTH LEBANON Massive Israeli explosions on Ali Taher cause shockwave of 4.1 on Richter scale; Israe",
           "rank_key": {
             "outlets": 2,
@@ -1142,11 +1105,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iranian president urges BRICS to prevent obstruction of legitimate trade",
+          "headline": "Yemen’s army launches airstrikes along western coast, including areas around Mocha",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-11T16:16+00:00"
+            "newest": "2026-09-11T16:54+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1160,11 +1123,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Amid US-Iran war, Indian premier urges ‘continued efforts’ for Mideast peace",
+          "headline": "Nearly 2,400 Yemeni families displaced in a day amid fighting in Taiz, Lahj",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-11T16:16+00:00"
+            "newest": "2026-09-11T16:45+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1225,6 +1188,24 @@
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia is targeting Ukrainian military facilities in Kyiv.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T13:54+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1339,25 +1320,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iranian-Pakistani talks are underway to de-escalate tensions, while Trump acknowledged the war has b",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T06:56+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1375,7 +1338,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-11T16:42:50.905183+00:00",
+    "last_success": "2026-09-11T17:14:47.574260+00:00",
     "last_failure": null
   },
   "ok": true
