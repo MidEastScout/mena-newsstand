@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T01:43:16.604498+00:00",
+  "updated": "2026-09-11T02:14:44.703139+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-11T01:41:23.191349+00:00"
+      "headlines_updated": "2026-09-11T02:13:04.860222+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
         "title_snippet": 34,
-        "title_translated": 1,
+        "dropped_no_english": 1,
         "title_native": 84,
         "in": 127,
-        "kept": 119
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -226,12 +226,17 @@
           "source": "TRT World",
           "title": "UK, France among 12 countries to sanction trade with illegal Israeli settlements",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"תבטיחי לי שאת לא עוזבת אותם\": הכירו את \"אמא תרזה\" של תל אביב",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 68,
+      "in": 118,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
@@ -270,13 +275,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "This is the full broadcast of the main edition from September 10, 2026, available for viewing.",
           "sec": 0,
           "off": 0,
@@ -298,7 +296,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Trump and Vance headline Republicans’ high-stakes midterm rally in Dallas",
+          "title": "3 , Vance takes the stage as Republicans close Trump-heavy midterm convention",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -514,13 +512,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Have you smelt it? Dubai residents report mysterious foul odour across many parts of the city",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Several killed, injured in tour bus crash in Switzerland",
           "sec": 2,
@@ -594,7 +585,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 50,
       "sizes": [
         5,
         5,
@@ -607,6 +598,7 @@
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -992,7 +984,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , Algeria cuts diplomatic ties with UAE: What we know",
+                "title": "4 , Algeria cuts diplomatic ties with UAE: What we know",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1126,6 +1118,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "India-Japan T20I tickets sold out ahead of historic clash",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-10T20:32+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Canada ready for ‘fair’ US trade deal after Trump talks: PM Carney",
           "rank_key": {
             "outlets": 1,
@@ -1233,25 +1243,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "At least 25 killed, five injured in cargo ship fire in eastern China",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-10T16:06+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1269,7 +1261,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-11T01:43:34.405948+00:00",
+    "last_success": "2026-09-11T02:14:45.845451+00:00",
     "last_failure": null
   },
   "ok": true
