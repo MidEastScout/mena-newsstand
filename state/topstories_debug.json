@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T04:21:50.368557+00:00",
+  "updated": "2026-09-11T04:35:00.192253+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-11T04:19:47.568798+00:00"
+      "headlines_updated": "2026-09-11T04:33:21.945186+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 35,
+        "title_snippet": 34,
         "title_native": 85,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 120
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -220,12 +221,17 @@
           "source": "TRT World",
           "title": "Israel to shut British consulate in occupied East Jerusalem over fresh UK sanctions",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "خارجية صنعاء: انقضاء مناوشات الساحل الغربي وملتزمون بالاستحقاقات الدولية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 76,
+      "in": 119,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
@@ -271,9 +277,16 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Israeli film on Gaza receives 25-minute ovation at Venice premiere",
+          "title": "2 , Israeli film on Gaza receives 25-minute ovation at Venice premiere",
           "sec": 0,
           "off": 2,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "4 , Republican midterm convention wraps up in Dallas, Texas: Key takeaways",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -466,13 +479,6 @@
           "reason": "off-topic signals outweigh security signals"
         },
         {
-          "source": "Gulf News",
-          "title": "Happy with the way things are going, says Harmanpreet Kaur as India reach Asia Cup final",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Several killed, injured in tour bus crash in Switzerland",
           "sec": 2,
@@ -481,7 +487,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Morning Briefing: Sept. 11, 2026",
+          "title": "California governor signs landmark online child safety bills",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -542,7 +548,7 @@
       "clusters": 52,
       "sizes": [
         6,
-        5,
+        4,
         3,
         3,
         3,
@@ -661,61 +667,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iran arms, advice helped Yemen's Houthis seize key Red Sea city",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-09-10T17:12+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen",
-            "L'Orient Today",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Iran arms, advice helped Yemen's Houthis seize key Red Sea city",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Iran war updates: UNSC meets on Yemen after Houthis seize city of Mocha",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "The New Arab",
-                "title": "Houthis seize key Yemen city near Bab el-Mandeb Strait",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "Israeli media reports indicate that the Houthis' success in controlling more coa",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "YEMEN Houthis seize Mokha city on Red Sea: Yemen military source",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Israel says it destroyed Hezbollah underground infrastructure at Ali Al-Taher ridge",
           "rank_key": {
             "outlets": 3,
@@ -749,7 +700,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Iran attack on base in Jordan damaged American military aircraft, US official says",
           "rank_key": {
             "outlets": 3,
@@ -794,7 +745,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Zelensky’s plane almost hit by drone en route to Oslo: Norway PM",
           "rank_key": {
             "outlets": 3,
@@ -824,6 +775,55 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Iran arms, advice helped Yemen's Houthis seize key Red Sea city",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-10T17:12+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "L'Orient Today",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Iran arms, advice helped Yemen's Houthis seize key Red Sea city",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Iran war updates: UNSC meets on Yemen after Houthis seize city of Mocha",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Houthis seize key Yemen city near Bab el-Mandeb Strait",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "YEMEN Houthis seize Mokha city on Red Sea: Yemen military source",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -895,7 +895,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Putin lands in India for BRICs summit, shadowed by Iran and Ukraine wars",
+                "title": "5 , Putin lands in India for BRICs summit, shadowed by Iran and Ukraine wars",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1129,6 +1129,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Dangerous gamble: Iran’s evolving missiles get closer to US warships. What changed?",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T01:07+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Türkiye welcomes IAEA's decision to close Syria's nuclear file",
           "rank_key": {
             "outlets": 1,
@@ -1272,24 +1290,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "UAE hits back after Algeria cuts ties over 'hostile' actions",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-10T17:03+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1308,7 +1308,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-11T04:22:04.262589+00:00",
+    "last_success": "2026-09-11T04:35:31.963018+00:00",
     "last_failure": null
   },
   "ok": true
