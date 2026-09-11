@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T15:08:22.416980+00:00",
+  "updated": "2026-09-11T15:40:32.075494+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-11T15:06:27.251729+00:00"
+      "headlines_updated": "2026-09-11T15:38:28.259911+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 29,
-        "dropped_no_english": 3,
+        "dropped_stale": 7,
+        "title_snippet": 28,
+        "dropped_no_english": 4,
         "title_translated": 1,
-        "title_native": 88,
+        "title_native": 87,
         "in": 127,
-        "kept": 118
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -188,6 +188,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Jordan Times",
+          "title": "Jordan condemns Houthi attacks on Saudi Arabia",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Al-Akhbar",
           "title": "الحرس الثوري: انسحاب إسرائيل من لبنان شرط لفتح مضيق هرمز",
@@ -220,6 +225,11 @@
         },
         {
           "source": "Kan 11",
+          "title": "נער בן 15 נפצע קשה מפגיעת רכב בחיפה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
           "title": "בלבנון דיווחו על 2 תקיפות בדרום המדינה",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
@@ -236,8 +246,8 @@
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 80,
+      "in": 116,
+      "kept": 77,
       "dropped": [
         {
           "source": "N12",
@@ -359,13 +369,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "JAF says four conscripts, bus driver killed, 18 injured in Karak bus crash",
-          "sec": 2,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "L'Orient Today",
           "title": "Earthquake recorded after Israel demolition of Lebanon infrastructure: USGS",
           "sec": 1,
@@ -443,22 +446,36 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "US defense chief vows to ‘finish this fight’ with Iran",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Int'l Criminal Court feels Trump's squeeze as more states exit",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "UK lawmakers reject controversial assisted dying bill",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "India, Russia vow to boost ties when Modi, Putin meet in New Delhi",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Erdoğan vows to shield Türkiye from regional turmoil",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Princess Diana’s ‘revenge dress’ could fetch $300,000 at auction",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Western Thrace Turkish teachers warn school closures threaten identity",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -509,11 +526,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 53,
+      "clusters": 48,
       "sizes": [
+        7,
         6,
         6,
-        5,
         5,
         4,
         2,
@@ -522,11 +539,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -573,6 +585,65 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-09-11T14:53+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Anadolu Agency",
+            "IRNA",
+            "Mehr News",
+            "SANA"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 7,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Houthis control key shipping route after gains along Yemen’s Red Sea coast",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "IRGC destroys US unmanned vessel in Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "VIDEO: Watch how Iran destroyed US unmanned vessel in Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Iran says Oman to host regional meeting on Hormuz shipping on Monday",
+                "rejected_by": "stale anticipatory framing"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Houthis seize key Red Sea island, take control of Bab al Mandeb area: goverment official",
           "rank_key": {
             "outlets": 4,
@@ -606,68 +677,17 @@
             "passed_over": [
               {
                 "source": "The New Arab",
-                "title": "Iran arms, advice helped Yemen's Houthis seize key Red Sea city",
+                "title": "Houthis seize key Yemen city near Bab el-Mandeb Strait",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "The New Arab",
-                "title": "Houthis seize key Yemen city near Bab el-Mandeb Strait",
+                "title": "Iran arms, advice helped Yemen's Houthis seize key Red Sea city",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al Mayadeen",
                 "title": "The Yemeni armed forces continue their advance along the western coast towards t",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-11T12:19+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Mehr News",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "3 , Houthis control key shipping route after gains along Yemen’s Red Sea coast",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "IRGC destroys US unmanned vessel in Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "VIDEO: Watch how Iran destroyed US unmanned vessel in Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -713,12 +733,12 @@
               },
               {
                 "source": "Arab News",
-                "title": "UN Security Council rallies behind Saudi Arabia, condemns Houthi attacks, warns ",
+                "title": "Pakistan pledges ‘unwavering solidarity’ with Saudi Arabia after Houthi attacks",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Arab News",
-                "title": "Pakistan pledges ‘unwavering solidarity’ with Saudi Arabia after Houthi attacks",
+                "title": "UN Security Council rallies behind Saudi Arabia, condemns Houthi attacks, warns ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -943,17 +963,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran, other Persian Gulf littoral states to meet in Oman to discuss regional issues: Foreign Ministr",
+          "headline": "US inflation picks up as gas prices spike to cement Fed hike bets",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-11T14:53+00:00"
+            "newest": "2026-09-11T14:52+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Daily Sabah"
           ],
           "camps": [
-            "iranian"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -997,42 +1017,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump stated at the Pentagon that Iran is the foremost state sponsor of terrorism and asserted that ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T14:22+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemen’s Houthis claim control of 6 districts in Taiz, Al Hudaydah",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T14:01+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Egypt Foreign Minister emphasizes unified strategic cooperation with Saudi Arabia",
           "rank_key": {
             "outlets": 1,
@@ -1059,60 +1043,6 @@
           },
           "outlet_names": [
             "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Türkiye detains 27 suspects over alleged plans to attack schools",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T12:19+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Germany expresses concern over Houthis takeover of key Red Sea port",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T12:00+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "India welcomes BRICS leaders for summit clouded by wars",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T11:47+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1158,7 +1088,97 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "32 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran, South Korea foreign ministers discuss regional developments",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T08:17+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Yemen weapons cell used Claude to develop missile software: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T07:30+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The IDF has released new footage from the extensive tunnel network of Hezbollah, located on the Ali ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T07:00+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iranian-Pakistani talks are underway to de-escalate tensions, while Trump acknowledged the war's pro",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T06:56+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pezeshkian terms BRICS a tool against US pressure",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T05:35+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1176,7 +1196,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-11T15:08:42.067022+00:00",
+    "last_success": "2026-09-11T15:40:44.830068+00:00",
     "last_failure": null
   },
   "ok": true
