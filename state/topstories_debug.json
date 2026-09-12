@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T04:45:22.566618+00:00",
+  "updated": "2026-09-12T05:17:05.185234+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-12T04:43:24.213556+00:00"
+      "headlines_updated": "2026-09-12T05:14:56.431437+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 33,
-        "title_native": 86,
+        "dropped_stale": 6,
+        "title_snippet": 28,
+        "dropped_no_english": 5,
+        "title_native": 87,
+        "title_translated": 1,
         "in": 127,
-        "kept": 119
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -186,16 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Al Arabiya",
-          "title": "Trump predicts Iran war to end ‘immediately’ after US midterm elections",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "\"وول ستريت جورنال\": الهجمات الإيرانية تثير قلقاً في واشنطن من أن إيران تستخدم صواريخ أكثر تطوراً قادرة على استهداف السفن",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Al Mayadeen",
           "title": "مدينة النبطية جنوب لبنان: حركة منعدمة ومتاجر مقفلة جراء العدوان الإسرائيلي",
@@ -225,12 +217,37 @@
           "source": "TRT World",
           "title": "Houthi attacks on Saudi oil facilities send prices soaring, warn of 'dangerous escalation'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: סעודיה סגרה צינור נפט מרכזי בציר מזרח-מערב במדינה לאחר שהותקף",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "דיווח: איראן קיבלה צילומי לוויין סיניים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "התחזית לחג: קיצי וחם, הים נוח לרחצה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"القسام\" تزف قائد لواء خان يونس محمد اليازوري: سيخلفه آلاف من القادة الأشداء",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إليانا تثير الجدل: أسيرات يطلبن «بوسة» من الآسرين!",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 78,
+      "in": 116,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
@@ -270,13 +287,6 @@
         {
           "source": "Channel 13",
           "title": "A stand-up comedy performance by Matan Lax is scheduled for the holiday.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "An individual described the experience of viewing a game as therapeutic, specifically mentioning…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -332,7 +342,7 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Iran's central bank governor stated that economic pressure is not a viable policy and constitutes a…",
+          "title": "Afternoon Bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -340,6 +350,13 @@
         {
           "source": "Mehr News",
           "title": "Iran planning to hold reg. meeting with Persian Gulf states",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Saudi Civil Defence says danger has passed in Khamis Mushait",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -523,22 +540,20 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 46,
       "sizes": [
         7,
         5,
-        5,
+        4,
+        4,
         4,
         4,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -617,7 +632,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , Iran war updates: Yemen gov’t says bombing ‘kill box’ near Mocha",
+                "title": "2 , Iran war updates: Yemen gov’t says bombing ‘kill box’ near Mocha",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -681,48 +696,45 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Gulf bloc condemns drone attack on Saudi pipeline from Iraq",
+          "headline": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 4,
             "camps": 3,
-            "newest": "2026-09-12T03:01+00:00"
+            "newest": "2026-09-11T07:45+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Arab News"
+            "Al Arabiya",
+            "Arab News",
+            "Gulf News",
+            "SANA"
           ],
           "camps": [
             "gulf",
             "panarab",
-            "turkish"
+            "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Gulf bloc condemns drone attack on Saudi pipeline from Iraq",
+            "source": "Gulf News",
+            "title": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "2 , Saudi Arabia says East-West pipeline hit by drones launched from Iraq",
+                "source": "Al Arabiya",
+                "title": "Pakistan: Houthi attacks on Saudi Arabia could trigger Mecca defense alliance",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Arab News",
-                "title": "Saudi Arabia condemns drone attack from Iraq after East-West Pipeline shut as pr",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Saudi Arabia shuts East-West Pipeline after drone attacks from Iraq, injuries re",
+                "title": "UN Security Council rallies behind Saudi Arabia, condemns Houthi attacks, warns ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -768,45 +780,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-11T07:45+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Gulf News",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "UN Security Council rallies behind Saudi Arabia, condemns Houthi attacks, warns ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran attack on base in Jordan damaged American military aircraft",
           "rank_key": {
             "outlets": 3,
@@ -839,6 +812,48 @@
               {
                 "source": "Iran International",
                 "title": "5 US warplanes damaged in Iran strikes on Jordan base",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Gulf bloc condemns drone attack on Saudi pipeline from Iraq",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-12T03:01+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Gulf bloc condemns drone attack on Saudi pipeline from Iraq",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Saudi Arabia condemns drone attack from Iraq after East-West Pipeline shut as pr",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Saudi Arabia shuts East-West Pipeline after drone attacks from Iraq, injuries re",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1062,36 +1077,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Rachel Rabin Yaakov, sister of the late Prime Minister Yitzhak Rabin, passed away at 101.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-11T05:27+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Rachel Rabin Yaakov, sister of the late Prime Minister Yitzhak Rabin, passed away at 101.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Reports indicate that China has supplied Iran with high-resolution satellite imagery, which was subs",
           "rank_key": {
             "outlets": 1,
@@ -1307,7 +1292,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1325,7 +1310,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-12T04:45:44.756940+00:00",
+    "last_success": "2026-09-12T05:17:18.309093+00:00",
     "last_failure": null
   },
   "ok": true
