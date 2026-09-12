@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T10:45:24.527558+00:00",
+  "updated": "2026-09-12T11:08:15.242200+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-12T10:43:27.093463+00:00"
+      "headlines_updated": "2026-09-12T11:06:38.646697+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 33,
-        "title_translated": 2,
+        "title_snippet": 27,
+        "dropped_no_english": 7,
+        "title_translated": 1,
         "title_native": 86,
         "in": 127,
-        "kept": 121
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -216,12 +217,47 @@
           "source": "TRT World",
           "title": "Houthi attacks on Saudi oil facilities send prices soaring, warn of 'dangerous escalation'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "טראמפ: איראן כנראה אחראית למתקפה בסעודיה, החות'ים לא רוצים להילחם בנו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "עימותים בין פלסטינים לחיילים באיו\"ש, צה\"ל יבדוק טענות על ירי פסול שבוצע בידי הכוח",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "התחזית לחג: נאה וחם, ירידה בטמפ' החל מאמצע השבוע",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "27 مليار دولار إضافية.. أوكرانيا تفاجئ أوروبا!",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"القسام\" تزف قائد لواء خان يونس محمد اليازوري: سيخلفه آلاف من القادة الأشداء",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "قلق إسرائيلي من قدرة القوات المسلحة اليمنية على التقدم سريعاً وقلب المعادلات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الصحة : 10 شهداء خلال 48 ساعة في غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 79,
+      "in": 114,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
@@ -273,8 +309,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This is a placeholder for a full episode of the program 'Hayom She'haya' from September 10, 2026.",
+          "source": "Al Jazeera",
+          "title": "5 , ‘Majority do not welcome him’: Trump heads to Ireland amid fury over Gaza",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -315,29 +351,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Iran president says pressure on country at critical, dangerous stage",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Sixth Bulletin",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "Iran planning to hold reg. meeting with Persian Gulf states",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "US warmongering has changed power balance in favor of Iran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,11 +365,32 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Mehr News",
+          "title": "Pezeshkian, Modi stress broadening Tehran-New Delhi relations",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Jordan Times",
           "title": "Top Palestinian official says elections won't be held on time",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "How narwhal 'scientists' track Arctic warming",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "JAF says four conscripts, bus driver killed, 18 injured in Karak bus crash",
+          "sec": 2,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "L'Orient Today",
@@ -420,13 +456,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Mathematicians are warning that the race among AI companies to solve famous problems threatens deep thought.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Iran president says pressure on country at critical, dangerous stage",
           "sec": 0,
@@ -439,13 +468,6 @@
           "sec": 0,
           "off": 2,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Watch: Teen found alive after clinging to capsized boat for 3 days",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
@@ -521,27 +543,21 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 44,
       "sizes": [
         6,
-        5,
-        4,
+        6,
         4,
         4,
         3,
         3,
         3,
+        3,
+        3,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -582,14 +598,14 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Trump stated that the Houthis do not wish to fight and that the war with Iran will end very soon.",
+          "headline": "Yemen government forces say hit Houthis in Red Sea city of Mocha",
           "rank_key": {
             "outlets": 6,
             "camps": 5,
             "newest": "2026-09-12T10:08+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
+            "Al Arabiya",
             "Iran International",
             "Kan 11",
             "SANA",
@@ -607,21 +623,16 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Trump stated that the Houthis do not wish to fight and that the war with Iran will end very soon.",
-            "title_source": "snippet",
+            "source": "Al Arabiya",
+            "title": "Yemen government forces say hit Houthis in Red Sea city of Mocha",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Iran war updates: Yemen gov’t says bombing ‘kill box’ near Mocha",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "The New Arab",
                 "title": "Iran arms, advice helped Yemen's Houthis seize key Red Sea city",
@@ -636,15 +647,20 @@
                 "source": "SANA",
                 "title": "Reuters: Iranian support helped Houthi militia seize Yemen’s Mocha",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Houthis seize key Red Sea island, take control of Bab al Mandeb area: goverment ",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Saudi Arabia says drones from Iraq caused injuries, oil pipeline closure",
+          "headline": "Saudi oil pipeline hit by drones launched from Iraq",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-09-12T09:38+00:00"
           },
@@ -652,6 +668,7 @@
             "Al Arabiya",
             "Anadolu Agency",
             "Arab News",
+            "Gulf News",
             "TRT World"
           ],
           "camps": [
@@ -659,12 +676,12 @@
             "panarab",
             "turkish"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Saudi Arabia says drones from Iraq caused injuries, oil pipeline closure",
+            "source": "Gulf News",
+            "title": "Saudi oil pipeline hit by drones launched from Iraq",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -832,6 +849,39 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israeli forces search, ransack multiple Palestinian homes in Jenin",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-12T10:58+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "Kan 11",
+            "WAFA News"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Israeli forces search, ransack multiple Palestinian homes in Jenin",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
           "rank_key": {
             "outlets": 3,
@@ -902,38 +952,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Palestinian man was shot in the leg by IDF forces during a confrontation with settlers on a farm i",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-12T08:43+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "A Palestinian man was shot in the leg by IDF forces during a confrontation with settlers on a farm in the…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Israel-Lebanon Rome talks pushed to October as Hezbollah strikes intensify",
           "rank_key": {
             "outlets": 2,
@@ -972,11 +990,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Pregnant woman dies from Israeli gunshot wounds south of Khan Younis",
+          "headline": "Palestinian killed, nine injured in Israeli strike in Gaza’s Khan Yunis",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-09-12T09:26+00:00"
+            "newest": "2026-09-12T10:52+00:00"
           },
           "outlet_names": [
             "SANA",
@@ -985,12 +1003,12 @@
           "camps": [
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "WAFA News",
-            "title": "Pregnant woman dies from Israeli gunshot wounds south of Khan Younis",
+            "title": "Palestinian killed, nine injured in Israeli strike in Gaza’s Khan Yunis",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -999,11 +1017,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Four Palestinians killed in Israeli strikes in Khan Younis",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "SANA",
                 "title": "One Palestinian killed, nine wounded in Israeli drone strike in southern Gaza",
@@ -1212,42 +1225,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "German prosecutors have filed charges against seven individuals for alleged Hamas membership and pla",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-12T06:00+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Dozens of intelligence documents, revealed for the first time, show that the threat from Al-Qaeda wa",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-12T05:58+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Reports from Jordan indicate explosions following launches from Iran, with ongoing updates.",
           "rank_key": {
             "outlets": 1,
@@ -1265,7 +1242,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Hormuz choked, Red Sea threatened: How will oil get through?",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-12T01:03+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Jordan condemns drone attack on Saudi East-West Pipeline",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T21:48+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1283,7 +1296,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-12T10:45:55.276855+00:00",
+    "last_success": "2026-09-12T11:08:36.767736+00:00",
     "last_failure": null
   },
   "ok": true
