@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T01:16:52.666269+00:00",
+  "updated": "2026-09-12T01:35:23.032276+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-12T01:14:59.507009+00:00"
+      "headlines_updated": "2026-09-12T01:32:48.116541+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 34,
+        "dropped_stale": 5,
+        "title_snippet": 33,
+        "dropped_no_english": 1,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 87,
         "in": 127,
-        "kept": 120
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -190,11 +191,6 @@
         {
           "source": "Al Arabiya",
           "title": "Trump predicts Iran war to end ‘immediately’ after US midterm elections",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
-          "title": "Pakistan pledges ‘unwavering solidarity’ with Saudi Arabia after Houthi attacks",
           "reason": "stale (older than 48h)"
         },
         {
@@ -218,15 +214,15 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Houthi attacks on Saudi oil facilities send prices soaring, warn of 'dangerous escalation'",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "\"מי ייתן והשנה החדשה תביא שלום מתמשך\": ראשי מדינות בירכו לכבוד ראש השנה תשפ\"ז",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 82,
+      "in": 121,
+      "kept": 80,
       "dropped": [
         {
           "source": "N12",
@@ -308,6 +304,13 @@
         {
           "source": "Middle East Eye",
           "title": "'Whitewashing Laura Loomer': AP interview sparks backlash on social media",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Iran president says pressure on country at critical, dangerous stage",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -425,6 +428,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Arab News",
+          "title": "Iran president says pressure on country at critical, dangerous stage",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Gulf News",
           "title": "Inside Dubai’s Rolls-Royce studio where buyers turn personal stories into cars",
           "sec": 0,
@@ -493,6 +503,13 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "US pressure on Iran at 'dangerous' stage: Pezeshkian",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
@@ -506,13 +523,13 @@
         4,
         4,
         4,
-        4,
+        3,
         3,
         3,
         3,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -698,52 +715,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-11T07:45+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "Gulf News",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Pakistan: Houthi attacks on Saudi Arabia could trigger Mecca defense alliance",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "UN Security Council rallies behind Saudi Arabia, condemns Houthi attacks, warns ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Enemy forces announced their withdrawal from Ali Taher.",
           "rank_key": {
             "outlets": 4,
@@ -786,7 +757,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "UK expanding settlement sanctions to Golan Heights, E. Jerusalem",
           "rank_key": {
             "outlets": 3,
@@ -858,6 +829,45 @@
                 "source": "IRNA",
                 "title": "President Pezeshkian departs for New Delhi to attend BRICS Summit",
                 "rejected_by": "stale anticipatory framing"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-11T07:45+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Gulf News",
+            "SANA"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "UN Security Council rallies behind Saudi Arabia, condemns Houthi attacks, warns ",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -939,44 +949,6 @@
               {
                 "source": "Syria Direct",
                 "title": "9/11 through Syrian eyes",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "US admission of Bahrain damage exposes cost of Israel’s wars",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-11T09:56+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Mehr News"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "US admission of Bahrain damage exposes cost of Israel’s wars",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (bahrain)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , ‘Blew the hell out of it’: How Iran damaged US bases in Bahrain, Jordan",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1208,24 +1180,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Following their reported takeover of the Bab al-Mandab strait, pro-Saudi forces in Yemen have launch",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T16:57+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "President Pezeshkian meets with Indian PM on BRICS summit sidelines",
           "rank_key": {
             "outlets": 1,
@@ -1297,7 +1251,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "US admission of Bahrain damage exposes cost of Israel’s wars",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-11T09:56+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1315,7 +1287,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-12T01:17:12.945261+00:00",
+    "last_success": "2026-09-12T01:35:38.422574+00:00",
     "last_failure": null
   },
   "ok": true
