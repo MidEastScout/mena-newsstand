@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T14:38:38.845012+00:00",
+  "updated": "2026-09-12T15:10:21.440583+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-12T14:36:40.619314+00:00"
+      "headlines_updated": "2026-09-12T15:08:16.548407+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 34,
+        "dropped_stale": 6,
+        "title_snippet": 31,
         "title_translated": 1,
-        "title_native": 87,
+        "title_native": 86,
+        "dropped_no_english": 3,
         "in": 127,
-        "kept": 122
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -199,6 +200,11 @@
         },
         {
           "source": "WAFA News",
+          "title": "Several injured in Israeli airstrikes in Gaza",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "WAFA News",
           "title": "Gaza death toll rises to 73,670 amid ongoing Israeli attacks",
           "reason": "stale (older than 48h)"
         },
@@ -211,12 +217,27 @@
           "source": "TRT World",
           "title": "Iran targets US base in Jordan, claims strikes on American destroyers",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن والخليج: ولادة \"قوس المضائق\" الاستراتيجية؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "مباحثات إيرانية باكستانية لخفض التصعيد… وترامب يقرّ بأنّ الحرب طالت أكثر مما كان يتوقع 10:00",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "تقرير مصور | علي الطاهر… صمود رجال الله يهزم الصورة المزيفة التي حاول الاحتلال إظهارها 21:36",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 73,
+      "in": 118,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
@@ -331,13 +352,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Seychelles has issued a warning regarding increasing maritime security risks in the Indian Ocean.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "Pezeshkian, Modi stress broadening Tehran-New Delhi relations",
           "sec": 0,
@@ -353,7 +367,21 @@
         },
         {
           "source": "Jordan Times",
-          "title": "How narwhal 'scientists' track Arctic warming",
+          "title": "Gaza film, Malkovich drama vie for Venice top prize",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "'A legend': Celine Dion poised for emotional comeback in Paris",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "German polls show Merz's party squeezed from far right and left",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -401,27 +429,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Manar",
-          "title": "Minister of Information Marqous announced that the Council of Ministers approved a special account for…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "WAFA News",
-          "title": "President Abbas receives credentials of new Chinese representative to Palestine",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "WAFA News",
-          "title": "President Abbas receives credentials of new Egyptian representative to Palestine",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "The article questions whether Sanaa and Tehran determine Trump's fate.",
           "sec": 0,
@@ -437,7 +444,7 @@
         },
         {
           "source": "Syria Direct",
-          "title": "9/11 through Syrian eyes",
+          "title": "9/11 through Syrian Eyes",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -469,13 +476,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "China's Xi urges BRICS to help advance peace in Middle East",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
@@ -580,7 +580,7 @@
         2,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -655,7 +655,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Trump says Houthis don’t want US to intervene, letting most ships through",
+                "title": "4 , Iran-backed Houthis seize strategic Mayun Island: Can they hold it?",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -1069,42 +1069,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "AEOI chief heads to Vienna to attend IAEA General Conference",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-12T08:05+00:00"
-          },
-          "outlet_names": [
-            "IRNA",
-            "Iran International"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "AEOI chief heads to Vienna to attend IAEA General Conference",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "ANALYSIS Iran’s hardliners bet on escalation as options narrow",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "SOUTH LEBANON Massive Israeli explosions on Ali Taher cause shockwave of 4.1 on Richter scale; Israe",
           "rank_key": {
             "outlets": 2,
@@ -1133,6 +1097,42 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran president and Abu Dhabi crown prince meet in New Delhi",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-12T14:56+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Bahrain rejects participation in proposed Hormuz ministerial meeting with Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-12T13:15+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1167,6 +1167,24 @@
             "levant"
           ],
           "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Nine Palestinians injured in Israeli drone strike in southern Gaza Strip",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-12T10:52+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1297,61 +1315,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Hormuz choked, Red Sea threatened: How will oil get through?",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-12T01:03+00:00"
-          },
-          "outlet_names": [
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemen's Houthis take over strait vital to global shipping",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T22:15+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "'That's why we fight': Trump links 9/11 to Iran conflict",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-11T22:00+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1369,7 +1333,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-12T14:38:58.385143+00:00",
+    "last_success": "2026-09-12T15:10:22.568686+00:00",
     "last_failure": null
   },
   "ok": true
