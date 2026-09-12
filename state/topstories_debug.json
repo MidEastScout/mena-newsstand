@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T06:20:07.790328+00:00",
+  "updated": "2026-09-12T06:32:00.460898+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-12T06:18:26.652519+00:00"
+      "headlines_updated": "2026-09-12T06:29:51.390763+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 34,
+        "title_snippet": 31,
         "title_native": 87,
-        "title_translated": 1,
+        "dropped_no_english": 4,
         "in": 127,
-        "kept": 122
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -211,12 +211,32 @@
           "source": "TRT World",
           "title": "Houthi attacks on Saudi oil facilities send prices soaring, warn of 'dangerous escalation'",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تطورات عسكرية متلاحقة في الساحل الغربي لليمن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: محافظ البنك المركزي الإيراني عبد الناصر همتي: الضغط الاقتصادي ليس سياسة بل هو خطأ في الحسابات ويزيد التكلفة الحسا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة العاشرة صباحاَ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "ماذا قالت الوزيرة الزين عن تفجيرات العدو في جنوب لبنان؟ 19:30",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 78,
+      "in": 118,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -324,29 +344,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Ukraine has surprised Europe with an additional $27 billion.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Al-Qassam Brigades announced the death of its Khan Younis brigade commander, Muhammad Al-Yazouri, stating…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Afternoon Bulletin",
+          "source": "Mehr News",
+          "title": "Iran planning to hold reg. meeting with Persian Gulf states",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Mehr News",
-          "title": "Iran planning to hold reg. meeting with Persian Gulf states",
+          "title": "Economic security inseparable from national-regional security",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "'That's why we fight': Trump links 9/11 to Iran conflict",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -364,13 +377,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "JAF says four conscripts, bus driver killed, 18 injured in Karak bus crash",
-          "sec": 3,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "L'Orient Today",
@@ -530,7 +536,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 43,
       "sizes": [
         6,
         6,
@@ -544,8 +550,6 @@
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -693,7 +697,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "3 , Can the Houthis close the Red Sea after seizing the Yemen coast?",
+                "title": "4 , Can the Houthis close the Red Sea after seizing the Yemen coast?",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -989,37 +993,37 @@
         },
         {
           "selected_rank": null,
-          "headline": "US admission of Bahrain damage exposes cost of Israel’s wars",
+          "headline": "Russia has targeted Ukrainian military facilities in Kyiv.",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-11T09:56+00:00"
+            "newest": "2026-09-11T13:54+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Mehr News"
+            "Falastin al-Youm"
           ],
           "camps": [
             "panarab",
-            "iranian"
+            "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Mehr News",
-            "title": "US admission of Bahrain damage exposes cost of Israel’s wars",
-            "title_source": "native",
+            "source": "Falastin al-Youm",
+            "title": "Russia has targeted Ukrainian military facilities in Kyiv.",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (bahrain)",
+              "names 1 of the story's dominant entities (ukraine)",
               "state/partisan outlet (last resort)",
-              "outlet's own English headline"
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , ‘Blew the hell out of it’: How Iran damaged US bases in Bahrain, Jordan",
+                "title": "3 , BRICS meets in India: What’s on the agenda, why it matters",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1273,7 +1277,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1291,7 +1295,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-12T06:20:39.324281+00:00",
+    "last_success": "2026-09-12T06:32:00.768052+00:00",
     "last_failure": null
   },
   "ok": true
