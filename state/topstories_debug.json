@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13T16:57:40.457921+00:00",
+  "updated": "2026-09-13T17:28:35.922291+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-13T16:55:58.880294+00:00"
+      "headlines_updated": "2026-09-13T17:26:55.518537+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 34,
+        "dropped_stale": 13,
+        "dropped_no_english": 9,
+        "title_snippet": 23,
         "title_translated": 1,
         "title_native": 80,
         "in": 126,
-        "kept": 115
+        "kept": 104
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 30,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "N12",
+          "title": "מבט מבפנים: התיעודים מרשת המנהרות של חיזבאללה שהושמדה ברכס עלי טאהר",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Al Arabiya",
           "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
@@ -218,6 +224,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Falastin al-Youm",
+          "title": "الاحتلال يتأهب تحسباً لرد ايراني على تفجير تلة علي الطاهر جنوب لبنان",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Syria Direct",
           "title": "9/11 through Syrian eyes",
           "reason": "stale (older than 48h)"
@@ -241,32 +252,63 @@
           "source": "TRT World",
           "title": "US pressure on Iran at 'dangerous' stage: Pezeshkian",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "לאחר השמדת המנהרות ברכס עלי טאהר: צה\"ל ביצע נסיגה נקודתית לרכס הבופור",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מתקפת כטב\"מים פגעה בצינור נפט בסעודיה; חשד לרצח משולש בשרון | חדשות החג",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מדריך חגי תשרי 2026: השאלות שכל מעסיק וכל עובד שואלים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחרי השמדת התוואי התת-קרקעי: דיווחים על תקיפות ברכס עלי טאהר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "هيئة الطيران المدني الإيرانية: لا إشعار جوياً جديداً.. والرحلات تسير حسب الجدول الزمني",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن يقترب من حصار البحر الأحمر و\"إسرائيل\" تستعد لليوم التالي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "المسلسلات القصيرة في الصدارة | 13 أيلول 2026 | الأخبار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "إعلان مشترك لقمة بريكس يؤكد معارضة العقوبات الأحادية الجانب 15:27",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "هل لأدوية إنقاص الوزن علاقة بارتفاع خطر الاكتئاب والأفكار الانتحارية؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 75,
+      "in": 104,
+      "kept": 68,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "The President of Iran stated that discussions were held with the United Arab Emirates, leading to an…",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "A fire broke out in the Tel Dan Nature Reserve, and the Nature and Parks Authority requested assistance for…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "A ship carrying hundreds of passengers has gone missing in Indonesia after encountering severe weather.",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -291,8 +333,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The full holiday broadcast from September 11, 2026, is available for viewing.",
+          "source": "Al Jazeera",
+          "title": "8 , As Chavez and Maduro images disappear, is Venezuela entering a new chapter?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -333,8 +375,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Brigadier General Yahya Sare'e of Yemen stated that continued Saudi aggression against their people will be…",
+          "source": "IRNA",
+          "title": "Cenbank chief heads to Turkey for Islamic central bank governors’ meeting",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -355,9 +397,9 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Celine Dion: the Quebec star's long and painful road to return",
+          "title": "King departs for UAE",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -438,13 +480,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The text questions whether weight-loss drugs are linked to an increased risk of depression and suicidal…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "Every IPL Team Will Regret Missing Out on Vaibhav Sooryavanshi, Says LSG Owner Sanjiv Goenka",
           "sec": 0,
@@ -454,13 +489,6 @@
         {
           "source": "Gulf News",
           "title": "Smriti Mandhana gets emotional over question on ‘hardest night’",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "UAE schools bring back textbooks, ban laptops for Grade 6 students",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -532,10 +560,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 40,
       "sizes": [
-        8,
-        4,
+        9,
+        9,
         3,
         2,
         2,
@@ -547,18 +575,6 @@
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -595,31 +611,91 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iran’s Revolutionary Guards reject Trump’s claim of US control over Strait of Hormuz",
+          "headline": "Iran reports commercial vessel struck in Strait of Hormuz",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-09-13T14:52+00:00"
+            "outlets": 7,
+            "camps": 3,
+            "newest": "2026-09-13T12:35+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Al Manar",
+            "Egypt Independent",
+            "Iran International",
+            "Mehr News",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 9,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Iran reports commercial vessel struck in Strait of Hormuz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Fierce battles ongoing between advancing Houthis and Yemen forces",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "4 , Red Sea nations watch as Houthis seize Bab al-Mandeb strait",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "6 , Fighting continues between Yemen gov’t forces, Houthis: What is the latest?",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Yemen government forces say hit Houthis in Red Sea city of Mocha",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Hormuz to Red Sea: How Iran is widening the war to gain leverage against US",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 5,
+            "newest": "2026-09-13T16:29+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Anadolu Agency",
             "Falastin al-Youm",
+            "Gulf News",
             "IRNA",
             "Mehr News"
           ],
           "camps": [
+            "gulf",
             "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran’s Revolutionary Guards reject Trump’s claim of US control over Strait of Hormuz",
+            "source": "Gulf News",
+            "title": "Hormuz to Red Sea: How Iran is widening the war to gain leverage against US",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -652,92 +728,36 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Yemen government forces say hit Houthis in Red Sea city",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-12T22:52+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Jordan Times"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Yemen government forces say hit Houthis in Red Sea city",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Yemen government forces say hit Houthis in Red Sea city of Mocha",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Fierce battles ongoing between advancing Houthis and Yemen forces",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Fighting continues between Yemen gov’t forces, Houthis: What is the latest?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
-          "headline": "The IDF reported that a soldier on leave shot at stone-throwers near Ramallah.",
+          "headline": "Shabjdeed's Saint Levant diss track: Who gets to represent Palestine?",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
             "newest": "2026-09-13T16:15+00:00"
           },
           "outlet_names": [
-            "Kan 11",
+            "Middle East Eye",
             "WAFA News"
           ],
           "camps": [
-            "israeli",
+            "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "The IDF reported that a soldier on leave shot at stone-throwers near Ramallah.",
-            "title_source": "snippet",
+            "source": "Middle East Eye",
+            "title": "Shabjdeed's Saint Levant diss track: Who gets to represent Palestine?",
+            "title_source": "native",
             "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "WAFA News",
                 "title": "Colonists attack Deir Jarir village east of Ramallah",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Two injured in colonists' attack east of Salfit",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
@@ -745,44 +765,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Kushner commented that the Israeli strike in Doha was unsuccessful and resulted in Israel's global i",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-13T14:08+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Kushner commented that the Israeli strike in Doha was unsuccessful and resulted in Israel's global isolation.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (qatar)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Jordan Times",
-                "title": "Safadi, Saudi, Qatari counterparts discuss regional de-escalation efforts",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Trump forecasts end to Iran war around November US midterm elections",
           "rank_key": {
             "outlets": 2,
@@ -813,7 +795,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Israeli strike kills two people in Gaza, medics say",
           "rank_key": {
             "outlets": 2,
@@ -842,44 +824,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-12T19:03+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (bahrain, hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "8 , Iran-GCC summit: What’s behind the meeting, why is Bahrain not attending?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -953,6 +897,43 @@
         },
         {
           "selected_rank": null,
+          "headline": "Jordan condemns storming of Al Aqsa Mosque by Israeli settlers",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-13T13:58+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Jordan condemns storming of Al Aqsa Mosque by Israeli settlers",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "Jordan condemns drone attack on Saudi East-West Pipeline",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Putin warns Europe against troop deployment as Ukraine strikes intensify",
           "rank_key": {
             "outlets": 2,
@@ -1013,7 +994,7 @@
             "passed_over": [
               {
                 "source": "Jordan Times",
-                "title": "Jordan condemns drone attack on Saudi East-West Pipeline",
+                "title": "Safadi, Saudi, Qatari counterparts discuss regional de-escalation efforts",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1105,11 +1086,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Vice President and Moroccan Foreign Minister review regional developments",
+          "headline": "Occupation forces detain foreign activist and tighten military measures at Al-Mughayyir entrance",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-13T16:08+00:00"
+            "newest": "2026-09-13T15:44+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -1146,6 +1127,24 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-09-13T14:10+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Kushner commented that the Israeli strike in Doha was unsuccessful and resulted in Israel's global i",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-13T14:08+00:00"
           },
           "outlet_names": [
             "Kan 11"
@@ -1213,24 +1212,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran reports commercial vessel struck in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-13T12:35+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Exclusive: Inside Hegseth’s push to showcase a dramatic Iran rescue on ‘60 Minutes’",
           "rank_key": {
             "outlets": 1,
@@ -1285,24 +1266,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Defense Secretary Pete Hegseth reportedly pressured F-15 pilots, whose aircraft were downed in Iran,",
+          "headline": "Iran can easily withdraw from NPT, revise nuclear doctrine",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-13T06:47+00:00"
+            "newest": "2026-09-13T05:36+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Mehr News"
           ],
           "camps": [
-            "israeli"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1320,7 +1301,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-13T16:57:57.942429+00:00",
+    "last_success": "2026-09-13T17:29:05.366258+00:00",
     "last_failure": null
   },
   "ok": true
