@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12T23:53:35.444712+00:00",
+  "updated": "2026-09-13T00:24:50.749016+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-12T23:51:23.229256+00:00"
+      "headlines_updated": "2026-09-13T00:22:55.183003+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 3,
-        "title_snippet": 33,
+        "title_snippet": 32,
         "title_translated": 2,
         "title_native": 88,
+        "dropped_no_english": 1,
         "in": 126,
-        "kept": 123
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -201,12 +202,17 @@
           "source": "Jordan Times",
           "title": "Jordan condemns Israeli prime minister's entry into Syria’s Mount Hermon",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بزشكيان لدى لقائه ولي عهد أبو ظبي: إيران تتصدى للمؤامرات الرامية إلى الفرقة بين أبناء الأمة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 78,
+      "in": 122,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
@@ -266,9 +272,9 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Second crypto billionaire donates record $49m to far-right Reform UK",
+          "title": "3 , Bahrain says it will not participate in Iran’s proposed Hormuz meeting",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -276,6 +282,13 @@
           "title": "4 , Tens of thousands march across Germany to protest far-right party AfD",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Second crypto billionaire donates record $49m to far-right Reform UK",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -328,8 +341,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "IRNA",
+          "title": "India seeks to expand ties with Iran, foreign ministry spokesperson tells IRNA",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Mehr News",
           "title": "Pezeshkian, Modi stress broadening Tehran-New Delhi relations",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Lebanon's president pledges Israeli withdrawal on visit to south",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -529,7 +556,7 @@
       "method": "heuristic",
       "clusters": 51,
       "sizes": [
-        8,
+        6,
         5,
         4,
         4,
@@ -539,8 +566,8 @@
         2,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -589,15 +616,73 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Yemen’s Houthis claim ballistic missile, drone attack on Saudi military base",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 5,
+            "newest": "2026-09-12T22:58+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency",
+            "Egypt Independent",
+            "Gulf News",
+            "Iran International"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Yemen’s Houthis claim ballistic missile, drone attack on Saudi military base",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "4 Saudi Arabia squeezed from Iraq and Yemen ahead of GCC talks with Iran",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Egypt Independent",
+                "title": "Saudi oil pipeline shut down after attack triggers fires",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Saudi Arabia, Houthis trade strikes over Red Sea chokepoint",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Türkiye condemns drone attacks on Saudi Arabia from Iraqi territory",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 4,
             "newest": "2026-09-12T16:38+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Arab News",
             "Egypt Independent",
             "SANA",
@@ -609,7 +694,7 @@
             "levant",
             "turkish"
           ],
-          "members": 8,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -622,11 +707,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Iraq probes drone strikes on Saudi Arabia, shuts three crossings to Iran",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "Al Arabiya",
                 "title": "Trump says Iran probably responsible for attack on Saudi pipeline",
@@ -646,110 +726,7 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Yemen’s Houthis claim ballistic missile, drone attack on Saudi military base",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-09-12T22:58+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Egypt Independent",
-            "Gulf News",
-            "Iran International"
-          ],
-          "camps": [
-            "gulf",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Yemen’s Houthis claim ballistic missile, drone attack on Saudi military base",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "5 Saudi Arabia squeezed from Iraq and Yemen ahead of GCC talks with Iran",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Egypt Independent",
-                "title": "Saudi oil pipeline shut down after attack triggers fires",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
-          "headline": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-12T20:08+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (bahrain, hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Bahrain says it will not participate in Iran’s proposed Hormuz meeting",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Bahrain rules out Iran meeting on Hormuz until diplomatic relations restored",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Israeli forces raid Palestinian journalist’s home in northern West Bank",
           "rank_key": {
             "outlets": 3,
@@ -799,6 +776,51 @@
           }
         },
         {
+          "selected_rank": 4,
+          "headline": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-09-12T20:08+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (bahrain, hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Bahrain rules out Iran meeting on Hormuz until diplomatic relations restored",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 5,
           "headline": "The Israeli military is maintaining a high state of alert in the north and continuing operations aga",
           "rank_key": {
@@ -837,44 +859,6 @@
               {
                 "source": "L'Orient Today",
                 "title": "FOCUS Ali Taher demolition: How significant is the loss for Hezbollah and Iran?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemen government forces say hit Houthis in Red Sea city",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-12T22:52+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Jordan Times"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Yemen government forces say hit Houthis in Red Sea city",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Yemen government forces say hit Houthis in Red Sea city of Mocha",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1188,24 +1172,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran president and Abu Dhabi crown prince meet in New Delhi",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-12T14:56+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Kuwait condemns attack on Saudi oil pipeline as threat to regional security",
           "rank_key": {
             "outlets": 1,
@@ -1241,7 +1207,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "More than 200 released prisoners from Saudi prisons were received in the Western region of Yemen.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-12T13:39+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1259,7 +1243,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-12T23:53:49.164075+00:00",
+    "last_success": "2026-09-13T00:25:04.986228+00:00",
     "last_failure": null
   },
   "ok": true
