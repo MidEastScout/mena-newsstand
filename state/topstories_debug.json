@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13T06:45:44.947348+00:00",
+  "updated": "2026-09-13T06:49:00.655346+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-13T06:43:57.728513+00:00"
+      "headlines_updated": "2026-09-13T06:46:56.727711+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 34,
+        "title_snippet": 30,
+        "dropped_no_english": 5,
         "title_native": 86,
-        "dropped_no_english": 1,
         "in": 126,
-        "kept": 120
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -213,15 +213,35 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Kan 11",
+          "title": "אינדונזיה: ספינה טבעה בעקבות תנאי מזג אוויר קשים, אדם אחד נהרג, 140 עדיין נעדרים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "علي الطاهر.. موقع استراتيجي في معركة الجنوب",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al Manar",
           "title": "القوات المسلحة اليمنية تعلن تنفيذ عملية “والله أشدُّ بأساً وأشدُّ تنكيلاً” في محافظتي تعز والحديدة 16:57",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "بحجة الأعياد اليهودية: الاحتلال يُغلق معبري رفح وكرم أبو سالم",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تفجيرات وقصف في تصعيد إسرائيلي متواصل على لبنان",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 67,
+      "in": 116,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
@@ -233,13 +253,6 @@
         {
           "source": "Kan 11",
           "title": "Israeli entrepreneur Elite Raz, owner of the company JOONKO, pleaded guilty to a massive investor fraud…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Threats against the 93-year-old Jewish Community president in Munich, Charlotte Knobloch, included graffiti…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -378,13 +391,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Moody's has upgraded its outlook for South Africa to 'positive,' despite economic pressures.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "In photos: Esteghlal defeats Paykan in Iran Pro League",
           "sec": 0,
@@ -401,6 +407,13 @@
         {
           "source": "Jordan Times",
           "title": "Lebanon's president pledges Israeli withdrawal on visit to south",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Jordan, Russia conclude seventh commission, agree to boost trade, investment",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -457,13 +470,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "The title translates to 'Do Sanaa and Tehran determine Trump's fate?'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Qatar's ambassador to the UN stated that changing Israel's belief in its impunity would end its actions.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -598,12 +604,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 43,
       "sizes": [
         8,
         5,
         4,
-        3,
         2,
         2,
         2,
@@ -611,7 +616,7 @@
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -971,7 +976,7 @@
           "camps": [
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -988,11 +993,6 @@
               {
                 "source": "Falastin al-Youm",
                 "title": "An individual was injured by settlers' assault in Beitello, Ramallah.",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Two individuals were injured, one by live ammunition, in Jerusalem and Ramallah.",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1133,24 +1133,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump links Iran war to September 11 attacks as pressure on Tehran deepens",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-12T18:28+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "BRICS declaration aligns with Iran’s key positions: Gharibabadi",
           "rank_key": {
             "outlets": 1,
@@ -1276,7 +1258,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Syria condemns attack on Saudi oil pipeline, reaffirms solidarity with Riyadh",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-12T10:13+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1294,7 +1294,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-13T06:46:00.573990+00:00",
+    "last_success": "2026-09-13T06:49:00.963891+00:00",
     "last_failure": null
   },
   "ok": true
