@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13T01:46:59.976153+00:00",
+  "updated": "2026-09-13T02:19:01.905435+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-13T01:45:09.186294+00:00"
+      "headlines_updated": "2026-09-13T02:16:10.891859+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 3,
         "title_snippet": 33,
-        "title_translated": 2,
+        "title_translated": 1,
         "title_native": 88,
+        "dropped_no_english": 1,
         "in": 126,
-        "kept": 123
+        "kept": 122
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -201,16 +202,42 @@
           "source": "Jordan Times",
           "title": "Jordan condemns Israeli prime minister's entry into Syria’s Mount Hermon",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بزشكيان لدى لقائه ولي عهد أبو ظبي: إيران تتصدى للمؤامرات الرامية إلى الفرقة بين أبناء الأمة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 79,
+      "in": 122,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "Israeli entrepreneur Elite Raz, owner of JOONKO, pleaded guilty to defrauding investors of $27 million in…",
+          "title": "Israeli entrepreneur Elite Raz, owner of JOONKO, pleaded guilty to defrauding investors of $27 million.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Kan 11",
+          "title": "Three men died in a car fire in an open area near Baka al-Gharbiyya.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "Israeli entrepreneur Elite Raz, 40, founder of AI company Joonko, admitted to defrauding investors of…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "After three days of searching, commando Itai Parson was found lifeless.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -224,23 +251,30 @@
         },
         {
           "source": "Channel 13",
-          "title": "Tamar Steinberg has won the World Windsurfing Championship, bringing pride to Israel.",
+          "title": "Israeli Tamar Steinberg won the world championship in windsurfing.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The holiday forecast predicts pleasant and warm weather, with temperatures expected to decrease starting…",
+          "title": "Channel 13 reports that the holiday forecast is pleasant and warm, with temperatures dropping mid-week.",
           "sec": 0,
-          "off": 2,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Tens of thousands march across Germany to protest far-right party AfD",
+          "title": "4 , BRICS nations urge ‘restraint’ in Middle East, smooth flow of global trade",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Second crypto billionaire donates record $49m to far-right Reform UK",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -254,7 +288,7 @@
           "source": "Middle East Eye",
           "title": "Turkey: Mo Salah welcomed by fans chanting ‘Allahu Akbar’ after move to Trabzonspor",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -287,21 +321,14 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Iranian minister Pezeshkian, during a meeting with the Crown Prince of Abu Dhabi, stated that Iran confronts…",
+          "title": "Moody's has upgraded its outlook for South Africa to \"positive\" despite economic pressures.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "Moody's has upgraded its outlook for South Africa to 'positive' despite ongoing economic pressures.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Six in the morning bulletin",
+          "title": "Sana'a has changed its rules of engagement, with Yemeni advances disrupting Saudi calculations on the west…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -371,28 +398,28 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Tickets for a meeting with Kazem El Saher in Beirut cost $650.",
+          "title": "Kadem Al Sahir's concert in Beirut requires a $650 fee for a meet-and-greet.",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Beirut has not yet set a date for meetings in Rome and Tampa following a conference in Paris.",
+          "title": "Beirut has not set a date for the Rome meeting or the Tampa meeting post-Paris conference.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Social media buzzed with discussions about the resilience and bravery of 'men of God' in Jabal Ali Taher…",
+          "title": "Social media buzzed with talk of the resilience and bravery of \"God's men\" in Jabal Ali Taher, contrasting…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Qatar's ambassador to the UN stated that changing Israel's belief in impunity would end its actions.",
+          "title": "Qatar's ambassador to the UN stated that changing Israel's belief of impunity will stop its actions.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -407,6 +434,13 @@
         {
           "source": "Syria Direct",
           "title": "9/11 through Syrian eyes",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Iran president says pressure on country at critical, dangerous stage",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -427,7 +461,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "Will India seal record-extending eighth Women’s T20 Asia Cup title?",
+          "title": "Vaibhav Sooryavanshi in focus as India take on Afghanistan in T20 series",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -499,7 +533,7 @@
           "source": "TRT World",
           "title": "Documentary exposing Israel's AI killing system wins Venice prize",
           "sec": 0,
-          "off": 2,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -520,12 +554,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 45,
       "sizes": [
-        11,
+        9,
         7,
-        6,
-        3,
+        4,
         3,
         3,
         3,
@@ -534,6 +567,8 @@
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -575,70 +610,10 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iraq, Iran discuss probe into drone attacks on Saudi oil pipeline",
-          "rank_key": {
-            "outlets": 8,
-            "camps": 4,
-            "newest": "2026-09-13T01:31+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Arab News",
-            "Egypt Independent",
-            "Gulf News",
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 11,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iraq, Iran discuss probe into drone attacks on Saudi oil pipeline",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Iraq probes drone strikes on Saudi Arabia, shuts three crossings to Iran",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Trump says Iran probably responsible for attack on Saudi pipeline",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Egypt Independent",
-                "title": "Trump says Iran likely responsible for attack on vital Saudi oil pipeline",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Trump indicates Iran behind attack on Saudi oil pipeline",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Yemen’s Houthis claim ballistic missile, drone attack on Saudi military base",
           "rank_key": {
-            "outlets": 6,
-            "camps": 5,
+            "outlets": 7,
+            "camps": 6,
             "newest": "2026-09-12T22:58+00:00"
           },
           "outlet_names": [
@@ -647,16 +622,18 @@
             "Egypt Independent",
             "Gulf News",
             "Iran International",
-            "Mehr News"
+            "Mehr News",
+            "N12"
           ],
           "camps": [
+            "israeli",
             "gulf",
             "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -671,6 +648,11 @@
             ],
             "passed_over": [
               {
+                "source": "N12",
+                "title": "Trump suggested Iran is likely responsible for the attack on Saudi Arabia's oil ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Iran International",
                 "title": "3 Saudi Arabia squeezed from Iraq and Yemen ahead of GCC talks with Iran",
                 "rejected_by": "older than the story's newest wave"
@@ -684,10 +666,64 @@
                 "source": "Al Jazeera",
                 "title": "1 , Saudi Arabia, Houthis trade strikes over Red Sea chokepoint",
                 "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Iraq, Iran discuss probe into drone attacks on Saudi oil pipeline",
+          "rank_key": {
+            "outlets": 7,
+            "camps": 4,
+            "newest": "2026-09-13T01:31+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Arab News",
+            "Egypt Independent",
+            "Gulf News",
+            "SANA",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 9,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Iraq, Iran discuss probe into drone attacks on Saudi oil pipeline",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Trump says Iran probably responsible for attack on Saudi pipeline",
+                "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Gulf News",
-                "title": "Saudi oil pipeline may be hit as Houthi attacks escalate: report",
+                "source": "Egypt Independent",
+                "title": "Trump says Iran likely responsible for attack on vital Saudi oil pipeline",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Trump indicates Iran behind attack on Saudi oil pipeline",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Iraq investigates attacks on Saudi oil pipeline launched from its territory",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -695,67 +731,7 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 5,
-            "newest": "2026-09-12T19:03+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Arab News",
-            "Iran International",
-            "Kan 11",
-            "TRT World"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "panarab",
-            "iranian",
-            "turkish"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (bahrain, hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "Trump stated that the Houthis do not want to fight and that the war with Iran wi",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "3 , Bahrain says it will not participate in Iran’s proposed Hormuz meeting",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Bahrain rules out Iran meeting on Hormuz until diplomatic relations restored",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "The Israeli military is on high alert following the destruction of a Hezbollah underground facility.",
+          "headline": "Following the destruction of a Hezbollah underground complex, the Israeli military is on high alert ",
           "rank_key": {
             "outlets": 3,
             "camps": 3,
@@ -776,7 +752,7 @@
           "why_not": null,
           "representative": {
             "source": "N12",
-            "title": "The Israeli military is on high alert following the destruction of a Hezbollah underground facility.",
+            "title": "Following the destruction of a Hezbollah underground complex, the Israeli military is on high alert for a…",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -787,7 +763,7 @@
             "passed_over": [
               {
                 "source": "Iran International",
-                "title": "ANALYSIS Israel crosses Iran’s Lebanon red lines as Tehran leans on maritime lev",
+                "title": "5 Israeli attacks on Hezbollah fuel hardline calls for Iran to escalate",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -799,38 +775,56 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "After three days of searching, Yamam fighter Itai Parson was found deceased.",
+          "selected_rank": 4,
+          "headline": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
           "rank_key": {
             "outlets": 3,
-            "camps": 1,
-            "newest": "2026-09-12T14:08+00:00"
+            "camps": 2,
+            "newest": "2026-09-12T19:03+00:00"
           },
           "outlet_names": [
-            "Channel 13",
-            "Kan 11",
-            "N12"
+            "Al Arabiya",
+            "Al Jazeera",
+            "Arab News"
           ],
           "camps": [
-            "israeli"
+            "gulf",
+            "panarab"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Channel 13",
-            "title": "After three days of searching, Yamam fighter Itai Parson was found deceased.",
-            "title_source": "snippet",
+            "source": "Arab News",
+            "title": "Bahrain will not attend Gulf meeting with Iran on Strait of Hormuz",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "names 2 of the story's dominant entities (bahrain, hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Bahrain says it will not participate in Iran’s proposed Hormuz meeting",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "‘Unprecedented threat’: Houthis & Iran now control Bab el-Mandeb & Hormuz Strait",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Bahrain rules out Iran meeting on Hormuz until diplomatic relations restored",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Israeli forces shoot, injure Palestinian in occupied East Jerusalem",
           "rank_key": {
             "outlets": 2,
@@ -936,12 +930,12 @@
             "passed_over": [
               {
                 "source": "Falastin al-Youm",
-                "title": "A person was injured due to an attack by settlers in Beitello, near Ramallah.",
+                "title": "An individual was injured due to an attack by settlers in Bittello, Ramallah.",
                 "rejected_by": "stale anticipatory framing"
               },
               {
                 "source": "Falastin al-Youm",
-                "title": "Two individuals were injured, one by live ammunition, in Jerusalem and Ramallah.",
+                "title": "Two individuals, one by live ammunition, were injured in Jerusalem and Ramallah.",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -949,11 +943,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Yemeni armed forces announced a qualitative military operation targeting the military base in Sh",
+          "headline": "The Yemeni armed forces announced the expulsion of Saudi forces from six districts on the west coast",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-12T21:35+00:00"
+            "newest": "2026-09-11T21:58+00:00"
           },
           "outlet_names": [
             "Al Manar",
@@ -968,7 +962,7 @@
           "why_not": null,
           "representative": {
             "source": "Al Mayadeen",
-            "title": "The Yemeni armed forces announced a qualitative military operation targeting the military base in Sharurah…",
+            "title": "The Yemeni armed forces announced the expulsion of Saudi forces from six districts on the west coast.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -979,12 +973,12 @@
             "passed_over": [
               {
                 "source": "Al Manar",
-                "title": "The Yemeni Armed Forces announced the execution of a military operation named 'B",
+                "title": "The Yemeni armed forces announced the execution of the \"God is the fiercest in m",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al Manar",
-                "title": "War media released high-quality footage of Yemeni Armed Forces operations agains",
+                "title": "The War Media distributed footage of the Yemeni armed forces' operations against",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -992,40 +986,32 @@
         },
         {
           "selected_rank": null,
-          "headline": "US believes Iran used Chinese satellite images for Jordan attack",
+          "headline": "Commando Itai Parson, a commando fighter, is the young person found lifeless on a Haifa beach.",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-12T08:55+00:00"
+            "camps": 1,
+            "newest": "2026-09-12T14:08+00:00"
           },
           "outlet_names": [
-            "Jordan Times",
-            "The New Arab"
+            "Kan 11",
+            "N12"
           ],
           "camps": [
-            "panarab",
-            "levant"
+            "israeli"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "US believes Iran used Chinese satellite images for Jordan attack",
-            "title_source": "native",
+            "source": "N12",
+            "title": "Commando Itai Parson, a commando fighter, is the young person found lifeless on a Haifa beach.",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (jordan)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
-            "passed_over": [
-              {
-                "source": "Jordan Times",
-                "title": "Jordan condemns drone attack on Saudi East-West Pipeline",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -1060,25 +1046,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "Three men were found dead inside a car that caught fire in an open area near Baqa al-Gharbiyye.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-13T00:57+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A young woman, approximately 18 years old, was seriously injured by gunfire near the Idan Negev inte",
+          "headline": "A young woman, approximately 18 years old, was severely injured by gunfire near the Idan Negev inter",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1132,7 +1100,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "The war in the Persian Gulf continues, with recent escalation.",
+          "headline": "The war in the Gulf continues with increased intensity.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1186,7 +1154,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Euro-Mediterranean Human Rights Monitor reported that Israeli 'quadcopter' drones have caused 60",
+          "headline": "The Euro-Mediterranean Observatory reported that Israeli quadcopter casualties in Gaza reached 60 ma",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1197,24 +1165,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran got Chinese satellite images before deadly strike on US troops: report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-12T15:05+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1240,7 +1190,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "More than 200 released prisoners from Saudi prisons were welcomed in the western coastal area of Yem",
+          "headline": "Sana'a welcomed over 200 released prisoners from Saudi prisons on the west coast.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1275,7 +1225,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Nine Palestinians injured in Israeli drone strike in southern Gaza Strip",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-12T11:21+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli army to collapse in short period without US help",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-12T10:21+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1293,7 +1279,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-13T01:47:14.266328+00:00",
+    "last_success": "2026-09-13T02:20:05.599727+00:00",
     "last_failure": null
   },
   "ok": true
