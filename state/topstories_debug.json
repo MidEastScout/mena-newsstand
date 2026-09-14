@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T02:38:20.315960+00:00",
+  "updated": "2026-09-14T03:09:12.174963+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-14T02:36:28.554585+00:00"
+      "headlines_updated": "2026-09-14T03:07:33.752261+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 33,
-        "title_translated": 1,
-        "title_native": 80,
+        "dropped_stale": 13,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
+        "title_native": 79,
         "in": 126,
-        "kept": 114
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 33,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -219,7 +219,7 @@
         },
         {
           "source": "Syria Direct",
-          "title": "9/11 through Syrian eyes",
+          "title": "9/11 through Syrian Eyes",
           "reason": "stale (older than 48h)"
         },
         {
@@ -230,6 +230,11 @@
         {
           "source": "Arab News",
           "title": "Iran says to discuss Hormuz with Gulf states in Oman on Monday",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "India welcomes Russia, Iran leaders for BRICS summit overshadowed by war",
           "reason": "stale (older than 48h)"
         },
         {
@@ -246,12 +251,22 @@
           "source": "TRT World",
           "title": "US pressure on Iran at 'dangerous' stage: Pezeshkian",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "הקצין האמריקני שהופל באיראן נחשף לראשונה: \"כשהסתכלתי למעלה ולא ראיתי מצנח, התחלתי להתפלל\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אתה מרגיש שאתה הולך עם מטרה על הגב\": האם להיות יהודי באמריקה הפך מסוכן?",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 67,
+      "in": 111,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -283,13 +298,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "This is a listing for the full edition of \"Hamahdurah Hamerkazit\" (The Main Edition) from September 13, 2026.",
           "sec": 0,
           "off": 0,
@@ -297,7 +305,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "6 , Centre-left opposition bloc leads in Swedish vote, poll shows",
+          "title": "5 , Sweden’s centre-left leads by three seats as election count continues",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -333,6 +341,13 @@
         {
           "source": "Al Arabiya",
           "title": "Israel and Lebanon to meet in Rome in October, US official says",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Trump tells Ukraine’s Zelenskyy to stop hitting Russian diesel",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -586,7 +601,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 36,
       "sizes": [
         11,
         6,
@@ -601,9 +616,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -736,7 +748,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "5 , Fighting continues between Yemen gov’t forces, Houthis: What is the latest?",
+                "title": "6 , Red Sea nations watch as Houthis seize Bab al-Mandeb strait",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -913,44 +925,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces blow up Mansouri Public School in southern Lebanon",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-13T21:55+00:00"
-          },
-          "outlet_names": [
-            "L'Orient Today",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Israeli forces blow up Mansouri Public School in southern Lebanon",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "FOCUS When robots join the battle between Israel and Hezbollah in southern Leban",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump has called on Zelensky to stop targeting diesel infrastructure in Russia.",
           "rank_key": {
             "outlets": 2,
@@ -976,6 +950,76 @@
               "passed every gate (neutral, current, fresh, not a stub)",
               "neutral-by-default outlet",
               "derived from the outlet's English snippet"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Jordan condemns coloniats' incursions into Al-Aqsa Mosque",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-13T13:12+00:00"
+          },
+          "outlet_names": [
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Jordan condemns coloniats' incursions into Al-Aqsa Mosque",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "US believes Iran used Chinese satellite images for Jordan attack",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "FOCUS When robots join the battle between Israel and Hezbollah in southern Lebanon",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": null
+          },
+          "outlet_names": [
+            "Iran International",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "L'Orient Today",
+            "title": "FOCUS When robots join the battle between Israel and Hezbollah in southern Lebanon",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (hezbollah, hezbollah_south)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": []
           }
@@ -1054,37 +1098,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Jordan condemns storming of Al Aqsa Mosque by Israeli settlers",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-13T13:58+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Jordan condemns storming of Al Aqsa Mosque by Israeli settlers",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (jordan, westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "After three days of searching, YAMAM fighter Itai Persson was found deceased.",
           "rank_key": {
             "outlets": 2,
@@ -1115,24 +1128,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump expects to discuss 'almost everything' with Xi during White House summit",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-14T00:49+00:00"
-          },
-          "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "A 22-year-old woman sustained severe injuries from a shooting incident in the Bedouin town of Umm al",
           "rank_key": {
             "outlets": 1,
@@ -1151,17 +1146,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "New Russian drones that evade defense systems are reportedly equipped with jet engines and resemble ",
+          "headline": "Israeli forces blow up Mansouri Public School in southern Lebanon",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-13T19:30+00:00"
+            "newest": "2026-09-13T21:55+00:00"
           },
           "outlet_names": [
-            "N12"
+            "The New Arab"
           ],
           "camps": [
-            "israeli"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1213,6 +1208,42 @@
           },
           "outlet_names": [
             "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump tells Zelenskyy: halt strikes on Russian diesel",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-13T14:24+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Jordan condemns storming of Al Aqsa Mosque by Israeli settlers",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-13T13:58+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
           ],
           "camps": [
             "levant"
@@ -1295,24 +1326,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iraq to reopen Iran crossings after drone attack",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-13T08:05+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran can easily withdraw from NPT, revise nuclear doctrine",
           "rank_key": {
             "outlets": 1,
@@ -1330,7 +1343,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1348,7 +1361,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-14T02:38:34.233651+00:00",
+    "last_success": "2026-09-14T03:09:27.697193+00:00",
     "last_failure": null
   },
   "ok": true
