@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T01:04:43.798729+00:00",
+  "updated": "2026-09-14T01:35:58.341418+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-14T01:02:50.711467+00:00"
+      "headlines_updated": "2026-09-14T01:33:57.410830+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 33,
+        "title_snippet": 31,
         "title_translated": 1,
         "title_native": 80,
+        "dropped_no_english": 2,
         "in": 126,
-        "kept": 114
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -246,12 +247,22 @@
           "source": "TRT World",
           "title": "US pressure on Iran at 'dangerous' stage: Pezeshkian",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "ترامب لزيلنسكي: توقف عن استهداف البنية التحتية للديزل في ‌روسيا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مصدر لوكالة \"سبأ\" بشأن ادعاءات السعودية إصابة الصواريخ اليمنية لمسجد: اتهام عار عن الصحة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 64,
+      "in": 112,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
@@ -361,13 +372,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Iran's Ghalibaf shared a satirical scene about soaring US fuel prices, referencing the economic impact of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The article discusses the potential for reclaiming the route from Hormuz to Bab al-Mandeb in West Asia.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -618,7 +622,7 @@
         2,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -655,67 +659,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Yemeni army retakes positions from Houthis, advances in Taiz: Report",
-          "rank_key": {
-            "outlets": 7,
-            "camps": 5,
-            "newest": "2026-09-13T23:40+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Al Manar",
-            "Al Mayadeen",
-            "Anadolu Agency",
-            "Kan 11",
-            "Mehr News"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 8,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Yemeni army retakes positions from Houthis, advances in Taiz: Report",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Iran war updates: Houthi vehicles in Dhubab, Mocha hit by Yemen’s army",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Red Sea nations watch as Houthis seize Bab al-Mandeb strait",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Yemen government forces say hit Houthis in Red Sea city of Mocha",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "Yemen reported Saudi artillery shelling on residential villages in the border di",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Gulf-Iran meeting on Strait of Hormuz postponed, Oman says",
           "rank_key": {
             "outlets": 7,
@@ -769,6 +712,66 @@
               {
                 "source": "Mehr News",
                 "title": "New details on Iran-Oman Hormuz agreement released",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Yemeni army retakes positions from Houthis, advances in Taiz: Report",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 5,
+            "newest": "2026-09-13T23:40+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Al Manar",
+            "Anadolu Agency",
+            "Kan 11",
+            "Mehr News"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 8,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Yemeni army retakes positions from Houthis, advances in Taiz: Report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Iran war updates: Houthi vehicles in Dhubab, Mocha hit by Yemen’s army",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "5 , Red Sea nations watch as Houthis seize Bab al-Mandeb strait",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "6 , Fighting continues between Yemen gov’t forces, Houthis: What is the latest?",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Yemen government forces say hit Houthis in Red Sea city of Mocha",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -859,43 +862,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Trump urged Zelenskyy to stop targeting Russian diesel infrastructure.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-13T17:17+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "Trump urged Zelenskyy to stop targeting Russian diesel infrastructure.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "6 , Trump tells Zelenskyy to stop hitting Russian diesel supplies",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "FOCUS When robots join the battle between Israel and Hezbollah in southern Lebanon",
           "rank_key": {
             "outlets": 2,
@@ -932,7 +898,7 @@
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-09-13T20:42+00:00"
+            "newest": "2026-09-14T00:56+00:00"
           },
           "outlet_names": [
             "SANA",
@@ -956,7 +922,7 @@
             "passed_over": [
               {
                 "source": "WAFA News",
-                "title": "Occupation forces detain young woman at checkpoint, northwest of Jerusalem",
+                "title": "Occupation forces raid Kafr Ein, open fire, and detain a young man from Burqa",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1170,6 +1136,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump urged Zelenskyy to stop targeting Russian diesel infrastructure.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-13T17:17+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Occupation forces detain foreign activist and tighten military measures at Al-Mughayyir entrance",
           "rank_key": {
             "outlets": 1,
@@ -1259,25 +1243,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iranian cargo vessel hit near Qeshm Island, one martyred",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-13T05:15+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1295,7 +1261,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-14T01:04:58.067208+00:00",
+    "last_success": "2026-09-14T01:36:24.576067+00:00",
     "last_failure": null
   },
   "ok": true
