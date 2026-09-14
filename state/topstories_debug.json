@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T04:14:12.934092+00:00",
+  "updated": "2026-09-14T04:48:11.816807+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-14T04:11:25.466331+00:00"
+      "headlines_updated": "2026-09-14T04:46:07.922908+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 31,
-        "title_native": 81,
-        "dropped_no_english": 3,
+        "dropped_stale": 13,
+        "title_snippet": 28,
+        "dropped_no_english": 5,
+        "title_native": 80,
         "in": 126,
-        "kept": 112
+        "kept": 108
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 32,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -190,6 +190,11 @@
         {
           "source": "N12",
           "title": "מבט מבפנים: התיעודים מרשת המנהרות של חיזבאללה שהושמדה ברכס עלי טאהר",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחרי השמדת התוואי התת-קרקעי: דיווחים על תקיפות ברכס עלי טאהר",
           "reason": "stale (older than 48h)"
         },
         {
@@ -228,6 +233,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Arab News",
+          "title": "India welcomes Russia, Iran leaders for BRICS summit overshadowed by war",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "Houthis seize key Red Sea island, take control of Bab al Mandeb area: goverment official",
           "reason": "stale (older than 48h)"
@@ -241,6 +251,16 @@
           "source": "TRT World",
           "title": "US pressure on Iran at 'dangerous' stage: Pezeshkian",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "יו\"ר ישראל ביתנו ליברמן על הסרט \"נז\"א\": זה נזק ישיר למדינת ישראל. מדובר בבגידה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הקצין האמריקני ששרד יומיים באיראן לאחר שמטוסו הופל שבר שתיקה: \"המצנח נפגע, נס ששרדתי\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
@@ -260,19 +280,12 @@
       ]
     },
     "relevance": {
-      "in": 112,
-      "kept": 69,
+      "in": 108,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "The Likud party plans to submit requests to disqualify the joint list and Ra'am from participating in the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Alexander Zverev won his second Grand Slam title at the US Open, defeating Ben Shelton.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -364,6 +377,13 @@
         {
           "source": "The New Arab",
           "title": "Trump pledges $5,000 to every US adult if Republicans win miderms",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Gaza documentary 'NAZA' wins Venice special jury prize",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -568,18 +588,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 37,
       "sizes": [
         12,
         8,
-        5,
+        4,
         4,
         3,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -721,7 +738,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "6 , Red Sea nations watch as Houthis seize Bab al-Mandeb strait",
+                "title": "6 , Fighting continues between Yemen gov’t forces, Houthis: What is the latest?",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -739,14 +756,13 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Israeli culture minister vows to revoke citizenship of Gaza documentary filmmakers",
+          "headline": "Israeli strike kills 2 Palestinians in fresh Gaza violation",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
-            "newest": "2026-09-13T20:52+00:00"
+            "newest": "2026-09-13T16:15+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
             "Daily Sabah",
             "Falastin al-Youm",
             "Middle East Eye",
@@ -757,12 +773,12 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli culture minister vows to revoke citizenship of Gaza documentary filmmakers",
+            "source": "Daily Sabah",
+            "title": "Israeli strike kills 2 Palestinians in fresh Gaza violation",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -780,16 +796,6 @@
                 "source": "Falastin al-Youm",
                 "title": "The Civil Defense announced the recovery of the remains of 17 martyrs from Gaza ",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "SANA",
-                "title": "Two Palestinians killed in Israeli airstrike on Gaza City",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "Israeli strike kills 2 Palestinians in fresh Gaza violation",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -844,15 +850,15 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Trump tells Zelenskyy: halt strikes on Russian diesel",
+          "headline": "US used Israel’s isolation after Doha strike to secure Gaza deal: Kushner",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-13T17:17+00:00"
+            "newest": "2026-09-14T02:27+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "TRT World"
+            "Anadolu Agency",
+            "Jordan Times"
           ],
           "camps": [
             "levant",
@@ -862,15 +868,22 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "TRT World",
-            "title": "Trump tells Zelenskyy: halt strikes on Russian diesel",
+            "source": "Anadolu Agency",
+            "title": "US used Israel’s isolation after Doha strike to secure Gaza deal: Kushner",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (gaza, qatar)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "Safadi, Saudi, Qatari counterparts discuss regional de-escalation efforts",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -960,17 +973,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "A 22-year-old woman sustained severe injuries from a shooting incident in the Bedouin town of Umm Ba",
+          "headline": "Trump expects to discuss 'almost everything' with Xi during White House summit",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-13T23:03+00:00"
+            "newest": "2026-09-14T00:49+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "TRT World"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1025,6 +1038,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump urged Zelenskyy to halt strikes on Russian diesel infrastructure.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-13T17:17+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1139,25 +1170,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Exclusive: Inside Hegseth’s push to showcase a dramatic Iran rescue on ‘60 Minutes’",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-13T12:23+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1175,7 +1188,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-14T04:14:40.839255+00:00",
+    "last_success": "2026-09-14T04:48:42.425667+00:00",
     "last_failure": null
   },
   "ok": true
