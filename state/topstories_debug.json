@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T08:49:05.120070+00:00",
+  "updated": "2026-09-15T09:24:15.464987+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,36 +167,27 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-15T08:46:58.317060+00:00"
+      "headlines_updated": "2026-09-15T09:22:14.862413+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 32,
+        "dropped_stale": 9,
+        "dropped_no_english": 7,
+        "title_snippet": 27,
         "title_native": 83,
         "title_translated": 1,
         "in": 127,
-        "kept": 116
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "N12",
-          "title": "רס\"ר איתי פרסון, לוחם בימ\"מ, הוא הצעיר שאותר ללא רוח חיים בחוף בחיפה",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "בתום 3 ימי חיפושים: לוחם הימ\"מ איתי פרסון אותר ללא רוח חיים",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "The New Arab",
           "title": "Gaza documentary 'NAZA' wins Venice special jury prize",
@@ -241,37 +232,51 @@
           "source": "TRT World",
           "title": "Türkiye, Saudi Arabia discuss regional tensions after oil pipeline attack",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "האו\"ם דורש מישראל לאפשר גישה לרצועת עזה כדי לחקור חשד לפשעי מלחמה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צה\"ל השמיד משגרי רקטות בלבנון; גורם צבאי: זו נורת אזהרה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דוח בריטי מציג עלייה ניכרת במספר מקרי האנטישמיות במערכת הבריאות במדינה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "טראמפ עם הגב לקיר: האפשרויות מול החות'ים, והמדינה המערבית ששולחת סיוע צבאי לסעודיה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "שילמו על 5G, קיבלו \"4G גרוע\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"נתניהו עשה יח\"צ על גבנו, הרגשתי נבגדת\" -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "منافس خليجي محتمل لإنفانتينو في انتخابات رئاسة \"فيفا\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 59,
+      "in": 111,
+      "kept": 56,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "A caregiver in Netanya, Shelly Sheinker, was sentenced to seven years in prison for abusing 12 infants.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
           "title": "Police in Israel have arrested an additional suspect in the murder of a Caucasian mafia boss in Caesarea.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Denis Mukhin has been sentenced to 22 years in prison for the murder of Diar Omri, which occurred during a…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Shelly Sheinker, a kindergarten assistant in Netanya, has been sentenced to seven years in prison for…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -410,6 +415,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Iran International",
+          "title": "VOICES FROM IRAN Iranians say basic food slipping beyond reach as bread prices soar",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Jordan Times",
           "title": "Ammonia leak at Aqaba industrial complex leaves 11 with breathing difficulties",
           "sec": 0,
@@ -461,6 +473,13 @@
         {
           "source": "L'Orient Today",
           "title": "FOCUS Al-Qard al-Hassan: Institutions pass the buck as investigation stalls Mounir YOUNES",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Egypt opens the 2nd Arab-African Exhibition in Water and Energy",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -572,9 +591,16 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Supreme Court blocks US Postal Service mail-in ballot rules ahead of midterm elections",
+          "title": "Challenging economic landscape looms over US midterms",
           "sec": 0,
-          "off": 1,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "US judge blocks Trump rule shortening length of visas for international students, academics, journalists",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -594,13 +620,6 @@
         {
           "source": "Daily Sabah",
           "title": "CEOs call for AI slowdown, regulation but Washington hesitates",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Child’s gravestone with çovgan motif uncovered in eastern Türkiye",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -639,22 +658,15 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "US energy chief says Saudi East-West pipeline expected to resume operations soon",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 33,
       "sizes": [
         6,
-        5,
+        6,
         4,
         3,
         3,
@@ -664,10 +676,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -745,7 +753,7 @@
               },
               {
                 "source": "Iran International",
-                "title": "3 Deadly ship strike deepens crisis over Strait of Hormuz",
+                "title": "4 Deadly ship strike deepens crisis over Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -758,6 +766,63 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Iran protests after nuclear chief denied entry to Vienna for IAEA conference",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-09-15T08:55+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Arab News",
+            "IRNA",
+            "Mehr News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "iranian",
+            "turkish"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Iran protests after nuclear chief denied entry to Vienna for IAEA conference",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Blocking Iran’s nuclear chief from IAEA conference sets dangerous precedent: AEO",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Blocking Iran’s nuclear chief from IAEA conference marks clear violation of righ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Barring Iran nuclear chief violates sovereign rights",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Iran nuclear chief blocked from Vienna meeting",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Coalition says Houthi attacks on Saudi Arabia targeted civilians, vows response",
           "rank_key": {
             "outlets": 4,
@@ -805,41 +870,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Iran nuclear chief blocked from Vienna meeting",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-14T16:12+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "IRNA",
-            "Mehr News",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "iranian",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Iran nuclear chief blocked from Vienna meeting",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -958,7 +988,13 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Palestinian dies of wounds from Israeli strike in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1137,11 +1173,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Egypt, Greece launch joint military exercise in Mediterranean",
+          "headline": "Japan's Global Hawk drone goes missing over Sea of Japan",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-15T08:39+00:00"
+            "newest": "2026-09-15T09:06+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1209,42 +1245,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Yemen’s Gate of Tears: How another critical waterway became Iran’s wild card",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-15T07:20+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Lebanon has requested a postponement of talks with Israel, citing Israeli military activity in the a",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-15T07:12+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "No talks with US until Iran’s conditions are met: Security chief",
           "rank_key": {
             "outlets": 1,
@@ -1263,24 +1263,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Palestinian killed by Israeli fire in West Bank raid",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-15T06:33+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Prisoner Dana Judeh gave birth to her daughter in Israeli prisons without medical care.",
           "rank_key": {
             "outlets": 1,
@@ -1292,24 +1274,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Poland ends air operations after Russian drone strikes on Ukraine",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-15T05:26+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1352,7 +1316,79 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "No talks with US until Iran’s conditions met",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-15T03:38+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The UK's Prime Minister, Andy Burnham, is reportedly considering Saudi requests for military support",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-14T23:05+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saudi Arabia is reportedly transferring Syrian fighters, described as a Yemeni version of 'deterring",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-14T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli violence West Bank: Full-fledged ethnic cleansing campaign",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-14T21:05+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "10 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1370,7 +1406,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-15T08:52:44.262520+00:00",
+    "last_success": "2026-09-15T09:24:32.204185+00:00",
     "last_failure": null
   },
   "ok": true
