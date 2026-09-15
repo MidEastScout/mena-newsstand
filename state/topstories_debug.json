@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T00:34:02.601060+00:00",
+  "updated": "2026-09-15T01:05:15.314412+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-15T00:31:53.322743+00:00"
+      "headlines_updated": "2026-09-15T01:03:14.002941+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 32,
+        "title_snippet": 31,
         "title_translated": 1,
         "title_native": 81,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 114
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -251,12 +252,17 @@
           "source": "TRT World",
           "title": "Houthis seize key Red Sea island, take control of Bab al Mandeb area: goverment official",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القوات المسلحة اليمنية: تصدّينا لتشكيلين جويّين قتاليين سعوديين في صعدة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 54,
+      "in": 113,
+      "kept": 52,
       "dropped": [
         {
           "source": "Kan 11",
@@ -330,14 +336,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Macklemore dropped from Ed Sheeran tour following Palestine advocacy",
+          "title": "3 , Why Saudi Arabia’s East-West pipeline matters for global oil",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Why Saudi Arabia’s East-West pipeline matters for global oil",
+          "title": "4 , Macklemore dropped from Ed Sheeran tour following Palestine advocacy",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -436,6 +442,13 @@
         {
           "source": "Jordan Times",
           "title": "Crown Prince visits Baptism Site",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Border guards thwart three drug-smuggling attempts in eastern region – JAF",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -568,6 +581,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "Rajeev Shukla explains why India refused Asia Cup trophy from Naqvi",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "India women return to Delhi after triumphant Asia Cup campaign",
           "sec": 0,
           "off": 1,
@@ -576,13 +596,6 @@
         {
           "source": "Gulf News",
           "title": "Dubai to have four Etihad Rail stations, including two for high-speed Abu Dhabi link, RTA reveals",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Hindu Temple Dubai issues Ganesha Chaturthi 2026 guidelines for Indian expat devotees in UAE",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -682,11 +695,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 28,
+      "clusters": 27,
       "sizes": [
         11,
         6,
-        4,
+        3,
         3,
         2,
         2,
@@ -694,7 +707,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -760,7 +772,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , CENTCOM disputes IRGC claim supertanker struck by Hormuz naval mines",
+                "title": "1 , CENTCOM disputes IRGC claim supertanker struck by Hormuz naval mines",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -833,14 +845,13 @@
           "selected_rank": 3,
           "headline": "South Korea condemns Houthi attacks on Saudi Arabia, urges immediate halt",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
             "newest": "2026-09-14T09:33+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Arab News",
-            "Jordan Times",
             "SANA"
           ],
           "camps": [
@@ -848,7 +859,7 @@
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -865,11 +876,6 @@
               {
                 "source": "Al Arabiya",
                 "title": "Islamabad condemns Houthi attacks on Saudi Arabia: Sharif tells MBS",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Houthi projectile injures two, damages mosque in Saudi Arabia’s Jazan — Civil De",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -1184,24 +1190,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Britain is boycotting settlements, raising questions about the repercussions of settlement policies.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-14T17:39+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Suicide rates have reportedly increased among the Israeli army.",
           "rank_key": {
             "outlets": 1,
@@ -1309,7 +1297,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "7 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Jordan condemns storming of Al Aqsa Mosque by Israeli settlers",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-13T13:58+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "6 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1327,7 +1333,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-15T00:34:15.057819+00:00",
+    "last_success": "2026-09-15T01:05:15.546546+00:00",
     "last_failure": null
   },
   "ok": true
