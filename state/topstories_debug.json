@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T00:08:24.569694+00:00",
+  "updated": "2026-09-16T00:40:14.305600+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-16T00:06:23.721793+00:00"
+      "headlines_updated": "2026-09-16T00:38:27.018734+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 34,
+        "dropped_stale": 7,
+        "title_snippet": 32,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 84,
+        "dropped_no_english": 2,
         "in": 126,
-        "kept": 120
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -203,6 +204,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "The New Arab",
+          "title": "Saudi pipeline outage threatens loss of 4% of global oil supply",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Jordan Times",
           "title": "Jordan condemns storming of Al Aqsa Mosque by Israeli settlers",
           "reason": "stale (older than 48h)"
@@ -216,12 +222,22 @@
           "source": "Gulf News",
           "title": "Indonesia says six killed, 130 missing after ferry capsizes off Java",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بعد كشف أكسيوس عن الاجتماع السري في ألمانيا.. كيف تقرأ طهران هذا التطور؟ وأي رد مرتقب؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "لبنان يبدأ منافسات كأس دايفيس اليوم",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 66,
+      "in": 117,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -288,14 +304,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Ed Sheeran blames US tour promoter for dropping Macklemore",
+          "title": "4 , Ed Sheeran blames US tour promoter for dropping Macklemore",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Who is Robert Kraft, pro-Israel billionaire who cancelled Macklemore?",
+          "title": "5 , Who is Robert Kraft, pro-Israel billionaire who cancelled Macklemore?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,13 +366,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "11 PM News Bulletin.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Najafi: Approval of Iran's membership in IAEA conference's General Committee was another political defeat for US",
           "sec": 0,
@@ -366,13 +375,6 @@
         {
           "source": "Iran International",
           "title": "VOICES FROM IRAN Iranians say basic food slipping beyond reach as bread prices soar",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Jordan, NATO begin preparations for 2027 disaster response exercise",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -408,13 +410,6 @@
         {
           "source": "Al-Akhbar",
           "title": "Oil prices rose by more than $3 due to the halt of Saudi and Libyan exports.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "A Hebrew report indicates Saudi Arabia requested Israeli support in confronting Ansar Allah.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -593,21 +588,14 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Lebanon reconstruction costs could exceed $27B: PM Salam",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 53,
+      "clusters": 51,
       "sizes": [
-        5,
+        9,
         3,
         2,
         2,
@@ -615,8 +603,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -669,29 +655,35 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israel shares Houthi intelligence with Saudi Arabia: Report",
+          "headline": "Saudi air defenses intercept Houthi drone near Mecca",
           "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-15T19:59+00:00"
+            "outlets": 8,
+            "camps": 5,
+            "newest": "2026-09-16T00:04+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al Jazeera",
+            "Anadolu Agency",
             "Arab News",
             "Daily Sabah",
+            "Iran International",
+            "Jordan Times",
             "TRT World"
           ],
           "camps": [
             "gulf",
             "panarab",
+            "iranian",
+            "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Israel shares Houthi intelligence with Saudi Arabia: Report",
+            "source": "Anadolu Agency",
+            "title": "Saudi air defenses intercept Houthi drone near Mecca",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -701,23 +693,23 @@
             ],
             "passed_over": [
               {
+                "source": "Al Jazeera",
+                "title": "1 , Iran war updates: US says Saudi pipeline to resume as Yemen fighting rages",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Al Arabiya",
                 "title": "Coalition says Houthi attacks on Saudi Arabia targeted civilians, vows response",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Arab News",
-                "title": "13 civilians in Saudi Arabia injured after Houthi attacks, alerts for several ci",
+                "source": "Iran International",
+                "title": "ANALYSIS Iran's Saudi leverage could become its liability",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Arab News",
-                "title": "Saudi Arabia issues, lifts alerts as Houthi attacks raise security fears",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Houthi missiles and drones strike several Saudi cities, injuring 13",
+                "source": "Jordan Times",
+                "title": "Saudi Arabia issues alerts following Houthi attacks, Iran denies involvement in ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -800,44 +792,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Israeli settlement sanctions 'fall far short' of UK obligations, warn legal experts",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-15T19:08+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Middle East Eye"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli settlement sanctions 'fall far short' of UK obligations, warn legal experts",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Shabjdeed's Saint Levant diss track: Who gets to represent Palestine?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "The commander of the Rafah Brigade and head of Hamas's operations division was eliminated.",
           "rank_key": {
             "outlets": 2,
@@ -868,7 +822,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "The war on Iran is depleting the US arsenal, and the Pentagon admits to ammunition shortages.",
           "rank_key": {
             "outlets": 2,
@@ -1192,7 +1146,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "33 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "32 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1210,7 +1164,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-16T00:08:40.204529+00:00",
+    "last_success": "2026-09-16T00:40:36.430918+00:00",
     "last_failure": null
   },
   "ok": true
