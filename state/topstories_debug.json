@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T23:19:12.400747+00:00",
+  "updated": "2026-09-16T23:50:41.577196+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-16T23:17:16.824116+00:00"
+      "headlines_updated": "2026-09-16T23:48:40.011195+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 32,
+        "title_snippet": 29,
         "title_translated": 1,
         "title_native": 88,
+        "dropped_no_english": 3,
         "in": 127,
-        "kept": 121
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -216,12 +217,27 @@
           "source": "Gulf News",
           "title": "Brent at $105.70 as Gulf states halt Hormuz talks, Saudi Arabia strikes Houthis",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة الحادية عشرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "وزير خارجية عُمان: في عصر الإفلات من العقاب، أصبح الدبلوماسيون أكثر أهمية من أي وقت مضى",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تراجع حركة الملاحة في مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 62,
+      "in": 118,
+      "kept": 59,
       "dropped": [
         {
           "source": "Kan 11",
@@ -393,7 +409,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Gov’t plans $10 billion PPP projects over next 3 to 4 years - minister",
+          "title": "King departs on working tour to France, Czech Republic, United States",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -401,6 +417,13 @@
         {
           "source": "L'Orient Today",
           "title": "LIVE Parliament renews confidence in government by 68 votes to 12 | LIVE",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
+          "title": "GENERAL POLICY DEBATE After 2 days of debate, Parliament maintains confidence in government",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -492,13 +515,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "There are 'Israeli' concerns about retaliatory operations in Gaza following a series of recent…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The U.S.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -640,10 +656,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 40,
       "sizes": [
-        8,
-        5,
+        9,
+        4,
         3,
         2,
         2,
@@ -651,8 +667,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -693,9 +707,9 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Former CENTCOM Commander on Houthi attacks, Yemen, Iran & Saudi Arabia",
+          "headline": "Saudi says Houthis target Mecca, warn of 'red line'",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 6,
             "camps": 4,
             "newest": "2026-09-16T11:57+00:00"
           },
@@ -704,6 +718,7 @@
             "Arab News",
             "Gulf News",
             "Iran International",
+            "Jordan Times",
             "SANA"
           ],
           "camps": [
@@ -712,12 +727,12 @@
             "iranian",
             "levant"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Former CENTCOM Commander on Houthi attacks, Yemen, Iran & Saudi Arabia",
+            "source": "Jordan Times",
+            "title": "Saudi says Houthis target Mecca, warn of 'red line'",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -753,12 +768,11 @@
           "selected_rank": 2,
           "headline": "21 dead, dozens missing after war-damaged building falls in Gaza",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
             "newest": "2026-09-16T19:06+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
             "Falastin al-Youm",
             "SANA",
             "TRT World",
@@ -769,7 +783,7 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -783,11 +797,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Al Mayadeen",
-                "title": "Yemen is escalating actions, Gaza is resisting annihilation, and Washington is d",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "Falastin al-Youm",
                 "title": "Hamas commented on the 'Al-Saada Building' disaster in Gaza, according to paltod",
@@ -803,43 +812,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Commando and Yahalom units engaged approximately 50 militants in the Ali Taher ridge, uncovering a c",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-16T16:58+00:00"
-          },
-          "outlet_names": [
-            "L'Orient Today",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Commando and Yahalom units engaged approximately 50 militants in the Ali Taher ridge, uncovering a central…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "DECODING Civil peace: Why Hezbollah and Amal are sounding the alarm",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "US House votes for a third time to end Iran war",
           "rank_key": {
             "outlets": 2,
@@ -870,7 +842,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "The Pentagon has stated that the war with Iran has depleted American ammunition and constrained supp",
           "rank_key": {
             "outlets": 2,
@@ -901,7 +873,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "The Houthis have committed to not carrying out attacks during their meeting with American officials ",
           "rank_key": {
             "outlets": 2,
@@ -1030,6 +1002,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israel and Morocco agree to open embassies following tripartite UN talks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-16T21:59+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Pezeshkian: Iran ready to resolve issues with neighbors through diplomacy",
           "rank_key": {
             "outlets": 1,
@@ -1138,6 +1128,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Commando and Yahalom units engaged approximately 50 militants in the Ali Taher ridge, uncovering a c",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-16T16:58+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Prisoner dies in Israeli detention facility",
           "rank_key": {
             "outlets": 1,
@@ -1155,43 +1163,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "The article reflects on the anniversary of Sabra and Shatila and how the shock of occupation transfo",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-16T15:25+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran oil facilities damaged in war on track for restoration, minister says",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-16T15:07+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1209,7 +1181,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-16T23:19:30.379940+00:00",
+    "last_success": "2026-09-16T23:50:54.359153+00:00",
     "last_failure": null
   },
   "ok": true
