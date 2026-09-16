@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T21:44:58.206987+00:00",
+  "updated": "2026-09-16T22:16:17.378275+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-16T21:43:06.622284+00:00"
+      "headlines_updated": "2026-09-16T22:14:24.394230+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 32,
+        "title_snippet": 28,
         "title_translated": 1,
+        "dropped_no_english": 4,
         "title_native": 89,
         "in": 127,
-        "kept": 122
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -211,12 +212,32 @@
           "source": "Syria Direct",
           "title": "Oil flows, fuel runs dry: Syria’s paradox as a new energy corridor",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "העסקה - והחשש מפגיעה בפרטיות: המשטרה תרכוש מצלמות מסין",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "בעקבות ביטול המופע האנטי-ישראלי של מאקלמור: אד שירן תחת מתקפה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القوات المسلحة اليمنية تعلن تنفيذ عمليتين نوعيتين في العمق السعودي بالصواريخ والمسيرات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "استشهاد أسير في سجون الاحتلال",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 63,
+      "in": 118,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
@@ -255,13 +276,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "This is a news summary for the show \"HaMakor,\" season 25, episode 8.",
           "sec": 0,
           "off": 0,
@@ -269,14 +283,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "Despite an unprecedented low in the Likud party, there has been a shift in blocs favoring Netanyahu.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This news item concerns a request for release from house arrest by the brother of the head of Shin Bet.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -359,29 +366,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "IRNA",
-          "title": "Iran: International engagement with Afghan officials is essential",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Iran International",
-          "title": "4 Islamic Republic asks public to identify opponents abroad",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "King departs on working tour to France, Czech Republic, United States",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Germany's Merz plans high-stakes party meet after Sunday's state polls",
+          "title": "3 Islamic Republic asks public to identify opponents abroad",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -478,13 +464,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Macklemore dropped from Ed Sheeran's US tour over pro-Palestinian remarks",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "This item is in Arabic and discusses Israeli concerns about retaliatory operations in Gaza following recent…",
           "sec": 0,
@@ -508,13 +487,6 @@
         {
           "source": "Arab News",
           "title": "Qatar warns against ‘catastrophic’ Bab Al-Mandab closure",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Mahmoud Khalil lawsuit says Columbia failed to protect pro-Palestinian activists",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -545,6 +517,13 @@
           "title": "US stocks end midweek lower as Fed raises rates for first time in over 3 years",
           "sec": 0,
           "off": 2,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "US Fed raises interest rates for 1st time in over 3 years as inflation remains elevated",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -637,17 +616,17 @@
       "method": "heuristic",
       "clusters": 39,
       "sizes": [
-        11,
+        9,
+        6,
         5,
-        4,
         3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -687,7 +666,7 @@
           "selected_rank": 1,
           "headline": "Five Muslim countries, including Türkiye condemn Houthi attack near Mecca",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 6,
             "camps": 5,
             "newest": "2026-09-16T19:22+00:00"
           },
@@ -697,8 +676,6 @@
             "Arab News",
             "Gulf News",
             "Iran International",
-            "Jordan Times",
-            "L'Orient Today",
             "SANA"
           ],
           "camps": [
@@ -708,7 +685,7 @@
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -749,22 +726,24 @@
           "selected_rank": 2,
           "headline": "21 dead, dozens missing after war-damaged building falls in Gaza",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-09-16T19:06+00:00"
           },
           "outlet_names": [
+            "Al Mayadeen",
+            "Falastin al-Youm",
+            "Jordan Times",
             "SANA",
             "TRT World",
-            "The New Arab",
-            "WAFA News"
+            "The New Arab"
           ],
           "camps": [
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -779,8 +758,18 @@
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "UPDATE: Eleven Palestinians killed as war-damaged building collapses in Gaza Cit",
+                "source": "Al Mayadeen",
+                "title": "This item is in Arabic and discusses Yemen's escalation, Gaza's resistance to ge",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Jordan Times",
+                "title": "Israel will 'finish job' in Gaza and remove Palestinians — defence minister",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "This item is in Arabic and asks what Hamas said about the 'Al-Sa'ada Tower' disa",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -855,6 +844,81 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Lebanon prosecutor requests charges for ex-president Michel Aoun over port blast",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-15T16:18+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Lebanon prosecutor requests charges for ex-president Michel Aoun over port blast",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "JUSTICE Prosecutor requests charges for former President Michel Aoun over Beirut",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Brent at $105.70 as Gulf states halt Hormuz talks, Saudi Arabia strikes Houthis",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-14T22:39+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "Iran International"
+          ],
+          "camps": [
+            "gulf",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Brent at $105.70 as Gulf states halt Hormuz talks, Saudi Arabia strikes Houthis",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (hormuz, yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "4 Hormuz traffic plunges ahead of Iran-China talks",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Saudi F-15 fighter jet downed over Yemen's Marib",
           "rank_key": {
             "outlets": 2,
@@ -956,6 +1020,61 @@
         },
         {
           "selected_rank": null,
+          "headline": "The Jerusalem Governorate warned of escalating settlement expansion north-west of Jerusalem.",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-16T14:10+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "The Jerusalem Governorate warned of escalating settlement expansion north-west of Jerusalem.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "Palestinians say Israeli army killed man in West Bank raid",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pezeshkian: Iran ready to resolve issues with neighbors through diplomacy",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-16T21:45+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "President Pezeshkian hails 200 nights of rallies by Iranians",
           "rank_key": {
             "outlets": 1,
@@ -1010,6 +1129,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Palestinian youth injured by Israeli forces’ gunfire during raid into Al-Bireh",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-16T20:49+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "IRGC spokesperson: US narrative of pilot rescue just fictional",
           "rank_key": {
             "outlets": 1,
@@ -1046,24 +1183,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Netanyahu vows to revoke citizenship of those who ‘defame’ Israeli soldiers in Gaza documentary NAZA",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-16T19:46+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Forces engaged in combat within a Hezbollah underground complex on the Ali Taher ridge, neutralizing",
           "rank_key": {
             "outlets": 1,
@@ -1075,6 +1194,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Prisoner dies in Israeli detention facility",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-16T16:25+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1118,24 +1255,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Jerusalem Governorate warned of escalating settlement expansion north-west of Jerusalem.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-16T14:10+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The Foreign Minister of Oman stated that in an era of impunity, diplomats have become more important",
           "rank_key": {
             "outlets": 1,
@@ -1153,25 +1272,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "This item is in Arabic and discusses Yemen's escalation, Gaza's resistance to genocide, and Washingt",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-16T12:51+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1189,7 +1290,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-16T21:45:11.698194+00:00",
+    "last_success": "2026-09-16T22:16:31.448342+00:00",
     "last_failure": null
   },
   "ok": true
