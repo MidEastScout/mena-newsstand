@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17T12:54:30.872377+00:00",
+  "updated": "2026-09-17T13:25:50.823298+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,29 +167,39 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-17T12:52:48.689909+00:00"
+      "headlines_updated": "2026-09-17T13:23:58.366809+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 32,
-        "title_native": 88,
-        "title_translated": 1,
+        "dropped_stale": 8,
+        "title_snippet": 26,
+        "dropped_no_english": 5,
+        "title_native": 89,
         "in": 128,
-        "kept": 121
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 31,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
         {
+          "source": "Al Mayadeen",
+          "title": "للمرة الأولى رسمياً.. البنتاغون: حرب إيران تستنزف الذخائر وتشلّ سلاسل الإمداد",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Jordan Times",
           "title": "Saudi Arabia issues alerts following Houthi attacks, Iran denies involvement in war",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "البنتاغون: حرب إيران استنزفت الذخائر الأميركية وكبّلت سلاسل الإمداد",
           "reason": "stale (older than 48h)"
         },
         {
@@ -208,11 +218,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "WAFA News",
-          "title": "Lawsuit accuses Columbia University of failing to protect pro-Palestine students",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "أزمة مالية وعملياتية خانقة تضرب جيش الاحتلال بعد 3 سنوات من الحرب",
           "reason": "stale (older than 48h)"
@@ -221,12 +226,37 @@
           "source": "Syria Direct",
           "title": "Oil flows, fuel runs dry: Syria’s paradox as a new energy corridor",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "מפת הקרב: ההתקדמות של החות'ים, אזורי השליטה שלהם בתימן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הסתיר מאות ספרים מאחורי הקיר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "لماذا لم تكسر العقوبات المجتمع الإيراني؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"نازا\": عندما يتحول الانتقام إلى منظومة قتل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تصعيد عسكري إسرائيلي واسع في جنوب لبنان",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 67,
+      "in": 115,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -273,13 +303,6 @@
         {
           "source": "N12",
           "title": "A couple's honeymoon in Italy was disrupted when their cooking class was canceled for \"ethical\" reasons…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "The article criticizes Ireland's stance on the Israeli-Palestinian conflict, suggesting a disproportionate…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -348,6 +371,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Arabiya",
+          "title": "Trump administration plans $2.8 billion Israel arms sale including 2,000-pound bombs",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "The New Arab",
           "title": "Trump administration plans $2.8 billion weapons sale to Israel",
           "sec": 0,
@@ -378,13 +408,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Brazilian positions on the Gaza situation and aggression against Iran and Lebanon have been a headache for…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Bulletin 8 a.m.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -467,8 +490,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Israeli colonists attempt to storm Ramallah public park",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "There are 'Israeli' fears of retaliatory operations in Gaza following a series of recent assassinations.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "Oil prices extend losses as Middle East supply concerns ease",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -482,7 +519,7 @@
         },
         {
           "source": "Arab News",
-          "title": "Qatar warns against ‘catastrophic’ Bab Al-Mandab closure",
+          "title": "Oil prices extend losses as fears of Middle East supply disruptions ease",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -510,14 +547,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Irish broadcaster confirms Eurovision boycott for 2nd year in row",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Fishermen block oil depots across France to protest rising fuel prices",
+          "title": "Oil prices fall over 3% as immediate Middle East supply concerns ease",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -610,9 +640,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 45,
       "sizes": [
-        4,
+        5,
+        3,
+        3,
         3,
         2,
         2,
@@ -620,15 +652,6 @@
         2,
         2,
         2,
-        2,
-        2,
-        2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -673,32 +696,36 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Saudi Arabia accuses Huthis of ‘red line’ attack on Mecca as rebels face outrage from Muslim world",
+          "headline": "1 killed, 2 injured by falling Houthi drone debris in western Saudi Arabia",
           "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-17T12:44+00:00"
+            "outlets": 5,
+            "camps": 5,
+            "newest": "2026-09-17T13:06+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Anadolu Agency",
             "Arab News",
             "Egypt Independent",
-            "SANA"
+            "Mehr News"
           ],
           "camps": [
             "gulf",
             "panarab",
-            "levant"
+            "iranian",
+            "levant",
+            "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Egypt Independent",
-            "title": "Saudi Arabia accuses Huthis of ‘red line’ attack on Mecca as rebels face outrage from Muslim world",
+            "source": "Anadolu Agency",
+            "title": "1 killed, 2 injured by falling Houthi drone debris in western Saudi Arabia",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -709,8 +736,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "SANA",
-                "title": "Saudi Arabia says Houthi drone intercepted before reaching Mecca airspace",
+                "source": "Mehr News",
+                "title": "Saudi Arabia's \"Wing Loong 2\" drone shot down over Yemen",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -723,6 +750,45 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Gaza building collapse kills more than 20, dozens remain trapped under rubble",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-17T13:11+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent",
+            "SANA",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Gaza building collapse kills more than 20, dozens remain trapped under rubble",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "21 dead, dozens missing after war-damaged building falls in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "US House votes for a third time to end Iran war",
           "rank_key": {
             "outlets": 3,
@@ -754,44 +820,6 @@
               {
                 "source": "Arab News",
                 "title": "US House votes for a third time to end the Iran war as conflict drags on",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Gaza building collapse kills more than 20, dozens remain trapped under rubble",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-17T12:39+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Gaza building collapse kills more than 20, dozens remain trapped under rubble",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "21 dead, dozens missing after war-damaged building falls in Gaza",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -867,75 +895,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "3 Syrian security personnel killed in clash with ISIS-linked group in Daraa",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-17T09:24+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "SANA"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "3 Syrian security personnel killed in clash with ISIS-linked group in Daraa",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "Three Syrian Internal Security Forces personnel martyred in Daraa attack",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump says ‘hopefully we are towards end’ of Iran war, to hold talks with Gulf leaders",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-17T07:17+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Trump says ‘hopefully we are towards end’ of Iran war, to hold talks with Gulf leaders",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump says US ‘hopefully toward the end’ of war with Iran, claims 'direct talks' — as Tehran stresse",
           "rank_key": {
             "outlets": 2,
@@ -966,6 +925,49 @@
               {
                 "source": "Al Jazeera",
                 "title": "4 , Trump claims direct talks with Iran: Is diplomacy picking up again?",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US officials met Iran-backed Houthis in Oman over the weekend, sources say",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-16T16:27+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Iran International"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "US officials met Iran-backed Houthis in Oman over the weekend, sources say",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "INSIGHT Tehran political circles see US hand in postponement of Oman Hormuz talk",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "5 US officials met Iran-aligned Houthis in Oman - Reuters",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1039,6 +1041,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Bab al-Mandeb Strait’s shipping traffic comes to halt amid conflict in Yemen",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-17T13:13+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Occupation forces storm the towns north of Tulkarm, and raid dozens of homes",
           "rank_key": {
             "outlets": 1,
@@ -1068,24 +1088,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Dramatic footage shows a shootout between police and a fugitive killer in Minneapolis, resulting in ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-17T10:38+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1147,6 +1149,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump hopes Iran war is nearing end, plans talks with Gulf leaders",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-17T07:17+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Claims of destroying Iran's military power sheer lie",
           "rank_key": {
             "outlets": 1,
@@ -1183,24 +1203,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli media reports that 'Yedioth Ahronoth' is discussing assistance in establishing an alternativ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-17T04:23+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump says ‘hopefully we are toward end’ of Iran war",
           "rank_key": {
             "outlets": 1,
@@ -1212,24 +1214,6 @@
           ],
           "camps": [
             "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemeni escalation is narrowing Riyadh's options, with potential Saudi-Israeli coordination and Arbil",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-17T01:49+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1254,7 +1238,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Pezeshkian: Iran ready to resolve issues with neighbors through diplomacy",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-16T21:45+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1272,7 +1274,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-17T12:54:41.461875+00:00",
+    "last_success": "2026-09-17T13:26:08.423818+00:00",
     "last_failure": null
   },
   "ok": true
