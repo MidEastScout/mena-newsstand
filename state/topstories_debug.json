@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17T22:05:01.121838+00:00",
+  "updated": "2026-09-17T22:36:30.082667+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-17T22:03:07.678163+00:00"
+      "headlines_updated": "2026-09-17T22:34:34.919347+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 33,
-        "title_translated": 2,
-        "title_native": 88,
+        "dropped_stale": 6,
+        "title_snippet": 24,
+        "dropped_no_english": 10,
+        "title_translated": 1,
+        "title_native": 87,
         "in": 128,
-        "kept": 123
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -203,6 +204,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "WAFA News",
+          "title": "Lebanese citizen killed as Israeli forces continue strikes on southern Lebanon",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Syria Direct",
           "title": "Oil flows, fuel runs dry: Syria’s paradox as a new energy corridor",
           "reason": "stale (older than 48h)"
@@ -211,12 +217,62 @@
           "source": "Gulf News",
           "title": "13 injured as Houthi missile, drone attacks hit three Saudi cities",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "טרגדיה בקריית ים: פעוט כבן שנתיים נפל אל מותו מהקומה הרביעית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "רגע לפני הבחירות: נתניהו מבקש לזמן את מנדלבליט לעדות במשפטו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אזור בחירה 17.09.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אני אופטימי\": הניסוי החדשני שמעורר תקווה חדשה עבור חולי ALS",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الحرب على إيران تُكلّف وزارة الحرب الأميركية 38 مليار دولار!",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "لماذا لم تكسر العقوبات المجتمع الإيراني؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "5877 | أرشيف أعداد جريدة الأخبار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "لماذا لم تكسر العقوبات المجتمع الإيراني؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الكونغرس: وزارة الحرب الأميركية أنفقت نحو 38 مليار دولار خلال حربها ضد إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مخاوف \"إسرائيلية\" من عمليات انتقامية في غزة بعد سلسلة الاغتيالات الأخيرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 67,
+      "in": 112,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -248,42 +304,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "A tragedy in Kiryat Yam: a toddler, about two years old, fell to his death from the fourth floor.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Moment before the elections: Netanyahu requests to summon Mandelblit to testify in his trial.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Choice Area 17.09.26 - The full program for direct viewing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "How much are the polls worth 40 days before the elections - and who will the undecided vote for?",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , From Yanbu to Sohar: Tracking Saudi Arabia’s alternative oil routes",
+          "title": "3 , From Yanbu to Sohar: Tracking Saudi Arabia’s alternative oil routes",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -332,21 +360,14 @@
         },
         {
           "source": "The New Arab",
-          "title": "Israeli mobs gather outside homes of NAZA Gaza film directors",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Iranian mission to the UN praised Somalia and Pakistan for their valuable stances and abstentions on a…",
+          "title": "How an Israel oil firm deepens Argentina-UK Malvinas dispute",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "Trump threatened Europe with trade cessation or severe tariffs if Canada becomes an EU member.",
+          "title": "The Iranian mission to the UN praised Somalia and Pakistan for their valuable stances and abstentions on a…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -368,13 +389,6 @@
         {
           "source": "IRNA",
           "title": "Iran: International engagement with Afghan officials is essential",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Iran International",
-          "title": "ANALYSIS A generation shaped by Woman, Life, Freedom refuses to go back",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -437,13 +451,6 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Issue 5787 | Archive of Al Akhbar newspaper editions.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "Aoun stated from Paris that Lebanon has a real opportunity to change the course of decades of instability.",
           "sec": 0,
           "off": 0,
@@ -459,13 +466,6 @@
         {
           "source": "Al Manar",
           "title": "A session to discuss the government in the Parliament is underway.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Current Events",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -527,10 +527,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "AI exposes Pentagon’s aging networks to growing cyber threats: Report",
+          "source": "Daily Sabah",
+          "title": "US govt website used Chinese AI tool that FBI said copied Anthropic",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -614,9 +614,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 53,
+      "clusters": 49,
       "sizes": [
-        7,
+        8,
         2,
         2,
         2,
@@ -625,10 +625,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -678,7 +674,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "EXCLUSIVE: Pakistan military vows to defend Saudi Arabia ‘to any extent’ amid Houthi attacks",
+          "headline": "One killed, two injured by debris from intercepted Houthi drone in Saudi Arabia",
           "rank_key": {
             "outlets": 5,
             "camps": 3,
@@ -696,12 +692,12 @@
             "panarab",
             "levant"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "EXCLUSIVE: Pakistan military vows to defend Saudi Arabia ‘to any extent’ amid Houthi attacks",
+            "source": "Al Arabiya",
+            "title": "One killed, two injured by debris from intercepted Houthi drone in Saudi Arabia",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -730,6 +726,38 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Extremist Israeli minister vows to expand Judaization of Negev, Galilee following West Bank model",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-17T22:21+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Extremist Israeli minister vows to expand Judaization of Negev, Galilee following West Bank model",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Lebanon, Jordan, France discuss army support, ending Israeli atrocities",
           "rank_key": {
             "outlets": 2,
@@ -767,7 +795,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Iran’s Araghchi, Pakistan army chief discuss regional developments as US-Iran talks stall",
           "rank_key": {
             "outlets": 2,
@@ -798,7 +826,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "US House votes third time to end the Iran war as it drags on",
           "rank_key": {
             "outlets": 2,
@@ -829,7 +857,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Syria condemns Houthi drone attack on Taif, reaffirms solidarity with Saudi Arabia",
           "rank_key": {
             "outlets": 2,
@@ -860,43 +888,6 @@
               {
                 "source": "Syria Direct",
                 "title": "The road to Mecca: Soldiers, spies and the new Syria-Pakistan relationship",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Occupation forces detain journalist after raiding his home in Ramallah",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-17T19:28+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Occupation forces detain journalist after raiding his home in Ramallah",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "Arrests and detentions of citizens occurred during raids in the West Bank and Je",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -935,42 +926,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Kremlin warned that new U.S.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-17T10:41+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "The Kremlin warned that new U.S.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Russia’s plans may include strikes against Ukraine’s allies, Poland says",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "An extensive Israeli military escalation in southern Lebanon.",
           "rank_key": {
             "outlets": 2,
@@ -1005,6 +960,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia’s security council secretary condemns treatment of Russian businesses in Armenia",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-17T22:26+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1116,60 +1089,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "One shot with live ammunition, another suffers suffocation during Israeli raids near Qalqilya",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-17T19:28+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Italy to safeguard its ships in Bab al-Mandeb as concerns mount",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-17T19:18+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US State Department approves $24.3B F-35 sale to Saudi Arabia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-17T18:23+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The U.S.",
           "rank_key": {
             "outlets": 1,
@@ -1223,7 +1142,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "32 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "IRGC destroys US MQ-9 drone near Qeshm Island",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-17T13:05+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Gaza building collapse kills more than 20, dozens remain trapped under rubble",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-17T12:39+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1241,7 +1196,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-17T22:05:24.646319+00:00",
+    "last_success": "2026-09-17T22:37:09.462479+00:00",
     "last_failure": null
   },
   "ok": true
