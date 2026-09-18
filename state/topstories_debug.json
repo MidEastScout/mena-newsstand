@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18T08:08:59.788732+00:00",
+  "updated": "2026-09-18T08:39:58.587641+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-18T08:07:24.876197+00:00"
+      "headlines_updated": "2026-09-18T08:38:32.654377+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 28,
-        "dropped_no_english": 7,
+        "title_snippet": 25,
+        "dropped_no_english": 9,
+        "title_translated": 1,
         "title_native": 88,
         "in": 128,
-        "kept": 116
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 32,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -213,6 +214,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Kan 11",
+          "title": "דיווח: חוקרי אבטחה פרצו בעזרת Claude למערכות הפנימיות של ענקית הבינה המלאכותית OpenAI",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "N12",
           "title": "אסון בקולומביה: צעיר ישראלי נהרג בתאונת מצנח רחיפה",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -224,34 +230,39 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "جريح البيجر شادي الغول: طوّرت تعليمي ودرّبت رفاقي الجرحى لبناء مستقبلهم",
+          "title": "ترامب يأمل \"انتهاء الحرب على إيران قريباً\".. ويجتمع مع قادة الخليج الثلاثاء في نيويورك",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"نازا\": عندما يتحول الانتقام إلى منظومة قتل",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al-Akhbar",
-          "title": "عون من باريس: لبنان أمام فرصة حقيقية لتغيير مسار عقود من عدم الاستقرار",
+          "title": "عامان على مجزرة «البيجر»: الدولة تركت عيون ضحاياها وأيديهم بلا عدالة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "يأمل انتهاء الحرب قريباً: ترامب يجتمع مع قادة الخليج في نيويورك",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"نازا\": عندما يتحول الانتقام إلى منظومة قتل",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Falastin al-Youm",
           "title": "توافق على خطة طوارئ لمواجهة أزمة المباني الآيلة للسقوط في غزة",
           "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "أزمة ميزانية حادة تضرب الجاهزية العسكرية لجيش الاحتلال",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "الخارجية الإيرانية: أي اعتداء على الأماكن المقدسة هو أمر مدان",
-          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 66,
+      "in": 114,
+      "kept": 64,
       "dropped": [
         {
           "source": "Channel 13",
@@ -269,21 +280,21 @@
         },
         {
           "source": "Channel 13",
-          "title": "A special program titled 'Area of Choice' aired on September 17, 2026, was available for live viewing.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "A groundbreaking trial is offering new hope for patients with ALS.",
+          "title": "A special program titled 'Area of Choice' aired on September 17, 2026, was available for live viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , India warns new US tariffs over Russian oil could impact ties",
+          "title": "3 , India warns new US tariffs over Russian oil could impact ties",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -353,9 +364,9 @@
         },
         {
           "source": "Iran International",
-          "title": "3 Video of Iran's police sexually abusing teenager draws fury",
+          "title": "2 Video of Iran's police sexually abusing teenager draws fury",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -607,11 +618,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 43,
       "sizes": [
-        7,
-        4,
-        4,
+        8,
+        6,
         3,
         2,
         2,
@@ -619,9 +629,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -664,79 +672,24 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Pakistan calls for implementing “Mecca Agreement” to safeguard Saudi security amid Houthi attacks",
+          "headline": "Iran says it struck Togo-flagged tanker in Strait of Hormuz",
           "rank_key": {
             "outlets": 4,
             "camps": 3,
-            "newest": "2026-09-18T03:05+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "Egypt Independent",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Pakistan calls for implementing “Mecca Agreement” to safeguard Saudi security amid Houthi attacks",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Saudi Arabia condemns Houthi drone attack targeting Mecca as regional outcry gro",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "One killed, two injured by debris from intercepted Houthi drone in Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Former CENTCOM Commander on Houthi attacks, Yemen, Iran & Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Egypt Independent",
-                "title": "Saudi Arabia accuses Huthis of ‘red line’ attack on Mecca as rebels face outrage",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Iran says it struck Togo-flagged tanker in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-18T06:07+00:00"
+            "newest": "2026-09-18T08:07+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
             "Anadolu Agency",
-            "IRNA"
+            "IRNA",
+            "Mehr News"
           ],
           "camps": [
             "panarab",
             "iranian",
             "turkish"
           ],
-          "members": 4,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -752,7 +705,63 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Trump weighs ‘big decision’ on Iran as IRGC says it hit a tanker in Hormuz",
+                "title": "1 , IRGC says it hit a tanker in Hormuz as Trump weighs ‘big decision’ on Iran",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Pakistan calls for implementing “Mecca Agreement” to safeguard Saudi security amid Houthi attacks",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-18T07:51+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "Egypt Independent",
+            "SANA"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 8,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Pakistan calls for implementing “Mecca Agreement” to safeguard Saudi security amid Houthi attacks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "EU condemns Houthi attacks on Saudi Arabia, attempted targeting of Mecca",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Saudi Arabia condemns Houthi drone attack targeting Mecca as regional outcry gro",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "One killed, two injured by debris from intercepted Houthi drone in Saudi Arabia",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Egypt Independent",
+                "title": "Saudi Arabia accuses Huthis of ‘red line’ attack on Mecca as rebels face outrage",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -775,7 +784,7 @@
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -1005,7 +1014,7 @@
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-18T07:28+00:00"
+            "newest": "2026-09-18T08:09+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -1013,7 +1022,7 @@
           "camps": [
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1055,6 +1064,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israeli occupation forces detain two Palestinians in Hebron",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T07:05+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The President of Serbia inaugurated a factory for assembling Israeli drones, announcing plans to ope",
           "rank_key": {
             "outlets": 1,
@@ -1066,24 +1093,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemeni army says 30 Houthis killed in clashes west of Taiz",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T04:04+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1216,7 +1225,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1234,7 +1243,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-18T08:09:15.131278+00:00",
+    "last_success": "2026-09-18T08:40:13.857361+00:00",
     "last_failure": null
   },
   "ok": true
