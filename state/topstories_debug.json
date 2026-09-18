@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18T13:46:22.554293+00:00",
+  "updated": "2026-09-18T14:07:52.152382+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,22 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-18T13:43:37.487166+00:00"
+      "headlines_updated": "2026-09-18T14:05:21.266935+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 22,
-        "dropped_no_english": 12,
-        "title_translated": 1,
-        "title_native": 82,
+        "dropped_stale": 11,
+        "title_snippet": 33,
+        "title_translated": 2,
+        "title_native": 81,
         "in": 127,
-        "kept": 105
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 33,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -206,6 +205,11 @@
         {
           "source": "Jordan Times",
           "title": "Jordan condemns Houthi attacks on Saudi Arabia",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Gov’t plans $10 billion PPP projects over next 3 to 4 years - minister",
           "reason": "stale (older than 48h)"
         },
         {
@@ -237,97 +241,51 @@
           "source": "TRT World",
           "title": "Pakistan condemns 'attempted drone attack' near Mecca as 'heinous'",
           "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Kan 11",
-          "title": "אחרי הפגיעה בצינור הנפט המרכזי: סעודיה הודיעה למדינות באירופה כי לא יקבלו נפט בחודש הבא",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "טרגדיה בקולומביה: צעיר ישראלי נהרג בתאונת מצנח רחיפה",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "טרגדיה בקריית ים: פעוט כבן שנתיים נפל אל מותו מהקומה הרביעית",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "\"בשנייה הראשונה שאתה מקבל את הבשורה - אתה ישר עובר למלחמה\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "נדב אבוקסיס: \"הפכנו למדינה של כתות, אחדות זה צורך בסיסי\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "مكملات غذائية شائعة قد تحمل مخاطر خفية.. لماذا؟",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "للعام الثاني... واشنطن تمنع عباس من حضور الجمعية العامة للأمم المتحدة",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "إعلام عبري: تل أبيب تخشى من بيع واشنطن مقاتلات «إف35» للرياض",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "بعد نصائح أميركية ومصرية وتركية... ابن سلمان يطلب الحوار مع «أنصار الله»",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "جريدة يوم الجمعة 18 أيلول 2026",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "«استهداف» مكّة: الرياض تَحتمي بالحرب الدينية",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "المطران عطا الله حنا: مواسم الأعياد اليهودية غطاء لفرض واقع جديد بالقدس",
-          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 105,
-      "kept": 69,
+      "in": 116,
+      "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "A young Israeli man from Ra'anana, Noam Maman, tragically died in Colombia due to a paragliding malfunction.",
+          "title": "A young Israeli man named Noam Maman from Ra'anana died in Colombia after his paraglider lost control due to…",
           "sec": 0,
           "off": 1,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "The chairman of the Bar Association has filed a petition to remove a controversial election video by Smotrich.",
+          "title": "The head of the Bar Association has filed a petition to remove an election video by Smotrich.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "A young Israeli tourist tragically died in Colombia following a paragliding accident.",
+          "title": "A young Israeli man died in Colombia in a paragliding accident attributed to severe weather conditions.",
           "sec": 0,
-          "off": 2,
-          "reason": "disaster/accident with no conflict dimension"
+          "off": 1,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "An Israeli man, Hassin, who went to fight ISIS, has been sentenced to death in Iraq.",
+          "title": "A two-year-old toddler died in Kiryat Yam after falling from a height of four stories.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "A young Israeli man tragically died in a paragliding accident in Colombia.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "A toddler in Kiryat Yam tragically died after falling from the fourth floor.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -335,6 +293,27 @@
         {
           "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "Nadav Abukasis stated: 'We have become a country of cults; unity is a basic necessity.' This statement was…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "4 , The view from Russia: ‘No party can be antiwar’ in parliamentary election",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , ‘Just ask Grok’: How ISIL is using Big Tech’s AI to build bombs",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -368,6 +347,27 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "The New Arab",
+          "title": "US approves sale of 48 F-35 jets to Saudi Arabia",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Normalization is expanding in the region, with Morocco increasing its representation and Israel engaging in…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Twelfth Bulletin",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "IRNA",
           "title": "Large-scale mass rally of Jan‑Fada campaign kicks off in Iran",
           "sec": 0,
@@ -375,8 +375,29 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "IRNA",
+          "title": "Iran appreciates Russia and China for their principled stances and for vetoing US anti-Iran resolution",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Foreign Ministry summons German ambassador over Berlin’s anti-Iran positions",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Mehr News",
           "title": "“Sacrifice for Iran” (Janfada-e-Iran) parade in Tehran",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Mehr News",
+          "title": "Iran thanks Russia, China for vetoing US-drafted resolution",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -392,26 +413,26 @@
           "source": "Jordan Times",
           "title": "Helen Mirren delves into Patricia Highsmith's mind in 'A Talent for Murder'",
           "sec": 0,
-          "off": 2,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "King departs on working tour to France, Czech Republic, United States King meets with Lebanon president, underscores Jor",
-          "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "Hussein held to a draw",
+          "title": "King meets with Lebanon president, underscores Jordan’s support for Lebanon",
           "sec": 0,
-          "off": 2,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
           "title": "SUPPORT CONFERENCE In Paris, Aoun calls on Lebanon’s friends, says 'the opportunity may not come again'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
+          "title": "Lebanon’s proposal for a European mission to replace UNIFIL",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -425,28 +446,28 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Gaza building collapse kills more than 20, dozens remain trapped under rubble",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
           "title": "Sisi warns against mounting conspiracy to destabilize Egypt",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al-Akhbar",
+          "title": "The newspaper 'Al Akhbar' published its Friday edition on September 18, 2026.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Al Manar",
-          "title": "The Lebanese Council of Ministers approved appointments in electricity, privatization, and education sectors.",
+          "title": "The Lebanese Cabinet approved appointments in various sectors, including electricity, privatization, and…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "For the second year, Washington has refused to grant President Abbas a visa for UN meetings.",
+          "title": "An emergency plan has been agreed upon to address the crisis of buildings at risk of collapse in Gaza.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -460,14 +481,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Multinational Maritime Defense Coalition holds 4th planning meeting in Saudi Arabia",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Istanbul Airport’s 4th runway will boost its global connectivity: President Erdogan",
+          "title": "EXPLAINER – Why Reform UK is facing renewed scrutiny over its donations",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -560,12 +574,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 50,
       "sizes": [
-        6,
+        7,
         5,
-        5,
-        4,
         3,
         2,
         2,
@@ -574,6 +586,14 @@
         2,
         2,
         2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -617,13 +637,14 @@
           "selected_rank": 1,
           "headline": "Tanker hit by unknown projectile in Strait of Hormuz, fire extinguished, crew safe: UKMTO",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 4,
             "newest": "2026-09-18T10:46+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
+            "Al-Akhbar",
             "Arab News",
             "IRNA",
             "Mehr News",
@@ -635,7 +656,7 @@
             "iranian",
             "levant"
           ],
-          "members": 6,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -715,45 +736,11 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Trump to meet Gulf leaders in New York to discuss Iran war endgame",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-17T09:37+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Mayadeen",
-            "Falastin al-Youm",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "Trump to meet Gulf leaders in New York to discuss Iran war endgame",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Russia, China veto US resolution about Iran sanctions",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-09-18T09:18+00:00"
+            "newest": "2026-09-18T07:09+00:00"
           },
           "outlet_names": [
             "Gulf News",
@@ -764,7 +751,7 @@
             "gulf",
             "iranian"
           ],
-          "members": 5,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -783,11 +770,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Iran appreciates Russia and China for their principled stances and for vetoing U",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Gulf News",
                 "title": "Russia and China veto US proposal for UN experts to keep monitoring sanctions on",
                 "rejected_by": "older than the story's newest wave"
@@ -796,50 +778,7 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Israeli occupation forces detain two Palestinians in Hebron",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-18T12:59+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli occupation forces detain two Palestinians in Hebron",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Armed Israeli colonists attack Palestinian farmers near Hebron",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "6 Palestinians injured, farmers detained in Israeli occupier attacks across West",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Israeli forces shell outskirts of Beit Jinn, launch incursion into southern Syria with 9 military ve",
           "rank_key": {
             "outlets": 2,
@@ -877,7 +816,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "UN finds grounds to believe US committed war crimes in Iran",
           "rank_key": {
             "outlets": 2,
@@ -915,64 +854,70 @@
         },
         {
           "selected_rank": null,
-          "headline": "This article examines why sanctions have not fractured Iranian society, suggesting resilience agains",
+          "headline": "Trump to meet Gulf leaders in New York to discuss Iran war endgame",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-17T06:14+00:00"
+            "newest": "2026-09-17T09:37+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Falastin al-Youm"
+            "Al Arabiya",
+            "Gulf News"
           ],
           "camps": [
-            "panarab",
-            "levant"
+            "gulf",
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "This article examines why sanctions have not fractured Iranian society, suggesting resilience against…",
-            "title_source": "snippet",
+            "source": "Gulf News",
+            "title": "Trump to meet Gulf leaders in New York to discuss Iran war endgame",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": []
           }
         },
         {
           "selected_rank": null,
-          "headline": "The article 'Naza': When Revenge Becomes a Killing System' explores the escalation of retaliatory ac",
+          "headline": "Rescue teams save people trapped after collapse of war-damaged building in Gaza City",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-17T05:29+00:00"
+            "camps": 1,
+            "newest": "2026-09-18T10:44+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Falastin al-Youm"
+            "Egypt Independent",
+            "WAFA News"
           ],
           "camps": [
-            "panarab",
             "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "The article 'Naza': When Revenge Becomes a Killing System' explores the escalation of retaliatory actions…",
-            "title_source": "snippet",
+            "source": "WAFA News",
+            "title": "Rescue teams save people trapped after collapse of war-damaged building in Gaza City",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Egypt Independent",
+                "title": "Gaza building collapse kills more than 20, dozens remain trapped under rubble",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1013,7 +958,38 @@
         },
         {
           "selected_rank": null,
-          "headline": "The IDF announced the final dismissal of the Gaza Division's chief of staff from October 7.",
+          "headline": "Israeli occupation forces detain two Palestinians in Hebron",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-18T07:05+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Israeli occupation forces detain two Palestinians in Hebron",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "The Israeli military has announced the final dismissal of Lieutenant Colonel 'Aleph', the Gaza Divis",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
@@ -1031,7 +1007,7 @@
           "why_not": null,
           "representative": {
             "source": "N12",
-            "title": "The IDF announced the final dismissal of the Gaza Division's chief of staff from October 7.",
+            "title": "The Israeli military has announced the final dismissal of Lieutenant Colonel 'Aleph', the Gaza Division's…",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -1041,6 +1017,78 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Three Palestinians, including two women, injured by Israeli drone fire in Gaza’s Al-Bureij camp",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T14:02+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Two Lebanese injured in Israeli shelling in southern Lebanon",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T13:57+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hundreds of migrants are being transferred from the Spanish enclave of Ceuta to a port camp amid cla",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T13:55+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Nearly 3,000 flee Yemen to Djibouti in less than a week as violence escalates: UN refugee agency",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T13:47+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1062,17 +1110,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "UN experts say settlement trade bans are a step in the right direction, but long overdue",
+          "headline": "Following an attack on its main oil pipeline, Saudi Arabia has informed European nations that they w",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-18T13:15+00:00"
+            "newest": "2026-09-18T13:22+00:00"
           },
           "outlet_names": [
-            "WAFA News"
+            "Kan 11"
           ],
           "camps": [
-            "levant"
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1080,7 +1128,25 @@
         },
         {
           "selected_rank": null,
-          "headline": "Shelly Meshel Yogev, whose daughter was murdered on October 7, confronted a former head of military…",
+          "headline": "Foreign Policy magazine reports that the United States is losing the war against Iran.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T13:09+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The mother of a victim murdered on October 7 confronted a former head of army intelligence, question",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1116,7 +1182,25 @@
         },
         {
           "selected_rank": null,
-          "headline": "The New York Times reported that the Trump administration was considering economic deals with Russia",
+          "headline": "6 Palestinians injured, farmers detained in Israeli occupier attacks across West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T12:59+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The Trump administration reportedly considered economic deals with Russia before the war's conclusio",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1151,115 +1235,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Israeli occupation forces detain young man in western Daraa countryside",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T11:55+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Arab League condemns Taif drone attack, expresses solidarity with Saudi Arabia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T11:09+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Rescue teams save people trapped after collapse of war-damaged building in Gaza City",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T10:44+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "6 students killed, 17 hurt in school shooting in southern Philippines",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T08:29+00:00"
-          },
-          "outlet_names": [
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Tehran orders Swedish diplomat to leave Iran within 48 hours",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T07:39+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Egypt bans social media accounts for under-13s and mandates “safe mode” for ages 13-15",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T03:15+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1277,7 +1253,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-18T13:46:44.355418+00:00",
+    "last_success": "2026-09-18T14:08:12.993335+00:00",
     "last_failure": null
   },
   "ok": true
