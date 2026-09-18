@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18T07:38:12.735389+00:00",
+  "updated": "2026-09-18T08:08:59.788732+00:00",
   "stages": {
     "fetch": {
       "items": 128,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-18T07:36:30.221553+00:00"
+      "headlines_updated": "2026-09-18T08:07:24.876197+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 33,
+        "dropped_stale": 5,
+        "title_snippet": 28,
+        "dropped_no_english": 7,
         "title_native": 88,
         "in": 128,
-        "kept": 121
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 31,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -197,16 +198,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "استشهاد صياد بنيران قوات الاحتلال أثناء عمله قبالة ساحل وسط قطاع غزة",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "استشهاد مواطن متأثرا بجراحه في غزة",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Syria Direct",
           "title": "Oil flows, fuel runs dry: Syria’s paradox as a new energy corridor",
           "reason": "stale (older than 48h)"
@@ -220,20 +211,48 @@
           "source": "Arab News",
           "title": "Houthi drone destroyed before entering Makkah’s airspace, Saudi Arabia says",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "אסון בקולומביה: צעיר ישראלי נהרג בתאונת מצנח רחיפה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "תושב מג'ד אל-כרום נעצר בחשד שפעל בהכוונת סוכנת מלבנון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "جريح البيجر شادي الغول: طوّرت تعليمي ودرّبت رفاقي الجرحى لبناء مستقبلهم",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عون من باريس: لبنان أمام فرصة حقيقية لتغيير مسار عقود من عدم الاستقرار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "توافق على خطة طوارئ لمواجهة أزمة المباني الآيلة للسقوط في غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أزمة ميزانية حادة تضرب الجاهزية العسكرية لجيش الاحتلال",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الخارجية الإيرانية: أي اعتداء على الأماكن المقدسة هو أمر مدان",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 71,
+      "in": 116,
+      "kept": 66,
       "dropped": [
-        {
-          "source": "N12",
-          "title": "A young Israeli man was killed in a paragliding accident in Colombia, reportedly due to difficult weather…",
-          "sec": 1,
-          "off": 1,
-          "reason": "disaster/accident with no conflict dimension"
-        },
         {
           "source": "Channel 13",
           "title": "A young Israeli man has tragically died in a paragliding accident in Colombia.",
@@ -300,13 +319,6 @@
         {
           "source": "Middle East Eye",
           "title": "Tommy Robinson backs Ed Sheeran as Paloma Faith and Ms Rachel side with Macklemore",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "'Naza': When revenge transforms into a killing system.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -516,6 +528,13 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "SCO's energy future in China-Russia-Iran triangle",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "US govt website used Chinese AI tool that FBI said copied Anthropic",
           "sec": 0,
           "off": 1,
@@ -576,14 +595,22 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Trump says Iran contacts US directly, wants to make a deal",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 46,
       "sizes": [
         7,
+        4,
         4,
         3,
         2,
@@ -592,12 +619,6 @@
         2,
         2,
         2,
-        2,
-        2,
-        2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -754,7 +775,7 @@
             "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -820,38 +841,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Jordan condemns Houthi attack on Saudi Arabia’s Taif",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-17T19:47+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "TRT World"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Jordan condemns Houthi attack on Saudi Arabia’s Taif",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (jordan, yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "The question of why sanctions have not broken Iranian society is explored.",
           "rank_key": {
             "outlets": 2,
@@ -1012,49 +1001,19 @@
         },
         {
           "selected_rank": null,
-          "headline": "IRGC Ground Forces chief vows strong response to enemy",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-17T11:01+00:00"
-          },
-          "outlet_names": [
-            "IRNA",
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "IRGC Ground Forces chief vows strong response to enemy",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "U.S. F-16 crashes during training in Michigan, pilot ejects safely",
+          "headline": "Two injured in Israeli beating attack near Nablus",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-18T07:21+00:00"
+            "newest": "2026-09-18T07:28+00:00"
           },
           "outlet_names": [
-            "SANA"
+            "WAFA News"
           ],
           "camps": [
             "levant"
           ],
-          "members": 1,
+          "members": 3,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1096,65 +1055,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli occupation forces detain two Palestinians in Hebron",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T07:05+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Colonists attack Palestinian vehicles north of Nablus",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T06:58+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The President of Serbia inaugurated a factory for assembling Israeli drones, announcing plans to ope",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
             "newest": "2026-09-18T05:58+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The security establishment is investigating a serious security incident within the IDF, which comes ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T04:15+00:00"
           },
           "outlet_names": [
             "N12"
@@ -1240,24 +1145,78 @@
         },
         {
           "selected_rank": null,
-          "headline": "AI may be digital, but its power is physical",
+          "headline": "152 countries reject US decision to bar Palestinian delegation from attending 81st UN General Assemb",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-17T21:05+00:00"
+            "newest": "2026-09-17T20:50+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "WAFA News"
           ],
           "camps": [
-            "turkish"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "A report detailing 37 Saudi airstrikes in Yemen over 24 hours, resulting in civilian casualties, has",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-17T20:37+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Jordan condemns Houthi attack on Saudi Arabia’s Taif",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-17T19:47+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia, China veto US anti-Iran resolution at UNSC",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-17T15:40+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1275,7 +1234,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-18T07:38:12.977038+00:00",
+    "last_success": "2026-09-18T08:09:15.131278+00:00",
     "last_failure": null
   },
   "ok": true
