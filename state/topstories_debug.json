@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18T19:58:45.258997+00:00",
+  "updated": "2026-09-18T20:30:57.000402+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,22 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-18T19:56:57.894219+00:00"
+      "headlines_updated": "2026-09-18T20:29:15.212807+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 30,
-        "dropped_no_english": 4,
+        "dropped_stale": 8,
+        "title_snippet": 34,
         "title_translated": 1,
-        "title_native": 86,
+        "title_native": 84,
         "in": 127,
-        "kept": 117
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -196,6 +195,16 @@
         {
           "source": "The New Arab",
           "title": "Trump administration plans $2.8 billion weapons sale to Israel",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "King meets with Lebanon president, underscores Jordan’s support for Lebanon",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Gov’t plans $10 billion PPP projects over next 3 to 4 years - minister",
           "reason": "stale (older than 48h)"
         },
         {
@@ -217,71 +226,37 @@
           "source": "Gulf News",
           "title": "Philippines ex-leader Duterte makes first appearance at ICC",
           "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Kan 11",
-          "title": "טראמפ אוסר על כלי תקשורת אמריקניים, בהם CNN, להיכנס לבית הלבן: \"מפיצים פייק ניוז\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "إيران: المتحدث باسم القوات المسلحة العميد أبو الفضل شكارتشي: التهديدات المتكررة والخالية من أي أساس التي يطلقها ترامب وق",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "5877 | أرشيف أعداد جريدة الأخبار",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "وجع الأسنان بلا علاج.. الحرب تحاصر خدمات طب الأسنان في غزة",
-          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 69,
+      "in": 119,
+      "kept": 73,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "A young Israeli from Ra'anana, Noam Maman, died in Colombia after a paragliding accident.",
+          "title": "A young Israeli man from Ra'anana, Noam Maman, died in Colombia when his paraglider malfunctioned due to…",
           "sec": 0,
           "off": 1,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Kan 11",
-          "title": "The US approved the sale of 48 F-35 jets to Saudi Arabia, despite security establishment concerns about…",
+          "title": "Donald Trump has banned American news organizations, including CNN, from entering the White House, citing…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "A young Israeli tragically died in Colombia in a paragliding accident.",
-          "sec": 0,
-          "off": 1,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "N12",
-          "title": "Diana's brother described King Charles as sounding 'like a lottery winner' after her death.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "French presidential candidate Eric Zemmour, a former politician and journalist, is advocating for strict…",
+          "title": "Diana's brother, Charles Spencer, claimed that King Charles sounded like a 'lottery winner' after Diana's…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "A two-year-old toddler tragically died in Kiryat Yam after falling four stories.",
+          "title": "A tragic incident occurred in Kiryat Yam where a two-year-old toddler fell to his death from the fourth floor.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -295,14 +270,21 @@
         },
         {
           "source": "Channel 13",
-          "title": "A senior Fatah official revealed that he conveyed a message from Sinwar to Israel.",
+          "title": "The bereaved mother stated in an interview following her confrontation with Haliva that they 'deserve…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "A senior Fatah official revealed, 'I delivered the message from Sinwar to Israel.' This statement was…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Trump bans CNN, MS NOW, Politico from the White House for ‘fake news’",
+          "title": "2 , Trump bans CNN, MS NOW, Politico from the White House for ‘fake news’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -344,7 +326,28 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "In Yemen, Al-Ajri stated that the repeated political exploitation of holy sites undermines Saudi credibility.",
+          "title": "The article discusses whether the 'Strait equation' is entering the heart of the regional confrontation, from…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Reports from Yemen state that Al-Ajri believes the repeated political exploitation of holy sites diminishes…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Canada is exploring the status of 'associate membership' in the European Union, separate from Washington.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Buzhakian stated that the presence of the people in the field frustrates any threats against Iran.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -352,13 +355,6 @@
         {
           "source": "IRNA",
           "title": "Foreign Ministry summons German ambassador over Berlin’s anti-Iran positions",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Russia, China veto US anti-Iran resolution at UNSC",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -393,28 +389,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Prime minister directs enhanced preparations for 2,000th Baptism anniversary",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
           "title": "Helen Mirren delves into Patricia Highsmith's mind in 'A Talent for Murder'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "King announces signing of defence agreement with France",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "King departs on working tour to France, Czech Republic, United States King meets with Lebanon president, underscores Jor",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -442,56 +417,42 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Washington has denied Palestinian President Abbas a visa to attend UN General Assembly meetings for the…",
+          "title": "Following American, Egyptian, and Turkish advice, Prince Salman requested dialogue with 'Ansar Allah.'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Following advice from the US, Egypt, and Turkey, Bin Salman reportedly requested dialogue with 'Ansar Allah'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "A right-wing campaign questioned whether the administration is distancing itself from Netanyahu.",
+          "title": "A right-wing campaign defends Trump, questioning if the administration is distancing itself from Netanyahu.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "The Lebanese cabinet approved appointments at EDL, the Higher Privatization Council, and the Educational…",
+          "title": "The Lebanese Council of Ministers approved appointments in 'Electricité du Liban,' the Higher Privatization…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Children in Beirut's southern suburbs are engaging in sports and unity, defying what is described as the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "President Donald Trump urged for swift reductions in US interest rates.",
+          "title": "US President Donald Trump demanded a quick reduction in interest rates in the United States.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "For the second year, Washington has refused to grant Palestinian President Abbas a visa to participate in UN…",
+          "title": "Bishop Atallah Hanna stated that the Jewish holidays are a cover for imposing a new reality in Jerusalem.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Archbishop Atallah Hanna stated that Jewish holiday seasons are used to impose a new reality in Jerusalem.",
+          "title": "Gold prices rose and oil prices fell in trading on Friday, September 18, 2026.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -520,6 +481,13 @@
         {
           "source": "Anadolu Agency",
           "title": "Greek premier, Bahrain's king discuss regional developments in Athens",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Alibaba open-sources AI model detecting cancer, 150 medical conditions",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -568,14 +536,21 @@
         },
         {
           "source": "TRT World",
-          "title": "Top House Democrat moves to block Trump administration's $2.8B bomb sale to Israel",
+          "title": "Trump says Iran contacts US directly, wants to make a deal",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "TRT World",
-          "title": "Trump says Iran contacts US directly, wants to make a deal",
+          "title": "Istanbul Airport named world's most connected aviation hub",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "US State Department clears $24.3B sale of 48 F-35s to Saudi Arabia",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -584,21 +559,22 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 46,
       "sizes": [
         7,
-        4,
-        4,
+        6,
         3,
         3,
         3,
+        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -640,14 +616,16 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Pro-Iranian media reported explosions near the Strait of Hormuz.",
+          "headline": "Pro-Iranian media outlets report an explosion has been heard in the Strait of Hormuz area.",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 6,
             "camps": 4,
             "newest": "2026-09-18T17:35+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al-Akhbar",
+            "Falastin al-Youm",
             "Kan 11",
             "Mehr News",
             "SANA"
@@ -658,12 +636,12 @@
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Kan 11",
-            "title": "Pro-Iranian media reported explosions near the Strait of Hormuz.",
+            "title": "Pro-Iranian media outlets report an explosion has been heard in the Strait of Hormuz area.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -683,8 +661,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "SANA",
-                "title": "Tanker hit by projectile in Strait of Hormuz, crew safe, UKMTO says",
+                "source": "Al-Akhbar",
+                "title": "The IRGC targeted a tanker in the Strait of Hormuz, and Trump is signaling a res",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "The Iranian Revolutionary Guard Corps announced it targeted an oil tanker in the",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -748,28 +731,27 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Türkiye condemns deadly terrorist attack in Pakistan",
+          "headline": "Türkiye condemns deadly terrorist attack in Pakistan's Kohat",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 2,
-            "newest": "2026-09-18T19:43+00:00"
+            "newest": "2026-09-18T19:29+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
             "Daily Sabah",
-            "TRT World",
             "WAFA News"
           ],
           "camps": [
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "TRT World",
-            "title": "Türkiye condemns deadly terrorist attack in Pakistan",
+            "source": "Daily Sabah",
+            "title": "Türkiye condemns deadly terrorist attack in Pakistan's Kohat",
             "title_source": "native",
             "why": [
               "mainstream outlet phrasing",
@@ -784,11 +766,6 @@
               {
                 "source": "Anadolu Agency",
                 "title": "Türkiye condemns terrorist attack near mosque in northwestern Pakistan",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "Türkiye condemns deadly terrorist attack in Pakistan's Kohat",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
@@ -840,39 +817,7 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Trump says ‘hopefully we are towards end’ of Iran war, to hold talks with Gulf leaders",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-17T06:22+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Mayadeen",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Trump says ‘hopefully we are towards end’ of Iran war, to hold talks with Gulf leaders",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The US military nearly raided a Chinese ship in the Middle East based on a false AI-generated report",
+          "headline": "The US military nearly conducted a raid on a Chinese ship in the Middle East based on a false alert ",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
@@ -891,7 +836,7 @@
           "why_not": null,
           "representative": {
             "source": "Kan 11",
-            "title": "The US military nearly raided a Chinese ship in the Middle East based on a false AI-generated report of…",
+            "title": "The US military nearly conducted a raid on a Chinese ship in the Middle East based on a false alert generated…",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -910,6 +855,38 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli army sets fire to hospital in south Lebanon",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-18T18:46+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Israeli army sets fire to hospital in south Lebanon",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -946,37 +923,36 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli army sets fire to hospital in south Lebanon",
+          "headline": "Trump weighs renewed major attacks on Iran: Report",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-18T17:41+00:00"
+            "newest": "2026-09-18T07:42+00:00"
           },
           "outlet_names": [
-            "Daily Sabah",
-            "L'Orient Today"
+            "Al Arabiya",
+            "Iran International"
           ],
           "camps": [
-            "levant",
-            "turkish"
+            "panarab",
+            "iranian"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Israeli army sets fire to hospital in south Lebanon",
+            "source": "Al Arabiya",
+            "title": "Trump weighs renewed major attacks on Iran: Report",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "L'Orient Today",
-                "title": "LIVE Israel sets fire to Mais al-Jabal hospital: Health Ministry denounces ‘mora",
+                "source": "Iran International",
+                "title": "4 Trump weighs major Iran escalation as China steps up diplomatic push",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1021,42 +997,42 @@
         },
         {
           "selected_rank": null,
-          "headline": "An article discusses why sanctions have failed to break the Iranian society.",
+          "headline": "Trump to meet Gulf leaders in New York to discuss Iran war endgame",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-17T06:14+00:00"
+            "newest": "2026-09-17T09:37+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Falastin al-Youm"
+            "Al Arabiya",
+            "Gulf News"
           ],
           "camps": [
-            "panarab",
-            "levant"
+            "gulf",
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "An article discusses why sanctions have failed to break the Iranian society.",
-            "title_source": "snippet",
+            "source": "Gulf News",
+            "title": "Trump to meet Gulf leaders in New York to discuss Iran war endgame",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": []
           }
         },
         {
           "selected_rank": null,
-          "headline": "The mother of a fallen soldier confronted a former head of military intelligence, stating he should ",
+          "headline": "The bereaved mother of a murder victim expressed her feelings after confronting Aharon Haliva, the f",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-09-18T19:15+00:00"
+            "newest": "2026-09-18T18:00+00:00"
           },
           "outlet_names": [
             "Channel 13",
@@ -1065,19 +1041,65 @@
           "camps": [
             "israeli"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "N12",
-            "title": "The mother of a fallen soldier confronted a former head of military intelligence, stating he should be…",
+            "title": "The bereaved mother of a murder victim expressed her feelings after confronting Aharon Haliva, the former…",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "neutral-by-default outlet",
               "derived from the outlet's English snippet"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "N12",
+                "title": "The mother of a victim of the Nova massacre encountered Aharon Haliva, the forme",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "Channel 13",
+                "title": "The mother of a victim of the Nova massacre confronted Aharon Haliva, stating, '",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "LIVE Israel sets fire to Mais al-Jabal hospital: Health Ministry denounces ‘moral failure’ | LIVE",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-18T11:10+00:00"
+          },
+          "outlet_names": [
+            "L'Orient Today",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "L'Orient Today",
+            "title": "LIVE Israel sets fire to Mais al-Jabal hospital: Health Ministry denounces ‘moral failure’ | LIVE",
+            "title_source": "native",
+            "why": [
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Armed Israeli colonists attack Palestinian farmers near Hebron",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
           }
         },
         {
@@ -1119,6 +1141,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "After a week of searching, a suspect has been arrested in the murder of a missing woman from East Je",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T19:58+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Ghalibaf: Live with it, era of US F-35s being hunted down has begun",
           "rank_key": {
             "outlets": 1,
@@ -1137,24 +1177,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Senators demand investigation into reported US strike on Iranian wedding",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T19:36+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Türkiye's military chief attends NATO meeting in Denmark",
           "rank_key": {
             "outlets": 1,
@@ -1166,6 +1188,24 @@
           ],
           "camps": [
             "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The article discusses 'Fedayeen of Iran,' describing popular military rallies and deterrence message",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T17:03+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1209,14 +1249,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Two Lebanese injured in Israeli shelling in southern Lebanon",
+          "headline": "The war is besieging dental services in Gaza, leaving people without treatment for toothaches.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-18T15:14+00:00"
+            "newest": "2026-09-18T12:58+00:00"
           },
           "outlet_names": [
-            "WAFA News"
+            "Falastin al-Youm"
           ],
           "camps": [
             "levant"
@@ -1263,42 +1303,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Armed Israeli colonists attack Palestinian farmers near Hebron",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T11:10+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "An individual stated that \"the moment you receive the news, you immediately go to war.\" This quote w",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-18T10:07+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "S. Korean president rejects Trump to send troops to ME",
           "rank_key": {
             "outlets": 1,
@@ -1317,17 +1321,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "6 students killed, 17 hurt in school shooting in southern Philippines",
+          "headline": "Tehran orders Swedish diplomat to leave Iran within 48 hours",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-18T08:29+00:00"
+            "newest": "2026-09-18T07:39+00:00"
           },
           "outlet_names": [
-            "Gulf News"
+            "Mehr News"
           ],
           "camps": [
-            "gulf"
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hebrew media reports that Tel Aviv fears Washington's sale of F-35 fighter jets to Riyadh.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T06:33+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1352,7 +1374,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-18T19:59:13.156475+00:00",
+    "last_success": "2026-09-18T20:31:10.345234+00:00",
     "last_failure": null
   },
   "ok": true
