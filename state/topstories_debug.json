@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19T04:50:38.257960+00:00",
+  "updated": "2026-09-19T05:22:18.989716+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-19T04:48:16.794890+00:00"
+      "headlines_updated": "2026-09-19T05:20:10.982081+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 34,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_native": 83,
         "title_translated": 1,
         "in": 127,
-        "kept": 118
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -231,12 +232,22 @@
           "source": "Gulf News",
           "title": "US House votes for a third time to end Iran war",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "פקיסטן: לפחות 31 הרוגים במסגד ותחנת משטרה שהותקפו על ידי מכונית תופת בעיר קוהט",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "ترامب مكروه في أوروبا.. ماذا أظهرت استطلاعات الرأي تجاهه؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 65,
+      "in": 116,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -289,13 +300,6 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Trump bans CNN, MS NOW, Politico from White House for ‘fake news’",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
           "title": "5 , Google’s Gemini AI hacks 3 companies in security test, then stops",
           "sec": 0,
           "off": 2,
@@ -338,13 +342,6 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Gaza is struggling while America is bleeding, as China and Pakistan build a new balance.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
           "title": "From Bab el-Mandeb to Hormuz, the question is whether the 'straits equation' will enter the heart of the…",
           "sec": 0,
           "off": 0,
@@ -353,13 +350,6 @@
         {
           "source": "IRNA",
           "title": "Foreign Ministry summons German ambassador over Berlin’s anti-Iran positions",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Large-scale mass rally of Jan‑Fada campaign kicks off in Iran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -527,7 +517,21 @@
         },
         {
           "source": "Gulf News",
-          "title": "UAE cost of living: Will rate hikes throw your finances off track?",
+          "title": "Trump claims 'infinite' Greenland security deal with Denmark",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Greenland, Denmark, US expected to sign Arctic security deal next week in New York",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Trump announces 'Infinite Life' deal with Denmark giving US control over Greenland security",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -615,11 +619,10 @@
       "method": "heuristic",
       "clusters": 44,
       "sizes": [
-        7,
+        6,
+        5,
         3,
         3,
-        3,
-        3,
         2,
         2,
         2,
@@ -627,6 +630,7 @@
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -687,7 +691,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -728,21 +732,24 @@
           "selected_rank": 2,
           "headline": "Tanker hit by unknown projectile in Strait of Hormuz, fire extinguished, crew safe: UKMTO",
           "rank_key": {
-            "outlets": 3,
-            "camps": 3,
+            "outlets": 5,
+            "camps": 4,
             "newest": "2026-09-18T10:46+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Arab News",
+            "IRNA",
             "Mehr News",
             "SANA"
           ],
           "camps": [
+            "gulf",
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 3,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -755,7 +762,13 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Iran’s IRGC says it struck Togo-flagged tanker in Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -840,7 +853,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "4 , Thousands march for Houthis in Saana as Yemen fighting rages",
+                "title": "3 , Thousands march for Houthis in Saana as Yemen fighting rages",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -848,49 +861,11 @@
         },
         {
           "selected_rank": 5,
-          "headline": "IAEA says cooling tower at Russia’s Kursk Nuclear Power Plant hit by drone",
+          "headline": "Drone hit Russian nuclear plant cooling tower, no fire: IAEA",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-18T23:48+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "IAEA says cooling tower at Russia’s Kursk Nuclear Power Plant hit by drone",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Drone hit Russian nuclear plant cooling tower, no fire: IAEA",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump weighs renewed major attacks on Iran: Report",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-18T07:42+00:00"
+            "newest": "2026-09-18T16:58+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -905,17 +880,18 @@
           "why_not": null,
           "representative": {
             "source": "Al Arabiya",
-            "title": "Trump weighs renewed major attacks on Iran: Report",
+            "title": "Drone hit Russian nuclear plant cooling tower, no fire: IAEA",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Iran International",
-                "title": "4 Trump weighs major Iran escalation as China steps up diplomatic push",
+                "title": "3 Iran rapidly rebuilding site tied to past nuclear weapons research - report",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -991,48 +967,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Syria says cooperation with UN agency supports transfer of peaceful nuclear technology",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-19T00:19+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Syria says cooperation with UN agency supports transfer of peaceful nuclear technology",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Netanyahu touts Gaza genocide and attacks on Iran, Lebanon, Syria as he kicks of",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Israeli forces carry out new incursion into southern Syria",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Donald Trump has declared an agreement with Denmark, asserting that the United States will have secu",
           "rank_key": {
             "outlets": 2,
@@ -1097,24 +1031,6 @@
               }
             ]
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "A man in Bat Yam, approximately 30 years old, has been seriously injured, apparently from a stabbing",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-19T00:05+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1315,7 +1231,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "France will convene G7 energy summit: Macron",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-18T16:46+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1333,7 +1267,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-19T04:50:53.745489+00:00",
+    "last_success": "2026-09-19T05:22:32.220791+00:00",
     "last_failure": null
   },
   "ok": true
