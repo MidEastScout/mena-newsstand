@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19T18:42:53.103788+00:00",
+  "updated": "2026-09-19T19:14:25.132030+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-19T18:41:00.797414+00:00"
+      "headlines_updated": "2026-09-19T19:12:25.299316+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 11,
-        "title_snippet": 32,
+        "title_snippet": 29,
+        "dropped_no_english": 3,
         "title_native": 84,
         "in": 127,
-        "kept": 116
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -240,12 +241,27 @@
           "source": "Arab News",
           "title": "EXCLUSIVE: Pakistan military vows to defend Saudi Arabia ‘to any extent’ amid Houthi attacks",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "טראמפ הכריז על הסכם עם דנמרק: \"ארה\"ב שולטת ביטחונית בגרינלנד\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "חשד להונאת ענק בטורקיה: כ-200 עצורים, מתוכם 9 ישראלים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "תיעוד: ירי ושוד בחתונה באולם בבאקה אל-גרבייה, החשודים נמלטו",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 68,
+      "in": 113,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -269,13 +285,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The experiences of social media influencers during a period of penitence, including visits to the Western…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "2 , Trump says US has ‘permanent control’ of Greenland security: Does it?",
           "sec": 0,
@@ -291,16 +300,16 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Japan has record 100,000 people aged over 100: How societies are ageing",
+          "title": "4 , Ed Sheeran concert set to go ahead after outcry over Gaza",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Ed Sheeran concert set to go ahead after outcry over Gaza",
+          "title": "5 , Trump says deal with Denmark gives US ‘permanent control’ over Greenland",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -347,7 +356,7 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "A question is raised regarding whether the Palestinian resistance made a mistake by accepting Trump's plan…",
+          "title": "A question is posed about whether the Palestinian resistance erred by accepting Trump's plan for Gaza, as…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -493,13 +502,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Trump says his son’s wedding party being bankrolled by a Russian oligarch is ‘totally allowed’",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "Trump says CNN, MS NOW, Politico banned from White House",
           "sec": 0,
@@ -587,13 +589,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 43,
       "sizes": [
         5,
         4,
+        4,
         3,
         3,
-        3,
         2,
         2,
         2,
@@ -604,8 +606,6 @@
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -725,6 +725,56 @@
         },
         {
           "selected_rank": 3,
+          "headline": "US military: Strait of Hormuz shipping traffic at 6-month high",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-09-19T18:17+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Arab News",
+            "IRNA"
+          ],
+          "camps": [
+            "gulf",
+            "iranian",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "US military: Strait of Hormuz shipping traffic at 6-month high",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Iran halts violating tanker Trend in Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Iran’s IRGC says it struck Togo-flagged tanker in Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "The Revolutionary Guards' naval forces announced they had targeted and stopped t",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "US approves tougher Russia sanctions with China and India in focus",
           "rank_key": {
             "outlets": 3,
@@ -757,46 +807,6 @@
               {
                 "source": "TRT World",
                 "title": "Trump signs Russia sanctions bill; China and India face possible 100% tariffs",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Iran’s IRGC says it struck Togo-flagged tanker in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-18T06:07+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Arab News",
-            "IRNA"
-          ],
-          "camps": [
-            "gulf",
-            "iranian",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Iran’s IRGC says it struck Togo-flagged tanker in Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "The Revolutionary Guards' naval forces announced they had targeted and stopped t",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -872,8 +882,8 @@
             "passed_over": [
               {
                 "source": "Al Manar",
-                "title": "The enemy, identified as Israeli forces, continued attacks in southern Lebanon, ",
-                "rejected_by": "loaded/partisan wording"
+                "title": "A consultant to the President of the Republic is appealing to Washington not to ",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -1151,17 +1161,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran stated it has conveyed its terms for ending the war to the United States and is awaiting a resp",
+          "headline": "Iran conveyed conditions to re-engage in talks with US: Tehran",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-19T15:32+00:00"
+            "newest": "2026-09-19T16:33+00:00"
           },
           "outlet_names": [
-            "Channel 13"
+            "TRT World"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1187,6 +1197,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Russia says powerful attacks hit Moscow electronic voting system as legislative election enters seco",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-19T12:42+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "UN reports 1,004 verified cases of sexual violence in Ukraine war",
           "rank_key": {
             "outlets": 1,
@@ -1200,24 +1228,6 @@
             "turkish"
           ],
           "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iranian, Pakistani foreign ministers discuss regional developments amid US-Iran deadlock",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-19T11:12+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1277,24 +1287,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The United States nearly attacked a Chinese ship due to faulty AI-generated intelligence.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-19T09:02+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The 'Forgotten Massacre' refers to numerous Arab and world wars that, due to their length and lack o",
           "rank_key": {
             "outlets": 1,
@@ -1330,7 +1322,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "700,000 students are returning to school after three years of 'genocide,' according to paltoday.ps.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-19T05:58+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1348,7 +1358,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-19T18:43:06.066089+00:00",
+    "last_success": "2026-09-19T19:14:57.973876+00:00",
     "last_failure": null
   },
   "ok": true
