@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19T20:48:23.293574+00:00",
+  "updated": "2026-09-19T21:01:37.361441+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-19T20:46:32.829649+00:00"
+      "headlines_updated": "2026-09-19T20:59:57.290803+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 11,
-        "title_snippet": 31,
+        "title_snippet": 27,
         "title_translated": 1,
         "title_native": 84,
+        "dropped_no_english": 4,
         "in": 127,
-        "kept": 116
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -193,8 +194,8 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Al Arabiya",
-          "title": "US approves potential $24.3 billion sale of 48 F-35 jets to Saudi Arabia",
+          "source": "The New Arab",
+          "title": "UN says US likely committed war crimes in Iran, including Minab",
           "reason": "stale (older than 48h)"
         },
         {
@@ -241,12 +242,32 @@
           "source": "Arab News",
           "title": "EXCLUSIVE: Pakistan military vows to defend Saudi Arabia ‘to any extent’ amid Houthi attacks",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "صواريخ يمنيّة تستهدف الرياض وينبع.. وتحالف دولي في جدة “لحماية الممرات البحرية”",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مناورات «فدائيو إيران».. الشعب الإيراني يعلن الجاهزية إلى جانب القوات المسلحة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "خليل الحية: أجرينا اتصالات مع الوسطاء لإدخال معدات الإنقاذ والإيواء",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "واشنطن فوق الأمم المتحدة.. قرار منع مشاركة الوفد الفلسطيني يُقابل بالتصويت فقط",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 65,
+      "in": 112,
+      "kept": 62,
       "dropped": [
         {
           "source": "N12",
@@ -347,6 +368,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Arabiya",
+          "title": "Moscow voting system hit by strong cyberattack during parliamentary election: Report",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "The New Arab",
           "title": "US approves sale of 48 F-35 jets to Saudi Arabia",
           "sec": 0,
@@ -363,20 +391,6 @@
         {
           "source": "Al Mayadeen",
           "title": "A report indicates that divisions within the Democratic party threaten their efforts to win the \"Congress\"…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "'Bus of Dreams' in Gaza: A damaged ambulance transformed into a space for children's psychological support.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Saudi Civil Defense issued a warning about a potential danger in Al-Kharj.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -609,15 +623,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 37,
       "sizes": [
+        5,
         4,
         3,
         3,
         3,
         3,
         3,
-        3,
         2,
         2,
         2,
@@ -626,11 +640,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -662,6 +671,62 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Iran executes man accused of providing missile info to Israel",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-09-19T16:47+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Iran International",
+            "Kan 11",
+            "N12",
+            "The New Arab"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "iranian"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Iran executes man accused of providing missile info to Israel",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Kan 11",
+                "title": "Iran executed an individual accused of spying for Israel during the 12-day war.",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "N12",
+                "title": "Iran executed a man convicted of spying for Israel, allegedly providing informat",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Man convicted of spying for Israel executed in Iran",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "4 Iran executes man it accused of spying for Israel on missile sites",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "US military: Strait of Hormuz shipping traffic at 6-month high",
           "rank_key": {
             "outlets": 3,
@@ -711,7 +776,7 @@
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Syria says Friday blast at military site killed 11",
           "rank_key": {
             "outlets": 3,
@@ -745,7 +810,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Iran condemns terrorist attack in Pakistan",
           "rank_key": {
             "outlets": 3,
@@ -788,7 +853,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Israeli army seals last route to West Bank, 47 Palestinian families isolated",
           "rank_key": {
             "outlets": 3,
@@ -828,38 +893,6 @@
                 "rejected_by": "loaded/partisan wording"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Man convicted of spying for Israel executed in Iran",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-19T08:57+00:00"
-          },
-          "outlet_names": [
-            "IRNA",
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "iranian"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Man convicted of spying for Israel executed in Iran",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1149,24 +1182,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran's National Security Council secretary stated they have tested an anti-ship missile and are seri",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-19T17:30+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The Foreign Ministry reported the arrest of several Israelis in Turkey on suspicion of criminal acti",
           "rank_key": {
             "outlets": 1,
@@ -1196,24 +1211,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran executes man accused of providing missile info to Israel",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-19T16:47+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1275,24 +1272,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The occupation forces stormed central Tulkarm and closed a street to civilian traffic.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-19T14:14+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Three Palestinians killed, others injured in Israeli strike on Gaza City",
           "rank_key": {
             "outlets": 1,
@@ -1328,7 +1307,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "UN reports 1,004 verified cases of sexual violence in Ukraine war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-19T11:39+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "‘We escaped barefoot’: Yemen families flee fresh Houthi offensive",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-19T11:10+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israel seeks US 'compensation' after Saudi F-35 fighter jet deal: report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-19T10:48+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1346,7 +1379,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-19T20:48:44.582002+00:00",
+    "last_success": "2026-09-19T21:02:02.004273+00:00",
     "last_failure": null
   },
   "ok": true
