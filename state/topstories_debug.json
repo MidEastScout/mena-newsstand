@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T22:15:48.024763+00:00",
+  "updated": "2026-09-20T22:47:08.511654+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-20T22:13:57.850455+00:00"
+      "headlines_updated": "2026-09-20T22:45:12.529334+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 34,
+        "dropped_stale": 4,
+        "title_snippet": 28,
+        "dropped_no_english": 6,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 87,
         "in": 126,
-        "kept": 120
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -187,16 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Jordan Times",
-          "title": "Prime minister directs enhanced preparations for 2,000th Baptism anniversary",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "King announces signing of defence agreement with France",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Syria Direct",
           "title": "Fuel Anger Erupts in the Government’s Idlib Heartland",
@@ -209,19 +200,49 @@
         },
         {
           "source": "TRT World",
-          "title": "US-Iran war wiped $150 billion off Arab economies in one month, UN official says",
+          "title": "Türkiye condemns deadly terrorist attack in Pakistan",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "UN mission finds grounds to believe US committed war crimes in Iran",
+          "title": "US-Iran war wiped $150 billion off Arab economies in one month, UN official says",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "פיגוע ירי בבנימין: גבר בן 36 נרצח, המחבל נעצר בתום מצוד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "איראן: העברנו לארה\"ב את תנאינו לסיום המלחמה, מחכים לטראמפ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הגבאי ששכל את בנו בבית הכנסת שנחרב ונפתח מחדש: \"אף אחד לא ישבור אותנו\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "עבריין ומכור כבד לשעבר קיבל חנינה מהנשיא - והפך למטפל בהתמכרויות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "دبلوماسي أميركي سابق: فرص اعتراف واشنطن بصوماليلاند تتراجع",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "بيان تحذيري صادر عن مقر خاتم الأنبياء (ص): أي عدوان على ايران سيوجب رداً مؤلماً يطال كل من يشارك فيه 13:44",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 66,
+      "in": 116,
+      "kept": 62,
       "dropped": [
         {
           "source": "N12",
@@ -232,35 +253,21 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A sexton who lost his son in a synagogue that was destroyed and reopened stated, 'No one will break us.'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A former convict and addict received a presidential pardon and became an addiction counselor.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , ‘Disaster’: Far left wins in Berlin, far right in Germany’s northeast vote",
+          "title": "4 , Trump tariffs hit Canada’s dairy farmers as US sales stall",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Trump tariffs hit Canada’s dairy farmers as US sales stall",
+          "title": "5 , ‘Disaster’: Far left wins in Berlin, far right in Germany’s northeast vote",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -295,13 +302,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Iran seals French language center in Tehran, accuses it of illegal activities",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Iran executes man convicted of spying for Israel’s Mossad, judiciary says",
           "sec": 0,
           "off": 0,
@@ -310,6 +310,13 @@
         {
           "source": "Al Arabiya",
           "title": "QatarEnergy says Hormuz crisis may delay some expansion projects",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Iran seals French language center in Tehran, accuses it of illegal activities",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -379,7 +386,21 @@
         },
         {
           "source": "Jordan Times",
+          "title": "Jordan banks won’t raise interest rates on existing individual loans — ABJ",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
           "title": "Prime minister unveils plans to boost economy in Maan, accelerate development",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "King begins working visit to New York for UN General Assembly",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -442,6 +463,13 @@
         },
         {
           "source": "WAFA News",
+          "title": "British singer Ed Sheeran describes Gaza war as “catastrophic, unjustified and disproportionate” at first concert since ",
+          "sec": 1,
+          "off": 2,
+          "reason": "off-topic signals outweigh security signals"
+        },
+        {
+          "source": "WAFA News",
           "title": "Germany’s Left Party leads Berlin election as supporters chant for a free Palestine",
           "sec": 0,
           "off": 0,
@@ -484,14 +512,14 @@
         },
         {
           "source": "Arab News",
-          "title": "Egypt’s Orfi to become youngest-ever women’s world No 1",
+          "title": "Iran says conveyed conditions to US for reopening Hormuz",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Arab News",
-          "title": "Iran says conveyed conditions to US for reopening Hormuz",
+          "title": "Egypt’s Orfi to become youngest-ever women’s world No 1",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -513,13 +541,6 @@
         {
           "source": "Gulf News",
           "title": "Abu Dhabi Police graduates 202 trainees from police and security qualification course in Al Ain",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Iran closes French language center in Tehran for ‘illegal’ activities",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -605,10 +626,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 54,
+      "clusters": 51,
       "sizes": [
         4,
-        3,
         2,
         2,
         2,
@@ -616,9 +636,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -670,7 +688,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Houthis warn against joining Saudi Arabia in Yemen’s civil war",
+          "headline": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
           "rank_key": {
             "outlets": 4,
             "camps": 4,
@@ -693,7 +711,7 @@
           "why_not": null,
           "representative": {
             "source": "The New Arab",
-            "title": "Houthis warn against joining Saudi Arabia in Yemen’s civil war",
+            "title": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -717,6 +735,44 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Qatar says mediation efforts underway to revive US-Iran talks",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-20T22:11+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Qatar says mediation efforts underway to revive US-Iran talks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (qatar)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Qatar condemns Ben-Gvir, colonists’ storming of Al-Aqsa Mosque",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Israel reportedly seeks to prosecute former Syrian air defense officers.",
           "rank_key": {
             "outlets": 2,
@@ -754,7 +810,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "US warns of rapid escalation in the Middle East",
           "rank_key": {
             "outlets": 2,
@@ -785,7 +841,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Iran executes man accused of providing missile info to Israel",
           "rank_key": {
             "outlets": 2,
@@ -822,7 +878,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Trump signs Russia sanctions bill; China and India face possible 100% tariffs",
           "rank_key": {
             "outlets": 2,
@@ -891,7 +947,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "Occupation forces raid several villages west of Jenin, detain residents",
+          "headline": "Israeli forces detain at least 27 Palestinians in al-Mughayyir, northeast of Ramallah",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
@@ -904,12 +960,12 @@
           "camps": [
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "WAFA News",
-            "title": "Occupation forces raid several villages west of Jenin, detain residents",
+            "title": "Israeli forces detain at least 27 Palestinians in al-Mughayyir, northeast of Ramallah",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -958,33 +1014,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Moscow targeted by ‘largest ever’ drone attack on final day of Russia’s parliamentary election",
+          "headline": "Woman, two children wounded by Israeli occupation fire in Gaza Strip",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-20T12:01+00:00"
+            "newest": "2026-09-20T21:20+00:00"
           },
           "outlet_names": [
-            "Egypt Independent",
             "SANA"
           ],
           "camps": [
             "levant"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Moscow targeted by ‘largest ever’ drone attack on final day of Russia’s parliamentary election",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1014,24 +1058,6 @@
           },
           "outlet_names": [
             "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Qatar condemns Ben-Gvir, colonists’ storming of Al-Aqsa Mosque",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T17:36+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
           ],
           "camps": [
             "levant"
@@ -1203,7 +1229,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "33 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1221,7 +1247,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-20T22:16:03.405884+00:00",
+    "last_success": "2026-09-20T22:47:25.519112+00:00",
     "last_failure": null
   },
   "ok": true
