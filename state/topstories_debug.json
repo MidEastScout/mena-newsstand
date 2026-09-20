@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T15:57:04.352451+00:00",
+  "updated": "2026-09-20T16:28:14.998153+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-20T15:55:25.942351+00:00"
+      "headlines_updated": "2026-09-20T16:26:31.030079+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 32,
+        "dropped_stale": 12,
+        "title_snippet": 29,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 81,
+        "dropped_no_english": 3,
         "in": 126,
-        "kept": 115
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -213,6 +214,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Jordan Times",
+          "title": "King announces signing of defence agreement with France",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Al-Akhbar",
           "title": "للعام الثاني... واشنطن تمنع عباس من حضور الجمعية العامة للأمم المتحدة",
           "reason": "stale (older than 48h)"
@@ -241,12 +247,27 @@
           "source": "TRT World",
           "title": "US denies Palestinian president visa to attend the UN General Assembly for second year",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اعتداءات للمستوطنين في الضفة واستهداف لمصادر المياه.. وإغلاق مرتقب للحرم الإبراهيمي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إسرائيل تطلب ملاحقة ضباط الدفاع الجوي في الجيش السوري السابق؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الأوقاف تستنكر.. بن غفير يؤدي طقوساً تلمودية في الأقصى بحماية الاحتلال",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 71,
+      "in": 111,
+      "kept": 73,
       "dropped": [
         {
           "source": "Kan 11",
@@ -334,13 +355,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Iran executes man convicted of spying for Israel’s Mossad, judiciary says",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Iran seals French language center in Tehran, accuses it of illegal activities",
           "sec": 0,
           "off": 0,
@@ -348,7 +362,14 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Trump cuts short weekend, returns to White House",
+          "title": "Iran executes man convicted of spying for Israel’s Mossad, judiciary says",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Police arrest Pakistan ex-PM Imran Khan’s sister in Lahore ahead of party’s planned march",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -362,42 +383,14 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Virgin coconut oil protects the brain from changes associated with chronic stress.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
           "title": "A notable walnut festival in Lebanon highlights the significance of the green 'jewel'.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Mehr News",
-          "title": "Ritter warns of US economy collapse, NATO vulnerabilities",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Iran International",
-          "title": "3 Tehran ‘ashamed’ as Iranians struggle to make ends meet",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Iran International",
           "title": "PODCAST Death-row Iran protester denied hospital treatment, family says",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "King begins working visit to New York for UN General Assembly",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -445,13 +438,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Israel's Likud party is seeking to prevent voters from returning from abroad.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "An important warning sign may indicate dementia.",
           "sec": 0,
@@ -488,14 +474,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "The school bag evolution: what UAE students carry now",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Iran closes French language center in Tehran for ‘illegal’ activities",
+          "title": "Abu Dhabi Police graduates 202 trainees from police and security qualification course in Al Ain",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -560,9 +539,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 58,
+      "clusters": 59,
       "sizes": [
         4,
+        3,
         3,
         2,
         2,
@@ -571,7 +551,7 @@
         2,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -899,7 +879,7 @@
           "camps": [
             "levant"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -912,7 +892,13 @@
               "neutral-by-default outlet",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces detain eight Palestinians in southern Hebron",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -995,6 +981,78 @@
         },
         {
           "selected_rank": null,
+          "headline": "Araghchi urges expansion of ties with Iraq, Kazakhstan",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-20T16:25+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saddam’s fate awaits Trump and Netanyahu: IRGC commander",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-20T16:22+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Parliamentary commission approves mandatory use of full ‘Persian Gulf’ name",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-20T16:20+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces raid Palestinian town, surround mosque northwest of East Jerusalem",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-20T15:35+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli premier orders intensified military operations in occupied West Bank",
           "rank_key": {
             "outlets": 1,
@@ -1024,42 +1082,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran warns US, regional states of ‘painful’ attacks if they act against Tehran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T14:10+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Ministry of Endowments condemns the closure of the Ibrahimi Mosque under the pretext of Jewish h",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T13:41+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1174,43 +1196,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Islamic Jihad stated that Netanyahu and settlement leaders' storming of the Western Wall is a blatan",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T11:20+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US warns citizens in Middle East against unexpected escalation",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T10:30+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "36 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "37 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1228,7 +1214,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-20T15:57:22.224195+00:00",
+    "last_success": "2026-09-20T16:28:34.597465+00:00",
     "last_failure": null
   },
   "ok": true
