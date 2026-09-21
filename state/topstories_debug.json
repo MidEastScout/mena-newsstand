@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21T06:57:20.570315+00:00",
+  "updated": "2026-09-21T07:10:30.164903+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-21T06:55:29.402815+00:00"
+      "headlines_updated": "2026-09-21T07:08:58.165588+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 35,
+        "title_snippet": 33,
         "title_native": 82,
+        "dropped_no_english": 2,
         "in": 126,
-        "kept": 117
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -230,12 +231,22 @@
           "source": "TRT World",
           "title": "Türkiye detains 175 in crackdown on fraud network with Israeli-linked owners",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القوات المسلحة اليمنية: 760 غارة سعودية منذ بدء تصعيد الرياض ضد اليمن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أسعار صرف العملات",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 69,
+      "in": 115,
+      "kept": 66,
       "dropped": [
         {
           "source": "N12",
@@ -261,6 +272,13 @@
         {
           "source": "Al Jazeera",
           "title": "3 , ‘Disaster’: Far left wins in Berlin, far right in Germany’s northeast vote",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , ICE officer shoots and wounds man in Austin, Texas, officials say",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -469,13 +487,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The government media office in Gaza announced an emergency plan to remove cracked buildings.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Denmark hails ‘binding’ Greenland deal with Trump",
           "sec": 0,
@@ -508,6 +519,13 @@
           "title": "Jailer 2 cast: From Vidya Balan’s Kantha to Hrithik Roshan, who plays whom in Rajinikanth’s film",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Russia's ruling party takes early lead, on course for constitutional majority",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -579,7 +597,7 @@
       "method": "heuristic",
       "clusters": 49,
       "sizes": [
-        8,
+        7,
         3,
         2,
         2,
@@ -590,8 +608,8 @@
         2,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -639,13 +657,12 @@
           "selected_rank": 1,
           "headline": "Iran says it downed US MQ-1 drone over Strait of Hormuz: Report",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-09-21T06:24+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Mayadeen",
             "Anadolu Agency",
             "IRNA",
             "Iran International",
@@ -657,7 +674,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 8,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -682,13 +699,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Mayadeen",
-                "title": "The Iranian Army announced the destruction of an \"Orbiter\" reconnaissance drone ",
+                "source": "IRNA",
+                "title": "Iranian Army downs advanced US spy drone over Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Iranian Army downs advanced US spy drone over Strait of Hormuz",
+                "source": "Mehr News",
+                "title": "Enemy's drone targeted over Hormuz: Iran Army",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -735,75 +752,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Fires reported in Palestinian village after Israeli forces use tear gas",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-21T05:48+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Fires reported in Palestinian village after Israeli forces use tear gas",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Israeli forces raid areas in West Bank, arrest 2 Palestinians, including child: Report",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-21T01:51+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "SANA"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli forces raid areas in West Bank, arrest 2 Palestinians, including child: Report",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "Israeli forces detain eight Palestinians, raid several West Bank towns",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "US warns of rapid escalation in the Middle East",
           "rank_key": {
             "outlets": 2,
@@ -834,7 +782,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Iran stated they are awaiting a response from Donald Trump regarding an end to the war and warned of",
           "rank_key": {
             "outlets": 2,
@@ -871,7 +819,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Qatar says mediation efforts underway to revive US-Iran talks",
           "rank_key": {
             "outlets": 2,
@@ -1098,6 +1046,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Egypt condemns storming of Al-Aqsa mosque and warns of consequences",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-21T06:59+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran Army holds cadet graduation ceremony after combat training",
           "rank_key": {
             "outlets": 1,
@@ -1127,6 +1093,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Fires reported in Palestinian village after Israeli forces use tear gas",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-21T03:04+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1277,43 +1261,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Türkiye’s CHP targets mayors in cleaning up corruption",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T13:38+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The President remitted the criminal record of a former soldier who killed a wounded Palestinian 10 y",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T13:03+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1331,7 +1279,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-21T06:57:34.485165+00:00",
+    "last_success": "2026-09-21T07:10:49.063068+00:00",
     "last_failure": null
   },
   "ok": true
