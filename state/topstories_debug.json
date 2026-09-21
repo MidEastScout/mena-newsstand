@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T23:33:53.001622+00:00",
+  "updated": "2026-09-21T00:04:44.282946+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-20T23:31:47.615017+00:00"
+      "headlines_updated": "2026-09-21T00:03:14.957111+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 34,
+        "title_snippet": 31,
         "title_translated": 1,
         "title_native": 86,
+        "dropped_no_english": 3,
         "in": 126,
-        "kept": 121
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -211,12 +212,27 @@
           "source": "TRT World",
           "title": "US-Iran war wiped $150 billion off Arab economies in one month, UN official says",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: وكالة \"مهر\" عن المتحدث باسم منظمة الطيران المدني: لم يصدر حتى الآن أي إعلان رسمي من قبل الحكومة العراقية بشأن الو",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "دبلوماسي أميركي سابق: فرص اعتراف واشنطن بصوماليلاند تتراجع",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مقرّ خاتم الأنبياء: انحياز دول المنطقة إلى واشنطن سيجعلها شريكة في العدوان على إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 64,
+      "in": 118,
+      "kept": 63,
       "dropped": [
         {
           "source": "N12",
@@ -338,20 +354,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "A notable walnut festival in Lebanon: What is the secret of the green 'jewel'?",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Third broadcast of the night on staging-ar.almayadeen.net.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "Option of Iran's withdrawal from NPT on the table: Senior MP",
           "sec": 0,
@@ -388,7 +390,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Queen Rania meets with Czech First Lady Eva Pavlová in Prague",
+          "title": "King begins working visit to New York for UN General Assembly",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -535,14 +537,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Dubai to host 1,000 leaders at Mohammed bin Rashid Leadership Forum; best Director General to be revealed",
+          "title": "Flying home for Diwali? Indian travellers face soaring festive airfares",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Abu Dhabi Police graduates 202 trainees from police and security qualification course in Al Ain",
+          "title": "Dubai to host 1,000 leaders at Mohammed bin Rashid Leadership Forum; best Director General to be revealed",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -621,18 +623,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 51,
       "sizes": [
         4,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -895,7 +896,7 @@
           "camps": [
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -915,6 +916,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Woman, two children injured by Israeli forces’ gunfire in Gaza",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-20T21:20+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Woman, two children injured by Israeli forces’ gunfire in Gaza",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1002,24 +1034,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Woman, two children wounded by Israeli occupation fire in Gaza Strip",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T21:20+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1206,7 +1220,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "32 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Türkiye exposes methods of Israel-linked int'l fraud network",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-20T12:47+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1224,7 +1256,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-20T23:34:06.974826+00:00",
+    "last_success": "2026-09-21T00:05:12.707638+00:00",
     "last_failure": null
   },
   "ok": true
