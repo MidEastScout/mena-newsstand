@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21T03:14:52.799970+00:00",
+  "updated": "2026-09-21T03:46:20.262599+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-21T03:13:18.004883+00:00"
+      "headlines_updated": "2026-09-21T03:44:55.534009+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 34,
-        "title_translated": 1,
-        "title_native": 85,
+        "dropped_stale": 7,
+        "title_snippet": 33,
+        "dropped_no_english": 2,
+        "title_native": 84,
         "in": 126,
-        "kept": 120
+        "kept": 117
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -190,6 +190,11 @@
         {
           "source": "Syria Direct",
           "title": "Fuel Anger Erupts in the Government’s Idlib Heartland",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "UN Security Council condemns Houthi attacks on Saudi Arabia, backs Riyadh’s right to self-defense",
           "reason": "stale (older than 48h)"
         },
         {
@@ -216,12 +221,22 @@
           "source": "TRT World",
           "title": "Türkiye condemns deadly terrorist attack in Pakistan",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אזרח התעמת עם אדם שתלש מדבקות הנצחה של חללי צה\"ל בירושלים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "عامان على ارتقائه؛ غاب السيد لكن \"هاجسه\" في \"إسرائيل\" لم يغب",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 72,
+      "in": 117,
+      "kept": 70,
       "dropped": [
         {
           "source": "N12",
@@ -232,14 +247,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "A former offender and addiction survivor received a pardon from the President and now works as an addiction…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "A former offender and addiction survivor received a pardon from the President and now works as an addiction…",
+          "source": "Al Jazeera",
+          "title": "2 , ICE officer shoots and wounds man in Austin, Texas, officials say",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -322,13 +337,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "A Taiwanese minister is making a rare visit to China to attend an APEC forum event.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "Qatari spokesman claims US seeking agreement with Iran",
           "sec": 0,
@@ -351,16 +359,16 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Queen Rania meets with Czech First Lady Eva Pavlová in Prague",
+          "title": "King begins working visit to New York for UN General Assembly",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "JTB opens China office to boost Chinese tourist arrivals",
+          "title": "Queen Rania meets with Czech First Lady Eva Pavlová in Prague",
           "sec": 0,
-          "off": 2,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -563,10 +571,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 51,
       "sizes": [
         6,
-        4,
+        3,
         3,
         2,
         2,
@@ -578,7 +586,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -686,23 +693,21 @@
           "selected_rank": 2,
           "headline": "Saudi Arabia has carried out 760 airstrikes on Yemen: Military spokesperson",
           "rank_key": {
-            "outlets": 4,
-            "camps": 4,
+            "outlets": 3,
+            "camps": 3,
             "newest": "2026-09-20T19:25+00:00"
           },
           "outlet_names": [
             "Al Manar",
             "Al Mayadeen",
-            "Arab News",
             "IRNA"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -719,11 +724,6 @@
               {
                 "source": "Al Manar",
                 "title": "The Yemeni Armed Forces announced targeting sensitive locations in Riyadh and Ar",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "UN Security Council condemns Houthi attacks on Saudi Arabia, backs Riyadh’s righ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -763,7 +763,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Powerful explosions at Syrian army site near Aleppo injure at least four",
+                "title": "5 , Powerful explosions at Syrian army site near Aleppo injure at least four",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -982,6 +982,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "Gaza death toll rises to 73,910 as 21 Palestinians injured in past 24 hours",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-20T19:49+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Gaza death toll rises to 73,910 as 21 Palestinians injured in past 24 hours",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Jordan condemns storming of Al Aqsa Mosque by far-right Israeli minister, settlers",
           "rank_key": {
             "outlets": 2,
@@ -1013,43 +1044,6 @@
                 "source": "WAFA News",
                 "title": "Jordan condemns Ben-Gvir, colonists’ storming of Al-Aqsa Mosque",
                 "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Gaza death toll rises to 73,910 as 21 Palestinians injured in past 24 hours",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-20T17:52+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Gaza death toll rises to 73,910 as 21 Palestinians injured in past 24 hours",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Gaza death toll rises to 73,910 as 21 Palestinians injured in past 24 hours",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -1331,7 +1325,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1349,7 +1343,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-21T03:15:08.671872+00:00",
+    "last_success": "2026-09-21T03:46:21.260880+00:00",
     "last_failure": null
   },
   "ok": true
