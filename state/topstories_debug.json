@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21T17:50:25.736914+00:00",
+  "updated": "2026-09-21T18:22:00.548456+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-21T17:48:21.423845+00:00"
+      "headlines_updated": "2026-09-21T18:20:08.724279+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 31,
+        "title_snippet": 21,
+        "dropped_no_english": 10,
+        "title_translated": 1,
         "title_native": 86,
-        "dropped_no_english": 1,
         "in": 126,
-        "kept": 117
+        "kept": 108
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 31,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -228,15 +229,60 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "N12",
+          "title": "העימות עם טראמפ מחריף: הרשתות מסרבות להחליף את CNN",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الجيش الإيراني يعلن تدمير طائرة استطلاعية من طراز \"أوربيتر\" فوق مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الرياض في مرمى الصواريخ والمسيّرات اليمنية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "جنبلاط من بعبدا: أؤيد اتفاق الإطار إذا أدى إلى انسحاب إسرائيل وترسيم الحدود",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الاحتلال يواصل التضييق على الفلسطينيين بالضفة: تحقيقات ميدانية وبوابات حديدية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عون يتلقّى جرعة دعم من ترامب: معجب بقيادتكم للبنان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "MBC تشعل فتيل «بنو حنيفة» | 21 أيلول 2026 | الأخبار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تفعيل معادلة «العاصمة بالعاصمة»: صنعاء تقترب من استعادة كامل تعز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al Manar",
           "title": "بالفيديو | الاعلام الحربي ينشر.. {لَّرَأَيْتَهُ خَاشِعًا مُّتَصَدِّعًا مِّنْ خَشْيَةِ اللَّهِ} 18:23",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "إيران تُدمر طائرة استطلاعية من طراز \"أوربيتر\" فوق مضيق هرمز",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 62,
+      "in": 108,
+      "kept": 59,
       "dropped": [
         {
           "source": "Kan 11",
@@ -261,7 +307,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "The sexton who lost his son in a synagogue that was destroyed and subsequently reopened stated, 'No one will…",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -286,13 +332,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Russia election results show Putin’s party winning: What we know",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Middle East Eye",
@@ -358,6 +397,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Mehr News",
+          "title": "Pres. Pezeshkian to depart for NY on Tue. for UNGA meeting",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Jordan Times",
           "title": "Jordan banks won’t raise interest rates on existing individual loans — ABJ",
           "sec": 0,
@@ -373,16 +419,16 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Queen Rania meets with Czech First Lady Eva Pavlová in Prague",
+          "title": "King begins working visit to New York for UN General Assembly",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "JTB opens China office to boost Chinese tourist arrivals",
+          "title": "Queen Rania meets with Czech First Lady Eva Pavlová in Prague",
           "sec": 0,
-          "off": 2,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -416,34 +462,6 @@
         {
           "source": "Egypt Independent",
           "title": "‘Voters are like, No thanks’: Trump’s tariffs fall flat with the working class",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Walid Jumblatt expressed support for an framework agreement if it leads to Israel's withdrawal and border…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Michel Aoun received a message of support from Trump, who expressed admiration for his leadership of Lebanon.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "MBC has ignited a controversy related to 'Bani Hanifa,' with details emerging on September 21, 2026.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The activation of the 'Capital for Capital' equation suggests Sana'a is nearing the full restoration of Taiz.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -493,20 +511,6 @@
         {
           "source": "Arab News",
           "title": "Pakistan interior minister in Tehran to discuss regional developments - officials",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Trump floats ‘massive’ fertilizer deal with Russian-allied Belarus",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "US refuses visas for Iran president’s UN communications team: state media",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -627,16 +631,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 45,
       "sizes": [
-        5,
+        6,
         5,
         4,
         2,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -704,7 +705,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -730,12 +731,12 @@
               },
               {
                 "source": "Arab News",
-                "title": "Arab states rally behind Saudi Arabia after Houthi attacks",
+                "title": "UN chief condemns Houthi attacks on Saudi Arabia",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Gulf News",
-                "title": "Emboldened Houthis advance in Yemen, widen attacks on Saudi Arabia: What can sto",
+                "source": "Arab News",
+                "title": "Arab states rally behind Saudi Arabia after Houthi attacks",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -915,34 +916,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces detain five Palestinians in Salfit amid intensified raids across West Bank",
+          "headline": "Türkiye rejects disinformation targeting child protection operations",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-21T13:11+00:00"
+            "newest": "2026-09-21T17:38+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "WAFA News"
+            "Daily Sabah"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces detain five Palestinians in Salfit amid intensified raids across West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1000,24 +988,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Intelligence information led the Shin Bet and a Duvdevan unit to a hospital in Ramallah where a susp",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-21T16:15+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The United States is reportedly preparing extensive sanctions that could financially cripple the…",
           "rank_key": {
             "outlets": 1,
@@ -1044,24 +1014,6 @@
           },
           "outlet_names": [
             "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "COP31 host Türkiye launches AI climate initiative ahead of summit",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-21T14:25+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1108,24 +1060,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "One martyr and 17 injured were reported in the Gaza Strip due to ongoing Israeli aggressions.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-21T12:53+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "What to expect at the UN General Assembly, the biggest event in world diplomacy",
           "rank_key": {
             "outlets": 1,
@@ -1161,7 +1095,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The article questions whether it is time to adopt the 'straight line' theory between Riyadh and Sana",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-21T11:28+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The article discusses the economic aspect of settlements, highlighting risks that extend beyond mere",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-21T11:17+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1179,7 +1149,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-21T17:50:36.919206+00:00",
+    "last_success": "2026-09-21T18:22:01.537168+00:00",
     "last_failure": null
   },
   "ok": true
