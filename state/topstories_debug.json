@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21T05:54:22.312826+00:00",
+  "updated": "2026-09-21T06:25:53.589533+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-21T05:52:11.068749+00:00"
+      "headlines_updated": "2026-09-21T06:24:02.402576+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 31,
-        "title_native": 85,
-        "dropped_no_english": 4,
+        "dropped_stale": 7,
+        "title_snippet": 30,
+        "title_native": 84,
+        "dropped_no_english": 5,
         "in": 126,
-        "kept": 116
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -187,6 +187,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Fighting uproots 112,000 in Yemen, thousands flee to Djibouti",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Syria Direct",
           "title": "Fuel Anger Erupts in the Government’s Idlib Heartland",
@@ -218,18 +223,23 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "القوات المسلحة اليمنية: 760 غارة سعودية منذ بدء تصعيد الرياض ضد اليمن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al-Akhbar",
           "title": "دريان يتغزّل بالسعودية... ولكن!",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al-Akhbar",
-          "title": "هرتسوغ يمحو السجل الجنائي لجندي سابق قتل فلسطينياً جريحاً قبل 10 أعوام",
+          "title": "جيش العدو يقرّ: نزع سلاح حزب الله «هدف أعلى» طويل المدى",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al-Akhbar",
-          "title": "إسرائيل تطلب ملاحقة ضباط الدفاع الجوي في الجيش السوري السابق؟",
+          "title": "هرتسوغ يمحو السجل الجنائي لجندي سابق قتل فلسطينياً جريحاً قبل 10 أعوام",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -240,8 +250,8 @@
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 80,
+      "in": 114,
+      "kept": 77,
       "dropped": [
         {
           "source": "N12",
@@ -259,7 +269,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , ‘Disaster’: Far left wins in Berlin, far right in Germany’s northeast vote",
+          "title": "3 , ICE officer shoots and wounds man in Austin, Texas, officials say",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "4 , ‘Disaster’: Far left wins in Berlin, far right in Germany’s northeast vote",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -501,9 +518,8 @@
       "method": "heuristic",
       "clusters": 55,
       "sizes": [
-        8,
-        7,
-        3,
+        6,
+        6,
         2,
         2,
         2,
@@ -514,7 +530,8 @@
         2,
         2,
         2,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -565,36 +582,32 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
+          "headline": "1 , Iran warns US against any new attacks as deadly fighting rages in Yemen",
           "rank_key": {
-            "outlets": 7,
-            "camps": 4,
-            "newest": "2026-09-21T00:24+00:00"
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-09-20T22:26+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
             "Al Manar",
             "Al Mayadeen",
-            "Anadolu Agency",
             "Channel 13",
-            "Egypt Independent",
-            "The New Arab"
+            "Egypt Independent"
           ],
           "camps": [
             "israeli",
             "panarab",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 8,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
+            "source": "Al Jazeera",
+            "title": "1 , Iran warns US against any new attacks as deadly fighting rages in Yemen",
             "title_source": "native",
             "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
@@ -606,11 +619,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Jazeera",
-                "title": "1 , Iran warns US against any new attacks as deadly fighting rages in Yemen",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Mayadeen",
                 "title": "Yemen reported martyrs and wounded in Saudi-led aggression raids on Al Jawf Gove",
                 "rejected_by": "loaded/partisan wording"
@@ -619,21 +627,25 @@
                 "source": "Egypt Independent",
                 "title": "US warns citizens in Middle East against unexpected escalation",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Egypt Independent",
+                "title": "UN and GCC denounce Huthi attacks on Saudi Arabia following missile interception",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Iran says conveyed conditions to US for reopening Hormuz",
+          "headline": "Another US MQ-1 drone downed over Strait of Hormuz",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 2,
-            "newest": "2026-09-20T20:31+00:00"
+            "newest": "2026-09-21T05:54+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Mayadeen",
             "IRNA",
             "Iran International",
             "Mehr News",
@@ -643,17 +655,17 @@
             "panarab",
             "iranian"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Iran says conveyed conditions to US for reopening Hormuz",
+            "source": "IRNA",
+            "title": "Another US MQ-1 drone downed over Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -663,13 +675,18 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Armed Forces spokesperson: Iran still has initiative in Strait of Hormuz despite",
+                "source": "The New Arab",
+                "title": "Iran says conveyed conditions to US for reopening Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Iran International",
-                "title": "4 Trump weighs Iran options; Tehran signals Hormuz leverage",
+                "source": "IRNA",
+                "title": "Iranian Army downs advanced US spy drone over Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Enemy's drone targeted over Hormuz: Iran Army",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -677,22 +694,52 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Israeli forces raid areas in West Bank, arrest 2 Palestinians, including child: Report",
+          "headline": "Fires reported in Palestinian village after Israeli forces use tear gas",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-21T01:51+00:00"
+            "newest": "2026-09-21T05:48+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "SANA",
             "WAFA News"
           ],
           "camps": [
             "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Fires reported in Palestinian village after Israeli forces use tear gas",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Israeli forces raid areas in West Bank, arrest 2 Palestinians, including child: Report",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-21T01:51+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "SANA"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -715,7 +762,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Ethiopia’s main armed groups announce alliance against government",
           "rank_key": {
             "outlets": 2,
@@ -752,7 +799,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "US warns of rapid escalation in the Middle East",
           "rank_key": {
             "outlets": 2,
@@ -1177,7 +1224,7 @@
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-20T16:34+00:00"
+            "newest": "2026-09-20T16:35+00:00"
           },
           "outlet_names": [
             "Arab News"
@@ -1262,7 +1309,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1280,7 +1327,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-21T05:54:36.344142+00:00",
+    "last_success": "2026-09-21T06:26:09.373799+00:00",
     "last_failure": null
   },
   "ok": true
