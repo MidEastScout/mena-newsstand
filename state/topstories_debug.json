@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21T04:19:15.039434+00:00",
+  "updated": "2026-09-21T04:50:53.892275+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-21T04:17:08.262563+00:00"
+      "headlines_updated": "2026-09-21T04:48:54.193038+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 34,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_native": 84,
         "in": 126,
-        "kept": 118
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -225,12 +226,27 @@
           "source": "TRT World",
           "title": "Türkiye condemns deadly terrorist attack in Pakistan",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ארה\"ב מתריעה: \"קיים פוטנציאל להסלמת הסכסוך עם החות'ים\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الجيش الإيراني يعلن تدمير طائرة استطلاعية من طراز \"أوربيتر\" فوق مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن: شهداء وجرحى في غارات للعدوان السعودي على محافظة الجوف",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 69,
+      "in": 115,
+      "kept": 67,
       "dropped": [
         {
           "source": "N12",
@@ -248,14 +264,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "The sexton who lost his son in a synagogue that was destroyed and reopened said, \"No one will break us.\"",
+          "title": "A former convict and recovering addict received a presidential pardon and became an addiction counselor.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "A former convict and recovering addict received a presidential pardon and became an addiction counselor.",
+          "source": "Al Jazeera",
+          "title": "5 , What’s behind Iranian authorities’ push for a mass mobilisation campaign?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -331,13 +347,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Iran stated, according to the Mehr agency, that the Iraqi government has not yet made any official…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "Option of Iran's withdrawal from NPT on the table: Senior MP",
           "sec": 0,
@@ -367,16 +376,16 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Queen Rania meets with Czech First Lady Eva Pavlová in Prague",
+          "title": "King begins working visit to New York for UN General Assembly",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "JTB opens China office to boost Chinese tourist arrivals",
+          "title": "Queen Rania meets with Czech First Lady Eva Pavlová in Prague",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -579,10 +588,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 48,
       "sizes": [
         7,
-        3,
+        5,
         2,
         2,
         2,
@@ -592,10 +601,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -687,7 +692,7 @@
               },
               {
                 "source": "Iran International",
-                "title": "5 Trump weighs Iran options; Tehran signals Hormuz leverage",
+                "title": "4 Trump weighs Iran options; Tehran signals Hormuz leverage",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -700,43 +705,51 @@
         },
         {
           "selected_rank": 2,
-          "headline": "The Yemeni Armed Forces reported 760 Saudi airstrikes since the start of Riyadh's escalation against",
+          "headline": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
           "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-20T19:25+00:00"
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-09-21T00:24+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Al Manar",
-            "Al Mayadeen",
-            "Egypt Independent"
+            "Anadolu Agency",
+            "Egypt Independent",
+            "The New Arab"
           ],
           "camps": [
             "panarab",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 3,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Mayadeen",
-            "title": "The Yemeni Armed Forces reported 760 Saudi airstrikes since the start of Riyadh's escalation against Yemen.",
-            "title_source": "snippet",
+            "source": "The New Arab",
+            "title": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Manar",
-                "title": "The Yemeni Armed Forces announced they targeted sensitive sites in Riyadh and Ar",
+                "source": "Al Jazeera",
+                "title": "1 , Iran warns US against any new attacks as deadly fighting rages in Yemen",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Egypt Independent",
                 "title": "UN and GCC denounce Huthi attacks on Saudi Arabia following missile interception",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "The Yemeni Armed Forces announced they targeted sensitive sites in Riyadh and Ar",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -817,7 +830,7 @@
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-20T16:35+00:00"
+            "newest": "2026-09-20T16:34+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
@@ -1065,24 +1078,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Yemen's Giants Brigades say 5 Houthi military vehicles destroyed near Bab al-Mandab Strait",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-21T00:24+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "US prepares sweeping sanctions on International Criminal Court — report",
           "rank_key": {
             "outlets": 1,
@@ -1130,24 +1125,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-20T18:31+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1262,7 +1239,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Security forces arrest former Air Force general over attacks on civilians",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-20T12:53+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "During a visit to the scene of a terrorist attack, the chief of staff stated that all those who assi",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-20T12:48+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1280,7 +1293,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-21T04:19:28.366260+00:00",
+    "last_success": "2026-09-21T04:51:12.380287+00:00",
     "last_failure": null
   },
   "ok": true
