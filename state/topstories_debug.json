@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22T18:24:36.764438+00:00",
+  "updated": "2026-09-22T18:56:11.123560+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-22T18:22:41.075232+00:00"
+      "headlines_updated": "2026-09-22T18:54:20.508682+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 33,
+        "dropped_stale": 10,
+        "title_snippet": 32,
+        "dropped_no_english": 1,
         "title_translated": 1,
-        "title_native": 88,
+        "title_native": 86,
         "in": 130,
-        "kept": 122
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -190,6 +191,16 @@
         {
           "source": "N12",
           "title": "נתנאל שקרון הוא הנרצח בפיגוע במעיין בבנימין; המחבל נלכד בבית חולים ברמאללה",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Dozens of Israeli colonists raid Al-Aqsa Mosque amid heightened measures for Yom Kippur",
           "reason": "stale (older than 48h)"
         },
         {
@@ -226,11 +237,16 @@
           "source": "TRT World",
           "title": "Iran, Pakistan discuss regional developments amid US tensions, Hormuz passage deadlock",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"קשה למצוא בית פוליטי\": התסכול והתקווה של המצביעים החדשים",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
+      "in": 119,
       "kept": 68,
       "dropped": [
         {
@@ -243,13 +259,6 @@
         {
           "source": "Channel 13",
           "title": "A motorcyclist, around 60 years old, died in an accident near Nokdim in the Judean Hills.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Lappi will convene the 'Change Bloc' to coordinate moves amidst ongoing political maneuvering.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -292,6 +301,13 @@
         {
           "source": "Al Arabiya",
           "title": "US treasury chief says Iran airlines to be ‘shut down’ Sept. 23",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Pakistan interior minister to visit Tehran amid renewed US-Iran tensions",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -473,14 +489,14 @@
         },
         {
           "source": "SANA",
-          "title": "Syria participates in 3rd annual UfM development agencies meeting in Barcelona",
+          "title": "Central Bank Governor, Union of Arab Banks chief discuss financial cooperation in Amman",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "President al-Sharaa attends opening session of 81st UN General Assembly",
+          "title": "Syria participates in 3rd annual UfM development agencies meeting in Barcelona",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -495,13 +511,6 @@
         {
           "source": "Arab News",
           "title": "US Treasury chief says Iran airlines to be ‘shut down’ Sept 23",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "UK maritime agency says Hormuz tanker hit by debris from projectiles",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -536,21 +545,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Pakistan premier, Kuwaiti crown prince discuss regional developments, reaffirm commitment to peace",
+          "title": "Turkish president receives UK premier on sidelines of UN meeting",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Kyrgyz president calls for UN decisions to be treated as binding international obligations",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Qatari emir wants ‘regional system of collective security’",
+          "source": "Daily Sabah",
+          "title": "UK ready to 'play our part' in Middle East conflict: PM Burnham",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -558,13 +560,6 @@
         {
           "source": "Daily Sabah",
           "title": "Erdoğan urges world to pressure Israel, end Gaza bloodshed at UNGA",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Trump threatens to 'annihilate' Iran if no deal reached after US midterms",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -615,15 +610,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 53,
       "sizes": [
         6,
-        5,
         4,
         3,
         2,
         2,
-        1,
+        2,
+        2,
+        2,
         1,
         1,
         1,
@@ -737,22 +733,21 @@
           "selected_rank": 2,
           "headline": "US military and diplomatic analysis on Saudi Arabia, Yemen, Trump, the Houthis, Iran & Hor",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
             "newest": "2026-09-22T13:58+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Arab News",
-            "SANA",
-            "The New Arab"
+            "SANA"
           ],
           "camps": [
             "gulf",
             "panarab",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -772,11 +767,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "The New Arab",
-                "title": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "SANA",
                 "title": "G7 tells Iran to stop arming Houthis as Yemen fighting escalates",
                 "rejected_by": "older than the story's newest wave"
@@ -791,14 +781,13 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Kahl threatens to evacuate Gaza city if an Israeli soldier or settler is abducted.",
+          "headline": "Kahl warns that if an Israeli is taken captive, the entire city of Gaza will be evacuated south.",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-09-22T14:11+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
             "Channel 13",
             "Falastin al-Youm",
             "Kan 11"
@@ -807,12 +796,12 @@
             "israeli",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al-Akhbar",
-            "title": "Kahl threatens to evacuate Gaza city if an Israeli soldier or settler is abducted.",
+            "source": "Channel 13",
+            "title": "Kahl warns that if an Israeli is taken captive, the entire city of Gaza will be evacuated south.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -825,26 +814,26 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Ukraine slams ‘unacceptable’ push to lift EU sanctions on Russian oligarchs",
+          "headline": "Trump says Ukraine, Russia 'going to make a deal,' discusses Patriot missile production",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-21T15:34+00:00"
+            "newest": "2026-09-22T18:41+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
+            "Anadolu Agency",
             "Arab News"
           ],
           "camps": [
             "gulf",
-            "panarab"
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Ukraine slams ‘unacceptable’ push to lift EU sanctions on Russian oligarchs",
+            "source": "Anadolu Agency",
+            "title": "Trump says Ukraine, Russia 'going to make a deal,' discusses Patriot missile production",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -852,11 +841,54 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Ukraine slams ‘unacceptable’ push to lift EU sanctions on Russian oligarchs",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
           "selected_rank": 5,
+          "headline": "Trump says US, Iran held ‘very good’ meeting, another scheduled soon",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-22T18:38+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Trump says US, Iran held ‘very good’ meeting, another scheduled soon",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Trump says US officials had ‘very good’ meeting with Iranian delegation",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Arab nations condemn Ben-Gvir's provocative incursion into Al-Aqsa Mosque compound",
           "rank_key": {
             "outlets": 2,
@@ -871,7 +903,7 @@
             "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -887,11 +919,43 @@
                 "source": "WAFA News",
                 "title": "Arab League condemns Israeli official, colonists' incursion into Al-Aqsa Mosque",
                 "rejected_by": "loaded/partisan wording"
-              },
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Palestinian woman wounded in Gaza, Israeli forces detain 10 in West Bank raids",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-22T12:03+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Palestinian woman wounded in Gaza, Israeli forces detain 10 in West Bank raids",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (gaza, westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
               {
                 "source": "WAFA News",
-                "title": "Dozens of Israeli colonists raid Al-Aqsa Mosque amid heightened measures for Yom",
-                "rejected_by": "loaded/partisan wording"
+                "title": "Israeli forces detain five Palestinians in Salfit amid intensified raids across ",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -934,17 +998,53 @@
         },
         {
           "selected_rank": null,
-          "headline": "Crashed drone near German air base may have carried explosives: Reports",
+          "headline": "Finland warns of spreading conflicts, calls for more cooperation",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-22T18:15+00:00"
+            "newest": "2026-09-22T18:36+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
           ],
           "camps": [
             "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Türkiye, Pakistan, Egypt condemn attacks targeting Saudi Arabia, reiterating their support for kingd",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-22T18:35+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump warns in UN speech he could ‘annihilate’ Iran without peace deal",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-22T17:48+00:00"
+          },
+          "outlet_names": [
+            "Arab News"
+          ],
+          "camps": [
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1014,24 +1114,6 @@
           },
           "outlet_names": [
             "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "EU agrees to lift sanctions on 2 major Russian oligarchs: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-22T16:41+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
           ],
           "camps": [
             "turkish"
@@ -1131,25 +1213,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Live blog - US-Israeli war on Iran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-22T14:20+00:00"
-          },
-          "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "34 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "33 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1167,7 +1231,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-22T18:24:58.507558+00:00",
+    "last_success": "2026-09-22T18:56:24.828076+00:00",
     "last_failure": null
   },
   "ok": true
