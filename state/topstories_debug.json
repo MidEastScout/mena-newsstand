@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22T02:13:00.315981+00:00",
+  "updated": "2026-09-22T02:44:47.089417+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-22T02:11:02.418827+00:00"
+      "headlines_updated": "2026-09-22T02:43:12.546019+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 33,
-        "title_translated": 1,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_native": 88,
         "in": 130,
-        "kept": 122
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -226,20 +226,28 @@
           "source": "TRT World",
           "title": "Türkiye detains 175 in crackdown on fraud network with Israeli-linked owners",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "פוקס ניוז לצד CNN: העיתונות בארה\"ב משיבה אש לחרם של טראמפ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "למות ולחיות מחדש: \"הכאב יישאר לנצח; ידעתי שרק אהבה תציל אותי\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تقييمات غربية: السعودية تواجه صعوبة بمواجهة تقدم قوات صنعاء.. وقد لا تستعيد المخا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 64,
+      "in": 119,
+      "kept": 62,
       "dropped": [
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Channel 13",
           "title": "Channel 13 presents the full evening broadcast from September 21, 2026.",
@@ -318,13 +326,6 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Three media organizations are suing Trump in protest of barring their representatives from entering the White…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Iran, Pakistan interior ministers meet in Tehran to advance bilateral ties",
           "sec": 0,
@@ -369,6 +370,13 @@
         {
           "source": "Jordan Times",
           "title": "King meets with Kuwait crown prince, Lebanon PM in New York",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Safadi urges international community to act on Gaza humanitarian crisis",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -550,10 +558,10 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "South Korea’s president, Japanese prime minister head to US for UN General Assembly",
+          "title": "Türkiye and US must leave behind barriers, 'gain new momentum' in relations: President Erdogan",
           "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
@@ -643,21 +651,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 38,
       "sizes": [
         7,
         6,
         5,
+        3,
         3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -859,6 +864,45 @@
         },
         {
           "selected_rank": 4,
+          "headline": "The IDF stated it attacked Hamas infrastructure in the Gaza Strip in response to an explosive device",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-21T19:00+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "Kan 11",
+            "WAFA News"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "The IDF stated it attacked Hamas infrastructure in the Gaza Strip in response to an explosive device…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Two Palestinians, including child, killed by Israeli gunfire in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "The Trump administration is reportedly set to announce sanctions on the International Criminal Court",
           "rank_key": {
             "outlets": 3,
@@ -896,7 +940,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Iran's top diplomat arrives in New York for UN General Assembly",
           "rank_key": {
             "outlets": 2,
@@ -1003,37 +1047,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The IDF stated it attacked Hamas infrastructure in the Gaza Strip in response to an explosive device",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-21T19:23+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The IDF stated it attacked Hamas infrastructure in the Gaza Strip in response to an explosive device…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Vermont man convicted in shooting of 3 Palestinian students",
           "rank_key": {
             "outlets": 1,
@@ -1124,24 +1137,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Kanaan condemns Israeli incursions into Al Aqsa compound",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-21T21:29+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Natanel Kron, who was murdered in a terrorist attack near Neve Tzuf, was laid to rest in the Ali Zah",
           "rank_key": {
             "outlets": 1,
@@ -1214,24 +1209,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hind Rajab is suing a soldier on vacation in Italy for alleged war crimes in Gaza, according to palt",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-21T18:18+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Pakistan targeted armed militants in Afghanistan, announcing the killing of 28 of them, according to",
           "rank_key": {
             "outlets": 1,
@@ -1249,7 +1226,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Two people were killed in road accidents, and a suspected murder occurred in Umm al-Fahm during the ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-21T16:15+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "On Yom Kippur, two people were killed on the roads, and there is a suspicion of murder in Umm al-Fah",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-21T16:14+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1267,7 +1280,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-22T02:13:18.226242+00:00",
+    "last_success": "2026-09-22T02:45:03.363267+00:00",
     "last_failure": null
   },
   "ok": true
