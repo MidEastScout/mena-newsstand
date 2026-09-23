@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T10:52:24.023877+00:00",
+  "updated": "2026-09-23T11:25:04.303195+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,31 +167,26 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-23T10:49:39.171884+00:00"
+      "headlines_updated": "2026-09-23T11:22:42.069479+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 32,
-        "title_translated": 1,
-        "title_native": 86,
+        "dropped_stale": 6,
+        "title_snippet": 27,
+        "dropped_no_english": 6,
+        "title_native": 87,
         "in": 126,
-        "kept": 119
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 31,
+        "requested": 32,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "Houthis warn against joining Saudi Arabia in Yemen's civil war",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Al Mayadeen",
           "title": "الجيش الإيراني يعلن تدمير طائرة استطلاعية من طراز \"أوربيتر\" فوق مضيق هرمز",
@@ -221,12 +216,42 @@
           "source": "TRT World",
           "title": "Arab nations condemn Ben-Gvir's provocative incursion into Al-Aqsa Mosque compound",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "כתב אישום נגד חוליית טרור משכם: \"תכננו לחטוף חייל ולהתנקש בבן גביר\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "האחות הקטנה התחילה ללכת - והתגובה של האח כבשה את הרשת: \"התרגשתי מאוד\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "האם העלויות של עבודות הביטחון בביתו של נפתלי בנט נופחו בכוונה?",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "في أسبوع الدفاع المقدس.. طهران ترفع سقف الردع وتبقي باب الدبلوماسية مفتوحًا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الوجود الإيطالي في السعودية إلى الواجهة: روما تنشّط اتصالاتها مع صنعاء",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "التوقف الدولي الأطول... تبرير «فيفا» لا يُبطل المخاوف",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 63,
+      "in": 114,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -238,13 +263,6 @@
         {
           "source": "Channel 13",
           "title": "A dispute over a scanning machine is preventing the resumption of flights to the Emirates.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -271,8 +289,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "US treasury chief says Iran airlines to be ‘shut down’ Sept. 23",
+          "source": "The New Arab",
+          "title": "Trump's Board of Peace to unveil $2.45bn Gaza recovery plan",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -397,20 +415,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Judicial formations are described as a power-sharing arrangement between Abboud, Al-Haj, and Al-Qasr.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Trump celebrated a 'meeting' with Iranians, with attention focused on New York for a potential breakthrough.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "A pictorial report on Hajj Abd al-Qadir, a man from the years of shadow whose memory preserves his biography.",
           "sec": 0,
@@ -468,6 +472,13 @@
         },
         {
           "source": "SANA",
+          "title": "Saudi Arabia urges immediate implementation of Trump Gaza plan",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
           "title": "President al-Sharaa participates in Trump meeting with Arab, Islamic leaders",
           "sec": 0,
           "off": 0,
@@ -481,22 +492,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "President al-Sharaa attends opening session of 81st UN General Assembly",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Syria Direct",
           "title": "Bad gas: Trouble at Syria’s al-Tabiyah plant leaves a bad smell",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "US Treasury chief says Iran airlines to be ‘shut down’ Sept 23",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -517,14 +514,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "US Treasury chief says all Iran airlines to be 'shut down' on September 23",
+          "title": "Iran airlines face global shutdown threat by Sept 23: What to know",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Iran airlines face global shutdown threat by Sept 23: What to know",
+          "title": "US Treasury chief says all Iran airlines to be 'shut down' on September 23",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -551,6 +548,27 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Nearly quarter of Belgian parliamentary questions generated entirely by AI: Report",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "EU faces launch capacity ‘gap' as satellite demand surges",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Ankara Mayor Yavaş quits CHP, to continue as independent",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Nearly half million investors affected by Türkiye funds liquidation",
           "sec": 0,
@@ -560,20 +578,6 @@
         {
           "source": "Daily Sabah",
           "title": "Ban on US diesel exports would further strain markets, analysts say",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Thousands live in Gaza's bombed-out houses despite risk of collapse",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Emine Erdoğan calls for end to throwaway culture during UNGA",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -624,9 +628,8 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 45,
       "sizes": [
-        6,
         4,
         4,
         4,
@@ -636,6 +639,10 @@
         2,
         2,
         2,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -677,52 +684,51 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Red Crescent delivers over 131,000 food baskets to Gaza",
+          "headline": "Why have Houthis started targeting Saudi Arabia?",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 4,
-            "newest": "2026-09-23T09:24+00:00"
+            "newest": "2026-09-23T11:09+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Channel 13",
-            "Egypt Independent",
-            "TRT World"
+            "Al Manar",
+            "Al Mayadeen",
+            "Daily Sabah",
+            "Iran International"
           ],
           "camps": [
-            "israeli",
             "panarab",
+            "iranian",
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Egypt Independent",
-            "title": "Red Crescent delivers over 131,000 food baskets to Gaza",
+            "source": "Daily Sabah",
+            "title": "Why have Houthis started targeting Saudi Arabia?",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Channel 13",
-                "title": "Katz threatened that if even one Israeli is abducted, the entire city of Gaza wi",
+                "source": "Al Mayadeen",
+                "title": "A report examines what the Yemeni field reveals about Saudi Arabia's predicament",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Jazeera",
-                "title": "5 , France rebukes world over Gaza as Canada, UK back Palestinian state at UNGA",
+                "source": "Iran International",
+                "title": "1 Iran diplomacy intensifies at UN as Hormuz crisis keeps pressure on region",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "TRT World",
-                "title": "Türkiye, seven other nations demand Israel end Gaza ceasefire violations, fulfil",
+                "source": "Al Manar",
+                "title": "Additional scenes from the Yemeni military operation \"Wallahi Ashadd Ba'san wa A",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -798,7 +804,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , US, Iran hold mediated UNGA talks on ending war, opening Strait of Hormuz",
+                "title": "4 , US, Iran hold mediated UNGA talks on ending war, opening Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -806,51 +812,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "The Yemeni Armed Forces shot down a Saudi \"Wing Loong 2\" aircraft in the skies of Taiz.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-23T05:40+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Al Mayadeen",
-            "Iran International"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "The Yemeni Armed Forces shot down a Saudi \"Wing Loong 2\" aircraft in the skies of Taiz.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "1 Iran diplomacy intensifies at UN as Hormuz crisis keeps pressure on region",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Additional scenes from the Yemeni military operation \"Wallahi Ashadd Ba'san wa A",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Israel denounces ‘grotesque absurdity’ of Macron UN remarks on West Bank",
           "rank_key": {
             "outlets": 3,
@@ -888,6 +849,43 @@
               {
                 "source": "N12",
                 "title": "French President Emmanuel Macron stated that Hamas has never operated in the Wes",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Erdogan calls for UN Security Council reform, urges abolition of veto power",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-23T10:27+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Erdogan calls for UN Security Council reform, urges abolition of veto power",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Erdogan proposes ending UN Security Council veto power",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1001,6 +999,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israel kills 3 in Gaza, raising death toll from genocide to 73,922: Health Ministry",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-23T11:00+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US, Iran hold 1st talks in months with both desperate to end war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-23T10:45+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "In photos: Funeral procession for Ayatollah Shobeiri Zanjani in Iran’s Qom",
           "rank_key": {
             "outlets": 1,
@@ -1012,42 +1046,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Erdogan calls for UN Security Council reform, urges abolition of veto power",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T10:27+00:00"
-          },
-          "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Swiss president warns post-World War II international order under 'severe constraints'",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T10:21+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1073,24 +1071,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Azerbaijani president pardons French national convicted of espionage",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T10:16+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "An Iranian official threatened that countries prohibiting Iranian aircraft passage would be disallow",
           "rank_key": {
             "outlets": 1,
@@ -1109,42 +1089,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "German foreign minister rejects Trump's call to quit International Criminal Court",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T10:12+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli colonists block road between Salfit and Lubban al-Sharqiya",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T09:57+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "According to reports from the United Arab Emirates, Hezbollah has transferred precision missiles to ",
           "rank_key": {
             "outlets": 1,
@@ -1153,24 +1097,6 @@
           },
           "outlet_names": [
             "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A senior official in the Palestinian Authority was arrested near Nablus, with the stated reason bein",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T09:39+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -1199,6 +1125,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Red Crescent delivers over 131,000 food baskets to Gaza",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-23T09:24+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Qatar emir, Guterres discuss Middle East de-escalation in New York",
           "rank_key": {
             "outlets": 1,
@@ -1216,7 +1160,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Saudi FM calls for full implementation of Trump’s Gaza peace plan",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-23T08:30+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Activists displayed a banner at New York's Grand Central Terminal reading 'Netanyahu is not welcome,",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-23T07:57+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Mamdani is a “dangerous leader,” Israeli ambassador says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-23T07:39+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1234,7 +1232,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-23T10:53:09.587744+00:00",
+    "last_success": "2026-09-23T11:25:18.761456+00:00",
     "last_failure": null
   },
   "ok": true
