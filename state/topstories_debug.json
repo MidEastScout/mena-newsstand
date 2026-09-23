@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T03:07:56.133593+00:00",
+  "updated": "2026-09-23T03:41:08.141008+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-23T03:06:19.943008+00:00"
+      "headlines_updated": "2026-09-23T03:38:58.074521+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 33,
+        "title_snippet": 32,
         "title_native": 83,
+        "dropped_no_english": 1,
         "in": 130,
-        "kept": 116
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -253,14 +254,19 @@
         },
         {
           "source": "TRT World",
-          "title": "Iran, Pakistan discuss regional developments amid US tensions, Hormuz passage deadlock",
+          "title": "Arab nations condemn Ben-Gvir's provocative incursion into Al-Aqsa Mosque compound",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الحرب على إيران... والدول التي تتألم أكثر!",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 64,
+      "in": 115,
+      "kept": 62,
       "dropped": [
         {
           "source": "Channel 13",
@@ -565,14 +571,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Turkish first lady shares video highlighting events on 1st day of UN General Assembly",
+          "title": "US Treasury Secretary emerges as top contender for AI czar post: Report",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "UN secretary-general says support for 2-state solution must go beyond words",
+          "title": "Trump meets with Venezuela’s acting president on sidelines of UN General Assembly",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -625,21 +631,26 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Treasury Secretary Scott Bessent tipped to become Trump's new AI czar",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 43,
       "sizes": [
-        8,
+        9,
         6,
-        5,
+        4,
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -686,23 +697,83 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Morocco urges respect for Gaza ceasefire amid Israeli violations",
+          "rank_key": {
+            "outlets": 7,
+            "camps": 3,
+            "newest": "2026-09-23T03:11+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Channel 13",
+            "Daily Sabah",
+            "Falastin al-Youm",
+            "Kan 11",
+            "N12",
+            "WAFA News"
+          ],
+          "camps": [
+            "israeli",
+            "levant",
+            "turkish"
+          ],
+          "members": 9,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Morocco urges respect for Gaza ceasefire amid Israeli violations",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Kan 11",
+                "title": "Israel's Defense Minister Katz stated that if a single Israeli is abducted, the ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Kan 11",
+                "title": "French President Macron, addressing the UN General Assembly, questioned the basi",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "N12",
+                "title": "French President Macron, speaking at the UN General Assembly, controversially st",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Channel 13",
+                "title": "Defense Minister Katz threatened Hamas, stating that if even one Israeli is abdu",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "What is going on in Yemen?",
           "rank_key": {
             "outlets": 6,
-            "camps": 4,
+            "camps": 5,
             "newest": "2026-09-22T21:05+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
             "Al Manar",
             "Al Mayadeen",
             "Arab News",
             "Daily Sabah",
-            "Egypt Independent"
+            "Egypt Independent",
+            "Iran International"
           ],
           "camps": [
             "gulf",
             "panarab",
+            "iranian",
             "levant",
             "turkish"
           ],
@@ -721,13 +792,13 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "5 , Saudi Arabia’s King Salman slams targeting of Mecca by ‘terrorist’ Houthis",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
                 "source": "Al Mayadeen",
                 "title": "Jeremy Corbyn criticized Britain's support for Saudi Arabia's bombing in Yemen, ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "1 Iran diplomacy intensifies at UN as Hormuz crisis keeps pressure on region",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -744,85 +815,25 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Macron slams Israel's 'shameful' Gaza aid restrictions, demands action",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 3,
-            "newest": "2026-09-22T21:33+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "Daily Sabah",
-            "Falastin al-Youm",
-            "Kan 11",
-            "N12",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "levant",
-            "turkish"
-          ],
-          "members": 8,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Macron slams Israel's 'shameful' Gaza aid restrictions, demands action",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "Israel's Defense Minister Katz stated that if a single Israeli is abducted, the ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Channel 13",
-                "title": "Defense Minister Katz threatened Hamas, stating that if even one Israeli is abdu",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Two Palestinians, including child, killed by Israeli gunfire in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Following threats from Katz, Hamas denied preparing for soldier abductions.",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
           "headline": "Iran ready to reopen Hormuz within 7 days if US eases pressure",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 4,
+            "camps": 3,
             "newest": "2026-09-22T11:30+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Arab News",
             "Falastin al-Youm",
-            "Iran International",
             "The New Arab"
           ],
           "camps": [
             "gulf",
             "panarab",
-            "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -836,11 +847,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "1 Iran diplomacy intensifies at UN as Hormuz crisis keeps pressure on region",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "Falastin al-Youm",
                 "title": "Iran announced the destruction of an 'Orbiter' model reconnaissance drone over t",
@@ -956,29 +962,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Croatian prime minister slams Serbia at UN for honoring convicted war criminal Mladic",
+          "headline": "UK vows to 'stand firm' on Falklands as Argentina denounces 'illegal occupation' at UN",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-23T03:05+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Belgium announces resumption of diplomatic relations with Rwanda",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T02:24+00:00"
+            "newest": "2026-09-23T03:10+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1003,24 +991,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US envoy Steve Witkoff stated that lengthy talks were held with the Iranian delegation in New York, ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T00:10+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1171,7 +1141,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "EU foreign policy chief meets with Iran FM in New York",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-22T17:07+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iranian and Belarusian FMs meet on sidelines of UNGA meeting",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-22T17:01+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1189,7 +1195,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-23T03:08:40.687095+00:00",
+    "last_success": "2026-09-23T03:41:53.666158+00:00",
     "last_failure": null
   },
   "ok": true
