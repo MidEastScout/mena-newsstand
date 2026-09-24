@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T04:50:49.637698+00:00",
+  "updated": "2026-09-24T05:21:55.326716+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-24T04:48:54.992214+00:00"
+      "headlines_updated": "2026-09-24T05:20:10.535026+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 32,
-        "title_native": 89,
+        "dropped_stale": 4,
+        "title_snippet": 33,
+        "dropped_no_english": 1,
+        "title_native": 88,
         "in": 126,
         "kept": 121
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 31,
+        "requested": 33,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -189,11 +190,6 @@
         {
           "source": "N12",
           "title": "נתנאל שקרון ז\"ל שנרצח בפיגוע סמוך לנווה צוף הובא למנוחות",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "الجيش الإيراني يعلن تدمير طائرة استطلاعية من طراز \"أوربيتر\" فوق مضيق هرمز",
           "reason": "stale (older than 48h)"
         },
         {
@@ -207,61 +203,80 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "إيران تُدمر طائرة استطلاعية من طراز \"أوربيتر\" فوق مضيق هرمز",
+          "source": "Gulf News",
+          "title": "White House Launches 24/7 ‘Trump TV’ Channel After Banning CNN, Politico and MS NOW from Press Access",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אזור בחירה 23.09.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
       "in": 121,
-      "kept": 62,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "Balad party chairman Abu Shihadah commented on his disqualification by the elections committee, stating his…",
+          "title": "After his article post-October 7th was deemed unsuccessful, the chairman of Balad, Abu Shehadeh, faced…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "The Recovery Administration's report shows that since October 7, the population of the Gaza envelope has…",
+          "title": "The number of residents in the Gaza envelope has increased by approximately 10% since October 7th.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "Prime Minister Netanyahu departed for New York ahead of his speech at the UN General Assembly.",
+          "title": "Prime Minister Netanyahu has traveled to New York for his upcoming address at the UN General Assembly.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Kan 11",
+          "title": "The President of the European Council spoke with the President of Iran and called for the renewal of…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "European pressure on Israel is mounting: sharp criticism at the UN General Assembly.",
+          "title": "The full edition of 'Ha'emra Hama'erkit' from September 23, 2026, is available for viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Al Mukor, Season 25, Episode 9: The Security Coordinator in Netanyahu's Service.",
+          "title": "The security coordinator in the Prime Minister's office has become a key figure in his circle, and his…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "The founder of the 'Michal Salameh Forum' stated to Ben Gvir that 'the data is intended to save lives.'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Scientists warn super El Nino could cause 450,000 deaths: Should we worry?",
+          "title": "4 , Why is Kenya turning against Tata Chemicals in Magadi?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Why is Kenya turning against Tata Chemicals in Magadi?",
+          "title": "5 , Australia says OpenAI agent hacked Medicare portal",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -302,22 +317,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Saudi FM calls for full implementation of Trump’s Gaza peace plan",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "Trump's Board of Peace to unveil $2.45bn Gaza recovery plan",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Iran ready to reopen Hormuz within 7 days if US eases pressure",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -338,14 +339,35 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "The consequences of Trump's meeting with Gulf leaders.",
+          "title": "The implications of Trump's meeting with Gulf leaders are discussed.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "Arab and Iranian media: a bridge for rapprochement or a tool for conflict?",
+          "title": "The role of Arab and Iranian media as a bridge for rapprochement or an instrument of conflict is examined.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Silva Kiir dissolved the government and parliament of South Sudan and appointed an interim administration.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Pezeshkian meets Iraqi PM in New York",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Pezeshkian’s first meeting in New York: Meets Swiss president",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -414,50 +436,50 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Latest news from Lebanon today | Exclusive reports and analyses from Al Akhbar.",
+          "source": "Egypt Independent",
+          "title": "Ukraine and Iran are involved in separate but overlapping conflicts",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Amid Israeli aggressions...",
+          "title": "The latest news, reports, and exclusive analyses from Lebanon are available from Al Akhbar.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Special | The strategic discourse of the resistance in a diverse Lebanese society: challenges of narrative in…",
+          "title": "The strategic discourse of the resistance in a diverse Lebanese society faces challenges in defining the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "The consequences of Trump's meeting with Gulf leaders.",
+          "title": "The implications of Trump's meeting with Gulf leaders are discussed.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "The Palestinian mission discusses in Geneva the file of over 11,000 forcibly disappeared persons.",
+          "title": "Water desalination plants in Gaza are on the verge of 'thirst.'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Water desalination plants in Gaza are on the verge of 'thirst'!",
+          "title": "A crisis has emerged between the UAE and Israel following tightened Shin Bet requirements.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Following the tightening of 'Shin Bet' requirements...",
+          "title": "85 Quran memorizers were honored in Gaza as part of the 'Generation of Quranic Revelation' cohort.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -526,20 +548,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "White House Launches 24/7 ‘Trump TV’ Channel After Banning CNN, Politico and MS NOW from Press Access",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "The fear of 'No Signal' is about to disappear with Equatys",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Turkish President Erdogan departs from New York after wrapping up UN event",
           "sec": 0,
@@ -599,7 +607,7 @@
           "source": "Hürriyet Daily News",
           "title": "15 best hotels of Türkiye in 2018 Click through for the top 15 hotels in Türkiye that won Travellers’ Choice 2018 awards",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -636,9 +644,9 @@
       "method": "heuristic",
       "clusters": 48,
       "sizes": [
-        4,
-        4,
+        5,
         3,
+        2,
         2,
         2,
         2,
@@ -693,107 +701,24 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Ukraine and Iran are involved in separate but overlapping conflicts",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-09-24T03:30+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Daily Sabah",
-            "Egypt Independent",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Ukraine and Iran are involved in separate but overlapping conflicts",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "N12",
-                "title": "The family of an Israeli citizen claims he came to Ukraine to visit his mother a",
-                "rejected_by": "stale anticipatory framing"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Russian strike on cargo ship in Ukraine’s Odesa region kills captain: Authoritie",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "Zelenskyy backs Türkiye-hosted trilateral summit to end Russia war",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Israel minister vows to force out all of Gaza City if any Israeli abducted",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-22T14:45+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Channel 13",
-            "Jordan Times"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Israel minister vows to force out all of Gaza City if any Israeli abducted",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Iran will not negotiate, reopen Hormuz until its conditions are met: Security chief",
           "rank_key": {
-            "outlets": 3,
-            "camps": 2,
+            "outlets": 4,
+            "camps": 3,
             "newest": "2026-09-23T16:47+00:00"
           },
           "outlet_names": [
             "Arab News",
             "IRNA",
-            "Iran International"
+            "Iran International",
+            "The New Arab"
           ],
           "camps": [
             "gulf",
+            "panarab",
             "iranian"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -807,6 +732,11 @@
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Iran ready to reopen Hormuz within 7 days if US eases pressure",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "Iran International",
                 "title": "4 Iran offers to reopen Hormuz within seven days if US lifts Hormuz blockade",
@@ -826,44 +756,51 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "US, China agree to extend bilateral trade truce to Jan. 10",
+          "selected_rank": 2,
+          "headline": "Russian strike on cargo ship in Ukraine’s Odesa region kills captain: Authorities",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-23T23:38+00:00"
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-09-24T03:30+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
+            "Al Arabiya",
+            "Daily Sabah",
+            "N12"
           ],
           "camps": [
+            "israeli",
             "panarab",
             "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "US, China agree to extend bilateral trade truce to Jan. 10",
+            "source": "Al Arabiya",
+            "title": "Russian strike on cargo ship in Ukraine’s Odesa region kills captain: Authorities",
             "title_source": "native",
             "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "2 , Trump welcomes Xi to Washington as US, China agree to extend trade truce",
+                "source": "N12",
+                "title": "The family of Yevgeny Gurvitch claims he traveled to Ukraine to visit his mother",
+                "rejected_by": "stale anticipatory framing"
+              },
+              {
+                "source": "Daily Sabah",
+                "title": "Zelenskyy backs Türkiye-hosted trilateral summit to end Russia war",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 3,
           "headline": "Senior IRGC commander killed in clashes in southeast Iran",
           "rank_key": {
             "outlets": 2,
@@ -894,8 +831,108 @@
           }
         },
         {
+          "selected_rank": 4,
+          "headline": "Saudis conduct 988 airstrikes on Yemen: military spox",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-23T18:02+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Saudis conduct 988 airstrikes on Yemen: military spox",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Additional footage from the Yemeni military operation 'We are harder in striking",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Israel minister vows to force out all of Gaza City if any Israeli abducted",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-22T14:45+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Jordan Times"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Israel minister vows to force out all of Gaza City if any Israeli abducted",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
           "selected_rank": null,
-          "headline": "The son of the Israeli ambassador in Washington was injured in a ramming attack west of Ramallah.",
+          "headline": "A military investigation revealed that forces at the Faga outpost were trained for riot control, not",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-24T03:29+00:00"
+          },
+          "outlet_names": [
+            "Kan 11",
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "A military investigation revealed that forces at the Faga outpost were trained for riot control, not for an…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "The son of the Israeli ambassador in Washington was injured in a ramming attack west of Ramallah, ac",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
@@ -913,7 +950,7 @@
           "why_not": null,
           "representative": {
             "source": "Al-Akhbar",
-            "title": "The son of the Israeli ambassador in Washington was injured in a ramming attack west of Ramallah.",
+            "title": "The son of the Israeli ambassador in Washington was injured in a ramming attack west of Ramallah, according…",
             "title_source": "snippet",
             "why": [
               "names 1 of the story's dominant entities (westbank)",
@@ -931,33 +968,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "A 15-year-old boy was seriously injured by a vehicle in Kiryat Bialik.",
+          "headline": "US Treasury Secretary questions how Iran’s UN delegation will get home as sanctions disrupt flights",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-23T23:51+00:00"
+            "newest": "2026-09-24T04:58+00:00"
           },
           "outlet_names": [
-            "Kan 11",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "According to a report, Israel thwarted a deal for Ankara to purchase F-35 fighter jets by pressuring",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T04:40+00:00"
+          },
+          "outlet_names": [
             "N12"
           ],
           "camps": [
             "israeli"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "A 15-year-old boy was seriously injured by a vehicle in Kiryat Bialik.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -972,24 +1015,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A report on Nachal Paga outpost revealed that forces were trained for public disorder, not for an at",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T03:29+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1051,6 +1076,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "115 Iran-linked ships redirected: US naval blockade on Iran continues",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T01:24+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "8 US sailors from carrier strike group attempted suicide during operations against Iran: Report",
           "rank_key": {
             "outlets": 1,
@@ -1087,7 +1130,25 @@
         },
         {
           "selected_rank": null,
-          "headline": "Pezeshkian and Rezaei set Iran's course: diplomacy without submission and a warning against engageme",
+          "headline": "A 15-year-old boy in Kiryat Bialik, who was critically injured by a vehicle, has died from his wound",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-23T23:51+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pezeshkian and Rezaei are setting Iran's course towards diplomacy without submission, while warning ",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1122,60 +1183,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "How did the prime minister's security coordinator become a key figure in his circle, and why is he f",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T20:02+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Araghchi meets his Tajik counterpart in New York",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T18:56+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Pezeshkian meets Iraqi PM in New York",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T18:23+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1194,7 +1201,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-24T04:51:02.910699+00:00",
+    "last_success": "2026-09-24T05:23:03.772773+00:00",
     "last_failure": null
   },
   "ok": true
