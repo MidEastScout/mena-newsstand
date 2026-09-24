@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T19:28:53.943162+00:00",
+  "updated": "2026-09-24T20:00:33.431402+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-24T19:26:46.016999+00:00"
+      "headlines_updated": "2026-09-24T19:58:41.070333+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 30,
-        "dropped_no_english": 4,
+        "title_snippet": 28,
+        "dropped_no_english": 6,
         "title_translated": 1,
         "title_native": 87,
         "in": 126,
-        "kept": 118
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -210,7 +210,7 @@
         },
         {
           "source": "Kan 11",
-          "title": "בנט: \"לנתניהו הייתה הזדמנות היסטורית להכריז על קטאר כאויב, אך הוא החמיץ את ההזדמנות\"",
+          "title": "היועמ\"שית מבקשת מבג\"ץ צו ביניים שיקפיא את חוק התקשורת: \"פגיעה קשה בתקשורת החופשית\"",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -227,12 +227,22 @@
           "source": "Al Mayadeen",
           "title": "ترامب وبزشكيان من منبر الأمم المتحدة.. إلى أين تتجه المواجهة بين واشنطن وطهران؟",
           "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "غزة: 6 شهداء و35 إصابة في اعتداءات الاحتلال خلال 24 ساعة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تركيا تسلّم تدريجياً معسكر بعشيقة إلى العراق",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 55,
+      "in": 116,
+      "kept": 56,
       "dropped": [
         {
           "source": "Kan 11",
@@ -368,13 +378,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "Pezeshkian tells Trump that Iran will never 'bend at the knee'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Mayadeen",
           "title": "Pezeshkian stated that Trump's speech prompted them to deviate from the prepared text at the General Assembly.",
           "sec": 0,
@@ -384,13 +387,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Over 15.8 million Moroccans have headed to the polls to vote.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The symbolic murals of Sayyid and the story behind the picture of Sayyid in the house of \"Zahrat Al-Mayadeen\"…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -599,13 +595,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "French president says he warned Trump diesel export ban would raise prices, calls move ‘bad’",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Erdoğan 'confident' Türkiye will get US F-35 jets",
           "sec": 0,
@@ -679,14 +668,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 45,
       "sizes": [
         4,
-        4,
+        3,
+        3,
         3,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -734,24 +724,68 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "US, Iran discuss phased deal to reopen Hormuz, end US blockade",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-09-24T19:36+00:00"
+          },
+          "outlet_names": [
+            "Iran International",
+            "SANA",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "US, Iran discuss phased deal to reopen Hormuz, end US blockade",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "1 Tehran sets out terms as US-Iran talks intensify in New York",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Shipping traffic through Strait of Hormuz rises, remains below average",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Two Palestinians injured in settler attack amid West Bank raids",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
             "newest": "2026-09-24T11:10+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Arab News",
-            "Falastin al-Youm",
-            "N12",
             "SANA"
           ],
           "camps": [
-            "israeli",
             "gulf",
+            "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -766,15 +800,20 @@
             ],
             "passed_over": [
               {
+                "source": "Al Arabiya",
+                "title": "Israel’s US envoy says son was injured in West Bank ramming attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Arab News",
-                "title": "Israel denounces ‘grotesque absurdity’ of Macron UN remarks on West Bank",
+                "title": "Son of Israel’s US envoy injured in West Bank ramming attack",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Two Palestinians killed by Israeli forces in central Gaza, WAFA says",
           "rank_key": {
             "outlets": 3,
@@ -812,7 +851,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Yemen's armed forces reported that an operation resulted in the deaths and injuries of hundreds of…",
           "rank_key": {
             "outlets": 2,
@@ -844,7 +883,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Iran threatens US and Israel with expanding scope of war ‘as far as the the Indian ocean’",
           "rank_key": {
             "outlets": 2,
@@ -881,50 +920,48 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Shipping traffic through Strait of Hormuz rises, remains below average",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-24T08:11+00:00"
-          },
-          "outlet_names": [
-            "Iran International",
-            "SANA"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Shipping traffic through Strait of Hormuz rises, remains below average",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "1 Tehran sets out terms as US-Iran talks intensify in New York",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": null,
-          "headline": "Israeli prime minister addresses UN amid walkouts, protests in New York",
+          "headline": "Lavrov, UN nuclear watchdog chief discuss Zaporizhzhia plant, Iran nuclear program",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-24T19:24+00:00"
+            "newest": "2026-09-24T19:43+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Portuguese premier calls for permanent UN Security Council seats for Africa, Brazil, India",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T19:36+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Netanyahu's transit through French airspace 'consistent' with international law despite ICC warrant,",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T19:30+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -949,24 +986,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US Senate rejects Iran war powers resolution",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T19:11+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1117,25 +1136,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "A potential Senate vote in the United States regarding the war on Iran is mentioned.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T14:42+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1153,7 +1154,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-24T19:29:17.761640+00:00",
+    "last_success": "2026-09-24T20:00:47.426063+00:00",
     "last_failure": null
   },
   "ok": true
