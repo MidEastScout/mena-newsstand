@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T07:50:30.323590+00:00",
+  "updated": "2026-09-24T08:22:10.749683+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-24T07:48:38.002871+00:00"
+      "headlines_updated": "2026-09-24T08:20:14.224855+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 33,
+        "title_snippet": 21,
+        "dropped_no_english": 12,
         "title_translated": 1,
         "title_native": 88,
         "in": 126,
-        "kept": 122
+        "kept": 110
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 31,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -206,12 +207,72 @@
           "source": "Gulf News",
           "title": "White House Launches 24/7 ‘Trump TV’ Channel After Banning CNN, Politico and MS NOW from Press Access",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נקבע מותו של התינוק שאיבד את הכרתו בבית בעכו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "יחיאל לייטר בהצהרה מבית החולים שבו מאושפז בנו: \"היה לילה מסובך, חששתי שאנחת ללא תקווה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הפעילה הפרו-חמאסית הודתה: שיקרתי, אני יהודייה לבנה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "תחקיר נרחב: זינוק דרמטי בתוכנית הנשק הגרעיני של סין",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"שיטת עמיחי\": כך ניווט שר המורשת את כספי הציבור למקורבים -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القوات المسلحة اليمنية تسقط طائرة \"وينغ لونغ 2\" سعودية في أجواء تعز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "القوات المسلحة اليمنية تسقط طائرة \"وينغ لونغ 2\" سعودية في أجواء تعز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«رويترز»: أميركا أعدت مذكرة تنديد ببريطانيا وفرنسا وكندا لكنها لم تُنشر قط",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تأمين الناحية الشرقية لـ«باب المندب»: صنعاء تنتزع جبال كهبوب",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تعويل على «الوساطة» الصينية | أميركا - إيران: لقاء نيويورك لا يردم الخلافات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "القوات المسلحة اليمنية تسقط طائرة \"وينغ لونغ 2\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مستعمرون يهاجمون عطارة برام الله ويحرقون مركبتين ويخطون شعارات معادية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 58,
+      "in": 110,
+      "kept": 55,
       "dropped": [
         {
           "source": "Kan 11",
@@ -242,13 +303,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "New revelations from a book by Princess Diana's brother suggest her father had a romantic relationship with…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
           "title": "European pressure on Israel is intensifying, as evidenced by sharp criticism at the UN General Assembly.",
           "sec": 0,
@@ -270,24 +324,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The article details how the security coordinator in the Prime Minister's office became a key figure and…",
+          "source": "Al Jazeera",
+          "title": "5 , Australia says OpenAI agent hacked Medicare portal",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "4 , Australia says OpenAI agent hacked Medicare portal",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Can Ethiopia’s seven-group rebel alliance challenge Abiy Ahmed?",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -306,14 +346,14 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Golan will remain Syrian, vows president al-Sharaa at UN",
+          "title": "Trump’s Board of Peace to unveil $2.45 billion Gaza recovery plan: Report",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Arabiya",
-          "title": "Trump’s Board of Peace to unveil $2.45 billion Gaza recovery plan: Report",
+          "title": "Israeli bulldozers smash Palestinian olive trees ahead of annual harvest",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -356,13 +396,6 @@
         {
           "source": "Al Mayadeen",
           "title": "This piece reflects on Sayyed Nasrallah as a sincere politician, from his words to his martyrdom.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The governor of Hadhramaut urged the province's people not to serve as pawns for Saudi Arabia or its agents.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -411,14 +444,14 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "FOCUS Ahead of midterms, Trump hosts anti-Zionist rabbis at White House",
+          "title": "AIR TRAVEL Air France, Transavia to resume Beirut flights this week after months of suspension",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
-          "title": "AIR TRAVEL Air France, Transavia to resume Beirut flights this week after months of suspension",
+          "title": "FOCUS Ahead of midterms, Trump hosts anti-Zionist rabbis at White House",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -439,13 +472,6 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Everything you need to know about Egypt’s Sokhna–Alamein high-speed train",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
           "title": "Bat sightings at Abu Simbel Temple on the rise – are they a threat?",
           "sec": 0,
           "off": 0,
@@ -454,13 +480,6 @@
         {
           "source": "Al-Akhbar",
           "title": "This is the newspaper Al Akhbar for Thursday, September 24, 2026.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "This article refers to September 23rd as a day of remembrance for Israeli crimes.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -489,20 +508,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Water desalination plants in Gaza are on the verge of 'thirst'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "A crisis has emerged between the UAE and Israel following tightened requirements by the Shin Bet.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "In Gaza, 85 Quran memorizers were honored as part of the 'Generation of the Quranic Revelation' cohort.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -571,29 +576,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "WRAP-UP - Turkish President Erdogan wraps up New York visit",
+          "source": "Daily Sabah",
+          "title": "Southeastern, eastern Türkiye rocked by 5.4 earthquake",
           "sec": 0,
           "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Türkiye's Karaburun Peninsula emerges as underwater tourism hub",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
           "title": "OpenAI agent breached Australian government portal: PM Albanese",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Tehran should take a hard look in the mirror",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "President Erdoğan touts resilient economy, eyes $100B trade with US",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -635,14 +633,14 @@
         },
         {
           "source": "TRT World",
-          "title": "Golan Heights will remain Syrian territory: Al Sharaa",
+          "title": "Board of Peace to unveil $2.45B Gaza recovery plan: report",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "TRT World",
-          "title": "Board of Peace to unveil $2.45B Gaza recovery plan: report",
+          "title": "Golan Heights will remain Syrian territory: Al Sharaa",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -665,22 +663,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 42,
       "sizes": [
         5,
+        3,
+        3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -781,6 +773,87 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Son of Israeli ambassador to US critically injured in West Bank ramming attack",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-24T07:44+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al-Akhbar",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Son of Israeli ambassador to US critically injured in West Bank ramming attack",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Israel’s US envoy says son was injured in West Bank ramming attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al-Akhbar",
+                "title": "The son of the Israeli ambassador in Washington was injured in a ramming attack ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Pakistan says it launched air strikes on Afghanistan over drone attacks",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-24T00:12+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Pakistan says it launched air strikes on Afghanistan over drone attacks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Pakistan says it launches air strikes on Afghanistan after drone attacks",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Senior IRGC commander killed in clashes in southeast Iran",
           "rank_key": {
             "outlets": 2,
@@ -811,7 +884,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 5,
           "headline": "Saudis conduct 988 airstrikes on Yemen: military spox",
           "rank_key": {
             "outlets": 2,
@@ -849,44 +922,49 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Son of Israeli ambassador to US critically injured in West Bank ramming attack",
+          "selected_rank": null,
+          "headline": "Two Palestinians killed in Israeli drone strike on vehicle in Khan Younis",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-09-24T07:44+00:00"
+            "newest": "2026-09-24T01:57+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Egypt Independent"
+            "SANA",
+            "WAFA News"
           ],
           "camps": [
             "levant"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Egypt Independent",
-            "title": "Son of Israeli ambassador to US critically injured in West Bank ramming attack",
+            "source": "WAFA News",
+            "title": "Two Palestinians killed in Israeli drone strike on vehicle in Khan Younis",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al-Akhbar",
-                "title": "The son of the Israeli ambassador in Washington was injured in a ramming attack ",
+                "source": "WAFA News",
+                "title": "Two Palestinians killed in Israeli strike northeast of Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Two Palestinians killed in Gaza strike, 12 detained in West Bank raids",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Pezeshkian to UN: Iran will never 'bend the knee' to 'US terror'",
           "rank_key": {
             "outlets": 2,
@@ -914,6 +992,42 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Two Palestinians injured during Israeli forces’ raid on Qalqiliya",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T08:11+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Why the Trump and Xi summit will struggle to live up to its grand pageantry",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T07:50+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -989,6 +1103,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "US, China agree to extend trade truce as Xi arrives for summit",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T07:33+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Türkiye warns against actions raising tensions in Aegean, East Med",
           "rank_key": {
             "outlets": 1,
@@ -1007,71 +1139,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces storm Azmut and Deir al-Hatab, east of Nablus, raid homes",
+          "headline": "Israeli army detains more than 150 Palestinians in West Bank raids",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-24T07:02+00:00"
+            "newest": "2026-09-24T06:25+00:00"
           },
           "outlet_names": [
-            "WAFA News"
+            "Anadolu Agency"
           ],
           "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The IDF eliminated a Hamas operative in Gaza who was involved in holding seven Israeli hostages.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T06:43+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The CIA has reportedly warned France, Spain, and Italy that Russia may be planning drone attacks.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T06:43+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The White House reportedly blocked a document that would have condemned Britain, France, and Canada ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T06:06+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1097,24 +1175,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Two Palestinians killed in Israeli drone strike on vehicle in Khan Younis",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T01:57+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "115 Iran-linked ships redirected: US naval blockade on Iran continues",
           "rank_key": {
             "outlets": 1,
@@ -1132,7 +1192,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Spanish prime minister calls for UN Security Council reform, condemns Gaza genocide",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T01:00+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1150,7 +1228,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-24T07:50:49.318583+00:00",
+    "last_success": "2026-09-24T08:22:28.231620+00:00",
     "last_failure": null
   },
   "ok": true
