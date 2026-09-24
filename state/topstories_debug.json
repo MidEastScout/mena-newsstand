@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T23:04:57.213205+00:00",
+  "updated": "2026-09-24T23:36:47.840775+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-24T23:03:14.657546+00:00"
+      "headlines_updated": "2026-09-24T23:34:48.680050+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 2,
-        "title_snippet": 34,
+        "dropped_stale": 3,
+        "title_snippet": 33,
         "title_translated": 1,
-        "title_native": 89,
+        "title_native": 88,
+        "dropped_no_english": 1,
         "in": 126,
-        "kept": 124
+        "kept": 122
       },
       "translator": {
         "configured": true,
@@ -189,6 +190,11 @@
       "dropped": [
         {
           "source": "Jordan Times",
+          "title": "King participates in multilateral meeting at invitation of President Trump",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
           "title": "Once decried as 'human cockfighting', MMA wants Olympic spot",
           "reason": "stale (older than 48h)"
         },
@@ -196,12 +202,17 @@
           "source": "Arab News",
           "title": "Iran ready to reopen Strait of Hormuz if US eases military pressure and lifts blockade",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "انسحابات جماعية في الأمم المتحدة خلال كلمة نتنياهو.. وسليماني في قاعة الجمعية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 61,
+      "in": 122,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -255,6 +266,13 @@
         {
           "source": "Channel 13",
           "title": "This refers to the full program \"Choice Area\" from September 24, 2026.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "6 , China vs US: Who is winning the AI race, in four charts",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -393,29 +411,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "Innovation to boost pharmaceutical industry expansion, competitiveness - JEDCO",
+          "source": "L'Orient Today",
+          "title": "Netanyahu at the UN: A tirade against Israel's critics",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "L'Orient Today",
-          "title": "AIR TRAVEL Air France, Transavia to resume Beirut flights this week after months of suspension",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "CENTRAL BANK Bank accounts of Riad Salameh, his brother, and 9 others frozen in Lebanon",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "REPORT 'It's a joke!': In Zawtar Gharbieh, the first prefabs struggle to convince returnees",
+          "title": "CENTRAL BANK Bank accounts of Riad Salameh, his brother, and 9 others frozen in Lebanon Stephanie Bechara",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -423,13 +427,6 @@
         {
           "source": "L'Orient Today",
           "title": "COMMENTARY Toward closer cooperation between Karim Souhaid and banks Mounir YOUNES",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "INFLATION Consumer price index rises again in Lebanon L'Orient Today staff",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -561,13 +558,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Armenia's Pashinyan says peace with Azerbaijan opened new prospects for South Caucasus",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "'No lie' will change Netanyahu's ICC arrest warrant: NY Mayor Mamdani",
           "sec": 0,
@@ -648,7 +638,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 46,
       "sizes": [
         8,
         4,
@@ -656,7 +646,9 @@
         3,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -850,58 +842,26 @@
         },
         {
           "selected_rank": 4,
-          "headline": "There is an escalation between Sanaa and Riyadh, involving Saudi airstrikes and Yemeni responses, wi",
+          "headline": "How far will Pakistan go to defend Saudi Arabia?",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
             "newest": "2026-09-24T21:05+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Daily Sabah"
+            "Daily Sabah",
+            "Iran International"
           ],
           "camps": [
-            "panarab",
+            "iranian",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Mayadeen",
-            "title": "There is an escalation between Sanaa and Riyadh, involving Saudi airstrikes and Yemeni responses, with…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Iran threatens US and Israel with expanding scope of war ‘as far as the the Indian ocean’",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-24T12:12+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent",
-            "Iran International"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Iran threatens US and Israel with expanding scope of war ‘as far as the the Indian ocean’",
+            "source": "Daily Sabah",
+            "title": "How far will Pakistan go to defend Saudi Arabia?",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -918,7 +878,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "The submarine \"INS Dragon\" has arrived in Israel.",
           "rank_key": {
             "outlets": 2,
@@ -946,6 +906,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Turkish Foreign Minister Fidan meets EU foreign policy chief Kallas in New York",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T23:10+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1146,25 +1124,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Trump is staying out of Saudi Arabia’s war. Americans could pay at the pump",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T12:31+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1182,7 +1142,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-24T23:05:35.150012+00:00",
+    "last_success": "2026-09-24T23:37:56.607196+00:00",
     "last_failure": null
   },
   "ok": true
