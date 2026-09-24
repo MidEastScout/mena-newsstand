@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T23:59:33.650565+00:00",
+  "updated": "2026-09-24T00:30:45.280954+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-23T23:57:14.575049+00:00"
+      "headlines_updated": "2026-09-24T00:28:55.839771+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 33,
+        "title_snippet": 31,
+        "dropped_no_english": 2,
         "title_translated": 1,
         "title_native": 88,
         "in": 126,
-        "kept": 122
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -199,19 +200,29 @@
         },
         {
           "source": "Gulf News",
-          "title": "US Treasury chief says all Iran airlines to be 'shut down' on September 23",
+          "title": "Iran airlines face global shutdown threat by Sept 23: What to know",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
           "title": "All Iranian airlines to face global shutdown from Wednesday: US",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "באיראן מאשימים את עראקצ'י: נפגש עם וויטקוף ללא תיאום ואישור",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המקור, עונה 25, פרק 9: הקב\"ט בשירות נתניהו לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 54,
+      "in": 120,
+      "kept": 51,
       "dropped": [
         {
           "source": "Kan 11",
@@ -467,6 +478,13 @@
         },
         {
           "source": "WAFA News",
+          "title": "Pregnant Palestinian detainee faces harsh conditions in Israeli prison",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "WAFA News",
           "title": "Gaza detainees face harsh conditions in Israeli prison",
           "sec": 0,
           "off": 0,
@@ -564,6 +582,20 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Arab News",
+          "title": "Trump: ‘A lot of momentum’ for Iran deal but time running out for it to ‘survive as a nation’",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "White House Launches 24/7 ‘Trump TV’ Channel After Banning CNN, Politico and MS NOW from Press Access",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Gulf News",
           "title": "Abdullah bin Zayed joins Trump meeting with Arab, Islamic leaders on sidelines of UN General Assembly",
           "sec": 0,
@@ -585,13 +617,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "White House Launches 24/7 ‘Trump TV’ Channel After Banning CNN, Politico and MS NOW from Press Access",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Türkiye ready to support efforts for lasting peace between Russia and Ukraine: President Erdogan",
           "sec": 0,
@@ -601,13 +626,6 @@
         {
           "source": "Anadolu Agency",
           "title": "AI must develop within framework of international rules, says Czech president",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Venezuela’s leading opposition figure remains in exile as interim president prepares to address UN",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -693,16 +711,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 39,
       "sizes": [
         6,
         4,
         3,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -746,22 +761,21 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Gaza flotilla activist 'near death' on Tunisia hunger strike",
+          "headline": "Gaza flotilla activist ’near death’ on Tunisia hunger strike",
           "rank_key": {
             "outlets": 6,
-            "camps": 3,
-            "newest": "2026-09-23T22:23+00:00"
+            "camps": 2,
+            "newest": "2026-09-23T22:21+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Mayadeen",
-            "Channel 13",
             "Middle East Eye",
+            "SANA",
             "The New Arab",
             "WAFA News"
           ],
           "camps": [
-            "israeli",
             "panarab",
             "levant"
           ],
@@ -770,7 +784,7 @@
           "why_not": null,
           "representative": {
             "source": "The New Arab",
-            "title": "Gaza flotilla activist 'near death' on Tunisia hunger strike",
+            "title": "Gaza flotilla activist ’near death’ on Tunisia hunger strike",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -779,11 +793,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Channel 13",
-                "title": "Katz threatened that if a single Israeli is abducted, the entire city of Gaza wo",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "Al Arabiya",
                 "title": "Saudi FM calls for full implementation of Trump’s Gaza peace plan",
@@ -797,6 +806,11 @@
               {
                 "source": "WAFA News",
                 "title": "Two Palestinians killed in Israeli strike northeast of Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Two Palestinians killed in Gaza strike, 12 detained in West Bank raids",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -886,7 +900,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Israel’s ambassador to the US says son injured in West Bank car-ramming",
+                "title": "5 , Israel’s ambassador to the US says son injured in West Bank car-ramming",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -926,6 +940,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Venezuela's acting president hails new phase in US ties",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-24T00:21+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "UN chief urges restraint as fighting intensifies in northern Ethiopia",
           "rank_key": {
             "outlets": 1,
@@ -955,24 +987,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces raid homes in Bethlehem-area town, refugee camp",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-23T23:01+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1141,7 +1155,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1159,7 +1173,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-23T23:59:51.628323+00:00",
+    "last_success": "2026-09-24T00:30:59.327047+00:00",
     "last_failure": null
   },
   "ok": true
