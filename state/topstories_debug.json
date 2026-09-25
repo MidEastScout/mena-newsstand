@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T06:51:50.230706+00:00",
+  "updated": "2026-09-25T07:23:22.015798+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-25T06:49:34.781421+00:00"
+      "headlines_updated": "2026-09-25T07:21:20.675284+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 2,
-        "title_snippet": 33,
-        "title_translated": 2,
+        "title_snippet": 30,
+        "dropped_no_english": 4,
         "title_native": 89,
+        "title_translated": 1,
         "in": 126,
-        "kept": 124
+        "kept": 120
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -196,12 +197,32 @@
           "source": "Arab News",
           "title": "Iran ready to reopen Strait of Hormuz if US eases military pressure and lifts blockade",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "האסון ברצועה: צה\"ל יקים צוות מומחים לבחינת האירוע, שימוש ברחפנים תוקפים הופסק ל-48 שעות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אזור בחירה 24.09.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "حماس: جاهزون لتنفيذ \"خارطة طريق السلام\" في غزة.. والاحتلال يقف وراء التعطيل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "حماس: جاهزون لتنفيذ خارطة الطريق المتفق عليها بشأن غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 59,
+      "in": 120,
+      "kept": 57,
       "dropped": [
         {
           "source": "Kan 11",
@@ -241,13 +262,6 @@
         {
           "source": "Channel 13",
           "title": "The death of a nine-year-old boy who contracted an 'amoeba that eats the brain' in the Kineret has been…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -365,13 +379,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Significant discount.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Ghalibaf takes swipe at US economic woes as Treasury yields hit 10-year highs",
           "sec": 0,
@@ -380,7 +387,7 @@
         },
         {
           "source": "IRNA",
-          "title": "Iran president meets Dutch prime minister in New York",
+          "title": "Iran determined to deepen, expand cooperation with Pakistan: Pezeshkian",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -506,14 +513,14 @@
         },
         {
           "source": "SANA",
-          "title": "Norway pledges additional $13.2 million in aid for Palestine",
+          "title": "Türkiye rejects Netanyahu’s accusations against Erdoğan as baseless",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "President al-Sharaa meets Dutch prime minister in New York",
+          "title": "Norway pledges additional $13.2 million in aid for Palestine",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -662,16 +669,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 44,
       "sizes": [
-        7,
+        6,
         3,
         3,
-        3,
         2,
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -718,13 +726,12 @@
           "selected_rank": 1,
           "headline": "Staff Sergeant Ofek Moalem and Staff Sergeant Nadav Kali, both reservists, were killed by a drone ex",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 2,
-            "newest": "2026-09-25T05:26+00:00"
+            "newest": "2026-09-25T05:24+00:00"
           },
           "outlet_names": [
             "Falastin al-Youm",
-            "Kan 11",
             "N12",
             "SANA",
             "WAFA News"
@@ -733,7 +740,7 @@
             "israeli",
             "levant"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -771,95 +778,46 @@
         },
         {
           "selected_rank": 2,
-          "headline": "How far will Pakistan go to defend Saudi Arabia?",
+          "headline": "What Washington’s defense pledge to Saudi Arabia means as Houthi attacks intensify",
           "rank_key": {
             "outlets": 3,
             "camps": 3,
-            "newest": "2026-09-24T21:05+00:00"
+            "newest": "2026-09-24T23:08+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Al Manar",
+            "Al Arabiya",
+            "Arab News",
             "Daily Sabah"
           ],
           "camps": [
+            "gulf",
             "panarab",
-            "levant",
             "turkish"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "How far will Pakistan go to defend Saudi Arabia?",
+            "source": "Arab News",
+            "title": "What Washington’s defense pledge to Saudi Arabia means as Houthi attacks intensify",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "1 , Urgent military talks set for Saudi, Turkish and Pakistani military chiefs",
+                "source": "Al Arabiya",
+                "title": "‘Saudi Arabia is a key friend’: Ex-Defense Minister backs UK support against Hou",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "The Yemeni forces announced a significant operation against the forces of aggres",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
           "selected_rank": 3,
-          "headline": "US official: 60 ships passed through Strait of Hormuz in one day",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-24T19:36+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "US official: 60 ships passed through Strait of Hormuz in one day",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "Shipping traffic through Strait of Hormuz rises, remains below average",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Cargo vessel hit by unknown projectile in Strait of Hormuz, two casualties repor",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Two Palestinians injured in settler attack amid West Bank raids",
           "rank_key": {
             "outlets": 3,
@@ -904,7 +862,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Iran threatens US and Israel with expanding scope of war ‘as far as the the Indian ocean’",
           "rank_key": {
             "outlets": 2,
@@ -941,7 +899,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "IRGC: Iran’s initiatives reshaped battle balance",
           "rank_key": {
             "outlets": 2,
@@ -969,6 +927,42 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Turkish foreign minister attends Mecca defense pact meeting",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-25T07:00+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Qatar, Bahrain condemn Houthi missile attacks on Saudi Arabia",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-25T06:40+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1001,24 +995,6 @@
           ],
           "camps": [
             "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Ireland's prime minister says international community has failed Palestine",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-25T04:44+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1169,25 +1145,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "The sixth submarine, 'INS Drakon,' has arrived in Israel, with the Defense Minister issuing a warnin",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-24T16:15+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1205,7 +1163,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-25T06:52:03.536449+00:00",
+    "last_success": "2026-09-25T07:23:39.604052+00:00",
     "last_failure": null
   },
   "ok": true
