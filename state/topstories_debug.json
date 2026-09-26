@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26T00:04:52.320978+00:00",
+  "updated": "2026-09-26T00:36:05.790887+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-26T00:03:08.365137+00:00"
+      "headlines_updated": "2026-09-26T00:33:56.594311+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
+        "dropped_stale": 9,
         "title_snippet": 27,
         "dropped_no_english": 7,
         "title_translated": 1,
-        "title_native": 83,
+        "title_native": 82,
         "in": 126,
-        "kept": 111
+        "kept": 110
       },
       "translator": {
         "configured": true,
@@ -201,6 +201,11 @@
         {
           "source": "Jordan Times",
           "title": "King delivers Jordan’s address at 81st UNGA",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Israel’s Elections Committee bars Balad leader from running in October elections",
           "reason": "stale (older than 48h)"
         },
         {
@@ -266,8 +271,8 @@
       ]
     },
     "relevance": {
-      "in": 111,
-      "kept": 60,
+      "in": 110,
+      "kept": 57,
       "dropped": [
         {
           "source": "Kan 11",
@@ -299,7 +304,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , What would a US diesel export ban mean for global fuel prices?",
+          "title": "4 , What would a US diesel export ban mean for global fuel prices?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -377,6 +382,13 @@
         {
           "source": "IRNA",
           "title": "Ghalibaf takes swipe at US economic woes as Treasury yields hit 10-year highs",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Mehr News",
+          "title": "Senior cleric praises Pezeshkian UN speech as voice of nation",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -480,6 +492,20 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Colonists steal sheep, agricultural tractor in Nablus-area town",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Colonists uproot olive trees in Bethlehem, assault woman in Nablus",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "Guterres affirmed the impossibility of replacing UNRWA and warned of its severe financial crisis.",
           "sec": 0,
@@ -538,13 +564,6 @@
         {
           "source": "Gulf News",
           "title": "Trump admin says there were 8 suicide attempts on US aircraft carrier",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "ADX joins SWIFT network in global connectivity push",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -630,12 +649,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 39,
       "sizes": [
-        8,
-        6,
+        7,
         4,
-        4,
+        3,
+        3,
+        2,
         2,
         2,
         2,
@@ -679,64 +699,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israeli drone strike kills Palestinian visiting brother’s grave in central Gaza",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-09-25T20:39+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Kan 11",
-            "Middle East Eye",
-            "N12",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 8,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli drone strike kills Palestinian visiting brother’s grave in central Gaza",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "The Israeli military will establish an expert team to investigate an incident wh",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Palestinian killed, others critically injured in Israeli strike on vehicle in Ga",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "UPDATE: Two killed, others injured in Israeli strike in central Gaza Strip",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Iran says Strait of Hormuz can reopen within 7 days if US accepts plan",
           "rank_key": {
             "outlets": 5,
@@ -755,7 +717,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 6,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -771,7 +733,12 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , What’s in Iran’s seven-day plan to reopen the Strait of Hormuz?",
+                "title": "3 , Iran’s FM says Hormuz security cannot be restored through military action",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "5 , What’s in Iran’s seven-day plan to reopen the Strait of Hormuz?",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -783,69 +750,12 @@
                 "source": "The New Arab",
                 "title": "US, Iran discuss phased deal to reopen Hormuz, end US blockade",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Iran International",
-                "title": "1 US-Iran talks focused on phased deal to reopen Hormuz",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "Strategic shift in Yemen conflict: Toward collective response",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-09-25T21:05+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Manar",
-            "Arab News",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Strategic shift in Yemen conflict: Toward collective response",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran says ‘choice rests with US’ on proposed plan as allies meet in Riyadh",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Yemeni forces announced a significant operation against the forces of aggression",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Arab News",
-                "title": "What Washington’s defense pledge to Saudi Arabia means as Houthi attacks intensi",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
+          "selected_rank": 2,
           "headline": "Netanyahu should be arrested",
           "rank_key": {
             "outlets": 4,
@@ -895,6 +805,90 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "Strategic shift in Yemen conflict: Toward collective response",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-09-25T21:05+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Arab News",
+            "Daily Sabah"
+          ],
+          "camps": [
+            "gulf",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Strategic shift in Yemen conflict: Toward collective response",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Yemeni forces announced a significant operation against the forces of aggression",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "Arab News",
+                "title": "What Washington’s defense pledge to Saudi Arabia means as Houthi attacks intensi",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Following an incident in Gaza where two reservists were killed by a \"Bat\" type drone, the Ground For",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-25T07:13+00:00"
+          },
+          "outlet_names": [
+            "Kan 11",
+            "Middle East Eye",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "panarab"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "Following an incident in Gaza where two reservists were killed by a \"Bat\" type drone, the Ground Forces…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 5,
           "headline": "UN says Israel’s 942 checkpoints, barriers in occupied West Bank restrict Palestinian movement",
           "rank_key": {
@@ -934,6 +928,44 @@
         },
         {
           "selected_rank": null,
+          "headline": "The Washington Post reported that US officials are concerned Saudi Arabia may pursue nuclear weapons",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-25T18:16+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "The Washington Post reported that US officials are concerned Saudi Arabia may pursue nuclear weapons, despite…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Iran war updates: Allies in Riyadh as Iran says nuclear programme peaceful",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Hormuz commodity ship transits fall to nine, shiptracking data shows",
           "rank_key": {
             "outlets": 2,
@@ -966,6 +998,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Canadian lawmaker says was demoted after backing bill on arms exports to Israel",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-26T00:10+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Bahrain rejects permit, fee regime for Strait of Hormuz passage",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-26T00:09+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "US Treasury Secretary wonders how Iran’s UN delegation will get home as sanctions disrupt flights",
           "rank_key": {
             "outlets": 1,
@@ -995,24 +1063,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Turkish foreign minister meets Iranian counterpart in New York",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-25T20:51+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1074,17 +1124,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Washington Post reported that US officials are concerned Saudi Arabia may pursue nuclear weapons",
+          "headline": "WHO: Gaza Strip continues to face humanitarian and public health emergency",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-25T18:16+00:00"
+            "newest": "2026-09-25T17:41+00:00"
           },
           "outlet_names": [
-            "N12"
+            "WAFA News"
           ],
           "camps": [
-            "israeli"
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "UAE condemns TPLF attacks, calls for immediate end to Ethiopia hostilities",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-25T17:32+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1145,42 +1213,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Gaza Strip facing the world’s worst economic crisis: UN report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-25T11:05+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iranian airlines cancel all flights to UAE following strict new US sanctions",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-25T10:51+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1199,7 +1231,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-26T00:04:53.397146+00:00",
+    "last_success": "2026-09-26T00:36:36.763458+00:00",
     "last_failure": null
   },
   "ok": true
