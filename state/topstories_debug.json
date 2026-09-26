@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26T21:56:45.148871+00:00",
+  "updated": "2026-09-26T22:03:40.542646+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,22 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-26T21:54:55.396349+00:00"
+      "headlines_updated": "2026-09-26T22:02:01.399352+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 31,
-        "dropped_no_english": 8,
+        "dropped_stale": 9,
+        "title_snippet": 26,
+        "dropped_no_english": 7,
         "title_translated": 1,
-        "title_native": 78,
+        "title_native": 83,
         "in": 126,
         "kept": 110
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 33,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -206,6 +206,11 @@
         {
           "source": "WAFA News",
           "title": "Israeli forces storm Izbat Shufa, south of Tulkarm, and raid homes",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "دراسة تكشف: المجال المغناطيسي للأرض يؤثر في إنتاج الخلايا للطاقة والعمر",
           "reason": "stale (older than 48h)"
         },
         {
@@ -235,32 +240,27 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "\"جيش\" الاحتلال: مقتل جنديين احتياطيين بانفجار مسيّرة كانا يشغلانها في قطاع غزة",
+          "title": "هل يؤثر المجال المغناطيسي للأرض على أعمارنا وصحتنا؟",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
-          "title": "العامري للميادين: الطيران الإيراني هو الوحيد الذي واصل دعم العراق خلال حرب داعش",
+          "title": "السفير الإيراني في العراق: قرار جديد بشأن الرحلات الجوية قد يُعلن قريباً",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
-          "title": "(فيديو) عالي الدقة يظهر ثقباً أسود يقذف بلازما باتجاه الأرض",
+          "title": "ترامب يرفض مقترح إيران الأخير بشأن فتح مضيق هرمز",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
-          "title": "البيت الأبيض يمنع مراسلي \"سي إن إن\" من مرافقة ترامب إلى ولاية تينيسي",
+          "title": "لبنان: تفجيرات واعتداءات للاحتلال جنوباً.. وتوغّل في دير ميماس",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Manar",
           "title": "في مشاهد خاصة للمنار، يظهر سيد شهداء الأمة السيد حسن نصرالله بين ناسه، قريبًا منهم، يتفقد أحوالهم ويأنس بوجوههم. 19:43",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "مقتل جنديين من جيش الاحتلال بانفجار مسيّرة مفخخة شمالي قطاع غزة",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -272,7 +272,7 @@
     },
     "relevance": {
       "in": 110,
-      "kept": 62,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
@@ -297,14 +297,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "The show \"The Crossing\" Season 2, Episode 5: Barter is available for direct viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The show \"The Crossing\" Season 2, Episode 5: Barter is available for direct viewing.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -493,7 +493,7 @@
         },
         {
           "source": "SANA",
-          "title": "Bangkok declares a disaster zone as flooding hits the Thai capital, according to SANA.",
+          "title": "Bangkok declares disaster zone as flooding hits Thai capital",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
@@ -538,13 +538,6 @@
           "title": "Ireland squad votes by 'significant majority' to play Israel Nations League fixture",
           "sec": 0,
           "off": 3,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "5 Israeli opposition leaders agree to coordinate campaign to replace Netanyahu government in next month's elections",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -614,17 +607,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 43,
       "sizes": [
         8,
         4,
+        4,
         3,
-        3,
-        3,
         2,
         2,
         2,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -728,6 +722,51 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Trump rejects Iran ceasefire proposal, WSJ reports",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-26T13:59+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Channel 13",
+            "Kan 11",
+            "SANA"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Trump rejects Iran ceasefire proposal, WSJ reports",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Channel 13",
+                "title": "A report indicates that Trump rejected the Iranian proposal for a ceasefire.",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "4 , Trump ‘rejects’ Iran’s seven-day ceasefire proposal. What’s next?",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Saudi Arabia intercepts Houthi drones headed for Riyadh, missile near Khamis Mushait",
           "rank_key": {
             "outlets": 4,
@@ -778,7 +817,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Hamas blasts Israel for war crimes against Palestinian journalists",
           "rank_key": {
             "outlets": 3,
@@ -817,51 +856,8 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Trump rejected Iran's proposal for a ceasefire.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-26T13:59+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Channel 13",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "panarab"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "Trump rejected Iran's proposal for a ceasefire.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Channel 13",
-                "title": "A report indicates that Trump rejected the Iranian proposal for a ceasefire.",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "4 , Trump ‘rejects’ Iran’s seven-day ceasefire proposal. What’s next?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 5,
-          "headline": "China emphasizes Middle East sovereignty and opposes unilateral actions at the UNGA, according to SA",
+          "headline": "China emphasizes Middle East sovereignty, opposes unilateral actions at UNGA",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
@@ -880,12 +876,12 @@
           "why_not": null,
           "representative": {
             "source": "SANA",
-            "title": "China emphasizes Middle East sovereignty and opposes unilateral actions at the UNGA, according to SANA.",
-            "title_source": "snippet",
+            "title": "China emphasizes Middle East sovereignty, opposes unilateral actions at UNGA",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
@@ -970,34 +966,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces detain four Palestinians, ransack homes in West Bank raids",
+          "headline": "Malaysia urges action on Palestine, challenges UN veto at General Assembly",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-25T15:45+00:00"
+            "newest": "2026-09-26T21:49+00:00"
           },
           "outlet_names": [
-            "SANA",
-            "WAFA News"
+            "Anadolu Agency"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces detain four Palestinians, ransack homes in West Bank raids",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1198,25 +1181,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Trump rejects Iran ceasefire proposal, according to the Syrian Arab News Agency (SANA).",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-26T11:31+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1234,7 +1199,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-26T21:56:59.180681+00:00",
+    "last_success": "2026-09-26T22:03:53.075112+00:00",
     "last_failure": null
   },
   "ok": true
