@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26T19:18:28.181489+00:00",
+  "updated": "2026-09-26T19:50:01.196796+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,26 +167,31 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-26T19:16:49.546680+00:00"
+      "headlines_updated": "2026-09-26T19:47:53.356091+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 39,
-        "title_translated": 1,
-        "title_native": 80,
+        "dropped_stale": 8,
+        "title_snippet": 28,
+        "dropped_no_english": 12,
+        "title_native": 78,
         "in": 126,
-        "kept": 120
+        "kept": 106
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 40,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "US, Iran discuss phased deal to reopen Hormuz, end US blockade",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "Gaza suffers world's worst ever economic crisis: UN",
@@ -195,6 +200,11 @@
         {
           "source": "The New Arab",
           "title": "Macklemore announces 'Free Palestine Tour' after Sheeran split",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Israeli forces storm Izbat Shufa, south of Tulkarm, and raid homes",
           "reason": "stale (older than 48h)"
         },
         {
@@ -216,20 +226,73 @@
           "source": "TRT World",
           "title": "Iran warns new war with US could spread to Indian Ocean",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: ערב 7.10, ראש המודיעין המצרי נחת בארץ והזהיר שחמאס מתארגן למתקפה מעזה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ראשי גוש השינוי חתמו על מסמך עקרונות משותף להחלפת הממשלה: \"מטרת העל המשותפת\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דיווח: ראש המודיעין המצרי הגיע לארץ 11 ימים לפני הטבח - והתריע",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "בתום הדרמה, נבחרת אירלנד הודיעה: \"ערכנו הצבעה, נשחק מול ישראל\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מהדורת השבת 26.09.26 – המהדורה המלאה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"جيش\" الاحتلال: مقتل جنديين احتياطيين بانفجار مسيّرة كانا يشغلانها في قطاع غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "البيت الأبيض يمنع مراسلي \"سي إن إن\" من مرافقة ترامب إلى ولاية تينيسي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بيت فلسطيني يحاصره المستوطنون.. حرب إثيوبيا وتحالفات جديدة في المغرب",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"وول ستريت جورنال\": ترامب يرفض المقترح الإيراني للهدنة 7 أيام وفتح مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "قبطان «الرقص مع النجوم» مَن يكون؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مقتل جنديين من جيش الاحتلال بانفجار مسيّرة مفخخة شمالي قطاع غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Rovo launches \"Zid\" e-commerce platform in Syria to boost digital trade and artisans - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 65,
+      "in": 106,
+      "kept": 64,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "Ofer Winter declared his intention to seek the Security Minister position and outlined a vision for a…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "N12",
           "title": "Qatar's Prime Minister responded to allegations of bribery and infiltration, calling the accusations absurd…",
@@ -240,20 +303,6 @@
         {
           "source": "Channel 13",
           "title": "The leaders of the 'Change Bloc' met with Lapid to coordinate their next steps.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "After closing the case, the police are now investigating the assault of a Christian child in Jerusalem.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -281,21 +330,14 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Italy’s Catania airport shuts as Etna ash halts flights",
+          "title": "Colombia’s new US-backed government cuts ties with Iran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Arabiya",
-          "title": "Bangkok declares flood disaster as heavy rain disrupts traffic, prompts evacuations",
-          "sec": 0,
-          "off": 1,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Colombia’s new US-backed government cuts ties with Iran",
+          "title": "Hormuz commodity ship transits fall to nine, shiptracking data shows",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -316,21 +358,7 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Mass walkouts occurred at the UN during Netanyahu's speech, with Soleimani pictured in the assembly hall.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
           "title": "This article discusses the importance of knowledge and action in strengthening resistance.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Iranian ambassador to Iraq stated that a new decision regarding flights may be announced soon.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -366,13 +394,6 @@
         {
           "source": "Jordan Times",
           "title": "China-Arab digital dialogue calls for new phase of digital cooperation",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Summer heatwaves cost Germany 25 billion euros: Allianz",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -420,13 +441,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "America has shifted its stance on al-Burhan, stating there is no 'legitimate' party in Sudan.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "This text reflects on two years of resistance, marked by sorrow and challenges.",
           "sec": 0,
@@ -443,13 +457,6 @@
         {
           "source": "Al Manar",
           "title": "Sayyed Hassan Nasrallah's speeches and national milestones consistently emphasized national unity and…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The article criticizes Netanyahu's UN speech, portraying the executioner as the judge and the victim as the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -490,25 +497,18 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Syrian, Kuwaiti, and Malaysian interior ministers convened to discuss security cooperation.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Iraq seeks exemption from US ban on Iran airlines",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Colombia’s new US-backed government cuts ties with Iran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Nepal PM says floods ‘a warning to the world’ about climate change",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Arab News",
@@ -520,27 +520,6 @@
         {
           "source": "Gulf News",
           "title": "Italy’s Catania Airport suspends flights until 4pm as Mount Etna sends ash cloud 4km high",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Catania Airport suspends flights as Mount Etna sends ash cloud over Sicily",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "All 50 Bangkok districts declared disaster areas amid heavy rain, flooding",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Iraq seeks exemption from US ban on Iranian flights",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -612,12 +591,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 40,
       "sizes": [
-        13,
-        5,
+        9,
         5,
         4,
+        4,
+        2,
+        2,
         2,
         2,
         2,
@@ -663,32 +644,27 @@
           "selected_rank": 1,
           "headline": "Iran pitches new deal to reopen Strait of Hormuz as talks stall",
           "rank_key": {
-            "outlets": 11,
-            "camps": 6,
-            "newest": "2026-09-26T15:13+00:00"
+            "outlets": 7,
+            "camps": 5,
+            "newest": "2026-09-26T11:47+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Al Mayadeen",
             "Arab News",
             "Daily Sabah",
             "IRNA",
             "Iran International",
             "Jordan Times",
-            "Kan 11",
-            "N12",
-            "TRT World",
-            "The New Arab"
+            "TRT World"
           ],
           "camps": [
-            "israeli",
             "gulf",
             "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 13,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -703,11 +679,6 @@
             ],
             "passed_over": [
               {
-                "source": "Kan 11",
-                "title": "According to The Wall Street Journal, the US president has rejected an offer fro",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Jazeera",
                 "title": "1 , Trump rejects Iran’s proposal to reopen Hormuz within seven days",
                 "rejected_by": "older than the story's newest wave"
@@ -718,8 +689,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "The New Arab",
-                "title": "US, Iran discuss phased deal to reopen Hormuz, end US blockade",
+                "source": "Iran International",
+                "title": "1 Iran rules out nuclear concessions even if US accepts Hormuz proposal",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Iran proposes US deal to reopen Strait of Hormuz in seven days",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -727,59 +703,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "262 Palestinian journalists killed by Israel since Gaza war: Media office",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-09-26T18:11+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Anadolu Agency",
-            "Daily Sabah",
-            "Kan 11",
-            "Middle East Eye"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "262 Palestinian journalists killed by Israel since Gaza war: Media office",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Hamas responded to Netanyahu's speech at the UN General Assembly, calling him a ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "Hamas blasts Israel for war crimes against Palestinian journalists",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Fighting escalates as Yemeni forces hit Houthis, Saudi Arabia intercepts drones",
           "rank_key": {
             "outlets": 5,
@@ -815,7 +738,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , The intelligence war is turning against the Houthis",
+                "title": "4 , The intelligence war is turning against the Houthis",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -826,6 +749,52 @@
               {
                 "source": "L'Orient Today",
                 "title": "YEMEN/SAUDI ARABIA Houthis launch new attacks on Riyadh and Khamis Mushait",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Hamas blasts Israel for war crimes against Palestinian journalists",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-26T15:01+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Anadolu Agency",
+            "Daily Sabah",
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Hamas blasts Israel for war crimes against Palestinian journalists",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "Hamas responded to Netanyahu's speech at the UN General Assembly, calling him a ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -870,7 +839,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "4 , Trump ‘rejects’ Iran’s seven-day ceasefire proposal. What’s next?",
+                "title": "6 , Trump ‘rejects’ Iran’s seven-day ceasefire proposal. What’s next?",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -878,26 +847,25 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Russia, Ukraine trade deadly strikes as 7 people are killed",
+          "headline": "Top Russian diplomat says Moscow remains committed to Ukraine peace talks, denies it is avoiding neg",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-26T11:32+00:00"
+            "camps": 1,
+            "newest": "2026-09-26T19:38+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
+            "Anadolu Agency",
             "Daily Sabah"
           ],
           "camps": [
-            "panarab",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Russia, Ukraine trade deadly strikes as 7 people are killed",
+            "source": "Anadolu Agency",
+            "title": "Top Russian diplomat says Moscow remains committed to Ukraine peace talks, denies it is avoiding negotiations",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -905,41 +873,46 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Daily Sabah",
+                "title": "Russia, Ukraine trade deadly strikes as 7 people are killed",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces strike several areas in southern Lebanon",
+          "headline": "According to The Wall Street Journal, the US president is preparing for a potential resumption of ho",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-09-26T10:51+00:00"
+            "newest": "2026-09-26T14:05+00:00"
           },
           "outlet_names": [
-            "L'Orient Today",
-            "WAFA News"
+            "Kan 11",
+            "N12"
           ],
           "camps": [
-            "levant"
+            "israeli"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces strike several areas in southern Lebanon",
-            "title_source": "native",
+            "source": "N12",
+            "title": "According to The Wall Street Journal, the US president is preparing for a potential resumption of hostilities…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
               "neutral-by-default outlet",
-              "outlet's own English headline"
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
-                "source": "L'Orient Today",
-                "title": "SOUTH LEBANON As Israeli attacks on South continue, US ambassador argues peace c",
+                "source": "Kan 11",
+                "title": "According to The Wall Street Journal, the US president has rejected an offer fro",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -984,6 +957,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Germany urges ‘profound’ reforms to United Nations",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-26T19:37+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Philippines urges Gaza ceasefire, says South China Sea disputes must be settled by law, not might",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-26T19:36+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The Prime Minister's office stated that Netanyahu did not meet or speak with the head of Egyptian…",
           "rank_key": {
             "outlets": 1,
@@ -992,24 +1001,6 @@
           },
           "outlet_names": [
             "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A podcast called 'Good Morning Gaza' aims to capture the voices of soldiers in a tank.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-26T18:03+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
           ],
           "camps": [
             "israeli"
@@ -1181,25 +1172,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Israeli forces detain four Palestinian farmers picking olives near Tulkarm",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-26T11:01+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1217,7 +1190,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-26T19:18:40.096184+00:00",
+    "last_success": "2026-09-26T19:50:18.478783+00:00",
     "last_failure": null
   },
   "ok": true
