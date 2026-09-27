@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T14:30:22.412421+00:00",
+  "updated": "2026-09-27T15:01:32.341000+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-27T14:28:38.976381+00:00"
+      "headlines_updated": "2026-09-27T14:59:56.379987+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 39,
-        "title_translated": 1,
+        "title_snippet": 30,
+        "dropped_no_english": 8,
+        "title_translated": 2,
         "title_native": 80,
         "in": 126,
-        "kept": 120
+        "kept": 112
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 37,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -216,23 +217,56 @@
           "source": "TRT World",
           "title": "Macklemore announces 'Free Palestine' tour after Ed Sheeran saga",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "טראמפ על מעצר החשודים בבסיס הצבאי בבריטניה: הם רצו לעשות נזק כבד, עקבנו אחריהם זמן רב",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שר האוצר האמריקני: לאיראן עומד להיגמר הנפט, הם מרגישים את הלחץ ובגלל זה רוצים עסקה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דיווח: שומר הראש של הנייה קיבל אזרחות בריטית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אלמנתו של ארנון זמורה ז\"ל: \"הייתי צריכה מישהי שתכווין אותי\" -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דיווח: טראמפ דחה את ההצעה האיראנית להפסקת אש",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הבעל שיילד את אשתו בחדר הלידה: \"היא הגשימה לי חלום\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "صنعاء تتوعد برد واسع يستهدف القواعد والمصالح الاستراتيجية السعودية إذا استمر الحصار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "في مكان عروج روحه، اجتمع محبو سيد شهداء الأمة، حاملين من الوفاء ما لا يختصره غياب 23:34",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 75,
+      "in": 112,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Avigdor Lieberman has asked Shin Bet chief Ronen Bar to transfer the investigation into the disappearance of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Hundreds of Palestinian caregivers had their work permits expire, leading to their departure from Israeli…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -246,28 +280,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "The widow of Arnon Zamora stated, \"I needed someone to guide me.\" This is a personal reflection shared by the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A husband described his experience delivering his wife's baby in the delivery room, saying, \"She fulfilled a…",
+          "title": "News 13 | News",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , UK police evacuate homes near airbase used by US",
+          "title": "5 , Northern Ireland protesters block Orange Order march in Portadown",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -303,13 +323,6 @@
         {
           "source": "The New Arab",
           "title": "Ramallah’s oldest cobbler keeps the city walking",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "This item is a title referring to a person, likely a religious or political leader, and is presented without…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -434,18 +447,11 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Manar",
-          "title": "Special footage from Al-Manar shows Sayyed Hassan Nasrallah among people.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
-          "title": "The Prime Minister of Qatar stated that Netanyahu is the biggest obstacle to Trump's plan for Gaza.",
-          "sec": 0,
+          "title": "Colonizers storm Al-Aqsa Mosque",
+          "sec": 1,
           "off": 0,
-          "reason": "no security/geopolitics signal"
+          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Arab News",
@@ -542,13 +548,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 49,
       "sizes": [
-        9,
+        10,
         7,
         3,
-        2,
-        2,
         2,
         2,
         2,
@@ -626,7 +630,7 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -642,7 +646,12 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Trump rejects Iran’s seven-day roadmap to end war and reopen Hormuz",
+                "title": "1 , Iran says it captured US sea drone in Hormuz; vows to keep strait closed",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Trump rejects Iran’s seven-day roadmap to end war and reopen Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -653,11 +662,6 @@
               {
                 "source": "Al Mayadeen",
                 "title": "According to The Washington Post, citing US officials, President Trump rejected ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Trump reportedly turns down Iran’s seven-day Hormuz proposal amid stalled talks",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -762,81 +766,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "An event commemorating two years since the elimination of Hassan Nasrallah and Hashem Safieddine was",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-27T13:46+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "An event commemorating two years since the elimination of Hassan Nasrallah and Hashem Safieddine was held in…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al-Akhbar",
-                "title": "Emile Lahoud remembered \"Dear Brother\" Sayyed Nasrallah, stating he remains pres",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "A report states that Trump rejected an Iranian proposal for a ceasefire.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-27T10:22+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Channel 13",
-            "title": "A report states that Trump rejected an Iranian proposal for a ceasefire.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "Trump rejected a ceasefire proposal from Iran, according to the Wall Street Jour",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Lavrov blasts assassination of Iran Leader as ‘unacceptable'",
           "rank_key": {
             "outlets": 2,
@@ -873,7 +802,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Israeli forces killed a Palestinian in Gaza and detained five in the West Bank.",
           "rank_key": {
             "outlets": 2,
@@ -1176,7 +1105,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-27T14:30:39.562203+00:00",
+    "last_success": "2026-09-27T15:01:56.970618+00:00",
     "last_failure": null
   },
   "ok": true
