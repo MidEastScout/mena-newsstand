@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T22:39:56.080262+00:00",
+  "updated": "2026-09-27T23:11:03.670058+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-27T22:37:41.565078+00:00"
+      "headlines_updated": "2026-09-27T23:09:25.901022+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 34,
-        "title_translated": 1,
+        "title_snippet": 32,
+        "dropped_no_english": 1,
+        "title_translated": 2,
         "title_native": 82,
         "in": 130,
-        "kept": 117
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -251,11 +252,16 @@
           "source": "TRT World",
           "title": "Macklemore announces 'Free Palestine' tour after Ed Sheeran saga",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "דיווח: ראש המודיעין המצרי הזהיר את נתניהו ימים לפני 7 באוקטובר",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
+      "in": 116,
       "kept": 80,
       "dropped": [
         {
@@ -295,14 +301,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , South Korea, Ukraine relations sour over North Korean POW transfer",
+          "title": "3 , Serbian President Aleksandar Vucic resigns amid prolonged protests",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Serbian President Aleksandar Vucic resigns amid prolonged protests",
+          "title": "5 , South Korea, Ukraine relations sour over North Korean POW transfer",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -343,6 +349,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "Sixth Bulletin",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Mehr News",
           "title": "Trump and the chain of setbacks in Iran, China and Russia",
           "sec": 0,
@@ -352,13 +365,6 @@
         {
           "source": "Jordan Times",
           "title": "Jordan’s economic growth expected to rebound to 2.8% in 2027 — EBRD",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "APC begins construction of $1.1 billion southern expansion project",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -429,13 +435,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Qatar's Prime Minister stated that Netanyahu is the biggest obstacle to Trump's plan for Gaza.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Iran president says supreme leader backs new plan to reopen Hormuz",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -523,14 +522,14 @@
       "method": "heuristic",
       "clusters": 56,
       "sizes": [
-        12,
+        14,
         6,
         4,
         2,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -590,7 +589,7 @@
           "selected_rank": 1,
           "headline": "Iran’s IRGC says seized US underwater drone in Hormuz",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 9,
             "camps": 4,
             "newest": "2026-09-27T18:02+00:00"
           },
@@ -599,6 +598,7 @@
             "Al Jazeera",
             "Al Mayadeen",
             "Arab News",
+            "Gulf News",
             "IRNA",
             "Iran International",
             "Mehr News",
@@ -610,7 +610,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 12,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -630,8 +630,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Mayadeen",
-                "title": "The Revolutionary Guard announced the seizure of a US intelligence submarine, id",
+                "source": "Al Jazeera",
+                "title": "6 , Iran shifts trade north to Caspian Sea as war impairs Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -744,68 +744,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "6 , Mike Waltz: US offered to sell Iran uranium for civilian programme",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Iran International"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "6 , Mike Waltz: US offered to sell Iran uranium for civilian programme",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Türkiye slams storming of Al-Aqsa Mosque by Israeli extremist groups",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-27T19:56+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Türkiye slams storming of Al-Aqsa Mosque by Israeli extremist groups",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Gaza death toll rises to 74,018 since October 2023",
           "rank_key": {
             "outlets": 2,
@@ -836,7 +774,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "The bodyguard of Yahya Sinwar reportedly received British citizenship and was planning a major attac",
           "rank_key": {
             "outlets": 2,
@@ -864,6 +802,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "France accuses Israel of 'scandalous' tolerance of occupied West Bank violence and land seizures",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-27T22:43+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -911,6 +867,24 @@
           },
           "outlet_names": [
             "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "ISSF exceeds most first-phase targets, mobilises $109m in private capital — World Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-27T20:20+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
           ],
           "camps": [
             "levant"
@@ -975,17 +949,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Security assessments indicate Hezbollah may attempt to escalate activity in the region soon.",
+          "headline": "Türkiye condemns Israeli extremist groups’ storming of Al-Aqsa Mosque",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-27T17:48+00:00"
+            "newest": "2026-09-27T18:13+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1046,43 +1020,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Trump says he expects more talks with Iran this week, warns Tehran 'overplayed' hand",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-27T15:45+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Saudi, Malaysian defense ministers discuss cooperation, regional developments",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-27T15:18+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "37 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "39 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1100,7 +1038,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-27T22:40:18.568362+00:00",
+    "last_success": "2026-09-27T23:11:36.439140+00:00",
     "last_failure": null
   },
   "ok": true
