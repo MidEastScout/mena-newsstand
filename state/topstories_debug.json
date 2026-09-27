@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T08:25:30.642869+00:00",
+  "updated": "2026-09-27T08:57:03.676832+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-27T08:23:42.000744+00:00"
+      "headlines_updated": "2026-09-27T08:55:11.447208+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 36,
-        "title_native": 79,
+        "dropped_stale": 8,
+        "title_snippet": 35,
+        "title_native": 81,
+        "dropped_no_english": 1,
         "title_translated": 1,
         "in": 126,
-        "kept": 116
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -187,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Al Arabiya",
-          "title": "Turkish military chief to attend Mecca Defense Alliance meeting in Saudi Arabia",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "The New Arab",
           "title": "Macklemore announces 'Free Palestine Tour' after Sheeran split",
@@ -233,33 +229,40 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Mecca defence pact ministers discuss urgent meeting to support Saudi Arabia",
-          "reason": "stale (older than 48h)"
+          "source": "Al Manar",
+          "title": "في مشاهد خاصة للمنار، يظهر سيد شهداء الأمة السيد حسن نصرالله بين ناسه، قريبًا منهم، يتفقد أحوالهم ويأنس بوجوههم. 19:43",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 68,
+      "in": 117,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "Reports indicate that at least 19 people have died due to floods and landslides in India and Nepal.",
+          "title": "Dozens of Israeli travelers are stranded in the village of Samagaon, Nepal, at an altitude of 3,500 meters…",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "N12",
+          "title": "Police in Britain declared a \"major incident\" near RAF Fairford, a base housing American bombers.",
           "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The reservist who developed an app connecting travelers commented on the impact of loneliness.",
+          "title": "A reservist who developed an app connecting travelers commented on the impact of loneliness.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Episode 68 of 'Feeling Beautiful' is available for direct viewing.",
+          "title": "Full episode 68 of 'Feeling Beautiful' is available for direct viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -279,6 +282,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Middle East Eye",
+          "title": "CBS staff accuse network of ‘overt racism’ over Abdul El-Sayed 9/11 story",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Al Arabiya",
           "title": "Trump rejects Iran’s proposal",
           "sec": 0,
@@ -293,6 +303,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Arabiya",
+          "title": "Italy’s Catania airport shuts as Etna ash halts flights",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "The New Arab",
           "title": "Lebanon PM stresses need to avert 'vacuum' if UN force leaves",
           "sec": 0,
@@ -301,7 +318,7 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Articles related to Argentina are available.",
+          "title": "Articles related to Argentina.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -336,6 +353,13 @@
         },
         {
           "source": "Jordan Times",
+          "title": "Iran president says supreme leader backs new plan to reopen Hormuz",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
           "title": "Jordan’s economic growth expected to rebound to 2.8% in 2027 — EBRD",
           "sec": 0,
           "off": 0,
@@ -359,61 +383,54 @@
           "source": "Egypt Independent",
           "title": "Thai capital Bangkok declared disaster zone amid widespread flooding",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Pezeshkian stated that Iran is ready to assist in resolving the crisis between Saudi Arabia and Yemen.",
+          "title": "Pezeshkian stated Iran is ready to help resolve the crisis between Saudi Arabia and Yemen.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "The article discusses who the captain of 'Dancing with the Stars' is.",
+          "title": "The article questions the identity of the captain of 'Dancing with the Stars'.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "The article examines slavery in the Islamic world over 14 centuries of oppression.",
+          "title": "An article discusses slavery in the Islamic world over 14 centuries.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "Sana'a refuted fearmongering campaigns, stating that the Bab al-Mandab strait is open to everyone except…",
+          "title": "America is reportedly turning against Al-Burhan, stating there is no 'legitimate' side in Sudan.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "The passage reflects on two years of resistance, highlighting the hardships and challenges faced.",
+          "title": "Two years of resistance have passed, filled with sorrows and challenges, as if it were an eternity.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Rare scenes show Sayyed Hassan Nasrallah among his people, checking on them and enjoying their presence.",
+          "title": "Sayyed Hassan Nasrallah's speeches and national milestones consistently included calls for national unity and…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
-          "title": "Sayyed Hassan Nasrallah's speeches and national milestones consistently emphasized national unity and…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "American and Jewish voices are reportedly opposing Netanyahu and calling for a halt to arming Israel.",
+          "title": "Special scenes for Al-Manar channel show Sayyed Hassan Nasrallah among his people.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -427,30 +444,23 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "A study revealed that the fatty compounds in the belly button may contain chemical fingerprints linked to…",
+          "title": "A study revealed that the bacterial communities in the navel may contain chemical fingerprints linked to…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "Bangkok has been declared a disaster zone due to widespread flooding in the Thai capital.",
+          "title": "Bangkok declared a disaster zone due to widespread flooding in the Thai capital.",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "SANA",
-          "title": "China and the US have agreed to strengthen ties and establish a channel for AI incidents.",
+          "title": "China and the U.S.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Syria lost 4-0 to Lebanon in the WAFF U17 championship opener in Jordan.",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -508,20 +518,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Indonesia says Palestine question test of our conscience, multilateral system",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "4 killed in helicopter crash in Canada’s Quebec province",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
@@ -583,18 +579,21 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 44,
       "sizes": [
-        8,
         6,
-        4,
-        3,
-        3,
-        3,
+        6,
+        5,
         3,
         3,
         2,
         2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
         1,
         1,
         1,
@@ -635,65 +634,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Trump rejects proposal to reopen the Strait of Hormuz. Iran says it is awaiting definitive US positi",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 3,
-            "newest": "2026-09-27T07:59+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Daily Sabah",
-            "Egypt Independent",
-            "Jordan Times",
-            "L'Orient Today",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 8,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Trump rejects proposal to reopen the Strait of Hormuz. Iran says it is awaiting definitive US position",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran says it ‘will not back down’ after Trump rejects Hormuz proposal",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "3 , Trump rejects Iran’s seven-day roadmap to end war and reopen Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Iran president says supreme leader backs new plan to reopen Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "IRAN/UNITED STATES New Iranian offer to reopen Hormuz approved by supreme leader",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "The Arab Interior Ministers Council has condemned Houthi attacks on Saudi Arabia.",
+          "headline": "The Arab Interior Ministers Council condemned the Houthi attacks on Saudi Arabia.",
           "rank_key": {
             "outlets": 6,
             "camps": 3,
@@ -717,7 +658,7 @@
           "why_not": null,
           "representative": {
             "source": "SANA",
-            "title": "The Arab Interior Ministers Council has condemned Houthi attacks on Saudi Arabia.",
+            "title": "The Arab Interior Ministers Council condemned the Houthi attacks on Saudi Arabia.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -750,56 +691,81 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "Palestinian girl injured in Israeli firing in occupied West Bank",
+          "selected_rank": 2,
+          "headline": "Trump rejects proposal to reopen the Strait of Hormuz. Iran says it is awaiting definitive US positi",
           "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-27T07:43+00:00"
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-27T07:59+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
-            "Falastin al-Youm",
-            "WAFA News"
+            "Al Jazeera",
+            "Daily Sabah",
+            "Egypt Independent",
+            "TRT World"
           ],
           "camps": [
+            "panarab",
             "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Palestinian girl injured in Israeli firing in occupied West Bank",
+            "source": "Egypt Independent",
+            "title": "Trump rejects proposal to reopen the Strait of Hormuz. Iran says it is awaiting definitive US position",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "names 1 of the story's dominant entities (hormuz)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Iran says it ‘will not back down’ after Trump rejects Hormuz proposal",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Trump rejects Iran’s seven-day roadmap to end war and reopen Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Daily Sabah",
+                "title": "Iran pitches new deal to reopen Strait of Hormuz as talks stall",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Iran awaits formal US response on Hormuz ceasefire plan, Araghchi says",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Two Palestinians injured in Israeli strikes and gunfire across Gaza",
           "rank_key": {
-            "outlets": 3,
-            "camps": 2,
+            "outlets": 4,
+            "camps": 3,
             "newest": "2026-09-27T06:36+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
+            "Kan 11",
             "Middle East Eye",
             "WAFA News"
           ],
           "camps": [
+            "israeli",
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -820,54 +786,15 @@
               },
               {
                 "source": "Al Mayadeen",
-                "title": "Two reserve soldiers were killed in Gaza when a drone they were operating explod",
+                "title": "The Israeli military reported that two reserve soldiers were killed in Gaza by a",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "The IDF reported an attack on a Hezbollah weapons storage facility in the Sajjoud area of southern L",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-26T15:03+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "Kan 11",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The IDF reported an attack on a Hezbollah weapons storage facility in the Sajjoud area of southern Lebanon.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (hezbollah, hezbollah_south)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Channel 13",
-                "title": "The IDF attacked a Hezbollah weapons storage facility in southern Lebanon.",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump rejects Iran ceasefire proposal, according to WSJ.",
+          "selected_rank": 4,
+          "headline": "Trump rejected Iran's ceasefire proposal, according to the WSJ.",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
@@ -887,7 +814,7 @@
           "why_not": null,
           "representative": {
             "source": "SANA",
-            "title": "Trump rejects Iran ceasefire proposal, according to WSJ.",
+            "title": "Trump rejected Iran's ceasefire proposal, according to the WSJ.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -897,14 +824,14 @@
             "passed_over": [
               {
                 "source": "Channel 13",
-                "title": "A report indicates that Trump rejected Iran's proposal for a ceasefire.",
+                "title": "A report states that Trump rejected an Iranian proposal for a ceasefire.",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "At UN, Russia and Germany’s top diplomats hold first talks since invasion of Ukraine",
           "rank_key": {
             "outlets": 2,
@@ -943,11 +870,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Intelligence received by Israel, including messages from Sinwar relayed by a senior official and war",
+          "headline": "The son of senior Hamas official Bassam Na'im is facing extradition to Germany.",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-27T07:59+00:00"
+            "newest": "2026-09-27T01:00+00:00"
           },
           "outlet_names": [
             "Daily Sabah",
@@ -957,27 +884,60 @@
             "israeli",
             "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "N12",
-            "title": "Intelligence received by Israel, including messages from Sinwar relayed by a senior official and warnings…",
+            "title": "The son of senior Hamas official Bassam Na'im is facing extradition to Germany.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
               "neutral-by-default outlet",
               "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
-                "source": "N12",
-                "title": "The son of senior Hamas official Bassam Naim has been accused of planning terror",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
                 "source": "Daily Sabah",
                 "title": "Hamas blasts Israel for war crimes against Palestinian journalists",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Lavrov blasts assassination of Iran Leader as ‘unacceptable'",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-26T19:42+00:00"
+          },
+          "outlet_names": [
+            "L'Orient Today",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Lavrov blasts assassination of Iran Leader as ‘unacceptable'",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "IRAN/UNITED STATES New Iranian offer to reopen Hormuz approved by supreme leader",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1022,11 +982,85 @@
         },
         {
           "selected_rank": null,
-          "headline": "Police in Britain declared a major incident near Fairford, a base for American bombers.",
+          "headline": "Israeli forces tighten military restrictions around Ramallah",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-27T06:07+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Israeli forces tighten military restrictions around Ramallah",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "SANA",
+                "title": "Israeli forces killed a Palestinian in Gaza and detained five in the West Bank.",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "The IDF confirmed an attack on a Hezbollah weapons depot in the Sajod area of southern Lebanon.",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-26T15:03+00:00"
+          },
+          "outlet_names": [
+            "Channel 13",
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "The IDF confirmed an attack on a Hezbollah weapons depot in the Sajod area of southern Lebanon.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (hezbollah, hezbollah_south)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Channel 13",
+                "title": "The IDF attacked a Hezbollah weapons storage facility in southern Lebanon.",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Reports indicate that Israel received multiple warnings about potential attacks.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-27T07:56+00:00"
+            "newest": "2026-09-27T07:59+00:00"
           },
           "outlet_names": [
             "N12"
@@ -1058,7 +1092,25 @@
         },
         {
           "selected_rank": null,
-          "headline": "Kimberley Guilfoyle, a diplomat close to Trump, allegedly threatened Greek ministers with their remo",
+          "headline": "Israel to impose weeklong closure on occupied West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-27T07:43+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Kimberley Guilfoyle, a diplomat close to Trump, reportedly threatened Greek ministers with their rem",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1112,7 +1164,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Israeli military confirmed the elimination of Sahar Tzeckar, the militant who abducted Noa Argam",
+          "headline": "The IDF confirmed the elimination of Sahar Atzkar, the militant responsible for abducting Noa Argama",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1130,17 +1182,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Israeli military announced the elimination of Sahar Tzeckar in Gaza.",
+          "headline": "Colonizers storm Al-Aqsa Mosque",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
             "newest": "2026-09-27T05:28+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Falastin al-Youm"
           ],
           "camps": [
-            "israeli"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1166,7 +1218,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "A report states that the bodyguard of Ismail Haniyeh obtained British citizenship and is accused of ",
+          "headline": "A report claims that Ismail Haniyeh's bodyguard obtained British citizenship and allegedly planned a",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1177,6 +1229,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Palestine 'remains a test of our conscience', Indonesian foreign minister says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-27T04:07+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1201,43 +1271,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "A report in The Sunday Times revealed that the bodyguard of a Hamas leader received asylum and then ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-26T23:25+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Yemeni army says Houthi weapons threaten civilian aviation in southern Red Sea",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-26T22:41+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1255,7 +1289,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-27T08:25:48.009997+00:00",
+    "last_success": "2026-09-27T08:57:20.205231+00:00",
     "last_failure": null
   },
   "ok": true
