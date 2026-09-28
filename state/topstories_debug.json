@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T20:18:37.266276+00:00",
+  "updated": "2026-09-28T20:53:41.159384+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-28T20:16:48.110631+00:00"
+      "headlines_updated": "2026-09-28T20:51:39.198485+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 38,
-        "title_translated": 1,
-        "title_native": 80,
+        "dropped_stale": 12,
+        "dropped_no_english": 11,
+        "title_snippet": 28,
+        "title_native": 79,
         "in": 130,
-        "kept": 119
+        "kept": 107
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 39,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -233,6 +233,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Arab News",
+          "title": "Russia calls for implementing US-Iran MoU after Trump rejects new proposal",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Gulf News",
           "title": "At UN, Saudi FM warns world failing to protect Gulf shipping",
           "reason": "stale (older than 48h)"
@@ -241,12 +246,67 @@
           "source": "TRT World",
           "title": "Trump rejects Iran's proposal to reopen Hormuz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שורדת השבי גבריאלה ליימברג: \"המחבלים הזהירו מפני 7 באוקטובר נוסף\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שורדת השבי גבריאלה ליימברג: המחבלים אמרו לנו שהם מתכננים שבעה באוקטובר נוסף",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "שורדת השבי הזהירה: \"המחבלים אמרו לי שהם מתכננים 7.10 נוסף\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "שיחת היום 28.09.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחיות ניתחו במקום רופאים: צו סגירה לבית החולים \"מדיקה\" בת\"א",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بريطانيا تعتقل 5 أشخاص قرب قاعدة فيرفورد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "القضاء الإيطالي يدين 3 مسؤولين أمنيين مصريين في مقتل الباحث جوليو ريجيني",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "مجموعة مسلحة موالية للحكومة الإثيوبية تعلن السيطرة على بلدة ألاماتا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "سلام يلتقي روبيو: لترجمة اتفاق الإطار إلى خطوات عملية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "طهران تنفي التكهنات حول الاعتقالات قرب قاعدة فيرفرورد البريطانية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "السيد القائد مجتبى الخامنئي: لن نعود إلى الحقبة التي يتمناها العدو… والشهيد السيد نصرالله كان النصر والفتح رفيقيه الدائم",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 60,
+      "in": 107,
+      "kept": 58,
       "dropped": [
         {
           "source": "Kan 11",
@@ -258,13 +318,6 @@
         {
           "source": "Kan 11",
           "title": "The UAE stated that discussions with Netanyahu focused on bilateral relations, following reports of a warning…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A police commander under investigation for bribery is being considered for a position in the Tiberias…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -284,29 +337,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The Ministry of Health has closed the \"Medica\" hospital in Tel Aviv after nurses performed surgeries in place…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Benet stated to Channel 13 News that Ronen Bar is correct and that Netanyahu is acting disgracefully.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
-          "title": "4 , Trump made the right decision to reject Iran’s offer",
+          "title": "3 , Trump made the right decision to reject Iran’s offer",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -316,6 +348,13 @@
           "title": "5 , Cattle to feed: Why a global meat crisis is looming",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "6 , UAE confirms Israel PM Netanyahu’s visit to Abu Dhabi",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -341,7 +380,7 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Iran says filed complaint to UN aviation watchdog over US flight restrictions",
+          "title": "Iran will have ‘nothing left to trade’ within two weeks as oil lifeline dries up: Bessent",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -418,14 +457,14 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Crown Prince meets with US International Development Finance Corporation CEO",
+          "title": "Iran stands firm on Hormuz plan after US rejection",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "Prime minister orders closure of facilities selling tobacco to minors",
+          "title": "Crown Prince meets with US International Development Finance Corporation CEO",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -473,41 +512,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Britain has arrested five individuals near Fairford base.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "An Italian court has convicted three Egyptian security officials in the case of the researcher Giulio Regeni.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "An armed group loyal to the Ethiopian government has announced control over the town of Alamata.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Salam met with Rubio to discuss translating the framework agreement into practical steps.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Tehran has denied speculation linking Iran to arrests made near Britain's Fairford base.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Abdullah Al-Bahrani pondered what if Sayyed Hassan Nasrallah were alive today, reflecting on his presence in…",
           "sec": 0,
@@ -551,7 +555,14 @@
         },
         {
           "source": "Arab News",
-          "title": "Russia calls for implementing US-Iran MoU after Trump rejects new proposal",
+          "title": "Iran stands firm on Hormuz plan after US rejection",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Israel’s Netanyahu visited Abu Dhabi on Sunday",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -586,21 +597,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Ex-UK attorney general says Israel cannot legally close British Consulate in East Jerusalem",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
           "title": "Iraq's national airline resumes flights between Najaf, Iranian airports",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Iran files complaint with UN aviation agency over US flight restrictions",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -653,24 +650,16 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "US will be forced out of Middle East: Iran's Khamenei",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 42,
       "sizes": [
         9,
         4,
         3,
-        2,
         2,
         2,
         2,
@@ -876,43 +865,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "South Korea summons Ukraine envoy in protest over North Korean POW transfer",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-28T13:17+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "South Korea summons Ukraine envoy in protest over North Korean POW transfer",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "6 , Why South Korea is demanding an apology from Ukraine over North Korean PoWs",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Sahir Tzakir, a Hamas fighter involved in the October 7th attack, was eliminated in a targeted strik",
           "rank_key": {
             "outlets": 2,
@@ -986,6 +938,60 @@
         },
         {
           "selected_rank": null,
+          "headline": "Top Saudi, US diplomats discuss maritime security, situation in Yemen",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T20:36+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump expects more Iran talks this week: Axios",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T20:31+00:00"
+          },
+          "outlet_names": [
+            "Arab News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Italian court sentences 3 Egyptian agents to 10 years over Giulio Regeni kidnapping",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T20:20+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The Algerian Foreign Minister condemned continued Israeli attacks on Syria and Lebanon.",
           "rank_key": {
             "outlets": 1,
@@ -997,6 +1003,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "UK police arrest five for preparing ‘terrorist act’ as incident near air base probed",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T20:05+00:00"
+          },
+          "outlet_names": [
+            "Arab News"
+          ],
+          "camps": [
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1076,25 +1100,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "UK police arrest five for preparing ‘terrorist act’ as incident near air base probed",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T18:35+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "At least 13 killed at fireworks factory in Russia's Yaroslavl region",
+          "headline": "14 killed at fireworks factory in Russia's Yaroslavl region",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1130,24 +1136,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A military investigation found that Ronen Bar and Herzi Halevi did not speak the night before the ma",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T17:49+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "US considering sanctions waiver for flights between Iran and Iraq’s Najaf, source says",
           "rank_key": {
             "outlets": 1,
@@ -1156,42 +1144,6 @@
           },
           "outlet_names": [
             "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The US representative to the UN Security Council called for support for the \"Peace Council\" initiati",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T16:42+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Violent clashes are occurring in Baidoa, Somalia, as government forces repel an attack by pro-Fattag",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T15:40+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
           ],
           "camps": [
             "panarab"
@@ -1219,7 +1171,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-28T20:18:54.455517+00:00",
+    "last_success": "2026-09-28T20:54:00.431855+00:00",
     "last_failure": null
   },
   "ok": true
