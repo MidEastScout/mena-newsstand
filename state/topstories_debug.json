@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T22:29:55.232336+00:00",
+  "updated": "2026-09-28T23:01:39.408362+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-28T22:28:06.559124+00:00"
+      "headlines_updated": "2026-09-28T22:59:26.313165+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 38,
+        "title_snippet": 31,
         "title_translated": 1,
-        "title_native": 79,
+        "dropped_no_english": 2,
+        "title_native": 84,
         "in": 130,
-        "kept": 118
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 33,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -246,12 +247,22 @@
           "source": "TRT World",
           "title": "Trump rejects Iran's proposal to reopen Hormuz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אני רוצה להקים בית דין לסכסוכים\": האם הג'וב החדש של אליהו ייגמר בפיצוץ?",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مسؤول أميركي للميادين: لا اتفاق مع إيران من دون معالجة القضايا النووية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 57,
+      "in": 116,
+      "kept": 59,
       "dropped": [
         {
           "source": "Kan 11",
@@ -276,13 +287,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "The full episode of \"Hayom Shehaya\" from 09/28/26 is available for direct viewing on Channel 13.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
@@ -290,7 +294,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "The full episode of \"Sichat Hayom\" from 09/28/26 is available for direct viewing on Channel 13.",
+          "title": "The full episode of \"Hayom Shehaya\" from 09/28/26 is available for direct viewing on Channel 13.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -304,16 +308,16 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Cattle to feed: Why a global meat crisis is looming",
+          "title": "4 , Trump made the right decision to reject Iran’s offer",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Trump made the right decision to reject Iran’s offer",
+          "title": "5 , Cattle to feed: Why a global meat crisis is looming",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -450,6 +454,13 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
+          "source": "L'Orient Today",
+          "title": "FOCUS Facing Israeli expansion in Lebanon and Syria, Jordan seeks to secure itself",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Egypt Independent",
           "title": "Proposal to harvest organs from Egypt’s death-row inmates sparks controversy",
           "sec": 0,
@@ -535,28 +546,7 @@
         },
         {
           "source": "SANA",
-          "title": "Syrian Arab News Agency (SANA) covers politics.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Syrian Arab News Agency (SANA) covers international news.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Syrian Arab News Agency (SANA) publishes photos.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Syrian Arab News Agency (SANA) covers the economy.",
+          "title": "Syria, U.S. discuss boosting bilateral ties, “Syria Without Camps” initiative",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -564,13 +554,6 @@
         {
           "source": "Arab News",
           "title": "Iran stands firm on Hormuz plan after US rejection",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "Israel’s Netanyahu visited Abu Dhabi on Sunday",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -684,11 +667,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 40,
       "sizes": [
         7,
         4,
-        4,
+        3,
+        3,
         3,
         2,
         2,
@@ -1012,48 +996,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "IN THE PRESS Israeli officer reveals details of operation that killed Hassan Nasrallah",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Manar",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "L'Orient Today",
-            "title": "IN THE PRESS Israeli officer reveals details of operation that killed Hassan Nasrallah",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Preparations are complete to commemorate the second anniversary of the martyred ",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Unseen footage shows the martyred Sayyed of the Ummah, Hassan Nasrallah, convers",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Donald Trump denied a report in \"Axios\" that he offered Iran sanctions relief in a negotiated deal.",
           "rank_key": {
             "outlets": 1,
@@ -1067,6 +1009,24 @@
             "israeli"
           ],
           "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Syria, UNODC discuss expanding cooperation on crime prevention",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T21:21+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1126,6 +1086,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Saudi defense minister invites UAE VP to Kingdom on Tuesday",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T19:30+00:00"
+          },
+          "outlet_names": [
+            "Arab News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Colonists attack Palestinian homes, assault residents in Halhul north of Hebron",
           "rank_key": {
             "outlets": 1,
@@ -1134,6 +1112,24 @@
           },
           "outlet_names": [
             "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli occupation shells outskirts of Tranja in Quneitra countryside",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T18:41+00:00"
+          },
+          "outlet_names": [
+            "SANA"
           ],
           "camps": [
             "levant"
@@ -1215,61 +1211,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "FM Araghchi to meet Qatari mediator in New York: Source",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T16:11+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The article details intense battles in Baidoa, Somalia, where government forces repelled an attack b",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T15:40+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A former diplomat stated that 'Israel' faces unprecedented international isolation and boycott, acco",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T15:14+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1287,7 +1229,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-28T22:30:09.627296+00:00",
+    "last_success": "2026-09-28T23:01:57.689225+00:00",
     "last_failure": null
   },
   "ok": true
