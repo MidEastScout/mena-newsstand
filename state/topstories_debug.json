@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T11:12:26.169272+00:00",
+  "updated": "2026-09-28T11:44:21.738600+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-28T11:10:00.726121+00:00"
+      "headlines_updated": "2026-09-28T11:42:43.281608+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 38,
+        "title_snippet": 30,
+        "dropped_no_english": 9,
         "title_translated": 1,
-        "title_native": 81,
+        "title_native": 80,
         "in": 130,
-        "kept": 120
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 39,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -195,11 +196,6 @@
         {
           "source": "The New Arab",
           "title": "Macklemore announces 'Free Palestine Tour' after Sheeran split",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "الولايات المتحدة الأميركية: صحيفة \"واشنطن بوست\" عن مسؤولين أميركيين: الرئيس ترامب رفض المقترح الإيراني المقدم \"لهدنة مدت",
           "reason": "stale (older than 48h)"
         },
         {
@@ -236,12 +232,62 @@
           "source": "Gulf News",
           "title": "Saudi Arabia intercepts Houthi drones headed for Riyadh, missile near Khamis Mushait",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Iran president says supreme leader backs new plan to reopen Hormuz",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "פיצוץ המטען בחצר בחולון: נכד של דיירת בבניין הוא בעל רקע פלילי ומוכר למשטרה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "תחקיר \"המבקר\": המינוי שאושר, הכשלים שנחשפו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "בבוקר חג סוכות - תושבי הנגב התעוררו לקולות ירי: \"מרגיש שלאף אחד לא אכפת מאיתנו\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "شتاءٌ قاسٍ يقترب من أوروبا.. والديزل في قلب العاصفة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "السودان يرفض اتهامات إثيوبيا بدعم المعارضة ويتهمها بمساندة \"الدعم السريع\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تراجع أسعار الذهب مع توقعات رفع الفائدة الأميركية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "من قائد المقاومة إلى «محور المحور»: كيف «قرأت» إسرائيل نصرالله؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "4 شهداء و19 جريحاً خلال 24 ساعة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria launches $175 million farm project backed by World Bank - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 81,
+      "in": 111,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -272,20 +318,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This item appears to be a generic news feed title and does not contain specific news content to summarize.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , ‘Still a lockdown’: Deadly floods hit Nepal tourism as peak season begins",
-          "sec": 0,
-          "off": 1,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Macklemore calls for a ‘free Palestine’ during Ed Sheeran shows, prompting praise and backlash",
           "sec": 0,
@@ -314,13 +346,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Gaza is experiencing a slump in goods and weak purchasing power among its citizens.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Iran International",
           "title": "5 Iran wrong to expect midterms to restrain Trump, former US official says",
           "sec": 0,
@@ -329,7 +354,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Prime minister orders closure of facilities selling tobacco to minors",
+          "title": "Crown Prince meets with US International Development Finance Corporation CEO",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -427,7 +452,7 @@
         },
         {
           "source": "WAFA News",
-          "title": "PCBS report notes sharp increase in the producer price in August",
+          "title": "MoFA slams Israel for blackmailing Dutch diplomats",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -447,13 +472,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Iran president says supreme leader backs new plan to reopen Hormuz",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Israeli occupiers storm Al-Aqsa Mosque in East Jerusalem as Palestinian shops forced to close for ‘Jewish prayers’",
           "sec": 1,
@@ -462,7 +480,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Palestine Action protesters confront UK foreign secretary over Gaza, group’s ban",
+          "title": "Ex-Greek MEP files complaint against Israeli spyware firm over alleged Pegasus surveillance",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Turkish Parliament set for reopening with busy agenda",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -473,13 +498,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "US-Iran stalemate sends oil higher, weighs on stock markets",
-          "sec": 1,
-          "off": 2,
-          "reason": "off-topic signals outweigh security signals"
         },
         {
           "source": "Hürriyet Daily News",
@@ -520,10 +538,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 48,
       "sizes": [
         17,
-        6,
+        4,
         3,
         2,
         2,
@@ -532,8 +550,7 @@
         2,
         2,
         2,
-        2,
-        2,
+        1,
         1,
         1,
         1,
@@ -582,12 +599,13 @@
           "selected_rank": 1,
           "headline": "Iran controls both sides of Strait of Hormuz: Top army cmdr.",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 9,
             "camps": 5,
             "newest": "2026-09-28T07:53+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al Jazeera",
             "Arab News",
             "Falastin al-Youm",
             "IRNA",
@@ -618,6 +636,11 @@
             ],
             "passed_over": [
               {
+                "source": "Al Jazeera",
+                "title": "4 , Iran war updates: US refutes claim that ‘advanced’ drone seized in Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Al Arabiya",
                 "title": "Trump rejects Iran’s proposal",
                 "rejected_by": "older than the story's newest wave"
@@ -631,69 +654,12 @@
                 "source": "IRNA",
                 "title": "Iran captures second US underwater drone in Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "Iran’s IRGC Navy captures 2nd US-made Remus 600 UUV in Hormuz",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Netherlands 'deeply regrets' Israel's decision to revoke status of Dutch diplomats in Ramallah",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-09-28T08:23+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Anadolu Agency",
-            "Falastin al-Youm",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Netherlands 'deeply regrets' Israel's decision to revoke status of Dutch diplomats in Ramallah",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Arab League warns of dangerous Israeli escalation at al-Aqsa Mosque and the West",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli forces close Aqsa mosque gate in Jerusalem following raid by 1,143 colon",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "SANA",
-                "title": "A closure has been imposed on the West Bank as hundreds of settlers entered the ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "IRGC: Nasrallah’s path continues in full glory and strength",
           "rank_key": {
             "outlets": 3,
@@ -733,70 +699,93 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "The Al-Buraq Wall plaza west of the Al-Aqsa Mosque is reportedly completely filled with settlers.",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 1,
+            "newest": "2026-09-28T08:23+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "The Al-Buraq Wall plaza west of the Al-Aqsa Mosque is reportedly completely filled with settlers.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Arab League warns of dangerous Israeli escalation at al-Aqsa Mosque and the West",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces close Aqsa mosque gate in Jerusalem following raid by 1,143 colon",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "SANA",
+                "title": "A closure has been imposed on the West Bank as hundreds of settlers entered the ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 4,
-          "headline": "Beijing mum after Trump reportedly asks China's Xi to buy US arms",
+          "headline": "Ukraine will 'pay a price' for strikes on Russia: Kremlin",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-28T10:24+00:00"
+            "newest": "2026-09-28T11:31+00:00"
           },
           "outlet_names": [
-            "Daily Sabah",
-            "Falastin al-Youm"
+            "Anadolu Agency",
+            "The New Arab"
           ],
           "camps": [
-            "levant",
+            "panarab",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Beijing mum after Trump reportedly asks China's Xi to buy US arms",
+            "source": "Anadolu Agency",
+            "title": "Ukraine will 'pay a price' for strikes on Russia: Kremlin",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Russia hits Ukraine's largest mobile provider, data centres",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
           "selected_rank": 5,
-          "headline": "Egypt, Syria accelerate economic cooperation at Damascus talks",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-28T10:13+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Egypt, Syria accelerate economic cooperation at Damascus talks",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump anticipates a new round of negotiations with Iran this week.",
           "rank_key": {
             "outlets": 2,
@@ -890,7 +879,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , The intelligence war is turning against the Houthis",
+                "title": "5 , The intelligence war is turning against the Houthis",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -921,36 +910,6 @@
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "A 15-year-old sustained serious injuries in Holon, possibly from a grenade or explosive device.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-28T09:35+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "A 15-year-old sustained serious injuries in Holon, possibly from a grenade or explosive device.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
               "neutral-by-default outlet",
               "derived from the outlet's English snippet"
             ],
@@ -1030,11 +989,47 @@
         },
         {
           "selected_rank": null,
-          "headline": "UK foreign minister denounces Netanyahu government, vows tougher action over Gaza",
+          "headline": "Germany urges Israel to ensure delivery of humanitarian aid to Gaza",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-28T10:56+00:00"
+            "newest": "2026-09-28T11:33+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Terror-free Türkiye board seeks to speed up process at 2nd meet",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T11:08+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "PROFILE – Who is Hassan Salameh, Palestinian prisoner threatened with execution by Israeli minister?",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T11:06+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1084,14 +1079,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "UK military bases potential targets for state-backed actors, defense secretary says",
+          "headline": "Beijing mum after Trump reportedly asks China's Xi to buy US arms",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-28T10:06+00:00"
+            "newest": "2026-09-28T10:24+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1102,17 +1097,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "UK detain 5, probe Iran link to foiled attack near US-run air base",
+          "headline": "Egypt, Syria accelerate economic cooperation at Damascus talks",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-28T10:06+00:00"
+            "newest": "2026-09-28T09:23+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "The New Arab"
           ],
           "camps": [
-            "turkish"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1209,43 +1204,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iran to remain steadfast even if apocalyptic war happens",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T03:38+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump warns of possible new Iran strikes; Araghchi vows ‘doomsday war’ — but remains open to diploma",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T00:39+00:00"
-          },
-          "outlet_names": [
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1263,7 +1222,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-28T11:12:42.999885+00:00",
+    "last_success": "2026-09-28T11:44:41.200628+00:00",
     "last_failure": null
   },
   "ok": true
