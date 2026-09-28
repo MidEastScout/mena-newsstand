@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T06:25:59.436544+00:00",
+  "updated": "2026-09-28T06:57:32.676725+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-28T06:24:03.299811+00:00"
+      "headlines_updated": "2026-09-28T06:55:43.522741+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 16,
-        "title_snippet": 39,
+        "title_snippet": 36,
+        "dropped_no_english": 3,
         "title_native": 75,
         "in": 130,
-        "kept": 114
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -188,12 +189,7 @@
       "dropped": [
         {
           "source": "The New Arab",
-          "title": "Macklemore announces 'Free Palestine Tour' after Sheeran split",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Israeli settlers deploy drones to abuse West Bank's Palestinians",
+          "title": "Lebanon PM stresses need to avert 'vacuum' if UN force leaves",
           "reason": "stale (older than 48h)"
         },
         {
@@ -204,6 +200,11 @@
         {
           "source": "The New Arab",
           "title": "Settlers torch Palestinian cars amid West Bank raids, demolition",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Macklemore announces 'Free Palestine Tour' after Sheeran split",
           "reason": "stale (older than 48h)"
         },
         {
@@ -265,12 +266,27 @@
           "source": "TRT World",
           "title": "Iran proposes US deal to reopen Strait of Hormuz in seven days",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "קונגו: מניין הנדבקים באבולה עומד על יותר מ-8,000 בני אדם, מתוכן 3,900 מתים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שר החוץ הבריטי נמנע מלקשור את איראן לתקרית ליד הבסיס בבריטניה: \"לא חכם להפיץ השערות\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "بينهم طفلة.. 3 إصابات برصاص طائرات الاحتلال وسط قطاع غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 68,
+      "in": 111,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -490,13 +506,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The Prime Minister of Qatar stated that Netanyahu is the biggest obstacle to Trump's plan in Gaza.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Russia calls for implementing US-Iran MoU after Trump rejects new proposal",
           "sec": 0,
@@ -601,7 +610,7 @@
       "clusters": 43,
       "sizes": [
         12,
-        7,
+        5,
         4,
         3,
         3,
@@ -656,7 +665,7 @@
           "rank_key": {
             "outlets": 8,
             "camps": 4,
-            "newest": "2026-09-28T03:23+00:00"
+            "newest": "2026-09-28T06:42+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -704,8 +713,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Ghalibaf mocks US claim Iran doesn’t control Strait of Hormuz",
+                "source": "Mehr News",
+                "title": "Iran’s IRGC Navy captures 2nd US-made Remus 600 UUV in Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -713,46 +722,39 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Gaza death toll rises to 74,018 since October 2023",
+          "headline": "Israeli minister calls for West Bank war, annexation of Lebanon, Gaza areas",
           "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-09-28T04:58+00:00"
+            "outlets": 4,
+            "camps": 2,
+            "newest": "2026-09-28T00:55+00:00"
           },
           "outlet_names": [
             "Jordan Times",
-            "Kan 11",
             "Middle East Eye",
             "SANA",
             "WAFA News"
           ],
           "camps": [
-            "israeli",
             "panarab",
             "levant"
           ],
-          "members": 7,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Gaza death toll rises to 74,018 since October 2023",
+            "source": "Jordan Times",
+            "title": "Israeli minister calls for West Bank war, annexation of Lebanon, Gaza areas",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Middle East Eye",
                 "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Israeli minister calls for West Bank war, annexation of Lebanon, Gaza areas",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -1170,7 +1172,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-28T06:26:23.978633+00:00",
+    "last_success": "2026-09-28T06:57:58.101509+00:00",
     "last_failure": null
   },
   "ok": true
