@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T19:22:16.566478+00:00",
+  "updated": "2026-09-28T19:47:34.086846+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-28T19:19:57.059425+00:00"
+      "headlines_updated": "2026-09-28T19:45:30.284552+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 39,
+        "dropped_stale": 11,
+        "title_snippet": 27,
+        "dropped_no_english": 11,
         "title_translated": 1,
         "title_native": 80,
         "in": 130,
-        "kept": 120
+        "kept": 108
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 38,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -200,6 +201,11 @@
         {
           "source": "WAFA News",
           "title": "Foreign Ministry condemns ballistic missile launches targeting Saudi Arabia",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "بينهم طفلة.. 3 إصابات برصاص طائرات الاحتلال وسط قطاع غزة",
           "reason": "stale (older than 48h)"
         },
         {
@@ -236,23 +242,71 @@
           "source": "TRT World",
           "title": "Trump rejects Iran's proposal to reopen Hormuz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "באיחוד האמירויות התייחסו לביקור נתניהו ולמפגש עם בן זאיד: \"דנו ביחסים בין המדינות\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "האחיות ניתחו במקום הרופאים: משרד הבריאות סגר את בית החולים \"מדיקה\" בתל אביב",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"עשה עלינו אקזיט\": מכר ציוד קרבי ללוחמים - ונעלם עם הכסף",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "وزير الخارجية البريطاني: ندين التطهير العرقي الذي يرتكبه المستوطنون في الضفة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بريطانيا تعتقل 5 أشخاص قرب قاعدة فيرفورد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "مجموعة مسلحة موالية للحكومة الإثيوبية تعلن السيطرة على بلدة ألاماتا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "سلام يلتقي روبيو: لترجمة اتفاق الإطار إلى خطوات عملية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "طهران تنفي التكهنات حول الاعتقالات قرب قاعدة فيرفرورد البريطانية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "قيود الاحتلال خلال الأعياد اليهودية تفاقم أزمة أسواق القدس",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "تقرير مصور |من الضاحية الاستعدادات لإحياء الذكرى السنوية الثانية للسيدين الشهيدين 11:42",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "المندوب الأمريكي بمجلس الأمن يدعو لتقديم الدعم لعمل \"مجلس السلام\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 61,
+      "in": 108,
+      "kept": 59,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Prime Minister Netanyahu reportedly asked UAE President bin Zayed to publicly deny warning him before October…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The UAE remains silent following Netanyahu's visit, with a source noting the meeting was intentionally kept…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -280,35 +334,21 @@
         },
         {
           "source": "Channel 13",
-          "title": "Former official Bennett stated to Channel 13 that Ronen Bar is correct and Netanyahu's actions are…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Channel 13 offers a full program for viewing, covering today's news.",
+          "source": "Al Jazeera",
+          "title": "3 , Trump made the right decision to reject Iran’s offer",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Trump made the right decision to reject Iran’s offer",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Cattle to feed: Why a global meat crisis is looming",
+          "title": "4 , Cattle to feed: Why a global meat crisis is looming",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
@@ -379,13 +419,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The Ministry of Transport in Sana'a reported that 198 commercial ships passed through Bab al-Mandab in five…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Protests are taking place in numerous Moroccan cities against the expansion of relations with Israel.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -489,43 +522,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Britain arrested five people near RAF Fairford.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Salam met with Rubio to translate the framework agreement into practical steps.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Tehran denied speculation linking Iran to the arrests near RAF Fairford.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Lebanon is losing 40% of its tourism revenue.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "Bab al-Mandab is no longer just a passage for ships; developments there impact navigation and oil lines.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "A Bahraini writer reflects on how the absent can be present, particularly concerning Sayyid Hassan Nasrallah.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "WAFA News",
+          "title": "UK reaffirms opposition of attempts to destroy the two-state solution",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -538,22 +543,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Israeli Supreme Court says Israeli government violating ruling on Red Cross visits to Palestinian detainees",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "Gold prices dropped by more than 3% to $4170 per ounce.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Netanyahu's office stated they did not receive an Egyptian warning before October 7.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -660,18 +651,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 43,
       "sizes": [
-        8,
+        9,
         3,
         3,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -735,7 +723,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -943,11 +931,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "President Erdogan says Türkiye will not back down from support for Palestinians",
+          "headline": "Zelenskyy says Russia has begun additional mobilization",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-28T19:13+00:00"
+            "newest": "2026-09-28T19:30+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1051,24 +1039,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Ireland coach: \"Genocide\" is a strong word; we are playing against Israel, not with it",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T18:20+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Germany's ex-Vice Chancellor Habeck accuses Israel of Gaza war crimes",
           "rank_key": {
             "outlets": 1,
@@ -1158,7 +1128,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "US considering sanctions waiver for flights between Iran and Iraq’s Najaf, source says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T16:52+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1176,7 +1164,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-28T19:22:45.029313+00:00",
+    "last_success": "2026-09-28T19:47:35.042509+00:00",
     "last_failure": null
   },
   "ok": true
