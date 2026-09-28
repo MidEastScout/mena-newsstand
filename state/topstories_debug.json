@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T04:59:55.722651+00:00",
+  "updated": "2026-09-28T05:31:38.932338+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,30 +167,26 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-28T04:58:21.661622+00:00"
+      "headlines_updated": "2026-09-28T05:29:46.854547+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 17,
-        "title_snippet": 34,
-        "title_native": 79,
+        "dropped_stale": 16,
+        "title_snippet": 30,
+        "dropped_no_english": 9,
+        "title_native": 75,
         "in": 130,
-        "kept": 113
+        "kept": 105
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 39,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "Macklemore announces 'Free Palestine Tour' after Sheeran split",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "The New Arab",
           "title": "Israeli settlers deploy drones to abuse West Bank's Palestinians",
@@ -204,6 +200,11 @@
         {
           "source": "The New Arab",
           "title": "Settlers torch Palestinian cars amid West Bank raids, demolition",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Macklemore announces 'Free Palestine Tour' after Sheeran split",
           "reason": "stale (older than 48h)"
         },
         {
@@ -267,26 +268,59 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Macklemore announces 'Free Palestine' tour after Ed Sheeran saga",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "אחרי ההודעה החריגה אתמול, ברשות שדות התעופה עדכנו: \"החניונים הציבוריים בנתב\"ג נפתחו\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "מדונה וטיילור סוויפט הן הזוכות הגדולות של טקס פרסי ה-VMA",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ליברמן: \"רע\"ם והרשימה המשותפת לא תומכות בחיסול חמאס, ולכן אין להן מקום בכנסת\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "כמעט 3 שנים אחרי 7 באוקטובר: כמה כוח נשאר לחמאס?",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Moroccan king calls for sanctions over Houthi attacks on Saudi Arabia - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "West Bank closure imposed as hundreds of settlers enter Al-Aqsa Mosque - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Gaza death toll rises to 74,018 amid ongoing Israeli attacks - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Israeli occupation drone strike injures five in Gaza City - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "China emphasizes Middle East sovereignty, opposes unilateral actions at UNGA - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 113,
-      "kept": 68,
+      "in": 105,
+      "kept": 62,
       "dropped": [
         {
           "source": "N12",
           "title": "Serbian President Vučić is stepping down following nearly two years of protests that began after a train…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Over 50 crew members are participating in weeks-long underwater exercises aboard the INS Drakon submarine.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -481,13 +515,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Saudi authorities shift schools in Riyadh to remote learning for week: AFP",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "Saudi Arabia shifts Riyadh schools to remote learning for a week",
           "sec": 0,
@@ -596,18 +623,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 43,
       "sizes": [
-        12,
+        11,
+        4,
         3,
-        3,
-        3,
         2,
         2,
         2,
         2,
-        2,
-        2,
+        1,
         1,
         1,
         1,
@@ -652,11 +677,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iran’s IRGC says seized US underwater drone in Hormuz",
+          "headline": "Oil prices rebound above $105 after Trump rejects Iranian Hormuz peace deal",
           "rank_key": {
             "outlets": 8,
             "camps": 4,
-            "newest": "2026-09-27T18:02+00:00"
+            "newest": "2026-09-28T01:39+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -674,12 +699,12 @@
             "iranian",
             "turkish"
           ],
-          "members": 12,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Iran’s IRGC says seized US underwater drone in Hormuz",
+            "source": "TRT World",
+            "title": "Oil prices rebound above $105 after Trump rejects Iranian Hormuz peace deal",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -694,6 +719,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Al Arabiya",
+                "title": "Iran’s IRGC says seized US underwater drone in Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Al Mayadeen",
                 "title": "Trump has rejected Iran's latest proposal regarding the reopening of the Strait ",
                 "rejected_by": "older than the story's newest wave"
@@ -702,17 +732,58 @@
                 "source": "IRNA",
                 "title": "Iran captures second US underwater drone in Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "Iran’s IRGC Navy captures 2nd US-made Remus 600 UUV in Hormuz",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
+          "headline": "Israeli minister calls for West Bank war, annexation of Lebanon, Gaza areas",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-28T00:55+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "Middle East Eye",
+            "N12",
+            "WAFA News"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Israeli minister calls for West Bank war, annexation of Lebanon, Gaza areas",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "N12",
+                "title": "The IDF confirmed the elimination of Sahar Ze'er, who abducted Noa Argamani and ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Russia hits Ukraine's largest mobile provider, data centres",
           "rank_key": {
             "outlets": 3,
@@ -752,7 +823,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "The Red Crescent announced that its crews dealt with injured individuals, including a minor, due to ",
           "rank_key": {
             "outlets": 2,
@@ -783,128 +854,7 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "The IDF eliminated a Hamas sniper in an attack in the southern Gaza Strip, stating the individual re",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-28T04:05+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The IDF eliminated a Hamas sniper in an attack in the southern Gaza Strip, stating the individual recently…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "The IDF eliminated Sahar Ze'er, the militant who abducted Noa Argamani from the ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "N12",
-                "title": "The IDF confirmed the elimination of Sahar Ze'er, who abducted Noa Argamani and ",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 5,
-          "headline": "Gaza death toll rises to 74,018 since October 2023",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-28T00:55+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Gaza death toll rises to 74,018 since October 2023",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "Gaza death toll rises to 74,018 amid ongoing Israeli attacks",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli authorities impose week-long closure on West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-27T23:42+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli authorities impose week-long closure on West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Arab League warns of dangerous Israeli escalation at al-Aqsa Mosque and the West",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "West Bank closure imposed as hundreds of settlers enter Al-Aqsa Mosque",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "According to The Wall Street Journal, Egyptian intelligence chief Abbas Kamel conveyed a third warni",
           "rank_key": {
             "outlets": 2,
@@ -971,6 +921,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump expects more Iran talks this week: Axios",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T05:21+00:00"
+          },
+          "outlet_names": [
+            "Arab News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "On October 10th, Sami Abu Shahadeh, chairman of Balad, posted a video on TikTok describing the Octob",
           "rank_key": {
             "outlets": 1,
@@ -989,17 +957,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Reports from Lebanon indicate that the Air Force attacked Wadi Zehkin in the southern part of the co",
+          "headline": "Israeli authorities impose week-long closure on West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-28T02:46+00:00"
+            "newest": "2026-09-27T23:42+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "WAFA News"
           ],
           "camps": [
-            "israeli"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1072,24 +1040,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli minister calls for West Bank war, annexation of Lebanon, Gaza areas",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-27T20:30+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1204,7 +1154,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-28T05:00:32.929730+00:00",
+    "last_success": "2026-09-28T05:32:04.803323+00:00",
     "last_failure": null
   },
   "ok": true
