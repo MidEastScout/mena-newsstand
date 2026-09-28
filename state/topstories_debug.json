@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T16:12:11.331578+00:00",
+  "updated": "2026-09-28T16:43:47.305161+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-28T16:09:42.667318+00:00"
+      "headlines_updated": "2026-09-28T16:41:50.560530+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 34,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_translated": 1,
         "title_native": 85,
         "in": 130,
-        "kept": 120
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -236,23 +237,31 @@
           "source": "TRT World",
           "title": "Trump rejects Iran's proposal to reopen Hormuz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רונן בר מאיים על נתניהו בתביעה - ותוקף: \"יש לגלות עדויות על מידע שנמסר לרה\"מ לפני 7.10\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "משרד האוצר: אין לאשר את עסקת מכירת צים במתווה הנוכחי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "صنعاء تحيي الذكرى السنوية الثانية لاستشهاد السيدين حسن نصر الله وهاشم صفي الدين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 69,
+      "in": 117,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "According to AP sources, Prime Minister Netanyahu asked the President of the Emirates, bin Zayed, to publicly…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Indirect discussions between the United States and Iran, mediated by Qatar and Pakistan, are reportedly set…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -291,6 +300,13 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "6 , Cattle to feed: Why a global meat crisis is looming",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
@@ -335,6 +351,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "The New Arab",
+          "title": "Morocco protests erupt over deepening ties with Israel",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "Buildings near RAF Fairford in Britain were evacuated, and bomb disposal experts were called to the scene.",
           "sec": 0,
@@ -351,6 +374,13 @@
         {
           "source": "Al Mayadeen",
           "title": "Global freshwater reserves continue to decline.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Iranian embassy rejects speculation linking Iran to RAF Fairford arrests",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -489,6 +519,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Israeli Supreme Court says Israeli government violating ruling on Red Cross visits to Palestinian detainees",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "Netanyahu's office stated they received no Egyptian warning before October 7th.",
           "sec": 0,
@@ -546,6 +583,20 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Pope Leo calls on Europe to defy decline in global civility",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Moscow seizes control of German retailer Metro's Russian assets",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "EU security protocol must complement NATO, not duplicate it: Kallas",
           "sec": 0,
           "off": 0,
@@ -554,13 +605,6 @@
         {
           "source": "Daily Sabah",
           "title": "Nvidia announces record $150B share buyback",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Erdoğan, Subianto discuss expanding Türkiye-Indonesia cooperation",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -604,22 +648,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 42,
       "sizes": [
-        11,
+        10,
+        4,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -681,7 +720,7 @@
             "iranian",
             "turkish"
           ],
-          "members": 11,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -701,11 +740,6 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Ghalibaf mocks US claim Iran doesn’t control Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Mehr News",
                 "title": "Strait of Hormuz now IRGC's hunting ground for American UUVs",
                 "rejected_by": "older than the story's newest wave"
@@ -713,6 +747,11 @@
               {
                 "source": "Mehr News",
                 "title": "Iran controls both sides of Strait of Hormuz: Top army cmdr.",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Ghalibaf mocks US claim Iran doesn’t control Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -735,7 +774,7 @@
             "iranian",
             "levant"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -752,6 +791,11 @@
               {
                 "source": "L'Orient Today",
                 "title": "IN THE PRESS Israeli officer reveals details of operation that killed Hassan Nas",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "FOCUS Hezbollah struggles to find a way forward, while its weapons remain its on",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -807,43 +851,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Strikes hit Sudan cities as army chief defiant after US visa snub",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-28T15:05+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Strikes hit Sudan cities as army chief defiant after US visa snub",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Strikes hit Sudan as army chief defiant after US visa snub",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Trump anticipates a new round of negotiations with Iran this week.",
           "rank_key": {
             "outlets": 2,
@@ -874,7 +881,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Smotrich calls for West Bank war, annexation of Lebanon, Gaza",
           "rank_key": {
             "outlets": 2,
@@ -966,7 +973,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Why South Korea is demanding an apology from Ukraine over North Korean PoWs",
+                "title": "3 , Why South Korea is demanding an apology from Ukraine over North Korean PoWs",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1059,7 +1066,7 @@
           "camps": [
             "israeli"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1191,24 +1198,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Mediators reportedly continue work with Iran, US toward likely deal",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-28T13:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Ukraine has shelled Russian oil and defense facilities, with Moscow vowing continued strikes.",
           "rank_key": {
             "outlets": 1,
@@ -1262,7 +1251,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The mother of a soldier who fell in Gaza announced her intention to enter politics, stating she can ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-28T11:05+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1280,7 +1287,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-28T16:12:26.651752+00:00",
+    "last_success": "2026-09-28T16:44:17.254715+00:00",
     "last_failure": null
   },
   "ok": true
