@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29T11:19:31.608889+00:00",
+  "updated": "2026-09-29T11:51:29.198770+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-29T11:17:17.691804+00:00"
+      "headlines_updated": "2026-09-29T11:49:20.011111+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 33,
+        "title_snippet": 31,
         "title_translated": 1,
         "title_native": 86,
+        "dropped_no_english": 2,
         "in": 130,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -236,12 +237,22 @@
           "source": "TRT World",
           "title": "Trump rejects Iran's proposal to reopen Hormuz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "صنعاء: جرائم النظام السعودي في اليمن تكشف نواياه التخريبية ولن تكسبه إنجازاً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الاعلام الحكومي : 5,147 خرقاً لوقف إطلاق النار و255 بنائية آيلة للسقوط",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 72,
+      "in": 118,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -280,14 +291,21 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , Can Pakistan’s Sohail Afridi win freedom for ex-PM Imran Khan?",
+          "title": "3 , Why has a Cornell rape investigation been reopened?",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "4 , Trump made the right decision to reject Iran’s offer",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Trump made the right decision to reject Iran’s offer",
+          "title": "5 , Can Pakistan’s Sohail Afridi win freedom for ex-PM Imran Khan?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -349,13 +367,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The article discusses the enemy retreating to the Arabian Sea.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "FM Araghchi to meet Qatari mediator in New York: Source",
           "sec": 0,
@@ -371,7 +382,7 @@
         },
         {
           "source": "Iran International",
-          "title": "4 Iran’s shrinking air links raise costs, strain regional ties",
+          "title": "3 Iran’s shrinking air links raise costs, strain regional ties",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -468,6 +479,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Under the pretext of Jewish holidays: Israel closes the Ibrahimi Mosque for three days",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "The article questions whether European boycotts against Israel will become a reality.",
           "sec": 0,
@@ -477,6 +495,13 @@
         {
           "source": "Falastin al-Youm",
           "title": "Gold is at its lowest level, and oil prices rose on Tuesday, September 29, 2026.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria freezes $104 million in contractors’ assets amid oil probe",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -497,21 +522,35 @@
         },
         {
           "source": "Gulf News",
-          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "Jackie Chan is alive: Fake ‘1954-2026’ death posts go viral worldwide",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Gulf News",
+          "title": "India-UAE Diwali, Dussehra flights: Fares from Dh945 as demand picks up",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Anadolu Agency",
-          "title": "INTERVIEW – As Merz loses ground, could Germany see a 'chancellor swap'?",
+          "title": "Rights groups warn Spain’s planned Ceuta deportation decree threatens asylum protections",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Spanish government agrees on eviction protections until 2030, curbs on property purchases by investment funds",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "6 EU member states call for cuts to bloc’s budget: Report",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -583,9 +622,8 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 45,
       "sizes": [
-        7,
         5,
         5,
         3,
@@ -595,7 +633,7 @@
         3,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -642,13 +680,12 @@
           "selected_rank": 1,
           "headline": "US-Iran war: What UAE residents need to know tonight (Sep 28, 2026) as Hormuz shipping stalls and oi",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
             "newest": "2026-09-28T14:40+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Gulf News",
             "IRNA",
             "Iran International"
@@ -658,7 +695,7 @@
             "panarab",
             "iranian"
           ],
-          "members": 7,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -673,11 +710,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "4 , Iran touts Hormuz attacks as oil flows increase despite tensions",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Arabiya",
                 "title": "Iran’s IRGC says seized US underwater drone in Hormuz",
                 "rejected_by": "older than the story's newest wave"
@@ -689,7 +721,12 @@
               },
               {
                 "source": "Iran International",
-                "title": "ANALYSIS Why Trump said no to Iran’s Hormuz proposal",
+                "title": "1 Hormuz oil flows rise despite Iran threats against shipping",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "UAE outmaneuvers Iran’s Hormuz strategy, state TV analysts say",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -697,57 +734,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "3 Palestinians killed in Israeli strike, gunfire in Gaza despite ceasefire",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-09-29T11:03+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Middle East Eye",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "3 Palestinians killed in Israeli strike, gunfire in Gaza despite ceasefire",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Palestinian woman killed, several others injured in Israeli airstrike on house s",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Two Palestinians killed by Israeli forces’ fire in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Large numbers of settlers stormed into Bituinya and the Jarut road west of Ramallah.",
           "rank_key": {
             "outlets": 4,
@@ -802,40 +788,7 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Trump refutes sanctions relief claims as Iran voices will to talk",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-29T08:45+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Trump refutes sanctions relief claims as Iran voices will to talk",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
+          "selected_rank": 3,
           "headline": "Trump expects more Iran talks this week: Axios",
           "rank_key": {
             "outlets": 3,
@@ -879,7 +832,51 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
+          "headline": "Three Palestinians killed others wounded in Israeli attacks on Gaza",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-29T11:03+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye",
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Three Palestinians killed others wounded in Israeli attacks on Gaza",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Palestinian woman killed, several others injured in Israeli airstrike on house s",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Trump open to Iran sanctions relief for ‘concrete progress’ on nuclear issues, US official says",
           "rank_key": {
             "outlets": 3,
@@ -920,6 +917,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump denies he offered Iran sanctions relief, release of frozen funds",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-29T05:36+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Trump denies he offered Iran sanctions relief, release of frozen funds",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1067,11 +1095,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "EU pledges €20 million for development in West Bank’s Area C",
+          "headline": "Syrian foreign minister receives EU foreign policy chief Kallas in Damascus",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-29T11:11+00:00"
+            "newest": "2026-09-29T11:35+00:00"
           },
           "outlet_names": [
             "SANA"
@@ -1114,24 +1142,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "13 injured in Syria road accidents; Civil Defense responds to 52 fires",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-29T10:59+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1229,6 +1239,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Türkiye hosts Palestine Day program with Gaza Tribunal focus",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-29T09:41+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Letter to American people goes beyond media propaganda: IRGC spokesperson",
           "rank_key": {
             "outlets": 1,
@@ -1265,24 +1293,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli occupiers attack 3 West Bank villages, torch homes, vehicles",
+          "headline": "Iran reiterates full sovereignty over three Persian Gulf islands, rejects UAE’s outlandish claims",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-29T07:46+00:00"
+            "newest": "2026-09-29T07:25+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "IRNA"
           ],
           "camps": [
-            "turkish"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1300,7 +1328,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-29T11:19:50.193417+00:00",
+    "last_success": "2026-09-29T11:52:05.591607+00:00",
     "last_failure": null
   },
   "ok": true
