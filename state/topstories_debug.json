@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29T16:32:44.085299+00:00",
+  "updated": "2026-09-29T17:04:41.399284+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-29T16:30:53.794638+00:00"
+      "headlines_updated": "2026-09-29T17:02:39.556854+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 34,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_translated": 1,
         "title_native": 88,
         "in": 130,
-        "kept": 123
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -221,12 +222,22 @@
           "source": "TRT World",
           "title": "Iran awaits formal US response on Hormuz ceasefire plan, Araghchi says",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "אחיות מנתחות ומרדימים ללא הסמכה: פרטים נוספים על המחדלים שהובילו לסגירת \"מדיקה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "سريع: الطيران السعودي شن 26 غارة على تعز والجوف ومأرب وذمار وصعدة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 73,
+      "in": 121,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
@@ -245,13 +256,6 @@
         {
           "source": "Kan 11",
           "title": "A 19-year-old motorcyclist died after skidding and crashing near Eilat.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The Prime Minister is scheduled to meet with the Minister of Defense and security officials before a meeting…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -313,13 +317,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "3 , Why has a Cornell rape investigation been reopened?",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Macklemore calls for a ‘free Palestine’ during Ed Sheeran shows, prompting praise and backlash",
           "sec": 0,
@@ -342,6 +339,13 @@
         },
         {
           "source": "Al Arabiya",
+          "title": "MBS, UAE vice president discuss regional developments in Riyadh",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
           "title": "Italy completes troop withdrawal from Iraq",
           "sec": 0,
           "off": 0,
@@ -356,14 +360,14 @@
         },
         {
           "source": "The New Arab",
-          "title": "How Netanyahu's lies at the UN lost the world but won Israel",
+          "title": "Is Syria's ancient Jabal Kawkab volcano waking up?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "The New Arab",
-          "title": "Gaza’s child amputees find hope and support at Al-Bait Village",
+          "title": "How Netanyahu's lies at the UN lost the world but won Israel",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -376,8 +380,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Washington is imposing visa restrictions on officials from four Latin American countries.",
+          "source": "IRNA",
+          "title": "Russia’s Grand Mufti praises Pezeshkian’s UN Speech",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -530,13 +534,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Gastech 2026: LNG's new phase as demand, security collide",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Hürriyet Daily News",
           "title": "PHOTO Best restaurants in Istanbul, ranked",
           "sec": 0,
@@ -570,13 +567,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "EU Commission unveils new measures to tackle mass arrivals at external borders",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
@@ -584,9 +574,9 @@
       "method": "heuristic",
       "clusters": 52,
       "sizes": [
-        6,
         5,
-        3,
+        4,
+        4,
         3,
         3,
         3,
@@ -594,8 +584,8 @@
         2,
         2,
         2,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -645,15 +635,13 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Ship hit in Strait of Hormuz, sparking fire: Maritime agency",
+          "headline": "Vessel struck by unknown projectile in Strait of Hormuz, UKMTO says",
           "rank_key": {
-            "outlets": 6,
-            "camps": 5,
+            "outlets": 4,
+            "camps": 4,
             "newest": "2026-09-29T13:48+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
             "Arab News",
             "Iran International",
             "SANA",
@@ -661,22 +649,21 @@
           ],
           "camps": [
             "gulf",
-            "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Ship hit in Strait of Hormuz, sparking fire: Maritime agency",
+            "source": "SANA",
+            "title": "Vessel struck by unknown projectile in Strait of Hormuz, UKMTO says",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -788,6 +775,55 @@
         },
         {
           "selected_rank": 4,
+          "headline": "A homeowner whose house in Benjamin was set on fire stated that settlers attacked them, with one thr",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-09-29T12:02+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "N12",
+            "The New Arab"
+          ],
+          "camps": [
+            "israeli",
+            "panarab"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "A homeowner whose house in Benjamin was set on fire stated that settlers attacked them, with one threatening…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "5 , US-Iran talks in New York: What’s the latest?",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Israel revokes diplomatic status of Dutch diplomats in Ramallah",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "Smotrich calls for West Bank war, annexation of Lebanon, Gaza",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Gaza: Two killed, others injured by Israeli shelling and gunfire in Deir al-Balah",
           "rank_key": {
             "outlets": 3,
@@ -836,7 +872,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Qatar continues US-Iran shuttle diplomacy to end Middle east war",
           "rank_key": {
             "outlets": 2,
@@ -875,6 +911,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "Russian military Tu-95 crashes in Far East, killing six",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-29T14:41+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Russian military Tu-95 crashes in Far East, killing six",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Syria urges EU to pressure Israel to halt attacks",
           "rank_key": {
             "outlets": 2,
@@ -907,42 +974,37 @@
         },
         {
           "selected_rank": null,
-          "headline": "A homeowner whose house in Benjamin was set on fire stated that settlers attacked them, with one thr",
+          "headline": "Ukrainian forces liberated 176 square kilometers and captured over 250 Russian soldiers.",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-29T12:02+00:00"
+            "newest": "2026-09-29T13:59+00:00"
           },
           "outlet_names": [
-            "N12",
-            "The New Arab"
+            "Al Jazeera",
+            "N12"
           ],
           "camps": [
             "israeli",
             "panarab"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "N12",
-            "title": "A homeowner whose house in Benjamin was set on fire stated that settlers attacked them, with one threatening…",
+            "title": "Ukrainian forces liberated 176 square kilometers and captured over 250 Russian soldiers.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "names 1 of the story's dominant entities (ukraine)",
               "neutral-by-default outlet",
               "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
-                "source": "The New Arab",
-                "title": "Israel revokes diplomatic status of Dutch diplomats in Ramallah",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "The New Arab",
-                "title": "Smotrich calls for West Bank war, annexation of Lebanon, Gaza",
+                "source": "Al Jazeera",
+                "title": "4 , Why has Putin added 15,000 new soldiers to Russia’s army?",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1047,17 +1109,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "US bases in region suffered serious damage: Iran Army spokesperson",
+          "headline": "Kazakh, German presidents discuss bilateral ties during talks in Berlin",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-29T16:24+00:00"
+            "newest": "2026-09-29T16:45+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Anadolu Agency"
           ],
           "camps": [
-            "iranian"
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "German defense firm says AI jet can beat human pilots",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-29T16:18+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1094,42 +1174,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Ukrainian forces liberated 176 square kilometers and captured over 250 Russian soldiers.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-29T13:59+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Russian military plane crashes in far east, killing six",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-29T13:32+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1262,7 +1306,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "An Israeli war is ongoing against those remaining in Al-Aroub and refusing to leave.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-29T10:31+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1280,7 +1342,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-29T16:33:00.153471+00:00",
+    "last_success": "2026-09-29T17:05:10.336947+00:00",
     "last_failure": null
   },
   "ok": true
