@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29T13:59:13.476981+00:00",
+  "updated": "2026-09-29T14:31:03.305886+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-29T13:57:19.282564+00:00"
+      "headlines_updated": "2026-09-29T14:29:17.633844+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 34,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_translated": 1,
         "title_native": 88,
         "in": 130,
-        "kept": 123
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -221,12 +222,22 @@
           "source": "TRT World",
           "title": "Trump rejects Iran's proposal to reopen Hormuz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דובר צה\"ל על המהומות בג'אלוד: אסור לאפשר לאירועים כאלו להפוך לנורמה, יש לגדוע את התופעה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מאות חיילים נפלו בשבי, אוקראינה ייצבה את החזית: מכה קשה לרוסיה בשדה הקרב",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 80,
+      "in": 121,
+      "kept": 79,
       "dropped": [
         {
           "source": "N12",
@@ -236,8 +247,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "A report in the French media outlet Mediapart revealed antisemitic remarks from the past of far-right leader…",
+          "source": "Channel 13",
+          "title": "Video footage shows young Haredi men attacking an elderly Arab man in Jerusalem.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -257,22 +268,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Video footage shows young Haredi men attacking an elderly Arab man in Jerusalem.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
-          "title": "3 , Why has a Cornell rape investigation been reopened?",
+          "title": "2 , Why has a Cornell rape investigation been reopened?",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Trump made the right decision to reject Iran’s offer",
+          "title": "5 , Can Pakistan’s Sohail Afridi win freedom for ex-PM Imran Khan?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -369,6 +373,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Jordan Times",
+          "title": "Bangkok floods send thousands into shelters after days of rain",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
           "source": "L'Orient Today",
           "title": "FOCUS IMF deal: Paris pushes, Beirut acts, BDL still resists",
           "sec": 0,
@@ -432,6 +443,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Colonists prevent Palestinian farmers from harvesting olives in west of Salfit",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "SANA",
           "title": "Syria allows non-exclusive agencies for foreign vehicle and tire firms",
           "sec": 0,
@@ -439,8 +457,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "UAE president discussed bilateral relations with Israel's Netanyahu, state news agency says",
+          "source": "Gulf News",
+          "title": "Starship successfully deploys 26 Starlink V3 satellites, to pave way for possible human 'inter-planetary' missions",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -455,20 +473,6 @@
         {
           "source": "Gulf News",
           "title": "Dubai community malls must offer more than convenience, says Shamal CEO",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Jackie Chan is alive: Fake ‘1954-2026’ death posts go viral worldwide",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "EU economic sentiment, employment expectations decline in September",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -533,13 +537,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 50,
       "sizes": [
         8,
         5,
         4,
-        3,
-        3,
+        4,
         3,
         3,
         3,
@@ -547,9 +550,8 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -657,6 +659,52 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Qatar confirms relaying messages between US, Iran to end war",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-09-29T14:03+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Falastin al-Youm",
+            "IRNA",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Qatar confirms relaying messages between US, Iran to end war",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (qatar)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "FM Araghchi to meet Qatari mediator in New York: Source",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "Lebanon presses US for Israeli withdrawal; Qatar seeks to revive US-Iran talks: ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "A woman died from injuries sustained by occupation fire in Mawasi Rafah.",
           "rank_key": {
             "outlets": 4,
@@ -707,7 +755,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Trump expects more Iran talks this week: Axios",
           "rank_key": {
             "outlets": 3,
@@ -745,50 +793,6 @@
               {
                 "source": "Falastin al-Youm",
                 "title": "Trump expects a new round of negotiations with Iran this week.",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Qatar rejects statements by \"Israel\" regarding the annexation of areas in Lebanon and the Gaza Strip",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-09-29T09:52+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "IRNA",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Qatar rejects statements by \"Israel\" regarding the annexation of areas in Lebanon and the Gaza Strip.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (qatar)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "IRNA",
-                "title": "FM Araghchi to meet Qatari mediator in New York: Source",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "Lebanon presses US for Israeli withdrawal; Qatar seeks to revive US-Iran talks: ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -911,42 +915,37 @@
         },
         {
           "selected_rank": null,
-          "headline": "The homeowner, whose house in Benjamin was set ablaze, recounted that settlers attacked them, with o",
+          "headline": "FM, UN envoy discuss latest developments in Yemen",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-09-29T12:02+00:00"
+            "newest": "2026-09-29T11:08+00:00"
           },
           "outlet_names": [
-            "Jordan Times",
-            "N12"
+            "Al Jazeera",
+            "Egypt Independent"
           ],
           "camps": [
-            "israeli",
+            "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "N12",
-            "title": "The homeowner, whose house in Benjamin was set ablaze, recounted that settlers attacked them, with one…",
-            "title_source": "snippet",
+            "source": "Egypt Independent",
+            "title": "FM, UN envoy discuss latest developments in Yemen",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Jordan Times",
-                "title": "Jordan condemns storming of Aqsa Mosque by Israeli far-right minister, settlers",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Jordan condemns ‘repeated’ Israeli settlers’ incursions into Al Aqsa Mosque",
+                "source": "Al Jazeera",
+                "title": "4 , Hormuz and Yemen: Iran offers de-escalation at a price others will pay",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1009,6 +1008,36 @@
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Tehran dismisses UAE claims over trio islands in Persian Gulf",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-09-29T07:22+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Tehran dismisses UAE claims over trio islands in Persian Gulf",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": []
@@ -1086,11 +1115,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Lebanese army gets 47 Humvees, 5 trucks under US assistance programs",
+          "headline": "Rosatom proposes new 1,000-megawatt nuclear power unit in Armenia",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-29T13:55+00:00"
+            "newest": "2026-09-29T14:15+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1104,17 +1133,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "Defense Minister Katz announced that the IDF eliminated the commander of the northern Gaza Strip and",
+          "headline": "Three stories of investment projects in the south were destroyed by the occupation.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-29T13:31+00:00"
+            "newest": "2026-09-29T13:59+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Al-Akhbar"
           ],
           "camps": [
-            "israeli"
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US completes Iraq pull out after 2 decades, leaving void for Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-29T13:23+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1140,17 +1187,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Türkiye highlights high readiness in Azerbaijan-hosted military exercise",
+          "headline": "The homeowner, whose house in Benjamin was set ablaze, recounted that settlers attacked them, with o",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-29T12:42+00:00"
+            "newest": "2026-09-29T12:02+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "N12"
           ],
           "camps": [
-            "turkish"
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1169,24 +1216,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "FM, UN envoy discuss latest developments in Yemen",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-29T11:08+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1301,7 +1330,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1319,7 +1348,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-29T13:59:35.412069+00:00",
+    "last_success": "2026-09-29T14:31:31.411874+00:00",
     "last_failure": null
   },
   "ok": true
