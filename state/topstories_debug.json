@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T00:25:45.089889+00:00",
+  "updated": "2026-09-30T00:56:58.795465+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-09-30T00:23:55.737019+00:00"
+      "headlines_updated": "2026-09-30T00:55:03.380772+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 16,
-        "title_snippet": 34,
+        "title_snippet": 33,
+        "dropped_no_english": 1,
         "title_translated": 1,
         "title_native": 79,
         "in": 130,
-        "kept": 114
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -205,11 +206,6 @@
         {
           "source": "WAFA News",
           "title": "One Palestinian killed and others injured in Israeli drone strike targeting a civilian vehicle southwest of Gaza",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "WAFA News",
-          "title": "Israeli forces raid refugee camp, break into house near Tubas",
           "reason": "stale (older than 48h)"
         },
         {
@@ -253,6 +249,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "Trump warns of possible new Iran strikes; Araghchi vows ‘doomsday war’ — but remains open to diplomacy",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "Türkiye slams storming of Al-Aqsa Mosque by Israeli extremist groups",
           "reason": "stale (older than 48h)"
@@ -266,12 +267,17 @@
           "source": "TRT World",
           "title": "US dismisses Iran's 'cynical' proposal as Trump expects more talks",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: פיצוצים עזים נשמעים בקייב",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 59,
+      "in": 113,
+      "kept": 58,
       "dropped": [
         {
           "source": "Kan 11",
@@ -360,13 +366,6 @@
         {
           "source": "Al Arabiya",
           "title": "Saudi Crown Prince MBS Chairs Cabinet Meeting in Riyadh",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Morocco’s king appoints Fatima Ezzahra El Mansouri first woman PM",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -540,6 +539,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Committee on Exercise of Inalienable Rights of Palestinian People meets with UN Secretary-General Guterres",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "Despite disagreements between Washington and Beijing, Trump offered to sell arms to China.",
           "sec": 0,
@@ -576,7 +582,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "Al-Futtaim programme gives Emirati students from Grade 9 an early start on private-sector careers",
+          "title": "Starship successfully deploys 26 Starlink V3 satellites, to pave way for possible human 'inter-planetary' missions",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -590,7 +596,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Morocco's king appoints El Mansouri as country's first female prime minister",
+          "title": "Argentina's ex-President Kirchner asks UN to review corruption conviction",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -671,7 +677,7 @@
         2,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -719,6 +725,53 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Iraq begins gasoline import via Syria to bypass Hormuz closure",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 4,
+            "newest": "2026-09-29T18:27+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Iran International",
+            "SANA",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Iraq begins gasoline import via Syria to bypass Hormuz closure",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "UAE outmaneuvers Iran’s Hormuz strategy, state TV analysts say",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Saudi FM, US counterpart discuss maritime security through Hormuz and Bab Al-Man",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Is uranium bringing Washington back to Niger?",
           "rank_key": {
             "outlets": 3,
@@ -751,52 +804,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Trump says Iran war will wrap up ‘very soon’ but shares no details",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Vessel struck by unknown projectile in Strait of Hormuz, UKMTO says",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-09-29T13:48+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Iran International",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "iranian",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Vessel struck by unknown projectile in Strait of Hormuz, UKMTO says",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "UAE outmaneuvers Iran’s Hormuz strategy, state TV analysts say",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Saudi FM, US counterpart discuss maritime security through Hormuz and Bab Al-Man",
+                "title": "1 , Trump says Iran war will wrap up ‘very soon’ but shares no details",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -862,7 +870,7 @@
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -960,44 +968,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "FM, UN envoy discuss latest developments in Yemen",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-29T11:08+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Egypt Independent"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "FM, UN envoy discuss latest developments in Yemen",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Hormuz and Yemen: Iran offers de-escalation at a price others will pay",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "ANALYSIS Hezbollah disarmament: Washington pushes for major overhaul",
           "rank_key": {
             "outlets": 2,
@@ -1029,11 +999,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli opposition leader accuses Netanyahu of stoking security fears ahead of election",
+          "headline": "US senator urges Pentagon chief to review security of military supply chains after F-35 parts divers",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-30T00:12+00:00"
+            "newest": "2026-09-30T00:41+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1047,11 +1017,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Thousands of Ultra-Orthodox Jews protest in Jerusalem against military draft",
+          "headline": "US senator calls for State Department report on West Bank violence",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-29T23:55+00:00"
+            "newest": "2026-09-30T00:28+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1137,24 +1107,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The military reported that the alarms in Nahal Oz were triggered by a false identification.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-29T19:33+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Thousands participated in a large march in Jerusalem in support of draft evaders, who were reportedl",
           "rank_key": {
             "outlets": 1,
@@ -1209,6 +1161,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iran ready for preemptive strikes if threatened",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-09-29T14:20+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Saudi Arabia reaffirms support for Sudan’s stability, sovereignty",
           "rank_key": {
             "outlets": 1,
@@ -1244,7 +1214,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1262,7 +1232,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-09-30T00:25:58.321957+00:00",
+    "last_success": "2026-09-30T00:57:25.700090+00:00",
     "last_failure": null
   },
   "ok": true
