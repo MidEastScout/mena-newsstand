@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T03:51:35.051734+00:00",
+  "updated": "2026-10-01T04:22:23.437237+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-01T03:49:55.501377+00:00"
+      "headlines_updated": "2026-10-01T04:20:45.377715+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 2,
-        "title_snippet": 33,
+        "title_snippet": 29,
+        "dropped_no_english": 3,
+        "title_translated": 1,
         "title_native": 91,
         "in": 126,
-        "kept": 124
+        "kept": 121
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 32,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -195,12 +197,27 @@
           "source": "Al-Akhbar",
           "title": "الخطوط الجوية العراقية تستأنف رحلاتها بين النجف والمطارات الإيرانية",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צה\"ל חיסל מפקד מחלקה של חמאס בעיר עזה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "מסתמן: חברות התעופה הישראליות יחלו בחילוץ נוסעים ישראלים התקועים בדובאי כבר מחר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "דיווח: סוכני בינה מלאכותית ניסו לפרוץ לאתר ממשלתי בקנדה",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 59,
+      "in": 121,
+      "kept": 58,
       "dropped": [
         {
           "source": "Kan 11",
@@ -224,13 +241,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Kan 11",
-          "title": "A U.S.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "N12",
           "title": "The rescue flight carrying Israelis from Saudi Arabia has landed in Israel.",
           "sec": 0,
@@ -243,13 +253,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "N12",
-          "title": "The individuals who neutralized the co-pilot recounted the terrifying moments on the flight.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
@@ -274,14 +277,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "The full episode of 'HaYom Ha'Boker' from September 30, 2026, is available for direct viewing.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The full main edition from September 30, 2026, is available for direct viewing.",
+          "title": "The full episode of 'HaYom Ha'Boker' from September 30, 2026, is available for direct viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -306,6 +309,13 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "4 , Christa Pike execution fails after Tennessee administers lethal injection",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
@@ -540,13 +550,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Iran leadership 'fractures': Hardline MP jailed over Ghalibaf article",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "flydubai suspends flights to Israel after FZ1073 'security incident'",
           "sec": 0,
           "off": 0,
@@ -567,6 +570,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Gulf News",
+          "title": "WhatsApp gives parents new controls over teens — but they can't read their messages",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Anadolu Agency",
           "title": "US says 4 Americans were aboard flydubai flight that diverted to Saudi Arabia",
           "sec": 0,
@@ -578,13 +588,6 @@
           "title": "Flydubai suspends Israel flights after incident on Dubai-Tel Aviv route",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "AI agents attempted to hack US and Canadian government websites, researchers say",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -669,7 +672,7 @@
         3,
         3,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -937,44 +940,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Qatar PM slams Israel strike on Doha amid mediation efforts",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-30T03:52+00:00"
-          },
-          "outlet_names": [
-            "L'Orient Today",
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "Qatar PM slams Israel strike on Doha amid mediation efforts",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (qatar)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "8 p.m. recap: Israel says Flydubai flight incident a 'terrorist attack'; Doha ca",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Over 20 people were injured in a fire that erupted at a nursing home in Bnei Brak, with two individu",
           "rank_key": {
             "outlets": 2,
@@ -1002,6 +967,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "South Korea's president vows to pursue practical ways to ease tensions with North Korea",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T04:02+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1034,24 +1017,6 @@
           ],
           "camps": [
             "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A senior American official confirmed that the Secretary of State demanded the Iranian Foreign Minist",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T01:23+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1220,7 +1185,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1238,7 +1203,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-01T03:51:36.006988+00:00",
+    "last_success": "2026-10-01T04:22:24.384436+00:00",
     "last_failure": null
   },
   "ok": true
