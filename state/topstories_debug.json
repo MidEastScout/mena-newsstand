@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T00:28:29.329355+00:00",
+  "updated": "2026-10-01T00:40:49.160172+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-01T00:26:58.529329+00:00"
+      "headlines_updated": "2026-10-01T00:39:01.886921+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 32,
+        "title_snippet": 31,
         "title_translated": 1,
         "title_native": 89,
+        "dropped_no_english": 1,
         "in": 126,
-        "kept": 122
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -206,12 +207,17 @@
           "source": "Al-Akhbar",
           "title": "الخطوط الجوية العراقية تستأنف رحلاتها بين النجف والمطارات الإيرانية",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الاحتلال يصدر 52 أمر اعتقال اداري بحق أسرى فلسطينيين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 62,
+      "in": 121,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
@@ -278,14 +284,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , What happened on diverted Flydubai flight from Dubai to Tel Aviv?",
+          "title": "4 , What happened on diverted Flydubai flight from Dubai to Tel Aviv?",
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Christa Pike seeks firing squad, not lethal injection: Inside US executions",
+          "title": "5 , Christa Pike seeks firing squad, not lethal injection: Inside US executions",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -383,14 +389,14 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Jordan holds 60 days of petroleum product stocks — Energy Ministry",
+          "title": "King receives call from Netherlands monarch",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "King receives call from Netherlands monarch",
+          "title": "Crown Prince meets with leaders of tech companies in New York",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -466,13 +472,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The UAE's General Civil Aviation Authority has urged against preempting the investigation results into the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Syria allows non-exclusive agencies for foreign vehicle and tire firms",
           "sec": 0,
@@ -516,6 +515,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "WhatsApp gives parents new controls over teens — but they can't read their messages",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "Abu Dhabi to begin work on 2031 maritime plan from 2027, eyes top-20 ranking",
           "sec": 0,
           "off": 0,
@@ -531,20 +537,6 @@
         {
           "source": "Gulf News",
           "title": "Hazza Zaal’s boutique vision for nature-led urban living in Dubai",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Altercation on flight deck caused flydubai incident, says airline",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Etihad Rail officially launches passenger services between Abu Dhabi and Dubai",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -637,7 +629,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 45,
       "sizes": [
         6,
         5,
@@ -647,7 +639,9 @@
         2,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -905,44 +899,6 @@
               {
                 "source": "SANA",
                 "title": "Vessel struck by unknown projectile in Strait of Hormuz, UKMTO says",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Russia warns UK and NATO of nuclear response over Kaliningrad blockade",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-09-29T12:00+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Russia warns UK and NATO of nuclear response over Kaliningrad blockade",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (nato, nuclear)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Russia warns NATO of possible nuclear response if Kaliningrad is cut off",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1208,24 +1164,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "UNICEF reports that 261 children have been martyred due to the occupation's aggression on Lebanon.",
+          "headline": "GCAA confirms ‘security incident’ on flydubai flight, crew members injured",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-30T17:05+00:00"
+            "newest": "2026-09-30T17:41+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm"
+            "Gulf News"
           ],
           "camps": [
-            "levant"
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1243,7 +1199,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-01T00:28:49.785405+00:00",
+    "last_success": "2026-10-01T00:41:02.921749+00:00",
     "last_failure": null
   },
   "ok": true
