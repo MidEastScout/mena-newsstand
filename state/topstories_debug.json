@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T07:36:07.037247+00:00",
+  "updated": "2026-10-01T08:07:32.300939+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-01T07:34:28.495715+00:00"
+      "headlines_updated": "2026-10-01T08:05:51.439669+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 3,
-        "title_snippet": 32,
+        "dropped_no_english": 10,
+        "title_snippet": 21,
         "title_translated": 1,
-        "title_native": 90,
+        "title_native": 91,
         "in": 126,
-        "kept": 123
+        "kept": 113
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 31,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Al Mayadeen",
+          "title": "عبد الناصر ونصر الله.. قائدان عربيان ارتبطا بالمقاومة وتحرير الأرض",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Al Mayadeen",
           "title": "الخطوط العراقية تستأنف الرحلات الجوية بين النجف والمطارات الإيرانية",
@@ -198,15 +204,60 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Iraq says US-led coalition mission has ended",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "בית המשפט העליון התיר לפרסום: קצין המודיעין של אוגדת עזה ב-7 באוקטובר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "אחרי מאבק משפטי: בית המשפט העליון אישר לפרסם את שמו של קמ\"ן אוגדת עזה ב-7 באוקטובר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"פליי דובאי\" הודיעה על הקפאת הטיסות לישראל | חדשות 13",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחרי שעות דרמה בשחקים: טיסת החילוץ מסעודיה נחתה בישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המקור, עונה 25, פרק 9: הקב\"ט בשירות נתניהו לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "טראמפ על איראן: \"אולי נפציץ אותם ואז נסגור עסקה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "على بالي | أسعد أبو خليل | 30 أيلول 2026 | الأخبار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "عبد الناصر ونصر الله... فلسطين في الساعات الأخيرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "اليونان تتولى رئاسة مجلس الأمن خلفاً لفرنسا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مداهمات واقتحامات واعتداءات للمستوطنين في الضفة المحتلة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 52,
+      "in": 113,
+      "kept": 50,
       "dropped": [
         {
           "source": "Kan 11",
@@ -225,13 +276,6 @@
         {
           "source": "Kan 11",
           "title": "Flydubai has officially announced a suspension of flights to and from Israel for the duration of the ongoing…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The United Arab Emirates will establish an investigative team to examine the flight incidents, determining if…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -258,36 +302,8 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "N12",
-          "title": "Italy's left-wing parties are facing difficulties in voting on an anti-Semitism bill, with the largest…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
-          "title": "Flydubai has announced a halt to its flights to Israel.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Following hours of aerial drama, the rescue flight from Saudi Arabia has landed in Israel.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A report features a security official in service to Netanyahu.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "title": "News 13 | News",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -301,21 +317,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Netanyahu calls stabbed Indian pilot a hero; Flydubai halts Israel flights",
+          "title": "3 , Christa Pike seeks firing squad, not lethal injection: Inside US executions",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Tennessee inmate Christa Pike survives lethal injection execution attempt",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Modi’s India takes on Trump more openly, from ‘terrorism’ to tariffs",
+          "title": "4 , Modi’s India takes on Trump more openly, from ‘terrorism’ to tariffs",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -350,13 +359,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Flydubai suspends flights to and from Israel pending investigation",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Netanyahu Says Pilot Stabbed Co-Pilot and Tried to Crash Plane",
           "sec": 0,
           "off": 0,
@@ -364,7 +366,7 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "US-led coalition ends mission in Iraq",
+          "title": "Trump Says He Spoke to Netanyahu After Flydubai Incident",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -419,13 +421,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Iran International",
-          "title": "5 German-based aid worker gets 10-year prison sentence in Iran",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Jordan Times",
           "title": "King receives UK national security adviser",
           "sec": 0,
@@ -462,6 +457,13 @@
         },
         {
           "source": "Egypt Independent",
+          "title": "‘Trump, Trump, Trump,’ Democrats’ hold on California and other takeaways from the governor debate",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
           "title": "Trump says he spoke to Netanyahu about suspected hijack attempt, hails passengers’ actions",
           "sec": 0,
           "off": 0,
@@ -482,13 +484,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Egypt Independent",
-          "title": "How Dubai became one of Israel’s most popular foreign destinations",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al-Akhbar",
           "title": "Al Akhbar reported that Qatar delivered Washington's response regarding the seven-day proposal to Araghchi.",
           "sec": 0,
@@ -498,13 +493,6 @@
         {
           "source": "Al-Akhbar",
           "title": "Al Akhbar reported that the UAE administration is accused of forgery concerning 'City'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Al Akhbar reported that Aoun is challenging the restructuring law, making an agreement with the IMF…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -526,6 +514,13 @@
         {
           "source": "Al Manar",
           "title": "A video message from the Islamic Resistance was presented to Sayyid Hassan Nasrallah and Sheikh Naim Qassem.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Vice President Al Sheikh welcomes ICRC call for urgent protection of Palestinians",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -595,13 +590,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Emirates suspends flydubai codeshare flights to Tel Aviv",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "Iran leadership 'fractures': Hardline MP jailed over Ghalibaf article",
           "sec": 0,
           "off": 0,
@@ -615,6 +603,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Gulf News",
+          "title": "Emirates suspends flydubai codeshare flights to Tel Aviv",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Anadolu Agency",
           "title": "US says 4 Americans were aboard flydubai flight that diverted to Saudi Arabia",
           "sec": 0,
@@ -623,16 +618,9 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Flydubai suspends Israel flights after incident on Dubai-Tel Aviv route",
+          "title": "AI agents attempted to hack US and Canadian government websites, researchers say",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Trump weighs diesel export ban, warns of impact on gasoline prices",
-          "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -704,19 +692,30 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Trump announces $200B South Korean investment in US energy projects",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 41,
       "sizes": [
-        7,
         5,
         3,
         2,
         2,
         2,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -753,18 +752,17 @@
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 5,
+      "selected": 4,
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Palestinian woman killed in Israeli airstrike on Gaza City apartment",
+          "headline": "Journalist Muhammad al-Najjar killed in Gaza as Israeli strikes kill eight Palestinians",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
-            "newest": "2026-10-01T07:10+00:00"
+            "newest": "2026-10-01T06:19+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm",
             "Jordan Times",
             "Middle East Eye",
             "TRT World",
@@ -775,17 +773,17 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Palestinian woman killed in Israeli airstrike on Gaza City apartment",
+            "source": "TRT World",
+            "title": "Journalist Muhammad al-Najjar killed in Gaza as Israeli strikes kill eight Palestinians",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -814,61 +812,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Turkish intelligence captures suspect in 2013 Reyhanlı bombing",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-01T06:40+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "SANA",
-            "Syria Direct",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Turkish intelligence captures suspect in 2013 Reyhanlı bombing",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "EU top diplomat says bloc wants to 'upgrade' Syria partnership",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Syria, EU discuss new agreement, recovery and Israeli withdrawal",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Syrian FM, EU foreign policy chief discuss ties, economic recovery and reconstru",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Syria Direct",
-                "title": "Syria is rising, al-Sharaa tells UN—but challenges remain at home",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Rubio orders Iranian delegation to leave New York, Iran rejects expulsion claim",
           "rank_key": {
             "outlets": 3,
@@ -894,6 +837,38 @@
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Gas pipeline blast near Damascus forces 3 Syrian power plants offline",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-09-30T20:41+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Gas pipeline blast near Damascus forces 3 Syrian power plants offline",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -939,43 +914,44 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Trump says co-pilot in flydubai incident may have been a 'terrorist' or 'whack-job'",
+          "selected_rank": null,
+          "headline": "US troops complete Iraq exit, as Iran and its allies celebrate",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-01T04:03+00:00"
+            "newest": "2026-10-01T07:50+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
-            "TRT World"
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hundreds of occupiers storm ‘Joseph’s Tomb’ under Israeli military protection",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T07:44+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
           ],
           "camps": [
             "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Trump says co-pilot in flydubai incident may have been a 'terrorist' or 'whack-job'",
-            "title_source": "native",
-            "why": [
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Anadolu Agency",
-                "title": "Trump says co-pilot in Flydubai incident may have been a 'terrorist' or 'whack-j",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces force families from homes in Jenin, turn them into military posts",
+          "headline": "Israeli colonists raid Ottoman-era tunnel near Tulkarm, perform Jewish prayers",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1011,6 +987,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Turkish intelligence captures suspect in 2013 Reyhanlı bombing",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T06:40+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran FM dismisses UK PM’s allegations over RAF Fairford incident",
           "rank_key": {
             "outlets": 1,
@@ -1029,17 +1023,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump commented on Iran, suggesting a potential bombing followed by a deal.",
+          "headline": "Trump unveils $200B South Korean investment plan for US energy projects",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-01T03:56+00:00"
+            "newest": "2026-10-01T03:04+00:00"
           },
           "outlet_names": [
-            "Channel 13"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1047,17 +1041,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran indicates it’s received an official US response to its latest offer on ending the war",
+          "headline": "Trump warns war against Iran will end 'very soon, one way or another'",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-01T01:54+00:00"
+            "newest": "2026-10-01T02:40+00:00"
           },
           "outlet_names": [
-            "Arab News"
+            "TRT World"
           ],
           "camps": [
-            "gulf"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1119,60 +1113,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A study confirms the risk of artificial intelligence to human memory.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-30T18:15+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump described the organized withdrawal of coalition forces and equipment from Erbil Air Base as th",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-30T17:42+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "UNICEF reported the martyrdom of 261 children due to the occupation's aggression on Lebanon.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-30T17:05+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Top security official warns regional countries against baseless claims on Iran’s islands",
           "rank_key": {
             "outlets": 1,
@@ -1190,7 +1130,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1208,7 +1148,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-01T07:36:26.716401+00:00",
+    "last_success": "2026-10-01T08:07:45.665185+00:00",
     "last_failure": null
   },
   "ok": true
