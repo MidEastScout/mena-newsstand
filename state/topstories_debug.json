@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T21:20:06.075614+00:00",
+  "updated": "2026-10-01T21:52:28.569729+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-01T21:18:06.183513+00:00"
+      "headlines_updated": "2026-10-01T21:50:31.724334+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 11,
-        "title_snippet": 32,
+        "title_snippet": 31,
+        "dropped_no_english": 1,
         "title_native": 83,
         "in": 126,
-        "kept": 115
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 31,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -240,12 +241,17 @@
           "source": "Arab News",
           "title": "Saudi crown prince welcomes UAE vice president in Riyadh",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בל\"ד: \"אבו שחאדה ימשיך כיו\"ר המפלגה, הסרת המועמדות אינה פרישה מהפוליטיקה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 53,
+      "in": 114,
+      "kept": 55,
       "dropped": [
         {
           "source": "Kan 11",
@@ -284,14 +290,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "The full program for \"Ha'Yom Ha'Zeh\" on October 01, 2026, is available for viewing.",
+          "title": "The full program for \"Ha'Mahadura Ha'Merakazit\" on October 01, 2026, is available for viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "The full program for \"Ha'Mahadura Ha'Merakazit\" on October 01, 2026, is available for viewing.",
+          "title": "The full program for \"Ezor Bechira\" on October 01, 2026, is available for viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -306,13 +312,6 @@
         {
           "source": "Al Jazeera",
           "title": "3 , Christa Pike execution fails: What next when a lethal injection is botched?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Canada to fast track oil pipeline meant to diversify economy away from US",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -591,13 +590,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Dual UK-Iranian national arrested over UK airbase incident, police say",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Who is the storyteller in the age of AI?",
           "sec": 0,
@@ -617,13 +609,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Trump claims Iran may be linked to co-pilot in flydubai plane attack",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Hürriyet Daily News",
@@ -685,7 +670,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 36,
+      "clusters": 39,
       "sizes": [
         6,
         3,
@@ -696,7 +681,10 @@
         2,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -1075,33 +1063,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "Over 20 people were injured in a fire that broke out at a nursing home in Bnei Brak.",
+          "headline": "OIC, Arab states condemn drone attack on Saudi Arabia's Medina power station",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-30T23:46+00:00"
+            "newest": "2026-10-01T20:42+00:00"
           },
           "outlet_names": [
-            "Kan 11",
-            "N12"
+            "Anadolu Agency"
           ],
           "camps": [
-            "israeli"
+            "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "Over 20 people were injured in a fire that broke out at a nursing home in Bnei Brak.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Suspect in flydubai attack handed over to UAE, Saudi authorities say",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T19:42+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1284,43 +1278,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iran FM dismisses UK PM’s allegations over RAF Fairford incident",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T05:31+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Gas pipeline blast near Damascus forces 3 Syrian power plants offline",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-09-30T19:16+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1338,7 +1296,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-01T21:20:35.865155+00:00",
+    "last_success": "2026-10-01T21:52:29.458999+00:00",
     "last_failure": null
   },
   "ok": true
