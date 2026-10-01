@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T06:27:11.502197+00:00",
+  "updated": "2026-10-01T06:33:41.238974+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-01T06:25:05.184552+00:00"
+      "headlines_updated": "2026-10-01T06:32:04.394558+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 2,
-        "title_snippet": 32,
+        "title_snippet": 26,
+        "dropped_no_english": 6,
         "title_translated": 1,
         "title_native": 91,
         "in": 126,
-        "kept": 124
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -196,12 +197,42 @@
           "source": "Al-Akhbar",
           "title": "الخطوط الجوية العراقية تستأنف رحلاتها بين النجف والمطارات الإيرانية",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "\"מנעתם אסון כבד\": הנשיא הרצוג יעניק אות גבורה לנוסעים שנאבקו במחבל בטיסת פליי דובאי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"פליי דובאי\" הודיעה על הקפאת הטיסות לישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחרי שעות דרמה בשחקים: טיסת החילוץ מסעודיה נחתה בישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המקור, עונה 25, פרק 9: הקב\"ט בשירות נתניהו לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "היום שהיה 30.09.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "من رئاسيات البرازيل إلى الانسحاب الأميركي من العراق.. تحولات تعيد رسم التوازنات",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
-      "kept": 50,
+      "in": 118,
+      "kept": 48,
       "dropped": [
         {
           "source": "Kan 11",
@@ -254,28 +285,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "Flydubai has officially announced the suspension of its flights to Israel.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The program 'The Source,' season 25, episode 9, titled 'The Security Chief in Netanyahu's Service,' is…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The program 'The Day That Was' from September 30, 2026, is available for viewing in its entirety.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -381,13 +391,6 @@
         {
           "source": "Al Mayadeen",
           "title": "A US official stated that the United States fully supports disarmament in Iraq and the transfer of weapons to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Israeli media reported that the Shin Bet is assisting in the investigation of an attempted operation aboard a…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -727,11 +730,11 @@
       "method": "heuristic",
       "clusters": 37,
       "sizes": [
-        7,
+        6,
         3,
         3,
         3,
-        2,
+        1,
         1,
         1,
         1,
@@ -769,31 +772,29 @@
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 5,
+      "selected": 4,
       "candidates": [
         {
           "selected_rank": 1,
           "headline": "Journalist Muhammad al-Najjar killed in Gaza as Israeli strikes kill eight Palestinians",
           "rank_key": {
-            "outlets": 6,
-            "camps": 4,
-            "newest": "2026-10-01T04:19+00:00"
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-10-01T01:08+00:00"
           },
           "outlet_names": [
             "Falastin al-Youm",
             "Jordan Times",
-            "Kan 11",
             "Middle East Eye",
             "TRT World",
             "WAFA News"
           ],
           "camps": [
-            "israeli",
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -948,36 +949,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "The evacuation flight from Saudi Arabia has landed in Israel after a dramatic journey through the sk",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-09-30T15:36+00:00"
-          },
-          "outlet_names": [
-            "Channel 13",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Channel 13",
-            "title": "The evacuation flight from Saudi Arabia has landed in Israel after a dramatic journey through the skies.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1197,7 +1168,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1215,7 +1186,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-01T06:27:30.950900+00:00",
+    "last_success": "2026-10-01T06:33:55.450421+00:00",
     "last_failure": null
   },
   "ok": true
