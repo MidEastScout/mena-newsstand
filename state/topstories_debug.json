@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T11:17:11.821124+00:00",
+  "updated": "2026-10-01T11:48:51.828819+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-01T11:15:24.259943+00:00"
+      "headlines_updated": "2026-10-01T11:47:15.273431+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 1,
-        "title_snippet": 34,
+        "title_snippet": 23,
+        "dropped_no_english": 10,
+        "title_translated": 1,
         "title_native": 91,
         "in": 126,
-        "kept": 125
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -190,12 +192,62 @@
           "source": "Al Mayadeen",
           "title": "عبد الناصر ونصر الله.. قائدان عربيان ارتبطا بالمقاومة وتحرير الأرض",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "טראמפ: \"איני מאמין לדיווחים שבאמירויות ובמצרים הזהירו את נתניהו לפני 7 באוקטובר\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אתה הולך עם תומכי חמאס\": יואב סגלוביץ' מגיב לביקורות נגדו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "איזנקוט נחלש, גוש נתניהו חוזר להוביל; הנדל מתחת לאחוז החסימה | חדשות 13",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«رويترز»: قطر سلمت عراقجي رد واشنطن على مقترح الأيام السبعة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "وثيقة سرية تحمل اقتراح مجلس الأمن القومي إلى ترامب: لائحة الإجراءات ضد الجهازيْن العسكري والأمني في حزب الله",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "على بالي | أسعد أبو خليل | 30 أيلول 2026 | الأخبار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "جريدة يوم الخميس 1 تشرين اول 2026",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عون يطعن في قانون إعادة الهيكلة: توقيع اتفاق مع صندوق النقد لم يعد ممكناً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"انتزاع الحرية\".. عملية الجهاد الإسلامي التي أسقطت نظريات الوهم الصهيونية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "3 عقبات تعرقل إحياء مفاوضات سد النهضة بين مصر وإثيوبيا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 125,
-      "kept": 54,
+      "in": 115,
+      "kept": 55,
       "dropped": [
         {
           "source": "Kan 11",
@@ -214,13 +266,6 @@
         {
           "source": "Kan 11",
           "title": "Multiple individuals sustained injuries in a fire that broke out in a residential building in Bnei Brak.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Emirates airline announced that it will not transport Israeli passengers whose final destination is Israel.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -248,7 +293,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "According to election projections, Benny Gantz's bloc has weakened, while Benjamin Netanyahu's bloc has…",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -256,20 +301,6 @@
         {
           "source": "Channel 13",
           "title": "A natural diamond ring valued at $75,000 can be purchased in a laboratory setting for 7,000 shekels.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Yonatan Shilo commented on the upcoming elections, stating that the youth vote will be decisive.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Shainina Sfoznikoff is described as someone who shouts, even if just to say hello.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -290,7 +321,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Modi’s India takes on Trump more openly, from ‘terrorism’ to tariffs",
+          "title": "5 , Christa Pike execution fails: What next when a lethal injection is botched?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -333,13 +364,6 @@
         {
           "source": "Al Arabiya",
           "title": "Netanyahu says Israel will get to the ‘root’ of co-pilot in flydubai flight incident",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "UK PM says ‘strong indications’ Iran linked to RAF Fairford incident",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -437,9 +461,23 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "FOCUS IMF deal: Paris pushes, Beirut acts, BDL still resists Mounir YOUNES",
+          "title": "BUSINESS Fattal Group, acquired by CMA CGM, is now called 'Tamina' L'Orient Today staff",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Egypt thwarts Israel’s plans to build Suez Canal alternative: Deputy Prime Minister",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Egypt’s 30-million tourist goal: Ready or bottlenecked?",
+          "sec": 0,
+          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -464,48 +502,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Egypt Independent",
-          "title": "Sisi announces launch of preparatory sessions, website for Egypt Forum 2026",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "Suez Canal Economic Zone, US embassy discuss investment cooperation",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Reuters reported that Qatar delivered Washington's response to Iran's seven-point proposal to Iraq.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "President Aoun has challenged the restructuring law, making an agreement with the International Monetary Fund…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The article is titled 'History is not written after the testimony of witnesses.'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The commentary piece is titled 'Ala Bali' by Asaad Abu Khalil, dated September 30, 2026.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "A shocking scene inside an American plane heading to Tel Aviv was observed after passengers had disembarked.",
           "sec": 0,
@@ -524,13 +520,6 @@
           "title": "Iraqi received the American response to the seven-day plan proposal.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "An Irish campaign is urging the national team to boycott Israel in solidarity with Palestine ahead of a…",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -563,20 +552,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Iran leadership 'fractures': Hardline MP jailed over Ghalibaf article",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "flydubai suspends flights to Israel after FZ1073 'security incident'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "Tried upside-down coffee or proffee? 5 viral TikTok coffee recipes almost too pretty to drink",
           "sec": 0,
           "off": 2,
@@ -591,7 +566,21 @@
         },
         {
           "source": "Gulf News",
+          "title": "Iran leadership 'fractures': Hardline MP jailed over Ghalibaf article",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "Buying gold in the UAE: How making charges affect your profits when selling",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "flydubai suspends flights to Israel after FZ1073 'security incident'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -619,21 +608,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Iraqi prime minister sets June 30 deadline to disarm groups outside state control",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Tennessee death row inmate Christa Pike survives 2 lethal doses",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Türkiye's SPK approves interim payments to investors in funds case",
+          "title": "Cornell police omitted student rape claim from summary sent to prosecutor: Report",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -698,14 +673,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 41,
       "sizes": [
-        7,
+        8,
         4,
         3,
-        3,
         2,
         2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -744,17 +721,18 @@
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 5,
+      "selected": 4,
       "candidates": [
         {
           "selected_rank": 1,
           "headline": "Several Palestinians injured in Israeli drone strike on Khan Younis",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-10-01T10:27+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Jordan Times",
             "Middle East Eye",
             "TRT World",
@@ -765,7 +743,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -785,6 +763,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Al Arabiya",
+                "title": "Israeli strikes kill five people in Gaza, medics say",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Jordan Times",
                 "title": "Gaza health officials say Israeli strike kills 5 in Gaza City",
                 "rejected_by": "older than the story's newest wave"
@@ -793,11 +776,6 @@
                 "source": "WAFA News",
                 "title": "UPDATE: Six Palestinians killed, more than 10 injured in Israeli strike on Gaza ",
                 "rejected_by": "bare stub headline"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Two Palestinians killed and others injured in Israeli strike, gunfire in Gaza",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -926,82 +904,22 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Hundreds of Israeli settlers stormed Al-Aqsa Mosque during the fifth day of the 'Sukkot' holiday.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-01T05:29+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Manar",
-            "title": "Hundreds of Israeli settlers stormed Al-Aqsa Mosque during the fifth day of the 'Sukkot' holiday.",
-            "title_source": "snippet",
-            "why": [
-              "names 1 of the story's dominant entities (westbank)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Hundreds of Israeli colonists raid Joseph's Tomb in Nablus under heavy Israeli m",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": null,
-          "headline": "A secret document reportedly suggests measures against military and security branches of Hezbollah f",
+          "headline": "Kyiv school, nuclear institute hit as Russia ramps up attacks",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-09-30T21:30+00:00"
+            "newest": "2026-10-01T11:20+00:00"
           },
           "outlet_names": [
-            "Al Manar",
-            "Al-Akhbar"
+            "Daily Sabah"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "A secret document reportedly suggests measures against military and security branches of Hezbollah for…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Fighters from the Islamic Resistance sent a message to Sayyid martyrs, Imam Hass",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Hezbollah categorically denied any connection to a cell that the Syrian Ministry",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1028,6 +946,24 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-01T10:41+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Greek Cyprus-Israel ties raise security concerns: Turkish Cypriot FM",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T09:40+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1184,43 +1120,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Six terrorists killed in IRGC operation in SE Iran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T07:24+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The article refers to the deportation of Islamic Jihad members during the Stone Intifada (First Inti",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T07:00+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1238,7 +1138,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-01T11:17:39.641492+00:00",
+    "last_success": "2026-10-01T11:49:11.345508+00:00",
     "last_failure": null
   },
   "ok": true
