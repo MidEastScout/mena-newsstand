@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T15:30:19.133005+00:00",
+  "updated": "2026-10-01T16:04:50.162419+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-01T15:28:28.511441+00:00"
+      "headlines_updated": "2026-10-01T16:03:21.200373+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 33,
+        "dropped_stale": 10,
+        "title_snippet": 25,
+        "dropped_no_english": 6,
         "title_translated": 1,
         "title_native": 84,
         "in": 126,
-        "kept": 118
+        "kept": 110
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 31,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Al Mayadeen",
+          "title": "النظام السعودي يبحث عن نصر مستحيل في اليمن",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Al Mayadeen",
           "title": "عبد الناصر ونصر الله.. قائدان عربيان ارتبطا بالمقاومة وتحرير الأرض",
@@ -195,6 +201,11 @@
         {
           "source": "Jordan Times",
           "title": "Jordan condemns storming of Aqsa Mosque by Israeli far-right minister, settlers",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "النظام السعودي يبحث عن نصر مستحيل في اليمن",
           "reason": "stale (older than 48h)"
         },
         {
@@ -226,12 +237,42 @@
           "source": "Arab News",
           "title": "Saudi crown prince welcomes UAE vice president in Riyadh",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "צה\"ל מגיב ל\"נז\"א\": \"מציג תמונה מעוותת, מטעה ומניפולטיבית\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחרי שעות דרמה בשחקים: טיסת החילוץ מסעודיה נחתה בישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אתה הולך עם תומכי חמאס\": יואב סגלוביץ' מגיב לביקורות נגדו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אם לא היינו נכנסים ומשתלטים על האירוע - כבר לא היינו פה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "النظام السعودي يبحث عن نصر مستحيل في اليمن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "نشطاء يُطلقون حملة رقمية واسعة دعمًا لصمود الشعب الفلسطيني",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 53,
+      "in": 110,
+      "kept": 50,
       "dropped": [
         {
           "source": "Kan 11",
@@ -270,28 +311,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "The IDF has responded to the film \"NIZ,\" stating it presents a distorted, misleading, and manipulative…",
-          "sec": 0,
-          "off": 2,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A rescue flight from Saudi Arabia has landed in Israel after a dramatic aerial incident.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A statement was made: 'If we hadn't entered and taken control of the event, we wouldn't be here now.' This…",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -383,13 +403,6 @@
         {
           "source": "Al Mayadeen",
           "title": "This piece covers shifts in Brazilian presidential elections and US withdrawal from Iraq, suggesting…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "A US official told Al Mayadeen that the United States fully supports disarmament in Iraq and the transfer of…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -542,13 +555,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The World Health Organization warns of a widening gap in mental health treatment, according to paltoday.ps.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "FlyDubai pilot tried to crash Israel-bound passenger jet after stabbing colleague, Netanyahu says",
           "sec": 0,
@@ -563,6 +569,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Arab News",
+          "title": "FlyDubai passenger jet pilots in bloody mid-air fight, Israeli media reports",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Gulf News",
           "title": "UAE orders investigation into flydubai Tel Aviv flight incident",
           "sec": 0,
@@ -571,30 +584,30 @@
         },
         {
           "source": "Gulf News",
-          "title": "100 young leaders from 75 nations to shape global water agenda at UN Conference in Abu Dhabi",
+          "title": "The Plaza, formerly Lamcy Plaza, set to reopen in first half of 2027",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Sharjah wife seeks divorce as husband prefers staying at home",
+          "title": "UAE outlines action against employers for late salaries",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Iran leadership 'fractures': Hardline MP jailed over Ghalibaf article",
+          "title": "Babar Azam sold for base price in ILT20 season 5 auction",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Buying gold in the UAE: How making charges affect your profits when selling",
+          "title": "Ai Everything Abu Dhabi 2026: Microsoft, VDURA, IFS to show AI at work",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -680,27 +693,18 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "US lifts long-standing ban on arms exports to Syria",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 40,
       "sizes": [
         6,
         3,
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -870,38 +874,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Yemeni army says 30 Houthis killed in major clashes across Taiz",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-01T13:31+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Yemeni army says 30 Houthis killed in major clashes across Taiz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Syrian officials and Hezbollah held secret talks in Turkey",
           "rank_key": {
             "outlets": 2,
@@ -939,7 +911,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Three tankers hit Tuesday in Hormuz - maritime agency",
           "rank_key": {
             "outlets": 2,
@@ -980,6 +952,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "West Nile virus death toll in Netherlands rises to 9",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T16:02+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1037,42 +1027,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Yoav Segalovitz responded to criticism, stating, 'You are going with Hamas supporters.' This comment",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T10:12+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The 'Freedom Seizure' operation by Islamic Jihad is described as having shattered Zionist illusions…",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T09:34+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "A 24-year-old Israeli tourist has died in a kayaking accident in Norway.",
           "rank_key": {
             "outlets": 1,
@@ -1084,24 +1038,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Three obstacles are hindering the revival of the Grand Ethiopian Renaissance Dam negotiations betwee",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T08:42+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1198,7 +1134,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The IDF spokesperson responded to the \"NIZ\" film, calling it a distorted, misleading, and unrealisti",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T07:04+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran rejects reports on timing of delegation’s departure from New York",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T06:40+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1216,7 +1188,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-01T15:30:20.101765+00:00",
+    "last_success": "2026-10-01T16:05:04.143228+00:00",
     "last_failure": null
   },
   "ok": true
