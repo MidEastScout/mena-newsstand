@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T11:12:42.129653+00:00",
+  "updated": "2026-10-02T11:44:38.943714+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-02T11:10:17.772184+00:00"
+      "headlines_updated": "2026-10-02T11:42:35.335680+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 16,
-        "title_snippet": 27,
+        "dropped_stale": 17,
+        "title_snippet": 26,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 81,
+        "dropped_no_english": 1,
         "in": 126,
-        "kept": 110
+        "kept": 108
       },
       "translator": {
         "configured": true,
@@ -190,6 +191,11 @@
         {
           "source": "The New Arab",
           "title": "Iran says received US response to proposal to end the war",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "EU top diplomat says bloc wants to 'upgrade' Syria partnership",
           "reason": "stale (older than 48h)"
         },
         {
@@ -263,15 +269,20 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "FlyDubai pilot tried to crash Israel-bound passenger jet after stabbing colleague, Netanyahu says",
+          "source": "Syria Direct",
+          "title": "Syria is rising, al-Sharaa tells UN—but challenges remain at home",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "تقرير مصور | محاولات متواصلة للنيل من المقاومة.. وثبات على طريق التحرير وكسر المشروع الصهيوني 18:27",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 110,
-      "kept": 59,
+      "in": 108,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -380,14 +391,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "UN diplomats stage walkout on Netanyahu",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "UK Foreign Secretary Ed Miliband questioned by activists over Palestine Action proscription",
+          "title": "’Flydubai incident’ tests regional aviation sector",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -416,13 +420,6 @@
         {
           "source": "IRNA",
           "title": "Top security official warns regional countries against baseless claims on Iran’s islands",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Economy minister stresses Iran’s determination to strengthen all-out ties with China",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -519,15 +516,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Manar",
-          "title": "Regional alliances are reportedly forming in light of American movements in the region, with developments…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Syria Direct",
-          "title": "Syria is rising, al-Sharaa tells UN—but challenges remain at home",
+          "source": "Arab News",
+          "title": "Hero FlyDubai pilot Smit Machchhar moved to Abu Dhabi hospital",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -582,13 +572,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Swiss glaciers face ‘catastrophic’ melt after record-hot summer",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Hürriyet Daily News",
           "title": "PHOTO Best restaurants in Istanbul, ranked",
           "sec": 0,
@@ -634,9 +617,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 42,
       "sizes": [
-        5,
+        4,
+        4,
         3,
         3,
         2,
@@ -648,7 +632,7 @@
         2,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -686,15 +670,110 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Yemeni air force carries out 20 strikes on Houthi targets in Taiz",
+          "headline": "One Palestinian killed in Israeli drone strike in Gaza City",
           "rank_key": {
             "outlets": 4,
-            "camps": 2,
-            "newest": "2026-10-02T09:39+00:00"
+            "camps": 3,
+            "newest": "2026-10-02T11:26+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "Middle East Eye",
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "One Palestinian killed in Israeli drone strike in Gaza City",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Jordan Times",
+                "title": "Gaza health officials say Israeli strike kills 5 in Gaza City",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Journalist Muhammad al-Najjar killed in Gaza as Israeli strikes kill eight Pales",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Flydubai pilot says he opened cockpit door during attack: Report",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-02T07:29+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
+            "Arab News",
+            "Gulf News",
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli",
+            "gulf",
+            "panarab"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Flydubai pilot says he opened cockpit door during attack: Report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Indian FlyDubai pilot Smit Machchhar praised for bravery during cockpit attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Who is Captain Smit Machchhar? Dubai-based flydubai pilot hailed as hero after c",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Yemeni air force carries out 20 strikes on Houthi targets in Taiz",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-02T07:15+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
             "Anadolu Agency",
             "TRT World"
           ],
@@ -702,7 +781,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 5,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -717,11 +796,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "1 , Yemen government forces say they targeted Houthis in Sanaa, Saada and Taiz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "TRT World",
                 "title": "Yemeni army says it launched six air strikes on Houthi positions in Taiz",
                 "rejected_by": "older than the story's newest wave"
@@ -730,7 +804,7 @@
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 4,
           "headline": "UAE-owned tankers hit after breaching Hormuz rules",
           "rank_key": {
             "outlets": 3,
@@ -774,7 +848,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 5,
           "headline": "Pakistan strongly condemns attack on Medina power station",
           "rank_key": {
             "outlets": 2,
@@ -805,7 +879,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": null,
           "headline": "An Ukrainian document, published in the New York Times, reveals a Russian plan to escalate attacks o",
           "rank_key": {
             "outlets": 2,
@@ -836,44 +910,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Russia tries to freeze Ukraine as it suffers record casualties and retreats",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "The pilot of the Flydubai flight, Smit Machchhar, who is still hospitalized in the Emirates, recount",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-02T07:29+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "gulf"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The pilot of the Flydubai flight, Smit Machchhar, who is still hospitalized in the Emirates, recounted the…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Indian FlyDubai pilot Smit Machchhar praised for bravery during cockpit attack",
+                "title": "3 , Russia tries to freeze Ukraine as it suffers record casualties and retreats",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -881,26 +918,26 @@
         },
         {
           "selected_rank": null,
-          "headline": "Eritrea says severing diplomatic ties with Ethiopia",
+          "headline": "US moves thousands of troops to Middle East as Trump weighs Iran strikes",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-01T19:52+00:00"
+            "newest": "2026-10-01T22:39+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
+            "Arab News",
             "TRT World"
           ],
           "camps": [
-            "panarab",
+            "gulf",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Eritrea says severing diplomatic ties with Ethiopia",
+            "source": "Arab News",
+            "title": "US moves thousands of troops to Middle East as Trump weighs Iran strikes",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -939,44 +976,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Journalist Muhammad al-Najjar killed in Gaza as Israeli strikes kill eight Palestinians",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-01T01:08+00:00"
-          },
-          "outlet_names": [
-            "Middle East Eye",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Journalist Muhammad al-Najjar killed in Gaza as Israeli strikes kill eight Palestinians",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -1023,7 +1022,7 @@
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-10-02T10:29+00:00"
+            "newest": "2026-10-02T10:27+00:00"
           },
           "outlet_names": [
             "IRNA",
@@ -1045,47 +1044,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Palestinian man killed in West Bank settler attack",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-02T08:25+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Palestinian man killed in West Bank settler attack",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Palestinian man shot and killed by Israeli colonists in Yasuf, central West Bank",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Colonists attack homes and seize vehicle northeast of Ramallah",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
           }
         },
         {
@@ -1155,6 +1113,43 @@
               {
                 "source": "Al Arabiya",
                 "title": "Iran’s IRGC kills six ‘terrorists’ in restive region, state news agency reports",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Palestinian man killed in West Bank settler attack",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-01T15:56+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Palestinian man killed in West Bank settler attack",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Palestinian man shot and killed by Israeli colonists in Yasuf, central West Bank",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
@@ -1252,11 +1247,47 @@
         },
         {
           "selected_rank": null,
+          "headline": "Senior Yemeni security commander killed in clashes with Houthis in Taiz",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T09:39+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Congo Ebola death toll hits 4,000 as violence hampers response",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-02T08:49+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Türkiye, Azerbaijan, Georgia defense chiefs discuss Caucasus security",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T08:45+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1306,42 +1337,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "US moves thousands of troops to Middle East as Trump weighs Iran strikes",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T20:08+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Houthi drone hits Medina power station supplying Prophet’s Mosque",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T17:38+00:00"
-          },
-          "outlet_names": [
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "US to see Iran's power in battlefield: Defense chief",
           "rank_key": {
             "outlets": 1,
@@ -1377,7 +1372,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1395,7 +1390,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-02T11:13:01.766945+00:00",
+    "last_success": "2026-10-02T11:44:58.258903+00:00",
     "last_failure": null
   },
   "ok": true
