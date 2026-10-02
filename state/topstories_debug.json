@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T17:38:28.725516+00:00",
+  "updated": "2026-10-02T18:09:34.380872+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-02T17:36:34.809130+00:00"
+      "headlines_updated": "2026-10-02T18:08:03.265370+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 16,
-        "title_snippet": 25,
+        "title_snippet": 23,
         "title_translated": 1,
         "title_native": 85,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 111
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -266,12 +267,22 @@
           "source": "Syria Direct",
           "title": "Syria is rising, al-Sharaa tells UN—but challenges remain at home",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الصومال: معارضون يتآمرون على البلاد من أبوظبي ويلتقون جهات مرتبطة بـ\"الدعم السريع\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إثر تهديد أميركي... أوروبا تدرس السحب من مخزونات الديزل",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 111,
-      "kept": 57,
+      "in": 109,
+      "kept": 55,
       "dropped": [
         {
           "source": "Kan 11",
@@ -352,7 +363,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Trump vs Europe as US presses for release of emergency diesel stocks",
+          "title": "5 , Trump vs Europe as US presses for release of emergency diesel stocks",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
@@ -437,6 +448,13 @@
         {
           "source": "Mehr News",
           "title": "Iran urges Iraq to make apropraite decision on US flight bans",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Mehr News",
+          "title": "Trump can win against Iran only in his dreams: Rezaei",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -554,13 +572,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "'India is proud': PM Modi praises flydubai pilot Smit Machchhar as ‘hero’ after Tabuk emergency landing",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Trump says Europe agrees to release stocked diesel oil",
           "sec": 0,
@@ -657,10 +668,10 @@
       "method": "heuristic",
       "clusters": 38,
       "sizes": [
-        6,
+        5,
         5,
         4,
-        3,
+        2,
         2,
         2,
         2,
@@ -706,26 +717,23 @@
           "selected_rank": 1,
           "headline": "Tanker attacked in Strait of Hormuz: UK maritime agency",
           "rank_key": {
-            "outlets": 6,
-            "camps": 5,
+            "outlets": 4,
+            "camps": 4,
             "newest": "2026-10-02T16:09+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Mayadeen",
             "Anadolu Agency",
             "Arab News",
-            "Jordan Times",
-            "Mehr News"
+            "Jordan Times"
           ],
           "camps": [
             "gulf",
             "panarab",
-            "iranian",
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -742,16 +750,6 @@
               {
                 "source": "Al Arabiya",
                 "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "A large oil tanker was hit and is burning near the coast of Oman in the Strait o",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "UAE-owned tankers hit after breaching Hormuz rules",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -859,80 +857,37 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Flydubai pilot says he opened cockpit door during attack: Report",
+          "headline": "Trump warns war against Iran will end 'very soon, one way or another'",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-02T06:49+00:00"
+            "newest": "2026-10-01T02:40+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "Gulf News"
+            "Gulf News",
+            "TRT World"
           ],
           "camps": [
             "gulf",
-            "panarab"
+            "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Flydubai pilot says he opened cockpit door during attack: Report",
+            "source": "TRT World",
+            "title": "Trump warns war against Iran will end 'very soon, one way or another'",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Indian FlyDubai pilot Smit Machchhar praised for bravery during cockpit attack",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Who is Captain Smit Machchhar? Dubai-based flydubai pilot hailed as hero after c",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Saudi warplanes strike areas in northern Yemen: report",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-02T11:53+00:00"
-          },
-          "outlet_names": [
-            "IRNA",
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "Saudi warplanes strike areas in northern Yemen: report",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
             "passed_over": []
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "US expelled from Iraq, suffered humiliating defeat: Qaani",
           "rank_key": {
             "outlets": 2,
@@ -1029,6 +984,42 @@
                 "source": "Al Arabiya",
                 "title": "Iran’s IRGC kills six ‘terrorists’ in restive region, state news agency reports",
                 "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Who is Captain Smit Machchhar? Dubai-based flydubai pilot hailed as hero after cockpit attack",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-01T06:59+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Who is Captain Smit Machchhar? Dubai-based flydubai pilot hailed as hero after cockpit attack",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Indian FlyDubai pilot Smit Machchhar praised for bravery during cockpit attack",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -1161,6 +1152,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Saudi warplanes strike areas in northern Yemen: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T08:11+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "UAE-owned tankers hit after breaching Hormuz rules",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T05:56+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Nearly 1,000 Israeli settlers invade Al-Aqsa Mosque",
           "rank_key": {
             "outlets": 1,
@@ -1197,24 +1224,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Artificial intelligence is posing a challenge to the sovereignty of nations.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Hamas called for the launch of the 'Great Dawn' campaign in support of Jerusalem.",
           "rank_key": {
             "outlets": 1,
@@ -1223,24 +1232,6 @@
           },
           "outlet_names": [
             "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "UAE probes possible 'terror' incident on flight to Israel",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T13:01+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
           ],
           "camps": [
             "levant"
@@ -1268,7 +1259,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-02T17:38:42.740589+00:00",
+    "last_success": "2026-10-02T18:10:01.347393+00:00",
     "last_failure": null
   },
   "ok": true
