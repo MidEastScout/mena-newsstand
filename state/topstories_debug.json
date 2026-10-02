@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T03:50:21.081084+00:00",
+  "updated": "2026-10-02T04:22:07.952157+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-02T03:48:27.086253+00:00"
+      "headlines_updated": "2026-10-02T04:20:09.630548+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 32,
+        "title_snippet": 29,
         "title_native": 84,
+        "dropped_no_english": 3,
         "in": 126,
-        "kept": 116
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -235,12 +236,27 @@
           "source": "SANA",
           "title": "Syria allows non-exclusive agencies for foreign vehicle and tire firms",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تحركات دبلوماسية للكونغو لحشد الدعم لنزع سلاح \"القوات الديمقراطية لتحرير رواندا\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تصعيد أمني في الصومال.. غارات في شبيلي السفلى وحظر تجول في بيدوا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "مكسيم خليل يرفع المنافسة في رمضان",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 59,
+      "in": 113,
+      "kept": 56,
       "dropped": [
         {
           "source": "Kan 11",
@@ -348,6 +364,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Arabiya",
+          "title": "Iraqi PM sets June 30 deadline for pro-Iran factions to disarm",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "The New Arab",
           "title": "Dubai-Tel Aviv flight diverts to Saudi Arabia after hijack scare",
           "sec": 0,
@@ -364,13 +387,6 @@
         {
           "source": "Al Mayadeen",
           "title": "A poll in Brazil indicates President Luiz Inácio Lula da Silva has 48% of the vote compared to 45% for Flavio…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Putin has announced a shift in the global system, questioning the end of Western dominance.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -476,13 +492,6 @@
         {
           "source": "Al-Akhbar",
           "title": "The article discusses the perceived decline of Lebanese media.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Tehran has summoned the British ambassador in response to accusations concerning the Fairford incident.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -640,18 +649,23 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Saudi Arabia investigates flydubai emergency landing in Tabuk",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 41,
       "sizes": [
         6,
         3,
-        2,
-        2,
-        2,
+        3,
         2,
         2,
         2,
@@ -755,6 +769,46 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Tanker attacked in Strait of Hormuz: UK maritime agency",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-01T22:54+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Trump deploys 2,000 Marines to Middle East, supertanker struck in Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Türkiye condemns Houthis' attack on holy city of Medina",
           "rank_key": {
             "outlets": 3,
@@ -788,70 +842,7 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "Tanker attacked in Strait of Hormuz: UK maritime agency",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-01T22:54+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
           "selected_rank": 4,
-          "headline": "Eritrea says severing diplomatic ties with Ethiopia",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-01T19:52+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Eritrea says severing diplomatic ties with Ethiopia",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Trump warns war against Iran will end 'very soon, one way or another'",
           "rank_key": {
             "outlets": 2,
@@ -882,7 +873,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Gas pipeline blast near Damascus forces 3 Syrian power plants offline",
           "rank_key": {
             "outlets": 2,
@@ -917,38 +908,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "1 , Trump deploys 2,000 Marines to Middle East, supertanker struck in Hormuz",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Iran International"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "1 , Trump deploys 2,000 Marines to Middle East, supertanker struck in Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1194,24 +1153,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Putin stated that a Russian Foreign Ministry message regarding the protection of Kaliningrad did not",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T16:26+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "There was a last-minute crisis when the UAE cancelled the approvals for rescue flights.",
           "rank_key": {
             "outlets": 1,
@@ -1301,6 +1242,24 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
+          "selected_rank": null,
+          "headline": "Six terrorists killed in IRGC operation in SE Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T07:24+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
           "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1319,7 +1278,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-02T03:50:35.116020+00:00",
+    "last_success": "2026-10-02T04:22:22.294583+00:00",
     "last_failure": null
   },
   "ok": true
