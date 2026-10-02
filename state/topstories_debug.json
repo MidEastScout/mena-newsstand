@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T08:04:53.888957+00:00",
+  "updated": "2026-10-02T08:30:50.764634+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -37,7 +37,7 @@
         "Al Arabiya": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "The New Arab": {
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-02T08:03:01.005303+00:00"
+      "headlines_updated": "2026-10-02T08:29:04.311130+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
         "title_snippet": 24,
-        "dropped_no_english": 5,
+        "dropped_no_english": 4,
+        "title_translated": 1,
         "title_native": 85,
         "in": 126,
-        "kept": 109
+        "kept": 110
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 28,
+        "requested": 27,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -254,29 +255,24 @@
         },
         {
           "source": "N12",
-          "title": "\"נפלתי לרצפה והרגשתי שהמטוס צולל, ידעתי שאסור לתת להם למות\": השיחה המרגשת בין מודי לקברניט הגיבור",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
-          "title": "היום שהיה 01.10.26 - התכנית המלאה לצפייה ישירה -",
+          "title": "טרור, התאבדות ותעלומות באוויר: היסטוריית הריסוק המכוון של מטוסים",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al-Akhbar",
-          "title": "اللقاءات التي ترعاها أنقرة بين إدارة الشرع وحزب الله متواصلة و«أكثر سلاسة» | تركيا في لبنان: نفوذ متنامٍ لا يستفزّ الريا",
+          "title": "قاآني: الجيل الجديد من حزب الله لن يترك إسرائيل وشأنها",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al-Akhbar",
-          "title": "جريدة يوم الجمعة 2 تشرين اول 2026",
+          "title": "على بالي | أسعد أبو خليل | 1 تشرين الأول 2026 | الأخبار",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 109,
-      "kept": 60,
+      "in": 110,
+      "kept": 55,
       "dropped": [
         {
           "source": "Kan 11",
@@ -329,6 +325,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "El Al has announced the cancellation of rescue flights that were scheduled from Dubai today.",
           "sec": 0,
           "off": 0,
@@ -344,6 +347,13 @@
         {
           "source": "Al Jazeera",
           "title": "2 , Flydubai co-pilot ‘assaulted’ captain before landing: Initial Saudi probe",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Christa Pike execution fails: What next when a lethal injection is botched?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -385,6 +395,13 @@
         },
         {
           "source": "The New Arab",
+          "title": "UN diplomats stage walkout on Netanyahu",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
           "title": "UK Foreign Secretary Ed Miliband questioned by activists over Palestine Action proscription",
           "sec": 0,
           "off": 0,
@@ -407,6 +424,13 @@
         {
           "source": "Al Mayadeen",
           "title": "A poll in Brazil indicates President Luiz Inácio Lula da Silva has 48% support compared to 45% for Flavio…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Economy minister stresses Iran’s determination to strengthen all-out ties with China",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -510,20 +534,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Israeli colonists damage olive trees southeast of Bethlehem",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "FlyDubai pilot tried to crash Israel-bound passenger jet after stabbing colleague, Netanyahu says",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "Arab News",
           "title": "Hero FlyDubai pilot Smit Machchhar moved to Abu Dhabi hospital",
           "sec": 0,
@@ -538,8 +548,29 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Arab News",
+          "title": "Netanyahu says too early to tell who is behind foiled bid to crash Dubai-Tel Aviv flight",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Arab News",
+          "title": "Indian Prime Minister Narendra Modi lauds FlyDubai “hero” pilot Smit Machchhar",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Gulf News",
           "title": "UAE orders investigation into flydubai Tel Aviv flight incident",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "flydubai emergency landing: Saudi Arabia issues clarification",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -560,23 +591,30 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Limits and price of politics according to Burnham",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "France closes 400 schools as education protests spiral into unrest",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "India’s ‘Cockroach’ movement calls protests over voter-list revisions",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "US tells European allies to release diesel stocks 'immediately'",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Who is the storyteller in the age of AI?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "When news disappears, who controls digital memory?",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -616,7 +654,7 @@
         },
         {
           "source": "TRT World",
-          "title": "Pro-Iran factions refuse to disarm as Iraqi government sets new deadline",
+          "title": "Saudi Arabia investigates flydubai emergency landing in Tabuk",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -625,22 +663,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 46,
+      "clusters": 41,
       "sizes": [
         5,
+        3,
+        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        2,
-        2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -738,6 +771,50 @@
         },
         {
           "selected_rank": 2,
+          "headline": "The article discusses the historical connection of Abdel Nasser and Hezbollah to Palestine and land…",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-01T06:16+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Al Mayadeen",
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "The article discusses the historical connection of Abdel Nasser and Hezbollah to Palestine and land…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Mayadeen",
+                "title": "The article discusses the historical connection of Abdel Nasser and Hezbollah to",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "Hezbollah has categorically denied any connection to a cell allegedly apprehende",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "UAE-owned tankers hit after breaching Hormuz rules",
           "rank_key": {
             "outlets": 2,
@@ -775,7 +852,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Iran urges Iraq to lift flight restrictions, restore normal air travel",
           "rank_key": {
             "outlets": 2,
@@ -806,7 +883,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Nearly 1,000 Israeli settlers invade Al-Aqsa Mosque",
           "rank_key": {
             "outlets": 2,
@@ -844,27 +921,27 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Eritrea says severing diplomatic ties with Ethiopia",
+          "selected_rank": null,
+          "headline": "US moves thousands of troops to Middle East as Trump weighs Iran strikes",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-01T19:52+00:00"
+            "newest": "2026-10-01T22:18+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
+            "Arab News",
             "TRT World"
           ],
           "camps": [
-            "panarab",
+            "gulf",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Eritrea says severing diplomatic ties with Ethiopia",
+            "source": "Arab News",
+            "title": "US moves thousands of troops to Middle East as Trump weighs Iran strikes",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -872,44 +949,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The article discusses the historical connection of Abdel Nasser and Hezbollah to Palestine and land…",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-01T06:16+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "The article discusses the historical connection of Abdel Nasser and Hezbollah to Palestine and land…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Mayadeen",
-                "title": "The article discusses the historical connection of Abdel Nasser and Hezbollah to",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -982,69 +1021,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "IRGC kill six ’terrorists’ in restive Sistan-Baluchistan region",
+          "headline": "Colonists attack homes and seize vehicle in northeast of Ramallah",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-01T18:21+00:00"
+            "newest": "2026-10-02T08:25+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "IRGC kill six ’terrorists’ in restive Sistan-Baluchistan region",
-            "title_source": "native",
-            "why": [
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Iran’s IRGC kills six ‘terrorists’ in restive region, state news agency reports",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "LEBANON-SYRIA Syrian government officials and Hezbollah held secret talks in Turkey, sources say",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Manar",
-            "L'Orient Today"
+            "WAFA News"
           ],
           "camps": [
             "levant"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "L'Orient Today",
-            "title": "LEBANON-SYRIA Syrian government officials and Hezbollah held secret talks in Turkey, sources say",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (hezbollah, syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
+          "members": 3,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Japanese, Qatari premiers discuss US-Iran war at meeting in Tokyo",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T08:04+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1084,19 +1093,19 @@
         },
         {
           "selected_rank": null,
-          "headline": "Colonists attack Palestinian olive harvesters near Beita, south of Nablus",
+          "headline": "28 detained in corruption probe involving Istanbul’s Eyüpsultan Mayor",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-02T07:09+00:00"
+            "newest": "2026-10-02T06:59+00:00"
           },
           "outlet_names": [
-            "WAFA News"
+            "Daily Sabah"
           ],
           "camps": [
-            "levant"
+            "turkish"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1120,17 +1129,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump says he may ask Europe to release diesel reserves",
+          "headline": "Iran’s IRGC kills six ‘terrorists’ in restive region, state news agency reports",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-01T22:24+00:00"
+            "newest": "2026-10-01T18:21+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Al Arabiya"
           ],
           "camps": [
-            "turkish"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1138,71 +1147,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Türkiye condemns Houthis' attack on holy city of Medina",
+          "headline": "Eritrea says severing diplomatic ties with Ethiopia",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-01T20:37+00:00"
+            "newest": "2026-10-01T17:47+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "Al Arabiya"
           ],
           "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US moves thousands of troops to Middle East as Trump weighs Iran strikes",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T20:08+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Suspect in flydubai attack handed over to UAE, Saudi authorities say",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T19:42+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Houthi drone hits Medina power station supplying Prophet’s Mosque",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-01T17:38+00:00"
-          },
-          "outlet_names": [
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1263,7 +1218,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Hamas called for the launch of the 'Great Dawn' campaign in support of Jerusalem.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-01T13:46+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1281,7 +1254,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-02T08:05:10.546498+00:00",
+    "last_success": "2026-10-02T08:31:12.336447+00:00",
     "last_failure": null
   },
   "ok": true
