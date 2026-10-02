@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T21:19:53.400584+00:00",
+  "updated": "2026-10-02T21:52:58.385915+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-02T21:17:56.416618+00:00"
+      "headlines_updated": "2026-10-02T21:50:48.797760+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 13,
-        "title_snippet": 29,
+        "title_snippet": 27,
         "title_translated": 1,
         "title_native": 84,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 114
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -251,12 +252,22 @@
           "source": "Arab News",
           "title": "Indian Prime Minister Narendra Modi lauds FlyDubai “hero” pilot Smit Machchhar",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "وزير الطاقة السنغالي: انقطاع التيار الكهربائي أبرز الحاجة إلى ضرورة تبني الغاز المحلي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "على الخط الأصفر.. مواطن يحوّل منزله المدمر إلى مصلى لسكان شمال غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 56,
+      "in": 112,
+      "kept": 57,
       "dropped": [
         {
           "source": "Kan 11",
@@ -330,7 +341,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , G7 to release 100m oil barrels as Trump hails Europe diesel deal",
+          "title": "5 , Christa Pike unconscious, on ventilator after botched execution: Lawyers",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -408,20 +419,6 @@
         {
           "source": "Al Mayadeen",
           "title": "New findings from the 'James Webb' telescope reveal a Jupiter-sized planet that challenges existing theories.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "This discusses the future of Iraq after the American withdrawal.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "A poll in Brazil shows President Luiz Inácio Lula da Silva with 48% of the vote against 45% for Flavio…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -609,13 +606,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Far right shifts from organized groups to digital networks in 2026",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Hürriyet Daily News",
           "title": "PHOTO Best restaurants in Istanbul, ranked",
           "sec": 0,
@@ -668,13 +658,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 46,
       "sizes": [
         5,
         4,
-        4,
-        3,
         2,
+        2,
+        2,
+        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -814,55 +807,11 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Türkiye condemns Houthi strike on infrastructure serving Prophet's Mosque",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-02T14:50+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Gulf News",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Türkiye condemns Houthi strike on infrastructure serving Prophet's Mosque",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Houthis target Madinah power station supplying Prophet’s Mosque, coalition says",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Houthi drone hits Medina power station supplying Prophet’s Mosque",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Israeli forces detain six Palestinians from West Bank",
+          "headline": "Palestinian killed, others injured by Israeli occupiers in West Bank",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-02T19:07+00:00"
+            "newest": "2026-10-02T19:01+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
@@ -872,17 +821,16 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces detain six Palestinians from West Bank",
+            "source": "Anadolu Agency",
+            "title": "Palestinian killed, others injured by Israeli occupiers in West Bank",
             "title_source": "native",
             "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -890,18 +838,39 @@
                 "source": "WAFA News",
                 "title": "Palestinian man shot and killed by Israeli colonists in Yasuf, central West Bank",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli colonists and forces prevent farmers from harvesting olives in Salfit",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Palestinian killed, others injured by Israeli occupiers in West Bank",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Trump warns war against Iran will end 'very soon, one way or another'",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-01T02:40+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Trump warns war against Iran will end 'very soon, one way or another'",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -933,6 +902,55 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Houthi drone hits Medina power station supplying Prophet’s Mosque",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-01T17:38+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Houthi drone hits Medina power station supplying Prophet’s Mosque",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump signals support for Türkiye as CAATSA sanctions linger",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T21:30+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1008,6 +1026,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israeli forces detain six Palestinians from West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T19:07+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Saudi-led coalition says it intercepted, destroyed 3 Houthi ballistic missiles targeting Khamis Mush",
           "rank_key": {
             "outlets": 1,
@@ -1037,6 +1073,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Checkpoints in the occupied West Bank choking Palestinian life, warns UN expert",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T16:26+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1097,61 +1151,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Saudi Arabia denies rumors of bombing attempt at Al-Masjid al-Haram in Mecca",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-02T10:27+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Saudi warplanes strike areas in northern Yemen: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-02T08:11+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Qaani stated that the new generation of Hezbollah will not leave Israel alone.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-02T06:54+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1169,7 +1169,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-02T21:20:08.138332+00:00",
+    "last_success": "2026-10-02T21:53:12.366437+00:00",
     "last_failure": null
   },
   "ok": true
