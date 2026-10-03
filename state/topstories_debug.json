@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T16:24:53.106046+00:00",
+  "updated": "2026-10-03T16:44:59.568064+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-03T16:23:11.264717+00:00"
+      "headlines_updated": "2026-10-03T16:42:52.069383+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 31,
-        "dropped_no_english": 6,
+        "dropped_stale": 7,
+        "title_snippet": 29,
+        "dropped_no_english": 8,
         "title_translated": 3,
-        "title_native": 79,
+        "title_native": 80,
         "in": 127,
-        "kept": 113
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -190,11 +190,6 @@
       "dropped": [
         {
           "source": "The New Arab",
-          "title": "IRGC kill six ’terrorists’ in restive Sistan-Baluchistan region",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "The New Arab",
           "title": "US removes Syria from arms export ban as Trump draws closer to Sharaa government",
           "reason": "stale (older than 48h)"
         },
@@ -205,7 +200,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Palestinian man killed in West Bank settler attack",
+          "title": "UAE probes possible 'terror' incident on flight to Israel",
           "reason": "stale (older than 48h)"
         },
         {
@@ -227,6 +222,11 @@
           "source": "TRT World",
           "title": "Yemeni army says it launched six air strikes on Houthi positions in Taiz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בן גביר בפנייה לבג\"ץ: יש לפרסם פסק דין בעניינו של סאמי אבו שחאדה",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Kan 11",
@@ -255,14 +255,19 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "سرايا القدس: ثابتون على الحق ولا نفرّط ولا نتنازل",
+          "title": "من التسوق إلى الجسم.. ماذا يحدث عند لمس الإيصالات الورقية؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "10 injured after car crashes into crowd in northern Sydney - وكالة الأنباء السورية",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 113,
-      "kept": 60,
+      "in": 112,
+      "kept": 59,
       "dropped": [
         {
           "source": "Kan 11",
@@ -274,13 +279,6 @@
         {
           "source": "Kan 11",
           "title": "London's Metropolitan Police will be unable to prevent a pro-Palestinian demonstration on October 7, despite…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "An 11-year-old boy sustained serious injuries in a scooter accident in Ar'ara, in the Negev region.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -351,6 +349,13 @@
         {
           "source": "The New Arab",
           "title": "Iran and Israel at UN, Netanyahu’s UAE trip, and US leave Iraq",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "The humans behind AI warfare",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -639,14 +644,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 35,
       "sizes": [
         7,
         6,
         6,
         6,
-        5,
+        3,
         2,
+        1,
         1,
         1,
         1,
@@ -744,54 +750,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "A Palestinian was killed and several injured in Israeli attacks in Gaza and the West Bank.",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-10-03T16:15+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Falastin al-Youm",
-            "N12",
-            "SANA",
-            "The New Arab"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "A Palestinian was killed and several injured in Israeli attacks in Gaza and the West Bank.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Israeli settlers attempted to set Palestinian child on fire in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli occupiers injure 16 Palestinians, burn 55 olive trees in West Bank attac",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "UAE says FlyDubai co-pilot attempted to carry out terrorist attack",
           "rank_key": {
             "outlets": 5,
@@ -846,7 +804,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Israeli strike kills 2 Christian women, lecturer, her mother in new Gaza ceasefire breach",
           "rank_key": {
             "outlets": 4,
@@ -902,7 +860,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Five Indians rescued after tanker hit by projectile in Strait of Hormuz",
           "rank_key": {
             "outlets": 4,
@@ -958,6 +916,46 @@
           }
         },
         {
+          "selected_rank": 5,
+          "headline": "Israeli settlers, masked and armed with stones, shattered car windows in the Palestinian village of ",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-03T14:32+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "N12",
+            "The New Arab"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "Israeli settlers, masked and armed with stones, shattered car windows in the Palestinian village of Usrin in…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Israeli settlers attempted to set Palestinian child on fire in West Bank",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": null,
           "headline": "Two Iranians charged with planning attack on Manchester Jews",
           "rank_key": {
@@ -987,6 +985,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli occupiers injure 16 Palestinians, burn 55 olive trees in West Bank attacks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-03T16:15+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1187,25 +1203,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Philippines urges ASEAN talks after 50 killed in Myanmar airstrike",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-03T09:17+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1223,7 +1221,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-03T16:25:14.508562+00:00",
+    "last_success": "2026-10-03T16:45:17.302197+00:00",
     "last_failure": null
   },
   "ok": true
