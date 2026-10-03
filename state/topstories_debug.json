@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T19:23:28.329028+00:00",
+  "updated": "2026-10-03T19:29:48.932448+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-03T19:21:29.836673+00:00"
+      "headlines_updated": "2026-10-03T19:27:40.031076+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 38,
+        "dropped_stale": 7,
+        "title_snippet": 36,
+        "dropped_no_english": 2,
         "title_translated": 2,
-        "title_native": 79,
+        "title_native": 80,
         "in": 127,
-        "kept": 119
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -187,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "US removes Syria from arms export ban as Trump draws closer to Sharaa government",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Jordan Times",
           "title": "Palestinian man killed in West Bank settler attack",
@@ -219,27 +215,30 @@
         },
         {
           "source": "Gulf News",
-          "title": "Houthi drone hits Medina power station supplying Prophet’s Mosque",
+          "title": "UAE orders investigation into flydubai Tel Aviv flight incident",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
           "title": "Yemeni army says it launched six air strikes on Houthi positions in Taiz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צה\"ל מאשר את ניסיון חיסול מנהיג חמאס בעזה: \"תוצאות התקיפה בבדיקה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تصعيد دبلوماسي بين مصر وإثيوبيا... والاتحاد الأفريقي يدعو إلى ضبط النفس",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
+      "in": 118,
       "kept": 63,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "A 75-year-year-old pilot, Eran Peleg from Kfar Saba, died in a light aircraft crash on Road 65.",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
         {
           "source": "N12",
           "title": "Three Israelis who neutralized a co-pilot armed with an axe on a Flydubai flight recounted the dramatic…",
@@ -339,6 +338,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "The New Arab",
+          "title": "How the internet is changing the illicit antiquities trade",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "Widespread student protests in France have led to school closures and confrontations with the police.",
           "sec": 0,
@@ -347,14 +353,7 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "An Abu Dhabi meeting is discussed in relation to Arab nations potentially supporting Netanyahu.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The United States is navigating internal crises while managing external conflicts, with a focus on the…",
+          "title": "An Abu Dhabi meeting is discussed in the context of Arab nations potentially supporting Netanyahu.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -629,9 +628,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 42,
       "sizes": [
-        7,
+        6,
         5,
         5,
         4,
@@ -639,6 +638,7 @@
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -698,7 +698,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -1239,7 +1239,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1257,7 +1257,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-03T19:26:38.960960+00:00",
+    "last_success": "2026-10-03T19:29:49.114515+00:00",
     "last_failure": null
   },
   "ok": true
