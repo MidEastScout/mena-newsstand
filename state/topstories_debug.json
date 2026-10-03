@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T20:33:51.052604+00:00",
+  "updated": "2026-10-03T21:05:47.761664+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-03T20:31:35.082157+00:00"
+      "headlines_updated": "2026-10-03T21:03:46.261689+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 38,
+        "dropped_stale": 7,
+        "title_snippet": 34,
+        "dropped_no_english": 3,
         "title_translated": 2,
         "title_native": 81,
         "in": 127,
-        "kept": 121
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -187,6 +188,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Al Mayadeen",
+          "title": "اجتماع أبو ظبي.. لماذا يتسابق العرب لإنقاذ نتنياهو؟",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Jordan Times",
           "title": "Palestinian man killed in West Bank settler attack",
@@ -216,12 +222,27 @@
           "source": "TRT World",
           "title": "Yemeni army says it launched six air strikes on Houthi positions in Taiz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "משרד התחבורה: מרכז איסוף נתוני הנוסעים אינו מבצעי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "חרדים התעמתו עם שוטרים בביתר עלית לאחר פרסום שקרי כי ניסו לעצור משתמטי גיוס",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "עריק חרדי הכה באגרוף שוטר בביתר עילית ונעצר, מהומות במקום",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 68,
+      "in": 117,
+      "kept": 64,
       "dropped": [
         {
           "source": "N12",
@@ -267,14 +288,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , What to know about Brazil’s 2026 presidential election",
+          "title": "5 , What to know about Brazil’s 2026 presidential election",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "6 , ‘Bordering on angry’: The state of play as US midterms enter final month",
+          "title": "6 , Trump ramps up pressure on US Republicans to end US clock switching",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -323,7 +344,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "Netanyahu is trying to steal the elections",
+          "title": "Trump: US is leaving Iraq",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -331,13 +352,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Large student protests in France have led to school closures and confrontations with police.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "An Abu Dhabi meeting is being discussed in the context of Arab nations engaging with Netanyahu.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -525,6 +539,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Gulf News",
+          "title": "Invest $350,000 for Argentine citizenship: New passport scheme unveiled",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Erdoğan vows action over Soma mine collapse at TEKNOFEST",
           "sec": 0,
@@ -598,7 +619,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 43,
       "sizes": [
         6,
         5,
@@ -642,10 +663,6 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
         1
       ]
     },
@@ -656,6 +673,63 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Oil tankers attacked in Hormuz strait: UK maritime agency",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-10-03T02:23+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Arab News",
+            "Gulf News",
+            "Jordan Times"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Oil tankers attacked in Hormuz strait: UK maritime agency",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Jordan Times",
+                "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Oil tankers hit in Hormuz as Yemeni forces strike Sanaa ‘military targets’",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Israeli strike kills 2 Christian women, lecturer, her mother in new Gaza ceasefire breach",
           "rank_key": {
             "outlets": 4,
@@ -705,62 +779,6 @@
               {
                 "source": "SANA",
                 "title": "Five Palestinians, including four women, were killed in an Israeli strike in wes",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Five Indians rescued after tanker hit by projectile in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-03T09:38+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "Gulf News",
-            "Jordan Times"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "Five Indians rescued after tanker hit by projectile in Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Oil tankers attacked in Hormuz strait: UK maritime agency",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -893,32 +911,32 @@
         },
         {
           "selected_rank": null,
-          "headline": "Reports indicate that the Houthis attacked an Aramco facility in Riyadh.",
+          "headline": "Houthis claim missile, drone attack on Saudi Aramco in Riyadh",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-03T18:58+00:00"
+            "newest": "2026-10-03T20:34+00:00"
           },
           "outlet_names": [
-            "Kan 11",
+            "Anadolu Agency",
             "L'Orient Today"
           ],
           "camps": [
-            "israeli",
-            "levant"
+            "levant",
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Reports indicate that the Houthis attacked an Aramco facility in Riyadh.",
-            "title_source": "snippet",
+            "source": "Anadolu Agency",
+            "title": "Houthis claim missile, drone attack on Saudi Aramco in Riyadh",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
@@ -1134,24 +1152,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Netanyahu invited the Indian pilot to light a torch on Independence Day, recognizing him as a hero.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-03T17:53+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Diplomatic tensions have escalated between Egypt and Ethiopia, prompting the African Union to call f",
           "rank_key": {
             "outlets": 1,
@@ -1260,24 +1260,42 @@
         },
         {
           "selected_rank": null,
-          "headline": "Egyptian president rejects use of Nile water for political gains, urges peaceful solutions to Africa",
+          "headline": "Terrorist images found on Flydubai suspect’s social media",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-03T14:25+00:00"
+            "newest": "2026-10-03T12:33+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Egypt Independent"
           ],
           "camps": [
-            "turkish"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The death toll from the Israeli war in Gaza has risen to 74,228.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-03T12:31+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1295,7 +1313,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-03T20:34:05.022970+00:00",
+    "last_success": "2026-10-03T21:06:21.383979+00:00",
     "last_failure": null
   },
   "ok": true
