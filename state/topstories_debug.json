@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T01:59:31.445037+00:00",
+  "updated": "2026-10-03T02:30:49.218589+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-03T01:57:46.811437+00:00"
+      "headlines_updated": "2026-10-03T02:28:59.703625+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 31,
-        "title_translated": 1,
+        "dropped_stale": 15,
+        "title_snippet": 26,
+        "dropped_no_english": 4,
         "title_native": 82,
         "in": 127,
-        "kept": 114
+        "kept": 108
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 30,
+        "requested": 29,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -203,8 +203,18 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "حادثة طائرة \"فلاي دبي\": \"إسرائيل\" تحقق في إعطاء الإذن لطيار عُماني بالطيران إليها",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Jordan Times",
           "title": "Gaza health officials say Israeli strike kills 5 in Gaza City",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "نتنياهو في تعقيب رسمي: حادثة طائرة \"فلاي دبي\" خطيرة جداً",
           "reason": "stale (older than 48h)"
         },
         {
@@ -251,12 +261,32 @@
           "source": "Gulf News",
           "title": "US exits Iraq as Trump cites victory over Daesh, vows Iran war ending ‘very soon’",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "כוכבת \"פאודה\" על תפקידה בפרקי ה-7 באוקטובר: \"קשה לי לצפות בזה\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "موسكو ترحب بانسحاب القوات الأميركية من العراق وتدعو لدور إقليمي لتعزيز الاستقرار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "الحجار: أولويتنا تحرير الجنوب وبسط سلطة الدولة فيه",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "هيئة البترول تنفي تغيير أوزان تعبئة اسطوانات الغاز",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 62,
+      "in": 108,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -309,13 +339,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "The first rescue flight from Dubai has departed, with officials stating they are happy to bring Israelis home.",
           "sec": 0,
           "off": 0,
@@ -330,7 +353,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , 12 minutes of madness: How Flydubai pilot, passengers saved plane midfall",
+          "title": "2 , 12 minutes of madness: How Flydubai pilot, passengers saved plane midfall",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -392,13 +415,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The Senegalese Minister of Energy highlighted the need to adopt local gas following a power outage.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Iraq and Iran agree on 40 daily flights by Iranian airlines to and from Najaf",
           "sec": 0,
@@ -417,6 +433,13 @@
           "title": "Hundreds of French high schools shut as new violence erupts",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
+          "title": "JUDICIARY Amnesty law, BDL, Sleiman al-Assad and cocaine: Where do Lebanon’s key legal cases stand?",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -476,13 +499,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "An article investigates what occurred within Division 40 in Daraa that led to its dissolution.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "In basketball, Riyadi Beirut is excelling, and Turkey's Konya team is showing solidarity with Palestine.",
           "sec": 0,
@@ -492,20 +508,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "The title refers to Gamal Abdel Nasser and Hassan Nasrallah regarding Palestine in the final hours.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The World Health Organization warns of a widening gap in mental health treatment.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The UAE Ministry of Foreign Affairs stated it is investigating the Flydubai flight incident.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -541,13 +543,6 @@
         {
           "source": "Gulf News",
           "title": "At its heart, it’s home food’: Karam Sethi on bringing Gymkhana to Dubai",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "New York governor names special prosecutor in Cornell sexual assault case",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -626,7 +621,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 49,
       "sizes": [
         4,
         3,
@@ -637,7 +632,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -1005,6 +999,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Tanker struck by unknown projectile off Oman: UK maritime agency",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-03T02:01+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "A large US arms deal for Israel is mentioned, along with a continuous withdrawal from Iraq.",
           "rank_key": {
             "outlets": 1,
@@ -1202,25 +1214,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Trump can win against Iran only in his dreams: Rezaei",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-02T15:43+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1238,7 +1232,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-03T01:59:51.118720+00:00",
+    "last_success": "2026-10-03T02:30:50.478366+00:00",
     "last_failure": null
   },
   "ok": true
