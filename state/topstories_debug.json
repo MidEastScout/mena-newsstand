@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-03T12:42:34.528627+00:00",
+  "updated": "2026-10-03T13:14:44.039096+00:00",
   "stages": {
     "fetch": {
-      "items": 127,
+      "items": 126,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -113,7 +113,7 @@
           "error": null
         },
         "SANA": {
-          "headlines": 5,
+          "headlines": 4,
           "lang": "en",
           "stale": false,
           "error": null
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-03T12:40:36.806897+00:00"
+      "headlines_updated": "2026-10-03T13:12:20.464580+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 16,
-        "title_snippet": 29,
+        "dropped_stale": 15,
+        "title_snippet": 27,
+        "dropped_no_english": 2,
         "title_translated": 2,
         "title_native": 80,
-        "in": 127,
-        "kept": 111
+        "in": 126,
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -205,6 +206,11 @@
         {
           "source": "Al Mayadeen",
           "title": "عبد الناصر ونصر الله... فلسطين في الساعات الأخيرة",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "UAE probes possible 'terror' incident on flight to Israel",
           "reason": "stale (older than 48h)"
         },
         {
@@ -238,18 +244,8 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "SANA",
-          "title": "Syria allows non-exclusive agencies for foreign vehicle and tire firms",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Syria Direct",
           "title": "Syria is rising, al-Sharaa tells UN—but challenges remain at home",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
-          "title": "Indian FlyDubai pilot Smit Machchhar praised for bravery during cockpit attack",
           "reason": "stale (older than 48h)"
         },
         {
@@ -266,23 +262,26 @@
           "source": "TRT World",
           "title": "Yemeni army says it launched six air strikes on Houthi positions in Taiz",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "משטרת לונדון: לא נוכל למנוע הפגנה פרו-פלסטינית ב-7 באוקטובר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "באמירויות מאשרים: טייס המשנה תכנן להוציא לפועל פיגוע טרור",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 111,
-      "kept": 63,
+      "in": 109,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "An 11-year-old child sustained serious injuries in a scooter accident in Ar'arat al-Naqab, a Bedouin town in…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A vehicle collided with a wall in the city of Lod, resulting in critical injuries to a man approximately 50…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -318,13 +317,6 @@
         {
           "source": "Channel 13",
           "title": "A star of \"Fauda\" commented on her role in episodes depicting October 7th, finding it difficult to watch the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "An Israeli woman in Thailand encountered a mafia hit while taking a taxi, becoming involved in a dangerous…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -548,6 +540,13 @@
         },
         {
           "source": "Anadolu Agency",
+          "title": "India says 5 citizens rescued after Kuwait-flagged tanker hit by projectile in Hormuz Strait",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
           "title": "1st Israeli flight departs Dubai to repatriate stranded passengers after Flydubai incident",
           "sec": 0,
           "off": 0,
@@ -613,15 +612,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 43,
       "sizes": [
         7,
-        7,
-        5,
+        6,
+        6,
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -726,13 +724,12 @@
           "selected_rank": 2,
           "headline": "Five Indians rescued after tanker hit by projectile in Strait of Hormuz",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 4,
             "camps": 3,
             "newest": "2026-10-03T09:38+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
             "Arab News",
             "Gulf News",
             "Jordan Times"
@@ -742,7 +739,7 @@
             "panarab",
             "levant"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -757,11 +754,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "1 , Oil tankers attacked in Strait of Hormuz, reports UK maritime agency",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Arabiya",
                 "title": "Tanker hit by projectile in Strait of Hormuz, UKMTO says",
                 "rejected_by": "older than the story's newest wave"
@@ -775,59 +767,34 @@
                 "source": "Jordan Times",
                 "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Tanker attacked in Strait of Hormuz: UK maritime agency",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 3,
-          "headline": "Yemeni army carries out 71 operations against Houthi positions in country's southwest",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-03T12:24+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Yemeni army carries out 71 operations against Houthi positions in country's southwest",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "One Palestinian killed in Israeli drone strike in Beit Lahia",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
+            "outlets": 3,
+            "camps": 3,
             "newest": "2026-10-03T11:32+00:00"
           },
           "outlet_names": [
+            "Arab News",
             "Middle East Eye",
             "WAFA News"
           ],
           "camps": [
+            "gulf",
             "panarab",
             "levant"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -861,6 +828,38 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Yemeni army carries out 71 operations against Houthi positions in country's southwest",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-03T12:24+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Yemeni army carries out 71 operations against Houthi positions in country's southwest",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1121,24 +1120,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "‘I was not going to let others die’: Flydubai pilot recounts cockpit attack",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-03T03:32+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "A significant US arms deal for Israel has been finalized, coinciding with a continued US troop withd",
           "rank_key": {
             "outlets": 1,
@@ -1156,7 +1137,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "This article discusses Israel's considerations regarding Lebanon, weighing between an electoral blow",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-02T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1174,7 +1173,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-03T12:42:52.182162+00:00",
+    "last_success": "2026-10-03T13:15:29.171837+00:00",
     "last_failure": null
   },
   "ok": true
