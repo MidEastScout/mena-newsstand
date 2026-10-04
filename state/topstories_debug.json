@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T21:01:13.449909+00:00",
+  "updated": "2026-10-04T21:33:13.101721+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-04T20:59:21.223022+00:00"
+      "headlines_updated": "2026-10-04T21:30:56.686318+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 39,
+        "dropped_stale": 10,
+        "title_snippet": 32,
+        "dropped_no_english": 5,
         "title_translated": 1,
-        "title_native": 79,
+        "title_native": 78,
         "in": 126,
-        "kept": 119
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 37,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -195,6 +196,16 @@
         {
           "source": "The New Arab",
           "title": "Sudan's ousted president Bashir sent to Khartoum for treatment, lawyer says",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "لا أدوية سرطان مُزوَّرة في لبنان: فتح معركة كسر الاحتكار",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "لماذا مُنعت البيوع العقارية على الحدود؟ وثيقة أمنية فرنسية تشرح تاريخ التغلغل اليهودي",
           "reason": "stale (older than 48h)"
         },
         {
@@ -221,12 +232,42 @@
           "source": "TRT World",
           "title": "Schools shut, tensions simmer as student protests rock France",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Mecca pact defence committee meeting in Riyadh soon: Pakistan",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "אחרי מתקפת הטרור שנמנעה: הצבא האמריקני פינה את מפציצי ה-B1 מהבסיס בבריטניה | דיווח",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אורלי חוששת להכיר בחורים בארץ: \"ישראלים לפעמים צוחקים עליי\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אימאל'ה, הם באים לעצור אותי\": מה קרה כשהמשטרה עצרה את חן מאירי ואדם?",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "طهران تلوّح بالتصعيد وعراقجي يؤكد على أن المواجهة المقبلة مع واشنطن ستكون أشد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "قائد رحلة \"فلاي دبي\" يروي لحظات الطعن والهبوط الاضطراري",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 60,
+      "in": 111,
+      "kept": 56,
       "dropped": [
         {
           "source": "Kan 11",
@@ -278,13 +319,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "A quote expresses a lifelong connection to discussing Israel and Jewish identity within a family.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "2 , Lula and Bolsonaro locked in tight election for Brazil’s presidency",
           "sec": 0,
@@ -293,7 +327,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Brazil election 2026 updates: Lula faces Bolsonaro in a close race",
+          "title": "5 , Brazil election 2026 updates: Lula faces Bolsonaro in a close race",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -467,20 +501,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "There are no counterfeit cancer medications in Lebanon, and a battle against monopolization is underway.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "A French security document explains the history of Jewish infiltration, questioning real estate sales at the…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "A video shows a meeting between Sayyed Nasrallah and Sayyed Safi al-Din for the first time.",
           "sec": 0,
@@ -545,13 +565,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "US prison chief Frank Strada who oversaw botched Christa Pike execution resigns",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "Benjamin Netanyahu invites flydubai pilot who averted mid-air crisis to Israel",
           "sec": 0,
           "off": 0,
@@ -573,6 +586,20 @@
         },
         {
           "source": "Daily Sabah",
+          "title": "Is a politics of 'competition within consensus' possible?",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Cyprus shouldn't become Crete: Lessons from guarantor debate",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
           "title": "Izmir mayor set to switch to AK Party this week: Report",
           "sec": 0,
           "off": 0,
@@ -581,13 +608,6 @@
         {
           "source": "Daily Sabah",
           "title": "Turkish Parliament meets for new bill, speech by central bank chair",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Perfectionism takes toll on young adults’ mental health: Study",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -633,19 +653,12 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "RSF 'executed' over 25 civilians in North Kordofan, violation of humanitarian law: Sudan's doctors",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 34,
       "sizes": [
         7,
         6,
@@ -657,10 +670,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -751,51 +760,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iran says Strait of Hormuz will not reopen until conditions are met",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-04T14:47+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "IRNA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Iran says Strait of Hormuz will not reopen until conditions are met",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Iran says Strait of Hormuz will not reopen until conditions are met",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Hormuz Strait to remain closed until Iran’s seven conditions are met: Ghalibaf",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Houthis claim missile, drone attacks on Saudi Aramco sites",
           "rank_key": {
             "outlets": 3,
@@ -840,12 +804,46 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "Iran says Strait of Hormuz will not reopen until conditions are met",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-04T08:33+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "IRNA"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Iran says Strait of Hormuz will not reopen until conditions are met",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
           "selected_rank": 4,
           "headline": "Gaza death toll rises to 74,237 since October 2023",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-10-04T16:17+00:00"
+            "newest": "2026-10-04T21:22+00:00"
           },
           "outlet_names": [
             "Middle East Eye",
@@ -883,6 +881,11 @@
               {
                 "source": "SANA",
                 "title": "A Palestinian was killed and several others injured in Israeli attacks in Gaza a",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Israeli occupation forces killed three individuals in Gaza and conducted raids i",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1097,6 +1100,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "The pilot-accused of an axe attack provided details to investigators in the UAE, stating he searched",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-04T21:09+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Tanker reports multiple explosions near vessel off Yemen: UK maritime agency",
           "rank_key": {
             "outlets": 1,
@@ -1120,42 +1141,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-04T19:55+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The pilot-accused of an axe attack provided details to investigators in the UAE, stating he searched",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-04T19:54+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "New details from the investigation into a pilot-terrorist suggest he planned to hijack a plane and c",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-04T18:11+00:00"
           },
           "outlet_names": [
             "N12"
@@ -1223,24 +1208,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Iranian Army announced steps to increase the range of its missiles following a conflict with the",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-04T13:52+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump announces leadership of AI task force",
           "rank_key": {
             "outlets": 1,
@@ -1252,24 +1219,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A report indicates a 121% increase in emergency psychiatric visits for children three years into the",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-04T13:01+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1295,24 +1244,78 @@
         },
         {
           "selected_rank": null,
-          "headline": "VP delves into FETÖ, terror-free Türkiye at event on Said Nursi",
+          "headline": "Iran Army planning to enhance missile range, speed: Spox.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-04T12:22+00:00"
+            "newest": "2026-10-04T11:00+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "Mehr News"
           ],
           "camps": [
-            "turkish"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Israeli Army Minister orders closure of crossings in West Bank and Gaza",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-04T08:59+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Islamic Jihad Movement celebrates 39 years of jihad and resistance.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-04T08:11+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Diplomatic path to ending war remains open: Iran FM Araghchi",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-04T07:15+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1330,7 +1333,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-04T21:01:27.355509+00:00",
+    "last_success": "2026-10-04T21:33:27.181662+00:00",
     "last_failure": null
   },
   "ok": true
