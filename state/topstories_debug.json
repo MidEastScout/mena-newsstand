@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T03:55:58.905487+00:00",
+  "updated": "2026-10-04T04:27:59.373973+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-04T03:54:04.724381+00:00"
+      "headlines_updated": "2026-10-04T04:26:10.644224+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 38,
-        "title_native": 83,
+        "title_snippet": 34,
+        "dropped_no_english": 3,
+        "title_native": 84,
         "title_translated": 1,
         "in": 127,
-        "kept": 122
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 37,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Al Mayadeen",
+          "title": "احتجاجات طلابية واسعة في فرنسا.. إغلاق مدارس ومواجهات مع الشرطة",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Al Mayadeen",
           "title": "اجتماع أبو ظبي.. لماذا يتسابق العرب لإنقاذ نتنياهو؟",
@@ -208,15 +214,25 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "US is moving around 9,000 troops aboard ships to Middle East as Trump weighs new attacks on Iran",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "לפיד: \"האיומים החיצוניים מוכרים לנו הרבה זמן, אם אתה נשאר בחיים בתקופה הזו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "לוחם נפצע קשה וקצין נפצע בינוני מפיצוץ רימון בדרום לבנון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "حزب الله وواشنطن: التفاوض المباشر لا يزال بعيداً",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 62,
+      "in": 119,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
@@ -226,22 +242,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Kan 11",
-          "title": "The UK's Green Party is expected to vote on a proposal that defines Zionism as a racist ideology.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "N12",
           "title": "Three Israelis who disarmed an attacker on a Flydubai flight recounted the ordeal, during which the plane…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Thousands of Israelis are stranded in Dubai and across the Middle East due to flight cancellations.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -276,7 +278,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Trump ramps up pressure on US Republicans to end US clock switching",
+          "title": "4 , Zimbabweans struggle to rebuild after fleeing xenophobia in South Africa",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -311,6 +313,13 @@
         },
         {
           "source": "Al Arabiya",
+          "title": "flydubai incident: Indian pilot stabbed, hailed as hero by Trump & Modi",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
           "title": "Netanyahu warns ‘very heavy price’ if any power behind flydubai incident",
           "sec": 0,
           "off": 0,
@@ -319,13 +328,6 @@
         {
           "source": "The New Arab",
           "title": "Trump: US is leaving Iraq",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Large student protests in France have led to school closures and confrontations with police.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -374,17 +376,17 @@
         },
         {
           "source": "Iran International",
-          "title": "INSIGHT As the rial sinks, Iranians seek shelter in almost anything else",
-          "sec": 0,
-          "off": 2,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Iran International",
           "title": "PODCAST Islamic Republic's 'slow meltdown' leaves it fewer ways out, analysts say",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Iran International",
+          "title": "INSIGHT As the rial sinks, Iranians seek shelter in almost anything else",
+          "sec": 1,
+          "off": 2,
+          "reason": "off-topic signals outweigh security signals"
         },
         {
           "source": "Jordan Times",
@@ -438,13 +440,6 @@
         {
           "source": "Al-Akhbar",
           "title": "Al Akhbar reports on alleged Israeli actions against journalists and their narratives.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "A statement from the resistance indicates the American withdrawal from Iraq is not considered complete, and…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -555,13 +550,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Somalia won't accept Israeli presence 'under any circumstances': President",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Erdoğan vows action over Soma mine collapse at TEKNOFEST",
           "sec": 0,
@@ -642,10 +630,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 49,
       "sizes": [
         5,
-        4,
+        3,
         3,
         2,
         2,
@@ -653,6 +641,8 @@
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -700,50 +690,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israeli settlers attack Palestinian vehicles in the occupied West Bank",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-03T17:59+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "TRT World",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Israeli settlers attack Palestinian vehicles in the occupied West Bank",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Israeli settlers attempted to set Palestinian child on fire in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli occupiers injure 16 Palestinians, burn 55 olive trees in West Bank attac",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Several Palestinians injured in Israeli drone strike in Gaza City",
           "rank_key": {
             "outlets": 3,
@@ -797,7 +743,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 2,
           "headline": "UAE says FlyDubai co-pilot attempted to carry out terrorist attack",
           "rank_key": {
             "outlets": 3,
@@ -839,7 +785,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "During a weekend operation in southern Lebanon, a soldier and an officer were seriously and moderate",
           "rank_key": {
             "outlets": 2,
@@ -871,6 +817,44 @@
               {
                 "source": "SANA",
                 "title": "Israeli explosions were reported in al-Mansouri, with shelling hitting towns in ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Israeli settlers attack Palestinian vehicles in the occupied West Bank",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-03T17:59+00:00"
+          },
+          "outlet_names": [
+            "TRT World",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Israeli settlers attack Palestinian vehicles in the occupied West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Israeli settlers attempted to set Palestinian child on fire in West Bank",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1004,6 +988,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "260 Houthis killed in 97 operations on southern fronts: Yemeni army",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-04T03:30+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "On the three-year anniversary of the massacre, 2,347 victims, including 63 children, are remembered.",
           "rank_key": {
             "outlets": 1,
@@ -1033,6 +1035,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia again urges foreign diplomats to leave Kyiv",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-03T23:15+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1183,43 +1203,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Reshet 13 is covering the 'Black Arrow' battle, detailing minute-by-minute how militants were preven",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-03T19:03+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Ethiopian federal troops enter Tigray capital",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-03T17:38+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1237,7 +1221,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-04T03:56:11.920170+00:00",
+    "last_success": "2026-10-04T04:28:12.606916+00:00",
     "last_failure": null
   },
   "ok": true
