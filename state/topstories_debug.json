@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T17:32:54.266392+00:00",
+  "updated": "2026-10-05T17:42:47.912971+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-05T17:31:01.594405+00:00"
+      "headlines_updated": "2026-10-05T17:41:00.460064+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 18,
+        "title_snippet": 16,
         "dropped_no_english": 22,
         "title_native": 79,
+        "title_translated": 2,
         "in": 127,
         "kept": 97
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 40,
+        "requested": 38,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -422,7 +423,14 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "The United States has not yet seen any conclusive evidence linking Iran to the Fly Dubai incident, according…",
+          "title": "Sixth Bulletin",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Four p.m. bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -458,13 +466,6 @@
         {
           "source": "Jordan Times",
           "title": "Trump faces midterm verdict as Democrats close in on US Congress",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Spain PM calls early election after parliament rejects housing measures",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -655,18 +656,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 37,
       "sizes": [
         5,
+        4,
         4,
         3,
         2,
         2,
         2,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -762,6 +761,57 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Occupation forces raid Rammun and close Karamilo military gate east of Ramallah",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-05T15:34+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "L'Orient Today",
+            "The New Arab",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Occupation forces raid Rammun and close Karamilo military gate east of Ramallah",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Israeli settlers attack Palestinian vehicles in the occupied West Bank",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "CONFLICT Israeli soldiers kill Palestinian accused of West Bank ramming",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "1 Palestinian killed, 5 injured in Israeli army, occupier attacks in West Bank",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Tanker ordered by Iran’s IRGC to turn back in Hormuz or risk being hit, UKMTO says",
           "rank_key": {
             "outlets": 3,
@@ -811,7 +861,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Iran tells US there is no military solution to Middle East war",
           "rank_key": {
             "outlets": 3,
@@ -855,7 +905,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Six more Palestinians killed in Gaza; death toll rises to 74,243",
           "rank_key": {
             "outlets": 2,
@@ -893,12 +943,12 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Palestinian child killed by Israel on first day back at school in Gaza",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-04T21:48+00:00"
+            "newest": "2026-10-04T20:24+00:00"
           },
           "outlet_names": [
             "Middle East Eye",
@@ -963,11 +1013,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "PPS: Israel expands use of “incitement” to target Palestinians",
+          "headline": "Médecins Sans Frontières: Israel is progressively asphyxiating Gaza and continuing its genocide",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-05T17:13+00:00"
+            "newest": "2026-10-05T17:40+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -981,11 +1031,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Occupation forces raid Rammun and close Karamilo military gate east of Ramallah",
+          "headline": "PPS: Israel expands use of “incitement” to target Palestinians",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-05T17:03+00:00"
+            "newest": "2026-10-05T17:13+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -993,7 +1043,7 @@
           "camps": [
             "levant"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1017,6 +1067,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Crown Prince participates in MED 9 Summit of Southern European countries",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-05T16:10+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "US approves $2.27B in arms sales to Egypt, Kuwait, UAE",
           "rank_key": {
             "outlets": 1,
@@ -1025,24 +1093,6 @@
           },
           "outlet_names": [
             "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "1 Palestinian killed, 5 injured in Israeli army, occupier attacks in West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T15:34+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
           ],
           "camps": [
             "turkish"
@@ -1178,7 +1228,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1196,7 +1246,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-05T17:33:24.355565+00:00",
+    "last_success": "2026-10-05T17:43:01.579705+00:00",
     "last_failure": null
   },
   "ok": true
