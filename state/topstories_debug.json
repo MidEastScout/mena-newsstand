@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T14:18:04.302500+00:00",
+  "updated": "2026-10-05T14:50:02.145981+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-05T14:15:58.733629+00:00"
+      "headlines_updated": "2026-10-05T14:48:04.603853+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 39,
+        "dropped_stale": 8,
+        "title_snippet": 31,
+        "dropped_no_english": 8,
         "title_translated": 1,
-        "title_native": 80,
+        "title_native": 79,
         "in": 127,
-        "kept": 120
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -187,6 +188,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Oil tankers attacked in Hormuz, smoke seen near Aramco in Riyadh",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "Israeli settlers attempted to set Palestinian child on fire in West Bank",
@@ -221,23 +227,56 @@
           "source": "TRT World",
           "title": "FlyDubai co-pilot attacked captain with 'axe' in 'terrorist' attempt, UAE top prosecutor says",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "אזרח כוויתי שניסה לפגוע בשגרירות ישראל בלונדון נידון למאסר עולם",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דיווח: הטייס המחבל תכנן פיגוע בטיסה קודמת לת\"א",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אתה מסתכל למוות בעיניים\": עומר ונקרט על החיים שאחרי השבי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "תמיכה רגשית והכרה בחוק: היוזמות למען בני ובנות הזוג של הנופלים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"את מנותקת\": עימות בקבינט בין השרה סטרוק לראש שב\"כ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إعلام عبري: إسرائيل تستعدّ لعملية عسكرية جديدة ضد إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Gold rises in Syrian market as global bullion reaches $4,160 an ounce - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Yemeni forces launch assault on Sanaa as government widens offensive - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 65,
+      "in": 111,
+      "kept": 55,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Three researchers have won the Nobel Prize in Medicine for their discoveries in the field of light.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The investigation into the former mayor of Acre on suspicion of election bribery has concluded, with a…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -251,21 +290,28 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "A confrontation occurred in the cabinet between Minister Strook and the head of the Shin Bet, with Strook…",
+          "title": "News 13 | News",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Russian lab worker dies of suspected plague in Siberia; US monitoring case",
+          "title": "2 , Brazil’s presidential race: Three key takeaways from the first round",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "3 , Is Iran charging a toll to allow oil traffic through Hormuz?",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Russian lab worker dies of suspected plague in Siberia; US monitoring case",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -294,13 +340,6 @@
         {
           "source": "Al Arabiya",
           "title": "Flights between Iran and Iraq’s Najaf to resume on Sunday, Iraqi state news agency says",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Iran executes two men arrested over January 2026 protests, Mizan reports",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -338,13 +377,6 @@
           "title": "Iran’s astronomy Olympiad triumph highlights youth scientific talent: Leader’s aide",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Judiciary chief congratulates astronomy Olympiad team on third straight title",
-          "sec": 0,
-          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -460,6 +492,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "145 colonists storm Al-Aqsa Mosque, 170 others enter under pretext of tourism",
+          "sec": 1,
+          "off": 1,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "Tehran has received new proposals from Washington via intermediaries.",
           "sec": 0,
@@ -503,6 +542,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "Lamar Jackson injury update emerges after leaving Ravens game in walking boot",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "'Era of wasting time over': Ghalibaf says Hormuz to remain closed until US meets conditions under June MoU",
           "sec": 0,
           "off": 0,
@@ -524,14 +570,21 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "UK police arrest 12 after anti-migrant protest in southern England",
+          "title": "Lithuania’s EU presidency to focus on security, competitiveness: President",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "Türkiye pursuing determined goal of becoming strong, respected global space player: President Erdogan",
+          "title": "UN chief to visit Pakistan for talks with top leadership",
+          "sec": 3,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Rubio says Russian biological lab incident not ‘cause for alarm,’ affirms US monitoring",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -617,23 +670,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 40,
       "sizes": [
-        7,
-        4,
+        6,
+        5,
         3,
-        3,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -696,7 +741,7 @@
             "iranian",
             "levant"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -717,17 +762,17 @@
               },
               {
                 "source": "Mehr News",
-                "title": "Yemeni army conducts 2 successful ops. deep inside S. Arabia",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "Yemeni forces advance in al-Jawf against Saudi backed forces",
+                "title": "Multiple explosions reported near tanker off Yemen: UKMTO",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Jordan Times",
                 "title": "Yemen presidency announces military operation to retake all territory from Houth",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "A military source reported that Yemeni forces expelled Saudi-backed gatherings f",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -735,6 +780,61 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Tanker ordered by Iran’s IRGC to turn back in Hormuz or risk being hit, UKMTO says",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-05T10:40+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "Mehr News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Tanker ordered by Iran’s IRGC to turn back in Hormuz or risk being hit, UKMTO says",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Iran says Strait of Hormuz will not reopen until conditions are met",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "No US vessel present near Iran: IRGC chief adviser",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Iran says Strait of Hormuz will not reopen until conditions are met",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Tanker damaged after attack in Strait of Hormuz: Maritime agency",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Iran tells US there is no military solution to Middle East war",
           "rank_key": {
             "outlets": 3,
@@ -778,78 +878,7 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "Tanker damaged after attack in Strait of Hormuz: Maritime agency",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-04T12:46+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Tanker damaged after attack in Strait of Hormuz: Maritime agency",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Is Iran charging a toll to allow oil traffic through Hormuz?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 4,
-          "headline": "201 displaced families have returned from Idlib camps to nine Syrian provinces.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-05T13:41+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "201 displaced families have returned from Idlib camps to nine Syrian provinces.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Six more Palestinians killed in Gaza; death toll rises to 74,243",
           "rank_key": {
             "outlets": 2,
@@ -887,7 +916,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Abdollahi stated that claims about Iran's nuclear program are based on illusions and that the fires ",
           "rank_key": {
             "outlets": 2,
@@ -958,6 +987,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "EU disburses $175M to Moldova as sides reaffirm path toward bloc membership",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-05T14:43+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Occupation forces raid Rammun and close Karamilo military gate east of Ramallah",
           "rank_key": {
             "outlets": 1,
@@ -971,24 +1018,6 @@
             "levant"
           ],
           "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US intends to 'live by' security pact with Saudi Arabia: Rubio",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T14:06+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1030,35 +1059,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "All 7 surviving Pakistani crew members rescued after Somalia pirate hijacking",
+          "headline": "Iran to use all diplomatic capacity to protect national interests: Araghchi",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-05T13:50+00:00"
+            "newest": "2026-10-05T13:53+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "IRNA"
           ],
           "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Three Palestinians injured in Israeli strike on tent in Khan Yunis",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T13:49+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1074,6 +1085,24 @@
           },
           "outlet_names": [
             "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "For the second time in 24 hours, IDF forces fired at suspects who approached a military post in the ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-05T13:41+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -1102,35 +1131,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Omer Vekert shared his experience of life after being held captive, describing it as \"looking death ",
+          "headline": "Iran able to disable Starlink operations during war",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-05T12:20+00:00"
+            "newest": "2026-10-05T12:21+00:00"
           },
           "outlet_names": [
-            "Channel 13"
+            "Mehr News"
           ],
           "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Initiatives are underway to provide emotional support and legal recognition for the bereaved partner",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T12:20+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1173,7 +1184,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Islamic Jihad is described as a shield for prisoners, with their resilience being legendary and thei",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-05T11:16+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1191,7 +1220,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-05T14:18:20.721300+00:00",
+    "last_success": "2026-10-05T14:50:23.039140+00:00",
     "last_failure": null
   },
   "ok": true
