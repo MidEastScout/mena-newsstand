@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T17:59:48.812794+00:00",
+  "updated": "2026-10-06T18:37:10.297210+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -127,7 +127,7 @@
         "Arab News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Gulf News": {
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-06T17:58:01.961251+00:00"
+      "headlines_updated": "2026-10-06T18:34:58.971490+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 38,
-        "title_translated": 2,
-        "title_native": 80,
+        "dropped_stale": 4,
+        "title_snippet": 36,
+        "title_translated": 1,
+        "dropped_no_english": 3,
+        "title_native": 82,
         "in": 126,
-        "kept": 120
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 39,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -190,16 +191,6 @@
         {
           "source": "The New Arab",
           "title": "Israeli settlers attack Palestinian vehicles in the occupied West Bank",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "The New Arab",
-          "title": "UK Green Party adopts ’Zionism is racism’ policy",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "The New Arab",
-          "title": "‘It has to pass’: Green Party members give their take on the Zionism is Racism motion",
           "reason": "stale (older than 48h)"
         },
         {
@@ -216,12 +207,27 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers attack Palestinian olive harvesters in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אחרי העימות: הסולחה בין משתתפת \"הארץ המובטחת\" לבין הלקוחה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"رويترز\" عن مصادر: وكالة الطاقة الدولية تحدد الأسبوع المقبل تفاصيل السحب من مخزونات \"الديزل\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "President al-Sharaa arrives in Riyadh for official visit, to meet Crown Prince - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 66,
+      "in": 119,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -273,13 +279,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This quote suggests that being assertive is necessary for integrating into Israel.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "2 , Russia plague quarantine following lab death: Should we be worried?",
           "sec": 0,
@@ -322,6 +321,34 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Arabiya",
+          "title": "US Senator Murphy says Pentagon denied him access to US base in Qatar",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Syrian president arrives in Riyadh on official visit, SANA reports",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "US warns foreign financial institutions over business with Iran",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "UK ’threatens to expel Israeli diplomats’ over consulate closure",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "The potential for the displacement of Gaza's residents has resurfaced as Israeli elections approach.",
           "sec": 0,
@@ -350,8 +377,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Sixth Bulletin",
+          "source": "IRNA",
+          "title": "Pezeshkian to meet Putin in Turkmenistan",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -359,13 +386,6 @@
         {
           "source": "IRNA",
           "title": "Pezeshkian: Iran ready to expand all-out ties with Thailand",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Iran warns of firm response to any US, Israeli aggression",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -385,8 +405,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Iran International",
-          "title": "ANALYSIS Iran’s Olympiad paradox: Building scientific talent for a future abroad",
+          "source": "Jordan Times",
+          "title": "World Bank keeps Jordan’s growth forecasts at 2.7% for 2026, 2.9% for 2027",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -483,6 +503,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Colonists assault several farmers north of Salfit",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "Al-Nakhala asserted that those attacking the resistance have no right to fire upon their own people.",
           "sec": 0,
@@ -512,7 +539,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Salman Ali Agha sacked as Pakistan T20I captain",
+          "title": "Sheikh Rashid: The ruler who built for the Dubai that did not yet exist",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "UAE sets up to Dh500,000 fine for food exceeding salt, sugar limits",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -520,13 +554,6 @@
         {
           "source": "Anadolu Agency",
           "title": "Iran summons French ambassador over student protests",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "WHO urges countries not to impose travel, trade restrictions for Ebola",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -596,7 +623,7 @@
         },
         {
           "source": "TRT World",
-          "title": "UK Green Party approves 'Zionism is racism' policy",
+          "title": "Türkiye-led Antalya Declaration unites 21 countries on peaceful use of space",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -605,16 +632,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 44,
       "sizes": [
-        6,
         5,
         5,
-        4,
-        4,
+        5,
+        3,
+        3,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -720,59 +746,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Operation ‘Dawn of Yemen’: Yemeni forces take control of Mokha & Bab al-Mandeb",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-10-06T17:03+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Arab News",
-            "Egypt Independent",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Operation ‘Dawn of Yemen’: Yemeni forces take control of Mokha & Bab al-Mandeb",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Yemeni forces gain control of Bab al-Mandab in operation targeting Houthis: spok",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Yemeni forces gain control of Bab Al-Mandab, Mokha in operation targeting Houthi",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Egypt Independent",
-                "title": "Saudi-backed Yemeni forces attack Houthis near key global trade route",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Saudi-led coalition intercepts Houthi ballistic missile targeting Khamis Mushait",
           "rank_key": {
             "outlets": 5,
@@ -829,7 +802,98 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "Operation ‘Dawn of Yemen’: Yemeni forces take control of Mokha & Bab al-Mandeb",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-06T17:03+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "Egypt Independent",
+            "SANA"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Operation ‘Dawn of Yemen’: Yemeni forces take control of Mokha & Bab al-Mandeb",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Yemeni forces gain control of Bab al-Mandab in operation targeting Houthis: spok",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Yemeni forces gain control of Bab Al-Mandab, Mokha in operation targeting Houthi",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Egypt Independent",
+                "title": "Saudi-backed Yemeni forces attack Houthis near key global trade route",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 4,
+          "headline": "India reported that 12 crew members were injured in an attack in the Strait of Hormuz.",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-06T18:23+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "IRNA",
+            "SANA"
+          ],
+          "camps": [
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "India reported that 12 crew members were injured in an attack in the Strait of Hormuz.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Trump’s social media posts do not determine whether Strait of Hormuz is open or ",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Israeli settlers beat AFP photographer covering West Bank",
           "rank_key": {
             "outlets": 3,
@@ -846,7 +910,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -861,58 +925,8 @@
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "(Update) Palestinians injured, homes and livestock shelters set ablaze in coloni",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
                 "source": "TRT World",
                 "title": "One Palestinian killed, five wounded in Israeli army, illegal settler attacks in",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "India reported that 12 crew members were injured in an attack in the Strait of Hormuz.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-06T14:35+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "IRNA",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "India reported that 12 crew members were injured in an attack in the Strait of Hormuz.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Tanker ordered by Iran’s IRGC to turn back in Hormuz or risk being hit, UKMTO sa",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Trump’s social media posts do not determine whether Strait of Hormuz is open or ",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -958,6 +972,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "UN chief visits Pakistan, India ceasefire monitoring mission in Islamabad",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-06T18:28+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Sudan’s Burhan vows to continue military campaign until ‘every inch’ retaken",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-06T18:25+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "A senior Israeli military official commented on recent riots in Modi'in, stating that the police sho",
           "rank_key": {
             "outlets": 1,
@@ -969,24 +1019,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "6 civilians killed, 4 injured in Houthi shelling south of Taiz, Yemen: State media",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-06T17:29+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1155,25 +1187,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Gulf oil flows have recovered to over 81% of pre-war levels.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-06T13:47+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1191,7 +1205,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-06T18:00:07.747424+00:00",
+    "last_success": "2026-10-06T18:37:27.854904+00:00",
     "last_failure": null
   },
   "ok": true
