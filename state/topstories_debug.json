@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T03:08:32.336319+00:00",
+  "updated": "2026-10-06T03:13:53.601966+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-06T03:06:16.492462+00:00"
+      "headlines_updated": "2026-10-06T03:12:02.903202+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 40,
+        "title_snippet": 34,
+        "dropped_no_english": 6,
         "title_native": 79,
         "in": 127,
-        "kept": 119
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -225,12 +226,42 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers attack Palestinian olive harvesters in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: הטייס-המחבל אמר בחקירתו כי תכנן את הפיגוע לפני שהועסק ב\"פליי דובאי\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דיווח: הטייס המחבל תכנן פיגוע בטיסה קודמת לת\"א - והתחרט",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "قاليباف يؤكد تمسك طهران بشروط مذكرة إسلام آباد... وعراقجي يحذّر واشنطن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "السجن 20 عاماً لكويتي حاول مهاجمة السفارة الإسرائيلية في لندن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "قاضية أميركية تحدّد موعداً لبدء المحاكمة في قضية تفجير لوكربي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إعلام عبري: إسرائيل تستعدّ لعملية عسكرية جديدة ضد إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 66,
+      "in": 113,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -289,22 +320,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The government secretary will leave his post but will remain associated with Netanyahu.",
+          "source": "Al Jazeera",
+          "title": "4 , Trump says US ready to aid Russia with plague outbreak in Siberia",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Trump officials pursue record number of cases to strip US citizenship",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Trump says US ready to aid Russia with plague outbreak in Siberia",
+          "title": "5 , Trump officials pursue record number of cases to strip US citizenship",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -443,13 +467,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Ghalibaf confirms Tehran's adherence to the Islamabad memorandum's conditions, while Araghchi warns…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Thousands have answered the call for the large scout gathering 'We are on the Covenant'.",
           "sec": 0,
@@ -506,22 +523,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Iran’s oil minister resigns for personal reasons, state media reports",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "British Airways flight declares emergency over Ireland, turns back to London",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Lamar Jackson injury update emerges after leaving Ravens game in walking boot",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -607,7 +610,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 40,
       "sizes": [
         8,
         5,
@@ -617,12 +620,8 @@
         3,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -866,6 +865,38 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Turkey, Pakistan to deploy forces to Saudi amid Houthi attacks: joint statement",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-05T22:12+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Turkey, Pakistan to deploy forces to Saudi amid Houthi attacks: joint statement",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Yemen’s Rashad Al-Alimi announces all-out military campaign to retake Houthi-held areas",
           "rank_key": {
             "outlets": 2,
@@ -940,6 +971,43 @@
               {
                 "source": "Al Arabiya",
                 "title": "Tanker damaged after attack in Strait of Hormuz: Maritime agency",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran tells US there is no military solution to Middle East war",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-04T21:57+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Jordan Times"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Iran tells US there is no military solution to Middle East war",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Jordan Times",
+                "title": "Iran FM tells US there is no military solution to their conflict",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1079,65 +1147,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "GAIF conference opens at Dead Sea, spotlights insurance sector challenges",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-06T00:09+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Ultra-Orthodox activists attempted to breach a building in Modi'in, and an army deserter was release",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-05T22:40+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Türkiye, Pakistan activate collective deterrence of Mecca Pact against Houthi attacks on S Arabia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T22:12+00:00"
-          },
-          "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Hundreds of ultra-Orthodox demonstrators gathered in Modi'in following reports of an attempted arres",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T21:46+00:00"
           },
           "outlet_names": [
             "Kan 11"
@@ -1205,24 +1219,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Kuwaiti national has been sentenced to 20 years in prison for attempting to attack the Israeli emb",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T20:45+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "US President Trump revealed that a specific threat related to Iran led to the evacuation of bombers ",
           "rank_key": {
             "outlets": 1,
@@ -1240,7 +1236,79 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Israeli forces raid Kafr ad-Dik west of Salfit and central Tulkarm, seize surveillance camera footag",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-05T19:31+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran: According to IRNA, the Commander of the Iranian Army, Major General Amir Hatami, stated during",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-05T18:03+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "President Pezeshkian nominates Mehrdad Akhlaghi as defense minister",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-05T15:06+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Scenarios of war and elections are being discussed.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-05T14:48+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1258,7 +1326,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-06T03:09:02.070540+00:00",
+    "last_success": "2026-10-06T03:14:07.830934+00:00",
     "last_failure": null
   },
   "ok": true
