@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T22:36:55.282911+00:00",
+  "updated": "2026-10-06T23:09:05.470978+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-06T22:34:54.980530+00:00"
+      "headlines_updated": "2026-10-06T23:07:13.845074+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_snippet": 38,
+        "title_snippet": 37,
+        "dropped_no_english": 1,
         "title_translated": 2,
         "title_native": 79,
         "in": 126,
-        "kept": 119
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -221,11 +222,16 @@
           "source": "TRT World",
           "title": "Over 800 Palestinian teachers killed in Israeli attacks since Gaza genocidal war",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "דיווח בטלגרף: הטייס המחבל המאם אל-המאמי למד לטוס בבריטניה",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
+      "in": 118,
       "kept": 69,
       "dropped": [
         {
@@ -391,13 +397,6 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "COMMENTARY How long can we keep believing in Lebanon?",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
           "title": "APPOINTMENT Nassib Ghobril appointed chief economist at Banque du Liban L'Orient Today staff",
           "sec": 0,
           "off": 0,
@@ -408,6 +407,13 @@
           "title": "INTERVIEW ‘Everyone underestimates Lebanese IT professionals’: XFOLIO founder Anis Rahal Philippe HAGE BOUTROS",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
+          "title": "PMI Lebanon’s business activity expands for fourth straight month despite regional uncertainty L'Orient Today staff",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -503,21 +509,14 @@
         },
         {
           "source": "Anadolu Agency",
+          "title": "Türkiye’s investment fund market remains sound despite investigations, fund liquidations: Central Bank governor",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
           "title": "Trump says call with Putin scheduled ‘very soon’ amid reports of suspected pneumonic plague case in Russia",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Türkiye, Italy explore closer space cooperation at International Astronautical Congress",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Qatar says Washington, Tehran exchanging messages as mediation continues",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -582,18 +581,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 48,
       "sizes": [
+        9,
         5,
-        4,
-        4,
         4,
         3,
         2,
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -643,87 +640,42 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Saudi Arabia reported Houthi attacks, and the Mecca Defense Alliance has entered its implementation ",
+          "headline": "Saudi-led coalition says Houthi ballistic missile intercepted over southwestern Saudi Arabia",
           "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-10-06T13:50+00:00"
-          },
-          "outlet_names": [
-            "Gulf News",
-            "Iran International",
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Saudi Arabia reported Houthi attacks, and the Mecca Defense Alliance has entered its implementation phase.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "4 Saudi Arabia, Turkey and Pakistan activate defense pact over Houthi attacks",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Turkey, Pakistan to deploy forces to Saudi amid Houthi attacks: joint statement",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Türkiye, Pakistan activate collective deterrence of Mecca Pact against Houthi at",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "The Saudi-led coalition announced it intercepted a ballistic missile launched by the Houthis.",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-06T21:50+00:00"
+            "outlets": 8,
+            "camps": 6,
+            "newest": "2026-10-06T22:46+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
+            "Anadolu Agency",
+            "Gulf News",
+            "Iran International",
             "Kan 11",
+            "SANA",
             "TRT World"
           ],
           "camps": [
             "israeli",
+            "gulf",
             "panarab",
+            "iranian",
+            "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "The Saudi-led coalition announced it intercepted a ballistic missile launched by the Houthis.",
-            "title_source": "snippet",
+            "source": "Anadolu Agency",
+            "title": "Saudi-led coalition says Houthi ballistic missile intercepted over southwestern Saudi Arabia",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
@@ -732,20 +684,25 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "TRT World",
-                "title": "Saudi-led coalition in Yemen hits Houthi sites in major Hudaida operation",
+                "source": "Iran International",
+                "title": "4 Saudi Arabia, Turkey and Pakistan activate defense pact over Houthi attacks",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Saudi-led coalition in Yemen says attacked Houthi-held Hodeidah",
+                "source": "SANA",
+                "title": "Saudi Arabia reported Houthi attacks, and the Mecca Defense Alliance has entered",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Turkey, Pakistan to deploy forces to Saudi amid Houthi attacks: joint statement",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 2,
           "headline": "Operation ‘Dawn of Yemen’: Yemeni forces take control of Mokha & Bab al-Mandeb",
           "rank_key": {
             "outlets": 4,
@@ -796,7 +753,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "Palestinian killed, others injured in Israeli strike on southwestern Gaza",
           "rank_key": {
             "outlets": 3,
@@ -840,7 +797,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Israeli settlers beat AFP photographer covering West Bank",
           "rank_key": {
             "outlets": 2,
@@ -872,7 +829,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Iran summons French envoy over ‘violent response’ to school protests",
           "rank_key": {
             "outlets": 2,
@@ -1151,7 +1108,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1169,7 +1126,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-06T22:37:08.783547+00:00",
+    "last_success": "2026-10-06T23:09:19.684874+00:00",
     "last_failure": null
   },
   "ok": true
