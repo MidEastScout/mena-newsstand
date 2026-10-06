@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T01:34:02.975685+00:00",
+  "updated": "2026-10-06T02:05:17.046516+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-06T01:32:21.837142+00:00"
+      "headlines_updated": "2026-10-06T02:03:32.562247+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 39,
-        "title_translated": 1,
-        "title_native": 77,
+        "dropped_stale": 9,
+        "title_snippet": 36,
+        "dropped_no_english": 4,
+        "title_native": 78,
         "in": 127,
-        "kept": 117
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 40,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -213,11 +213,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "UAE says FlyDubai co-pilot attempted to carry out terrorist attack",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Gulf News",
           "title": "Oil tankers attacked in Hormuz strait: UK maritime agency",
           "reason": "stale (older than 48h)"
@@ -236,12 +231,32 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers attack Palestinian olive harvesters in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "לצלילי המנון נטורי קרתא: ריקודים בישיבה שמזוהה עם ש\"ס | תיעוד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "עומר חזן משתף: \"ביום שהודיעו על מה שקרה – פשוט התפרקתי בבכי\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Britain’s Green Party votes to define Zionism as form of racism - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Israeli shelling wounds Palestinians in Khan Younis, 10 detained in West Bank - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 66,
+      "in": 114,
+      "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
@@ -274,20 +289,6 @@
         {
           "source": "N12",
           "title": "Avitan Or planned and executed a daring escape, risking his life and taking his fate into his own hands.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Samantha and Zack are visiting Bnei Brak, with an unknown outcome.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -405,13 +406,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Jordan Times",
-          "title": "After hottest summer, weeds turn historic Belgian canals green",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "L'Orient Today",
           "title": "PMI Lebanon’s business activity expands for fourth straight month despite regional uncertainty L'Orient Today staff",
           "sec": 0,
@@ -482,13 +476,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Syria signed a deal with UAE's Eagle Hills in the presence of President al-Sharaa.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Syria Direct",
           "title": "A terrible beauty is born: Syria after Assad",
           "sec": 0,
@@ -519,20 +506,6 @@
         {
           "source": "Gulf News",
           "title": "Lamar Jackson injury update emerges after leaving Ravens game in walking boot",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "UK warns it may expel 27 Israeli diplomats over East Jerusalem consulate closure: Report",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Trump calls Flavio Bolsonaro’s first-round success in Brazil’s presidential election a ‘great victory’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -592,23 +565,16 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "UK Green Party approves 'Zionism is racism' policy",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 43,
       "sizes": [
+        6,
         5,
         5,
-        4,
         4,
         4,
         3,
@@ -617,6 +583,8 @@
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -656,65 +624,26 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Saudi Arabia condemns Houthi attacks on kingdom, says group chose military escalation",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 2,
-            "newest": "2026-10-05T21:05+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen",
-            "Anadolu Agency",
-            "Daily Sabah",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Saudi Arabia condemns Houthi attacks on kingdom, says group chose military escalation",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "3 , Turkiye, Pakistan agree Saudi Arabia military deployment under Mecca pact",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Yemeni forces gain control of Bab Al-Mandab, Mokha – spokesperson",
           "rank_key": {
-            "outlets": 4,
-            "camps": 3,
+            "outlets": 5,
+            "camps": 4,
             "newest": "2026-10-05T23:27+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
             "Arab News",
-            "Jordan Times"
+            "Jordan Times",
+            "TRT World"
           ],
           "camps": [
             "gulf",
             "panarab",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -744,8 +673,49 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "TRT World",
+                "title": "Operation 'Dawn of Yemen' launched to retake Sanaa from Houthis",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Saudi Arabia condemns Houthi attacks on kingdom, says group chose military escalation",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 2,
+            "newest": "2026-10-05T22:12+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al Mayadeen",
+            "Anadolu Agency",
+            "Daily Sabah",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Saudi Arabia condemns Houthi attacks on kingdom, says group chose military escalation",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
                 "source": "Al Jazeera",
-                "title": "1 , Saudi-backed Yemeni forces confirm retaking Mocha from Houthis",
+                "title": "3 , Turkiye, Pakistan agree Saudi Arabia military deployment under Mecca pact",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -848,6 +818,61 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Tanker ordered by Iran’s IRGC to turn back in Hormuz or risk being hit, UKMTO says",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-05T10:40+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "Mehr News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Tanker ordered by Iran’s IRGC to turn back in Hormuz or risk being hit, UKMTO says",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Iran says Strait of Hormuz will not reopen until conditions are met",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "No US vessel present near Iran: IRGC chief adviser",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Iran says Strait of Hormuz will not reopen until conditions are met",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Tanker damaged after attack in Strait of Hormuz: Maritime agency",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "The Yemeni situation is described as being under fire, with reported advances by Saudi-backed forces",
           "rank_key": {
             "outlets": 2,
@@ -891,54 +916,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Tanker ordered by Iran’s IRGC to turn back in Hormuz or risk being hit, UKMTO says",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-05T10:40+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Mehr News"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Tanker ordered by Iran’s IRGC to turn back in Hormuz or risk being hit, UKMTO says",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Iran says Strait of Hormuz will not reopen until conditions are met",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "No US vessel present near Iran: IRGC chief adviser",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Tanker damaged after attack in Strait of Hormuz: Maritime agency",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Pakistan, Saudi Arabia, Turkey agree rapid force deployment in Saudi Arabia",
           "rank_key": {
             "outlets": 2,
@@ -966,6 +943,43 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "One Palestinian killed, five wounded in Israeli army, illegal settler attacks in occupied West Bank",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-06T01:36+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "One Palestinian killed, five wounded in Israeli army, illegal settler attacks in occupied West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Anadolu Agency",
+                "title": "Israeli occupiers, army injure 8 Palestinians in West Bank attacks",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
           }
         },
         {
@@ -1077,6 +1091,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Former ‘American Idol’ contestant sentenced to life in prison for wife’s murder",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-06T01:33+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "GAIF conference opens at Dead Sea, spotlights insurance sector challenges",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-06T00:09+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Explosions were heard in Riyadh, the capital of Saudi Arabia.",
           "rank_key": {
             "outlets": 1,
@@ -1142,24 +1192,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "One Palestinian killed, five wounded in Israeli army, illegal settler attacks in occupied West Bank",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T19:46+00:00"
-          },
-          "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1274,25 +1306,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "The article discusses scenarios related to war and elections.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-05T14:48+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1310,7 +1324,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-06T01:34:16.115469+00:00",
+    "last_success": "2026-10-06T02:05:30.271317+00:00",
     "last_failure": null
   },
   "ok": true
