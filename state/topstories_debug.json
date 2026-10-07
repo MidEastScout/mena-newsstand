@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T04:08:51.838044+00:00",
+  "updated": "2026-10-07T04:41:18.435719+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,14 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-07T04:06:56.530384+00:00"
+      "headlines_updated": "2026-10-07T04:39:31.571782+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 39,
-        "title_native": 79,
+        "dropped_stale": 6,
+        "title_snippet": 38,
+        "title_native": 80,
         "title_translated": 1,
+        "dropped_no_english": 1,
         "in": 126,
         "kept": 119
       },
@@ -198,11 +199,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "UK Green party adopts ‘Zionism is racism’ policy",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Gulf News",
           "title": "Strait of Hormuz crisis: Tanker struck near Oman as shipping traffic plunges",
           "reason": "stale (older than 48h)"
@@ -221,12 +217,17 @@
           "source": "TRT World",
           "title": "UK Green Party approves 'Zionism is racism' policy",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Yemeni forces report 250 Houthi casualties in Taiz operations - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
       "in": 119,
-      "kept": 71,
+      "kept": 72,
       "dropped": [
         {
           "source": "N12",
@@ -266,13 +267,6 @@
         {
           "source": "Al Jazeera",
           "title": "2 , Politicians slam Trump’s suggestion that Iran ‘take’ San Diego, Los Angeles",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Russia plague quarantine following lab death: Should we be worried?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -370,6 +364,13 @@
         },
         {
           "source": "Jordan Times",
+          "title": "White House denies Trump suggested Iran should 'take out' US cities",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
           "title": "Cabinet approves investment incentives for vehicle assembly, manufacturing projects",
           "sec": 0,
           "off": 0,
@@ -378,13 +379,6 @@
         {
           "source": "Jordan Times",
           "title": "Prime minister: Aqaba-Shidiya-Maan railway strategic project for Jordan, region",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "World Bank keeps Jordan’s growth forecasts at 2.7% for 2026, 2.9% for 2027",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -481,15 +475,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Hundreds of UAE supporters head to Jeddah on Emirates charter flights",
+          "source": "Arab News",
+          "title": "Saudi Arabia, Pakistan and Turkiye to activate collective defense commitments amid ongoing threats",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Sheikh Rashid: The ruler who built for the Dubai that did not yet exist",
+          "title": "Hundreds of UAE supporters head to Jeddah on Emirates charter flights",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -568,9 +562,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 51,
       "sizes": [
-        9,
+        10,
         5,
         3,
         3,
@@ -578,7 +572,8 @@
         2,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -631,25 +626,27 @@
           "selected_rank": 1,
           "headline": "Yemen’s Houthis claim attacks on Saudi airports, military bases",
           "rank_key": {
-            "outlets": 6,
-            "camps": 4,
+            "outlets": 7,
+            "camps": 5,
             "newest": "2026-10-07T03:27+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
             "Anadolu Agency",
+            "Gulf News",
             "Iran International",
             "SANA",
             "TRT World"
           ],
           "camps": [
+            "gulf",
             "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 10,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -665,7 +662,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , Iran war updates: Saudi-led forces down Houthi missile in Khamis Mushait",
+                "title": "4 , Iran war updates: Saudi-led forces down Houthi missile in Khamis Mushait",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -1075,7 +1072,7 @@
           "camps": [
             "levant"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1134,7 +1131,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "31 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "32 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1152,7 +1149,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-07T04:09:15.507739+00:00",
+    "last_success": "2026-10-07T04:41:19.377450+00:00",
     "last_failure": null
   },
   "ok": true
