@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T19:34:50.802316+00:00",
+  "updated": "2026-10-07T19:40:34.868260+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -139,7 +139,7 @@
         "Al-Masirah": {
           "headlines": 1,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Anadolu Agency": {
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-07T19:32:51.117347+00:00"
+      "headlines_updated": "2026-10-07T19:38:36.825992+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 39,
+        "title_snippet": 37,
         "title_translated": 1,
         "title_native": 79,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 119
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -226,12 +227,22 @@
           "source": "TRT World",
           "title": "UK Green Party approves 'Zionism is racism' policy",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "المقاومة الفلسطينية: 7 أكتوبر كشف إخفاقات كبيرة في الأمن والاستخبارات الإسرائيليين",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "فصائل المقاومة: 7 أكتوبر كشف إخفاقات كبيرة في منظومة الأمن والاستخبارات الإسرائيلية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 65,
+      "in": 117,
+      "kept": 63,
       "dropped": [
         {
           "source": "Kan 11",
@@ -388,6 +399,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Iran International",
+          "title": "5 Iran says economy holding up as pressure mounts on oil, rial",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Jordan Times",
           "title": "Foreign reserves at CBJ rise to $28.5 billion",
           "sec": 0,
@@ -500,13 +518,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The article explores 'Al-Aqsa Flood,' discussing rationality, strategy, and the judgment of history.",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "SANA",
           "title": "President Al-Sharaa and Saudi Crown Prince Mohammed bin Salman discussed bilateral relations.",
           "sec": 0,
@@ -615,20 +626,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 47,
+      "clusters": 46,
       "sizes": [
         4,
-        4,
         3,
         3,
         3,
+        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -723,51 +733,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Strait of Hormuz \"under full control of Iran’s Armed Forces\"",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-10-07T16:11+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "IRNA",
-            "Iran International",
-            "Mehr News"
-          ],
-          "camps": [
-            "gulf",
-            "iranian"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "Strait of Hormuz \"under full control of Iran’s Armed Forces\"",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "5 Iran says US talks ‘meaningless’ as third tanker hit near Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Iran has ‘lost complete control’ of Hormuz Strait: Rubio",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Saudi-led coalition says missile launch platform used to target Riyadh destroyed in Yemen",
           "rank_key": {
             "outlets": 3,
@@ -805,6 +770,45 @@
               {
                 "source": "TRT World",
                 "title": "Saudi-led coalition in Yemen hits Houthi sites in major Hudaida operation",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Strait of Hormuz \"under full control of Iran’s Armed Forces\"",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-07T16:11+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "gulf",
+            "iranian"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Strait of Hormuz \"under full control of Iran’s Armed Forces\"",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Iran has ‘lost complete control’ of Hormuz Strait: Rubio",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1255,24 +1259,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Saba agency reported that a citizen was injured by Saudi artillery shelling on residential villa",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-07T16:16+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Crown Prince meets with Monaco prince",
           "rank_key": {
             "outlets": 1,
@@ -1308,7 +1294,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "France summons Iran ambassador over disinformation campaign on student protests",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-07T15:59+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1326,7 +1330,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-07T19:35:07.615776+00:00",
+    "last_success": "2026-10-07T19:40:48.980206+00:00",
     "last_failure": null
   },
   "ok": true
