@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T07:15:11.446211+00:00",
+  "updated": "2026-10-07T07:48:01.716371+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-07T07:13:20.012749+00:00"
+      "headlines_updated": "2026-10-07T07:46:01.808514+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 40,
+        "title_snippet": 34,
+        "dropped_no_english": 5,
         "title_native": 78,
+        "title_translated": 1,
         "in": 126,
-        "kept": 118
+        "kept": 113
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 40,
+        "requested": 39,
         "translated": 0,
         "cached": 630,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -207,11 +209,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "UK Green party adopts ‘Zionism is racism’ policy",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Gulf News",
           "title": "Strait of Hormuz crisis: Tanker struck near Oman as shipping traffic plunges",
           "reason": "stale (older than 48h)"
@@ -225,12 +222,42 @@
           "source": "TRT World",
           "title": "Over 800 Palestinian teachers killed in Israeli attacks since Gaza genocidal war",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "UK Green Party approves 'Zionism is racism' policy",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "במשטרה בודקים את הבכירים במשרד התחבורה שעבדו בעבודות נוספות: \"חשד לניגוד עניינים\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: النخالة: الآلاف من أبناء الشعب الفلسطيني واجهوا العدو بكل اقتدار انطلاقاً من ثقافتهم التي تحثهم على قتال",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "3 أعوام على حرب الإبادة.. 92 شهيداً و26 ألف حالة اعتقال في الضفة والقدس",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أنقذوا الصحفيين عمار وحسن وزملائهما!!",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Israeli occupation forces target southern Syria with artillery shelling - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 69,
+      "in": 113,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
@@ -242,13 +269,6 @@
         {
           "source": "Kan 11",
           "title": "A 19-year-old resident of Yitzhar is accused of spitting at the door of a church in Jerusalem's Old City.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Following the signing of a surplus agreement, Netanyahu and Smotrich will hold an election preparedness…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -296,13 +316,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "5 , Russia plague quarantine following lab death: Should we be worried?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Macklemore calls for a ‘free Palestine’ during Ed Sheeran shows, prompting praise and backlash",
           "sec": 0,
@@ -318,14 +331,7 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Following statements by Smotrich regarding Sinai, angry Egyptian reactions continue to pour in.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "A secret Saudi-Israeli alliance is reportedly in place in Yemen.",
+          "title": "Bulletin 8 a.m.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -381,6 +387,13 @@
         },
         {
           "source": "Jordan Times",
+          "title": "IMF warns cost-of-living shocks cause 'lasting deterioration' in affordability",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
           "title": "World Bank keeps Jordan’s growth forecasts at 2.7% for 2026, 2.9% for 2027",
           "sec": 0,
           "off": 0,
@@ -416,7 +429,21 @@
         },
         {
           "source": "Egypt Independent",
+          "title": "Rainy, windy weather across Egypt on Wednesday",
+          "sec": 0,
+          "off": 2,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
           "title": "This city is on track to run out of water by 2030. For many residents, that day is already here",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "\"Maxim and Sulafa\" discuss Syria after the fall of the Ba'ath party.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -436,13 +463,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "\"Maxim and Sulafa\" discuss Syria after the fall of the Ba'ath party.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Photos show a gathering including Sayyid Ali Khamenei and Sayyid Mojtaba Khamenei.",
           "sec": 0,
@@ -452,13 +472,6 @@
         {
           "source": "WAFA News",
           "title": "Britain may expel Israeli diplomats if Israel carries out decision to close consulate",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "WAFA News",
-          "title": "Israeli government denies CEC entry to Gaza, Jerusalem",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -478,15 +491,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "President al-Sharaa has arrived in Riyadh for an official visit and will meet with the Crown Prince.",
+          "source": "Syria Direct",
+          "title": "A terrible beauty is born: Syria after Assad",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Syria Direct",
-          "title": "A terrible beauty is born: Syria after Assad",
+          "source": "Arab News",
+          "title": "UK Green Party’s vote revives debate over Zionism and racism",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -508,6 +521,13 @@
         {
           "source": "Anadolu Agency",
           "title": "Israel denies Palestinian election officials entry to Gaza, East Jerusalem",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "US death row inmate Christa Pike conscious, speaking after botched execution: Attorneys",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -579,16 +599,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 46,
       "sizes": [
-        12,
+        5,
+        5,
         5,
         4,
         3,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -637,13 +658,11 @@
           "selected_rank": 1,
           "headline": "Yemen’s Houthis claim attacks on Saudi airports, military bases",
           "rank_key": {
-            "outlets": 7,
-            "camps": 5,
-            "newest": "2026-10-07T05:29+00:00"
+            "outlets": 5,
+            "camps": 4,
+            "newest": "2026-10-07T03:27+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
             "Anadolu Agency",
             "Gulf News",
             "Iran International",
@@ -652,12 +671,11 @@
           ],
           "camps": [
             "gulf",
-            "panarab",
             "iranian",
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -672,16 +690,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "1 , Houthi missiles hit Aden airport; another intercepted over Saudi’s Riyadh",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Iran International",
-                "title": "ANALYSIS Houthi gains reversed at Bab al-Mandab, but Iran’s leverage runs deeper",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Iran International",
                 "title": "4 Saudi Arabia, Turkey and Pakistan activate defense pact over Houthi attacks",
                 "rejected_by": "older than the story's newest wave"
@@ -690,64 +698,22 @@
                 "source": "SANA",
                 "title": "Saudi Arabia reported Houthi attacks, and the Mecca Defense Alliance has entered",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Turkey, Pakistan to deploy forces to Saudi amid Houthi attacks: joint statement",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Türkiye, Pakistan activate collective deterrence of Mecca Pact against Houthi at",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Gaza journalists pay heavy price after 3 years of Israeli war, with 263 killed",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-10-07T05:12+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Falastin al-Youm",
-            "Middle East Eye",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Gaza journalists pay heavy price after 3 years of Israeli war, with 263 killed",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Palestinian killed, others injured in Israeli strike on southwestern Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "A Palestinian was killed and others injured in an Israeli occupation strike in s",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "The slogan \"May your village burn\" is being used, turning settler terrorism and the Judaization of G",
           "rank_key": {
             "outlets": 4,
@@ -798,38 +764,107 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Satellite images reveal Iran is restoring a nuclear weapons development facility that was attacked b",
+          "selected_rank": 3,
+          "headline": "Gaza journalists pay heavy price after 3 years of Israeli war, with 263 killed",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-07T05:04+00:00"
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-07T01:00+00:00"
           },
           "outlet_names": [
-            "Egypt Independent",
-            "N12"
+            "Anadolu Agency",
+            "Middle East Eye",
+            "SANA",
+            "WAFA News"
           ],
           "camps": [
-            "israeli",
-            "levant"
+            "panarab",
+            "levant",
+            "turkish"
           ],
-          "members": 2,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "N12",
-            "title": "Satellite images reveal Iran is restoring a nuclear weapons development facility that was attacked by the IDF…",
-            "title_source": "snippet",
+            "source": "Anadolu Agency",
+            "title": "Gaza journalists pay heavy price after 3 years of Israeli war, with 263 killed",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Egypt Independent",
-                "title": "US and China discussing reciprocal nuclear site visits amid concerns about a new",
+                "source": "Middle East Eye",
+                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Palestinian killed, others injured in Israeli strike on southwestern Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "One killed and others injured by Israeli forces' shelling in Gaza city",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "2 Houthi missiles target Aden International Airport in southern Yemen",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-07T00:56+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency",
+            "Iran International",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "2 Houthi missiles target Aden International Airport in southern Yemen",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Houthi missiles hit Aden airport; another intercepted over Saudi’s Riyadh",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "5 , Iran war updates: Saudi-led forces down Houthi missile in Khamis Mushait",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "ANALYSIS Houthi gains reversed at Bab al-Mandab, but Iran’s leverage runs deeper",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Saudi-led coalition in Yemen hits Houthi sites in major Hudaida operation",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -882,7 +917,7 @@
             "gulf",
             "panarab"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -900,83 +935,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Operation ‘Dawn of Yemen’: Yemeni forces take control of Mokha & Bab al-Mandeb",
+          "headline": "Sudanese co-pilot arrested at Cairo Airport for possessing drugs",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-06T13:14+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Jordan Times"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Operation ‘Dawn of Yemen’: Yemeni forces take control of Mokha & Bab al-Mandeb",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Jordan Times",
-                "title": "Yemeni forces gain control of Bab Al-Mandab, Mokha – spokesperson",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Saudi-backed Yemeni forces attack Houthis near key global trade route",
-          "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-06T09:23+00:00"
+            "newest": "2026-10-07T07:38+00:00"
           },
           "outlet_names": [
-            "Al Manar",
             "Egypt Independent"
           ],
           "camps": [
             "levant"
           ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Saudi-backed Yemeni forces attack Houthis near key global trade route",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Yemeni media released footage of armed forces targeting Saudi gatherings with Sh",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "The Yemeni Armed Forces announced the targeting of Saudi enemy gatherings at the",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1009,6 +982,24 @@
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Satellite images reveal Iran is restoring a nuclear weapons development facility that was attacked b",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-07T05:04+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1063,6 +1054,24 @@
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Mecca defense alliance takes on challenges with tangible steps",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-07T04:32+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1141,61 +1150,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Russia closely watching NATO over attack warnings: Lavrov",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-06T19:09+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The IRGC stated that the \"Al-Aqsa Flood\" operation has changed the balance of power in favor of the…",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-06T18:48+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The US President has approved the execution of Nidal Hassan, a former officer of Palestinian origin,",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-06T15:04+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1213,7 +1168,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-07T07:16:25.130193+00:00",
+    "last_success": "2026-10-07T07:48:35.298064+00:00",
     "last_failure": null
   },
   "ok": true
