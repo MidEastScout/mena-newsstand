@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T23:00:18.786920+00:00",
+  "updated": "2026-10-08T23:32:00.452917+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,17 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-08T22:57:55.116820+00:00"
+      "headlines_updated": "2026-10-08T23:29:47.241403+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
+        "dropped_stale": 8,
         "title_translated": 26,
-        "title_snippet": 9,
-        "dropped_no_english": 5,
-        "title_native": 78,
+        "title_snippet": 7,
+        "dropped_no_english": 7,
+        "title_native": 79,
         "in": 127,
-        "kept": 113
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -188,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "Turkey weighs military support for Saudi Arabia under Mecca pact",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Jordan Times",
           "title": "Saudi Aramco boss says global oil stockpiles 'scarily thin'",
@@ -235,7 +230,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "ההתרעה הביטחונית לראשי המחאה ב-23', הפשרה - והסירוב של נתניהו",
+          "title": "\"אני מזהה אותו\": האם המנטורים יגלו למי שייך הקול עוד לפני הסיבוב?",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -255,13 +250,23 @@
         },
         {
           "source": "Al-Akhbar",
+          "title": "عودة دعاوى «العسكرة»: مستشفيات غزة تحت التهديد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
           "title": "شكوكٌ في خلفيات سياسية: بغداد تخفّض سعر الدينار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«نوبل» لآن كارسون: الشعر على تخوم المعرفة والرغبة",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 113,
+      "in": 112,
       "kept": 78,
       "dropped": [
         {
@@ -384,13 +389,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "L'Orient Today",
-          "title": "ANALYSIS Illegal internet: Lebanon faces the specter of the 'generator model' Mounir YOUNES",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Egypt Independent",
           "title": "Egypt’s Hurghada allocates LE 23 million to first fully-equipped stray dog shelter",
           "sec": 0,
@@ -400,13 +398,6 @@
         {
           "source": "Egypt Independent",
           "title": "Fitch affirms Egypt’s credit rating at “B” with a stable outlook",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "A Moroccan-Israeli defense company will supply Rabat with vehicle turrets in March 2027.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -435,6 +426,13 @@
         {
           "source": "SANA",
           "title": "Syria called for an investigation into the sinking of the ship Alfa Watan and the fate of its crew.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Iran has ‘lost complete control’ of Hormuz Strait: Rubio",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -513,23 +511,21 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 41,
       "sizes": [
-        11,
+        14,
         7,
+        4,
         4,
         3,
         3,
         3,
-        3,
-        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -567,10 +563,10 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Belgian foreign minister condemns Houthi attacks on Saudi Arabia",
+          "headline": "Saudi nursery hit by debris as Houthis target Riyadh airport",
           "rank_key": {
-            "outlets": 7,
-            "camps": 4,
+            "outlets": 9,
+            "camps": 5,
             "newest": "2026-10-08T20:38+00:00"
           },
           "outlet_names": [
@@ -580,20 +576,23 @@
             "Arab News",
             "Egypt Independent",
             "Gulf News",
-            "SANA"
+            "Mehr News",
+            "SANA",
+            "The New Arab"
           ],
           "camps": [
             "gulf",
             "panarab",
+            "iranian",
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Belgian foreign minister condemns Houthi attacks on Saudi Arabia",
+            "source": "The New Arab",
+            "title": "Saudi nursery hit by debris as Houthis target Riyadh airport",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -627,6 +626,52 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Israeli army says one soldier killed, three wounded in south Lebanon",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-08T19:29+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Falastin al-Youm",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Israeli army says one soldier killed, three wounded in south Lebanon",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "SOUTH LEBANON Israeli army says one soldier killed, three wounded in south Leban",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "Israeli artillery shelling of southern Lebanon and drones flying over Tyre",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Two Palestinians killed in Israeli drone strike on vehicle in Gaza City",
           "rank_key": {
             "outlets": 4,
@@ -664,12 +709,12 @@
               },
               {
                 "source": "Al Mayadeen",
-                "title": "Occupied Palestine: Al-Mayadeen correspondent: 7 wounded, including 2 in critica",
+                "title": "Occupied Palestine: Al-Mayadeen correspondent: Israeli artillery shelling target",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al Mayadeen",
-                "title": "Occupied Palestine: Al-Mayadeen correspondent: Israeli artillery shelling target",
+                "title": "Occupied Palestine: Al-Mayadeen correspondent: 7 wounded, including 2 in critica",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -681,7 +726,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Turkish intelligence chief discusses SDF integration with Syrian FM",
           "rank_key": {
             "outlets": 3,
@@ -731,46 +776,6 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Israeli army says one soldier killed, three wounded in south Lebanon",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-08T19:29+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Israeli army says one soldier killed, three wounded in south Lebanon",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah_south)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "Israeli artillery shelling of southern Lebanon and drones flying over Tyre",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 5,
           "headline": "Iran will not abandon uranium enrichment or hand over its uranium, nuclear chief says",
           "rank_key": {
@@ -802,44 +807,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump rules out new Iran attack before US midterm elections",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-08T22:41+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al-Akhbar",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Trump rules out new Iran attack before US midterm elections",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Trump: No attack on Iran before US elections; ‘productive’ talks ongoing",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -932,43 +899,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Pakistan military confirms deployment of forces to Saudi Arabia under Makkah pact",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-08T11:37+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Pakistan military confirms deployment of forces to Saudi Arabia under Makkah pact",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Pakistani troops deployed in Saudi Arabia, military confirms",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Hamas delegation heads to Cairo to complete national dialogue consultations",
           "rank_key": {
             "outlets": 2,
@@ -1031,6 +961,42 @@
               {
                 "source": "Al Jazeera",
                 "title": "5 , At least 81 US aircraft worth up to $3.3bn lost or damaged in Iran war",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump rules out new Iran attack before US midterm elections",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-08T22:41+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Trump rules out new Iran attack before US midterm elections",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Trump: No attack on Iran before US elections; ‘productive’ talks ongoing",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1309,17 +1275,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Yemen strikes Riyadh airport with ballistic missile",
+          "headline": "Pakistani troops deployed in Saudi Arabia, military confirms",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-08T05:54+00:00"
+            "newest": "2026-10-08T01:42+00:00"
           },
           "outlet_names": [
-            "Mehr News"
+            "TRT World"
           ],
           "camps": [
-            "iranian"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1344,7 +1310,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1362,7 +1328,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-08T23:00:32.670577+00:00",
+    "last_success": "2026-10-08T23:32:19.550867+00:00",
     "last_failure": null
   },
   "ok": true
