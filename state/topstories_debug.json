@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T19:51:29.212068+00:00",
+  "updated": "2026-10-08T20:24:57.840631+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-08T19:49:11.959909+00:00"
+      "headlines_updated": "2026-10-08T20:22:31.786548+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 7,
-        "title_translated": 30,
-        "title_snippet": 10,
+        "title_translated": 29,
+        "title_snippet": 9,
         "title_native": 80,
+        "dropped_no_english": 2,
         "in": 127,
-        "kept": 120
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 10,
+        "requested": 11,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -221,12 +222,22 @@
           "source": "TRT World",
           "title": "CIA warns deepening internal fractures put Israel at risk of civil war — report",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "ترامب: لن نهاجم إيران قبل انتخابات التجديد النصفي للكونغرس",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "شركة دفاعية مغربية إسرائيلية تزوّد الرباط بأبراج مركبات في آذار 2027",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 76,
+      "in": 118,
+      "kept": 81,
       "dropped": [
         {
           "source": "Kan 11",
@@ -292,13 +303,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "5 , Venezuela’s Nicolas Maduro and his wife charged over torture allegations",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Macklemore calls for a ‘free Palestine’ during Ed Sheeran shows, prompting praise and backlash",
           "sec": 0,
@@ -306,22 +310,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Iran has ‘lost complete control’ of Hormuz Strait, its economy is in ‘freefall’ Rubio says",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "Why Morocco is deepening ties with Israel despite public anger",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Book Club: Every Exit Brings You Home by Naeem Murr",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -343,6 +333,13 @@
         {
           "source": "IRNA",
           "title": "Baqaei reacts to Marco Rubio’s attempt to distort history",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Leader: Signs of police force’s significant impact in recent conflicts have become more evident",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -425,20 +422,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Nobel Prize in Chemistry to Solve a Century-Old Mystery",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Maxim and Sulafa: Syria after the Baath Party.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Google faces lawsuit in Britain over app store fees 03:02",
           "sec": 0,
@@ -467,29 +450,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Iran has ‘lost complete control’ of Hormuz Strait: Rubio",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Iran-Oman deal reached on navigational corridors through Hormuz: Baghaei",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "US suspends India tech giants Tata, Infosys, Wipro from green card process",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Putin arrives in Turkmenistan to attend CIS leaders' and Caspian environmental summits",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -540,13 +502,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 51,
       "sizes": [
         9,
-        6,
-        4,
+        9,
         3,
         3,
+        3,
         2,
         2,
         2,
@@ -555,6 +517,9 @@
         2,
         2,
         2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -599,6 +564,65 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Belgian foreign minister condemns Houthi attacks on Saudi Arabia",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-10-08T20:02+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Manar",
+            "Anadolu Agency",
+            "Arab News",
+            "Egypt Independent",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 9,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Belgian foreign minister condemns Houthi attacks on Saudi Arabia",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Coalition vows Houthi attacks on Saudi civilian sites ‘will not go unpunished’",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "UAE strongly condemns continued Houthi targeting of Saudi civilian facilities an",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Three killed, 36 injured in Houthi attacks on Saudi Arabia’s Abha, Riyadh airpor",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Escalation in Yemen: Saudi-led forces respond to Houthi assaults on civilian air",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "5 Palestinians killed, over dozen injured in Israeli attacks across Gaza",
           "rank_key": {
             "outlets": 5,
@@ -655,109 +679,7 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Saudi officials confirm three deaths at civilian airports after Houthi attacks",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-10-08T16:58+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Manar",
-            "Arab News",
-            "Egypt Independent",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Saudi officials confirm three deaths at civilian airports after Houthi attacks",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Coalition vows Houthi attacks on Saudi civilian sites ‘will not go unpunished’",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Three killed, 36 injured in Houthi attacks on Saudi Arabia’s Abha, Riyadh airpor",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Escalation in Yemen: Saudi-led forces respond to Houthi assaults on civilian air",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Yemeni Armed Forces Announce Targeting Saudi Airports, Camps and Military Suppli",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
-          "headline": "Israeli army shells outskirts of village in southern Syria",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-08T17:32+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "SANA",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli army shells outskirts of village in southern Syria",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Syria says nine nationals missing as drone sinks Black Sea ship",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Syria strongly condemns Houthi militia attacks on Saudi civilian facilities",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Trump says US will not attack Iran before midterm elections",
           "rank_key": {
             "outlets": 3,
@@ -796,7 +718,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "It has been cleared for publication: Captain Eliab Haim Tzafelmus fell in Southern Lebanon.",
           "rank_key": {
             "outlets": 3,
@@ -835,7 +757,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Drone hits data center of Russia's 'Google' in 1st for Ukraine war",
           "rank_key": {
             "outlets": 2,
@@ -874,36 +796,37 @@
         },
         {
           "selected_rank": null,
-          "headline": "2 Latvian nationals arrested on suspicion of trespassing at UK military base",
+          "headline": "Syria says nine nationals missing as drone sinks Black Sea ship",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-08T16:46+00:00"
+            "newest": "2026-10-08T12:53+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
+            "SANA",
+            "The New Arab"
           ],
           "camps": [
             "panarab",
-            "turkish"
+            "levant"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "2 Latvian nationals arrested on suspicion of trespassing at UK military base",
+            "source": "The New Arab",
+            "title": "Syria says nine nationals missing as drone sinks Black Sea ship",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "6 , Two Latvian men arrested inside UK military base after breach",
+                "source": "SANA",
+                "title": "Syria strongly condemns Houthi militia attacks on Saudi civilian facilities",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -944,6 +867,73 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US lost or damaged 81 aircraft in Iran war, report says",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-07T09:21+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "US lost or damaged 81 aircraft in Iran war, report says",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "5 , At least 81 US aircraft worth up to $3.3bn lost or damaged in Iran war",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US imposes fresh sanctions on Iran’s shadow fleet",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-08T20:07+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "US imposes fresh sanctions on Iran’s shadow fleet",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1052,6 +1042,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israeli soldier killed, 3 injured in southern Lebanon as Tel Aviv continues to violate framework dea",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-08T19:29+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Putin tells Iran president will ‘do everything’ to help end Middle East war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-08T18:56+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Plane damage reported as Houthis target Riyadh airport again",
           "rank_key": {
             "outlets": 1,
@@ -1124,17 +1150,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "US imposes sanctions targeting 17 vessels of Iran ‘shadow fleet’",
+          "headline": "2 Latvian nationals arrested on suspicion of trespassing at UK military base",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-08T17:02+00:00"
+            "newest": "2026-10-08T16:46+00:00"
           },
           "outlet_names": [
-            "Al Arabiya"
+            "Anadolu Agency"
           ],
           "camps": [
-            "panarab"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1214,24 +1240,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Saudi-led coalition strikes Houthi targets in Yemen",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-08T12:41+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Award-winning Kashmiri filmmaker Arfat Sheikh detained by US immigration",
           "rank_key": {
             "outlets": 1,
@@ -1249,25 +1257,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Multiple explosions heard in Riyadh",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-08T08:19+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1285,7 +1275,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-08T19:52:53.314704+00:00",
+    "last_success": "2026-10-08T20:25:11.707731+00:00",
     "last_failure": null
   },
   "ok": true
