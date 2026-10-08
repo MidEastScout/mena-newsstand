@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T02:59:03.831465+00:00",
+  "updated": "2026-10-08T03:30:42.140283+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-08T02:57:24.992235+00:00"
+      "headlines_updated": "2026-10-08T03:29:03.468214+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 11,
-        "title_snippet": 38,
-        "dropped_no_english": 2,
+        "title_snippet": 36,
+        "dropped_no_english": 4,
         "title_native": 76,
         "in": 127,
-        "kept": 114
+        "kept": 112
       },
       "translator": {
         "configured": true,
@@ -249,14 +249,24 @@
         },
         {
           "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: سريع: تمكنت قواتنا المسلحة من استهداف مطار الملك خالد في الرياض بصاروخ باليستي وقد أصاب هدفه بدقة وتسبب ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
           "title": "الولايات المتحدة الأميركية: مسؤول في البيت الأبيض يُعلّق للميادين على تقارير بشأن طلب البيت الأبيض إعداد خيارات لاستهداف",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "بالفيديو | مشاهد من طرد القوات اليمنية تحشيدات سعودية من تعز 21:14",
           "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 63,
+      "in": 112,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -371,13 +381,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Iran is initiating a new phase, prompting questions about the future regional landscape and foreign presence.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Pezeshkian and Putin stress strengthening strategic ties between Iran and Russia",
           "sec": 0,
@@ -414,7 +417,7 @@
         },
         {
           "source": "Iran International",
-          "title": "3 Iran’s own surveys reveal demand for 'fundamental change'",
+          "title": "2 Iran’s own surveys reveal demand for 'fundamental change'",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -614,26 +617,30 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Trump welcomes Türkiye, Pakistan defence support for Saudi Arabia under Mecca pact",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 35,
       "sizes": [
-        11,
+        13,
         4,
         4,
-        4,
+        3,
         2,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -670,8 +677,8 @@
           "selected_rank": 1,
           "headline": "Jordan condemns Houthi attacks on Saudi airports",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 7,
+            "camps": 5,
             "newest": "2026-10-07T23:08+00:00"
           },
           "outlet_names": [
@@ -679,15 +686,18 @@
             "Al Jazeera",
             "Anadolu Agency",
             "Gulf News",
-            "Jordan Times"
+            "Iran International",
+            "Jordan Times",
+            "Mehr News"
           ],
           "camps": [
             "gulf",
             "panarab",
+            "iranian",
             "levant",
             "turkish"
           ],
-          "members": 11,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -717,8 +727,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Jordan Times",
-                "title": "Jordan condemns Houthi attacks on Saudi Arabia",
+                "source": "Mehr News",
+                "title": "Saudi regime attacks Yemen with US support: Houthi",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -726,52 +736,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Strait of Hormuz \"under full control of Iran’s Armed Forces\"",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-07T16:11+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "IRNA",
-            "Mehr News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "Strait of Hormuz \"under full control of Iran’s Armed Forces\"",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Iran has ‘lost complete control’ of Hormuz Strait, its economy is in ‘freefall’ ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Iran has ‘lost complete control’ of Hormuz Strait: Rubio",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Hamas dismissed the occupation's claims regarding Kamal Adwan Hospital as baseless.",
           "rank_key": {
             "outlets": 4,
@@ -815,6 +779,51 @@
               {
                 "source": "SANA",
                 "title": "A Palestinian was killed and others injured in an Israeli occupation strike in s",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Strait of Hormuz will stay closed until Iran’s demands are met: IRGC advisor",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-07T16:11+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News",
+            "IRNA"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "Strait of Hormuz will stay closed until Iran’s demands are met: IRGC advisor",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Iran has ‘lost complete control’ of Hormuz Strait, its economy is in ‘freefall’ ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Iran has ‘lost complete control’ of Hormuz Strait: Rubio",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1270,7 +1279,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1288,7 +1297,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-08T02:59:17.800408+00:00",
+    "last_success": "2026-10-08T03:30:59.148674+00:00",
     "last_failure": null
   },
   "ok": true
