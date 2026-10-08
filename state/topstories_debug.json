@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T00:53:52.891053+00:00",
+  "updated": "2026-10-08T01:24:46.261200+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-08T00:51:53.023896+00:00"
+      "headlines_updated": "2026-10-08T01:23:13.350870+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 39,
+        "title_snippet": 38,
         "title_translated": 1,
         "title_native": 77,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 117
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -224,24 +225,29 @@
         },
         {
           "source": "TRT World",
-          "title": "Türkiye, Pakistan activate collective deterrence of Mecca Pact against Houthi attacks on S Arabia",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "TRT World",
           "title": "Saudi-led coalition in Yemen hits Houthi sites in major Hudaida operation",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "Over 800 Palestinian teachers killed in Israeli attacks since Gaza genocidal war",
+          "title": "Türkiye, Pakistan activate collective deterrence of Mecca Pact against Houthi attacks on S Arabia",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "One Palestinian killed, five wounded in Israeli army, illegal settler attacks in occupied West Bank",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«باراماونت» و«وارنر براذرز» تحت مظلة «سكاي دانس»!",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 65,
+      "in": 116,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -315,7 +321,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Christa Pike was nearly taken off life support before waking, lawyers say",
+          "title": "5 , Christa Pike was nearly taken off life support before waking, lawyers say",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -413,7 +419,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Crown Prince meets with Monaco prince",
+          "title": "Prime minister directs replacement of unsafe heaters ahead of winter",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -482,13 +488,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "The Nobel Prize in Medicine was awarded for discovering a 'key' to the brain.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "The New York Times reports that AIPAC is losing influence in America and becoming a burden for Democrats.",
           "sec": 0,
@@ -525,23 +524,16 @@
         },
         {
           "source": "Gulf News",
-          "title": "Dubai crowns Create Apps winners as entries reach 9,754",
+          "title": "Gulf News: Latest UAE news, Dubai news, Business, travel news, Dubai Gold rate, prayer time, cinema",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "iCademy expands its Dubai presence with two Knowledge HUBs",
+          "title": "Dubai crowns Create Apps winners as entries reach 9,754",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "UAE Federal Tax Authority issues guide on Multinational Enterprise Top-Up Tax",
-          "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -611,9 +603,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 40,
       "sizes": [
-        12,
+        13,
+        4,
         4,
         3,
         2,
@@ -622,9 +615,6 @@
         2,
         2,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -666,24 +656,26 @@
           "selected_rank": 1,
           "headline": "Jordan condemns Houthi attacks on Saudi airports",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-10-07T23:08+00:00"
+            "outlets": 6,
+            "camps": 5,
+            "newest": "2026-10-07T23:44+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
             "Anadolu Agency",
             "Gulf News",
+            "Iran International",
             "Jordan Times"
           ],
           "camps": [
             "gulf",
             "panarab",
+            "iranian",
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -699,12 +691,12 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Yemen war updates: Houthi attacks on two Saudi airports kill three people",
+                "title": "3 , Yemen war updates: Houthi attacks on two Saudi airports kill three people",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al Jazeera",
-                "title": "5 , Three killed, 36 injured in Houthi attacks on Saudi airports, Riyadh says",
+                "title": "4 , Three killed, 36 injured in Houthi attacks on Saudi airports, Riyadh says",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -713,8 +705,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Jordan Times",
-                "title": "Jordan condemns Houthi attacks on Saudi Arabia",
+                "source": "Iran International",
+                "title": "ANALYSIS Houthi gains reversed at Bab al-Mandab, but Iran’s leverage runs deeper",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -807,6 +799,54 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Palestinian Foreign Ministry calls Israeli attacks on West Bank olive harvesters ‘war crimes’",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-08T01:18+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Palestinian Foreign Ministry calls Israeli attacks on West Bank olive harvesters ‘war crimes’",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces tighten movement restrictions on southern West Bank town",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Colonists, Israeli forces assault olive harvesters in Jerusalem, detain several ",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Foreign Ministry condemns escalating Israeli colonist attacks on Palestinian far",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Iraq devalues its currency as Iran-US war disrupts oil shipping routes",
           "rank_key": {
             "outlets": 2,
@@ -837,7 +877,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "The Palestinian resistance stated that October 7th revealed significant failures in Israeli security",
           "rank_key": {
             "outlets": 2,
@@ -869,33 +909,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran summons French envoy over ‘violent response’ to school protests",
+          "headline": "UKMTO says tanker struck by multiple projectiles north of Qatar’s Madinat ash Shamal",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-06T20:51+00:00"
+            "camps": 1,
+            "newest": "2026-10-07T19:10+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Arab News"
+            "The New Arab"
           ],
           "camps": [
-            "gulf",
             "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Iran summons French envoy over ‘violent response’ to school protests",
+            "source": "Al Arabiya",
+            "title": "UKMTO says tanker struck by multiple projectiles north of Qatar’s Madinat ash Shamal",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (qatar)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Houthis hit Aden airport, Qatar says US-Iran talks progressing",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1003,24 +1049,6 @@
             "israeli"
           ],
           "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces tighten movement restrictions on southern West Bank town",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-07T23:13+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1205,7 +1233,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Al Mayadeen reports that Israeli artillery is targeting the eastern side of Gaza City.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-07T19:40+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1223,7 +1269,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-08T00:54:06.178446+00:00",
+    "last_success": "2026-10-08T01:24:59.387399+00:00",
     "last_failure": null
   },
   "ok": true
