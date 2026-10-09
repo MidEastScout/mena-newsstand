@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T00:36:03.520087+00:00",
+  "updated": "2026-10-09T01:07:30.041147+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,14 +167,14 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-09T00:33:59.760214+00:00"
+      "headlines_updated": "2026-10-09T01:05:34.877526+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
+        "dropped_stale": 10,
         "title_translated": 23,
         "title_snippet": 4,
-        "dropped_no_english": 13,
+        "dropped_no_english": 12,
         "title_native": 78,
         "in": 127,
         "kept": 105
@@ -182,7 +182,7 @@
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 17,
+        "requested": 16,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -196,6 +196,11 @@
         {
           "source": "Jordan Times",
           "title": "Saudi Aramco boss says global oil stockpiles 'scarily thin'",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "سموتريتش يتوعّد مصر: لن تكون هناك سيناء إذا أقدمت على مهاجمتنا",
           "reason": "stale (older than 48h)"
         },
         {
@@ -250,7 +255,7 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "اليمن: المتحدّث باسم القوات المسلحة اليمنية العميد يحيى سريع: تمكنت قواتنا المسلحة من استهداف مطار الملك خالد في الرياض ",
+          "title": "\"لن تكون هناك سيناء\".. تصريح سموتريتش يُشعل موجة غضباً في مصر",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -279,11 +284,6 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "ترامب: لن نهاجم إيران قبل انتخابات التجديد النصفي للكونغرس",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
           "source": "Al Manar",
           "title": "تقارير خاصة | بعد ثلاث سنوات على طوفان الأقصى.. تداعيات الصدمة مستمرة داخل الكيان 13:41",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -302,7 +302,7 @@
     },
     "relevance": {
       "in": 105,
-      "kept": 73,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
@@ -466,13 +466,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "First poll since Brazil’s first round presidential election predicts Flavio 53%, Lula 47% in upcoming runoff",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "France's students ask a fair question about equality",
           "sec": 0,
@@ -532,9 +525,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 42,
       "sizes": [
-        14,
+        11,
         6,
         5,
         4,
@@ -545,6 +538,9 @@
         2,
         2,
         2,
+        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -582,11 +578,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Saudi nursery hit by debris as Houthis target Riyadh airport",
+          "headline": "Belgian foreign minister condemns Houthi attacks on Saudi Arabia",
           "rank_key": {
-            "outlets": 10,
-            "camps": 5,
-            "newest": "2026-10-08T20:22+00:00"
+            "outlets": 8,
+            "camps": 4,
+            "newest": "2026-10-08T20:02+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -596,23 +592,20 @@
             "Egypt Independent",
             "Gulf News",
             "L'Orient Today",
-            "Mehr News",
-            "SANA",
-            "The New Arab"
+            "SANA"
           ],
           "camps": [
             "gulf",
             "panarab",
-            "iranian",
             "levant",
             "turkish"
           ],
-          "members": 14,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Saudi nursery hit by debris as Houthis target Riyadh airport",
+            "source": "Anadolu Agency",
+            "title": "Belgian foreign minister condemns Houthi attacks on Saudi Arabia",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -681,7 +674,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Tehran reports ‘explosions’ in Hormuz, Trump says no attack before midterms",
+                "title": "1 , Tehran reports ‘explosions’ in Hormuz, Trump says no attack before midterms",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -915,6 +908,44 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-08T12:57+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "4 , Israeli settlers take Palestinian olives, and their harvest traditions",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Hamas delegation heads to Cairo to complete national dialogue consultations",
           "rank_key": {
             "outlets": 2,
@@ -1038,17 +1069,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump rules out new Iran attack before US midterm elections",
+          "headline": "Israeli forces kill seven in Gaza",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-08T22:41+00:00"
+            "newest": "2026-10-08T21:40+00:00"
           },
           "outlet_names": [
             "The New Arab"
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "USS Abraham Lincoln returns to San Diego after supporting Iran war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-08T21:04+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1164,24 +1213,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-08T12:57+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israel issues high-level travel warning for Egypt and regional nations",
           "rank_key": {
             "outlets": 1,
@@ -1236,24 +1267,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Pakistani troops deployed in Saudi Arabia, military confirms",
+          "headline": "Yemen strikes Riyadh airport with ballistic missile",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-08T01:42+00:00"
+            "newest": "2026-10-08T05:54+00:00"
           },
           "outlet_names": [
-            "TRT World"
+            "Mehr News"
           ],
           "camps": [
-            "turkish"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1271,7 +1302,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-09T00:36:14.569146+00:00",
+    "last_success": "2026-10-09T01:07:44.260906+00:00",
     "last_failure": null
   },
   "ok": true
