@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T16:21:13.381462+00:00",
+  "updated": "2026-10-09T16:26:27.859954+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-09T16:19:29.108066+00:00"
+      "headlines_updated": "2026-10-09T16:24:28.499767+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 33,
+        "dropped_stale": 6,
+        "title_snippet": 30,
         "title_translated": 5,
-        "title_native": 79,
+        "title_native": 82,
+        "dropped_no_english": 4,
         "in": 127,
         "kept": 117
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -203,11 +204,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "شهيد وإصابات.. جيش الاحتلال يصعد من خرقه لاتفاق غزة",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Syria Direct",
           "title": "A terrible beauty is born: Syria after Assad",
           "reason": "stale (older than 48h)"
@@ -218,30 +214,35 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Yemen conflict escalates as Houthis hit Aden airport, target Riyadh",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "AK Party scores win as Turkish opposition stronghold's mayor joins",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Libya parliament speaker ousted after 12 years amid power shift",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "TRT World",
           "title": "Iraq devalues its currency as US war on Iran disrupts oil shipping routes",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن: محمد طاهر أنعم للميادين: المديريات تتحرر شيئاً فشيئاً ومديرية جبل حبشي هي آخر المديريات خارج مدينة تعز التي يجري ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "هل يبحث نتنياهو عن حبل للخروج من مأزق الانتخابات الإسرائيلية القادمة؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بري وسالم: تقاطع لمواجهة تفرّد عون 2",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الهندي: الإعلان الرسمي عن تأجيل الانتخابات سيصدر خلال الفترة المقبلة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
       "in": 117,
-      "kept": 85,
+      "kept": 83,
       "dropped": [
         {
           "source": "Kan 11",
@@ -426,6 +427,20 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Daily Sabah",
+          "title": "Türkiye extends high-speed rail network to EU border",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "2 stolen Renoir paintings recovered in France, 6 arrested",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Hürriyet Daily News",
           "title": "PHOTO Best restaurants in Istanbul, ranked",
           "sec": 0,
@@ -471,11 +486,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 46,
       "sizes": [
-        16,
+        14,
         5,
-        5,
+        4,
         4,
         3,
         3,
@@ -517,6 +532,7 @@
         1,
         1,
         1,
+        1,
         1
       ]
     },
@@ -529,17 +545,15 @@
           "selected_rank": 1,
           "headline": "Germany condemns Houthi attacks and backs Saudi right to self-defense",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 8,
             "camps": 4,
             "newest": "2026-10-09T15:37+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Mayadeen",
             "Al-Akhbar",
             "Anadolu Agency",
             "Arab News",
-            "Daily Sabah",
             "Egypt Independent",
             "Gulf News",
             "L'Orient Today",
@@ -551,7 +565,7 @@
             "levant",
             "turkish"
           ],
-          "members": 16,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -662,7 +676,7 @@
             "panarab",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -679,11 +693,6 @@
               {
                 "source": "Middle East Eye",
                 "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "A correspondent reported that one Palestinian was killed and others injured in a",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -1102,6 +1111,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "ICC condemns sweeping US sanctions as assault on international law",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T15:03+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Brigadier General Yahya Saree, the spokesperson for the armed forces, stated that Saudi-aligned forc",
           "rank_key": {
             "outlets": 1,
@@ -1110,6 +1137,24 @@
           },
           "outlet_names": [
             "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Vessel struck by unknown projectile off UAE coast, UKMTO says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T12:48+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
           ],
           "camps": [
             "panarab"
@@ -1138,6 +1183,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Turkish Defense Ministry marks 7 years since Operation Peace Spring",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T12:43+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Yemeni forces complete control over Bab al-Mandeb, Perim Island",
           "rank_key": {
             "outlets": 1,
@@ -1149,6 +1212,24 @@
           ],
           "camps": [
             "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Türkiye, European Space Agency reportedly discussing renewed co-op",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T12:15+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1169,24 +1250,6 @@
             "iranian"
           ],
           "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Two men deny carrying out surveillance for Iran of Israeli embassy in UK",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T10:38+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1245,61 +1308,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "War on Iran puts on display limits to US military power",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T08:06+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran not to leave negotating table despite US attacks",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T05:20+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Zac Goldsmith, a prominent pro-Palestinian voice in British politics, lost a special election for a…",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T04:08+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1317,7 +1326,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-09T16:21:43.256058+00:00",
+    "last_success": "2026-10-09T16:26:29.012664+00:00",
     "last_failure": null
   },
   "ok": true
