@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T22:41:49.695791+00:00",
+  "updated": "2026-10-09T23:13:55.366072+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-09T22:39:58.057179+00:00"
+      "headlines_updated": "2026-10-09T23:11:26.729470+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 39,
+        "title_snippet": 36,
         "title_translated": 1,
+        "dropped_no_english": 3,
         "title_native": 81,
         "in": 131,
-        "kept": 121
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -236,12 +237,27 @@
           "source": "TRT World",
           "title": "Trump welcomes Türkiye, Pakistan defence support for Saudi Arabia under Mecca pact",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מ\"כנפיים של קרמבו\" לכנסת: המועמדת של איזנקוט בריאיון ראשון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "منظمة الهجرة الدولية: ما يقرب من مليوني شخص في غزة بحاجة ماسة إلى مساعدات الإيواء مع اقتراب فصل الشتاء",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "إدوارد سعيد: فلسطين تستعيد صوتها من الأرشيف",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 73,
+      "in": 118,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
@@ -321,22 +337,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The weekend forecast predicts sunny and pleasant weather with a slight temperature increase.",
+          "source": "Middle East Eye",
+          "title": "Navi Pillay, eminent South African jurist, awarded the 2026 Nobel Peace Prize",
           "sec": 0,
-          "off": 2,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
-          "title": "Macklemore calls for a ‘free Palestine’ during Ed Sheeran shows, prompting praise and backlash",
+          "title": "Ed Miliband insists UK will 'build back' presence in Jerusalem as British consulate closes on Israel's orders",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Arabiya",
-          "title": "Trump says Russia to immediately supply 300,000 tons of diesel fuel",
+          "title": "Navi Pillay Jokes About Sharing Nobel Peace Prize With Trump",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -344,13 +360,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Knesset elections..",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Arab-Iranian dialogue..",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -365,6 +374,13 @@
         {
           "source": "Mehr News",
           "title": "Iran proposes plan on shrinking water level in Caspian Sea",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Iran International",
+          "title": "5 Iran turns on Pakistan as Saudi defense pact takes effect",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -433,13 +449,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Top 5 matches in Europe after the end of the international break - Al Akhbar.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Chile | Heavy rains cause Mopucho River to flood, residents evacuated.",
           "sec": 0,
@@ -498,13 +507,6 @@
         {
           "source": "Gulf News",
           "title": "US CentCom rejects Iran's claim of Hormuz closure, says 20 million barrels of crude moving through",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Trump says Russia to supply diesel fuel to American, global markets",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -583,12 +585,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 38,
       "sizes": [
         10,
-        5,
+        6,
         4,
-        4,
+        3,
+        3,
         3,
         3,
         3,
@@ -597,12 +600,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -699,24 +697,26 @@
           "selected_rank": 2,
           "headline": "Hamas congratulated the jurist Navi Pillay, who stated that \"Israel is committing genocide,\" on winn",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 6,
+            "camps": 5,
             "newest": "2026-10-09T20:31+00:00"
           },
           "outlet_names": [
             "Arab News",
             "Falastin al-Youm",
             "Kan 11",
+            "Middle East Eye",
             "N12",
             "TRT World"
           ],
           "camps": [
             "israeli",
             "gulf",
+            "panarab",
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -736,6 +736,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Middle East Eye",
+                "title": "Palestinians reflect as they mark three years since the beginning of Israel's ge",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Arab News",
                 "title": "Nobel Peace Prize awarded to Navi Pillay, the UN investigator who accused Israel",
                 "rejected_by": "older than the story's newest wave"
@@ -750,56 +755,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Occupied Palestine: Al Mayadeen correspondent reports occupation vehicles firing intensively east of",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-10-09T20:53+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Middle East Eye",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Occupied Palestine: Al Mayadeen correspondent reports occupation vehicles firing intensively east of Gaza…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Palestinian killed, others injured by Israeli gunfire in central Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "A Palestinian was killed and others were injured by Israeli occupation forces in",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Strait of Hormuz..",
           "rank_key": {
             "outlets": 3,
@@ -849,7 +804,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "UAE says Omani flydubai co-pilot planned suicide attack on Tel Aviv flight",
           "rank_key": {
             "outlets": 3,
@@ -882,7 +837,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Iran slams French president’s double standard on nuclear deterrence",
           "rank_key": {
             "outlets": 3,
@@ -921,6 +876,125 @@
               {
                 "source": "Arab News",
                 "title": "Iran will not abandon uranium enrichment or hand over its uranium, nuclear chief",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Occupied Palestine: Al Mayadeen correspondent reports occupation vehicles firing intensively east of",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-09T20:53+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Mayadeen",
+            "title": "Occupied Palestine: Al Mayadeen correspondent reports occupation vehicles firing intensively east of Gaza…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Palestinian killed, others injured by Israeli gunfire in central Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "A Palestinian was killed and others were injured by Israeli occupation forces in",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "‘Obvious weakness’: Zelenskyy criticizes Trump-Putin diesel deal over lack of de-escalation",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-09T20:38+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al Mayadeen",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "‘Obvious weakness’: Zelenskyy criticizes Trump-Putin diesel deal over lack of de-escalation",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "4 , Ukraine pushes Russia back in Donetsk as military, civilian casualties soar",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US imposes sanctions on ICC after former judge wins Nobel Peace Prize",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-09T18:42+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "US imposes sanctions on ICC after former judge wins Nobel Peace Prize",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "US sanctions ICC hours after former judge wins Nobel Peace Prize",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -998,42 +1072,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russia: The Kremlin stated that Putin and Trump's talks paid great attention to prospects for resolv",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-09T20:14+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Russia: The Kremlin stated that Putin and Trump's talks paid great attention to prospects for resolving the…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "3 , Ukraine pushes Russia back in Donetsk as military, civilian casualties soar",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
           "rank_key": {
             "outlets": 2,
@@ -1101,6 +1139,43 @@
         },
         {
           "selected_rank": null,
+          "headline": "Saudi nursery hit by debris as Houthis target Riyadh airport",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-08T23:30+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Saudi nursery hit by debris as Houthis target Riyadh airport",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Watch: At least one plane severely damaged as Houthis claim third Riyadh airport",
+                "rejected_by": "bare stub headline"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Justice Minister meets Turkish President at Istanbul International Justice Summit - SANA.",
           "rank_key": {
             "outlets": 1,
@@ -1148,24 +1223,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US imposes sanctions on ICC after former judge wins Nobel Peace Prize",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T18:42+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1316,7 +1373,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Iran not to leave negotating table despite US attacks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T05:20+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1334,7 +1409,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-09T22:42:12.990478+00:00",
+    "last_success": "2026-10-09T23:14:10.978054+00:00",
     "last_failure": null
   },
   "ok": true
