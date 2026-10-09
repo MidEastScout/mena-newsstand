@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T14:11:49.514667+00:00",
+  "updated": "2026-10-09T14:43:41.684407+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-09T14:09:55.520413+00:00"
+      "headlines_updated": "2026-10-09T14:41:44.241177+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 32,
-        "title_translated": 6,
+        "title_snippet": 28,
+        "title_translated": 5,
         "title_native": 81,
+        "dropped_no_english": 5,
         "in": 127,
-        "kept": 119
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 32,
+        "requested": 33,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -226,12 +227,37 @@
           "source": "TRT World",
           "title": "Iraq devalues its currency as US war on Iran disrupts oil shipping routes",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن: المتحدث باسم القوات المسلحة العميد يحيى سريع: تصدينا وطردنا التحشيدات السعودية التي حاولت التقدم باتجاه باب المند",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "مفاوضات مع قيادات تعز لتحييد المدينة: صنعاء تنذر عمّال المنشآت النفطية السعودية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "بوتين لبزشكيان: أبلغوا تحياتي الحارة إلى آية الله السيد مجتبى خامنئي 21:48",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الهندي: الإعلان الرسمي عن تأجيل الانتخابات سيصدر خلال الفترة المقبلة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syrian culture minister meets Lebanese PM, culture minister in Beirut - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 119,
-      "kept": 80,
+      "in": 114,
+      "kept": 77,
       "dropped": [
         {
           "source": "Kan 11",
@@ -287,13 +313,6 @@
           "title": "4 , ‘Indentured servants’: US green card move will hit thousands of IT workers",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Key takeaways from US Senate debate in Michigan between El-Sayed, Rogers",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -381,13 +400,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Nabih Berri and Salem met, indicating a convergence to counter Aoun's unilateralism.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "A massive reception was held for the Lebanese junior national team in Beirut after they won the West Asia…",
           "sec": 0,
@@ -397,13 +409,6 @@
         {
           "source": "WAFA News",
           "title": "Colonists assault Palestinian man and his two children near al-Taybeh",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The World Health Organization stated that the delay in introducing medical equipment and fuel is worsening…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -423,8 +428,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Forty-five companies showcased advanced surgical and hearing technologies in Damascus.",
+          "source": "Gulf News",
+          "title": "US CentCom rejects Iran's claim of Hormuz closure, says 20 million barrels of crude moving through",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -438,7 +443,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Canadians ‘worried’ about US travel as Trump’s policies make travelers feel unwelcome: Former premier",
+          "title": "Severe turbulence injures 8, diverts New York flight to Miami",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "AI firms prepare for backlash over potential catastrophic event: Report",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -510,14 +522,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 46,
       "sizes": [
         9,
         5,
         4,
+        4,
         3,
         3,
-        3,
         2,
         2,
         2,
@@ -526,12 +538,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -664,7 +671,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , 2026 Nobel Peace Prize awarded to Navi Pillay",
+                "title": "5 , 2026 Nobel Peace Prize awarded to Navi Pillay",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -722,6 +729,54 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Aggressive US military bears responsibility for regional maritime escalation: IRGC",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-09T14:39+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "Aggressive US military bears responsibility for regional maritime escalation: IRGC",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , IRGC says it hit tanker ‘illegally’ crossing Hormuz, causing ‘massive’ fire",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Illegal routes in Hormuz to be blocked soon: IRGC advisor",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "No outsider allowed to interfere in Persian Gulf: IRGC cmdr.",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Four people died and 33 were injured in road accidents across Syria in the past 24 hours.",
           "rank_key": {
             "outlets": 2,
@@ -759,7 +814,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Saudia identifies pilot killed in Riyadh airport attack",
           "rank_key": {
             "outlets": 2,
@@ -792,37 +847,37 @@
         },
         {
           "selected_rank": null,
-          "headline": "Illegal routes in Hormuz to be blocked soon: IRGC advisor",
+          "headline": "Rubio warns Ukraine war has reached dangerous stalemate as US pushes for deal",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-09T06:00+00:00"
+            "newest": "2026-10-08T22:19+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Mehr News"
+            "TRT World"
           ],
           "camps": [
             "panarab",
-            "iranian"
+            "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Mehr News",
-            "title": "Illegal routes in Hormuz to be blocked soon: IRGC advisor",
+            "source": "TRT World",
+            "title": "Rubio warns Ukraine war has reached dangerous stalemate as US pushes for deal",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , IRGC says it hit tanker ‘illegally’ crossing Hormuz, causing ‘massive’ fire",
+                "title": "2 , Ukraine pushes Russia back in Donetsk as military, civilian casualties soar",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -931,42 +986,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-09T13:58+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Armed colonists open fire on olive harvesters in Burham, north of Ramallah",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "South African judge Navi Pillay, who determined that Israel is committing genocide in Gaza, will rec",
           "rank_key": {
             "outlets": 2,
@@ -1059,11 +1078,42 @@
         },
         {
           "selected_rank": null,
-          "headline": "Mother, 2 children killed after hippopotamus attack in DR Congo",
+          "headline": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-08T12:57+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "UN urges sustained international support for DR Congo as humanitarian crises deepen",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-09T14:00+00:00"
+            "newest": "2026-10-09T14:32+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1077,17 +1127,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli artillery, airstrikes target southern Lebanon despite framework deal",
+          "headline": "Iranian, Turkmen presidents meet on sidelines of CIS summit in Turkmenistan",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T14:26+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Armed colonists open fire on olive harvesters in Burham, north of Ramallah",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-09T13:58+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "WAFA News"
           ],
           "camps": [
-            "turkish"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1149,24 +1217,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces detain three Palestinians, force farmers off their land near Qalqilia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T12:16+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Türkiye, European Space Agency reportedly discussing renewed co-op",
           "rank_key": {
             "outlets": 1,
@@ -1203,60 +1253,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Yemen's \"Saba\" agency reported that Saudi aircraft targeted communication networks in the Belad Al-R",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T11:19+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Pezeshkian stresses Iran’s strategic role in connecting Central Asia, Eurasia to open waters",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T10:09+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iranian, Russian, Azerbaijani foreign ministers hold brief talks ahead of CIS summit",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T09:14+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump rules out pre-election strikes on Iran as IRGC vows to press on",
           "rank_key": {
             "outlets": 1,
@@ -1274,7 +1270,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "War on Iran puts on display limits to US military power",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T08:06+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Three killed in attacks on Riyadh airport, Saudi aviation authority says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T06:59+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran not to leave negotating table despite US attacks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T05:20+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1292,7 +1342,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-09T14:12:06.435442+00:00",
+    "last_success": "2026-10-09T14:43:55.895575+00:00",
     "last_failure": null
   },
   "ok": true
