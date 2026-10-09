@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T19:07:08.997445+00:00",
+  "updated": "2026-10-09T19:39:10.430709+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-09T19:05:01.071521+00:00"
+      "headlines_updated": "2026-10-09T19:37:04.144938+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 38,
+        "dropped_stale": 4,
+        "title_snippet": 35,
         "title_translated": 1,
-        "title_native": 83,
+        "title_native": 84,
+        "dropped_no_english": 3,
         "in": 127,
-        "kept": 122
+        "kept": 120
       },
       "translator": {
         "configured": true,
@@ -187,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Jordan Times",
-          "title": "UN chief calls for Gaza ceasefire ahead of Oct 7 anniversary",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Falastin al-Youm",
           "title": "شهيد وإصابات.. جيش الاحتلال يصعد من خرقه لاتفاق غزة",
@@ -211,11 +207,26 @@
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "منظمة الهجرة الدولية: ما يقرب من مليوني شخص في غزة بحاجة ماسة إلى مساعدات الإيواء مع اقتراب فصل الشتاء",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "المنظمة الدولية: سكان غزة بحاجة إلى خيام ومساعدة قبل فصل الشتاء",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Global leaders condemn Houthi militia attacks on Saudi civilian airports - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
+      "in": 120,
       "kept": 77,
       "dropped": [
         {
@@ -443,22 +454,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Oil prices have decreased while gold prices have risen.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Syria and Türkiye discussed bilateral ties and regional developments.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Syria's L602 air corridor recorded 2,188 overflights in its first phase.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -479,14 +476,14 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Turkish Defense Ministry marks 7 years since Operation Peace Spring",
+          "title": "Trump offers White House press secretary role to Katie Zacharia",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
-          "title": "Türkiye extends high-speed rail network to EU border",
+          "title": "Turkish Defense Ministry marks 7 years since Operation Peace Spring",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -537,9 +534,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 43,
       "sizes": [
-        8,
+        9,
         5,
         4,
         3,
@@ -548,7 +545,6 @@
         3,
         3,
         3,
-        3,
         2,
         2,
         2,
@@ -556,6 +552,8 @@
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -592,13 +590,14 @@
           "selected_rank": 1,
           "headline": "Jordan condemns Houthi attacks on Saudi Arabia",
           "rank_key": {
-            "outlets": 7,
-            "camps": 3,
-            "newest": "2026-10-09T16:10+00:00"
+            "outlets": 8,
+            "camps": 4,
+            "newest": "2026-10-09T19:23+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al-Akhbar",
+            "Anadolu Agency",
             "Arab News",
             "Egypt Independent",
             "Gulf News",
@@ -608,9 +607,10 @@
           "camps": [
             "gulf",
             "panarab",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 8,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -762,44 +762,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Japan expresses ‘deep concern’ over US sanctions on International Criminal Court",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-09T16:56+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Mayadeen",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Japan expresses ‘deep concern’ over US sanctions on International Criminal Court",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , US sanctions International Criminal Court itself in major escalation",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "A Palestinian was killed and others injured by Israeli occupation forces in Gaza.",
           "rank_key": {
             "outlets": 3,
@@ -996,7 +958,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , Who is Navi Pillay, winner of the 2026 Nobel Peace Prize?",
+                "title": "5 , Who is Navi Pillay, winner of the 2026 Nobel Peace Prize?",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1414,7 +1376,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1432,7 +1394,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-09T19:07:30.028580+00:00",
+    "last_success": "2026-10-09T19:39:27.985553+00:00",
     "last_failure": null
   },
   "ok": true
