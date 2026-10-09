@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T17:29:50.931785+00:00",
+  "updated": "2026-10-09T18:03:41.463154+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-09T17:27:51.780261+00:00"
+      "headlines_updated": "2026-10-09T18:01:24.544373+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 3,
-        "title_snippet": 38,
+        "dropped_stale": 4,
+        "title_snippet": 34,
         "title_translated": 2,
         "title_native": 84,
+        "dropped_no_english": 3,
         "in": 127,
-        "kept": 124
+        "kept": 120
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 38,
+        "requested": 37,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -193,6 +194,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Falastin al-Youm",
+          "title": "شهيد وإصابات.. جيش الاحتلال يصعد من خرقه لاتفاق غزة",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Syria Direct",
           "title": "A terrible beauty is born: Syria after Assad",
           "reason": "stale (older than 48h)"
@@ -201,11 +207,26 @@
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: مراسل الميادين: شهيد وجرحى في عدوان طيران الاحتلال على منزل في حي الصبرة جنوبي مدينة غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria condemns Houthi militia attacks on Saudi King Khalid International Airport - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria, Türkiye discuss bilateral ties and regional developments - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 124,
+      "in": 120,
       "kept": 79,
       "dropped": [
         {
@@ -266,16 +287,9 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , US to livestream Fort Hood shooter’s execution: Is that legal?​",
+          "title": "4 , US to livestream Fort Hood shooter’s execution: Is that legal?​",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "4 , ‘Indentured servants’: US green card move will hit thousands of IT workers",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -298,13 +312,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Liberation of districts is proceeding gradually, with Jabal Habashi being the last district outside Taiz city…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "IRNA",
@@ -426,13 +433,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "The official announcement regarding the postponement of elections will be issued soon.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Syrian Customs thwarted the smuggling of over 500,000 Captagon pills in 48 hours.",
           "sec": 0,
@@ -440,22 +440,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "The Lebanese President and the Syrian Chargé d’Affaires reviewed bilateral ties in Beirut.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "The Syrian culture minister met with the Lebanese Prime Minister and culture minister in Beirut.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "US CentCom rejects Iran's claim of Hormuz closure, says 20 million barrels of crude moving through",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Vance says he will not watch planned livestream of Fort Hood shooter's execution",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -527,11 +520,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 43,
       "sizes": [
-        12,
+        11,
         5,
-        4,
         4,
         4,
         3,
@@ -547,6 +539,9 @@
         2,
         2,
         2,
+        2,
+        2,
+        1,
         1,
         1,
         1,
@@ -602,7 +597,7 @@
             "levant",
             "turkish"
           ],
-          "members": 12,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -799,6 +794,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "RSF drone strike in Sudan kills 26 women, four children: Official, witnesses",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-09T17:37+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "RSF drone strike in Sudan kills 26 women, four children: Official, witnesses",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Japan expresses ‘deep concern’ over US sanctions on International Criminal Court",
           "rank_key": {
             "outlets": 2,
@@ -813,7 +839,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 4,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -934,7 +960,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "5 , 2026 Nobel Peace Prize awarded to Navi Pillay",
+                "title": "3 , Who is Navi Pillay, winner of the 2026 Nobel Peace Prize?",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1397,24 +1423,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Turkey says will not send troops to fight Yemen's Houthis",
+          "headline": "Trump rules out new Iran attack before US midterm elections",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-08T23:33+00:00"
+            "newest": "2026-10-08T22:41+00:00"
           },
           "outlet_names": [
-            "Jordan Times"
+            "The New Arab"
           ],
           "camps": [
-            "levant"
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1432,7 +1458,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-09T17:31:47.928107+00:00",
+    "last_success": "2026-10-09T18:03:55.783743+00:00",
     "last_failure": null
   },
   "ok": true
