@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T12:36:00.350637+00:00",
+  "updated": "2026-10-09T13:07:40.955322+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,34 +167,40 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-09T12:34:15.817646+00:00"
+      "headlines_updated": "2026-10-09T13:05:51.241025+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 30,
+        "dropped_stale": 6,
+        "title_snippet": 28,
         "title_translated": 9,
-        "title_native": 83,
+        "title_native": 81,
+        "dropped_no_english": 3,
         "in": 127,
-        "kept": 122
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 30,
+        "requested": 31,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
         {
+          "source": "The New Arab",
+          "title": "Houthis hit Aden airport, Qatar says US-Iran talks progressing",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Jordan Times",
           "title": "UN chief calls for Gaza ceasefire ahead of Oct 7 anniversary",
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "شهيد وإصابات.. جيش الاحتلال يصعد من خرقه لاتفاق غزة",
+          "source": "WAFA News",
+          "title": "Palestinian killed, others injured in Israeli strike on southwestern Gaza",
           "reason": "stale (older than 48h)"
         },
         {
@@ -211,12 +217,27 @@
           "source": "TRT World",
           "title": "Iraq devalues its currency as US war on Iran disrupts oil shipping routes",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "هل يبحث نتنياهو عن حبل للخروج من مأزق الانتخابات الإسرائيلية القادمة؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: القوة البحرية في حرس الثورة: استمرار التدخلات الأميركية سيؤدي إلى تزايد الحوادث المؤسفة يوماً بعد يوم",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الاحتلال يصدر أوامر اعتقال إداري بحق 33 معتقلا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 82,
+      "in": 118,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -269,21 +290,21 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Key takeaways from US Senate debate in Michigan between El-Sayed, Rogers",
+          "title": "4 , Key takeaways from US Senate debate in Michigan between El-Sayed, Rogers",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , ‘Indentured servants’: US green card move will hit thousands of IT workers",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
           "title": "Macklemore calls for a ‘free Palestine’ during Ed Sheeran shows, prompting praise and backlash",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "'This is urgent': high school students turn out for new protests across France",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -430,7 +451,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "UN voices concern over student protests, high school blockades in France",
+          "title": "Finland approves US-funded grant for TNT plant to support NATO, Ukraine",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Private firms driving lunar development, but competition for resources poses risks: Space executive",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -445,6 +473,13 @@
         {
           "source": "Daily Sabah",
           "title": "2 stolen Renoir paintings recovered in France, 6 arrested",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "European firms called to expand partnerships with Turkish contractors",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -502,13 +537,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 54,
+      "clusters": 51,
       "sizes": [
         8,
-        6,
         4,
         3,
         3,
+        3,
         2,
         2,
         2,
@@ -518,9 +553,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -625,46 +657,39 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israeli fire kills Palestinian, injures 3, including child, in central Gaza",
+          "headline": "Palestinian killed, others injured by Israeli gunfire in central Gaza",
           "rank_key": {
-            "outlets": 5,
-            "camps": 3,
+            "outlets": 4,
+            "camps": 2,
             "newest": "2026-10-09T11:29+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
-            "Anadolu Agency",
             "Middle East Eye",
             "SANA",
             "WAFA News"
           ],
           "camps": [
             "panarab",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 6,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli fire kills Palestinian, injures 3, including child, in central Gaza",
+            "source": "WAFA News",
+            "title": "Palestinian killed, others injured by Israeli gunfire in central Gaza",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Middle East Eye",
                 "title": "Palestinian child killed by Israel on first day back at school in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "A reported Palestinian killed and others injured in an Israeli airstrike on a ho",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -677,16 +702,15 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Navi Pillay wins Nobel Peace Prize for international justice work",
+          "headline": "UN rights chief hails Navi Pillay's Nobel Peace Prize as recognition of global human rights struggle",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
             "newest": "2026-10-09T12:14+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
             "Anadolu Agency",
-            "Daily Sabah",
             "Falastin al-Youm"
           ],
           "camps": [
@@ -694,12 +718,12 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Navi Pillay wins Nobel Peace Prize for international justice work",
+            "source": "Anadolu Agency",
+            "title": "UN rights chief hails Navi Pillay's Nobel Peace Prize as recognition of global human rights struggle",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -821,67 +845,30 @@
         },
         {
           "selected_rank": null,
-          "headline": "Illegal routes in Hormuz to be blocked soon: IRGC advisor",
+          "headline": "Saudia pilot killed in attack on Riyadh airport: Statement",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-09T06:00+00:00"
-          },
-          "outlet_names": [
-            "Gulf News",
-            "Mehr News"
-          ],
-          "camps": [
-            "gulf",
-            "iranian"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "Illegal routes in Hormuz to be blocked soon: IRGC advisor",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Gulf News",
-                "title": "US CentCom rejects Iran's claim of Hormuz closure, says 20 million barrels of cr",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Three killed, 36 injured in attacks on Saudi airports",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-07T18:39+00:00"
+            "newest": "2026-10-09T08:04+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Arab News"
+            "Gulf News"
           ],
           "camps": [
             "gulf",
             "panarab"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Al Arabiya",
-            "title": "Three killed, 36 injured in attacks on Saudi airports",
+            "title": "Saudia pilot killed in attack on Riyadh airport: Statement",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (boeing)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -918,6 +905,42 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-09T12:06+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Israel forces out British diplomats in Jerusalem over West Bank sanctions",
+            "title_source": "native",
+            "why": [
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Colonists burn vehicle, attack olive harvesters across Nablus Governorate",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
           }
         },
         {
@@ -1019,24 +1042,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Colonists burn vehicle, attack olive harvesters across Nablus Governorate",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T12:31+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israeli forces detain three Palestinians, force farmers off their land near Qalqilia",
           "rank_key": {
             "outlets": 1,
@@ -1048,6 +1053,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Türkiye, European Space Agency reportedly discussing renewed co-op",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T12:15+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1109,42 +1132,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Local sources reported hearing an explosion in the western countryside of Deir Ezzor.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T09:54+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Türkiye-France defense cooperation spark concern in Greek media",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-09T09:28+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iranian, Russian, Azerbaijani foreign ministers hold brief talks ahead of CIS summit",
           "rank_key": {
             "outlets": 1,
@@ -1199,19 +1186,19 @@
         },
         {
           "selected_rank": null,
-          "headline": "Saudia plane damaged in Houthi attacks at Riyadh airport, Saudi civil aviation confirms",
+          "headline": "Illegal routes in Hormuz to be blocked soon: IRGC advisor",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-09T07:49+00:00"
+            "newest": "2026-10-09T06:00+00:00"
           },
           "outlet_names": [
-            "Gulf News"
+            "Mehr News"
           ],
           "camps": [
-            "gulf"
+            "iranian"
           ],
-          "members": 1,
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1234,7 +1221,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "30 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Zac Goldsmith, a prominent pro-Palestinian voice in British politics, lost a special election for a…",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-09T04:08+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Turkey says will not send troops to fight Yemen's Houthis",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-08T23:33+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1252,7 +1275,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-09T12:36:27.734911+00:00",
+    "last_success": "2026-10-09T13:08:02.090372+00:00",
     "last_failure": null
   },
   "ok": true
