@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T03:59:39.141745+00:00",
+  "updated": "2026-10-09T04:30:49.465087+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-09T03:57:39.878929+00:00"
+      "headlines_updated": "2026-10-09T04:29:10.422886+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_translated": 20,
-        "title_snippet": 20,
+        "title_translated": 22,
+        "title_snippet": 17,
         "title_native": 81,
+        "dropped_no_english": 1,
         "in": 127,
-        "kept": 121
+        "kept": 120
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 20,
+        "requested": 18,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -216,12 +217,17 @@
           "source": "TRT World",
           "title": "One Palestinian killed, five wounded in Israeli army, illegal settler attacks in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria foils smuggling of 395,000 Captagon pills from Lebanon - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 78,
+      "in": 120,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -273,6 +279,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Jazeera",
+          "title": "5 , ICE agent shoots man in car with five-year-old child in New York: Mayor",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Middle East Eye",
           "title": "Macklemore calls for a ‘free Palestine’ during Ed Sheeran shows, prompting praise and backlash",
           "sec": 0,
@@ -282,13 +295,6 @@
         {
           "source": "Al Arabiya",
           "title": "What did Trump mean when he said Iran could ‘take out’ Los Angeles & San Diego?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The leader of Ansarullah stated that Riyadh is losing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -359,6 +365,13 @@
         {
           "source": "Jordan Times",
           "title": "Royal Decrees appoint Fayez as Senate president, Khayyat as member",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Prime minister directs replacement of unsafe heaters ahead of winter",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -442,14 +455,14 @@
         },
         {
           "source": "SANA",
-          "title": "Syria and Türkiye discussed bilateral ties and regional developments.",
+          "title": "South Korea, Egypt elevate ties to strategic partnership - Syrian News Agency",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "South Korea, Egypt elevate ties to strategic partnership - Syrian News Agency",
+          "title": "Erdogan and Putin discuss bilateral ties, Black Sea navigation safety",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -528,12 +541,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 41,
       "sizes": [
-        14,
-        6,
+        13,
+        7,
         5,
-        4,
+        3,
         3,
         2,
         2,
@@ -544,7 +557,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -607,7 +619,7 @@
             "levant",
             "turkish"
           ],
-          "members": 14,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -680,7 +692,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Tehran reports ‘explosions’ in Hormuz, Trump says no attack before midterms",
+                "title": "1 , IRGC targets ‘violating’ ships nightly, Trump says no attack before vote",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -716,7 +728,7 @@
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -771,7 +783,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -793,11 +805,6 @@
               {
                 "source": "SANA",
                 "title": "Syria strongly condemns Houthi militia attacks on Saudi civilian facilities",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Syrian Foreign minister, US envoy discuss bilateral ties in Istanbul",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1237,6 +1244,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump says anyone who does not call AI ‘super intelligence’ is ‘the enemy’",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-08T16:49+00:00"
+          },
+          "outlet_names": [
+            "Arab News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Presidency condemns attacks targeting Saudi airports and civilian facilities",
           "rank_key": {
             "outlets": 1,
@@ -1291,24 +1316,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The occupation issued administrative arrest warrants against 33 detainees.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-08T13:15+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israel issues high-level travel warning for Egypt and regional nations",
           "rank_key": {
             "outlets": 1,
@@ -1344,7 +1351,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1362,7 +1369,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-09T03:59:52.190395+00:00",
+    "last_success": "2026-10-09T04:31:02.706933+00:00",
     "last_failure": null
   },
   "ok": true
