@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T20:31:55.718400+00:00",
+  "updated": "2026-10-10T20:53:36.897160+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-10T20:29:30.774712+00:00"
+      "headlines_updated": "2026-10-10T20:51:16.106764+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 9,
-        "title_snippet": 39,
+        "dropped_no_english": 6,
+        "title_snippet": 33,
         "title_native": 83,
         "in": 131,
-        "kept": 122
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -230,12 +231,42 @@
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "צעיר בן 28 נפצע באורח קשה ביבנה מפליטת כדור של אחיו, מאבטח בן 21 שעובד במוסד חינוכי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מהדורת השבת 10.10.26 - המהדורה המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن: حزام الأسد للميادين: في حال انخرط الأميركي أو الإسرائيلي أو أي بلد في العدوان علينا فلدينا الكثير من الخيارات للر",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن: حزام الأسد للميادين: جل المنشآت والمرافق التي استهدفتها الغارات السعودية مدنية وهي تشمل مطارات وجسوراً وشبكات اتص",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الانتخابات الفلسطينية المؤجلة حين تخاف السياسة من صندوق الاقتراع",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الاتحاد الأوروبي يدعو واشنطن للتراجع عن فرض عقوبات على \"الجنائية الدولية\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 65,
+      "in": 116,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -287,15 +318,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This is the full edition of the Shabbat broadcast from October 10, 2026.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
-          "title": "5 , ‘Anachronism’: Rubio’s civilisational rhetoric prompts pushback from Iran",
+          "title": "4 , ‘Anachronism’: Rubio’s civilisational rhetoric prompts pushback from Iran",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -338,13 +362,6 @@
         {
           "source": "The New Arab",
           "title": "Trump rails against Norway after not being awarded Peace Prize",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Gold prices reached a weekly high due to receding inflation fears and falling oil prices.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -485,13 +502,6 @@
         {
           "source": "WAFA News",
           "title": "President Abbas sets September 11, 2027, as date for simultaneous presidential and legislative elections",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Oil prices have decreased, while gold prices have risen.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -640,9 +650,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 48,
+      "clusters": 44,
       "sizes": [
-        4,
+        5,
         3,
         3,
         3,
@@ -654,10 +664,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -699,6 +705,54 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Nearly 50,000 women, girls killed or wounded by Israel in Gaza",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 4,
+            "newest": "2026-10-10T16:40+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Falastin al-Youm",
+            "Middle East Eye",
+            "N12",
+            "The New Arab"
+          ],
+          "camps": [
+            "israeli",
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Nearly 50,000 women, girls killed or wounded by Israel in Gaza",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Israeli forces kill at least seven Palestinians in separate attacks across Gaza",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Nobel Peace Prize awarded to Navi Pillay, the UN investigator who accused Israel",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Riyadh airport suspends operations after attack leaves several injured",
           "rank_key": {
             "outlets": 3,
@@ -715,7 +769,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -730,12 +784,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Attack on Riyadh airport causes injuries, forces closure: Saudi authorities",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Attack on airport in Saudi capital, Riyadh, leaves several injured",
+                "title": "3 , Attack on airport in Saudi capital, Riyadh, leaves several injured",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -747,7 +796,7 @@
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Trump called for Ukraine to replace Zelenskyy, blaming him for the failure to end the war.",
           "rank_key": {
             "outlets": 3,
@@ -779,56 +828,12 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Trump says Ukraine needs a new president who will agree to end the war",
+                "title": "5 , Trump says Ukraine needs a new president who will agree to end the war",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al-Akhbar",
                 "title": "Putin informed Trump about the stalled peace negotiations with Ukraine amid mutu",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Egypt has condemned the Houthi attack on Saudi Arabia's King Khalid International Airport.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-10T09:56+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Middle East Eye",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Egypt has condemned the Houthi attack on Saudi Arabia's King Khalid International Airport.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Pakistan PM condemns Houthi attacks on Saudi Arabia, pledges unwavering support",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Middle East Eye",
-                "title": "Watch: At least one plane severely damaged as Houthis claim third Riyadh airport",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -986,15 +991,15 @@
         },
         {
           "selected_rank": null,
-          "headline": "Several were injured by an Israeli drone targeting west of Gaza City.",
+          "headline": "Egypt has condemned the Houthi attack on Saudi Arabia's King Khalid International Airport.",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-10T14:29+00:00"
+            "newest": "2026-10-10T09:56+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Falastin al-Youm"
+            "Al Arabiya",
+            "SANA"
           ],
           "camps": [
             "panarab",
@@ -1004,20 +1009,20 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Several were injured by an Israeli drone targeting west of Gaza City.",
+            "source": "SANA",
+            "title": "Egypt has condemned the Houthi attack on Saudi Arabia's King Khalid International Airport.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
+              "names 1 of the story's dominant entities (yemen)",
+              "neutral-by-default outlet",
               "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
-                "source": "Al Mayadeen",
-                "title": "A correspondent reported one martyr and several injured due to an Israeli airstr",
-                "rejected_by": "loaded/partisan wording"
+                "source": "Al Arabiya",
+                "title": "Pakistan PM condemns Houthi attacks on Saudi Arabia, pledges unwavering support",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -1134,21 +1139,39 @@
         },
         {
           "selected_rank": null,
-          "headline": "A man, approximately 30 years old, is in critical condition after being accidentally shot by his bro",
+          "headline": "Watch: At least one plane severely damaged as Houthis claim third Riyadh airport attack",
           "rank_key": {
-            "outlets": 1,
+            "outlets": 2,
             "camps": 1,
-            "newest": "2026-10-10T20:07+00:00"
+            "newest": "2026-10-08T23:30+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Al Jazeera",
+            "Middle East Eye"
           ],
           "camps": [
-            "israeli"
+            "panarab"
           ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Middle East Eye",
+            "title": "Watch: At least one plane severely damaged as Houthis claim third Riyadh airport attack",
+            "title_source": "native",
+            "why": [
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Trump says may US strike Houthis, Iran after latest Riyadh airport attack",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
         },
         {
           "selected_rank": null,
@@ -1206,24 +1229,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hamas stated that the postponement of elections should lead to national dialogue.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-10T16:40+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Gunman behind Faryab police officer’s assassination killed in security operation",
           "rank_key": {
             "outlets": 1,
@@ -1254,7 +1259,7 @@
           "camps": [
             "levant"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1349,7 +1354,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Palestinians seek urgent UN action as settler attacks escalate",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T13:22+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US senators want to escape quagmire of catastrophic failures",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T12:59+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1367,7 +1408,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-10T20:32:18.135970+00:00",
+    "last_success": "2026-10-10T20:53:50.787269+00:00",
     "last_failure": null
   },
   "ok": true
