@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T13:04:47.704521+00:00",
+  "updated": "2026-10-10T13:36:50.330932+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,30 +167,26 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-10T13:02:27.171078+00:00"
+      "headlines_updated": "2026-10-10T13:34:24.373999+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "title_snippet": 39,
-        "title_native": 84,
+        "title_snippet": 37,
+        "title_native": 83,
+        "dropped_no_english": 3,
         "in": 131,
-        "kept": 123
+        "kept": 120
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 40,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Falastin al-Youm",
-          "title": "ثلاث سنوات على الحرب.. غزة تواجه أكبر فصول المأساة",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Syria Direct",
           "title": "A terrible beauty is born: Syria after Assad",
@@ -218,19 +214,39 @@
         },
         {
           "source": "Gulf News",
-          "title": "Escalation in Yemen: Saudi-led forces respond to Houthi assaults on civilian airports",
+          "title": "US CentCom rejects Iran's claim of Hormuz closure, says 20 million barrels of crude moving through",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Trump welcomes Türkiye, Pakistan defence support for Saudi Arabia under Mecca pact",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: مراسل الميادين في غزة: قوات الاحتلال تطلق النار نحو خيام النازحين في منطقة جباليا البلد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بوتين يبلغ ترامب بتعثر مفاوضات السلام مع أوكرانيا وسط تصعيد عسكري متبادل",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الانتخابات الإسرائيلية والأمريكية في ميزان الموقف الفلسطيني: حرب مستمرة وشرعية متآكلة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 73,
+      "in": 120,
+      "kept": 71,
       "dropped": [
         {
           "source": "Kan 11",
@@ -310,6 +326,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "The New Arab",
+          "title": "Abbas postpones Palestinian elections, sets poll for Sept 2027",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "Three European countries are experiencing significant public anger that transcends economic crises.",
           "sec": 0,
@@ -326,13 +349,6 @@
         {
           "source": "IRNA",
           "title": "Iran proposes long-term action plan to address falling water level of Caspian Sea",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "Iran proposes plan on shrinking water level in Caspian Sea",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -431,13 +447,6 @@
         {
           "source": "Al-Akhbar",
           "title": "Saleem wants to take off from Al-Qalaa...",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Newspaper for Saturday, October 10, 2026.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -586,20 +595,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 49,
+      "clusters": 47,
       "sizes": [
-        12,
+        11,
         3,
         3,
         3,
+        3,
+        3,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        2,
-        1,
         1,
         1,
         1,
@@ -648,13 +655,12 @@
           "selected_rank": 1,
           "headline": "How a series of miscalculations restarted Saudi Arabia’s war in Yemen",
           "rank_key": {
-            "outlets": 7,
-            "camps": 4,
+            "outlets": 6,
+            "camps": 3,
             "newest": "2026-10-10T12:09+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Anadolu Agency",
             "Arab News",
             "Egypt Independent",
             "Gulf News",
@@ -664,10 +670,9 @@
           "camps": [
             "gulf",
             "panarab",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 12,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -708,19 +713,21 @@
           "selected_rank": 2,
           "headline": "Nearly 50,000 women, girls killed or wounded by Israel in Gaza",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
+            "outlets": 3,
+            "camps": 3,
             "newest": "2026-10-10T12:49+00:00"
           },
           "outlet_names": [
+            "Anadolu Agency",
             "The New Arab",
             "WAFA News"
           ],
           "camps": [
             "panarab",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -738,26 +745,27 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Chief of India's 'cockroach' movement detained ahead of major protest",
+          "headline": "flydubai co-pilot allegedly planned 9/11-style attack, UAE probe finds",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 3,
             "camps": 2,
-            "newest": "2026-10-10T08:08+00:00"
+            "newest": "2026-10-09T16:57+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "TRT World"
+            "Arab News",
+            "Gulf News"
           ],
           "camps": [
-            "panarab",
-            "turkish"
+            "gulf",
+            "panarab"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "TRT World",
-            "title": "Chief of India's 'cockroach' movement detained ahead of major protest",
+            "source": "Gulf News",
+            "title": "flydubai co-pilot allegedly planned 9/11-style attack, UAE probe finds",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -957,36 +965,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "flydubai co-pilot allegedly planned 9/11-style attack, UAE probe finds",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-09T16:57+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "flydubai co-pilot allegedly planned 9/11-style attack, UAE probe finds",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Israeli forces kill journalist Wael Dahdouh’s nephew in Gaza",
           "rank_key": {
             "outlets": 2,
@@ -1026,6 +1004,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "EU urges US to reverse planned sanctions against International Criminal Court",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T13:32+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1094,6 +1090,24 @@
           ],
           "camps": [
             "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran has deployed over 50 combat, support units along borders",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T10:35+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1208,43 +1222,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "The Iran war is economically and politically isolating Donald Trump, potentially harming Republican ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-10T07:45+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Navi Pillay's career has been dedicated to holding perpetrators of war crimes in Gaza accountable.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-10T05:35+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1262,7 +1240,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-10T13:05:13.118757+00:00",
+    "last_success": "2026-10-10T13:37:10.339882+00:00",
     "last_failure": null
   },
   "ok": true
