@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T19:27:57.738962+00:00",
+  "updated": "2026-10-10T19:59:58.301057+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,14 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-10T19:25:44.448486+00:00"
+      "headlines_updated": "2026-10-10T19:57:34.951056+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 38,
+        "dropped_stale": 9,
+        "title_snippet": 36,
+        "dropped_no_english": 2,
         "title_translated": 1,
-        "title_native": 81,
+        "title_native": 83,
         "in": 131,
         "kept": 120
       },
@@ -190,11 +191,6 @@
         {
           "source": "Middle East Eye",
           "title": "Ed Miliband insists UK will 'build back' presence in Jerusalem as British consulate closes on Israel's orders",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Middle East Eye",
-          "title": "Palestinian killed during settler attack on olive farmers in West Bank",
           "reason": "stale (older than 48h)"
         },
         {
@@ -229,11 +225,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Airlines cancel flights to Riyadh after Houthi attack on airport",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Gulf News",
           "title": "US CentCom rejects Iran's claim of Hormuz closure, says 20 million barrels of crude moving through",
           "reason": "stale (older than 48h)"
         },
@@ -241,12 +232,22 @@
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מהדורת השבת 10.10.26 – המהדורה המלאה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تيار الإصلاح الديمقراطي بفتح: تأجيل الانتخابات جريمة سياسية مركبة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
       "in": 120,
-      "kept": 59,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -333,22 +334,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Netanyahu is intensifying his criticism of Winter and Zalicha, labeling them 'fake right-wing'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "4 , ‘Anachronism’: Rubio’s civilisational rhetoric prompts pushback from Iran",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Why is the US sanctioning the International Criminal Court?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -572,6 +559,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "From apartheid to Nobel Peace Prize: The remarkable life of Navi Pillay",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "Dubai Holding Entertainment plans new park, attractions as CEO reveals expansion plans",
           "sec": 0,
           "off": 0,
@@ -587,13 +581,6 @@
         {
           "source": "Anadolu Agency",
           "title": "US death row inmate Christa Pike back in prison after release from hospital, lawyers say",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Trump says ‘it’s time for Ukraine to get a new president’ who can ‘make a deal’ with Russia",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -679,13 +666,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 41,
       "sizes": [
+        5,
+        4,
         3,
         3,
         3,
-        3,
-        3,
         2,
         2,
         2,
@@ -693,7 +680,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -732,13 +718,69 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Riyadh airport suspends operations after attack leaves several injured",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-10T16:56+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Anadolu Agency",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Riyadh airport suspends operations after attack leaves several injured",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Attack on Riyadh airport causes injuries, forces closure: Saudi authorities",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Attack on airport in Saudi capital, Riyadh, leaves several injured",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Three killed in attacks on Riyadh airport, Saudi aviation authority says",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "L'Orient Today",
+                "title": "SAUDI ARABIA Several wounded in Riyadh airport attack, operations suspended, Sau",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Nearly 50,000 women, girls killed or wounded by Israel in Gaza",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 4,
             "camps": 3,
             "newest": "2026-10-10T16:40+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Arab News",
             "Falastin al-Youm",
             "The New Arab"
@@ -748,7 +790,7 @@
             "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -763,6 +805,11 @@
             ],
             "passed_over": [
               {
+                "source": "Al Jazeera",
+                "title": "5 , What has Trump’s Board of Peace achieved in a year since Gaza ‘ceasefire’?",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Arab News",
                 "title": "Nobel Peace Prize awarded to Navi Pillay, the UN investigator who accused Israel",
                 "rejected_by": "older than the story's newest wave"
@@ -771,7 +818,7 @@
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Egypt condemned the Houthi attack on Saudi Arabia's King Khalid International Airport.",
           "rank_key": {
             "outlets": 3,
@@ -815,7 +862,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Israeli occupiers abduct 7 Palestinians, injure 3 during olive harvest in West Bank",
           "rank_key": {
             "outlets": 2,
@@ -857,7 +904,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Syrian and Turkish military chiefs discussed strengthening cooperation.",
           "rank_key": {
             "outlets": 2,
@@ -889,7 +936,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "IRGC: Offending supertanker is burning in Strait of Hormuz",
           "rank_key": {
             "outlets": 2,
@@ -1045,37 +1092,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "3 , Attack on airport in Saudi capital, Riyadh, leaves several injured",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "3 , Attack on airport in Saudi capital, Riyadh, leaves several injured",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump called for a new Ukrainian president, blaming Zelenskyy for failing to end the war.",
           "rank_key": {
             "outlets": 2,
@@ -1197,11 +1213,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran’s security indicators have improved, Armed Forces chief says",
+          "headline": "Gunman behind Faryab police officer’s assassination killed in security operation",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-10T16:32+00:00"
+            "newest": "2026-10-10T16:30+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1233,24 +1249,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Eight killed in shooting at Pennsylvania home: Local media",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-10T15:29+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Eritrea has urged the UN Security Council to take deterrent measures against Ethiopia and warned of ",
           "rank_key": {
             "outlets": 1,
@@ -1269,7 +1267,7 @@
         },
         {
           "selected_rank": null,
-          "headline": "Nobel peace laureate Pillay calls ICC sanctions ‘unacceptable’",
+          "headline": "Omani FM condemns attacks on Saudi airports in phone call with Prince Faisal",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -1280,6 +1278,24 @@
           ],
           "camps": [
             "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Austria's anti-terror laws are turning journalism about Palestine into a crime",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T13:45+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1323,24 +1339,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "An international complaint accuses Israeli officials of involvement in torturing Palestinian prisone",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-10T12:59+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Police detain dozens and check 50,000 schools after two attacks shake Poland",
           "rank_key": {
             "outlets": 1,
@@ -1358,7 +1356,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Trump criticized the Nobel Peace Prize committee, claiming he ended wars and freed all Israeli hosta",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T12:22+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1376,7 +1392,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-10T19:28:14.749122+00:00",
+    "last_success": "2026-10-10T20:00:12.405497+00:00",
     "last_failure": null
   },
   "ok": true
