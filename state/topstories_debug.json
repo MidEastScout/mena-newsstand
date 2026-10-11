@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T01:35:21.127402+00:00",
+  "updated": "2026-10-11T02:07:32.873923+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-11T01:33:08.205752+00:00"
+      "headlines_updated": "2026-10-11T02:05:06.759907+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 39,
+        "dropped_stale": 10,
+        "title_snippet": 37,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 81,
+        "dropped_no_english": 2,
         "in": 131,
-        "kept": 122
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -228,14 +229,29 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "Airlines cancel flights to Riyadh after Houthi attack on airport",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة الثالثة فجراً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن: العجري رداً على رئيس وزراء قطر السابق: أتفق معك أن السعودية الدولة الأكبر في منظومة مجلس التعاون ولكنها للأسف ليس",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
+      "in": 119,
       "kept": 59,
       "dropped": [
         {
@@ -365,20 +381,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The municipality of Tehran has initiated a zero-inflation plan, which includes fixing the prices of 12…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "European inflation has surged to 3.8%, with the energy crisis exerting pressure and the central bank facing…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Iran and Russia discuss opportunities for oil exploration cooperation in southern Caspian Sea",
           "sec": 0,
@@ -429,7 +431,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "SSIF says its assets reach JD20.1 billion at end of third quarter",
+          "title": "Two-thirds of Jordanians express trust in government – poll",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -589,13 +591,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Rashid Khan hosts Irfan and Yusuf Pathan for lavish Afghan feast at his Dubai residence",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "UAE National Guard rescues 22 people after oil tanker catches fire in Gulf",
           "sec": 0,
@@ -683,17 +678,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 40,
       "sizes": [
         7,
+        5,
         4,
         3,
         3,
         2,
         2,
-        2,
-        2,
-        1,
         1,
         1,
         1,
@@ -738,11 +731,12 @@
           "selected_rank": 1,
           "headline": "Riyadh airport suspends operations after attack leaves several injured",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 6,
             "camps": 4,
             "newest": "2026-10-10T22:28+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Al Jazeera",
             "Anadolu Agency",
             "Arab News",
@@ -770,12 +764,12 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Attack on Riyadh airport kills 12, injures over 300, Saudi Arabia says",
+                "title": "3 , Iran war updates: 12 killed in attack on Riyadh airport – Saudi authorities",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Jazeera",
-                "title": "3 , Iran war updates: 12 killed in attack on Riyadh airport – Saudi authorities",
+                "source": "Al Arabiya",
+                "title": "Riyadh airport suspends operations following attack: Saudi civil aviation author",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -793,6 +787,57 @@
         },
         {
           "selected_rank": 2,
+          "headline": "At least 12 killed, 309 injured in Houthi militia attack on Riyadh's King Khalid airport",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-11T00:22+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al Mayadeen",
+            "SANA",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "At least 12 killed, 309 injured in Houthi militia attack on Riyadh's King Khalid airport",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Houthi attack on Riyadh airport kills 12, more than 300 injured",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Attack in Riyadh kills 12 as Trump debates joining fight against Houthis",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Egypt has condemned the Houthi attack on Saudi Arabia’s King Khalid internationa",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Trump says Iran may step up actions before midterm elections, muses about renaming Strait of Hormuz",
           "rank_key": {
             "outlets": 4,
@@ -827,7 +872,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Trump has called for Ukraine to replace its president, Zelenskyy, and blamed him for failing to end ",
           "rank_key": {
             "outlets": 3,
@@ -871,7 +916,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Israeli occupiers abduct 7 Palestinians, injure 3 during olive harvest in West Bank",
           "rank_key": {
             "outlets": 2,
@@ -913,7 +958,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Hundreds of thousands march worldwide against Israel’s genocide in Gaza",
           "rank_key": {
             "outlets": 2,
@@ -945,81 +990,6 @@
               {
                 "source": "Arab News",
                 "title": "Nobel Peace Prize awarded to Navi Pillay, the UN investigator who accused Israel",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Egypt has condemned the Houthi attack on Saudi Arabia’s King Khalid international airport.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-10T09:56+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Egypt has condemned the Houthi attack on Saudi Arabia’s King Khalid international airport.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Pakistan PM condemns Houthi attacks on Saudi Arabia, pledges unwavering support",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Zelenskyy stated that a diesel deal between Trump and Putin could fund Russia's war effort.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-10T09:38+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Zelenskyy stated that a diesel deal between Trump and Putin could fund Russia's war effort.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Trump eases Russia sanctions, says Putin will release diesel supplies",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1061,24 +1031,6 @@
               }
             ]
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Reports indicate that Riyadh airport was targeted, raising questions about potential US intervention",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-10T23:52+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1208,24 +1160,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Eight killed in shooting at Pennsylvania home: Local media",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-10T15:29+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Eritrea is urging the UN Security Council to take deterrent measures against Ethiopia, warning of po",
           "rank_key": {
             "outlets": 1,
@@ -1279,7 +1213,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The European Union is calling on Washington to withdraw its sanctions against the International Crim",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T13:29+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Palestinians seek urgent UN action as settler attacks escalate",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T13:22+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1297,7 +1267,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-11T01:35:45.366365+00:00",
+    "last_success": "2026-10-11T02:07:46.099576+00:00",
     "last_failure": null
   },
   "ok": true
