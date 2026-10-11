@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T23:35:47.845286+00:00",
+  "updated": "2026-10-11T00:00:07.185030+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-10T23:33:35.610644+00:00"
+      "headlines_updated": "2026-10-10T23:57:43.714329+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 11,
-        "title_snippet": 39,
-        "title_translated": 1,
+        "title_snippet": 37,
+        "dropped_no_english": 3,
         "title_native": 80,
         "in": 131,
-        "kept": 120
+        "kept": 117
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 39,
+        "requested": 40,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -241,11 +241,26 @@
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"זה היה ממש מרור\": מה קרה כשמשתתפי \"הארץ המובטחת\" עלו לצפון?",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "تقارير عن استهداف مطار الرياض.. هل تتدخل أميركا ضد اليمن؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "بوتين يبلغ ترامب بتعثر مفاوضات السلام مع أوكرانيا وسط تصعيد عسكري متبادل",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
+      "in": 117,
       "kept": 57,
       "dropped": [
         {
@@ -300,13 +315,6 @@
         {
           "source": "Channel 13",
           "title": "Ronaldo has been suspended from the Portugal national team 'until further notice.'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -372,13 +380,6 @@
           "title": "Iran: Al-Mayadeen correspondent in Tehran reports that Tehran Municipality has begun implementing a…",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "European inflation has jumped to 3.8%, with the energy crisis exerting pressure and the central bank facing…",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -512,13 +513,6 @@
           "title": "Egyptian films are returning with new installments.",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Matans Wahbeh | Articles and Reports | Al Akhbar.",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -1321,7 +1315,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-10T23:36:26.154204+00:00",
+    "last_success": "2026-10-11T00:00:07.485867+00:00",
     "last_failure": null
   },
   "ok": true
