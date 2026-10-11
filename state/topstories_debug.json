@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T14:04:43.153523+00:00",
+  "updated": "2026-10-11T14:36:36.582844+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-11T14:02:29.837716+00:00"
+      "headlines_updated": "2026-10-11T14:34:24.031289+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 15,
-        "title_snippet": 36,
-        "title_native": 80,
+        "dropped_no_english": 1,
+        "title_snippet": 33,
+        "title_translated": 1,
+        "title_native": 81,
         "in": 131,
-        "kept": 116
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 36,
+        "requested": 34,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -204,6 +206,11 @@
         {
           "source": "The New Arab",
           "title": "Trump rules out new Iran attack before US midterm elections",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Iran International",
+          "title": "Trump rules out Iran attack before midterms, Tehran says ready for prolonged war",
           "reason": "stale (older than 48h)"
         },
         {
@@ -242,11 +249,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "Saudia pilot killed in attack on Riyadh airport",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
@@ -260,93 +262,77 @@
           "source": "TRT World",
           "title": "Trump rules out pre-election strikes on Iran as IRGC vows to press on",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נחשד בניצול סמכותו לרעה: תא\"ל יוגב בר-ששת, סגן מבקר מערכת הביטחון, פורש מצה\"ל",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
-      "kept": 70,
+      "in": 115,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "Brigadier General Yogev Bar-Shoshan is retiring from the IDF following an inquiry into allegations of abusing…",
+          "title": "Mohammad Dahlan criticized Mahmoud Abbas for postponing the Palestinian Authority elections, calling it a…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "Mohammad Dahlan criticized Mahmoud Abbas for postponing elections in the Palestinian Authority, stating it…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Benny Gantz has declared he will not withdraw from the Knesset race, asserting his party has at least six…",
+          "title": "Gantz stated he will not withdraw from the Knesset race, saying, \"We have at least 6 mandates.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "A security guard is suspected of accidentally discharging his weapon at his home in Yavne, resulting in his…",
+          "title": "Initial investigation suggests the weapon was legally held by the 21-year-old security guard, who is the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "A 70-year-old man from Haifa suffered a severe arm injury requiring emergency surgery after a large dog…",
+          "title": "A 70-year-old Haifa resident, Gandy, suffered a severe injury requiring emergency surgery after a large dog…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "N12",
-          "title": "A Greek island school faces closure due to a declining birthrate, with only two students entering the sixth…",
+          "title": "Two students are entering the sixth grade at a school on the Greek island of Kalamaki, and next year the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Brigadier General Yogev Bar-Shoshan is retiring from the IDF following allegations of harassment.",
+          "title": "Brigadier General Yoav Bar-Shashat is retiring from the IDF after being suspected of harassment.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Benny Gantz stated he will continue his Knesset campaign, projecting his party will secure at least six seats.",
+          "title": "Gantz will not withdraw, stating he is \"running to the end\" and expects \"at least 6 mandates.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Raz Hershko secured a bronze medal at the World Judo Championships, an achievement celebrated as Israeli…",
+          "title": "Personal WhatsApp messages purportedly belonging to Yonatan Urich have been leaked online.",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Personal WhatsApp messages allegedly belonging to Yonatan Uriach have been leaked online.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The parents of a 7-year-old who died in an accident are demanding justice, stating that the driver…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "4 , Pakistan imposes emergency rule in ​province governed by Imran Khan’s party",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -374,14 +360,7 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Anthropic has established rules to protect its application 'Claude' from human abuse.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "A poll indicates that President Macron's popularity in France has fallen to a historic low of 15%.",
+          "title": "Anthropic has established rules to protect its Claude application from human abuse.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -415,15 +394,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Iran International",
-          "title": "1 Iran turns on Pakistan as Saudi defense pact takes effect",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Jordan Times",
-          "title": "ACI exports rise 6.5% to JD5.977b in first nine months",
+          "title": "Three years on, Jordan’s humanitarian mission in Gaza continues",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -465,31 +437,24 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Sanaa stated that the principle of reciprocity will determine the nature of the response to Saudi Arabia.",
+          "title": "The principle of reciprocity will determine the nature of the response to Saudi Arabia.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "The FBI is reportedly using a martial arts organization to train its agents.",
+          "title": "The FBI is utilizing a martial arts organization to train its agents.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "The Bab al-Mandab strait has been 'liberated' numerous times in the Abrahamic media.",
+          "title": "Bab al-Mandab has been \"liberated\" countless times in the Abrahamic media.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "The American stock market is affected by tensions in the Strait of Hormuz, with US company stock values…",
-          "sec": 1,
-          "off": 2,
-          "reason": "off-topic signals outweigh security signals"
         },
         {
           "source": "WAFA News",
@@ -507,21 +472,21 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Over 90% of water and sewage facilities have been damaged.",
+          "title": "Over 90% of water and sanitation facilities have been damaged.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "The Shin Bet reportedly intends to establish a school for Islamic studies.",
+          "title": "The Shin Bet intends to establish a school for Islamic studies.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Falastin al-Youm",
-          "title": "In response to Donald Trump's statements, Iran asserted that the real danger lies within the United States.",
+          "title": "In response to Trump's statements, Iran stated that the real danger is within the United States.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -542,14 +507,14 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Top Turkish defense firms ban foreign EVs from campuses: TEI CEO",
+          "title": "Bilal Erdoğan calls for support for Palestinian entrepreneur",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
-          "title": "Türkiye earns $822.7M from fresh vegetable exports in 9 months",
+          "title": "Top Turkish defense firms ban foreign EVs from campuses: TEI CEO",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -593,16 +558,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 31,
+      "clusters": 33,
       "sizes": [
         22,
         13,
+        4,
+        3,
         2,
         2,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -631,14 +598,14 @@
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 4,
+      "selected": 5,
       "candidates": [
         {
           "selected_rank": 1,
           "headline": "UN, EU leaders slam Houthi attack on Riyadh airport",
           "rank_key": {
-            "outlets": 11,
-            "camps": 5,
+            "outlets": 10,
+            "camps": 4,
             "newest": "2026-10-11T13:53+00:00"
           },
           "outlet_names": [
@@ -650,12 +617,10 @@
             "Daily Sabah",
             "Egypt Independent",
             "Middle East Eye",
-            "N12",
             "SANA",
             "TRT World"
           ],
           "camps": [
-            "israeli",
             "gulf",
             "panarab",
             "levant",
@@ -676,23 +641,23 @@
             ],
             "passed_over": [
               {
-                "source": "N12",
-                "title": "The Houthi attacks on Riyadh's King Khalid International Airport, described as t",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Al Jazeera",
                 "title": "2 , World condemns deadly Houthi attack on Saudi Arabia’s Riyadh airport",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al Jazeera",
-                "title": "3 , Yemen fighting expands as Houthis attack Saudi airport: What to know",
+                "title": "4 , Yemen fighting expands as Houthis attack Saudi airport: What to know",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Middle East Eye",
                 "title": "UN chief 'strongly' condemns 'Houthi attacks' on Riyadh airport",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Saudi-led coalition says Houthi attack on Riyadh airport a ‘war crime,’ vows res",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -761,15 +726,108 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Injuries were reported from an Israeli drone strike west of Gaza City.",
+          "headline": "Fire erupts in tanker after being hit by projectile in Hormuz",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-11T05:06+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al Manar",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Fire erupts in tanker after being hit by projectile in Hormuz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Hormuz attacks intensify as efforts to end war on Iran stall",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Giant oil tanker hits mine, catches fire in Hormuz: IRGC",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "The Revolutionary Guards Navy announced the explosion of an oil tanker after col",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "The Yemeni armed forces announced an upcoming statement regarding significant military operations in",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-10T14:29+00:00"
+            "newest": "2026-10-11T14:33+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Mayadeen",
+            "title": "The Yemeni armed forces announced an upcoming statement regarding significant military operations inside…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Yemeni military media displayed footage of Yemeni forces targeting Saudi reinfor",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "Yemeni military media showed footage of securing the remaining districts of Sam'",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Eight Palestinians, including pregnant woman, injured by Israeli gunfire in Gaza",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-11T07:05+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
-            "Falastin al-Youm"
+            "WAFA News"
           ],
           "camps": [
             "panarab",
@@ -779,35 +837,35 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Falastin al-Youm",
-            "title": "Injuries were reported from an Israeli drone strike west of Gaza City.",
-            "title_source": "snippet",
+            "source": "WAFA News",
+            "title": "Eight Palestinians, including pregnant woman, injured by Israeli gunfire in Gaza",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (gaza)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "neutral-by-default outlet",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Al Mayadeen",
-                "title": "A Palestinian correspondent reported a martyr and injuries resulting from an Isr",
+                "title": "A reporter stated that a martyr and injured individuals resulted from an Israeli",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Donald Trump launched a strong attack on Zelenskyy, stating it is time for Ukraine to have a new pre",
+          "selected_rank": null,
+          "headline": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-10-11T07:13+00:00"
+            "newest": "2026-10-11T13:12+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
-            "SANA"
+            "Egypt Independent"
           ],
           "camps": [
             "levant"
@@ -816,23 +874,35 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al-Akhbar",
-            "title": "Donald Trump launched a strong attack on Zelenskyy, stating it is time for Ukraine to have a new president.",
-            "title_source": "snippet",
+            "source": "Egypt Independent",
+            "title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (ukraine)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "Donald Trump called for a new Ukrainian president, blaming Zelenskyy for failing",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Defense forces conducted an operation to destroy \"terror monuments\" in the West Bank area, marking t",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-11T14:26+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -847,6 +917,24 @@
           ],
           "camps": [
             "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Two Hezbollah operatives were apprehended at a checkpoint en route to Dahieh carrying approximately ",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-11T13:35+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -872,24 +960,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-11T13:12+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Turkish minister eyes Germany, Italy visits to fight int’l crime",
           "rank_key": {
             "outlets": 1,
@@ -908,7 +978,25 @@
         },
         {
           "selected_rank": null,
-          "headline": "Rear Admiral Habibollah Sayyari, assistant coordinator for the Iranian Army, stated that enemy vesse",
+          "headline": "The parents of a 7-year-old killed in an accident are protesting, stating, \"The driver is still walk",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-11T12:37+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Admiral Sayari stated that Iran will take necessary measures to strike the enemy wherever necessary.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -920,13 +1008,31 @@
           "camps": [
             "panarab"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
-          "headline": "Three prisoners are suffering from difficult health conditions in occupation prisons.",
+          "headline": "Rear Admiral Habibollah Sayyari, deputy chief of the Iranian Army for Coordination, stated that Iran",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-11T11:12+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Three prisoners are suffering from difficult health conditions in the occupation's prisons.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
@@ -939,6 +1045,24 @@
             "levant"
           ],
           "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Syria condemns Houthi attack on Riyadh airport, expresses solidarity with KSA",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-11T09:13+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -962,24 +1086,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Syria condemns Houthi attack on Riyadh airport, expresses solidarity with KSA",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-11T07:39+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Jordanian citizen among those killed in attack on Riyadh airport — ministry",
           "rank_key": {
             "outlets": 1,
@@ -993,60 +1099,6 @@
             "levant"
           ],
           "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Aggressors must answer for ecocide: Araghchi",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-11T07:24+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Eight Palestinians, including pregnant woman, injured by Israeli gunfire in Gaza",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-11T07:05+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Fire erupts in tanker after being hit by projectile in Hormuz",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-11T05:06+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1069,7 +1121,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-11T14:05:04.189366+00:00",
+    "last_success": "2026-10-11T14:36:57.672132+00:00",
     "last_failure": null
   },
   "ok": true
