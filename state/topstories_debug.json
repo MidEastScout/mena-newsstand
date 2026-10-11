@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T02:39:29.479314+00:00",
+  "updated": "2026-10-11T03:11:37.768527+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -139,7 +139,7 @@
         "Al-Masirah": {
           "headlines": 1,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Anadolu Agency": {
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-11T02:37:07.334098+00:00"
+      "headlines_updated": "2026-10-11T03:09:22.750865+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "title_snippet": 40,
-        "title_native": 81,
+        "title_snippet": 37,
+        "title_native": 82,
+        "dropped_no_english": 2,
         "in": 131,
-        "kept": 121
+        "kept": 119
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 40,
+        "requested": 39,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -235,12 +236,22 @@
           "source": "Al-Masirah",
           "title": "60 شهيدًا و343 مصابًا بقطاع غزة خلال 24 ساعة",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة الثالثة فجراً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "SANA",
+          "title": "Trump appoints Katie Zacharia as New White House Press Secretary - وكالة الأنباء السورية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 60,
+      "in": 119,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -307,7 +318,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Man dies after entering tiger enclosure at England wildlife park",
+          "title": "4 , Man dies after entering tiger enclosure at England wildlife park",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -341,13 +352,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Abbas postpones legislative elections, sets presidential poll for September 2027",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "Abbas postpones Palestinian elections, sets poll for Sept 2027",
           "sec": 0,
@@ -371,13 +375,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Yemen's Al-Ajri responded to Qatar's former prime minister, agreeing that Saudi Arabia is the largest but not…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "In Iran, the Tehran municipality has initiated a zero-inflation plan, including fixing prices for 12…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -537,22 +534,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Kallas stated that Europe will not ease pressure on Russia.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Arab News",
           "title": "Trump says Norway has indelible stain for not awarding him Nobel Peace Prize",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
-          "title": "UAE rescues 22 crew from burning tanker in Arabian Gulf",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -673,20 +656,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 38,
       "sizes": [
+        11,
         7,
-        5,
-        3,
-        3,
-        3,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
+        2,
         1,
         1,
         1,
@@ -724,6 +705,65 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "At least 12 killed, 309 injured in Houthi militia attack on Riyadh's King Khalid airport",
+          "rank_key": {
+            "outlets": 7,
+            "camps": 3,
+            "newest": "2026-10-11T02:52+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Al Manar",
+            "Al Mayadeen",
+            "Anadolu Agency",
+            "SANA",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 11,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "At least 12 killed, 309 injured in Houthi militia attack on Riyadh's King Khalid airport",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Attack on Riyadh kills 12 as Trump plans to call Saudi Arabia’s MBS",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Saudi Arabia says 12 killed, 300 wounded in Houthi attack on Riyadh airport",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "3 , World condemns deadly Houthi attack on Saudi Arabia’s Riyadh airport",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Pakistan PM condemns Houthi attacks on Saudi Arabia, pledges unwavering support",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Riyadh airport suspends operations after attack leaves several injured",
           "rank_key": {
             "outlets": 6,
@@ -759,7 +799,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "3 , Iran war updates: 12 killed in attack on Riyadh airport – Saudi authorities",
+                "title": "5 , Iran war updates: 12 killed in attack on Riyadh airport – Saudi authorities",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -781,181 +821,7 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Reports indicate Riyadh airport was targeted, raising questions about potential US intervention agai",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-10-10T23:52+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Al Mayadeen",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Reports indicate Riyadh airport was targeted, raising questions about potential US intervention against Yemen.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Saudi Arabia says 12 killed, 300 wounded in Houthi attack on Riyadh airport",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Pakistan PM condemns Houthi attacks on Saudi Arabia, pledges unwavering support",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Egypt condemned the Houthi attack on Saudi Arabia’s King Khalid International Ai",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Attack in Riyadh kills 12 as Trump debates joining fight against Houthis",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 3,
-          "headline": "Trump says Iran may step up actions before midterm elections, muses about renaming Strait of Hormuz",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-10T22:00+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "IRNA",
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Trump says Iran may step up actions before midterm elections, muses about renaming Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Trump called for a new Ukrainian president, blaming Zelenskyy for failure to end the war.",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-10T17:24+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al-Akhbar",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Trump called for a new Ukrainian president, blaming Zelenskyy for failure to end the war.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "4 , Trump says Ukraine needs a new president who will agree to end the war",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al-Akhbar",
-                "title": "Putin informed Trump about the stalled peace negotiations with Ukraine amidst mu",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Israeli occupiers abduct 7 Palestinians, injure 3 during olive harvest in West Bank",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-10T17:49+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Israeli occupiers abduct 7 Palestinians, injure 3 during olive harvest in West Bank",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Colonists attack farmers, seize olive harvest and abduct three Palestinians in Q",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Two Palestinians injured in Israeli colonist attack on olive harvesters west of ",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Hundreds of thousands march worldwide against Israel’s genocide in Gaza",
           "rank_key": {
             "outlets": 2,
@@ -993,7 +859,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "US imposes sanctions on ICC after former judge wins Nobel Peace Prize",
           "rank_key": {
             "outlets": 2,
@@ -1024,6 +890,106 @@
               {
                 "source": "Middle East Eye",
                 "title": "US sanctions ICC hours after former judge wins Nobel Peace Prize",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Saudia pilot killed in attack on Riyadh airport",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-09T08:20+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Saudia pilot killed in attack on Riyadh airport",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (boeing)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Giant oil tanker hits mine, catches fire in Hormuz: IRGC",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-10T17:37+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Giant oil tanker hits mine, catches fire in Hormuz: IRGC",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump called for a new Ukrainian president, blaming Zelenskyy for failure to end the war.",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-10T17:24+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Trump called for a new Ukrainian president, blaming Zelenskyy for failure to end the war.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al-Akhbar",
+                "title": "Putin informed Trump about the stalled peace negotiations with Ukraine amidst mu",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1187,24 +1153,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Syrian and Turkish military chiefs discussed strengthening cooperation.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-10T17:02+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Hamas stated that the postponement of elections should lead to national dialogue.",
           "rank_key": {
             "outlets": 1,
@@ -1252,6 +1200,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Major Saudi conferences to proceed despite deadly airport attack",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-10T14:39+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1312,7 +1278,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1330,7 +1296,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-11T02:40:00.932938+00:00",
+    "last_success": "2026-10-11T03:11:51.902905+00:00",
     "last_failure": null
   },
   "ok": true
