@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T23:42:09.688274+00:00",
+  "updated": "2026-10-11T23:49:48.809407+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-11T23:39:55.860568+00:00"
+      "headlines_updated": "2026-10-11T23:47:40.215434+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 15,
-        "title_snippet": 34,
+        "dropped_stale": 16,
+        "title_snippet": 33,
         "title_translated": 1,
-        "title_native": 81,
+        "title_native": 80,
+        "dropped_no_english": 1,
         "in": 131,
-        "kept": 116
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -205,6 +206,11 @@
         {
           "source": "The New Arab",
           "title": "Trump rules out new Iran attack before US midterm elections",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Saudi nursery hit by debris as Houthis target Riyadh airport",
           "reason": "stale (older than 48h)"
         },
         {
@@ -261,11 +267,16 @@
           "source": "TRT World",
           "title": "Trump rules out pre-election strikes on Iran as IRGC vows to press on",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الولايات المتحدة الأميركية: وزارة الخارجية: على المواطنين الأميركيين الانتباه إلى احتمالية إلغاء الرحلات الجوية وإغلاق ا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 116,
+      "in": 114,
       "kept": 84,
       "dropped": [
         {
@@ -311,13 +322,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "At least 139 migrants dead after boat to Yemen capsizes",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
           "source": "IRNA",
           "title": "Iran’s top officials hold meeting to discuss latest developments",
           "sec": 0,
@@ -355,13 +359,6 @@
         {
           "source": "L'Orient Today",
           "title": "EDUCATION Pope Leo XIV announces scholarships for Christian students from Lebanon, Syria and Iraq",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "EXPLAINER What is Quds Day?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -496,16 +493,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 35,
       "sizes": [
-        22,
-        14,
+        23,
+        13,
         9,
-        4,
+        3,
         3,
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -569,7 +567,7 @@
             "levant",
             "turkish"
           ],
-          "members": 22,
+          "members": 23,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -595,7 +593,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "5 , Yemen fighting expands as Houthis attack Saudi airport again: What to know",
+                "title": "4 , Yemen fighting expands as Houthis attack Saudi airport again: What to know",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -631,7 +629,7 @@
             "levant",
             "turkish"
           ],
-          "members": 14,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -655,13 +653,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Attack on Riyadh airport kills 12, over 300 wounded: Civil aviation authority",
+                "source": "Jordan Times",
+                "title": "Several injured in attack on Riyadh’s King Khalid International Airport — Saudi ",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Jordan Times",
-                "title": "Several injured in attack on Riyadh’s King Khalid International Airport — Saudi ",
+                "title": "King condoles Saudi monarch, crown prince over attacks on Abha, King Khalid inte",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -706,7 +704,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Hormuz attacks intensify as efforts to end war on Iran stall",
+                "title": "5 , Hormuz attacks intensify as efforts to end war on Iran stall",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -724,41 +722,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Trump says Russia and Ukraine agree to 'energy ceasefire'",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-11T18:31+00:00"
-          },
-          "outlet_names": [
-            "Gulf News",
-            "Kan 11",
-            "N12",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "Trump says Russia and Ukraine agree to 'energy ceasefire'",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "The Israeli military announced that an attacker who crossed the demarcation line in southern Gaza ha",
           "rank_key": {
             "outlets": 3,
@@ -802,6 +765,39 @@
           }
         },
         {
+          "selected_rank": 5,
+          "headline": "Trump says Russia and Ukraine agree to 'energy ceasefire'",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-11T17:58+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "Kan 11",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "gulf"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Trump says Russia and Ukraine agree to 'energy ceasefire'",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
           "selected_rank": null,
           "headline": "Iran will strike enemy's ships again if necessary: Sayyari",
           "rank_key": {
@@ -830,24 +826,6 @@
             ],
             "passed_over": []
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Yemeni scene is being analyzed, focusing on field transformations and confrontation dynamics aro",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-11T22:39+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -995,6 +973,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Saudi air defenses intercept cruise missile near Riyadh airport; Terminal 4 hit",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-11T18:52+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The Secretary of Iran's Supreme National Security Council stated that the American response to condi",
           "rank_key": {
             "outlets": 1,
@@ -1048,7 +1044,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1066,7 +1062,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-11T23:42:23.216327+00:00",
+    "last_success": "2026-10-11T23:50:07.326117+00:00",
     "last_failure": null
   },
   "ok": true
