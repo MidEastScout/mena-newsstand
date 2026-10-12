@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T01:25:17.495825+00:00",
+  "updated": "2026-10-12T01:57:18.971522+00:00",
   "stages": {
     "fetch": {
       "items": 131,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-12T01:22:59.898313+00:00"
+      "headlines_updated": "2026-10-12T01:54:50.897849+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 14,
-        "title_snippet": 34,
+        "dropped_stale": 15,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 81,
         "in": 131,
-        "kept": 117
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -195,6 +196,11 @@
         {
           "source": "Middle East Eye",
           "title": "US sanctions ICC hours after former judge wins Nobel Peace Prize",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Middle East Eye",
+          "title": "Watch: At least one plane severely damaged as Houthis claim third Riyadh airport attack",
           "reason": "stale (older than 48h)"
         },
         {
@@ -256,12 +262,27 @@
           "source": "TRT World",
           "title": "Trump rules out pre-election strikes on Iran as IRGC vows to press on",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "סעודיה: יורט טיל בליסטי ששוגר בידי החות'ים לעבר העיר ח'מיס מושייט",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אזור בחירה 11.10.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "على بالي | أسعد أبو خليل | 11 تشرين الأول 2026 | الأخبار",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 88,
+      "in": 113,
+      "kept": 87,
       "dropped": [
         {
           "source": "Channel 13",
@@ -280,13 +301,6 @@
         {
           "source": "Channel 13",
           "title": "A star contestant is set to impress the mentors on a reality show.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The full edition of the main news broadcast from October 11, 2026.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -335,13 +349,6 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "FOCUS Oct. 7 hero Youssef al-Ziadna watches as Israel demolishes his Bedouin neighborhood",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
           "title": "FOCUS Real estate, stocks, eurobonds: Lebanese banks multiply offers to settle deposits",
           "sec": 0,
           "off": 1,
@@ -378,13 +385,6 @@
         {
           "source": "Al-Akhbar",
           "title": "The Baalbek Council represents a shortcut with associated costs.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Trump is reportedly turning to Putin, with discussions involving diesel for Zelensky.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -473,14 +473,14 @@
       "clusters": 31,
       "sizes": [
         27,
-        18,
-        7,
+        17,
+        6,
         4,
         3,
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -514,7 +514,7 @@
           "selected_rank": 1,
           "headline": "Türkiye slams latest Houthi attack on Saudi capital Riyadh",
           "rank_key": {
-            "outlets": 13,
+            "outlets": 14,
             "camps": 6,
             "newest": "2026-10-11T18:34+00:00"
           },
@@ -526,6 +526,7 @@
             "Arab News",
             "Daily Sabah",
             "Egypt Independent",
+            "Gulf News",
             "Iran International",
             "Jordan Times",
             "Middle East Eye",
@@ -607,7 +608,7 @@
             "levant",
             "turkish"
           ],
-          "members": 18,
+          "members": 17,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -647,12 +648,11 @@
           "selected_rank": 3,
           "headline": "2nd super tanker hits naval mine in Strait of Hormuz: IRGC",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-10-11T22:09+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
             "Al Manar",
             "Al Mayadeen",
             "Falastin al-Youm",
@@ -664,7 +664,7 @@
             "iranian",
             "levant"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -678,11 +678,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Hormuz attacks intensify as efforts to end war on Iran stall",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "Al Manar",
                 "title": "The IRGC Navy announced the explosion of an oil tanker after colliding with a mi",
@@ -733,50 +728,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "The IDF announced that an assailant who crossed the border south of the Gaza Strip has been eliminat",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-11T20:44+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "Kan 11",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The IDF announced that an assailant who crossed the border south of the Gaza Strip has been eliminated.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Gaza death toll rises to 74,377 as Israeli aggression continues",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas described the occupation's threats to assassinate leaders as state terrori",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Security chief: US response to Iran’s 7 conditions ‘insufficient’",
           "rank_key": {
             "outlets": 2,
@@ -804,6 +755,86 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Two Hezbollah members were apprehended at a checkpoint en route to Dahieh, carrying approximately 80",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-11T13:35+00:00"
+          },
+          "outlet_names": [
+            "L'Orient Today",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "Two Hezbollah members were apprehended at a checkpoint en route to Dahieh, carrying approximately 800…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "SECURITY Geagea to L’Orient-Le Jour: Dahr al-Baidar incident is the most dangero",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hamas described the occupation's threats to assassinate leaders as state terrorism and political ban",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-11T14:15+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Falastin al-Youm",
+            "title": "Hamas described the occupation's threats to assassinate leaders as state terrorism and political bankruptcy.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Gaza death toll rises to 74,377 as Israeli aggression continues",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Eight Palestinians, including pregnant woman, injured by Israeli gunfire in Gaza",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -946,24 +977,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Body of Palestinian man killed by Israeli forces returned after being withheld for two days",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-11T19:28+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Saudi air defenses intercept cruise missile near Riyadh airport; Terminal 4 hit",
           "rank_key": {
             "outlets": 1,
@@ -1053,7 +1066,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-11T13:12+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1071,7 +1102,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-12T01:25:31.138083+00:00",
+    "last_success": "2026-10-12T01:57:32.967634+00:00",
     "last_failure": null
   },
   "ok": true
