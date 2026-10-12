@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T23:19:30.338543+00:00",
+  "updated": "2026-10-12T23:51:37.245647+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-12T23:17:01.630975+00:00"
+      "headlines_updated": "2026-10-12T23:49:05.902324+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "dropped_no_english": 14,
-        "title_snippet": 20,
+        "dropped_stale": 3,
+        "dropped_no_english": 15,
+        "title_snippet": 19,
         "title_translated": 1,
-        "title_native": 87,
+        "title_native": 88,
         "in": 126,
         "kept": 108
       },
@@ -188,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "The New Arab",
-          "title": "Abbas postpones Palestinian elections, sets poll for Sept 2027",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Jordan Times",
           "title": "Several injured in attack on Riyadh’s King Khalid International Airport — Saudi media",
@@ -207,6 +202,11 @@
           "source": "TRT World",
           "title": "Riyadh airport suspends operations after attack leaves several wounded",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רעידת אדמה נוספת בעוצמה 6 הורגשה באזור פנמה",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Kan 11",
@@ -270,7 +270,7 @@
         },
         {
           "source": "Al Manar",
-          "title": "قتيل ونحو 20 جريحًا قرب الحدود مع لبنان وجيش الاحتلال يرجّح انفجار قنبلة عنقودية تابعة لحزب الله 18:03",
+          "title": "تقرير مصور| النائب حمادة من البزالية: حزب الله لا يزال الهاجس الأكبر لـ«إسرائيل» وأميركا ولا أحد يستطيع نزع سلاحه 10:27",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -282,18 +282,11 @@
     },
     "relevance": {
       "in": 108,
-      "kept": 78,
+      "kept": 82,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Following a deadly incident during a trip in northern Israel, the minister announced that educational trips…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The 'change bloc' faction claims that the president is paving the way for a Netanyahu-Eizenkot government.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -328,14 +321,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , US agents search home of Ilhan Omar, Trump critic and Congress member",
+          "title": "3 , US agents search home of Ilhan Omar, Trump critic and Congress member",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Canada’s Carney calls for unity as Alberta prepares for secession vote",
+          "title": "5 , Stolen Renoir paintings found behind wall in France following arrests",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -357,13 +350,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Iran is escalating tensions in Hormuz while moving towards Saudi-Yemeni dialogue, consolidating its influence.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Exclusive | Iran's ambassador rejects allegations of Tehran’s role in British airbase incident",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -432,25 +418,11 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Iran says US response to its proposal to reopen Hormuz was ‘insufficient’, state media reports",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Palestinian vice president vows to bring forward presidential and legislative elections if conditions permit",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Hurricane Simon weakens to Category 2 off Mexico’s Pacific coast",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
@@ -498,9 +470,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 37,
       "sizes": [
-        26,
+        28,
+        6,
         4,
         4,
         2,
@@ -510,10 +483,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -551,9 +520,9 @@
           "selected_rank": 1,
           "headline": "Saudi Arabia prepared for various scenarios amid Houthi attacks",
           "rank_key": {
-            "outlets": 11,
+            "outlets": 12,
             "camps": 5,
-            "newest": "2026-10-12T20:49+00:00"
+            "newest": "2026-10-12T23:26+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -566,7 +535,8 @@
             "Jordan Times",
             "Middle East Eye",
             "SANA",
-            "TRT World"
+            "TRT World",
+            "The New Arab"
           ],
           "camps": [
             "gulf",
@@ -575,7 +545,7 @@
             "levant",
             "turkish"
           ],
-          "members": 26,
+          "members": 28,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -596,7 +566,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "3 , Why are the Houthis striking Saudi airports?",
+                "title": "4 , Why are the Houthis striking Saudi airports?",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -606,7 +576,7 @@
               },
               {
                 "source": "Middle East Eye",
-                "title": "Houthi forces warn against use of Saudi airports following Riyadh attack",
+                "title": "'Riyadh no longer feels safe': Houthi strikes shatter Saudi capital's aura of ca",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -711,6 +681,60 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Third oil tanker catches fire after hitting sea mine in Strait of Hormuz: Statement",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-12T11:28+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "IRNA",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "Third oil tanker catches fire after hitting sea mine in Strait of Hormuz: Statement",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Iran sets crosshairs on ‘US-UAE’ oil shuttle out of Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Supertanker explodes after hitting mine in ‘unauthorized’ Hormuz route: IRGC Nav",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Third oil tanker catches fire in Hormuz after hitting mine",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "IRGC Navy warns ships against turning off navigation systems",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "From fragmentation to unity: Restoring Syria's sovereignty",
           "rank_key": {
             "outlets": 2,
@@ -748,7 +772,45 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
+          "headline": "The article discusses Iran and Palestine's choices between resistance and settlement, with Hamas, th",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-12T20:31+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Mayadeen",
+            "title": "The article discusses Iran and Palestine's choices between resistance and settlement, with Hamas, the PA, and…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 2 of the story's dominant entities (gaza, westbank)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Falastin al-Youm",
+                "title": "The Red Cross warned that opportunities to identify Gaza martyrs are diminishing",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Riyadh airport attack: US embassy issues fresh security alert for citizens in Saudi Arabia",
           "rank_key": {
             "outlets": 2,
@@ -823,81 +885,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "‘Iran to counter US naval blockade through strategic management of Strait of Hormuz’",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-12T11:28+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "IRNA"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "‘Iran to counter US naval blockade through strategic management of Strait of Hormuz’",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Iran sets crosshairs on ‘US-UAE’ oil shuttle out of Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces detain two Palestinians from Ramallah governorate",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-12T19:37+00:00"
-          },
-          "outlet_names": [
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces detain two Palestinians from Ramallah governorate",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "Palestinian killed in Gaza as Israeli occupation forces detain five in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "King, in call with Saudi crown prince, condemns attacks on Saudi Arabia, expresses solidarity with S",
           "rank_key": {
             "outlets": 2,
@@ -934,40 +921,21 @@
         },
         {
           "selected_rank": null,
-          "headline": "Third oil tanker catches fire after hitting sea mine in Strait of Hormuz: Statement",
+          "headline": "Trump says Putin, Zelenskyy must reach deal to end 'ridiculous war'",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-12T06:14+00:00"
+            "newest": "2026-10-12T23:37+00:00"
           },
           "outlet_names": [
-            "IRNA",
-            "Mehr News"
+            "Anadolu Agency"
           ],
           "camps": [
-            "iranian"
+            "turkish"
           ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Third oil tanker catches fire after hitting sea mine in Strait of Hormuz: Statement",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "Third oil tanker catches fire in Hormuz after hitting mine",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1025,19 +993,19 @@
         },
         {
           "selected_rank": null,
-          "headline": "The article discusses Iran and Palestine's choices between resistance and settlement, with Hamas, th",
+          "headline": "Israeli forces detain two Palestinians from Ramallah governorate",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-12T20:31+00:00"
+            "newest": "2026-10-12T19:37+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
+            "WAFA News"
           ],
           "camps": [
-            "panarab"
+            "levant"
           ],
-          "members": 1,
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1072,24 +1040,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces shoot and injure Palestinian boy, detain him in Qalqilya",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T18:58+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1186,7 +1136,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1204,7 +1154,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-12T23:19:43.549810+00:00",
+    "last_success": "2026-10-12T23:51:51.167186+00:00",
     "last_failure": null
   },
   "ok": true
