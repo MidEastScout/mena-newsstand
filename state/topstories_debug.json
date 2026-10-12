@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T18:49:31.497066+00:00",
+  "updated": "2026-10-12T19:21:43.084640+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-12T18:47:14.828528+00:00"
+      "headlines_updated": "2026-10-12T19:19:23.263608+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 34,
+        "dropped_no_english": 4,
+        "title_snippet": 30,
         "title_translated": 1,
         "title_native": 87,
         "in": 126,
-        "kept": 122
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -194,7 +195,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "Abbas postpones Palestinian elections, sets poll for Sept 2027",
+          "title": "Yemen govt say advancing against Houthis around Bab al-Mandeb",
           "reason": "stale (older than 48h)"
         },
         {
@@ -206,12 +207,32 @@
           "source": "TRT World",
           "title": "US hits ICC with sanctions hours after Pillay's Nobel win",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שני גברים נורו בכרם שלום, בהם פצוע במצב אנוש. על פי החשד, הירי אירע בשל סכסוך משפחות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: الخارجية الإيرانية: مزاعم بريطانيا مؤامرة لتعزيز الحملة المعادية لإيران والتهرب من المساءلة عن مشاركتها في العدوا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "سوريا: مصادر محلية: قوات الاحتلال الإسرائيلي تعتقل شاباً خلال توغلها في قرية رسم سند في ريف القنيطرة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "هتافات ضد الاحتلال «الإسرائيلي» في قمة الأهلي والزمالك",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 90,
+      "in": 118,
+      "kept": 85,
       "dropped": [
         {
           "source": "Kan 11",
@@ -237,13 +258,6 @@
         {
           "source": "Kan 11",
           "title": "Tsephay, the father of the girl Haimenot Kassa, appealed to the Prime Minister to assign the investigation to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "In the United States, federal agents searched the home of a member of the U.S.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -299,7 +313,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , US agents search home of Ilhan Omar, Trump critic and Congress member",
+          "title": "2 , US agents search home of Ilhan Omar, Trump critic and Congress member",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -321,6 +335,13 @@
         {
           "source": "Mehr News",
           "title": "Iran has more than 30 satellites under development",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Iran International",
+          "title": "5 Freight costs from Turkey to Iran surge fivefold in two months",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -354,13 +375,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Oil prices have fallen amid expectations of increased Russian supplies and disagreements over a diesel deal.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "A field hospital has been set up near the earthquake's epicenter in Panama to treat patients amid fears of…",
           "sec": 0,
@@ -382,8 +396,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Gulf News",
+          "title": "Iran says US response to seven conditions is ‘inadequate’",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Anadolu Agency",
           "title": "PROFILE - Who are Robert E. Hall and Michael Woodford, recipients of the 2026 Nobel Prize in Economics?",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Iran again rejects UK accusations over Fairford airbase incident",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -441,20 +469,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 37,
       "sizes": [
         25,
         9,
-        9,
+        8,
         4,
         3,
-        3,
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -536,6 +561,11 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
+                "title": "1 , Saudi Arabia shoots down more Houthi missiles as Riyadh targeted again",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
                 "title": "4 , Why are the Houthis striking Saudi airports?",
                 "rejected_by": "older than the story's newest wave"
               },
@@ -547,11 +577,6 @@
               {
                 "source": "Middle East Eye",
                 "title": "Houthi forces warn against use of Saudi airports following Riyadh attack",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Middle East Eye",
-                "title": "UN chief 'strongly' condemns 'Houthi attacks' on Riyadh airport",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -621,14 +646,13 @@
           "selected_rank": 3,
           "headline": "Iran dismisses US reply to Hormuz proposal, Saudi airports hit",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-10-12T12:54+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
             "Arab News",
-            "Gulf News",
             "IRNA",
             "Mehr News",
             "The New Arab"
@@ -638,7 +662,7 @@
             "panarab",
             "iranian"
           ],
-          "members": 9,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -654,7 +678,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Iran sets crosshairs on ‘US-UAE’ oil shuttle out of Strait of Hormuz",
+                "title": "3 , Iran sets crosshairs on ‘US-UAE’ oil shuttle out of Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -723,7 +747,7 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Yemeni military media continues to document operations with audio and visual evidence.",
+          "headline": "Yemeni military media released footage of an operation targeting Saudi gatherings in Al-Fulaiha.",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
@@ -737,12 +761,12 @@
             "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Al Mayadeen",
-            "title": "Yemeni military media continues to document operations with audio and visual evidence.",
+            "title": "Yemeni military media released footage of an operation targeting Saudi gatherings in Al-Fulaiha.",
             "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -908,6 +932,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israeli forces shoot and injure Palestinian boy, detain him in Qalqilya",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T18:58+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Araghchi discusses regional developments in phone call with Iraqi counterpart",
           "rank_key": {
             "outlets": 1,
@@ -944,24 +986,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "In Lebanon, an Israeli military correspondent reported that Israeli artillery targeted the town of M",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T17:29+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Exclusive | Iran's ambassador rejects allegations of Tehran’s role in British airbase incident",
           "rank_key": {
             "outlets": 1,
@@ -991,24 +1015,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Occupation authorities compels Palestinian to demolish his home in Jerusalem",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T17:28+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1123,7 +1129,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "At least 72 Sudanese artisanal miners killed in strike, rights monitor says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T12:37+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1141,7 +1165,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-12T18:49:58.563410+00:00",
+    "last_success": "2026-10-12T19:21:56.360079+00:00",
     "last_failure": null
   },
   "ok": true
