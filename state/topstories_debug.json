@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T17:13:25.068422+00:00",
+  "updated": "2026-10-12T17:45:37.713009+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-12T17:10:54.893002+00:00"
+      "headlines_updated": "2026-10-12T17:43:06.307599+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 34,
+        "dropped_stale": 5,
+        "title_snippet": 24,
+        "dropped_no_english": 10,
         "title_translated": 1,
-        "title_native": 87,
+        "title_native": 86,
         "in": 126,
-        "kept": 122
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -206,12 +207,67 @@
           "source": "TRT World",
           "title": "Riyadh airport suspends operations after attack leaves several wounded",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "US hits ICC with sanctions hours after Pillay's Nobel win",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בגוש השינוי טוענים: הרצוג מכין את הקרקע לממשלת נתניהו-איזנקוט",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "הסערה שעורר שר החוץ האיראני לשעבר - בגלל ההתבטאות שצפה מחדש: \"השגרירים שלנו הם נציגי כוח קודס\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "איש צוות ממדינה עוינת התגלה, מטוס זר שב על עקבותיו אחרי שהמריא",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "لبنان: مراسل الميادين: مدفعية الاحتلال الإسرائيلي استهدفت بلدة المنصوري في قضاء صور جنوبي لبنان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الإعلام الحربي اليمني ينشر مشاهد لاستهداف حشود تابعة للسعودية في الفليحة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بالصوت والصورة.. الإعلام الحربي اليمني يواصل توثيق العمليات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فيديو | شرق جنين.. بوابات حديدية وتجريف يهددان موسم الزيتون!",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "أعمال عسكرية ونشاط استيطاني ومنظّمات لبنانية وأميركية على الخط: ماذا يجري في الجنوب... وماذا يخطط العدو؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "الحرس الثوري الإيراني يوجّه رسالة مقتضبة: «نحن ننتظر» 00:14",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "1.2 مليار شخص في العالم يعانون الفقر المدقع!",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 86,
+      "in": 111,
+      "kept": 77,
       "dropped": [
         {
           "source": "Kan 11",
@@ -312,22 +368,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Coyoacan is one of the oldest and most attractive towns for tourists in Mexico City.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Libya has confiscated nearly one million dollars worth of hashish in the eastern part of the country.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Mehr News",
           "title": "US response to Iran’s conditions 'insufficient'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Americans Hall and Woodford win economics Nobel for stabilisation models",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -359,13 +408,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Chants against the 'Israeli' occupation were heard at the Al Ahly and Zamalek football match.",
-          "sec": 1,
-          "off": 2,
-          "reason": "off-topic signals outweigh security signals"
         },
         {
           "source": "Al-Akhbar",
@@ -404,7 +446,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Sudan’s Burhan orders inquiry after reported killing of 72 miners near Egyptian border",
+          "title": "PROFILE - Who are Robert E. Hall and Michael Woodford, recipients of the 2026 Nobel Prize in Economics?",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Musk appears to be biggest-known donor ahead of US miderm elections",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -419,13 +468,6 @@
         {
           "source": "Daily Sabah",
           "title": "AI 'slow-moving tsunami' but holds global growth, IMF chief says",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "US federal agents search home of Rep. Ilhan Omar as part of probe",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -469,17 +511,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 35,
       "sizes": [
-        23,
-        10,
+        24,
+        8,
         7,
-        5,
         4,
-        2,
-        2,
-        2,
-        1,
+        4,
         1,
         1,
         1,
@@ -523,7 +561,7 @@
           "rank_key": {
             "outlets": 12,
             "camps": 5,
-            "newest": "2026-10-12T16:36+00:00"
+            "newest": "2026-10-12T17:24+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -546,7 +584,7 @@
             "levant",
             "turkish"
           ],
-          "members": 23,
+          "members": 24,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -585,67 +623,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iran dismisses US reply to Hormuz proposal, Saudi airports hit",
-          "rank_key": {
-            "outlets": 7,
-            "camps": 5,
-            "newest": "2026-10-12T14:32+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al Manar",
-            "Anadolu Agency",
-            "Gulf News",
-            "IRNA",
-            "Mehr News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 10,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Iran dismisses US reply to Hormuz proposal, Saudi airports hit",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Iran sets crosshairs on ‘US-UAE’ oil shuttle out of Strait of Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Third oil tanker catches fire after hitting sea mine in Strait of Hormuz: Statem",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Supertanker explodes after hitting mine in ‘unauthorized’ Hormuz route: IRGC Nav",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "2nd super tanker hits naval mine in Strait of Hormuz: IRGC",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "One dead, 11 wounded in Sunday attack on Riyadh airport: Civil aviation",
           "rank_key": {
             "outlets": 7,
@@ -704,6 +681,63 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "Iran dismisses US reply to Hormuz proposal, Saudi airports hit",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-10-12T12:54+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Gulf News",
+            "IRNA",
+            "Mehr News",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian"
+          ],
+          "members": 8,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Iran dismisses US reply to Hormuz proposal, Saudi airports hit",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Iran sets crosshairs on ‘US-UAE’ oil shuttle out of Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Third oil tanker catches fire after hitting sea mine in Strait of Hormuz: Statem",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Supertanker explodes after hitting mine in ‘unauthorized’ Hormuz route: IRGC Nav",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "2nd super tanker hits naval mine in Strait of Hormuz: IRGC",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 4,
           "headline": "Trump’s Russia-Ukraine ’energy ceasefire’ sparks confusion",
           "rank_key": {
@@ -751,79 +785,11 @@
         },
         {
           "selected_rank": 5,
-          "headline": "A 14-year-old boy was killed and 24 others were injured in an explosion of unexploded ordnance durin",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-12T12:07+00:00"
-          },
-          "outlet_names": [
-            "L'Orient Today",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "A 14-year-old boy was killed and 24 others were injured in an explosion of unexploded ordnance during a trip…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "FOCUS Hezbollah prepares for next war: Upgraded drones, fortified positions, new",
-                "rejected_by": "stale anticipatory framing"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "North Korea fires 'several ballistic missiles' into Sea of Japan",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-12T11:08+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times",
-            "TRT World"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "North Korea fires 'several ballistic missiles' into Sea of Japan",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "UN documents killings of 1,076 Palestinians in Gaza since ceasefire last October",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-10-12T16:48+00:00"
+            "newest": "2026-10-12T17:15+00:00"
           },
           "outlet_names": [
             "Falastin al-Youm",
@@ -832,7 +798,7 @@
           "camps": [
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -847,17 +813,48 @@
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "Death toll in Gaza Strip rises to 74,382 and injuries to 175,416 since the start",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
                 "source": "Falastin al-Youm",
                 "title": "The Red Cross warned of diminishing chances to identify martyrs in Gaza as evide",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "CWRC documents 14 attacks against Palestinian farmers in one day",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T17:43+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Occupation authorities compels Palestinian to demolish his home in Jerusalem",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T17:28+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -873,24 +870,6 @@
           "camps": [
             "panarab"
           ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces deport three international solidarity activists",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T16:23+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
@@ -905,42 +884,6 @@
           },
           "outlet_names": [
             "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A student was killed and 24 were injured in an unexploded ordnance explosion during a field trip to ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T15:22+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Britain's government has imposed sanctions on two additional Iranians involved in planning attacks w",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T15:09+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -969,24 +912,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Belgium's Foreign Ministry condemned Israeli actions that violated international law.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T14:32+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran ready for diplomacy and war, deputy foreign minister says",
           "rank_key": {
             "outlets": 1,
@@ -998,24 +923,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Jordan condemns Houthi attacks on Saudi airports",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T13:55+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1041,24 +948,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "An explosion at 'Ramat Raheem' is likely the result of students and teachers walking over war remnan",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T12:50+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "At least 72 Sudanese artisanal miners killed in strike, rights monitor says",
           "rank_key": {
             "outlets": 1,
@@ -1076,7 +965,79 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Trump really wants to make ‘super intelligence’ happen. Is it going to happen?",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T12:37+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "After oil increasingly left the Gulf, Iran is trying to regain its stranglehold on shipping",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T12:34+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Norway has withdrawn over half a billion dollars from Israeli banks due to the Gaza war and West Ban",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T11:33+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Coalition says it destroyed ballistic missile launched toward Saudi Arabia",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T10:21+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1094,7 +1055,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-12T17:13:43.371040+00:00",
+    "last_success": "2026-10-12T17:45:51.740030+00:00",
     "last_failure": null
   },
   "ok": true
