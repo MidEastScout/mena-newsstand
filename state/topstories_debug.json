@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T19:11:47.948925+00:00",
+  "updated": "2026-10-13T19:44:40.625299+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-13T19:09:12.378938+00:00"
+      "headlines_updated": "2026-10-13T19:41:44.148337+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 34,
+        "dropped_stale": 14,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 78,
+        "title_native": 77,
         "in": 126,
-        "kept": 113
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -229,6 +230,11 @@
         },
         {
           "source": "Arab News",
+          "title": "International outcry grows after deadly Houthi attack on Riyadh airport",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
           "title": "Iran says US response to its proposal to reopen Hormuz was ‘insufficient’, state media reports",
           "reason": "stale (older than 48h)"
         },
@@ -244,19 +250,34 @@
         },
         {
           "source": "TRT World",
-          "title": "Fresh strike sparks fire at Riyadh airport: Saudi-led coalition",
+          "title": "Türkiye, Egypt, Pakistan, Saudi Arabia issue joint condemnation of Houthi militia attacks",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "Riyadh airport suspends operations after attack leaves several wounded",
+          "title": "Fresh strike sparks fire at Riyadh airport: Saudi-led coalition",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "40 שנות מאסר נגזרו על ראש הכנופיה שעמד מאחורי רצח הראפר טופאק שאקור",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إصابات واعتقالات في باريس.. احتجاجات تطالب باستقالة ماكرون وحكومته",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مستوطنون يقتحمون المسجد الأقصى المبارك",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 113,
-      "kept": 71,
+      "in": 109,
+      "kept": 68,
       "dropped": [
         {
           "source": "Kan 11",
@@ -344,14 +365,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Why has search of Ilhan Omar’s home before US midterms caused controversy?",
+          "title": "4 , Why has search of Ilhan Omar’s home before US midterms caused controversy?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Air France says it will follow Israeli rule barring crew from some nations",
+          "title": "6 , Air France says it will follow Israeli rule barring crew from some nations",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -366,13 +387,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Protests in Paris are escalating from demands related to education to political slogans.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Iranian television reported that the British ambassador was informed of Tehran's complete rejection of the…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -455,13 +469,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Grand Mufti says buying olive oil and olives from Israeli colonists is religiously forbidden",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "Bank of Palestine concluded its participation in the SIBOS 2026 conference, strengthening its presence in…",
           "sec": 0,
@@ -470,16 +477,16 @@
         },
         {
           "source": "SANA",
-          "title": "Justice minister, OPCW chief discuss accountability for chemical weapons use",
+          "title": "Ministry of Agriculture, IFAD discuss rural development and agricultural extension",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "Syrian Tourism Minister says UN code accession ensures safe, reliable travel experience",
+          "title": "Syria attends UNHCR executive committee session in Geneva",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -492,6 +499,13 @@
         {
           "source": "Anadolu Agency",
           "title": "Iran summons British ambassador for UK claims about RAF Fairford incident",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "Saudi Arabia issues all-clear in Riyadh minutes after emergency warning",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -556,20 +570,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 36,
       "sizes": [
-        19,
-        5,
+        22,
+        6,
         3,
-        3,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -608,11 +617,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Trump says Yemen’s Houthis are ‘behaving very badly’",
+          "headline": "Blasts rock Saudi cities as Yemen conflict escalates",
           "rank_key": {
-            "outlets": 11,
+            "outlets": 12,
             "camps": 5,
-            "newest": "2026-10-13T18:14+00:00"
+            "newest": "2026-10-13T19:09+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -620,6 +629,7 @@
             "Anadolu Agency",
             "Arab News",
             "Daily Sabah",
+            "Gulf News",
             "Jordan Times",
             "L'Orient Today",
             "Middle East Eye",
@@ -634,12 +644,12 @@
             "levant",
             "turkish"
           ],
-          "members": 19,
+          "members": 22,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Trump says Yemen’s Houthis are ‘behaving very badly’",
+            "source": "Daily Sabah",
+            "title": "Blasts rock Saudi cities as Yemen conflict escalates",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -673,9 +683,9 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iranian Navy identifies oil tanker that caught fire in Strait of Hormuz",
+          "headline": "Yet another oil tanker burns in flames in Strait of Hormuz",
           "rank_key": {
-            "outlets": 5,
+            "outlets": 6,
             "camps": 3,
             "newest": "2026-10-13T16:23+00:00"
           },
@@ -684,6 +694,7 @@
             "Al-Akhbar",
             "IRNA",
             "Iran International",
+            "Mehr News",
             "The New Arab"
           ],
           "camps": [
@@ -691,12 +702,12 @@
             "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "IRNA",
-            "title": "Iranian Navy identifies oil tanker that caught fire in Strait of Hormuz",
+            "source": "Mehr News",
+            "title": "Yet another oil tanker burns in flames in Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -725,51 +736,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Saudi-led coalition says it struck resources sustaining Houthi war effort",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-13T18:45+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Saudi-led coalition says it struck resources sustaining Houthi war effort",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Saudi-led Coalition says ballistic missile fired by Houthis intercepted",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Saudi-led coalition says 'intercepted and destroyed' Houthi ballistic missile",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "One killed and others injured in Israeli strike on vehicle in al-Tuffah neighborhood, east of Gaza C",
           "rank_key": {
             "outlets": 3,
@@ -813,7 +779,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 4,
           "headline": "Occupation forces complete demolition of house in east Jerusalem",
           "rank_key": {
             "outlets": 2,
@@ -851,19 +817,18 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Syria, Jordan reaffirm ties, condemn attacks on Saudi Arabia",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
+            "camps": 1,
             "newest": "2026-10-13T14:24+00:00"
           },
           "outlet_names": [
-            "Gulf News",
-            "SANA"
+            "SANA",
+            "Syria Direct"
           ],
           "camps": [
-            "gulf",
             "levant"
           ],
           "members": 2,
@@ -881,8 +846,8 @@
             ],
             "passed_over": [
               {
-                "source": "Gulf News",
-                "title": "Jordanian father of two killed in Houthi airport attack, leaving children in gra",
+                "source": "Syria Direct",
+                "title": "The Damascus oud maker fighting to keep a generations-old craft alive",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -926,17 +891,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Six people were injured in a shooting targeting a home in Buq'ata, with two sustaining serious injur",
+          "headline": "Jerusalem: Israel sentences Issawiya child to prison as occupation forces raid Al-Tur town",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-13T19:06+00:00"
+            "newest": "2026-10-13T19:39+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "WAFA News"
           ],
           "camps": [
-            "israeli"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1088,24 +1053,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hamas stated that targeting human rights institutions in Ramallah will not obscure the occupation's ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T11:40+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran, Egypt foreign ministers discuss Yemen developments",
           "rank_key": {
             "outlets": 1,
@@ -1141,7 +1088,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Hezbollah announced a housing program for displaced persons, allocating $14,000 per housing unit.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T09:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1159,7 +1124,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-13T19:12:06.087099+00:00",
+    "last_success": "2026-10-13T19:44:53.955400+00:00",
     "last_failure": null
   },
   "ok": true
