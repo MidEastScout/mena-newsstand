@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T05:41:23.890320+00:00",
+  "updated": "2026-10-13T06:13:18.126991+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-13T05:39:04.474564+00:00"
+      "headlines_updated": "2026-10-13T06:11:03.430035+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 34,
+        "dropped_stale": 10,
+        "title_snippet": 25,
+        "dropped_no_english": 9,
         "title_translated": 1,
-        "title_native": 82,
+        "title_native": 81,
         "in": 126,
-        "kept": 117
+        "kept": 107
       },
       "translator": {
         "configured": true,
@@ -190,6 +191,11 @@
         {
           "source": "Middle East Eye",
           "title": "Attack on Riyadh airport leaves 12 dead, more than 300 injured",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Middle East Eye",
+          "title": "UN chief 'strongly' condemns 'Houthi attacks' on Riyadh airport",
           "reason": "stale (older than 48h)"
         },
         {
@@ -219,7 +225,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "Riyadh airport attack: Several injured, flights suspended, travel warnings issued",
+          "title": "Riyadh airport attack: Saudi schools switch to remote learning",
           "reason": "stale (older than 48h)"
         },
         {
@@ -231,23 +237,61 @@
           "source": "TRT World",
           "title": "Riyadh airport suspends operations after attack leaves several wounded",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "חברות תעופה מבטלות טיסות לסעודיה: קטאר איירווייז ואתיחאד השעו קווים לריאד ולדמאם",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בעקבות דיווח אנונימי על פצצה: נבדק מטוס דלתא שנחת בנתב\"ג, הנוסעים הורדו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "בעקבות תקיפות החות'ים: חברות תעופה במפרץ מבטלות טיסות לסעודיה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن: القوات المسلحة اليمنية: المطارات السعودية غير آمنة باستثناء مطارات وأجواء المناطق المقدسة في مكة المكرمة والمدينة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "المملكة المتحدة: رئيس الوزراء البريطاني السابق ريشي سوناك: انتهى النظام العالمي الذي تقوده الولايات المتحدة الأميركية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "صندوق النقد: توقعات بأن يصل صافي الاقتراض لدى الاقتصادات المتقدمة إلى 5.2 % من الناتج المحلي هذا العام أي الأعلى منذ 202",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "المملكة المتحدة: رئيس الوزراء البريطاني السابق ريشي سوناك: دخل العالم مرحلة تتسم بتزايد حالة عدم اليقين الجيوسياسي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "لبنان لا يُدرج على اللائحة السوداء... إذا؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "لماذا يرتفع ضغط الدوم في الشتاء ؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 86,
+      "in": 107,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Yair Elazar Vilenski, a ninth-grade student at ORT High School in Ma'alot, died in a disaster during a school…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A fragmentation grenade was allegedly thrown on Menachem Begin Street in Tel Aviv.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -401,7 +445,21 @@
         },
         {
           "source": "Anadolu Agency",
+          "title": "Meta challenges UK media regulator over fees, fines",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
           "title": "Jordan's King Abdullah arrives in Australia for first visit in a decade",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Italy and Türkiye: A Latin and Mediterranean legacy",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -459,14 +517,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 39,
       "sizes": [
-        20,
-        9,
-        5,
+        19,
+        7,
         5,
         4,
-        3,
         2,
         2,
         2,
@@ -511,9 +567,9 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Houthis claim new attack on Riyadh airport, strike on Saudi air base",
+          "headline": "Arab airlines halt Riyadh flights as deadly Houthi militia attacks hit Saudi capital",
           "rank_key": {
-            "outlets": 11,
+            "outlets": 10,
             "camps": 5,
             "newest": "2026-10-12T23:26+00:00"
           },
@@ -521,7 +577,6 @@
             "Al Arabiya",
             "Al Jazeera",
             "Arab News",
-            "Daily Sabah",
             "Gulf News",
             "Iran International",
             "Jordan Times",
@@ -537,12 +592,12 @@
             "levant",
             "turkish"
           ],
-          "members": 20,
+          "members": 19,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Houthis claim new attack on Riyadh airport, strike on Saudi air base",
+            "source": "TRT World",
+            "title": "Arab airlines halt Riyadh flights as deadly Houthi militia attacks hit Saudi capital",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -558,12 +613,12 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "3 , Houthi missile attack targets Saudi capital Riyadh for third day in a row",
+                "title": "2 , Houthi missile attack targets Saudi capital Riyadh for third day in a row",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al Jazeera",
-                "title": "5 , Iran war updates: Saudi downs Houthi missiles during ongoing deadly attacks",
+                "title": "4 , Iran war updates: Saudi downs Houthi missiles during ongoing deadly attacks",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -576,15 +631,14 @@
         },
         {
           "selected_rank": 2,
-          "headline": "An escalation in the Strait of Hormuz and moves towards Saudi-Yemeni dialogue are noted, with questi",
+          "headline": "Iran dismisses US reply to Hormuz proposal, Saudi airports hit",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 3,
-            "newest": "2026-10-12T20:51+00:00"
+            "newest": "2026-10-12T12:54+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Al Mayadeen",
             "Arab News",
             "IRNA",
             "Iran International",
@@ -596,23 +650,23 @@
             "panarab",
             "iranian"
           ],
-          "members": 9,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Mayadeen",
-            "title": "An escalation in the Strait of Hormuz and moves towards Saudi-Yemeni dialogue are noted, with questions on…",
-            "title_source": "snippet",
+            "source": "The New Arab",
+            "title": "Iran dismisses US reply to Hormuz proposal, Saudi airports hit",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Iran sets crosshairs on ‘US-UAE’ oil shuttle out of Strait of Hormuz",
+                "title": "3 , Iran sets crosshairs on ‘US-UAE’ oil shuttle out of Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -621,13 +675,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "The New Arab",
-                "title": "Iran dismisses US reply to Hormuz proposal, Saudi airports hit",
+                "source": "Iran International",
+                "title": "4 Iran-US diplomacy stalls as Houthi attacks on Saudi Arabia intensify",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Third oil tanker catches fire after hitting sea mine in Strait of Hormuz: Statem",
+                "source": "Arab News",
+                "title": "Iran says US response to its proposal to reopen Hormuz was ‘insufficient’, state",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -635,58 +689,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "One dead, 11 wounded in Sunday attack on Riyadh airport: Civil aviation",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-10-12T08:25+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al-Akhbar",
-            "Arab News",
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "One dead, 11 wounded in Sunday attack on Riyadh airport: Civil aviation",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al-Akhbar",
-                "title": "12 people were killed and over 300 injured in an attack on King Khalid Airport i",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Pakistani national killed, 11 injured in latest Riyadh airport attack",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Another deadly attack hits Riyadh's King Khalid airport, 1 killed, 11 injured",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Trump’s Russia-Ukraine ’energy ceasefire’ sparks confusion",
           "rank_key": {
             "outlets": 5,
@@ -721,7 +723,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Trump insists energy ceasefire holds as Ukraine reports new Russian strikes",
+                "title": "5 , Trump insists energy ceasefire holds as Ukraine reports new Russian strikes",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -738,127 +740,87 @@
           }
         },
         {
-          "selected_rank": 5,
-          "headline": "Child dies from injuries sustained in Israeli shelling in central Gaza Strip",
+          "selected_rank": 4,
+          "headline": "One dead, 11 wounded in Sunday attack on Riyadh airport: Civil aviation",
           "rank_key": {
             "outlets": 4,
-            "camps": 2,
-            "newest": "2026-10-13T05:31+00:00"
+            "camps": 4,
+            "newest": "2026-10-12T08:25+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Falastin al-Youm",
+            "Al Arabiya",
+            "Arab News",
             "SANA",
-            "WAFA News"
+            "TRT World"
           ],
           "camps": [
+            "gulf",
             "panarab",
-            "levant"
+            "levant",
+            "turkish"
           ],
           "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Child dies from injuries sustained in Israeli shelling in central Gaza Strip",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Mayadeen",
-                "title": "The article discusses Iran and Palestine's positions between resistance and sett",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "The Red Cross warned of diminishing chances to identify Gaza martyrs due to evid",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "SANA",
-                "title": "Palestinian killed in Gaza as Israeli occupation forces detain five in West Bank",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "A disaster occurred in the Ramim ridge area where a 14-year-old boy died and 24 people were injured ",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-12T12:07+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "L'Orient Today",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "A disaster occurred in the Ramim ridge area where a 14-year-old boy died and 24 people were injured by an…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "FOCUS Hezbollah prepares for next war: Upgraded drones, fortified positions, new",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "A report features parliament member Hamadeh discussing Hezbollah as Israel's and",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Immigration agents raid home of Congresswoman Ilhan Omar",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-12T16:00+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "Middle East Eye"
-          ],
-          "camps": [
-            "israeli",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Middle East Eye",
-            "title": "Immigration agents raid home of Congresswoman Ilhan Omar",
+            "source": "Al Arabiya",
+            "title": "One dead, 11 wounded in Sunday attack on Riyadh airport: Civil aviation",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Pakistani national killed, 11 injured in latest Riyadh airport attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Another deadly attack hits Riyadh's King Khalid airport, 1 killed, 11 injured",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "From fragmentation to unity: Restoring Syria's sovereignty",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-12T21:05+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "Syria Direct"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "From fragmentation to unity: Restoring Syria's sovereignty",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Syria Direct",
+                "title": "The Damascus oud maker fighting to keep a generations-old craft alive",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -936,11 +898,60 @@
         },
         {
           "selected_rank": null,
+          "headline": "FOCUS Hezbollah prepares for next war: Upgraded drones, fortified positions, new recruits",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": null
+          },
+          "outlet_names": [
+            "Al Manar",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "L'Orient Today",
+            "title": "FOCUS Hezbollah prepares for next war: Upgraded drones, fortified positions, new recruits",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Occupation forces detain youth during raid in Tubas",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-13T05:32+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Child dies from injuries sustained in Israeli shelling in central Gaza Strip",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T05:31+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -972,24 +983,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Israeli military reported that five Hamas and Islamic Jihad militants were killed in southern Ga",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T05:14+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Security guards noticed an individual filming and recording at a light rail station.",
           "rank_key": {
             "outlets": 1,
@@ -1001,24 +994,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "South Korea's president rejects ‘submissive’ diplomacy amid intelligence dispute with US",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T04:06+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1098,42 +1073,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "From fragmentation to unity: Restoring Syria's sovereignty",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T21:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A UN deputy special envoy to Syria, Claudio Cordone, indicated reports of Israel continuing to detai",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-12T20:31+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Yemeni military issues statement on latest Saudi agggression",
           "rank_key": {
             "outlets": 1,
@@ -1151,7 +1090,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Israeli forces shoot and injure Palestinian boy, detain him in Qalqilya",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T18:58+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Araghchi discusses regional developments in phone call with Iraqi counterpart",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T18:20+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Deployment of 39,000 troops foiled enemy ground invasion plan",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-12T16:06+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1169,7 +1162,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-13T05:41:45.920346+00:00",
+    "last_success": "2026-10-13T06:13:57.297163+00:00",
     "last_failure": null
   },
   "ok": true
