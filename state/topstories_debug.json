@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T16:24:14.133187+00:00",
+  "updated": "2026-10-13T16:29:04.098333+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-13T16:21:34.607286+00:00"
+      "headlines_updated": "2026-10-13T16:26:13.628903+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
-        "title_snippet": 34,
+        "dropped_stale": 10,
+        "title_snippet": 30,
+        "dropped_no_english": 3,
         "title_translated": 1,
         "title_native": 82,
         "in": 126,
-        "kept": 117
+        "kept": 113
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -213,6 +214,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Al-Akhbar",
+          "title": "بوتين يبلغ ترامب بتعثر مفاوضات السلام مع أوكرانيا وسط تصعيد عسكري متبادل",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Arab News",
           "title": "International outcry grows after deadly Houthi attack on Riyadh airport",
           "reason": "stale (older than 48h)"
@@ -231,12 +237,27 @@
           "source": "TRT World",
           "title": "Riyadh airport suspends operations after attack leaves several wounded",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"טראומה-סלפי\": מדוע אנו שולפים את הטלפון ברגעי חרדה?",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "لبنان: مراسل الميادين: مدفعية الاحتلال الإسرائيلي استهدفت بلدة المنصوري في قضاء صور جنوبي لبنان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فرنسا: موفد الميادين إلى باريس: إصابات في صفوف الشرطة والمحتجين جراء المواجهات",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
-      "kept": 81,
+      "in": 113,
+      "kept": 77,
       "dropped": [
         {
           "source": "Kan 11",
@@ -309,22 +330,29 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "This is the story behind the internet star Kobi Sweisa.",
+          "source": "Al Jazeera",
+          "title": "2 , US ambassador to Greece resigns amid misconduct allegations",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , Air France says it will follow Israeli rule barring crew from some nations",
+          "title": "3 , Air France says it will follow Israeli rule barring crew from some nations",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Despite long history with Netanyahu, Trump hedges as Israel vote nears",
+          "title": "4 , Despite long history with Netanyahu, Trump hedges as Israel vote nears",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Why has search of Ilhan Omar’s home before US midterms caused controversy?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -428,13 +456,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "US’ Vance says he had no advance notice of federal search at Rep. Ilhan Omar's home",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "France accuses Musk of online harassment, warns of election meddling",
           "sec": 0,
@@ -494,12 +515,12 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 42,
       "sizes": [
         20,
-        5,
         3,
         3,
+        3,
         2,
         2,
         2,
@@ -510,8 +531,6 @@
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -614,76 +633,20 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Zelenskyy stated that Russia continues to target Ukraine's energy sector.",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-13T07:28+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Al-Akhbar",
-            "Arab News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "Zelenskyy stated that Russia continues to target Ukraine's energy sector.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Trump’s diesel deal opens a new rift with Europe over Ukraine",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "The New Arab",
-                "title": "Trump’s Russia-Ukraine ’energy ceasefire’ sparks confusion",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Trump’s ‘energy ceasefire’ sparks confusion as Russia strikes Ukraine",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Russia hits Ukraine power plants despite Trump energy ceasefire claim",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Saudi-led coalition launches airstrikes on Houthi positions in Yemen’s Sanaa",
+          "headline": "Tanker catches fire east of Strait of Hormuz: Iranian Navy",
           "rank_key": {
             "outlets": 3,
             "camps": 3,
-            "newest": "2026-10-13T14:22+00:00"
+            "newest": "2026-10-13T16:23+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
+            "Al-Akhbar",
             "Anadolu Agency",
-            "Gulf News"
+            "IRNA"
           ],
           "camps": [
-            "gulf",
-            "panarab",
+            "iranian",
+            "levant",
             "turkish"
           ],
           "members": 3,
@@ -691,30 +654,19 @@
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Saudi-led coalition launches airstrikes on Houthi positions in Yemen’s Sanaa",
+            "title": "Tanker catches fire east of Strait of Hormuz: Iranian Navy",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
+              "names 1 of the story's dominant entities (hormuz)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Saudi-led coalition says intercepted, destroyed Houthi ballistic missile",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Saudi-led coalition says 'intercepted and destroyed' Houthi ballistic missile",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "One killed and others injured in Israeli strike on vehicle in al-Tuffah neighborhood, east of Gaza C",
           "rank_key": {
             "outlets": 3,
@@ -753,6 +705,44 @@
                 "source": "Falastin al-Youm",
                 "title": "Photos showed the targeting of a car in the Al-Masharha neighborhood of Gaza Cit",
                 "rejected_by": "bare stub headline"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Trump says Houthis acting 'very badly' amid intensifying attacks",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-13T16:21+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Iran International"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Trump says Houthis acting 'very badly' amid intensifying attacks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Iran International",
+                "title": "ANALYSIS US military support against Houthis risks widening Iran war, expert say",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -828,44 +818,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Al Thani stated that the closure of the Strait of Hormuz and damage to Ras Laffan led to a significa",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-13T11:34+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Iran International"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "Al Thani stated that the closure of the Strait of Hormuz and damage to Ras Laffan led to a significant…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "3 Iran-US diplomacy stalls as Houthi attacks on Saudi Arabia intensify",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Saudi Arabia reinforces security readiness after airport attacks",
           "rank_key": {
             "outlets": 2,
@@ -896,6 +848,49 @@
               {
                 "source": "Gulf News",
                 "title": "Riyadh airport attack: US embassy issues fresh security alert for citizens in Sa",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump’s Russia-Ukraine ’energy ceasefire’ sparks confusion",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-12T08:15+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Trump’s Russia-Ukraine ’energy ceasefire’ sparks confusion",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Trump’s ‘energy ceasefire’ sparks confusion as Russia strikes Ukraine",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Russia hits Ukraine power plants despite Trump energy ceasefire claim",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1133,42 +1128,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Saudi aggression targeted the Al-Sabaha oil facility in Sanaa, with sources stating it had no mili",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T14:44+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Russia's Deputy Foreign Minister indicated that the next meeting between Russia and the United State",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T14:40+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "FM Fidan, Iran FM discuss regional tensions, efforts to end conflicts",
           "rank_key": {
             "outlets": 1,
@@ -1216,24 +1175,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Enemy’s crime in Lamerd beyond media’s capacity to narrate: Commander",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T14:03+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1294,7 +1235,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "The occupation banned a Jerusalemite, Khaled Abu Tayeh, from Al-Aqsa Mosque for 6 months.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T12:23+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran, Egypt foreign ministers discuss Yemen developments",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T11:27+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Hezbollah announced a housing program for the displaced, with $14,000 per housing unit.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T09:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1312,7 +1307,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-13T16:24:27.968232+00:00",
+    "last_success": "2026-10-13T16:29:17.218939+00:00",
     "last_failure": null
   },
   "ok": true
