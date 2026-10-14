@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T10:01:18.652340+00:00",
+  "updated": "2026-10-14T10:11:15.351912+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-14T09:59:06.671454+00:00"
+      "headlines_updated": "2026-10-14T10:08:20.310765+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 34,
+        "title_snippet": 31,
+        "dropped_no_english": 3,
         "title_translated": 1,
         "title_native": 77,
         "in": 126,
-        "kept": 112
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -256,13 +257,35 @@
           "source": "TRT World",
           "title": "Houthis target Saudi Arabia's Dammam airport as wave of airport attacks continues",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "גבר נהרג בתאונה קטלנית בין אוטובוס למשאית בצפון, 19 נפצעו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "דיווח: מפקד כוח קודס מינה מפקד חדש ליחידת החיסולים החשאית של איראן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"לא ריאלי\": כך השימוש בסמארטפון עלול לגרום להפרעות אכילה בקרב בני נוער",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 112,
-      "kept": 65,
+      "in": 109,
+      "kept": 66,
       "dropped": [
+        {
+          "source": "Kan 11",
+          "title": "A bus driver was killed and 19 others were injured, one seriously, in a collision with a truck near the…",
+          "sec": 2,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
         {
           "source": "Kan 11",
           "title": "A child in Tiberias found an unexploded ordnance, and bomb disposal experts are currently working at the…",
@@ -286,13 +309,6 @@
         },
         {
           "source": "Kan 11",
-          "title": "A bus driver was killed and 19 others were injured, one seriously, in a collision with a truck near the…",
-          "sec": 2,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Kan 11",
           "title": "Police located unexploded ordnance in the Eshtaol Forest.",
           "sec": 0,
           "off": 0,
@@ -306,24 +322,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "The new White House press secretary, Kayleigh McEnany, faced harsh criticism for her initial press briefing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "This report discusses the connection between smartphone use and eating disorders among children.",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -349,14 +351,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , Tensions with teachers, pupils and Turkiye: Inside Azerbaijan’s hijab row",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "4 , Trump says oil, gas and mineral exploration to begin in Greenland",
+          "title": "3 , Tensions with teachers, pupils and Turkiye: Inside Azerbaijan’s hijab row",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -516,15 +511,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "OpenAI engineer arrested over hidden recording device in executive meeting room",
+          "source": "Arab News",
+          "title": "Iran says it will reply to US response on Hormuz proposal once review over",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "China’s exports surge 36.3% in September as AI demand boosts trade",
+          "source": "Gulf News",
+          "title": "OpenAI engineer arrested over hidden recording device in executive meeting room",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -548,13 +543,6 @@
           "title": "4,700-year-old amphorae shed light on ancient trade in Türkiye",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Apple debuts HomeView smart device in fresh home push",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -596,15 +584,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 33,
+      "clusters": 35,
       "sizes": [
-        19,
-        8,
-        3,
-        3,
+        21,
+        7,
         2,
         2,
         2,
+        2,
+        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -665,7 +655,7 @@
             "levant",
             "turkish"
           ],
-          "members": 19,
+          "members": 21,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -686,17 +676,17 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "3 , Houthis strike Aramco hours after Saudi-led coalition hits Sanaa oil site",
+                "title": "2 , Houthis strike Aramco hours after Saudi-led coalition hits Sanaa oil site",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "5 , Iran war updates: Houthis fire missiles at Saudi Arabia",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Middle East Eye",
                 "title": "'Riyadh no longer feels safe': Houthi strikes shatter Saudi capital's aura of ca",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "UAE condemns Houthi attacks on Riyadh airport, expresses solidarity with Saudi A",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -706,8 +696,8 @@
           "selected_rank": 2,
           "headline": "Attacks on commercial vessels raise concerns over security in Strait of Hormuz",
           "rank_key": {
-            "outlets": 7,
-            "camps": 4,
+            "outlets": 6,
+            "camps": 3,
             "newest": "2026-10-14T09:28+00:00"
           },
           "outlet_names": [
@@ -716,16 +706,14 @@
             "Al-Akhbar",
             "IRNA",
             "Mehr News",
-            "N12",
             "SANA"
           ],
           "camps": [
-            "israeli",
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 8,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -764,33 +752,31 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Palestinian woman killed, others injured in Israeli strike on apartment in Gaza City",
+          "headline": "A Palestinian woman was killed and others were injured as the occupation army escalates its violatio",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-14T06:04+00:00"
+            "newest": "2026-10-14T05:18+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
-            "Falastin al-Youm",
-            "WAFA News"
+            "Falastin al-Youm"
           ],
           "camps": [
             "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Palestinian woman killed, others injured in Israeli strike on apartment in Gaza City",
-            "title_source": "native",
+            "source": "Falastin al-Youm",
+            "title": "A Palestinian woman was killed and others were injured as the occupation army escalates its violation of the…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
@@ -803,45 +789,33 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Israel kills Gazan woman, while settler violence plagues West Bank",
+          "headline": "Russia, Ukraine renew accusations concerning overnight strikes that kill 5",
           "rank_key": {
             "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-14T09:45+00:00"
+            "camps": 1,
+            "newest": "2026-10-14T09:53+00:00"
           },
           "outlet_names": [
-            "Daily Sabah",
-            "WAFA News"
+            "Anadolu Agency",
+            "Daily Sabah"
           ],
           "camps": [
-            "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Israel kills Gazan woman, while settler violence plagues West Bank",
+            "source": "Anadolu Agency",
+            "title": "Russia, Ukraine renew accusations concerning overnight strikes that kill 5",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "names 1 of the story's dominant entities (ukraine)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "At gunpoint: Colonists force farmers to leave their lands east of Tulkarm",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Colonist violence has become an organized colonial policy aimed at displacing Pa",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -877,41 +851,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Coalition says it intercepted, destroyed 5 drones and 6 missiles targeting Saudi Arabia",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-13T20:13+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Coalition says it intercepted, destroyed 5 drones and 6 missiles targeting Saudi Arabia",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "FM highlights Egypt’s efforts to de-escalate US-Iran tensions",
+          "headline": "Al-Azhar condemns Riyadh Airport attack, targeting of civilians, Umrah pilgrims",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-14T09:55+00:00"
+            "newest": "2026-10-14T10:05+00:00"
           },
           "outlet_names": [
             "Egypt Independent"
@@ -925,17 +869,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russia, Ukraine renew accusations concerning overnight strikes that kill 5",
+          "headline": "FM calls for further efforts to prevent regional conflict from widening",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-14T09:53+00:00"
+            "newest": "2026-10-14T10:00+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "Egypt Independent"
           ],
           "camps": [
-            "turkish"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -966,6 +910,42 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-14T09:48+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "At gunpoint: Colonists force farmers to leave their lands east of Tulkarm",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-14T09:45+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Colonist violence has become an organized colonial policy aimed at displacing Palestinians, official",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-14T09:43+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -1033,17 +1013,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "Egypt urges Iran to halt attacks on Saudi Arabia",
+          "headline": "Israel kills Gazan woman, while settler violence plagues West Bank",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-14T08:39+00:00"
+            "newest": "2026-10-14T08:22+00:00"
           },
           "outlet_names": [
-            "Egypt Independent"
+            "Daily Sabah"
           ],
           "camps": [
-            "levant"
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saudi Arabia intercepts four cruise missiles and five drones over Riyadh and southern region",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T20:13+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1068,61 +1066,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "IRGC kills terrorists, rescues kidnapped engineer in SE",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T16:12+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Syria, Jordan reaffirm ties, condemn attacks on Saudi Arabia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T14:24+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A 10-year-old boy in Tiberias found an unexploded missile in the street and played with it.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T13:44+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1140,7 +1084,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-14T10:01:36.387900+00:00",
+    "last_success": "2026-10-14T10:11:34.637508+00:00",
     "last_failure": null
   },
   "ok": true
