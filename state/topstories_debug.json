@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T05:41:57.195390+00:00",
+  "updated": "2026-10-14T06:14:17.179118+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-14T05:39:39.241353+00:00"
+      "headlines_updated": "2026-10-14T06:11:56.166557+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 14,
-        "title_snippet": 34,
+        "title_snippet": 33,
+        "dropped_no_english": 1,
         "title_translated": 1,
         "title_native": 77,
         "in": 126,
-        "kept": 112
+        "kept": 111
       },
       "translator": {
         "configured": true,
@@ -256,12 +257,17 @@
           "source": "TRT World",
           "title": "Türkiye, Egypt, Pakistan, Saudi Arabia issue joint condemnation of Houthi militia attacks",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "מד\"א: גבר נפצע קשה באירוע אלימות בעראבה",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 112,
-      "kept": 75,
+      "in": 111,
+      "kept": 74,
       "dropped": [
         {
           "source": "Kan 11",
@@ -273,13 +279,6 @@
         {
           "source": "Kan 11",
           "title": "A 9-month-old baby fell from a height in Ashkelon and is in critical condition.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "At a rally in Alaska, Trump declared, \"Wait and see what we do in Iran – we will do something serious there.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -342,7 +341,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , US ambassador to Greece resigns amid misconduct allegations",
+          "title": "4 , US ambassador to Greece Kimberley Guilfoyle resigns amid misconduct claims",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , OpenAI engineer charged after listening device found in meeting room",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -517,19 +523,19 @@
         },
         {
           "source": "TRT World",
-          "title": "IMF lowers China growth forecast to 4.5% amid global escalates",
+          "title": "Pope Leo diagnosed with lung cancer, had 'successful' surgery: Vatican",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 39,
       "sizes": [
         21,
-        5,
+        4,
         4,
         3,
         3,
@@ -537,8 +543,7 @@
         2,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -649,7 +654,7 @@
           "rank_key": {
             "outlets": 3,
             "camps": 3,
-            "newest": "2026-10-14T01:45+00:00"
+            "newest": "2026-10-13T23:50+00:00"
           },
           "outlet_names": [
             "Al Mayadeen",
@@ -661,7 +666,7 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -679,11 +684,6 @@
                 "source": "Al Mayadeen",
                 "title": "Occupied Palestine: Al Mayadeen correspondent reports that occupation forces sto",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli forces remove colonist-installed fence in Al-Farisiya following court ru",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -761,43 +761,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "US Treasury fines Bank of America more than $1.21B over money laundering and sanctions laws violatio",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-13T23:48+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "US Treasury fines Bank of America more than $1.21B over money laundering and sanctions laws violations",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , US fines Bank of America $1.2bn for money laundering, sanctions violations",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Occupied Palestine: Al Mayadeen correspondent reports that occupation aircraft targeted a residentia",
           "rank_key": {
             "outlets": 2,
@@ -873,6 +836,48 @@
         },
         {
           "selected_rank": null,
+          "headline": "Palestinian woman killed, others injured in Israeli strike on apartment in Gaza City",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-14T06:04+00:00"
+          },
+          "outlet_names": [
+            "Falastin al-Youm",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Palestinian woman killed, others injured in Israeli strike on apartment in Gaza City",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "One killed and others injured in Israeli strike on vehicle in al-Tuffah neighbor",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Falastin al-Youm",
+                "title": "Photos show the targeting of a car in Gaza City, resulting in the death of a cit",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "One person was killed and about 20 injured near the border with Lebanon due to the explosion of a cl",
           "rank_key": {
             "outlets": 2,
@@ -909,6 +914,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iran’s nuclear industry showcases export potential at Shiraz Expo 2026",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-14T06:07+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran, Oman foreign ministers discuss Yemen developments",
           "rank_key": {
             "outlets": 1,
@@ -921,7 +944,7 @@
           "camps": [
             "iranian"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -986,6 +1009,24 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-13T23:51+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US Treasury fines Bank of America more than $1.21B over money laundering and sanctions laws violatio",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T23:48+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1071,24 +1112,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "One killed and others injured in Israeli strike on vehicle in al-Tuffah neighborhood, east of Gaza C",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T21:14+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Four Road Security personnel martyred in attacks on two patrols in Hama countryside",
           "rank_key": {
             "outlets": 1,
@@ -1106,25 +1129,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Yemen's is not just a sectarian war",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T21:05+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1142,7 +1147,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-14T05:42:13.444208+00:00",
+    "last_success": "2026-10-14T06:14:30.391389+00:00",
     "last_failure": null
   },
   "ok": true
