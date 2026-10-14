@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T23:37:03.075961+00:00",
+  "updated": "2026-10-14T00:09:25.316603+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-13T23:34:43.031487+00:00"
+      "headlines_updated": "2026-10-14T00:07:02.201187+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 14,
-        "title_snippet": 35,
-        "title_native": 77,
+        "dropped_stale": 13,
+        "title_snippet": 32,
+        "dropped_no_english": 3,
+        "title_native": 78,
         "in": 126,
-        "kept": 112
+        "kept": 110
       },
       "translator": {
         "configured": true,
@@ -237,11 +238,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Tanker struck by unidentified projectile in Strait of Hormuz, UKMTO says",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "TRT World",
           "title": "At least 12 killed, 309 injured in Houthi militia attack on Riyadh's King Khalid airport",
           "reason": "stale (older than 48h)"
@@ -255,12 +251,27 @@
           "source": "TRT World",
           "title": "Türkiye, Egypt, Pakistan, Saudi Arabia issue joint condemnation of Houthi militia attacks",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בכיר בבית הלבן: הדיווחים על תקיפה אמריקנית באיראן לפני בחירות האמצע אינם נכונים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "סכנה בגן: בן 4 ששיחק עם קוביות בלע 37 מגנטים - והובהל לניתוח",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אוריך: \"ביבי מז**ן את המוח, שרה מבלבלת לי את הגויאבות\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 112,
-      "kept": 74,
+      "in": 110,
+      "kept": 75,
       "dropped": [
         {
           "source": "Kan 11",
@@ -299,13 +310,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "The best friend of Static is appearing on Reshet 13 to reconnect after three years.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "Reshet 13 is offering direct viewing of 'The Promised Land,' Season 1, Episode 5: 'Friday, First in the Land'.",
           "sec": 0,
           "off": 0,
@@ -326,29 +330,22 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Reshet 13 discusses whether the Haredim will remain loyal to Netanyahu, asking if there is an alternative and…",
+          "source": "Al Jazeera",
+          "title": "3 , US ambassador to Greece resigns amid misconduct allegations",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , US ambassador to Greece resigns amid misconduct allegations",
+          "title": "4 , Pope Leo diagnosed with cancer after surgery to remove part of lung",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , Pope Leo diagnosed with cancer after surgery to remove part of lung",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "4 , Why has search of Ilhan Omar’s home before US midterms caused controversy?",
+          "title": "5 , Why has search of Ilhan Omar’s home before US midterms caused controversy?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -473,13 +470,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Saudi Arabia issues all-clear in Riyadh minutes after emergency warning",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "One nation, two states: No room for discord",
           "sec": 0,
@@ -532,17 +522,20 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 42,
+      "clusters": 45,
       "sizes": [
-        16,
-        8,
+        15,
+        6,
         5,
+        4,
         2,
         2,
         2,
         2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -609,7 +602,7 @@
             "levant",
             "turkish"
           ],
-          "members": 16,
+          "members": 15,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -625,12 +618,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Houthis fire missile barrage at Saudi Arabia; Aramco building hit",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Trump says Houthis trying to increase oil prices before US elections",
+                "title": "1 , Iran war updates: Houthis fire missiles at Saudi Arabia",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -642,22 +630,26 @@
                 "source": "Middle East Eye",
                 "title": "Saudi Arabia refuses request from Netanyahu to join fight against Houthis, says ",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "UAE condemns Houthi attacks on Riyadh airport, expresses solidarity with Saudi A",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Container ship, tanker struck by unknown projectiles in Strait of Hormuz: UK maritime agency",
+          "headline": "Yet another oil tanker burns in flames in Strait of Hormuz",
           "rank_key": {
-            "outlets": 7,
-            "camps": 5,
-            "newest": "2026-10-13T19:39+00:00"
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-10-13T16:23+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Manar",
-            "Anadolu Agency",
             "Arab News",
             "IRNA",
             "Mehr News",
@@ -667,20 +659,19 @@
             "gulf",
             "panarab",
             "iranian",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 8,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Container ship, tanker struck by unknown projectiles in Strait of Hormuz: UK maritime agency",
+            "source": "Mehr News",
+            "title": "Yet another oil tanker burns in flames in Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -709,6 +700,46 @@
         },
         {
           "selected_rank": 3,
+          "headline": "4 Palestinians injured in Israeli military operations across occupied West Bank",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-13T23:49+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "4 Palestinians injured in Israeli military operations across occupied West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Mayadeen",
+                "title": "Occupation forces entered Ramallah and al-Bireh in the West Bank, according to r",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Child dies from injuries sustained in Israeli shelling in central Gaza Strip",
           "rank_key": {
             "outlets": 3,
@@ -752,83 +783,7 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Occupation forces demolish a house and greenhouses north of Jenin and erect a gate at the entrance t",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-13T22:40+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Occupation forces demolish a house and greenhouses north of Jenin and erect a gate at the entrance to Arraba",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Mayadeen",
-                "title": "Occupation forces entered Ramallah and al-Bireh in the West Bank, according to r",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
           "selected_rank": 5,
-          "headline": "Ukraine received no prior warning of Russian attack on Kyiv’s energy infrastructure: Zelenskyy",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-13T22:11+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Ukraine received no prior warning of Russian attack on Kyiv’s energy infrastructure: Zelenskyy",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Trump’s Russia-Ukraine ’energy ceasefire’ sparks confusion",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Syria, Jordan reaffirm ties, condemn attacks on Saudi Arabia",
           "rank_key": {
             "outlets": 2,
@@ -932,47 +887,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Occupation forces detain youth during raid in Tubas",
+          "headline": "Palestinian factions to hold preparatory talks in Cairo ahead of broader dialogue",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-13T23:10+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A missile was intercepted in the Al-Kharj region of Saudi Arabia.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T22:49+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "4 injured, 15 homes damaged by debris from intercepted missiles in Saudi capital",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-13T22:43+00:00"
+            "newest": "2026-10-13T23:57+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -986,11 +905,47 @@
         },
         {
           "selected_rank": null,
-          "headline": "Colonists attack Ramallah-area town to prevent residents from reaching lands",
+          "headline": "Netanyahu rejects return of displaced Palestinians to northern West Bank refugee camps",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-13T22:30+00:00"
+            "newest": "2026-10-13T23:51+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US Treasury fines Bank of America more than $1.21B over money laundering and sanctions laws violatio",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T23:48+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Colonists attack olive pickers in Beit Amarin, north of Nablus, and force them to leave their lands",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-13T23:35+00:00"
           },
           "outlet_names": [
             "WAFA News"
@@ -1147,7 +1102,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1165,7 +1120,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-13T23:37:35.939641+00:00",
+    "last_success": "2026-10-14T00:09:39.511126+00:00",
     "last_failure": null
   },
   "ok": true
