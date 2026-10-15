@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T22:20:27.004357+00:00",
+  "updated": "2026-10-15T22:52:38.516698+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-15T22:17:44.836155+00:00"
+      "headlines_updated": "2026-10-15T22:50:07.772974+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 34,
+        "title_snippet": 31,
         "title_translated": 1,
+        "dropped_no_english": 3,
         "title_native": 87,
         "in": 126,
-        "kept": 122
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -206,12 +207,27 @@
           "source": "TRT World",
           "title": "Pope Leo diagnosed with lung cancer, had 'successful' surgery: Vatican",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "אסנהיים, עונה 1, פרק 19: גדי איזנקוט לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: مراسل الميادين: شهيد برصاص قوات الاحتلال في مخيم جباليا شمالي قطاع غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "بالفيديو | بعد إعلان وفاتها بـ8 ساعات.. مراهقة غواتيمالية تستفيق داخل نعشها خلال مراسم عزائها 13:50",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 73,
+      "in": 119,
+      "kept": 71,
       "dropped": [
         {
           "source": "N12",
@@ -242,22 +258,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Omer Adam broke records with tens of thousands of Israelis attending his major concert.",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
-          "title": "3 , Trump administration seeks to strip Ilhan Omar of US citizenship: WSJ",
+          "title": "3 , Israeli ad-tech firm helped place spyware on Al Jazeera devices",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Israeli ad-tech firm helped place spyware on Al Jazeera devices",
+          "title": "4 , Trump administration seeks to strip Ilhan Omar of US citizenship: WSJ",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -300,13 +309,6 @@
         {
           "source": "Al Mayadeen",
           "title": "The Knesset's inability to secure a majority suggests a potential period of political deadlock.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Iran's Hatami stated that if Iran's infrastructure is threatened, the enemy's infrastructure and interests…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -474,7 +476,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "15 major US media organizations move to unseal search warrant records for Rep. Ilhan Omar’s home",
+          "title": "US investigates 'suspicious mailings' sent to election offices across multiple states",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "France braces for nationwide cost-of-living protests Saturday",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -560,9 +569,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 40,
       "sizes": [
-        9,
+        7,
+        4,
         4,
         4,
         4,
@@ -570,12 +580,10 @@
         3,
         3,
         3,
-        3,
         2,
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -612,19 +620,17 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "5 killed in Yemen palace strike as Houthis claim hit on Saudi jet",
+          "headline": "Why have Saudi air defences failed to intercept Houthi missiles?",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 6,
             "camps": 5,
-            "newest": "2026-10-15T21:07+00:00"
+            "newest": "2026-10-14T20:30+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Arab News",
-            "Daily Sabah",
             "Iran International",
             "Jordan Times",
-            "L'Orient Today",
             "Middle East Eye",
             "TRT World"
           ],
@@ -635,7 +641,63 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 7,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Middle East Eye",
+            "title": "Why have Saudi air defences failed to intercept Houthi missiles?",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "One person wounded in Riyadh by debris from intercepted Houthi missile: Civil de",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Saudi air defenses intercept Houthi missile over Riyadh",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Missile debris rains on Riyadh, injuring four and damaging 15 homes amid Houthi ",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "3 Trump says Iran decision coming, suggests Tehran behind Houthi attacks",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "5 killed in Yemen palace strike as Houthis claim hit on Saudi jet",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-15T21:07+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Arab News",
+            "Daily Sabah"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "turkish"
+          ],
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -650,30 +712,20 @@
             ],
             "passed_over": [
               {
-                "source": "Middle East Eye",
-                "title": "Why have Saudi air defences failed to intercept Houthi missiles?",
+                "source": "Al Jazeera",
+                "title": "1 , Five killed and 16 wounded in Houthi attack on presidential palace in Aden",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Al Arabiya",
-                "title": "One person wounded in Riyadh by debris from intercepted Houthi missile: Civil de",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Jordan Times",
-                "title": "Coalition destroys Houthi missile targeting Riyadh, four injured from debris — S",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Saudi air defenses intercept Houthi missile over Riyadh",
+                "title": "Houthi attack on presidential palace in Yemen’s Aden kills four",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Two cargo ships sunk in Strait of Hormuz as Iran ramps up attacks in run-up to midterms",
           "rank_key": {
             "outlets": 4,
@@ -719,7 +771,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "US military weighs use of ’mother of all bombs’ on Iran: CNN",
           "rank_key": {
             "outlets": 4,
@@ -753,7 +805,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 5,
           "headline": "Israeli rights groups report 22 accounts of prisoners being shot by guards",
           "rank_key": {
             "outlets": 3,
@@ -786,45 +838,6 @@
               {
                 "source": "Arab News",
                 "title": "Palestinian prisoners shot at close range in Israeli detention, rights groups sa",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Houthi attack on presidential palace in Yemen’s Aden kills four",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-15T17:19+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Houthi attack on presidential palace in Yemen’s Aden kills four",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Five killed and 16 wounded in Houthi attack on presidential palace in Aden",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1036,12 +1049,12 @@
             "passed_over": [
               {
                 "source": "L'Orient Today",
-                "title": "HEZBOLLAH Hezbollah claims ownership of seized explosives and warns opponents ag",
+                "title": "SURVEY State arms monopoly, deal with Israel: Hezbollah loses ground among Leban",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "L'Orient Today",
-                "title": "SURVEY State arms monopoly, deal with Israel: Hezbollah loses ground among Leban",
+                "title": "HEZBOLLAH Hezbollah claims ownership of seized explosives and warns opponents ag",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1138,24 +1151,6 @@
             ],
             "passed_over": []
           }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Turkish foreign minister says Türkiye-Azerbaijan ties built on 'unshakable' friendship, brotherhood",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-15T22:05+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1356,7 +1351,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "One Palestinian killed, others injured in Israeli strike on Gaza",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-15T11:26+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1374,7 +1387,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-15T22:20:50.228981+00:00",
+    "last_success": "2026-10-15T22:52:52.967458+00:00",
     "last_failure": null
   },
   "ok": true
