@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T18:22:09.183610+00:00",
+  "updated": "2026-10-15T18:41:10.157841+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-15T18:19:47.941971+00:00"
+      "headlines_updated": "2026-10-15T18:38:38.101180+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 34,
-        "title_translated": 1,
+        "title_snippet": 31,
+        "dropped_no_english": 4,
         "title_native": 85,
         "in": 126,
-        "kept": 120
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -216,12 +216,32 @@
           "source": "Arab News",
           "title": "Israel turns back Ethiopian Airlines cargo flight over pilot’s nationality, reports say",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "חשד לרצח בצפון: גבר כבן 40 אותר ללא רוח חיים סמוך למחלף גולני",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "חשד לרצח: גבר אותר ללא רוח חיים בשטח פתוח ליד צומת גולני",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "בניין בשיפוץ קרס בתל אביב, אין נפגעים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "\"فايننشال تايمز\" تكشف استخدام شركة إسرائيلية إعلانات الإنترنت للتجسس",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 78,
+      "in": 116,
+      "kept": 76,
       "dropped": [
         {
           "source": "N12",
@@ -233,20 +253,6 @@
         {
           "source": "Channel 13",
           "title": "A fatal accident in the north resulted in the death of a bus driver and serious injury to a truck driver.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Netanyahu revealed he spoke with Syrian President Bashar al-Assad but could not disclose details.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -274,14 +280,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "How France’s far-right uses Israel to whitewash its antisemitism",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Hosni Muhelli questioned whether Turkey will maintain its strained relations with Ilham Aliyev or retract…",
+          "title": "Netanyahu claims spoke with Syria’s Sharaa on Druze violence",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -302,14 +301,14 @@
         },
         {
           "source": "IRNA",
-          "title": "Baqaei extends condolences over death of Pakistani students and teachers",
+          "title": "Iranian ambassador meets with Tajikistan’s minister of transport; emphasizes expansion of cooperation",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "IRNA",
-          "title": "Iran calls for stronger regional transport and rail cooperation",
+          "title": "Baqaei extends condolences over death of Pakistani students and teachers",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -448,6 +447,20 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Poland launches security review of broadcaster takeover by Trump-linked US media giant",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Anthropic asked to delay IPO over AI security concerns",
+          "sec": 0,
+          "off": 3,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Lagarde reportedly nears WEF chair role, triggering ECB succession race",
           "sec": 0,
@@ -457,13 +470,6 @@
         {
           "source": "Daily Sabah",
           "title": "PM Carney urges Canadian unity ahead of Alberta secession vote",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Gaza rejects truck taxes, urges Israel to allow 600 daily deliveries",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -524,16 +530,16 @@
       "clusters": 46,
       "sizes": [
         11,
-        8,
-        5,
+        7,
         4,
         4,
+        3,
         2,
         2,
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -639,15 +645,14 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iran reports another oil tanker fire in restricted area east of Strait of Hormuz",
+          "headline": "Army Navy spots burning oil tanker in restricted area of Strait of Hormuz",
           "rank_key": {
-            "outlets": 6,
-            "camps": 4,
-            "newest": "2026-10-15T15:37+00:00"
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-10-15T15:07+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Anadolu Agency",
             "Egypt Independent",
             "IRNA",
             "Iran International",
@@ -656,20 +661,19 @@
           "camps": [
             "panarab",
             "iranian",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 8,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran reports another oil tanker fire in restricted area east of Strait of Hormuz",
+            "source": "IRNA",
+            "title": "Army Navy spots burning oil tanker in restricted area of Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -746,7 +750,7 @@
           "camps": [
             "israeli"
           ],
-          "members": 5,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -760,18 +764,8 @@
             ],
             "passed_over": [
               {
-                "source": "Kan 11",
-                "title": "A second person injured in the explosion at the Intel factory in Kiryat Gat has ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "N12",
                 "title": "Yikir Kosshoyeli and Ilya Chechulin are identified as the fatalities from the ex",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "N12",
-                "title": "One person has died and two others are seriously injured following a truck explo",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -811,6 +805,44 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russian Drone Strike Hits Supermarket in Ukraine’s Odesa",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-15T15:06+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Russian Drone Strike Hits Supermarket in Ukraine’s Odesa",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al-Akhbar",
+                "title": "Washington is reportedly discussing easing sanctions on Moscow, while Ukraine an",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -982,11 +1014,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "US Navy deploys carrier strike group with uncrewed vessel for 1st time: Acting secretary",
+          "headline": "Lebanon presses US to push Israel for halt to attacks",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-15T18:15+00:00"
+            "newest": "2026-10-15T18:19+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1000,11 +1032,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Albanian students clash with police for 3rd consecutive day",
+          "headline": "US Navy deploys carrier strike group with uncrewed vessel for 1st time: Acting secretary",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-15T18:12+00:00"
+            "newest": "2026-10-15T18:15+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1180,14 +1212,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran’s military says oil tanker on fire in Gulf of Oman",
+          "headline": "What is the ’mother of all bombs’ the US could use against Iran?",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-15T13:19+00:00"
+            "newest": "2026-10-15T12:00+00:00"
           },
           "outlet_names": [
-            "Al Arabiya"
+            "The New Arab"
           ],
           "camps": [
             "panarab"
@@ -1197,7 +1229,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1215,7 +1247,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-15T18:22:10.240764+00:00",
+    "last_success": "2026-10-15T18:41:37.351768+00:00",
     "last_failure": null
   },
   "ok": true
