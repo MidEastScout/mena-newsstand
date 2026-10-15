@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T09:33:05.967426+00:00",
+  "updated": "2026-10-15T09:53:57.990610+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-15T09:30:24.433829+00:00"
+      "headlines_updated": "2026-10-15T09:51:42.906532+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 34,
+        "title_snippet": 28,
+        "dropped_no_english": 6,
         "title_translated": 1,
         "title_native": 87,
         "in": 126,
-        "kept": 122
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -206,12 +207,42 @@
           "source": "Gulf News",
           "title": "Iran’s forgotten southeast front erupts: 94 dead in 6 months of violence as armed attacks intensify",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רוכב אופנוע נפצע קשה במהלך רכיבה בכביש 60, סמוך לצומת ג'ית",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "האסון בקריית גת: נקבע מותו של פצוע נוסף מהפיצוץ במפעל אינטל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "החתונה של אלעד צפני -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: هيئة علماء فلسطين: ندعو السلطات الأذربيجانية لمراجعة هذه الإجراءات والتراجع عن كل تطبيق يحرم الطالبة الم",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "واشنطن تبحث تخفيف العقوبات عن موسكو... وأوكرانيا تعلن استئناف الهجمات على مصافي النفط الروسية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "صحة غزة تُحذر من استمرار إغلاق معبر رفح أمام المرضى",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 73,
+      "in": 116,
+      "kept": 70,
       "dropped": [
         {
           "source": "N12",
@@ -235,20 +266,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "On the subject of Netanyahu, Eizenkot stated that during stressful situations, Netanyahu enters a panic…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Netanyahu's political standing has weakened, with significant shifts occurring, altering the bloc's map.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "2 , Trump administration seeks to strip Ilhan Omar of US citizenship: WSJ",
           "sec": 0,
@@ -258,6 +275,13 @@
         {
           "source": "Al Jazeera",
           "title": "3 , Backlash in Kashmir over proposal for uniform Friday sermons across mosques",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Clock ticking for leap second: Why timekeeping could change forever",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -319,8 +343,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The article analyzes Netanyahu's recent strategies, suggesting a focus on security to maintain power.",
+          "source": "IRNA",
+          "title": "Health must never be used as political leverage: Iranian official",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -419,13 +443,6 @@
         {
           "source": "SANA",
           "title": "Syria signs deal to rehabilitate and operate six grain mills",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Gold prices in Syria fall by 100 pounds per gram as global bullion rebounds",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -548,23 +565,15 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Trump says Qatar offered to gift US a 747 jet after he sought to 'borrow' one",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 41,
       "sizes": [
-        10,
-        5,
-        4,
+        8,
+        7,
         4,
         4,
         3,
@@ -572,9 +581,8 @@
         3,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
+        2,
         1,
         1,
         1,
@@ -614,83 +622,28 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Two cargo ships sunk in Strait of Hormuz as Iran ramps up attacks in run-up to midterms",
+          "headline": "Saudi coalition fighting Houthis intercepts missile near Medina",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 4,
-            "newest": "2026-10-15T08:57+00:00"
+            "newest": "2026-10-15T09:08+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Al Jazeera",
-            "Egypt Independent",
-            "Gulf News",
-            "IRNA",
-            "Iran International"
+            "Al Manar",
+            "Arab News",
+            "Daily Sabah",
+            "Jordan Times",
+            "L'Orient Today",
+            "TRT World"
           ],
           "camps": [
             "gulf",
             "panarab",
-            "iranian",
-            "levant"
-          ],
-          "members": 10,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "Two cargo ships sunk in Strait of Hormuz as Iran ramps up attacks in run-up to midterms",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Iran war updates: Cargo ships sunk in Hormuz, Houthis claim Riyadh attack",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Iran’s IRGC say container ship sinks in Strait of Hormuz after hitting mine",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Container ship sinks near Hormuz after being hit by projectile",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Arabiya",
-                "title": "Container ship struck by unknown projectile in Strait of Hormuz, UKMTO says",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Saudi coalition fighting Houthis intercepts missile near Medina",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-15T09:08+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Arab News",
-            "Daily Sabah",
-            "Jordan Times"
-          ],
-          "camps": [
-            "gulf",
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -705,24 +658,82 @@
             ],
             "passed_over": [
               {
+                "source": "Al Arabiya",
+                "title": "One person wounded in Riyadh by debris from intercepted Houthi missile: Civil de",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Jordan Times",
                 "title": "Coalition destroys Houthi missile targeting Riyadh, four injured from debris — S",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Manar",
-                "title": "Yemeni military media displayed footage of repelling Saudi forces' gatherings in",
+                "source": "TRT World",
+                "title": "Missile debris rains on Riyadh, injuring four and damaging 15 homes amid Houthi ",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Manar",
-                "title": "Media platforms shared footage purportedly showing the fall of a Yemeni missile ",
+                "source": "L'Orient Today",
+                "title": "Israel threatens attacks on Beirut's southern suburbs; Houthis strike Aramco hea",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Two cargo ships sunk in Strait of Hormuz as Iran ramps up attacks in run-up to midterms",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 4,
+            "newest": "2026-10-15T08:57+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Egypt Independent",
+            "Gulf News",
+            "IRNA",
+            "Iran International"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian",
+            "levant"
+          ],
+          "members": 7,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Two cargo ships sunk in Strait of Hormuz as Iran ramps up attacks in run-up to midterms",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Iran’s IRGC say container ship sinks in Strait of Hormuz after hitting mine",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Arab News",
-                "title": "Yemeni forces vow to break Houthi siege of Taiz, hail Saudi support",
+                "source": "Al Arabiya",
+                "title": "Container ship sinks near Hormuz after being hit by projectile",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Ship carrying 2,500 containers hits mine, sinks south of Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "ANALYSIS Iran escalates Hormuz tanker attacks in gamble ahead of US midterms",
+                "rejected_by": "stale anticipatory framing"
               }
             ]
           }
@@ -763,52 +774,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Saudi Arabia trades strikes with Yemen, threatens Houthis",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-14T19:28+00:00"
-          },
-          "outlet_names": [
-            "Iran International",
-            "L'Orient Today",
-            "Middle East Eye",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Saudi Arabia trades strikes with Yemen, threatens Houthis",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "3 Houthi airport strikes carry echoes of Iran’s aviation threats, experts say",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "Israel threatens attacks on Beirut's southern suburbs; Houthis strike Aramco hea",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "28 killed in school roof collapse in northwestern Pakistan",
           "rank_key": {
             "outlets": 3,
@@ -840,7 +805,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Palestinian killed, others injured in Israeli strikes, gunfire in Gaza",
           "rank_key": {
             "outlets": 3,
@@ -885,39 +850,77 @@
         },
         {
           "selected_rank": null,
-          "headline": "The US military has prepared strike plans targeting Iran's energy infrastructure and nuclear facilit",
+          "headline": "Saudi Arabia trades strikes with Yemen, threatens Houthis",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-10-15T04:43+00:00"
+            "newest": "2026-10-14T19:28+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Kan 11",
-            "N12"
+            "Iran International",
+            "Middle East Eye",
+            "The New Arab"
           ],
           "camps": [
-            "israeli",
-            "levant"
+            "panarab",
+            "iranian"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "The US military has prepared strike plans targeting Iran's energy infrastructure and nuclear facilities.",
-            "title_source": "snippet",
+            "source": "The New Arab",
+            "title": "Saudi Arabia trades strikes with Yemen, threatens Houthis",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al-Akhbar",
-                "title": "Iran is fortifying its nuclear facilities amidst intensified attacks in the Horm",
+                "source": "Iran International",
+                "title": "3 Houthi airport strikes carry echoes of Iran’s aviation threats, experts say",
                 "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Aleppo military court sentences two defendants to death over coastal violations",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-15T09:43+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "SANA",
+            "title": "Aleppo military court sentences two defendants to death over coastal violations",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Syrian court sentences two to death over 2025 coastal massacre",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -1028,6 +1031,55 @@
         },
         {
           "selected_rank": null,
+          "headline": "The US military has prepared strike plans targeting Iran's energy infrastructure and nuclear facilit",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-15T04:43+00:00"
+          },
+          "outlet_names": [
+            "Kan 11",
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "The US military has prepared strike plans targeting Iran's energy infrastructure and nuclear facilities.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Top Russian, Chinese diplomats discuss bilateral ties, wars in Ukraine, Iran during talks in Baku",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-15T09:47+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "IMF, World Bank launch global roadmap to combat online financial fraud",
           "rank_key": {
             "outlets": 1,
@@ -1057,24 +1109,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "President Herzog was compelled to fly on an Azerbaijani plane to transit through Turkish airspace.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-15T08:25+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1136,24 +1170,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "News 13 | News - All the news and updates from Israel and around the world",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-15T07:29+00:00"
-          },
-          "outlet_names": [
-            "Channel 13"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The Prisoners' Affairs Authority reported that approximately 80 individuals released in exchange dea",
           "rank_key": {
             "outlets": 1,
@@ -1190,6 +1206,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "News 13 | News - All the news and updates from Israel and around the world",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-15T06:25+00:00"
+          },
+          "outlet_names": [
+            "Channel 13"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "A UN warning has been issued regarding the continuation of Israeli aggression on Gaza despite a ceas",
           "rank_key": {
             "outlets": 1,
@@ -1208,14 +1242,32 @@
         },
         {
           "selected_rank": null,
-          "headline": "After four months of destruction, the 99th Division's mission in the northern Gaza Strip has conclud",
+          "headline": "A rifle jammed. A suspected attack failed: US police investigate alleged Hindu temple shooting plot",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-15T06:07+00:00"
+            "newest": "2026-10-15T04:09+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm"
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Kuwait condemns Colombia’s opening of embassy in occupied Jerusalem",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-14T23:21+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
           ],
           "camps": [
             "levant"
@@ -1225,25 +1277,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "US considering using ‘mother of all bombs’ against Iran: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-15T04:53+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1261,7 +1295,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-15T09:33:35.317066+00:00",
+    "last_success": "2026-10-15T09:54:24.396584+00:00",
     "last_failure": null
   },
   "ok": true
