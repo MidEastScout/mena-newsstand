@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T16:52:09.079491+00:00",
+  "updated": "2026-10-16T17:24:40.203508+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-16T16:49:50.745845+00:00"
+      "headlines_updated": "2026-10-16T17:22:24.439027+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 34,
+        "dropped_stale": 7,
+        "title_snippet": 31,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 84,
+        "dropped_no_english": 3,
         "in": 126,
-        "kept": 120
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -190,6 +191,11 @@
         {
           "source": "Middle East Eye",
           "title": "Colombia opens embassy in West Jerusalem as new president embraces Israel",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Sally Rooney’s books pulled from UK amid Palestine Action ban",
           "reason": "stale (older than 48h)"
         },
         {
@@ -216,12 +222,27 @@
           "source": "TRT World",
           "title": "Palestine, Saudi Arabia, Jordan slam Colombia's opening of embassy in West Jerusalem",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: سعيد خطيب زاده: الكيان المحتل هو ابن ووليد الولايات المتحدة في المنطقة ونعتبر ان السيطرة على هذا الكيان تقع على ع",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اليمن بعيون صُنّاع المحتوى.. تطورات الميدان وأصداؤها على المنصات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "بلدية غزة تحذر من السباحة بسبب ارتفاع الأمواج واشتداد التيارات البحرية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 69,
+      "in": 116,
+      "kept": 70,
       "dropped": [
         {
           "source": "Kan 11",
@@ -287,13 +308,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "4 , Why is China buying up gold?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Sally Rooney's books to be withdrawn from sale in UK over Palestine Action support",
           "sec": 0,
@@ -308,29 +322,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Trump on Zelenskyy: Not a Good Guy to Deal With",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "The New Arab",
           "title": "What is the ’mother of all bombs’ the US could use against Iran?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Qatar announces project to develop Lebanon’s electricity sector",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Indian police warn ’Cockroach’ movement founder over protest",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -365,7 +358,7 @@
         },
         {
           "source": "Mehr News",
-          "title": "Iran urges UK not to conceal its insecurity role in West Asia",
+          "title": "US claim on collapse of Iranian economy not realized",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -490,13 +483,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "An official report monitors the collapse of the food and health systems in Gaza.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Syria extends condolences to Pakistan after deadly school collapse in Peshawar",
           "sec": 0,
@@ -533,14 +519,14 @@
         },
         {
           "source": "Daily Sabah",
-          "title": "Türkiye to account for 20% of Europe-CIS aircraft demand: Airbus",
+          "title": "Putin supports Vatican aid initiative for civilians in Ukraine",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
-          "title": "Rare barn owl family captivates New Yorkers near Central Park",
+          "title": "Türkiye to account for 20% of Europe-CIS aircraft demand: Airbus",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -584,10 +570,9 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 36,
+      "clusters": 38,
       "sizes": [
-        7,
-        5,
+        8,
         4,
         4,
         4,
@@ -595,10 +580,13 @@
         4,
         3,
         3,
+        3,
         2,
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -651,7 +639,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -690,84 +678,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Israeli-enforced starvation persists in Gaza despite ceasefire",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-10-16T16:14+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Anadolu Agency",
-            "Falastin al-Youm",
-            "TRT World",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Israeli-enforced starvation persists in Gaza despite ceasefire",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Russian strikes kill six in Ukraine, cut power to 370,000 in Volyn region",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-10-16T15:55+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Gulf News",
-            "N12",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Russian strikes kill six in Ukraine, cut power to 370,000 in Volyn region",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Gulf News",
-                "title": "Trump calls renewed Ukraine attacks on Russian refineries 'a disgrace'",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
           "headline": "Russia, US eye new joint projects as diesel deal faces sanctions hurdles",
           "rank_key": {
             "outlets": 4,
@@ -806,7 +716,7 @@
               },
               {
                 "source": "Al Jazeera",
-                "title": "2 , Trump rules out using a nuclear bomb on Iran: Why that matters",
+                "title": "3 , Trump rules out using a nuclear bomb on Iran: Why that matters",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -818,7 +728,42 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": 3,
+          "headline": "Israeli drone fire kills Palestinian in northwestern Gaza despite ceasefire",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-16T16:14+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen",
+            "Anadolu Agency",
+            "Falastin al-Youm",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Israeli drone fire kills Palestinian in northwestern Gaza despite ceasefire",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Türkiye and 18 other countries condemn Colombia's West Jerusalem embassy opening",
           "rank_key": {
             "outlets": 4,
@@ -852,7 +797,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "US military weighs use of ’mother of all bombs’ on Iran: CNN",
           "rank_key": {
             "outlets": 4,
@@ -883,6 +828,46 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "German chancellor defends Ukraine’s strikes on Russian refineries",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-16T17:13+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Gulf News",
+            "SANA"
+          ],
+          "camps": [
+            "gulf",
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "German chancellor defends Ukraine’s strikes on Russian refineries",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Gulf News",
+                "title": "Trump calls renewed Ukraine attacks on Russian refineries 'a disgrace'",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1119,6 +1104,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Avoiding sanctions, Lebanon revokes Bank Saderat Iran’s license",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-16T17:09+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The Wall Street Journal revealed the story of Lev Stupnikov, a Russian officer who became an intelli",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-16T15:55+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Türkiye, Cambodia sign military coop. deal as Erdoğan hails growing ties",
           "rank_key": {
             "outlets": 1,
@@ -1142,42 +1163,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-16T15:29+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli army launches airstrikes, artillery shelling, demolitions in southern Lebanon",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-16T14:29+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Escalation between Sanaa and Riyadh: Where is the confrontation heading?",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-16T14:29+00:00"
           },
           "outlet_names": [
             "Al Mayadeen"
@@ -1245,24 +1230,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli guards ‘crushed’ Palestinian prisoner’s testicle with rubber bullet",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-16T09:51+00:00"
-          },
-          "outlet_names": [
-            "Middle East Eye"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Egypt halts Sudan truck transit following fatal shooting of two Egyptian drivers",
           "rank_key": {
             "outlets": 1,
@@ -1292,6 +1259,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saudi Arabia welcomes UN Security Council condemnation of Houthi attacks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-16T09:10+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1334,7 +1319,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1352,7 +1337,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-16T16:52:39.162865+00:00",
+    "last_success": "2026-10-16T17:24:52.381621+00:00",
     "last_failure": null
   },
   "ok": true
