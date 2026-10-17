@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T18:09:31.070601+00:00",
+  "updated": "2026-10-17T18:41:54.524956+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-17T18:07:12.255284+00:00"
+      "headlines_updated": "2026-10-17T18:39:23.486910+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
-        "title_snippet": 34,
+        "dropped_stale": 8,
+        "title_snippet": 31,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 83,
+        "dropped_no_english": 3,
         "in": 126,
-        "kept": 120
+        "kept": 115
       },
       "translator": {
         "configured": true,
@@ -190,6 +191,11 @@
         {
           "source": "The New Arab",
           "title": "US military weighs use of ’mother of all bombs’ on Iran: CNN",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Israeli settlers set fire to mosque in occupied West Bank",
           "reason": "stale (older than 48h)"
         },
         {
@@ -213,15 +219,35 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "Trump halts livestream plan for Fort Hood shooter’s execution",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "US weighs using 'Mother of All Bombs' in potential strikes on Iran: report",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "غضب في فرنسا.. أوروبا تواجه أزماتها",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فرنسا: وزير الداخلية الفرنسي: 550 ألفاً تظاهروا ضد غلاء المعيشة في البلاد بينهم 110 آلاف في باريس",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«الفيتو» يعقّد اختيار أمين عام جديد للأمم المتحدة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 63,
+      "in": 115,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -476,13 +502,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Direct flights to the United States will not be possible for at least two years, as Beirut Airport is deemed…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Astronomers have observed a green star, a rare phenomenon in space, and documented dense stellar remnants…",
           "sec": 0,
@@ -546,15 +565,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "White House shake-up: Trump fires Zacharia as press secretary after five days",
+          "source": "Anadolu Agency",
+          "title": "Egyptian parliament to discuss authorizing action to defend Saudi Arabia if requested",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "Egyptian parliament to discuss authorizing action to defend Saudi Arabia if requested",
+          "title": "Kenya confirms 4 new Ebola cases, including 3 health workers, raising total to 7",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -572,13 +591,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Gaza shelter crisis deepens as millions face winter rains, floods",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Hürriyet Daily News",
@@ -626,21 +638,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 36,
+      "clusters": 33,
       "sizes": [
         6,
         5,
         5,
+        5,
         4,
         4,
-        3,
-        3,
         2,
         2,
         2,
         2,
-        1,
-        1,
         1,
         1,
         1,
@@ -673,57 +682,57 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Iran’s IRGC says 2nd supertanker hits naval mine in Strait of Hormuz",
+          "headline": "Trump waives new Russia sanctions as rift with Ukraine deepens",
           "rank_key": {
             "outlets": 5,
-            "camps": 3,
-            "newest": "2026-10-17T13:41+00:00"
+            "camps": 4,
+            "newest": "2026-10-17T18:21+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Al Jazeera",
-            "Anadolu Agency",
-            "IRNA",
-            "Mehr News"
+            "Daily Sabah",
+            "Egypt Independent",
+            "Gulf News",
+            "TRT World"
           ],
           "camps": [
+            "gulf",
             "panarab",
-            "iranian",
+            "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran’s IRGC says 2nd supertanker hits naval mine in Strait of Hormuz",
+            "source": "TRT World",
+            "title": "Trump waives new Russia sanctions as rift with Ukraine deepens",
             "title_source": "native",
             "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
+              "names 1 of the story's dominant entities (ukraine)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Five tankers reported hit in Hormuz, drones intercepted over Riyadh",
+                "title": "5 , Trump faces bipartisan backlash over Russia sanctions waiver",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Tanker explodes after hitting mine in Strait of Hormuz: Iran’s IRGC",
+                "source": "Egypt Independent",
+                "title": "Trump waives Russia-related sanctions before they even kick in as Ukraine ties w",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "IRNA",
-                "title": "Oil supertanker catches fire after striking mine in Strait of Hormuz: IRGC Navy",
+                "source": "Gulf News",
+                "title": "Trump calls renewed Ukraine attacks on Russian refineries 'a disgrace'",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Mehr News",
-                "title": "Oil tanker explodes in Hormuz after hitting naval mine: IRGC",
-                "rejected_by": "older than the story's newest wave"
+                "source": "Daily Sabah",
+                "title": "Zelenskyy warns Trump sanctions waiver risks fueling Russian aggression",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -732,13 +741,14 @@
           "selected_rank": 2,
           "headline": "Illegal Israeli settlers attack European delegation in West Bank",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 3,
             "newest": "2026-10-17T16:03+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
             "Daily Sabah",
+            "TRT World",
             "The New Arab",
             "WAFA News"
           ],
@@ -747,7 +757,7 @@
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -773,12 +783,12 @@
               },
               {
                 "source": "Anadolu Agency",
-                "title": "Belgium condemns attack by Israeli occupiers on Palestinians, diplomats in West ",
+                "title": "Israeli occupiers attack European diplomatic delegation in occupied West Bank",
                 "rejected_by": "loaded/partisan wording"
               },
               {
                 "source": "Anadolu Agency",
-                "title": "Israeli occupiers attack European diplomats in occupied West Bank",
+                "title": "Belgium condemns attack by Israeli occupiers on Palestinians, diplomats in West ",
                 "rejected_by": "loaded/partisan wording"
               }
             ]
@@ -824,7 +834,7 @@
               },
               {
                 "source": "Al Arabiya",
-                "title": "Saudi Arabia welcomes UN Security Council condemnation of Houthi attacks",
+                "title": "Iran is backing and encouraging escalated Houthi attacks: Senior Saudi diplomat",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -877,39 +887,54 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Trump waives new Russia sanctions as rift with Ukraine deepens",
+          "headline": "Second supertanker explodes after hitting mine in Strait of Hormuz: IRGC Navy",
           "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-17T12:19+00:00"
+            "outlets": 4,
+            "camps": 2,
+            "newest": "2026-10-17T13:41+00:00"
           },
           "outlet_names": [
-            "Egypt Independent",
-            "Gulf News",
-            "TRT World"
+            "Al Arabiya",
+            "Al Jazeera",
+            "IRNA",
+            "Mehr News"
           ],
           "camps": [
-            "gulf",
-            "levant",
-            "turkish"
+            "panarab",
+            "iranian"
           ],
-          "members": 3,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "TRT World",
-            "title": "Trump waives new Russia sanctions as rift with Ukraine deepens",
+            "source": "IRNA",
+            "title": "Second supertanker explodes after hitting mine in Strait of Hormuz: IRGC Navy",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Gulf News",
-                "title": "Trump calls renewed Ukraine attacks on Russian refineries 'a disgrace'",
+                "source": "Al Jazeera",
+                "title": "1 , Five tankers reported hit in Hormuz, drones intercepted over Riyadh",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Tanker explodes after hitting mine in Strait of Hormuz: Iran’s IRGC",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Oil supertanker catches fire after striking mine in Strait of Hormuz: IRGC Navy",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Oil tanker explodes in Hormuz after hitting naval mine: IRGC",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -960,49 +985,6 @@
                 "source": "Falastin al-Youm",
                 "title": "The Ministry of Education mourns the martyred student Mohammed Abu Hammad and ca",
                 "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Russia hails Trump waiving sanctions as 'historic'",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-17T14:57+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Gulf News",
-            "Jordan Times"
-          ],
-          "camps": [
-            "gulf",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Russia hails Trump waiving sanctions as 'historic'",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Trump signs executive order waiving new Russia sanctions, tariffs",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Gulf News",
-                "title": "Trump signs executive order waiving new Russia sanctions, tariffs",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -1067,6 +1049,36 @@
           "representative": {
             "source": "TRT World",
             "title": "Türkiye and 18 other countries condemn Colombia's West Jerusalem embassy opening",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Trump signs executive order waiving new Russia sanctions, tariffs",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-17T03:46+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "Trump signs executive order waiving new Russia sanctions, tariffs",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -1240,24 +1252,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Revolutionary Guard reported that a mine explosion occurred on a tanker carrying two million bar",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-17T14:05+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Persian Gulf Internet, AI Infrastructures within Iran’s reach",
           "rank_key": {
             "outlets": 1,
@@ -1293,7 +1287,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "FM al-Shaibani arrives in Baghdad for the 52nd OIC Foreign Ministers’ Council session",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-17T07:14+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1311,7 +1323,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-17T18:09:49.652535+00:00",
+    "last_success": "2026-10-17T18:42:08.522102+00:00",
     "last_failure": null
   },
   "ok": true
