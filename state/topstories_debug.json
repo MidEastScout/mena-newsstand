@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T21:08:21.176506+00:00",
+  "updated": "2026-10-17T21:40:58.616997+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-17T21:05:48.667525+00:00"
+      "headlines_updated": "2026-10-17T21:38:52.324936+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 34,
+        "title_snippet": 30,
+        "dropped_no_english": 4,
         "title_translated": 1,
         "title_native": 85,
         "in": 126,
-        "kept": 120
+        "kept": 116
       },
       "translator": {
         "configured": true,
@@ -216,12 +217,32 @@
           "source": "Gulf News",
           "title": "US considers hitting Iran with 'Mother of All Bombs': CNN",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הולך רגל בן 21 נהרג מפגיעת רכב בכביש 443, סמוך למחסום עופר",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "צרפת בוערת: מאות עצורים, בנייני עירייה נשרפו וחנויות נבזזו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "الإعلام الحربي اليمني يعرض مشاهد لضرب تحشيدات تابعة للسعودية شمالي الجوف 16:20",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الخطأ في التحويل المالي عبر المحافظ الإلكترونية والإجراءات القانونية والعملية لاسترداد الأموال المحولة بالخطأ",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 68,
+      "in": 116,
+      "kept": 64,
       "dropped": [
         {
           "source": "Kan 11",
@@ -309,14 +330,21 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "Anger in France reflects broader European struggles with crises.",
+          "title": "France's Interior Minister stated that 550,000 people protested against the high cost of living, including…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Mayadeen",
-          "title": "France's Interior Minister stated that 550,000 people protested against the high cost of living, including…",
+          "title": "Anger in France reflects broader European struggles with crises.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Iranian official meets president of Asian Cultural Heritage Union",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -443,13 +471,6 @@
         {
           "source": "Al Manar",
           "title": "Astronomers have observed a green star for the first time, documenting dense stellar remnants known as white…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Manar",
-          "title": "Ahead of COP31, turtles are issuing an early warning about the consequences of rising Mediterranean Sea…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -591,7 +612,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 40,
       "sizes": [
         7,
         6,
@@ -602,9 +623,6 @@
         2,
         2,
         2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -645,7 +663,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Israeli settlers attack European diplomats in West Bank amid surge in olive harvest violence",
+          "headline": "Illegal Israeli settlers attack European delegation, beat French mayor in occupied West Bank",
           "rank_key": {
             "outlets": 6,
             "camps": 4,
@@ -669,8 +687,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Israeli settlers attack European diplomats in West Bank amid surge in olive harvest violence",
+            "source": "TRT World",
+            "title": "Illegal Israeli settlers attack European delegation, beat French mayor in occupied West Bank",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -738,7 +756,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Trump faces bipartisan backlash over Russia sanctions waiver",
+                "title": "3 , Trump faces bipartisan backlash over Russia sanctions waiver",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -897,42 +915,6 @@
                 "source": "Mehr News",
                 "title": "Oil tanker explodes in Hormuz after hitting naval mine: IRGC",
                 "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The commander of US Central Command revealed that terrorist organizations are transferring money bac",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-17T15:40+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "N12",
-            "title": "The commander of US Central Command revealed that terrorist organizations are transferring money back to Iran.",
-            "title_source": "snippet",
-            "why": [
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "The Ministry of Education mourned the student martyr Mohammad Abu Hammad and cal",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
@@ -1146,24 +1128,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A senior IDF official stated that 45% of activity in Judea and Samaria is dedicated to addressing…",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-17T18:04+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The Yemeni armed forces spokesperson, Brigadier General Yahya Saree, announced the downing of a Saud",
           "rank_key": {
             "outlets": 1,
@@ -1236,6 +1200,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "The commander of US Central Command revealed that terrorist organizations are transferring money bac",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-17T15:40+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iranian, Lebanese FM hold talks on sidelines of OIC summit in Baghdad",
           "rank_key": {
             "outlets": 1,
@@ -1253,7 +1235,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1271,7 +1253,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-17T21:08:41.758956+00:00",
+    "last_success": "2026-10-17T21:41:19.230698+00:00",
     "last_failure": null
   },
   "ok": true
