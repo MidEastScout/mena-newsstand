@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T20:03:10.627280+00:00",
+  "updated": "2026-10-18T20:35:28.810826+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-18T20:00:49.641137+00:00"
+      "headlines_updated": "2026-10-18T20:33:03.288816+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 35,
-        "title_native": 78,
+        "dropped_stale": 12,
+        "title_snippet": 26,
+        "dropped_no_english": 8,
+        "title_translated": 1,
+        "title_native": 79,
         "in": 126,
-        "kept": 113
+        "kept": 106
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -232,11 +234,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Arab News",
-          "title": "Iran ships some LPG, jet fuel despite US blockade, data shows",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Gulf News",
           "title": "White House shake-up: Trump fires Zacharia as press secretary after five days",
           "reason": "stale (older than 48h)"
@@ -250,23 +247,63 @@
           "source": "Gulf News",
           "title": "What is the ‘Mother of All Bombs’ US may use in Iran?",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "דרמה במטוס לווינה: אנונימי התקשר לדווח על פצצה במטוס שהמריא מישראל, נבדק אם מדובר בהתרעת שווא",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "העימותים בפריז התחדשו, מקרון בנאום לאומה: \"מי שהרס ישלם, מי שבזז יחזיר\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران تعلن امتلاك تكنولوجيا قنبلة الـ14 طنًا.. ردع جديد أم اقتراب للحرب؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "ترامب يدعم نتنياهو وآيزنكوت أمام خيار حكومة الوحدة.. والقائمتان تحت الضغط",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "نمو صادرات الصين من الوقود المكرر في أيلول",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "معضلة الأمن في الوعي الاسرائيلي: لماذا يريد نتنياهو «تغيير الشرق الاوسط»؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "هيئة صحية أمريكية: إصابات الحصبة ترتفع إلى 4410 حالات 10:37",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الاتحاد الأوروبي يدين هجمات المستوطنين على الفلسطينيين والدبلوماسيين الأوروبيين",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 113,
-      "kept": 57,
+      "in": 106,
+      "kept": 55,
       "dropped": [
         {
           "source": "Kan 11",
-          "title": "A suspicion arose at Kaplan Hospital that blood taken from patients was used for research without their…",
+          "title": "An airplane traveling from Israel to Vienna made an emergency landing in Bulgaria following an anonymous bomb…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Kan 11",
-          "title": "An airplane traveling from Israel to Vienna made an emergency landing in Bulgaria following an anonymous bomb…",
+          "title": "A suspicion arose at Kaplan Hospital that blood taken from patients was used for research without their…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -281,20 +318,6 @@
         {
           "source": "N12",
           "title": "An Israeli couple in Vienna experienced a frightening incident where a stranger knocked on their door…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Netanyahu presented his security concept, including the goal of regime change in Iran and independence from…",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "Trump expressed support for Netanyahu, stating any other leader would be incorrect and that America would…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -315,6 +338,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "A first look at the new season of 'Survivor' was released, with a promotional statement that everything…",
           "sec": 0,
           "off": 0,
@@ -328,13 +358,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "'I cried in my sleep,' said Lior Oz, breaking down in front of the camera.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "2 , Macron vows rioters will ‘pay for their crimes’ after demonstrations",
           "sec": 0,
@@ -343,7 +366,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "6 , Why have France’s school protests become a wider political crisis?",
+          "title": "5 , Why have France’s school protests become a wider political crisis?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -363,22 +386,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "Police drop probe into PM adviser’s wife’s Palestine Action post",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Mayadeen",
           "title": "Iran announced its possession of 14-ton bomb technology, with questions arising about the response.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Netanyahu stated that the remaining time of Trump's term must be exploited to complete 'our missions' on all…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -469,13 +478,6 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "China's refined fuel exports grew in September.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "Berri met with Barro to integrate national and international efforts to stop the Israeli aggression.",
           "sec": 0,
           "off": 0,
@@ -518,6 +520,13 @@
         },
         {
           "source": "SANA",
+          "title": "Italian ambassador tours Aleppo heritage sites, affirms support for restoration",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
           "title": "Agriculture Ministry, Chinese firm discuss land reclamation, soil salinity",
           "sec": 0,
           "off": 0,
@@ -538,8 +547,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Syria, World Bank agree to establish recovery and reconstruction fund",
+          "source": "Arab News",
+          "title": "Egypt says to provide all necessary support to Saudi Arabia to defend its security",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -553,17 +562,17 @@
         },
         {
           "source": "Arab News",
-          "title": "Egypt says to provide all necessary support to Saudi Arabia to defend its security",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
           "title": "Two officers dead as Saudi reconnaissance helicopter crashes in Najran",
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "Arab News",
+          "title": "Egypt pledges full support for Saudi Arabia amid escalating regional tensions",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
@@ -571,13 +580,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Egyptian parliament begins emergency session on possible troop deployment to defend Saudi Arabia",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
@@ -653,17 +655,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 37,
       "sizes": [
         9,
-        5,
+        6,
+        3,
         2,
         2,
         2,
-        2,
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -700,7 +699,7 @@
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 3,
+      "selected": 4,
       "candidates": [
         {
           "selected_rank": 1,
@@ -763,29 +762,30 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Pakistani, Egyptian foreign ministers condemn Houthi attacks, reaffirm solidarity with Saudi Arabia",
+          "headline": "Egypt’s top security body agrees to help Saudi Arabia defend itself against Houthi attacks",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 3,
-            "newest": "2026-10-18T12:53+00:00"
+            "newest": "2026-10-18T18:41+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
             "Anadolu Agency",
             "Iran International",
-            "TRT World"
+            "TRT World",
+            "The New Arab"
           ],
           "camps": [
             "panarab",
             "iranian",
             "turkish"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Pakistani, Egyptian foreign ministers condemn Houthi attacks, reaffirm solidarity with Saudi Arabia",
+            "source": "The New Arab",
+            "title": "Egypt’s top security body agrees to help Saudi Arabia defend itself against Houthi attacks",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -819,52 +819,77 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Egyptian parliament adjourns session on potential military support for Saudi Arabia",
+          "headline": "Iranian, Egyptian foreign ministers discuss latest regional developments",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-18T18:43+00:00"
+            "newest": "2026-10-18T20:20+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "Falastin al-Youm"
+            "IRNA"
           ],
           "camps": [
-            "levant",
+            "iranian",
             "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Egyptian parliament adjourns session on potential military support for Saudi Arabia",
+            "title": "Iranian, Egyptian foreign ministers discuss latest regional developments",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Iranian, Pakistani FMs discuss regional developments, de-escalation efforts",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
-          "selected_rank": null,
-          "headline": "Iran, Egypt FMs discuss regional de-escalation efforts in phone call",
+          "selected_rank": 4,
+          "headline": "The IDF announced that a drill will be held near Haifa from tomorrow morning until Tuesday, during w",
           "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-18T19:55+00:00"
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-18T18:05+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Kan 11",
+            "L'Orient Today"
           ],
           "camps": [
-            "iranian"
+            "israeli",
+            "levant"
           ],
           "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "The IDF announced that a drill will be held near Haifa from tomorrow morning until Tuesday, during which…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "IN THE PRESS Netanyahu says 'Israel will remain in southern Lebanon until Hezbol",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
         },
         {
           "selected_rank": null,
@@ -873,24 +898,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-18T19:44+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The IDF announced that a drill will be held near Haifa from tomorrow morning until Tuesday, during w",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-18T18:05+00:00"
           },
           "outlet_names": [
             "Kan 11"
@@ -1030,17 +1037,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Russia's Lavrov stated the Middle East is on the verge of a comprehensive war and the root causes of",
+          "headline": "Egyptian parliament adjourns session on potential military support for Saudi Arabia",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-18T14:59+00:00"
+            "newest": "2026-10-18T14:57+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
+            "Anadolu Agency"
           ],
           "camps": [
-            "panarab"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1065,7 +1072,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Fugitive members of terrorist FETÖ nabbed in Istanbul",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-18T13:03+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Updating Iran defense capabilities changed enemy calculations",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-18T09:59+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1083,7 +1126,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-18T20:03:27.800685+00:00",
+    "last_success": "2026-10-18T20:35:42.552842+00:00",
     "last_failure": null
   },
   "ok": true
