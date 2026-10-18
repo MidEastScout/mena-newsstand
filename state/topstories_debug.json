@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T05:25:47.061283+00:00",
+  "updated": "2026-10-18T05:57:59.313667+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-18T05:23:41.866563+00:00"
+      "headlines_updated": "2026-10-18T05:55:29.945371+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 35,
+        "title_snippet": 32,
+        "dropped_no_english": 3,
         "title_native": 87,
         "in": 126,
-        "kept": 122
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -205,12 +206,27 @@
           "source": "Gulf News",
           "title": "US considers hitting Iran with 'Mother of All Bombs': CNN",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "הפיצוץ בבסיס בקנדה: לפחות שבעה בני אדם נהרגו ועשרות נפצעו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בחשד לתקיפת שוטרים: ח\"כ קרויזר יתייצב היום לחקירה בלהב 433",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "אזהרה לישראלים באלבניה: \"להימנע מהגעה לאזורי הפגנות\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 73,
+      "in": 119,
+      "kept": 72,
       "dropped": [
         {
           "source": "Kan 11",
@@ -270,14 +286,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Tear gas and unrest as hundreds of thousands protest for reforms in France",
+          "title": "4 , Why Marco Rubio’s visit to Mumbai has ruffled feathers in India",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Why Trump’s latest White House press secretary lasted just five days",
+          "title": "5 , Tear gas and unrest as hundreds of thousands protest for reforms in France",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -292,13 +308,6 @@
         {
           "source": "Al Arabiya",
           "title": "White House Press Secretary Zacharia ‘let go’ from role, official says",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Al-Sisi Pledges to Defend Saudi Arabia, Seeks Parliament Approval",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -334,13 +343,6 @@
         {
           "source": "IRNA",
           "title": "Iranian official meets president of Asian Cultural Heritage Union",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "Iran remains committed to upholding shipping safety, security",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -559,22 +561,19 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 34,
       "sizes": [
         19,
         4,
         4,
         4,
-        3,
+        4,
         3,
         3,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -607,11 +606,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "US 'very disturbed' by attack on American journalist in occupied West Bank: Rubio",
+          "headline": "US wants Israel to 'crack down' on settler attacks, Rubio says",
           "rank_key": {
-            "outlets": 10,
+            "outlets": 12,
             "camps": 5,
-            "newest": "2026-10-18T05:07+00:00"
+            "newest": "2026-10-18T02:41+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -620,9 +619,11 @@
             "Daily Sabah",
             "Falastin al-Youm",
             "Kan 11",
+            "Middle East Eye",
             "N12",
             "SANA",
             "TRT World",
+            "The New Arab",
             "WAFA News"
           ],
           "camps": [
@@ -636,8 +637,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "US 'very disturbed' by attack on American journalist in occupied West Bank: Rubio",
+            "source": "Middle East Eye",
+            "title": "US wants Israel to 'crack down' on settler attacks, Rubio says",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -652,6 +653,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "The New Arab",
+                "title": "US urges Israel to probe settler attack on American journalist",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "WAFA News",
                 "title": "Palestinians suffer tear gas inhalation as Israeli forces and colonists target o",
                 "rejected_by": "loaded/partisan wording"
@@ -659,11 +665,6 @@
               {
                 "source": "WAFA News",
                 "title": "Israeli forces fire tear gas at olive harvesters near Ramallah",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Tear gas canisters fired by Israeli forces spark house fire northeast of Ramalla",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -763,6 +764,55 @@
         },
         {
           "selected_rank": 4,
+          "headline": "The spokesperson for the Yemeni armed forces, Brigadier General Yahya Saree, announced the downing o",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-17T17:59+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Al Manar",
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Mayadeen",
+            "title": "The spokesperson for the Yemeni armed forces, Brigadier General Yahya Saree, announced the downing of a Saudi…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "state/partisan outlet (last resort)",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "The Yemeni armed forces carried out a qualitative operation targeting the comman",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Ships attacked off UAE and Yemen; Saudi forces down drones near Riyadh",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "Yemeni War Media presented footage of strikes on gatherings belonging to Saudi f",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Iran Navy says no. of ships hit in east of Hormuz rising",
           "rank_key": {
             "outlets": 3,
@@ -801,7 +851,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "SECURITY Tensions between the ISF and Hezbollah: Army deploys in Beirut’s southern suburbs as Nasser",
           "rank_key": {
             "outlets": 3,
@@ -872,49 +922,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The spokesperson for the Yemeni armed forces, Brigadier General Yahya Saree, announced the downing o",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-17T17:59+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "The spokesperson for the Yemeni armed forces, Brigadier General Yahya Saree, announced the downing of a Saudi…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "The Yemeni armed forces carried out a qualitative operation targeting the comman",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Yemeni War Media presented footage of strikes on gatherings belonging to Saudi f",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Saudi-led coalition targets Houthi arms-smuggling, destroys missile launch platforms",
           "rank_key": {
             "outlets": 2,
@@ -953,6 +960,37 @@
         },
         {
           "selected_rank": null,
+          "headline": "Türkiye and 18 other countries condemn Colombia's West Jerusalem embassy opening",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-16T09:39+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "TRT World"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Türkiye and 18 other countries condemn Colombia's West Jerusalem embassy opening",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli forces detain two Palestinians during raid on Salfit-area town, steal cash from home",
           "rank_key": {
             "outlets": 1,
@@ -964,24 +1002,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Heidi Levine's son reported that Jeff Bezos promised to do everything possible to ensure justice for",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-18T04:32+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1012,24 +1032,6 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-10-17T23:31+00:00"
-          },
-          "outlet_names": [
-            "Middle East Eye"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Coalition says two missiles, drone launched towards Saudi Arabia destroyed",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-17T23:10+00:00"
           },
           "outlet_names": [
             "Middle East Eye"
@@ -1168,7 +1170,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Lebanon to participate in US-led trilateral talks with Israel: Aoun",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-17T19:16+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Jordan condemns West Bank settler attack on European diplomats",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-17T19:08+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1186,7 +1224,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-18T05:26:08.163950+00:00",
+    "last_success": "2026-10-18T05:58:25.416582+00:00",
     "last_failure": null
   },
   "ok": true
