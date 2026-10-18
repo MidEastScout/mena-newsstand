@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T23:45:50.120630+00:00",
+  "updated": "2026-10-18T00:18:00.976411+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-17T23:43:32.959230+00:00"
+      "headlines_updated": "2026-10-18T00:15:38.712000+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 5,
-        "title_snippet": 33,
+        "title_snippet": 31,
+        "dropped_no_english": 2,
         "title_translated": 2,
         "title_native": 86,
         "in": 126,
-        "kept": 121
+        "kept": 119
       },
       "translator": {
         "configured": true,
@@ -211,12 +212,22 @@
           "source": "Gulf News",
           "title": "US considers hitting Iran with 'Mother of All Bombs': CNN",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "מרקו רוביו: \"אני מוטרד מאלימות המתנחלים בגדה המערבית\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "طهران لواشنطن: لا أهمية لأسماء قنابلكم وأحجامها... ستنفجر في أماكن أخرى",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 70,
+      "in": 119,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
@@ -368,13 +379,6 @@
         {
           "source": "L'Orient Today",
           "title": "STORIES OF LOVE 'As we lose embryo after embryo, I discover love that grows stronger with pain'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "FOCUS Iran-US showdown in Lebanon intensifies as Qatar steps in as mediator",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -579,7 +583,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 33,
       "sizes": [
         13,
         7,
@@ -593,7 +597,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -926,16 +929,16 @@
         },
         {
           "selected_rank": null,
-          "headline": "Washington is pushing for internal confrontation, with Aoun requesting the arrest of Hezbollah offic",
+          "headline": "SECURITY Tensions between the ISF and Hezbollah: Army deploys in Beirut’s southern suburbs as Nasser",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-10-16T21:30+00:00"
+            "newest": null
           },
           "outlet_names": [
             "Al Manar",
-            "Al-Akhbar",
-            "Iran International"
+            "Iran International",
+            "L'Orient Today"
           ],
           "camps": [
             "iranian",
@@ -945,27 +948,16 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al-Akhbar",
-            "title": "Washington is pushing for internal confrontation, with Aoun requesting the arrest of Hezbollah officials.",
-            "title_source": "snippet",
+            "source": "L'Orient Today",
+            "title": "SECURITY Tensions between the ISF and Hezbollah: Army deploys in Beirut’s southern suburbs as Nassereddine defends strike",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hezbollah)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Iran International",
-                "title": "PODCAST Iran cultivated Houthis for years before opening new war front, insider ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "Hezbollah's media relations stated that the incident occurred in the Samaan Gall",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -1171,24 +1163,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The US ambassador called the attack on a Washington Post photographer a \"despicable act of terror\" a",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-17T20:17+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Turkish Embassy rejects reports of FM Fidan's 'secret talks' in Baku",
           "rank_key": {
             "outlets": 1,
@@ -1314,7 +1288,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "FM al-Shaibani arrives in Baghdad for the 52nd OIC Foreign Ministers’ Council session",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-17T07:14+00:00"
+          },
+          "outlet_names": [
+            "SANA"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "10 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1332,7 +1324,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-17T23:46:08.218236+00:00",
+    "last_success": "2026-10-18T00:18:01.377228+00:00",
     "last_failure": null
   },
   "ok": true
