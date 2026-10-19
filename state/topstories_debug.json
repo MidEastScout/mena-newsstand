@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T03:22:09.184177+00:00",
+  "updated": "2026-10-19T03:55:01.686164+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-19T03:19:59.627888+00:00"
+      "headlines_updated": "2026-10-19T03:52:38.068397+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 12,
-        "title_snippet": 35,
+        "title_snippet": 34,
+        "dropped_no_english": 1,
         "title_native": 79,
         "in": 126,
-        "kept": 114
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -199,11 +200,6 @@
         {
           "source": "Al Arabiya",
           "title": "White House Press Secretary Zacharia ‘let go’ from role, official says",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Iran is backing and encouraging escalated Houthi attacks: Senior Saudi diplomat",
           "reason": "stale (older than 48h)"
         },
         {
@@ -232,6 +228,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Gulf News",
+          "title": "Trump signs executive order waiving new Russia sanctions, tariffs",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "TRT World",
           "title": "Houthi projectiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu",
           "reason": "stale (older than 48h)"
@@ -245,12 +246,17 @@
           "source": "TRT World",
           "title": "Türkiye and 18 other countries condemn Colombia's West Jerusalem embassy opening",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"כל מה שהיה לפני העונה הזאת נמחק ובטל\": צפו בהצצה ראשונה להישרדות",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 114,
-      "kept": 63,
+      "in": 113,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -303,13 +309,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "The full program of the television show 'HaYom HaZeh' from October 18, 2026, is available for viewing.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "Singers Eden Ben Zaken and Dana Lapidot shared an emotional moment as they closed a circle, suggesting a…",
           "sec": 0,
           "off": 0,
@@ -331,14 +330,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , ‘Anger and shame’: Macron denounces France’s nationwide rioting, looting",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Alberta independence referendum: Will separatists survive a loss?",
+          "title": "5 , ‘Anger and shame’: Macron denounces France’s nationwide rioting, looting",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -388,6 +380,13 @@
         {
           "source": "Jordan Times",
           "title": "Sisi says Egypt ready to defend Saudi Arabia 'if requested'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "France counts cost of violent protests, 1,800 arrested",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -458,6 +457,13 @@
         {
           "source": "Al Manar",
           "title": "MP Hussein Al-Haj Hassan chaired a meeting in Baalbek to discuss electricity supply issues in the…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Gaza mourns 75 Palestinians recovered from rubble as thousands remain buried beneath ruins",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -613,19 +619,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 45,
+      "clusters": 44,
       "sizes": [
-        7,
-        4,
+        6,
+        3,
+        3,
+        3,
         3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        2,
-        1,
         1,
         1,
         1,
@@ -689,7 +694,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -713,64 +718,57 @@
                 "rejected_by": "loaded/partisan wording"
               },
               {
-                "source": "WAFA News",
-                "title": "US, France condemn escalating Israeli colonist attacks in occupied West Bank",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
                 "source": "Arab News",
                 "title": "Israeli settlers attack European diplomats in West Bank amid surge in olive harv",
                 "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Anadolu Agency",
+                "title": "Israeli occupiers injure 2 Palestinians, attack ambulance in West Bank",
+                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "6 injured after Houthi strike hits southern Saudi Arabia — civil defence",
+          "headline": "Russian President Vladimir Putin reportedly proposed a trilateral summit with Donald Trump and Chine",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
-            "newest": "2026-10-18T23:46+00:00"
+            "newest": "2026-10-19T02:48+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Iran International",
-            "Jordan Times",
-            "The New Arab"
+            "Al Jazeera",
+            "Egypt Independent",
+            "Kan 11"
           ],
           "camps": [
+            "israeli",
             "panarab",
-            "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Jordan Times",
-            "title": "6 injured after Houthi strike hits southern Saudi Arabia — civil defence",
-            "title_source": "native",
+            "source": "Kan 11",
+            "title": "Russian President Vladimir Putin reportedly proposed a trilateral summit with Donald Trump and Chinese…",
+            "title_source": "snippet",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
             ],
             "passed_over": [
               {
-                "source": "Al Arabiya",
-                "title": "GCC chief condemns continued Houthi attacks on Saudi Arabia",
+                "source": "Al Jazeera",
+                "title": "3 , Trump defends Russian sanctions relief, lashes out at Zelenskyy",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "The New Arab",
-                "title": "Egypt says ready to give Saudi Arabia necessary support amid Houthi conflict",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Iran International",
-                "title": "2 Iran giving Houthis targeting intelligence for Saudi attacks - WSJ",
+                "source": "Egypt Independent",
+                "title": "Zelensky praises ‘real leaders’ in Europe as his relationship with Trump deterio",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -778,6 +776,50 @@
         },
         {
           "selected_rank": 3,
+          "headline": "Iran’s Revolutionary Guard says oil tanker struck mine and caught fire in Strait of Hormuz",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-19T01:11+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Iran’s Revolutionary Guard says oil tanker struck mine and caught fire in Strait of Hormuz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Iran war updates: ‘Violating’ vessel on fire in Hormuz after sea mine blast",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Tanker explodes after hitting mine in Strait of Hormuz: Iran’s IRGC",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
           "headline": "Egypt parliament delays vote on military support to Saudi Arabia",
           "rank_key": {
             "outlets": 3,
@@ -815,78 +857,35 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Russian President Vladimir Putin reportedly proposed a trilateral summit with Donald Trump and Chine",
+          "selected_rank": 5,
+          "headline": "4 Iran giving Houthis targeting intelligence for Saudi attacks - WSJ",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-19T02:48+00:00"
+            "newest": null
           },
           "outlet_names": [
-            "Egypt Independent",
-            "Kan 11"
+            "Al Manar",
+            "Iran International"
           ],
           "camps": [
-            "israeli",
+            "iranian",
             "levant"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Russian President Vladimir Putin reportedly proposed a trilateral summit with Donald Trump and Chinese…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Egypt Independent",
-                "title": "Zelensky praises ‘real leaders’ in Europe as his relationship with Trump deterio",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Iran’s Revolutionary Guard says oil tanker struck mine and caught fire in Strait of Hormuz",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-19T01:11+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran’s Revolutionary Guard says oil tanker struck mine and caught fire in Strait of Hormuz",
+            "source": "Iran International",
+            "title": "4 Iran giving Houthis targeting intelligence for Saudi attacks - WSJ",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (yemen)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "3 , Iran war updates: ‘Violating’ vessel on fire in Hormuz after sea mine blast",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -924,6 +923,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "GCC chief condemns continued Houthi attacks on Saudi Arabia",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-18T12:17+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "GCC chief condemns continued Houthi attacks on Saudi Arabia",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1143,7 +1173,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "25 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1161,7 +1191,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-19T03:22:28.589101+00:00",
+    "last_success": "2026-10-19T03:55:24.468877+00:00",
     "last_failure": null
   },
   "ok": true
