@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T01:46:38.529764+00:00",
+  "updated": "2026-10-19T02:18:42.356698+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-19T01:44:02.516077+00:00"
+      "headlines_updated": "2026-10-19T02:16:24.650534+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 15,
-        "title_snippet": 34,
+        "dropped_stale": 14,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
         "title_translated": 1,
-        "title_native": 76,
+        "title_native": 77,
         "in": 126,
-        "kept": 111
+        "kept": 110
       },
       "translator": {
         "configured": true,
@@ -214,12 +215,12 @@
         },
         {
           "source": "The New Arab",
-          "title": "Iran ships some LPG, jet fuel despite US blockade, data shows",
+          "title": "Missiles hit Aden airport, Saudi coalition intercepts missile",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "The New Arab",
-          "title": "Missiles hit Aden airport, Saudi coalition intercepts missile",
+          "title": "Iran ships some LPG, jet fuel despite US blockade, data shows",
           "reason": "stale (older than 48h)"
         },
         {
@@ -230,11 +231,6 @@
         {
           "source": "Syria Direct",
           "title": "What Syria’s revolution can teach the world about democracy",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Arab News",
-          "title": "Iran ships some LPG, jet fuel despite US blockade, data shows",
           "reason": "stale (older than 48h)"
         },
         {
@@ -261,12 +257,22 @@
           "source": "TRT World",
           "title": "Türkiye and 18 other countries condemn Colombia's West Jerusalem embassy opening",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נקבע מותו של גבר בן 60 לאחר שנפצע באירוע אלימות בכפר אלעיזריה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "حزب الله يحذّر السلطة من مواصلة استفزاز المقاومة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 111,
-      "kept": 59,
+      "in": 110,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -347,21 +353,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , ‘Anger and shame’: Macron denounces France’s nationwide rioting, looting",
+          "title": "2 , ‘Anger and shame’: Macron denounces France’s nationwide rioting, looting",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Macron vows rioters will ‘pay for their crimes’ after demonstrations",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Alberta independence referendum: Will separatists survive a loss?",
+          "title": "4 , Alberta independence referendum: Will separatists survive a loss?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -469,13 +468,6 @@
           "title": "Grand Egyptian Museum ticket prices to increase starting November 1",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Lebanese teams Al-Ansar and Al-Nijmeh are leading in Asian competitions.",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -638,16 +630,16 @@
       "method": "heuristic",
       "clusters": 40,
       "sizes": [
-        6,
-        6,
+        7,
         5,
+        3,
+        3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -683,7 +675,7 @@
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 4,
+      "selected": 5,
       "candidates": [
         {
           "selected_rank": 1,
@@ -707,7 +699,7 @@
             "levant",
             "turkish"
           ],
-          "members": 6,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -731,78 +723,20 @@
                 "rejected_by": "loaded/partisan wording"
               },
               {
+                "source": "WAFA News",
+                "title": "US, France condemn escalating Israeli colonist attacks in occupied West Bank",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
                 "source": "Arab News",
                 "title": "Israeli settlers attack European diplomats in West Bank amid surge in olive harv",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Israeli occupiers injure 2 Palestinians, attack ambulance in West Bank",
-                "rejected_by": "loaded/partisan wording"
               }
             ]
           }
         },
         {
           "selected_rank": 2,
-          "headline": "Egypt is reportedly sending forces to Saudi Arabia for 'defensive' missions.",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 4,
-            "newest": "2026-10-18T21:30+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al-Akhbar",
-            "Anadolu Agency",
-            "Arab News",
-            "Falastin al-Youm",
-            "WAFA News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "Egypt is reportedly sending forces to Saudi Arabia for 'defensive' missions.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Al-Sisi Pledges to Defend Saudi Arabia, Seeks Parliament Approval",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Vice President commends the Egypt’s decision to send forces to defend Saudi Arab",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Egypt’s Sisi seeks parliament approval to authorize support for Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Anadolu Agency",
-                "title": "Egyptian parliament adjourns session on potential military support for Saudi Ara",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "6 injured after Houthi strike hits southern Saudi Arabia — civil defence",
           "rank_key": {
             "outlets": 5,
@@ -855,6 +789,43 @@
           }
         },
         {
+          "selected_rank": 3,
+          "headline": "Egypt is reportedly sending forces to Saudi Arabia for 'defensive' missions.",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 1,
+            "newest": "2026-10-18T21:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "Falastin al-Youm",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al-Akhbar",
+            "title": "Egypt is reportedly sending forces to Saudi Arabia for 'defensive' missions.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Vice President commends the Egypt’s decision to send forces to defend Saudi Arab",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 4,
           "headline": "Iran’s Revolutionary Guard says oil tanker struck mine and caught fire in Strait of Hormuz",
           "rank_key": {
@@ -886,11 +857,140 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Iran war updates: ‘Violating’ vessel on fire in Hormuz after sea mine blast",
+                "title": "3 , Iran war updates: ‘Violating’ vessel on fire in Hormuz after sea mine blast",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Yemen’s military claims 1,326 strikes on Houthis, about 370 fighters neutralized",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-18T15:53+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Yemen’s military claims 1,326 strikes on Houthis, about 370 fighters neutralized",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Yemeni military media showcased footage of strikes targeting Saudi gatherings no",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "Yemeni military media presented footage of targeting Saudi gatherings and vehicl",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Zelensky praises ‘real leaders’ in Europe as his relationship with Trump deteriorates",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-18T12:35+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Egypt Independent"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "Zelensky praises ‘real leaders’ in Europe as his relationship with Trump deteriorates",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "5 , Russia’s war on Ukraine ‘must be brought to an end’, Zelenskyy says",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Al-Sisi Pledges to Defend Saudi Arabia, Seeks Parliament Approval",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-17T13:41+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Al-Sisi Pledges to Defend Saudi Arabia, Seeks Parliament Approval",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Bomb threat forces flight from Israel to land in Bulgaria under fighter jet escort",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-19T01:37+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1002,24 +1102,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Eight fans have been detained on suspicion of violence and disturbing public order during a match be",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-18T19:44+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Bilateral ties, regional developments top agenda of Lavrov’s visit to Tehran: Baqaei",
           "rank_key": {
             "outlets": 1,
@@ -1109,7 +1191,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "24 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1127,7 +1209,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-19T01:47:04.126415+00:00",
+    "last_success": "2026-10-19T02:18:58.933168+00:00",
     "last_failure": null
   },
   "ok": true
