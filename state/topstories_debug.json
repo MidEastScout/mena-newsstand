@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T23:00:24.045814+00:00",
+  "updated": "2026-10-19T23:32:49.349856+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-19T22:57:58.921710+00:00"
+      "headlines_updated": "2026-10-19T23:30:12.329238+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 10,
-        "title_snippet": 33,
-        "title_translated": 2,
-        "title_native": 82,
+        "dropped_stale": 9,
+        "title_snippet": 27,
+        "dropped_no_english": 7,
+        "title_translated": 1,
+        "title_native": 83,
         "in": 127,
-        "kept": 117
+        "kept": 111
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -213,11 +214,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Jordan Times",
-          "title": "Safadi reiterates Jordan’s condemnation of ‘terrorist’ Houthi attacks on Saudi Arabia",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Syria Direct",
           "title": "What Syria’s revolution can teach the world about democracy",
           "reason": "stale (older than 48h)"
@@ -236,13 +232,55 @@
           "source": "TRT World",
           "title": "Illegal Israeli settlers attack European delegation, beat French mayor in occupied West Bank",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "שר ההגנה האמריקני הגסת' ביקר אתמול בישראל ונפגש עם נתניהו | פרסום ראשון",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "דיאנה זלוטניק | אסתטיקה גברית בעידן החדש – תוצאות טבעיות, חדות ומדויקות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "لافروف من طهران يؤكد الالتزام بالاتفاقية مع إيران.. واليمن يعلن ست عمليات في العمق السعودي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الأمم المتحدة: \"الجيش\" الإسرائيلي يعرقل عمل \"يونيفيل\" في لبنان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "مهرجان الجونة: السينما العربية في مواجهة الخراب",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«طبيب أميركي» في غزة: بلادنا تموّل الإبادة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "اتهامات آذربيجانية لتركيا بـ«التخطيط لانقلاب» | باكو - أنقرة: «الحجاب» يفجّر القلوب الملآنة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 117,
+      "in": 111,
       "kept": 54,
       "dropped": [
+        {
+          "source": "Kan 11",
+          "title": "Reports indicate that US Defense Secretary Hagood met with Netanyahu during a visit to Israel.",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
         {
           "source": "Kan 11",
           "title": "Hundreds were arrested across France following protests against the cost of living, with 351 in Paris alone.",
@@ -258,22 +296,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Kan 11",
-          "title": "Reports indicate that US Defense Secretary Hagood met with Netanyahu during a visit to Israel.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "N12",
           "title": "Severe riots in France have led authorities to impose curfews in major cities, including Paris.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -287,14 +311,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "The program \"Election Zone\" from October 19, 2026, is available for full viewing.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Channel 13",
-          "title": "Analysis of Benett's rise and the current political map is presented, with all data included.",
+          "title": "The program \"Election Zone\" from October 19, 2026, is available for full viewing.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -315,7 +339,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , France protests updates: Curfews imposed in parts of Paris, other cities",
+          "title": "5 , Finland seeking one million land mines as it eyes Russian threat",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -342,22 +366,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Musk says will give SpaceX share to ‘every kid in America’",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Mayadeen",
           "title": "Large protests in Tokyo are calling for the government's resignation due to its support for Israel.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Midnight Bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -400,6 +410,13 @@
         {
           "source": "Jordan Times",
           "title": "Trump backs ally Netanyahu ahead of Israel's tight election",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Rubio says no pause in US intel sharing with Ukraine",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -456,27 +473,6 @@
         {
           "source": "Al-Akhbar",
           "title": "A piece titled \"Laughter and Dance on the Edge of Loss\" dated October 19, 2026, has been published.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Economic keys are reportedly being distributed to close associates under various decrees and through a UN…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "A curfew has been imposed in several French cities, and demonstrations are restricted in Paris.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "An American arrest warrant has been issued for Raul Castro.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -546,13 +542,6 @@
         },
         {
           "source": "Arab News",
-          "title": "Egypt says to provide all necessary support to Saudi Arabia to defend its security",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
           "title": "Trump backs ally Netanyahu ahead of Israel’s tight election",
           "sec": 0,
           "off": 0,
@@ -560,7 +549,7 @@
         },
         {
           "source": "Arab News",
-          "title": "Egypt pledges full support for Saudi Arabia amid escalating regional tensions",
+          "title": "Egypt says to provide all necessary support to Saudi Arabia to defend its security",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -672,14 +661,14 @@
         },
         {
           "source": "TRT World",
-          "title": "Türkiye launches massive data centre project in digital hub push",
+          "title": "Flight from Israel makes emergency landing in Bulgaria amid bomb threat",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "TRT World",
-          "title": "Flight from Israel makes emergency landing in Bulgaria amid bomb threat",
+          "title": "Macron says ‘nothing justifies’ protest violence, vows rioters will pay",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -688,9 +677,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 33,
       "sizes": [
-        6,
+        5,
+        4,
         4,
         3,
         3,
@@ -700,8 +690,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -733,78 +721,25 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Occupation forces demolish two vehicle-scrapping sheds, prevent a citizen from reaching sheep pen so",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-19T21:58+00:00"
-          },
-          "outlet_names": [
-            "Middle East Eye",
-            "N12",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "Occupation forces demolish two vehicle-scrapping sheds, prevent a citizen from reaching sheep pen south of Jenin",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "N12",
-                "title": "Amid escalating tensions in Judea and Samaria during the olive harvest season, r",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Middle East Eye",
-                "title": "West Bank: Israeli forces detain Palestinian teachers and issue widespread demol",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli forces detain four olive harvesters from northern West Bank town",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli forces detain two Palestinians and two solidarity activists following by",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Iran says US responsible for ‘insecurity’ in Hormuz strait",
           "rank_key": {
-            "outlets": 3,
-            "camps": 3,
+            "outlets": 4,
+            "camps": 4,
             "newest": "2026-10-19T13:15+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Arab News",
             "Jordan Times",
             "Mehr News"
           ],
           "camps": [
             "gulf",
+            "panarab",
             "iranian",
             "levant"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -819,8 +754,53 @@
             ],
             "passed_over": [
               {
+                "source": "Al Arabiya",
+                "title": "Oil tanker on fire after hitting mine in Hormuz: Iran’s IRGC",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Mehr News",
                 "title": "Yet another oil tanker explodes after hitting mine in Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Egypt says ready to give Saudi Arabia necessary support amid Houthi conflict",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-18T15:53+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Arab News",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Egypt says ready to give Saudi Arabia necessary support amid Houthi conflict",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Yemeni military media released footage showing the targeting of Saudi forces' ga",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -943,6 +923,59 @@
         },
         {
           "selected_rank": null,
+          "headline": "Occupation forces demolish two vehicle-scrapping sheds, prevent a citizen from reaching sheep pen so",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-19T21:58+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye",
+            "WAFA News"
+          ],
+          "camps": [
+            "panarab",
+            "levant"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Occupation forces demolish two vehicle-scrapping sheds, prevent a citizen from reaching sheep pen south of Jenin",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "West Bank: Israeli forces detain Palestinian teachers and issue widespread demol",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces detain four olive harvesters from northern West Bank town",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces detain two Palestinians and two solidarity activists following by",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Jenin: Occupation forces issue over 20 demolition notices and expel farmers from",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Four individuals were killed by occupation airstrikes on the Gaza Strip.",
           "rank_key": {
             "outlets": 2,
@@ -1048,44 +1081,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Egypt says ready to give Saudi Arabia necessary support amid Houthi conflict",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-18T12:17+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Egypt says ready to give Saudi Arabia necessary support amid Houthi conflict",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Yemeni military media released footage showing the targeting of Saudi forces' ga",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Two suspects planning an attack were apprehended on Highway 1 near the Latrun interchange by elite f",
           "rank_key": {
             "outlets": 2,
@@ -1175,24 +1170,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Israeli military's artillery has targeted the town of Beit Yahoun in southern Lebanon.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-19T19:48+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1361,7 +1338,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Humiliation of Israeli regime in Baku",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-19T06:25+00:00"
+          },
+          "outlet_names": [
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "10 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1379,7 +1374,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-19T23:00:43.763290+00:00",
+    "last_success": "2026-10-19T23:33:02.783243+00:00",
     "last_failure": null
   },
   "ok": true
