@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T19:50:14.218509+00:00",
+  "updated": "2026-10-20T19:55:21.257926+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-20T19:47:56.079454+00:00"
+      "headlines_updated": "2026-10-20T19:52:43.457359+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 33,
+        "dropped_stale": 6,
+        "dropped_no_english": 2,
+        "title_snippet": 31,
         "title_translated": 1,
-        "title_native": 87,
+        "title_native": 86,
         "in": 126,
-        "kept": 121
+        "kept": 118
       },
       "translator": {
         "configured": true,
@@ -198,24 +199,39 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "The New Arab",
+          "title": "Egypt says ready to give Saudi Arabia necessary support amid Houthi conflict",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Jordan Times",
           "title": "Safadi reiterates Jordan’s condemnation of ‘terrorist’ Houthi attacks on Saudi Arabia",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Jordan Times",
-          "title": "Yemen’s military claims 1,417 strikes on Houthis, about 800 fighters killed or wounded",
+          "title": "Sisi says Egypt ready to defend Saudi Arabia 'if requested'",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Falastin al-Youm",
           "title": "البرلمان المصري يُرجئ التصويت على الدعم الدفاعي للسعودية إلى الغد",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "רויטרס: שר המלחמה האמריקני הגסת' אישר כי ביקר בישראל, אך סירב להרחיב על שיחות עם נתניהו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אני קרובה למשפחה ולחברים שלי. להחליט ברגע אחד אם לגור בישראל - זה לא קל\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
+      "in": 118,
       "kept": 55,
       "dropped": [
         {
@@ -255,13 +271,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "Israelis are preparing for the Christmas holiday, with popular destinations and prices being considered.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
@@ -269,7 +278,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "This entry is a placeholder for the full program of 'The Daily Report' from October 20, 2026.",
+          "title": "Israelis are preparing for the Christmas holiday, with popular destinations and prices being considered.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -317,13 +326,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Middle East Eye",
-          "title": "Netanyahu to Trump: 'We have a job to finish'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Arabiya",
           "title": "Hegseth discusses Iran with Netanyahu in unannounced visit to Israel, officials say",
           "sec": 0,
@@ -349,13 +351,6 @@
           "title": "Mahmoud Khalil asks Supreme Court to stop immigration detentions",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "'We pay the price': Palestinians say Trump's endorsement for Netanyahu means more suffering ahead",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -499,13 +494,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "For the third consecutive day: Colonists continue to cut off electricity to lawyer's home in Nablus' Beita town",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "Large demonstrations took place in the Japanese capital demanding the government's resignation over its…",
           "sec": 0,
@@ -597,6 +585,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "UN warns Gaza displacement sites at risk of flooding, collapse as winter nears",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
           "source": "Daily Sabah",
           "title": "Russia builds long-range radar in Kaliningrad: Reports",
           "sec": 0,
@@ -684,10 +679,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 38,
       "sizes": [
         8,
-        3,
+        4,
         2,
         2,
         2,
@@ -695,7 +690,6 @@
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -736,7 +730,7 @@
           "selected_rank": 1,
           "headline": "UK to deploy fighter jets to help protect Saudi from Houthi attacks",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 4,
             "newest": "2026-10-20T14:20+00:00"
           },
@@ -746,6 +740,7 @@
             "Arab News",
             "Egypt Independent",
             "Gulf News",
+            "Middle East Eye",
             "TRT World"
           ],
           "camps": [
@@ -769,6 +764,11 @@
             ],
             "passed_over": [
               {
+                "source": "Middle East Eye",
+                "title": "Yemen war: Why Egypt's vow to defend Saudi Arabia is a risky gamble",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Arab News",
                 "title": "Philippines reaffirms solidarity with Saudi Arabia in wake of Houthi attacks",
                 "rejected_by": "older than the story's newest wave"
@@ -790,20 +790,22 @@
           "selected_rank": 2,
           "headline": "Iran says supertanker carrying over 2 million barrels of oil hit mine near Hormuz",
           "rank_key": {
-            "outlets": 3,
-            "camps": 2,
+            "outlets": 4,
+            "camps": 3,
             "newest": "2026-10-20T18:25+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Anadolu Agency",
             "IRNA",
             "Mehr News"
           ],
           "camps": [
+            "panarab",
             "iranian",
             "turkish"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -817,6 +819,11 @@
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Iran’s IRGC says mines halted two tankers crossing Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "IRNA",
                 "title": "IRGC: Two oil ankers caught fire, halted in Strait of Hormuz",
@@ -1005,36 +1012,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "US Secretary of Defense Hegseth visited Israel and met with Netanyahu, according to reports.",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-19T22:38+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "US Secretary of Defense Hegseth visited Israel and met with Netanyahu, according to reports.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Two suspects planning an attack were apprehended on Route 1 by a special unit during an unusual arre",
           "rank_key": {
             "outlets": 2,
@@ -1062,6 +1039,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "CWRC documents 13 Israeli assaults against farmers and property across West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-20T19:39+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1191,24 +1186,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Turkish intelligence chief, Libyan premier discuss unifying rival administrations, military forces",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T16:30+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran possesses technologies that enable the targeting of US bases outside the region, according to B",
           "rank_key": {
             "outlets": 1,
@@ -1298,7 +1275,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-20T19:50:34.579023+00:00",
+    "last_success": "2026-10-20T19:55:22.276598+00:00",
     "last_failure": null
   },
   "ok": true
