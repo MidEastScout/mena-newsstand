@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T14:06:32.058699+00:00",
+  "updated": "2026-10-20T14:38:53.005034+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-20T14:04:14.932023+00:00"
+      "headlines_updated": "2026-10-20T14:36:39.161326+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 3,
-        "title_snippet": 34,
+        "dropped_stale": 5,
+        "title_snippet": 30,
+        "dropped_no_english": 3,
         "title_translated": 1,
-        "title_native": 88,
+        "title_native": 87,
         "in": 126,
-        "kept": 123
+        "kept": 118
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Police drop probe into PM adviser’s wife’s Palestine Action post",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "Egypt says ready to give Saudi Arabia necessary support amid Houthi conflict",
@@ -201,11 +207,31 @@
           "source": "Jordan Times",
           "title": "Safadi reiterates Jordan’s condemnation of ‘terrorist’ Houthi attacks on Saudi Arabia",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "البرلمان المصري يُرجئ التصويت على الدعم الدفاعي للسعودية إلى الغد",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "שר ההגנה של טורקיה: נשאיר כוחות בסוריה ועיראק עד שתובטח אבטחת הגבול עם מדינות אלו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "שבוע לפתיחת הקלפיות: כך מסקרים בעולם הערבי את הבחירות הגורליות",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مواجهات واعتداءات مستوطنين في مدن بالضفة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
+      "in": 118,
       "kept": 63,
       "dropped": [
         {
@@ -244,13 +270,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "New images of Kim Jong-un have been released following rumors of his death.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
           "title": "Education Minister Yoav Kisch announced the cancellation of the Meitzar exams, instructing that there should…",
           "sec": 0,
@@ -280,14 +299,21 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , France PM promises more curfews as authorities seek to regain control",
+          "title": "2 , Is Russia stalking satellites which help Ukraine from space?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Trump’s approval ratings plummet: what that means for the US midterms",
+          "title": "3 , Trump’s approval ratings plummet: what that means for the US midterms",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , France PM promises more curfews as authorities seek to regain control",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -308,13 +334,6 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "WFP slashes Gaza food aid over funding, warns needs persist",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
           "title": "Hegseth discusses Iran with Netanyahu in unannounced visit to Israel, officials say",
           "sec": 0,
           "off": 0,
@@ -323,13 +342,6 @@
         {
           "source": "The New Arab",
           "title": "World Food Programme cuts aid to 500,000 Palestinians in Gaza, cites funding shortages",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Macron opens Gulf tour amid violent protests in France",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -358,6 +370,13 @@
         {
           "source": "IRNA",
           "title": "Iran summons German ambassador over baseless allegations",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Mehr News",
+          "title": "Persian Gulf authority acts against 40 violating vessels",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -420,14 +439,14 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "This headline refers to an article discussing the grandeur of Iranian civilization, potentially originating…",
+          "title": "The International Energy Agency is reportedly considering withdrawing more oil from member states' reserves.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al-Akhbar",
-          "title": "The International Energy Agency is reportedly considering withdrawing more oil from member states' reserves.",
+          "title": "This headline refers to an article discussing the grandeur of Iranian civilization, potentially originating…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -447,22 +466,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Salfit health director: Continued Israeli closure of northern entrance obstructs healthcare services",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "Large demonstrations took place in the Japanese capital, Tokyo, demanding the government's resignation due to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The Egyptian Parliament has postponed the vote on defense support for Saudi Arabia until tomorrow.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -476,7 +481,7 @@
         },
         {
           "source": "SANA",
-          "title": "Macron seeks Gulf fuel supplies as conflict disrupts energy markets",
+          "title": "Historic al-Qaymariyya neighborhood blends heritage and vibrant culinary scene",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -496,10 +501,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "World Food Programme says ending aid for half million in Gaza due to funding shortfall",
+          "source": "Gulf News",
+          "title": "Viral video: Parents film beach reel as stranger rescues toddler from waves",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -521,13 +526,6 @@
           "title": "Apu is back on The Simpsons. But do Indians really need another stereotype?",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Apple's October 28 event could bring a major MacBook change",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -616,14 +614,7 @@
         },
         {
           "source": "TRT World",
-          "title": "Macron begins Gulf tour to secure fuel supplies as cost-of-living protests rock France",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "WFP cuts Gaza aid for 500,000 people as Israeli restrictions strain food supplies",
+          "title": "JD Vance refuses to endorse Netanyahu ahead of Israeli elections",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -632,10 +623,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 44,
+      "clusters": 41,
       "sizes": [
         6,
-        5,
+        6,
+        3,
         3,
         2,
         2,
@@ -645,10 +637,6 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -687,6 +675,55 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "UK to deploy fighter jets to defend Saudi Arabia against Houthi attacks",
+          "rank_key": {
+            "outlets": 6,
+            "camps": 4,
+            "newest": "2026-10-20T14:20+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Arab News",
+            "Egypt Independent",
+            "Middle East Eye",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant",
+            "turkish"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Egypt Independent",
+            "title": "UK to deploy fighter jets to defend Saudi Arabia against Houthi attacks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Yemen war: Why Egypt's vow to defend Saudi Arabia is a risky gamble",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Philippines reaffirms solidarity with Saudi Arabia in wake of Houthi attacks",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "IRGC: Two oil ankers caught fire, halted in Strait of Hormuz",
           "rank_key": {
             "outlets": 6,
@@ -745,50 +782,152 @@
           }
         },
         {
-          "selected_rank": 2,
-          "headline": "Yemen war: Why Egypt's vow to defend Saudi Arabia is a risky gamble",
+          "selected_rank": 3,
+          "headline": "Saudi, UAE foreign ministers discuss regional security in phone call",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-10-20T12:31+00:00"
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-19T16:39+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Anadolu Agency",
-            "Arab News",
-            "Egypt Independent",
-            "Middle East Eye"
+            "Middle East Eye",
+            "SANA"
           ],
           "camps": [
-            "gulf",
             "panarab",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 5,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Middle East Eye",
-            "title": "Yemen war: Why Egypt's vow to defend Saudi Arabia is a risky gamble",
+            "source": "Al Arabiya",
+            "title": "Saudi, UAE foreign ministers discuss regional security in phone call",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Arab News",
-                "title": "Philippines reaffirms solidarity with Saudi Arabia in wake of Houthi attacks",
+                "source": "Middle East Eye",
+                "title": "Egyptian, Saudi foreign ministers discuss regional de-escalation",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
+          "headline": "Türkiye says troops will stay in Syria, Iraq 'until borders are secured'",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-20T13:21+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "IRNA"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Türkiye says troops will stay in Syria, Iraq 'until borders are secured'",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (syria)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Israeli forces commit new aggression in southern Syria",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Pakistan's army chief arrives in Tehran for talks",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-20T10:39+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Pakistan's army chief arrives in Tehran for talks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Amnesty International calls for sanctions on Israeli officials and an end to settler sttacks in the ",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-20T05:55+00:00"
+          },
+          "outlet_names": [
+            "TRT World",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "Amnesty International calls for sanctions on Israeli officials and an end to settler sttacks in the West Bank",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "TRT World",
+                "title": "EU, Canada condemn Israeli settler attacks on Palestinians, European diplomats",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Pakistan army chief Asim Munir to visit Tehran on Tuesday",
           "rank_key": {
             "outlets": 2,
@@ -825,45 +964,7 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Rubio says no pause in US intel sharing with Ukraine",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-19T19:00+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Jordan Times"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Jordan Times",
-            "title": "Rubio says no pause in US intel sharing with Ukraine",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Is Russia stalking satellites which help Ukraine from space?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "The Egyptian Parliament has postponed a vote on military support for Saudi Arabia.",
           "rank_key": {
             "outlets": 2,
@@ -894,43 +995,6 @@
               {
                 "source": "The New Arab",
                 "title": "Egypt parliament delays vote on military support to Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Saudi, French foreign ministers discuss de-escalation and maritime security",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-19T13:14+00:00"
-          },
-          "outlet_names": [
-            "Middle East Eye",
-            "SANA"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Saudi, French foreign ministers discuss de-escalation and maritime security",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Egyptian, Saudi foreign ministers discuss regional de-escalation",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1013,37 +1077,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "UN warns 1.6M children in Yemen's Taiz face water crisis amid fighting",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-20T13:18+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "UN warns 1.6M children in Yemen's Taiz face water crisis amid fighting",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "US Secretary of Defense Hegseth visited Israel and met with Netanyahu.",
           "rank_key": {
             "outlets": 2,
@@ -1104,6 +1137,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israeli forces demolish inhabited home in al-Walaja northwest of Bethlehem",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-20T14:07+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The French Prime Minister has pledged to deploy substantial police forces in anticipation of new pro",
           "rank_key": {
             "outlets": 1,
@@ -1122,60 +1173,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Military delegations from Lebanon and Israel have arrived in Florida to resume talks between the two",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T13:51+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Pakistan to continue mediation efforts between US and Iran: Deputy PM Dar",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T13:28+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Türkiye says troops will stay in Syria, Iraq 'until borders are secured'",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T13:21+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Zelensky seeks interceptors for energy truce with Russia",
           "rank_key": {
             "outlets": 1,
@@ -1187,6 +1184,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Death toll from Houthi attack in Yemen’s Shabwa rises to 73, with 14 missing",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-20T12:54+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1266,24 +1281,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Türkiye's FM Fidan, NATO chief Rutte discuss Black Sea security in Brussels",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T11:39+00:00"
-          },
-          "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Pakistani Army Chief arrives in Tehran",
           "rank_key": {
             "outlets": 1,
@@ -1319,7 +1316,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Qatari official says Iran-US talks continue amid risk of wider regional war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-20T10:24+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Foreign Affairs published an article questioning why a war on Iran could be one of Washington's bigg",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-20T09:05+00:00"
+          },
+          "outlet_names": [
+            "Al Mayadeen"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1337,7 +1370,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-20T14:06:43.795341+00:00",
+    "last_success": "2026-10-20T14:39:06.945390+00:00",
     "last_failure": null
   },
   "ok": true
