@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T20:27:26.023920+00:00",
+  "updated": "2026-10-20T20:59:57.998666+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-20T20:25:08.602268+00:00"
+      "headlines_updated": "2026-10-20T20:57:19.098175+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 33,
+        "title_snippet": 24,
+        "dropped_no_english": 9,
         "title_translated": 1,
         "title_native": 88,
         "in": 126,
-        "kept": 122
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -206,12 +207,57 @@
           "source": "Falastin al-Youm",
           "title": "البرلمان المصري يُرجئ التصويت على الدعم الدفاعي للسعودية إلى الغد",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ֱדוידי בן ציון על פרישתו מ\"עמך ישראל\": \"לא הערכתי את עוצמת הקמפיין נגדנו\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "\"עלול לעלות בחיי אדם\": אתגר הטיקטוק שמותיר בנייני מגורים ללא מטפי כיבוי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הארץ המובטחת, עונה 1, פרק 6: פרק ההחלטות לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "فلسطين المحتلة: مراسل الميادين: غارة من مسيرة إسرائيلية على مخيم البريج وسط قطاع غزة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "لبنان: مراسل الميادين في الجنوب: عملية تمشيط بالأسلحة الرشاشة من قبل قوات الاحتلال الاسرائيلي في بلدة زوطر الشرقية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "الولايات المتحدة الأميركية: رويترز عن مسؤول أميركي: المناقشات شملت بنوداً من إطار شامل للسلام بما في ذلك الضمانات الأمني",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مصدر أمني لـ\"تسنيم\": أوكرانيا نشرت قوات متخصصة بالمسيّرات قرب إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "رئيس وزراء النرويج: المبعوث الأميركي ستيف ويتكوف التقى الرئيس الأوكراني وسيتوجه غداً إلى سانت بطرسبرغ للقاء القيادة الرو",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "نتنياهو ينفي التوصل لصفقة إقرار بالذنب بالتهم المنسوبة إليه",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 58,
+      "in": 113,
+      "kept": 53,
       "dropped": [
         {
           "source": "Kan 11",
@@ -229,21 +275,7 @@
         },
         {
           "source": "Kan 11",
-          "title": "US Vice President Vance stated he is not for or against Netanyahu and will not interfere in Israel's…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
           "title": "Prime Minister Netanyahu met with US Secretary of Defense Hegseth, with Iran being the central topic of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "N12",
-          "title": "US Vice President Vance refrained from endorsing Netanyahu, stating his focus is on American candidates and…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -284,13 +316,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Israelis are preparing for the Christmas holiday, with popular destinations and prices being highlighted.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "3 , ‘Not getting involved’: US Vice President declines to endorse Netanyahu",
           "sec": 0,
@@ -313,13 +338,6 @@
         },
         {
           "source": "Middle East Eye",
-          "title": "Mahmoud Khalil petitions US Supreme Court to hear his free speech case",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Middle East Eye",
           "title": "Exclusive: Full text of the Mecca defence pact signed by Turkey, Saudi Arabia and Pakistan",
           "sec": 0,
           "off": 0,
@@ -327,21 +345,21 @@
         },
         {
           "source": "Middle East Eye",
-          "title": "Netanyahu to Trump: 'We have a job to finish'",
+          "title": "World Food Programme says ending aid for half million in Gaza due to funding shortfall",
           "sec": 0,
           "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Middle East Eye",
+          "title": "Mahmoud Khalil petitions US Supreme Court to hear his free speech case",
+          "sec": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Arabiya",
           "title": "Hegseth discusses Iran with Netanyahu in unannounced visit to Israel, officials say",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "US VP Vance declines to endorse Netanyahu despite Trump’s backing",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -368,22 +386,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Demonstrations in Tokyo are demanding the government's resignation for its support of Israel.",
+          "source": "The New Arab",
+          "title": "Macron opens Gulf tour amid violent protests in France",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "Hegseth met with Netanyahu at Ovda air base, with representatives from regional countries present.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Protesters in France have blocked the Louvre Museum, and there are warnings of a state of emergency being…",
+          "source": "IRNA",
+          "title": "Iran summons German ambassador over baseless allegations",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -396,15 +407,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Mehr News",
-          "title": "Persian Gulf authority acts against 40 violating vessels",
+          "source": "Jordan Times",
+          "title": "Trump backs ally Netanyahu ahead of Israel's tight election",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Jordan Times",
-          "title": "Trump backs ally Netanyahu ahead of Israel's tight election",
+          "title": "US VP Vance says staying out of Israel vote as Trump backs Netanyahu",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -495,13 +506,6 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Large demonstrations in Tokyo are demanding the government's resignation due to its support for Israel.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
           "title": "Aid is declining, raising questions about who will support families and markets in Gaza.",
           "sec": 0,
           "off": 0,
@@ -523,14 +527,14 @@
         },
         {
           "source": "SANA",
-          "title": "Economic experts: START fund a pillar for recovery, engine for sustainable development",
+          "title": "Archaeologists uncover hidden Inca roads and structures in Peru",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "SANA",
-          "title": "IEA ready to coordinate further release of emergency oil reserves",
+          "title": "Ministry of Culture mourns mathematician and manuscript scholar Mustafa Mawladi",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -545,6 +549,13 @@
         {
           "source": "Arab News",
           "title": "Hegseth meets Netanyahu in unannounced visit to Israel, reports Axios",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
+          "title": "Iran Guards say three tankers hit mines crossing Hormuz strait",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -579,9 +590,9 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Trump says Congresswoman Ilhan Omar ‘could go to jail’ over immigration investigation",
+          "title": "Anthropic could spend $750B on computing power ahead of IPO: Report",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -660,24 +671,28 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Mecca defence pact with Türkiye, Pakistan aims to boost regional security: MBS",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 36,
       "sizes": [
         7,
-        5,
-        3,
+        6,
         2,
         2,
         2,
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -717,7 +732,7 @@
           "selected_rank": 1,
           "headline": "UK to deploy fighter jets to help protect Saudi from Houthi attacks",
           "rank_key": {
-            "outlets": 7,
+            "outlets": 6,
             "camps": 4,
             "newest": "2026-10-20T13:37+00:00"
           },
@@ -727,7 +742,6 @@
             "Arab News",
             "Egypt Independent",
             "Gulf News",
-            "Middle East Eye",
             "TRT World"
           ],
           "camps": [
@@ -736,7 +750,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -765,29 +779,30 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Iran says supertanker carrying over 2 million barrels of oil hit mine near Hormuz",
+          "headline": "IRGC says three tankers hit mines crossing Hormuz Strait",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 5,
             "camps": 3,
-            "newest": "2026-10-20T20:06+00:00"
+            "newest": "2026-10-20T20:08+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Anadolu Agency",
             "IRNA",
-            "Mehr News"
+            "Mehr News",
+            "Middle East Eye"
           ],
           "camps": [
             "panarab",
             "iranian",
             "turkish"
           ],
-          "members": 5,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Iran says supertanker carrying over 2 million barrels of oil hit mine near Hormuz",
+            "source": "Middle East Eye",
+            "title": "IRGC says three tankers hit mines crossing Hormuz Strait",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -807,6 +822,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "IRNA",
+                "title": "IRGC Navy: Violating oil tanker hits mine in Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Mehr News",
                 "title": "IRGC downs 54th US MQ-9 drone over Strait of Hormuz",
                 "rejected_by": "older than the story's newest wave"
@@ -816,83 +836,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Israeli settler violence aims to 'ethnically cleanse' occupied West Bank: Amnesty",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-20T08:59+00:00"
-          },
-          "outlet_names": [
-            "TRT World",
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Israeli settler violence aims to 'ethnically cleanse' occupied West Bank: Amnesty",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "How settler violence is devastating the West Bank’s olive harvest",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Israeli airstrikes, artillery shelling, and explosions have been reported in several areas in southe",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-20T15:48+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Israeli airstrikes, artillery shelling, and explosions have been reported in several areas in southern…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "Falastin al-Youm",
-                "title": "Israeli artillery shelling targeted southern Lebanon.",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Pakistan's army chief arrives in Tehran for talks",
           "rank_key": {
             "outlets": 2,
@@ -923,7 +866,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Drone strikes across Sudan kill more than 160 in past days",
           "rank_key": {
             "outlets": 2,
@@ -960,44 +903,7 @@
           }
         },
         {
-          "selected_rank": null,
-          "headline": "Pakistan army chief Asim Munir to visit Tehran on Tuesday",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-20T05:35+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Mehr News"
-          ],
-          "camps": [
-            "gulf",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Pakistan army chief Asim Munir to visit Tehran on Tuesday",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Mehr News",
-                "title": "Pakistan army chief to visit Tehran on Tuesday",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Ukraine must join potential Trump-Putin-Xi talks: Zelenskyy",
           "rank_key": {
             "outlets": 2,
@@ -1108,6 +1014,24 @@
           "camps": [
             "levant"
           ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces abuse Palestinian youths, use resident as human shield in Tulkarm Governorate",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-20T19:39+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
@@ -1132,24 +1056,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli forces abuse Palestinian youths, use resident as human shield in Tulkarm Governorate",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T19:25+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Yemeni army says over 740 attacks ‘neutralized’ 200 Houthis in 24 hours",
           "rank_key": {
             "outlets": 1,
@@ -1161,42 +1067,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Rezaei: Enriched uranium will not exit Iran by any means",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T18:56+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Wall Street Journal reported that Sanaa revealed Saudi Arabia's military weaknesses, describing ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T17:49+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1280,7 +1150,7 @@
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-20T11:20+00:00"
+            "newest": "2026-10-20T11:22+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1294,17 +1164,53 @@
         },
         {
           "selected_rank": null,
-          "headline": "Pakistan’s army chief departs for Tehran: Source",
+          "headline": "US AI centers will be targeted in next war: MP",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-20T08:22+00:00"
+            "newest": "2026-10-20T07:11+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Mehr News"
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The Egyptian Parliament has postponed a vote on military support for Saudi Arabia.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-19T17:04+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Saudi, UAE foreign ministers discuss regional security in phone call",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-19T16:39+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1329,7 +1235,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-20T20:27:48.528118+00:00",
+    "last_success": "2026-10-20T21:00:36.152007+00:00",
     "last_failure": null
   },
   "ok": true
