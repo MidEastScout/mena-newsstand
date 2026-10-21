@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T02:47:23.486177+00:00",
+  "updated": "2026-10-21T03:19:22.932745+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-21T02:45:06.268247+00:00"
+      "headlines_updated": "2026-10-21T03:17:03.882675+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 4,
-        "title_snippet": 35,
+        "title_snippet": 34,
+        "dropped_no_english": 1,
         "title_native": 87,
         "in": 126,
-        "kept": 122
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -205,12 +206,17 @@
           "source": "Jordan Times",
           "title": "Oil tanker on fire after hitting mine in Hormuz: Iran's Guards",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הישראלים נערכים לכריסטמס: היעדים הפופולריים - והמחירים",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 60,
+      "in": 121,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -252,13 +258,6 @@
           "title": "Kish is canceling the MEC exams, stating 'There is no cooperation with RAMA.'",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The full program of \"HaTzinor\" for October 20, 2026, is available for direct viewing.",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -472,13 +471,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "Colonist rams vehicle of head of al-Rashayida Village Council near Bethlehem",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Falastin al-Youm",
           "title": "Large demonstrations are taking place in the Japanese capital demanding the government's resignation for its…",
           "sec": 0,
@@ -495,6 +487,13 @@
         {
           "source": "SANA",
           "title": "UAE, France discuss regional developments and energy security",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "Macron seeks Gulf fuel supplies as conflict disrupts energy markets",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -529,13 +528,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "One was preparing for her wedding: Three sisters die beneath collapsed home",
-          "sec": 0,
-          "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "Driving in the UAE? Ministry issues safety warning ahead of unsettled weather",
           "sec": 0,
           "off": 1,
@@ -549,8 +541,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "UN official warns of 'increased tensions' in Kosovo as political deadlock appears to ease",
+          "source": "Gulf News",
+          "title": "UAE residents report strange smells. What we know so far",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -650,11 +642,11 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 36,
       "sizes": [
         7,
         5,
-        5,
+        4,
         4,
         4,
         3,
@@ -662,6 +654,8 @@
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -755,53 +749,6 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Oslo talks seek path out of Russia-Ukraine war amid US-Kyiv tensions",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-10-21T02:30+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Daily Sabah",
-            "Kan 11",
-            "SANA"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Oslo talks seek path out of Russia-Ukraine war amid US-Kyiv tensions",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "4 , ‘I don’t care how it’s done’: Trump pressures Ukraine to cut peace deal",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Daily Sabah",
-                "title": "Ukraine must join potential Trump-Putin-Xi talks: Zelenskyy",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
           "headline": "Super tanker catches fire after hitting mine in Hormuz",
           "rank_key": {
             "outlets": 4,
@@ -856,7 +803,7 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 3,
           "headline": "One Palestinian killed, several injured in Israeli shelling of northern Gaza",
           "rank_key": {
             "outlets": 4,
@@ -895,6 +842,51 @@
               {
                 "source": "SANA",
                 "title": "Two Palestinian children killed in Israeli strike on Gaza Strip",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Ukraine reported that two people were killed in Russian drone attacks in the Kharkiv region.",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-21T02:30+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Daily Sabah",
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Kan 11",
+            "title": "Ukraine reported that two people were killed in Russian drone attacks in the Kharkiv region.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "4 , ‘I don’t care how it’s done’: Trump pressures Ukraine to cut peace deal",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Daily Sabah",
+                "title": "Ukraine must join potential Trump-Putin-Xi talks: Zelenskyy",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1069,6 +1061,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Yemen’s central bank orders banks to freeze assets of 135 Houthi-linked individuals, entities",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-21T01:11+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1269,25 +1279,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Pakistan’s army chief departs for Tehran: Source",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-20T08:22+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1305,7 +1297,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-21T02:47:42.973093+00:00",
+    "last_success": "2026-10-21T03:19:35.956341+00:00",
     "last_failure": null
   },
   "ok": true
