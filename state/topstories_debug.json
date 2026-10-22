@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T23:35:11.080283+00:00",
+  "updated": "2026-10-22T00:07:34.349047+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,26 +167,31 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-21T23:33:08.606712+00:00"
+      "headlines_updated": "2026-10-22T00:05:09.239552+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 34,
-        "title_translated": 1,
-        "title_native": 86,
+        "dropped_stale": 6,
+        "title_snippet": 29,
+        "dropped_no_english": 6,
+        "title_native": 85,
         "in": 126,
-        "kept": 121
+        "kept": 114
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Middle East Eye",
+          "title": "Mahmoud Khalil petitions US Supreme Court to hear his free speech case",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "World Food Programme cuts aid to 500,000 Palestinians in Gaza, cites funding shortages",
@@ -211,12 +216,42 @@
           "source": "Arab News",
           "title": "Drone strikes across Sudan kill more than 100",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח ב\"ניו יורק טיימס\": ארה\"ב וישראל מתכננות לתקוף באיראן אחרי בחירות האמצע לקונגרס",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "החשש להסלמה באזור: ארה\"ב נערכת לפינוי עובדי שגרירויות במדינות המפרץ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "מטען חבלה הוצמד לאופנוע בראשל\"צ; חבלן הוזעק",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مباحثات بين بوتين وويتكوف في صدارتها الملف الأوكراني",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اشتباك كلامي بين جناحي الحركة الإسلامية في فلسطين المحتلة... ما أسباب الخلاف؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "انتخابات الكنيست... نسبة المشاركة قد تحدد من يؤلف الحكومة المقبلة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 71,
+      "in": 114,
+      "kept": 69,
       "dropped": [
         {
           "source": "Kan 11",
@@ -228,13 +263,6 @@
         {
           "source": "Kan 11",
           "title": "The pro-Israel lobbying group AIPAC will stop providing direct financial support and official endorsements to…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Foreign leaders exploited the unrest in France for their own political agendas, according to French President…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -256,13 +284,6 @@
         {
           "source": "N12",
           "title": "A three-year-old girl in China was rescued by passersby after being left alone and dangling from a 12th-floor…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -296,27 +317,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "5 , Why are French protesters chanting ‘Bismillah, c’est les ténèbres’?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Middle East Eye",
-          "title": "Turkey, Qatar, Pakistan and Indonesia forge ‘Badr’ deal to jointly produce weapons",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Middle East Eye",
-          "title": "Turkey, Qatar, Pakistan and Indonesia forge ‘Badr’ deal to jointly produce weapons",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Why Greece's alliances failed to prevent eastern Libya's maritime deal with Turkey",
           "sec": 0,
@@ -326,6 +326,13 @@
         {
           "source": "Middle East Eye",
           "title": "Turkey secures a strategic win over Greece as eastern Libya backs the maritime deal",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Middle East Eye",
+          "title": "Turkey, Qatar, Pakistan and Indonesia forge ‘Badr’ deal to jointly produce weapons",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -345,13 +352,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "There are escalating developments in the Middle East, with updates on Iran, Yemen, and the region.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Gharibabadi: Both Iran and China stress need to expand cooperation within Global South",
           "sec": 0,
@@ -360,7 +360,7 @@
         },
         {
           "source": "Iran International",
-          "title": "3 Iran-Pakistan border trade halt leaves trucks and cargo stranded",
+          "title": "2 Iran-Pakistan border trade halt leaves trucks and cargo stranded",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -479,16 +479,16 @@
         },
         {
           "source": "Gulf News",
-          "title": "Ras Al Khaimah partners with China to advance AI-powered transport",
+          "title": "Getting to Yas Island could become easier under new Etihad Rail deal",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "UAE weather alert: Heavy rain hits east as NCM warns of strong winds up to 50km/h",
+          "title": "Ras Al Khaimah partners with China to advance AI-powered transport",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -572,13 +572,13 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 49,
       "sizes": [
         4,
         4,
-        4,
         3,
         3,
+        3,
         2,
         2,
         2,
@@ -586,9 +586,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -634,37 +632,46 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Sisi says Egypt to 'defend Saudi territory' and will not attack Yemen",
+          "headline": "US, Israel develop plans for renewed strikes on Iran after midterm elections: Report",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
-            "newest": "2026-10-21T19:49+00:00"
+            "newest": "2026-10-21T23:40+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Arab News",
-            "Daily Sabah",
-            "Jordan Times"
+            "Al Jazeera",
+            "Anadolu Agency",
+            "Iran International"
           ],
           "camps": [
-            "gulf",
-            "levant",
+            "panarab",
+            "iranian",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Jordan Times",
-            "title": "Sisi says Egypt to 'defend Saudi territory' and will not attack Yemen",
+            "source": "Anadolu Agency",
+            "title": "US, Israel develop plans for renewed strikes on Iran after midterm elections: Report",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "3 , Iran determined to keep uranium amid increased war odds, flurry of meetings",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Iran International",
+                "title": "3 Pakistani mediator leaves Tehran after Iran doubles down on demands",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -797,38 +804,37 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Qatar, France urge Israeli withdrawal from Gaza, end to West Bank settlement policies",
+          "headline": "US orders embassy staff, families to leave Saudi Arabia",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-21T23:27+00:00"
+            "newest": "2026-10-21T19:49+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
-            "WAFA News"
+            "Al Jazeera",
+            "Daily Sabah"
           ],
           "camps": [
-            "levant",
+            "panarab",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Qatar, France urge Israeli withdrawal from Gaza, end to West Bank settlement policies",
+            "source": "Daily Sabah",
+            "title": "US orders embassy staff, families to leave Saudi Arabia",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 3 of the story's dominant entities (gaza, qatar, westbank)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "WAFA News",
-                "title": "Colonists attack olive harvesters east of Qalqilya, injure one",
-                "rejected_by": "loaded/partisan wording"
+                "source": "Al Jazeera",
+                "title": "5 , US orders departure of personnel from Saudi Arabia, citing Houthi threat",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -941,11 +947,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Houthi ballistic missile launched at Yemen’s Aden airport",
+          "headline": "Pakistan's army chief arrives in Tehran for talks",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-21T08:04+00:00"
+            "newest": "2026-10-20T10:39+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -959,44 +965,11 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Houthi ballistic missile launched at Yemen’s Aden airport",
+            "source": "Arab News",
+            "title": "Pakistan's army chief arrives in Tehran for talks",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "3 , Iran determined to keep uranium amid increased war odds, flurry of meetings",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": null
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Iran International"
-          ],
-          "camps": [
-            "panarab",
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Jazeera",
-            "title": "3 , Iran determined to keep uranium amid increased war odds, flurry of meetings",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -1048,6 +1021,37 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Sisi says Egypt to 'defend Saudi territory' and will not attack Yemen",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-21T19:31+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Jordan Times",
+            "title": "Sisi says Egypt to 'defend Saudi territory' and will not attack Yemen",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
           }
         },
         {
@@ -1124,42 +1128,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A security official in Iran stated that a wide-scale war and assassinations would make targeting U.S",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-21T20:52+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "The Ministry of Transport in Sanaa declared the militarization of Rayyan Airport a war crime and a v",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-21T20:46+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israeli attacks kill 4 Palestinians in Gaza amid latest ceasefire violations",
           "rank_key": {
             "outlets": 1,
@@ -1214,6 +1182,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Colonists attack olive harvesters east of Qalqilya, injure one",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-21T19:32+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Explosions heard in Sirik in south Iran",
           "rank_key": {
             "outlets": 1,
@@ -1250,14 +1236,14 @@
         },
         {
           "selected_rank": null,
-          "headline": "Amid fears of regional escalation, the U.S.",
+          "headline": "The United States is reportedly planning to order the evacuation of staff and their families from it",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-21T19:08+00:00"
+            "newest": "2026-10-21T19:05+00:00"
           },
           "outlet_names": [
-            "N12"
+            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -1267,7 +1253,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "'Null and void:' Egypt condemns Turkey-Libya maritime deal, reaffirms pact with Greece",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-21T19:00+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "26 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1285,7 +1289,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-21T23:35:30.330734+00:00",
+    "last_success": "2026-10-22T00:08:06.483520+00:00",
     "last_failure": null
   },
   "ok": true
