@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T21:07:36.484114+00:00",
+  "updated": "2026-10-22T21:40:16.185450+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-22T21:05:28.684136+00:00"
+      "headlines_updated": "2026-10-22T21:37:59.951451+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 6,
-        "title_snippet": 35,
+        "title_snippet": 29,
+        "dropped_no_english": 5,
+        "title_translated": 1,
         "title_native": 85,
         "in": 126,
-        "kept": 120
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -215,25 +217,43 @@
           "source": "Gulf News",
           "title": "UK rearrests 2 men over suspected Iran plot at RAF Fairford",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "יורוליג: מכבי ת\"א הפסידה לריאל מדריד 113:99",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "طريق «الانتصار» مسدود: لا أحد مُستعِدٌّ للقتال بالنيابة عن السعودية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عودةٌ لازمة إلى التاريخ: مصر والتدخّل المرير في اليمن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تلويح مصري بـ«منع التنقيب» عن الغاز: القاهرة تخشى وصاية تركية على ليبيا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عون وسلام ينفذان أوامر روبيو: إحالة ملف الشاحنة إلى المجلس العدلي",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 66,
+      "in": 115,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "A 25-year-old man sustained moderate injuries in a road accident involving two motorcycles near Beit Hanina.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Actor Tom Skerritt, known for \"M*A*S*H\" and \"Alien,\" passed away at 93.",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -253,6 +273,13 @@
         {
           "source": "Channel 13",
           "title": "A minibus overturned near Beit Shemesh, resulting in nine injuries, including a man around 30 in serious…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -279,22 +306,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The program \"Good Morning\" focuses on how small amounts of money can make a significant difference.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "2 , Netanyahu promises Iran regime change: Can Israel topple Tehran government?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , Epstein, Iran and ‘drain the swamp’: Have Republicans shifted before vote?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -378,7 +391,7 @@
         },
         {
           "source": "Iran International",
-          "title": "5 German regulator orders liquidation of Bank Saderat Iran’s Hamburg branch",
+          "title": "4 German regulator orders liquidation of Bank Saderat Iran’s Hamburg branch",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -417,27 +430,6 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The flour deficit in Gaza has reached 100%.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "Albanese warned Indonesia against participating in the 'Peace Council'.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The 'Free Patriotic Movement' filed two complaints against Fadd after issues with generators and fuel prices.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Manar",
@@ -525,6 +517,13 @@
         },
         {
           "source": "Anadolu Agency",
+          "title": "Türkiye-Canada defense deal signals stronger ties, official says",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
           "title": "Trump says US ‘may do it a little bit further’ in Iran",
           "sec": 0,
           "off": 0,
@@ -536,13 +535,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "France issues orange alert in 15 departments ahead of Storm Austen",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Daily Sabah",
@@ -599,23 +591,32 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Canada, Türkiye elevate relations to strategic level, commit to long-term ties: Carney",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 41,
       "sizes": [
         8,
         6,
         4,
-        4,
-        4,
+        3,
         3,
         2,
         2,
         2,
         2,
+        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -768,14 +769,13 @@
           "selected_rank": 3,
           "headline": "At least 4 Palestinians killed in Israeli attacks across Gaza",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
             "newest": "2026-10-22T19:34+00:00"
           },
           "outlet_names": [
             "Daily Sabah",
             "IRNA",
-            "TRT World",
             "WAFA News"
           ],
           "camps": [
@@ -783,7 +783,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -806,68 +806,12 @@
                 "source": "WAFA News",
                 "title": "Two Palestinians, including a girl, killed by Israeli gunfire and shelling in Ja",
                 "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Israeli attacks kill three Palestinians in Gaza as child succumbs to earlier wou",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 4,
-          "headline": "During the current October, 409 attacks by the army and settlers against olive farmers were recorded",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-22T16:12+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm",
-            "TRT World",
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Falastin al-Youm",
-            "title": "During the current October, 409 attacks by the army and settlers against olive farmers were recorded.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "Israel detains US congress candidate at West Bank olive harvest",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Israeli forces and colonists carry out 17 attacks on Palestinian olive harvester",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "TRT World",
-                "title": "Israeli forces, illegal settlers target Palestinian olive harvest across occupie",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Houthis say they attacked Saudi defense ministry, Aramco in Yanbu and Dammam airport",
           "rank_key": {
             "outlets": 3,
@@ -911,7 +855,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "UN condemns killing of Syrian civilian with disability by Israeli forces in southern Syria",
           "rank_key": {
             "outlets": 2,
@@ -943,6 +887,43 @@
               {
                 "source": "SANA",
                 "title": "Syria condemns Israeli occupation killing of disabled young man in western Daraa",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US, Israel draw up plans for 72-hour Iran strike: 7 key questions on Trump’s strategy and Tehran’s r",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-22T10:04+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "US, Israel draw up plans for 72-hour Iran strike: 7 key questions on Trump’s strategy and Tehran’s response",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "TRT World",
+                "title": "US, Israel draw up plans for post-election strikes on Iran — report",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1081,6 +1062,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Iranian, Senegalese FMs discuss bilateral ties over phone",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-22T21:32+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Araghchi reacts to Macron’s contradictions regarding Iran’s nuclear activities",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-22T21:18+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Protests in Tirana: Domestic unrest or reaction against Israel?",
           "rank_key": {
             "outlets": 1,
@@ -1117,24 +1134,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Army Spokesperson: US is most criminal country from times to present",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T20:23+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "The US Army noted 100 days of blockade against Iran, stating it helped prevent tens of billions in o",
           "rank_key": {
             "outlets": 1,
@@ -1146,6 +1145,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "UNICEF: 351 children killed in Gaza since October 2025 ceasefire",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-22T19:52+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1207,6 +1224,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "A second female lawmaker in Australia is threatened days after alleged car attack",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-22T16:30+00:00"
+          },
+          "outlet_names": [
+            "Arab News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Iran better placed for asymmetric war",
           "rank_key": {
             "outlets": 1,
@@ -1242,61 +1277,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Vice President al-Sheikh, Saudi Foreign Minister discuss regional developments",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T13:26+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Hamas called for concrete action to counter the escalating \"extermination war\" and restore the polic",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T12:46+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Sana'a is expanding its targets within Saudi Arabia and threatening major escalatory measures.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T12:36+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1314,7 +1295,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-22T21:07:59.790621+00:00",
+    "last_success": "2026-10-22T21:40:33.486479+00:00",
     "last_failure": null
   },
   "ok": true
