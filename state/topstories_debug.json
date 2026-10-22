@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-22T10:09:57.381317+00:00",
+  "updated": "2026-10-22T10:41:52.408320+00:00",
   "stages": {
     "fetch": {
-      "items": 126,
+      "items": 122,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -71,7 +71,7 @@
           "error": null
         },
         "Jordan Times": {
-          "headlines": 5,
+          "headlines": 1,
           "lang": "en",
           "stale": false,
           "error": null
@@ -167,25 +167,37 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-22T10:07:54.957009+00:00"
+      "headlines_updated": "2026-10-22T10:39:44.004096+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 35,
-        "title_native": 86,
-        "in": 126,
-        "kept": 121
+        "dropped_stale": 7,
+        "title_snippet": 27,
+        "dropped_no_english": 7,
+        "title_translated": 1,
+        "title_native": 80,
+        "in": 122,
+        "kept": 108
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 32,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Middle East Eye",
+          "title": "Mahmoud Khalil petitions US Supreme Court to hear his free speech case",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Iran’s IRGC says mines halted two tankers crossing Strait of Hormuz",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "Mahmoud Khalil asks Supreme Court to stop immigration detentions",
@@ -198,24 +210,59 @@
         },
         {
           "source": "Jordan Times",
-          "title": "Rubio says no pause in US intel sharing with Ukraine",
+          "title": "Iran's military says oil tanker on fire in Gulf of Oman",
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "SANA",
-          "title": "U.S. moves to revive Russia-Ukraine peace talks with new diplomatic push",
+          "source": "WAFA News",
+          "title": "Couple, child, killed, others wounded by Israeli gunfire in Gaza",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Syria Direct",
           "title": "Syria’s Kurds fight to keep their language alive in the classroom",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "החל מהחודש הבא: מחירי הביצים בפיקוח יתייקרו ב-2.1%",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "يجب ألا تقع حماس في فخ سياسي جديد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "OpenAI تعلن عن تعطيل أنظمة.. ما هي؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بريطانيا تعزز حضورها العسكري في السعودية تحت عنوان الدفاع ومخاوف اتساع حرب اليمن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Manar",
+          "title": "دراسة | اليمن في الحسابات الإقليمية.. تهديد ممتد يختبر الدفاعات وحدود التحالفات 15:50",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "يجب ألا تقع حماس في فخ سياسي جديد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مستوطنون يقتحمون باحات الأقصى وسط إجراءات مشددة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 121,
-      "kept": 75,
+      "in": 108,
+      "kept": 58,
       "dropped": [
         {
           "source": "N12",
@@ -233,6 +280,13 @@
         },
         {
           "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Channel 13",
           "title": "Winter failed to pass the electoral threshold, significantly altering the political bloc landscape.",
           "sec": 0,
           "off": 0,
@@ -241,13 +295,6 @@
         {
           "source": "Channel 13",
           "title": "Ayelet Shaked explained her decision not to run with Bennett in the elections, describing it as a process.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The opening of the Green Line of the light rail in Tel Aviv is delayed and will not be completed before 2031.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -274,8 +321,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Middle East Eye",
+          "title": "Turkey secures a strategic win over Greece as eastern Libya backs the maritime deal",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Al Arabiya",
-          "title": "Al-Sisi says Egypt will help defend Saudi territory",
+          "title": "Trump says something will happen regarding Iran ‘fairly soon’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -288,8 +342,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "A dispute between Turkey and Azerbaijan regarding a decision to ban headscarves.",
+          "source": "IRNA",
+          "title": "Gharibabadi: Both Iran and China stress need to expand cooperation within Global South",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -311,13 +365,6 @@
         {
           "source": "Iran International",
           "title": "2 Iran-Pakistan border trade halt leaves trucks and cargo stranded",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Baghdad closes border crossing with Iran under US pressure: Iraqi sources",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -359,14 +406,14 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Petroleum Minister, Total Energies discuss fast tracking Cyprus gas link",
+          "title": "Egypt to see falling temperatures and heavier autumn rains",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Egypt Independent",
-          "title": "Sisi: Strong state institutions, public confidence essential to protecting Egypt",
+          "title": "Petroleum Minister, Total Energies discuss fast tracking Cyprus gas link",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -379,15 +426,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Manar",
-          "title": "Nabil Fahmy, from Tyre, stated that what the citizens in the South are enduring is unacceptable, and…",
+          "source": "WAFA News",
+          "title": "Gaza hospitals warn of imminent shortage of generator oils, threatening life-saving medical services",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "WAFA News",
-          "title": "Gaza hospitals warn of imminent shortage of generator oils, threatening life-saving medical services",
+          "title": "Israeli colonists open fire on Palestinian olive pickers near Hebron",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -414,6 +461,27 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "SANA",
+          "title": "China, Russia rejects foreign interference, seek to expand economic cooperation",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "Syria’s transitional justice court outlines cases, procedures and witness protections",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "SANA",
+          "title": "Oil tops $110 a barrel as concerns over supply disruptions intensify",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Arab News",
           "title": "Iran’s Supreme Leader Khamenei meets parliament speaker Qalibaf, state broadcaster IRIB reports",
           "sec": 0,
@@ -429,7 +497,7 @@
         },
         {
           "source": "Arab News",
-          "title": "Canada, Turkey to agree during Carney visit to deepen defence and energy ties, source says",
+          "title": "Thousands of Greek students, teachers protest over education, pay",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -443,6 +511,13 @@
         },
         {
           "source": "Gulf News",
+          "title": "VIBE by Arsenal East brings a fresh take on urban living to Dubai",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
           "title": "Bodybuilder, 33, dies after collapsing on stage during UK championship",
           "sec": 0,
           "off": 1,
@@ -450,16 +525,9 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Gaza Health Ministry warns hospital generators may shut down",
+          "title": "Meta faces class action lawsuit in Australia over alleged social media addiction among children",
           "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Gold falls below $4,100, silver drops 3.6% as higher oil prices fuel inflation concerns",
-          "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -471,14 +539,21 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Yemen’s displacement toll reaches 260,000 since August as Taiz warns of looming health crisis",
+          "title": "US banks faced unauthorized access by AI agents: Report",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "INTERVIEW - 'Regulatory capture': UK campaign group challenges tech giants' power",
+          "title": "Tesla aims to begin Cybercab deliveries to customers by year's-end",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Daily Sabah",
+          "title": "Macron slams ‘stupid’ claims blaming Muslims for France unrest",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -520,13 +595,6 @@
         },
         {
           "source": "TRT World",
-          "title": "Russia frees US citizen Hubbard after Trump 'requests' Putin",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
           "title": "President Erdogan welcomes Libya’s approval of maritime deal with Türkiye",
           "sec": 0,
           "off": 0,
@@ -538,35 +606,29 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Trump says US not negotiating with Iran, signals developments 'fairly soon'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 50,
+      "clusters": 37,
       "sizes": [
-        10,
+        8,
+        5,
         4,
-        4,
-        3,
-        3,
         3,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -604,39 +666,38 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "4 vessels hit by IRGC, 3 others hit mine in Strait of Hormuz",
+          "headline": "Return to US-Iran war looms after 7 tankers damaged in Hormuz",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 7,
             "camps": 4,
-            "newest": "2026-10-22T07:44+00:00"
+            "newest": "2026-10-22T09:50+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
-            "Al Mayadeen",
             "Arab News",
+            "Daily Sabah",
             "Gulf News",
             "IRNA",
             "Iran International",
-            "Jordan Times",
             "Mehr News"
           ],
           "camps": [
             "gulf",
             "panarab",
             "iranian",
-            "levant"
+            "turkish"
           ],
-          "members": 10,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Mehr News",
-            "title": "4 vessels hit by IRGC, 3 others hit mine in Strait of Hormuz",
+            "source": "Daily Sabah",
+            "title": "Return to US-Iran war looms after 7 tankers damaged in Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -665,6 +726,53 @@
         },
         {
           "selected_rank": 2,
+          "headline": "7 dead as Russia-Ukraine trade strikes despite diplomatic overtures",
+          "rank_key": {
+            "outlets": 5,
+            "camps": 3,
+            "newest": "2026-10-22T09:09+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Daily Sabah",
+            "N12",
+            "TRT World"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "turkish"
+          ],
+          "members": 5,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "7 dead as Russia-Ukraine trade strikes despite diplomatic overtures",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "5 , El-Sayed and Rogers clash over Trump, Iran war in Michigan Senate debate",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Russia ready to resume trilateral Ukraine talks in November: Kremlin",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Two killed and eight injured in attack targeting King Fahd Airport in Saudi Arabia",
           "rank_key": {
             "outlets": 4,
@@ -708,81 +816,7 @@
           }
         },
         {
-          "selected_rank": 3,
-          "headline": "Sisi: Egypt would defend Saudi territory, rules out Yemen attack",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 2,
-            "newest": "2026-10-21T20:00+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Jordan Times",
-            "Middle East Eye",
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Sisi: Egypt would defend Saudi territory, rules out Yemen attack",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
           "selected_rank": 4,
-          "headline": "Russia pounds Ukraine’s capital Kyiv, hours after agreeing to peace talks",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-22T08:37+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News",
-            "SANA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "Russia pounds Ukraine’s capital Kyiv, hours after agreeing to peace talks",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Putin hosts Trump envoy for new Ukraine peace talks, frees US citizen held in Ru",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "US orders departure of some embassy staff and families from Saudi Arabia amid Houthi threat",
           "rank_key": {
             "outlets": 3,
@@ -827,48 +861,79 @@
           }
         },
         {
-          "selected_rank": null,
-          "headline": "Nine people were injured, one seriously, when a minibus overturned near the settlement of Shaked.",
+          "selected_rank": 5,
+          "headline": "Israeli forces close roads and entrances to villages east of Jenin, continue land leveling for colon",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-22T07:31+00:00"
+            "newest": "2026-10-22T10:11+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen",
-            "Kan 11"
+            "Kan 11",
+            "WAFA News"
           ],
           "camps": [
             "israeli",
-            "panarab"
+            "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Nine people were injured, one seriously, when a minibus overturned near the settlement of Shaked.",
-            "title_source": "snippet",
+            "source": "WAFA News",
+            "title": "Israeli forces close roads and entrances to villages east of Jenin, continue land leveling for colonial road",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (westbank)",
               "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "outlet's own English headline"
             ],
             "passed_over": []
           }
         },
         {
           "selected_rank": null,
-          "headline": "Rubio says talks with Ukraine 'positive' as Witkoff heads to Russia",
+          "headline": "Israel’s election may change its leader, but not Iran war policy",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-21T18:57+00:00"
+            "newest": "2026-10-22T08:27+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
-            "Jordan Times"
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Israel’s election may change its leader, but not Iran war policy",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Sisi: Egypt would defend Saudi territory, rules out Yemen attack",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-21T20:00+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "The New Arab"
           ],
           "camps": [
             "panarab",
@@ -878,22 +943,16 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Jordan Times",
-            "title": "Rubio says talks with Ukraine 'positive' as Witkoff heads to Russia",
+            "source": "The New Arab",
+            "title": "Sisi: Egypt would defend Saudi territory, rules out Yemen attack",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
+              "names 1 of the story's dominant entities (yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Rubio says talks with Ukraine ‘positive’ as Witkoff heads to Russia",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -929,45 +988,57 @@
         },
         {
           "selected_rank": null,
-          "headline": "Palestinian killed in Israeli shelling of northern Gaza",
+          "headline": "Two civilians killed, 11 injured in Houthi shelling in Yemen’s Taiz",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-21T08:19+00:00"
+            "newest": "2026-10-22T10:24+00:00"
           },
           "outlet_names": [
-            "SANA",
-            "WAFA News"
+            "SANA"
           ],
           "camps": [
             "levant"
           ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "SANA",
-            "title": "Palestinian killed in Israeli shelling of northern Gaza",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "One Palestinian killed, several injured in Israeli shelling of northern Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Couple, child, killed, others wounded by Israeli gunfire in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Jordanian, Syrian foreign ministers hold expanded talks in Aqaba",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-22T10:18+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran Army chief says drone capabilities strengthened, forces ready for asymmetric warfare",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-22T10:09+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1043,24 +1114,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "7 dead as Russia-Ukraine trade strikes despite diplomatic overtures",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T09:09+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Israeli forces ram into Palestinian-licensed vehicle near Tulkarm",
           "rank_key": {
             "outlets": 1,
@@ -1079,29 +1132,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Prime Minister Netanyahu denied a Financial Times report claiming that the US president halted an Is",
+          "headline": "Mohammad al-Saadi, accused of orchestrating a large terrorist network in Europe, continued to direct",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-22T08:59+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A Ukrainian soldier, Kostiantyn Vlasenko, was historically evacuated by drone after surviving 491 da",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T08:57+00:00"
+            "newest": "2026-10-22T07:57+00:00"
           },
           "outlet_names": [
             "N12"
@@ -1115,17 +1150,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Colonization and Wall Resistance Commission documents 409 Israeli attacks on olive farmers and their",
+          "headline": "Trump commented on a potential attack on Iran, suggesting it might happen after the midterm election",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-22T08:55+00:00"
+            "newest": "2026-10-22T04:45+00:00"
           },
           "outlet_names": [
-            "WAFA News"
+            "N12"
           ],
           "camps": [
-            "levant"
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1133,17 +1168,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Baqaei: Broken US promises, not Iranians’ religious beliefs, obstruct negotiations",
+          "headline": "Nine people were injured, one seriously, when a minibus overturned in the Jerusalem area.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-22T08:53+00:00"
+            "newest": "2026-10-22T04:23+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Channel 13"
           ],
           "camps": [
-            "iranian"
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1151,42 +1186,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "FM Fidan to chair first-ever R4-E3 talks in Istanbul",
+          "headline": "The New York Times reports that the United States and Israel are planning to attack Iran after the u",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-22T08:37+00:00"
+            "newest": "2026-10-21T23:52+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "Kan 11"
           ],
           "camps": [
-            "turkish"
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Türkiye expands free online university platform to 16 modules",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T07:57+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1204,7 +1221,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-22T10:10:12.502920+00:00",
+    "last_success": "2026-10-22T10:42:17.225688+00:00",
     "last_failure": null
   },
   "ok": true
