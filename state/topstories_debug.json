@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T03:35:57.410345+00:00",
+  "updated": "2026-10-23T04:07:38.768474+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -73,7 +73,7 @@
         "Jordan Times": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "L'Orient Today": {
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-23T03:33:48.916454+00:00"
+      "headlines_updated": "2026-10-23T04:05:38.054389+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 34,
-        "title_native": 87,
+        "dropped_stale": 3,
+        "title_snippet": 32,
+        "dropped_no_english": 2,
+        "title_native": 88,
         "title_translated": 1,
         "in": 126,
-        "kept": 122
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -187,11 +188,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Middle East Eye",
-          "title": "Why Greece's alliances failed to prevent eastern Libya's maritime deal with Turkey",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "L'Orient Today",
           "title": "Arab League chief backs Lebanon-Israel talks, condemns Israeli attacks",
@@ -206,12 +202,22 @@
           "source": "Gulf News",
           "title": "UK rearrests 2 men over suspected Iran plot at RAF Fairford",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בסיוע נתניהו: יועצו הבכיר של טראמפ הפקיד מיליארד דולר סעודיים בישראל | דיווח",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تلويح مصري بـ«منع التنقيب» عن الغاز: القاهرة تخشى وصاية تركية على ليبيا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 74,
+      "in": 121,
+      "kept": 76,
       "dropped": [
         {
           "source": "Kan 11",
@@ -223,13 +229,6 @@
         {
           "source": "Kan 11",
           "title": "Maccabi Tel Aviv lost to Real Madrid with a score of 113-99 in the Euroleague.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "A 25-year-old sustained moderate injuries in a road accident involving two motorcycles near Beit Hanina.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -284,8 +283,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Al-Sisi says Egypt will help defend Saudi territory",
+          "source": "The New Arab",
+          "title": "UN expert urges Indonesia to reconsider involvement in Trump’s Gaza board",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -396,13 +395,6 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "The flour deficit in Gaza has reached 100%.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "Meta has temporarily paused the sharing of conversations on its AI assistant 'Mewz' following the discovery…",
           "sec": 0,
@@ -467,14 +459,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Donald Trump says LeBron James disrespected the United States, demands apology",
+          "title": "France reports first human Shamonda virus case, says no health risk",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "Caitlin Clark and Angel Reese Left Out of ESPN's 30 Greatest WNBA Players List",
+          "title": "Donald Trump says LeBron James disrespected the United States, demands apology",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -537,14 +529,7 @@
         },
         {
           "source": "TRT World",
-          "title": "President Erdogan welcomes Libya’s approval of maritime deal with Türkiye",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Türkiye, Canada seal strategic partnership to advance economic, defence ties",
+          "title": "Russia frees US citizen Hubbard after Trump 'requests' Putin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -557,10 +542,10 @@
       "sizes": [
         8,
         7,
-        4,
-        4,
+        6,
+        5,
         3,
-        3,
+        2,
         2,
         2,
         2,
@@ -663,82 +648,26 @@
         },
         {
           "selected_rank": 2,
-          "headline": "At least 4 Palestinians killed in Israeli attacks across Gaza",
+          "headline": "Putin reaffirms Russia’s readiness to resume trilateral peace talks on Ukraine war",
           "rank_key": {
             "outlets": 5,
             "camps": 4,
-            "newest": "2026-10-22T23:44+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "IRNA",
-            "Middle East Eye",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "At least 4 Palestinians killed in Israeli attacks across Gaza",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Watch: Palestinian killed in Israeli strike on vehicle in Gaza City",
-                "rejected_by": "bare stub headline"
-              },
-              {
-                "source": "IRNA",
-                "title": "Palestinian Resistance Committees commander killed in Israeli attack on Khan You",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Gaza death toll rises to 74,498 amid continued Israeli ceasefire breaches",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Palestinian killed in Israeli strike in central Gaza, 13 injured in Gaza City",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Putin reaffirms Russia’s readiness to resume trilateral peace talks on Ukraine war",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
             "newest": "2026-10-22T22:56+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Anadolu Agency",
+            "Arab News",
             "Egypt Independent",
             "TRT World"
           ],
           "camps": [
+            "gulf",
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -758,13 +687,74 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Al Arabiya",
+                "title": "Ukraine’s Zelenskyy says he supports ceasefire, trilateral talks with US and Rus",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "Egypt Independent",
                 "title": "Massive strikes hit Kyiv hours after Putin agrees to fresh peace talks",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "TRT World",
-                "title": "Russia ready to resume trilateral Ukraine talks in November: Kremlin",
+                "source": "Egypt Independent",
+                "title": "US-Ukraine relationship worsens amid Trump and Zelensky’s mutual distrust",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "At least 4 Palestinians killed in Israeli attacks across Gaza",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-22T19:34+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "IRNA",
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "At least 4 Palestinians killed in Israeli attacks across Gaza",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Palestinian Resistance Committees commander killed in Israeli attack on Khan You",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Gaza death toll rises to 74,498 amid continued Israeli ceasefire breaches",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Two Palestinians, including a girl, killed by Israeli gunfire and shelling in Ja",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Gaza death toll from Israeli war rises to 74,498, with more than 175,000 injured",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -779,17 +769,17 @@
             "newest": "2026-10-22T05:32+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
             "Iran International",
             "Jordan Times",
-            "Mehr News"
+            "Mehr News",
+            "Middle East Eye"
           ],
           "camps": [
             "panarab",
             "iranian",
             "levant"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -804,8 +794,13 @@
             ],
             "passed_over": [
               {
-                "source": "Al Jazeera",
-                "title": "5 , Iran says seven ships hit in Hormuz Strait, warns US of wider response",
+                "source": "Middle East Eye",
+                "title": "Gulf exports more oil than it did before Iran war despite surge in Hormuz attack",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Middle East Eye",
+                "title": "Gulf exports more oil than it did before Iran war despite surge in Hormuz attack",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -818,46 +813,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Whose war is this? Rethinking Iran’s role in Houthi attacks",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-10-22T21:05+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "Daily Sabah",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "turkish"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Whose war is this? Rethinking Iran’s role in Houthi attacks",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "The New Arab",
-                "title": "The Houthi war machine is evolving. Can Saudi Arabia keep pace?",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Saudi-led coalition says it intercepted 11 Houthi drones and a ballistic missile",
           "rank_key": {
             "outlets": 2,
@@ -967,6 +922,43 @@
               "outlet's own English headline"
             ],
             "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US, Israel draw up plans for 72-hour Iran strike: 7 key questions on Trump’s strategy and Tehran’s r",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-22T10:04+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "US, Israel draw up plans for 72-hour Iran strike: 7 key questions on Trump’s strategy and Tehran’s response",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "TRT World",
+                "title": "US, Israel draw up plans for post-election strikes on Iran — report",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1179,6 +1171,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Whose war is this? Rethinking Iran’s role in Houthi attacks",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-22T21:05+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "The U.S.",
           "rank_key": {
             "outlets": 1,
@@ -1268,24 +1278,6 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Trump sharply criticized the basketball player for moving during the national anthem, demanding an a",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T16:59+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
           "note": "23 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1304,7 +1296,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-23T03:36:21.923216+00:00",
+    "last_success": "2026-10-23T04:08:02.402378+00:00",
     "last_failure": null
   },
   "ok": true
