@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T06:50:01.862739+00:00",
+  "updated": "2026-10-23T06:54:05.263755+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-23T06:47:38.948590+00:00"
+      "headlines_updated": "2026-10-23T06:51:38.591837+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 33,
+        "dropped_stale": 3,
+        "dropped_no_english": 6,
+        "title_snippet": 27,
         "title_translated": 2,
-        "title_native": 87,
+        "title_native": 88,
         "in": 126,
-        "kept": 122
+        "kept": 117
       },
       "translator": {
         "configured": true,
@@ -203,15 +204,40 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "UK rearrests 2 men over suspected Iran plot at RAF Fairford",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "הרמטכ\"ל: ברכב המחבלים הייתה כמות תחמושת גדולה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "יורוליג: מכבי ת\"א הפסידה לריאל מדריד 113:99",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بين \"الكود 100\" و \"تكتيك الذئب\".. الحرب الشاملة تقف على الحافة الصفرية من العراق",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مستوطنون يحرقون اشجار زيتون شرق قلقيلية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "متى يكون النسيان مقلقاً؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "حماس ترفض التعيينات في المجلس الوطني وتدعو لحوار وطني شامل",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
-      "kept": 73,
+      "in": 117,
+      "kept": 67,
       "dropped": [
         {
           "source": "Kan 11",
@@ -278,6 +304,13 @@
         },
         {
           "source": "Middle East Eye",
+          "title": "Sisi says Egypt will 'defend Saudi territory' without attacking Yemen",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Middle East Eye",
           "title": "Turkey, Qatar, Pakistan and Indonesia forge ‘Badr’ deal to jointly produce weapons",
           "sec": 0,
           "off": 0,
@@ -286,6 +319,13 @@
         {
           "source": "Al Arabiya",
           "title": "Trump says Iran is trying to drive up oil prices before midterm elections",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Al-Sisi says Egypt will help defend Saudi territory",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -418,20 +458,6 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "Oil prices increased by over 1%.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Due to climate change, 96% of shallow coral reefs are at risk of extinction.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
           "title": "This juice protects teeth from damage.",
           "sec": 0,
           "off": 0,
@@ -468,6 +494,13 @@
         {
           "source": "Gulf News",
           "title": "Saudi Aramco evacuates Dhahran headquarters, orders staff to work from home",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Gulf News",
+          "title": "'Kharg Island a monument to failure': Bessent says 'Operation Economic Outcast' cutting Iran's oil lifeline",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -560,10 +593,10 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 39,
+      "clusters": 37,
       "sizes": [
-        9,
         7,
+        6,
         6,
         5,
         4,
@@ -573,8 +606,6 @@
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -610,66 +641,6 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "One Palestinian killed, others injured in Israeli drone strike west of Khan Younis",
-          "rank_key": {
-            "outlets": 6,
-            "camps": 5,
-            "newest": "2026-10-23T06:41+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah",
-            "IRNA",
-            "Kan 11",
-            "Middle East Eye",
-            "SANA",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 9,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "WAFA News",
-            "title": "One Palestinian killed, others injured in Israeli drone strike west of Khan Younis",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Watch: Palestinian killed in Israeli strike on vehicle in Gaza City",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "IRNA",
-                "title": "Palestinian Resistance Committees commander killed in Israeli attack on Khan You",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Gaza death toll rises to 74,498 amid continued Israeli ceasefire breaches",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Palestinian killed in Israeli strike in central Gaza, 13 injured in Gaza City",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "Egypt condemns attack on King Fahd Airport in Saudi Arabia",
           "rank_key": {
             "outlets": 6,
@@ -717,7 +688,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 2,
           "headline": "Rezaei outlined Tehran's conditions for negotiations, emphasizing guarantees and the strategic impor",
           "rank_key": {
             "outlets": 5,
@@ -768,6 +739,62 @@
               {
                 "source": "Al Manar",
                 "title": "A senior official from Yemen's Supreme Political Council praised the Iranian peo",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "One Palestinian killed, others injured in Israeli drone strike west of Khan Younis",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-23T06:41+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "IRNA",
+            "SANA",
+            "WAFA News"
+          ],
+          "camps": [
+            "iranian",
+            "levant",
+            "turkish"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "WAFA News",
+            "title": "One Palestinian killed, others injured in Israeli drone strike west of Khan Younis",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Palestinian Resistance Committees commander killed in Israeli attack on Khan You",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Gaza death toll rises to 74,498 amid continued Israeli ceasefire breaches",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "WAFA News",
+                "title": "Palestinian killed in Israeli strike in central Gaza, 13 injured in Gaza City",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Gaza death toll from Israeli war rises to 74,498, with more than 175,000 injured",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -915,6 +942,44 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israeli army kills 2 Palestinians in occupied West Bank shooting",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-23T06:29+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Israeli army kills 2 Palestinians in occupied West Bank shooting",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Israeli forces detain 19 Palestinians across the West Bank",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Saudi-led coalition says it intercepted 11 Houthi drones and a ballistic missile",
           "rank_key": {
             "outlets": 2,
@@ -980,73 +1045,6 @@
                 "rejected_by": "older than the story's newest wave"
               }
             ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Oil prices saw an increase of over 1% amid reports of US diplomatic staff evacuations from Saudi Ara",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-22T05:43+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Mayadeen",
-            "title": "Oil prices saw an increase of over 1% amid reports of US diplomatic staff evacuations from Saudi Arabia.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "state/partisan outlet (last resort)",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "L'Orient Today",
-                "title": "Washington orders all US embassy staff, families to leave Saudi Arabia: diplomat",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "The CEO of Magen David Adom reported that five people were injured in an attack near the Judah inter",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-23T05:17+00:00"
-          },
-          "outlet_names": [
-            "Kan 11",
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Kan 11",
-            "title": "The CEO of Magen David Adom reported that five people were injured in an attack near the Judah intersection…",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": []
           }
         },
         {
@@ -1119,24 +1117,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israeli army kills 2 Palestinians in occupied West Bank shooting",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-23T06:29+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran says term ‘Iran conflict’ obscures US, Israeli responsibility for war",
           "rank_key": {
             "outlets": 1,
@@ -1148,6 +1128,24 @@
           ],
           "camps": [
             "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "In a shooting attack at the Judah intersection, five people were injured, two critically, and two as",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T04:25+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
           ],
           "members": 1,
           "qualified": false,
@@ -1281,24 +1279,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Syria says two security personnel killed in operation against ISIS-linked cell",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-22T13:33+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "US-Ukraine relationship worsens amid Trump and Zelensky’s mutual distrust",
           "rank_key": {
             "outlets": 1,
@@ -1334,7 +1314,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "IMF maintains growth forecasts for Jordan despite regional war",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-22T13:06+00:00"
+          },
+          "outlet_names": [
+            "Jordan Times"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1352,7 +1350,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-23T06:50:30.345462+00:00",
+    "last_success": "2026-10-23T06:54:18.590153+00:00",
     "last_failure": null
   },
   "ok": true
