@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T11:45:20.991396+00:00",
+  "updated": "2026-10-23T12:17:38.941082+00:00",
   "stages": {
     "fetch": {
       "items": 130,
@@ -73,7 +73,7 @@
         "Jordan Times": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "L'Orient Today": {
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-23T11:42:56.322589+00:00"
+      "headlines_updated": "2026-10-23T12:15:19.535601+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 33,
+        "dropped_stale": 7,
+        "dropped_no_english": 2,
+        "title_snippet": 31,
         "title_translated": 2,
-        "title_native": 90,
+        "title_native": 88,
         "in": 130,
-        "kept": 125
+        "kept": 121
       },
       "translator": {
         "configured": true,
@@ -187,6 +188,16 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Middle East Eye",
+          "title": "Turkey, Qatar, Pakistan and Indonesia forge ‘Badr’ deal to jointly produce weapons",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Middle East Eye",
+          "title": "Why Greece's alliances failed to prevent eastern Libya's maritime deal with Turkey",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Syria Direct",
           "title": "Syria’s Kurds fight to keep their language alive in the classroom",
@@ -211,12 +222,22 @@
           "source": "Syria Direct",
           "title": "Syria’s Muslim Brotherhood fights for its future",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח בירדן: לפחות 7 הרוגים באירוע ירי בכנסייה בדרום המדינה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "النمسا تطرد 4 دبلوماسيين روس",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 125,
-      "kept": 78,
+      "in": 121,
+      "kept": 80,
       "dropped": [
         {
           "source": "N12",
@@ -261,20 +282,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Middle East Eye",
-          "title": "Pro-Israel lobbying group Aipac ends endorsements, direct funding to US candidates",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Middle East Eye",
-          "title": "Turkey, Qatar, Pakistan and Indonesia forge ‘Badr’ deal to jointly produce weapons",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Arabiya",
           "title": "Trump says Iran is trying to drive up oil prices before midterm elections",
           "sec": 0,
@@ -284,13 +291,6 @@
         {
           "source": "Al Arabiya",
           "title": "Al-Sisi says Egypt will help defend Saudi territory",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Pro-Israel lobby AIPAC drops endorsements amid US backlash",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -326,6 +326,13 @@
         {
           "source": "IRNA",
           "title": "Gharibabadi: Both Iran and China stress need to expand cooperation within Global South",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "IRNA",
+          "title": "Iran demands end to selective IAEA statute implementation",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -464,20 +471,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Lewis Hamilton reiterates his stance on Palestine ahead of United States GP",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "'Kharg Island a monument to failure': Bessent says 'Operation Economic Outcast' cutting Iran's oil lifeline",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "TRNC welcomes Libyan parliament's approval of maritime jurisdiction agreement with Türkiye",
           "sec": 0,
@@ -486,21 +479,14 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Pope Leo XIV cancels planned Assisi visit on doctors’ advice to continue recovery",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "Volvo Cars announces 2,500 job cuts after disastrous Q3",
+          "title": "Ebola spreads to 8th province in Congo as hunger threatens patient carer: UN food agency",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
-          "title": "Tanker carrying Russian diesel on way to US after Putin-Trump deal",
+          "title": "S&amp;P says Türkiye's policy shift on track, banking risks manageable",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -539,32 +525,26 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "President Erdogan welcomes Libya’s approval of maritime deal with Türkiye",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 51,
+      "clusters": 52,
       "sizes": [
-        7,
+        8,
+        6,
         5,
-        5,
-        4,
-        4,
-        4,
+        3,
+        3,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
+        2,
+        2,
+        2,
         1,
         1,
         1,
@@ -615,7 +595,7 @@
           "selected_rank": 1,
           "headline": "Egypt condemns attack on King Fahd Airport in Saudi Arabia",
           "rank_key": {
-            "outlets": 6,
+            "outlets": 7,
             "camps": 4,
             "newest": "2026-10-22T10:40+00:00"
           },
@@ -623,6 +603,7 @@
             "Al Arabiya",
             "Arab News",
             "Egypt Independent",
+            "Gulf News",
             "Middle East Eye",
             "TRT World",
             "The New Arab"
@@ -633,7 +614,7 @@
             "levant",
             "turkish"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -714,111 +695,11 @@
         },
         {
           "selected_rank": 3,
-          "headline": "US forces deployed 600–700 km away from Strait of Hormuz",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-23T09:31+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Mayadeen",
-            "Arab News",
-            "Mehr News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Mehr News",
-            "title": "US forces deployed 600–700 km away from Strait of Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Iran’s IRGC threaten to hit US bases in retaliation for Hormuz escorts",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Mayadeen",
-                "title": "Rezaei outlined Tehran's conditions for negotiations, emphasizing guarantees and",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Iran’s Guards threaten US bases in retaliation for Hormuz escorts",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Saudi airstrikes target Yemen’s capital, Sanaa",
+          "headline": "Two Palestinians killed, others injured in Israeli airstrikes west of Gaza City",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-10-23T11:34+00:00"
-          },
-          "outlet_names": [
-            "Al Manar",
-            "IRNA",
-            "L'Orient Today"
-          ],
-          "camps": [
-            "iranian",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "IRNA",
-            "title": "Saudi airstrikes target Yemen’s capital, Sanaa",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "state/partisan outlet (last resort)",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "IRNA",
-                "title": "Yemeni forces target Saudi defense ministry, oil and airport facilities",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "L'Orient Today",
-                "title": "Houthis say they attacked Saudi defense ministry, Aramco in Yanbu and Dammam air",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Manar",
-                "title": "The Yemeni Armed Forces announced four military operations in the past 48 hours,",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "One Palestinian killed, others injured in Israeli drone strike west of Khan Younis",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-23T06:41+00:00"
+            "newest": "2026-10-23T12:02+00:00"
           },
           "outlet_names": [
             "IRNA",
@@ -829,12 +710,12 @@
             "iranian",
             "levant"
           ],
-          "members": 5,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "WAFA News",
-            "title": "One Palestinian killed, others injured in Israeli drone strike west of Khan Younis",
+            "title": "Two Palestinians killed, others injured in Israeli airstrikes west of Gaza City",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -867,27 +748,220 @@
           }
         },
         {
-          "selected_rank": null,
-          "headline": "Russia, Ukraine swap 270 servicemen each in latest prisoner exchange",
+          "selected_rank": 4,
+          "headline": "Houthis say they attacked Saudi defense ministry, Aramco in Yanbu and Dammam airport",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-10-22T13:22+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "IRNA",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "L'Orient Today",
+            "title": "Houthis say they attacked Saudi defense ministry, Aramco in Yanbu and Dammam airport",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "The Yemeni Armed Forces announced four military operations in the past 48 hours,",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "US forces deployed 600–700 km away from Strait of Hormuz",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-23T11:33+00:00"
+            "newest": "2026-10-23T09:31+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "US forces deployed 600–700 km away from Strait of Hormuz",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Arabiya",
+                "title": "Iran’s IRGC threaten to hit US bases in retaliation for Hormuz escorts",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "UN chief condemns Houthi attacks on Saudi Arabia, warns an ‘El Nino of war’ is hitting world’s poor",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-22T15:18+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "UN chief condemns Houthi attacks on Saudi Arabia, warns an ‘El Nino of war’ is hitting world’s poor",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "US orders some diplomats to leave Saudi amid Houthi attacks",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "The New Arab",
+                "title": "The Houthi war machine is evolving. Can Saudi Arabia keep pace?",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US, Israel draw up plans for 72-hour Iran strike: 7 key questions on Trump’s strategy and Tehran’s r",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-22T10:04+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "US, Israel draw up plans for 72-hour Iran strike: 7 key questions on Trump’s strategy and Tehran’s response",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "TRT World",
+                "title": "US, Israel draw up plans for post-election strikes on Iran — report",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "US orders embassy staff to leave Saudi Arabia as deadly attacks escalate",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-22T05:02+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "gulf",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Gulf News",
+            "title": "US orders embassy staff to leave Saudi Arabia as deadly attacks escalate",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "Washington orders all US embassy staff, families to leave Saudi Arabia: diplomat",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Kremlin says trilateral Ukraine peace talks scheduled for ‘1st half of November’ in Abu Dhabi",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-23T10:52+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
-            "Egypt Independent"
+            "TRT World"
           ],
           "camps": [
-            "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Russia, Ukraine swap 270 servicemen each in latest prisoner exchange",
+            "title": "Kremlin says trilateral Ukraine peace talks scheduled for ‘1st half of November’ in Abu Dhabi",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -897,13 +971,8 @@
             ],
             "passed_over": [
               {
-                "source": "Egypt Independent",
-                "title": "Massive strikes hit Kyiv hours after Putin agrees to fresh peace talks",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Egypt Independent",
-                "title": "US-Ukraine relationship worsens amid Trump and Zelensky’s mutual distrust",
+                "source": "TRT World",
+                "title": "Russia ready to resume trilateral Ukraine talks in November: Kremlin",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1047,6 +1116,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Tigray rebel leader vows to continue war against Ethiopian forces despite territorial losses",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T11:59+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "A worker was seriously injured after falling from a height in the industrial zone of Beit Shemesh.",
           "rank_key": {
             "outlets": 1,
@@ -1076,6 +1163,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "War-ravaged Sudan on brink as El Nino fans new flames of hunger",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T09:12+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1137,6 +1242,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Diplomacy remains Türkiye's priority from Ukraine to Africa: Erdoğan",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T08:50+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "2 dead, 5 injured in coal mine explosion in Türkiye",
           "rank_key": {
             "outlets": 1,
@@ -1155,35 +1278,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Canada's AtkinsRealis contender to build Türkiye nuclear plant: Carney",
+          "headline": "Iran to sue US over illegal naval blockade: senior MP",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-23T08:39+00:00"
+            "newest": "2026-10-23T06:56+00:00"
           },
           "outlet_names": [
-            "Daily Sabah"
+            "Mehr News"
           ],
           "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A security coordinator from a West Bank settlement faces charges for allegedly shooting at a Palesti",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-23T07:39+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1226,43 +1331,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Ghalibaf reiterates warning to US about heavy costs of war",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-23T05:45+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A shooting attack occurred at the Yehuda junction, leaving five injured, two critically, and two ter",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-23T04:25+00:00"
-          },
-          "outlet_names": [
-            "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "29 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1280,7 +1349,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-23T11:45:42.405688+00:00",
+    "last_success": "2026-10-23T12:18:02.571497+00:00",
     "last_failure": null
   },
   "ok": true
