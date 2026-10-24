@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-24T11:33:25.082387+00:00",
+  "updated": "2026-10-24T11:39:40.191042+00:00",
   "stages": {
     "fetch": {
-      "items": 122,
+      "items": 126,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -71,7 +71,7 @@
           "error": null
         },
         "Jordan Times": {
-          "headlines": 1,
+          "headlines": 5,
           "lang": "en",
           "stale": false,
           "error": null
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-24T11:31:01.014059+00:00"
+      "headlines_updated": "2026-10-24T11:37:26.065199+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 11,
-        "title_snippet": 33,
+        "dropped_stale": 12,
+        "title_snippet": 32,
         "title_translated": 2,
-        "title_native": 76,
-        "in": 122,
-        "kept": 111
+        "title_native": 79,
+        "dropped_no_english": 1,
+        "in": 126,
+        "kept": 113
       },
       "translator": {
         "configured": true,
@@ -200,6 +201,11 @@
         {
           "source": "The New Arab",
           "title": "Iran’s Khamenei meets Ghalibaf amid rising US-Israeli threats",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Jordan condemns Houthi attack on Saudi Arabia, reaffirms support, solidarity",
           "reason": "stale (older than 48h)"
         },
         {
@@ -241,12 +247,17 @@
           "source": "TRT World",
           "title": "US, Israel draw up plans for post-election strikes on Iran — report",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "كتائب القسام تبارك عملية الخليل وتدعو شعبنا لتصعيد المواجهة مع الاحتلال",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 111,
-      "kept": 65,
+      "in": 113,
+      "kept": 66,
       "dropped": [
         {
           "source": "Kan 11",
@@ -391,6 +402,13 @@
         {
           "source": "Iran International",
           "title": "INSIGHT Iran’s trade squeeze spreads from sea to land",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "King receives Syria FM",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -577,12 +595,12 @@
       "clusters": 34,
       "sizes": [
         15,
-        8,
-        5,
+        14,
         4,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -685,15 +703,17 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Jordan declares three days of general mourning for victims of Karak church attack",
+          "headline": "Türkiye condemns deadly church attack in Jordan",
           "rank_key": {
-            "outlets": 7,
-            "camps": 3,
-            "newest": "2026-10-24T09:14+00:00"
+            "outlets": 9,
+            "camps": 4,
+            "newest": "2026-10-24T09:42+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
+            "Anadolu Agency",
             "Arab News",
+            "Daily Sabah",
             "Gulf News",
             "Middle East Eye",
             "SANA",
@@ -703,19 +723,20 @@
           "camps": [
             "gulf",
             "panarab",
-            "levant"
+            "levant",
+            "turkish"
           ],
-          "members": 8,
+          "members": 14,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "SANA",
-            "title": "Jordan declares three days of general mourning for victims of Karak church attack",
+            "source": "Anadolu Agency",
+            "title": "Türkiye condemns deadly church attack in Jordan",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (funeral, jordan)",
-              "neutral-by-default outlet",
+              "names 1 of the story's dominant entities (jordan)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -731,12 +752,12 @@
               },
               {
                 "source": "WAFA News",
-                "title": "Seven worshippers killed, 34 injured in church shooting in Jordan",
-                "rejected_by": "older than the story's newest wave"
+                "title": "Jerusalem Patriarchate condemns terrorist attack targeting church in Jordan’s Al",
+                "rejected_by": "loaded/partisan wording"
               },
               {
-                "source": "SANA",
-                "title": "Seven killed, 34 injured in shooting at funeral in Jordan’s Karak",
+                "source": "WAFA News",
+                "title": "Seven worshippers killed, 34 injured in church shooting in Jordan",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -783,55 +804,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Türkiye condemns deadly church attack in Jordan",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-10-24T09:42+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency",
-            "Daily Sabah",
-            "WAFA News"
-          ],
-          "camps": [
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Türkiye condemns deadly church attack in Jordan",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (jordan)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Jerusalem Patriarchate condemns terrorist attack targeting church in Jordan’s Al",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Presidency condemns terrorist attack targeting church in Jordan’s Al-Karak",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Vice President al-Sheikh condemns terror attack on worshippers at church in Jord",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Russia, Ukraine trade accusations over overnight strikes amid local ceasefire deal",
           "rank_key": {
             "outlets": 2,
@@ -863,7 +835,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "Deadly France shooting a ’racist, probably Islamophobic’ attack: mayor",
           "rank_key": {
             "outlets": 2,
@@ -930,7 +902,7 @@
           "camps": [
             "levant"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1098,24 +1070,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "US could strike Iran this weekend, envoy says",
+          "headline": "Yet two other supertankers hit mines in Hormuz: IRGC",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-23T19:37+00:00"
+            "newest": "2026-10-23T21:17+00:00"
           },
           "outlet_names": [
-            "Gulf News"
+            "Mehr News"
           ],
           "camps": [
-            "gulf"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1133,7 +1105,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-24T11:33:46.528581+00:00",
+    "last_success": "2026-10-24T11:40:19.510525+00:00",
     "last_failure": null
   },
   "ok": true
