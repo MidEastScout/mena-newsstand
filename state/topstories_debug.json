@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T00:35:53.319944+00:00",
+  "updated": "2026-10-24T01:08:23.763288+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-24T00:33:41.192486+00:00"
+      "headlines_updated": "2026-10-24T01:05:41.364921+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 14,
-        "title_snippet": 34,
-        "title_native": 77,
+        "dropped_stale": 13,
+        "title_snippet": 29,
+        "dropped_no_english": 5,
+        "title_native": 78,
         "title_translated": 1,
         "in": 126,
-        "kept": 112
+        "kept": 108
       },
       "translator": {
         "configured": true,
@@ -253,15 +254,35 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "President Erdogan welcomes Libya’s approval of maritime deal with Türkiye",
-          "reason": "stale (older than 48h)"
+          "source": "N12",
+          "title": "חשיפה | איראן מגדילה את המאמצים לפגיעה בבכירים ובדיפלומטיים אמריקניים",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "عملية الخليل تربك حسابات الانتخابات.. وطهران تواجه التهديدات بالاستعداد",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "ترامب يهدد بالنفط وطهران تتوعد بالمفاجآت.. وكوشنر في دائرة المال والنفوذ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "اللوبي الإسرائيلي في أميركا بين الأسطرة والواقع",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "عملية فدائية في الخليل.. هل تنفجر الضفة الغربية في وجه الاحتلال؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 112,
-      "kept": 69,
+      "in": 108,
+      "kept": 64,
       "dropped": [
         {
           "source": "Channel 13",
@@ -300,6 +321,13 @@
         },
         {
           "source": "Al Jazeera",
+          "title": "2 , Trump administration sues to block possible Democratic win in Alaska",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
           "title": "3 , Why is Trump questioning Ilhan Omar’s name?",
           "sec": 0,
           "off": 0,
@@ -307,7 +335,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Trump administration sues to block possible Democratic win in Alaska",
+          "title": "4 , Former FBI officials charged in connection with Hunter Biden laptop probe",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -327,8 +355,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The US Secretary of State urged Cubans to secretly cooperate with the CIA to bring about change in their…",
+          "source": "Al Arabiya",
+          "title": "Trump calls for Ilhan Omar to resign from Congress over alleged identity fraud",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -345,13 +373,6 @@
           "title": "Ghalibaf to global protester: Don’t let warmongering rulers distort your protests",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "World ParaVolley chief hails Iranian men’s and women’s teams",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -563,23 +584,27 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Canada, Türkiye elevate relations to strategic level, commit to long-term ties: Carney",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 37,
       "sizes": [
         15,
-        11,
+        9,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -619,70 +644,10 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Live: Netanyahu threatens West Bank military operation unprecedented since 1967",
-          "rank_key": {
-            "outlets": 9,
-            "camps": 3,
-            "newest": "2026-10-23T23:34+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera",
-            "Al Mayadeen",
-            "Falastin al-Youm",
-            "Kan 11",
-            "L'Orient Today",
-            "Middle East Eye",
-            "N12",
-            "WAFA News"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant"
-          ],
-          "members": 11,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Middle East Eye",
-            "title": "Live: Netanyahu threatens West Bank military operation unprecedented since 1967",
-            "title_source": "native",
-            "why": [
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Kan 11",
-                "title": "Following a terrorist attack, security forces launched an anti-terrorism operati",
-                "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran war updates: Israel locks down West Bank as Trump threatens Iran",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Al Jazeera",
-                "title": "2 , Israel says ‘targeted’ operation begun in Hebron after two soldiers killed",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Middle East Eye",
-                "title": "Netanyahu vows large-scale West Bank operation, starting with expulsion of Pales",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
           "headline": "EU condemns church attack in Jordan’s Karak",
           "rank_key": {
             "outlets": 8,
-            "camps": 5,
+            "camps": 4,
             "newest": "2026-10-23T23:57+00:00"
           },
           "outlet_names": [
@@ -691,12 +656,11 @@
             "Anadolu Agency",
             "Gulf News",
             "Middle East Eye",
-            "N12",
             "SANA",
+            "The New Arab",
             "WAFA News"
           ],
           "camps": [
-            "israeli",
             "gulf",
             "panarab",
             "levant",
@@ -717,13 +681,13 @@
             ],
             "passed_over": [
               {
-                "source": "N12",
-                "title": "At least six people were killed in a church shooting in southern Jordan by two u",
+                "source": "Middle East Eye",
+                "title": "Worshippers killed in shooting at church in Jordan",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Middle East Eye",
-                "title": "Worshippers killed in shooting at church in Jordan",
+                "source": "The New Arab",
+                "title": "Six killed, 28 injured in attack at funeral in Jordan’s Karak",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -735,6 +699,66 @@
                 "source": "WAFA News",
                 "title": "Jerusalem Patriarchate condemns terrorist attack targeting church in Jordan’s Al",
                 "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Security forces, including the IDF and Shin Bet, have initiated a multi-day operation in Hebron to n",
+          "rank_key": {
+            "outlets": 8,
+            "camps": 3,
+            "newest": "2026-10-23T23:34+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Mayadeen",
+            "Falastin al-Youm",
+            "Kan 11",
+            "L'Orient Today",
+            "Middle East Eye",
+            "N12",
+            "WAFA News"
+          ],
+          "camps": [
+            "israeli",
+            "panarab",
+            "levant"
+          ],
+          "members": 9,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "N12",
+            "title": "Security forces, including the IDF and Shin Bet, have initiated a multi-day operation in Hebron to neutralize…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Kan 11",
+                "title": "Following a terrorist attack, security forces launched an anti-terrorism operati",
+                "rejected_by": "loaded/partisan wording"
+              },
+              {
+                "source": "Middle East Eye",
+                "title": "Netanyahu vows large-scale West Bank operation, starting with expulsion of Pales",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Middle East Eye",
+                "title": "Israel prepares full West Bank lockdown after Hebron shooting",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Israel’s military says it killed two who had launched an attack in the occupied ",
+                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -1011,42 +1035,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A Palestinian in Gaza was reported dead from injuries sustained weeks prior in an Israeli airstrike ",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-23T20:55+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Egypt, Saudi Arabia, Turkey, and Pakistan identified Israeli occupation as a source of regional inst",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-23T20:31+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Türkiye rules out fight against Houthis under Saudi defense pact: Güler",
           "rank_key": {
             "outlets": 1,
@@ -1058,24 +1046,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran's Revolutionary Guard stated that two tankers caught fire after hitting naval mines, leading th",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-23T19:43+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1136,7 +1106,61 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Settlers attack West Bank, a potential Iran-US deal, and Egypt's Sisi pushes for Yemen intervention",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T17:23+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "A woman in her 40s was stabbed to death in Haifa.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T16:16+00:00"
+          },
+          "outlet_names": [
+            "Kan 11"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "The US ambassador to Turkey stated that the US is prepared for an agreement with Iran but warned tha",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T16:06+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1154,7 +1178,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-24T00:36:23.282680+00:00",
+    "last_success": "2026-10-24T01:08:42.601835+00:00",
     "last_failure": null
   },
   "ok": true
