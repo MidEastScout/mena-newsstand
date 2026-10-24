@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T10:28:33.165583+00:00",
+  "updated": "2026-10-24T11:00:33.962050+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-24T10:26:14.325886+00:00"
+      "headlines_updated": "2026-10-24T10:58:34.094018+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 13,
-        "title_snippet": 34,
-        "title_native": 78,
-        "title_translated": 1,
+        "dropped_stale": 16,
+        "title_snippet": 30,
+        "dropped_no_english": 3,
+        "title_translated": 2,
+        "title_native": 75,
         "in": 126,
-        "kept": 113
+        "kept": 107
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -195,6 +196,16 @@
         {
           "source": "Al Arabiya",
           "title": "Trump says something will happen regarding Iran ‘fairly soon’",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Two killed, eight injured in attack on Saudi Arabia’s Dammam airport: Aviation authority",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Al-Sisi says Egypt will help defend Saudi territory",
           "reason": "stale (older than 48h)"
         },
         {
@@ -228,8 +239,23 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Arab News",
+          "title": "Dammam’s King Fahd airport resumes operations after attack kills 2",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Gulf News",
           "title": "US orders embassy staff to leave Saudi Arabia as deadly attacks escalate",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Israeli forces, illegal settlers target Palestinian olive harvest across occupied West Bank: report",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Attack on Saudi Arabia's Dammam airport kills 2, injures 8",
           "reason": "stale (older than 48h)"
         },
         {
@@ -243,28 +269,26 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "Attack on Saudi Arabia's Dammam airport kills 2, injures 8",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "משרד הבריאות: תן נגוע בכלבת אותר ביישוב טייבה בעמק יזרעאל, מתבצעת חקירה אפידמיולוגית",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
-          "source": "TRT World",
-          "title": "Russia ready to resume trilateral Ukraine talks in November: Kremlin",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "אישה בת 69 נפצעה בינוני בהתהפכות טרקטורון בנתניה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "אישה כבת 70 במצב קשה לאחר שטבעה בת\"א: \"אנשים ניסו לסמן למציל",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 113,
+      "in": 107,
       "kept": 66,
       "dropped": [
-        {
-          "source": "Kan 11",
-          "title": "Medical teams are performing CPR on a woman in her 70s who drowned at Bograshov Beach in Tel Aviv.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Kan 11",
           "title": "According to a report, Netanyahu instructed Israeli diplomats to support Argentina regarding the Falklands…",
@@ -273,8 +297,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Kan 11",
-          "title": "A 16-year-old electric scooter rider sustained moderate injuries in Segev Shalom.",
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -308,36 +332,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "Yana Zykova is the woman who was fatally stabbed by her partner in Haifa.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
-          "title": "2 , Typhoon Champi hits Taiwan, killing one and injuring hundreds",
-          "sec": 0,
+          "title": "3 , Typhoon Champi hits Taiwan, killing one and injuring hundreds",
+          "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , The Muslims finding belonging in southern Spain",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "5 , North Korea’s Kim Jong Un visits China via newly opened bridge",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Trump calls for Ilhan Omar to resign from Congress over alleged identity fraud",
+          "title": "4 , The Muslims finding belonging in southern Spain",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -345,13 +348,6 @@
         {
           "source": "Al Arabiya",
           "title": "Trump says Iran is trying to drive up oil prices before midterm elections",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Iran’s Khamenei meets Ghalibaf amid rising US-Israeli threats",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -512,13 +508,6 @@
         },
         {
           "source": "Arab News",
-          "title": "Trump calls for Ilhan Omar’s immediate resignation",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Arab News",
           "title": "Trump says Iran is trying to drive up oil prices before the midterm elections",
           "sec": 0,
           "off": 0,
@@ -582,7 +571,7 @@
         },
         {
           "source": "TRT World",
-          "title": "Trump accuses Ilhan Omar of identity fraud, calls for her resignation",
+          "title": "Pentagon labels Confucius Institutes in US a national security threat",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -591,21 +580,18 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 37,
+      "clusters": 34,
       "sizes": [
-        14,
+        13,
         10,
+        4,
         3,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -641,14 +627,13 @@
           "selected_rank": 1,
           "headline": "Türkiye condemns deadly church attack in Jordan",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 8,
             "camps": 4,
             "newest": "2026-10-24T09:42+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
             "Anadolu Agency",
-            "Arab News",
             "Daily Sabah",
             "Gulf News",
             "Middle East Eye",
@@ -662,7 +647,7 @@
             "levant",
             "turkish"
           ],
-          "members": 14,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -743,13 +728,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Middle East Eye",
-                "title": "Netanyahu vows large-scale West Bank operation, starting with expulsion of Pales",
+                "source": "Al Jazeera",
+                "title": "2 , Why is Israel launching a new military operation in the occupied West Bank?",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Israel’s military says it killed two who had launched an attack in the occupied ",
+                "source": "Middle East Eye",
+                "title": "Netanyahu vows large-scale West Bank operation, starting with expulsion of Pales",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -762,26 +747,29 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Saudi-led coalition says it intercepted 2 Houthi ballistic missiles targeting Saudi cities",
+          "headline": "Fidan to meet Yemeni FM as fighting threatens key shipping routes",
           "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-24T09:43+00:00"
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-10-24T10:02+00:00"
           },
           "outlet_names": [
             "Al Manar",
-            "Anadolu Agency"
+            "Anadolu Agency",
+            "Daily Sabah",
+            "Middle East Eye"
           ],
           "camps": [
+            "panarab",
             "levant",
             "turkish"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Saudi-led coalition says it intercepted 2 Houthi ballistic missiles targeting Saudi cities",
+            "source": "Daily Sabah",
+            "title": "Fidan to meet Yemeni FM as fighting threatens key shipping routes",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -791,8 +779,8 @@
             ],
             "passed_over": [
               {
-                "source": "Anadolu Agency",
-                "title": "Saudi-led coalition intercepts Houthi missile fired toward Riyadh",
+                "source": "Middle East Eye",
+                "title": "Time running out for Yemen’s Taiz after 20 days under Houthi siege, UN warns",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -805,6 +793,44 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Death toll from church attack in Jordan rises to 8",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-24T09:14+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Death toll from church attack in Jordan rises to 8",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (jordan)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "Jordan’s King Abdullah: Terrorist attack against Karak will be met with ‘harshes",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Russia, Ukraine trade accusations over overnight strikes amid local ceasefire deal",
           "rank_key": {
             "outlets": 2,
@@ -836,7 +862,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "American intelligence reveals that Iranian plans to assassinate US officials in the Middle East and ",
           "rank_key": {
             "outlets": 2,
@@ -923,7 +949,7 @@
           "camps": [
             "levant"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -976,24 +1002,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Fidan to meet Yemeni FM as fighting threatens key shipping routes",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-24T10:02+00:00"
-          },
-          "outlet_names": [
-            "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "8-nation Istanbul talks urge diplomacy to quell Mideast conflicts",
           "rank_key": {
             "outlets": 1,
@@ -1020,24 +1028,6 @@
           },
           "outlet_names": [
             "N12"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "A woman in her 70s was moderately injured in a car accident near the Bar Lev Industrial Park, with t",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-24T08:19+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
           ],
           "camps": [
             "israeli"
@@ -1191,7 +1181,43 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "US could strike Iran this weekend, envoy says",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T19:37+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Deadly France shooting a ’racist, probably Islamophobic’ attack: mayor",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-23T18:26+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1209,7 +1235,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-24T10:28:52.494297+00:00",
+    "last_success": "2026-10-24T11:01:30.826912+00:00",
     "last_failure": null
   },
   "ok": true
