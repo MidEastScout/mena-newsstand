@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T00:17:03.901107+00:00",
+  "updated": "2026-10-25T00:21:24.738123+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-25T00:14:56.297222+00:00"
+      "headlines_updated": "2026-10-25T00:18:58.979864+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 11,
-        "title_snippet": 35,
+        "title_snippet": 34,
         "title_native": 80,
+        "dropped_no_english": 1,
         "in": 126,
-        "kept": 115
+        "kept": 114
       },
       "translator": {
         "configured": true,
@@ -188,12 +189,12 @@
       "dropped": [
         {
           "source": "The New Arab",
-          "title": "Sisi: Egypt would defend Saudi territory, rules out Yemen attack",
+          "title": "Trump denies negotiations with Iran, says conflict to end soon",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "The New Arab",
-          "title": "Ben-Gvir arms more West Bank settlers ahead of Israeli elections",
+          "title": "Sisi: Egypt would defend Saudi territory, rules out Yemen attack",
           "reason": "stale (older than 48h)"
         },
         {
@@ -240,11 +241,16 @@
           "source": "TRT World",
           "title": "Russia ready to resume trilateral Ukraine talks in November: Kremlin",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "كابلات الإنترنت البحرية.. ورقة إيران الجديدة في مواجهة تهديدات الحرب؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
+      "in": 114,
       "kept": 77,
       "dropped": [
         {
@@ -423,13 +429,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Trump calls for Ilhan Omar’s immediate resignation",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Thousands rally in Spain in support of pension scheme",
           "sec": 0,
@@ -517,15 +516,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 39,
       "sizes": [
-        18,
+        17,
         16,
         3,
         3,
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -592,7 +592,7 @@
             "levant",
             "turkish"
           ],
-          "members": 18,
+          "members": 17,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -775,6 +775,37 @@
         },
         {
           "selected_rank": 5,
+          "headline": "Trump weighs quick end to Iran war against letting conflict ‘wither’",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-23T15:13+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Arab News",
+            "title": "Trump weighs quick end to Iran war against letting conflict ‘wither’",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Exclusive | Baqaei: Regional meetings must address root causes of insecurity in Persian Gulf and Str",
           "rank_key": {
             "outlets": 2,
@@ -931,7 +962,7 @@
           "camps": [
             "panarab"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1080,7 +1111,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-25T00:17:17.784691+00:00",
+    "last_success": "2026-10-25T00:21:38.719817+00:00",
     "last_failure": null
   },
   "ok": true
