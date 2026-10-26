@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T19:32:29.251829+00:00",
+  "updated": "2026-10-26T20:04:39.754186+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,20 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-26T19:30:14.184525+00:00"
+      "headlines_updated": "2026-10-26T20:02:07.689388+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 12,
-        "title_snippet": 35,
-        "title_native": 80,
+        "dropped_stale": 13,
+        "title_snippet": 29,
+        "dropped_no_english": 5,
+        "title_translated": 1,
+        "title_native": 79,
         "in": 127,
-        "kept": 115
+        "kept": 109
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -228,6 +230,11 @@
         },
         {
           "source": "Jordan Times",
+          "title": "King vows firm response as Karak church attack death toll rises to nine",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
           "title": "Six martyrs, 28 injured in Karak attack — PSD",
           "reason": "stale (older than 48h)"
         },
@@ -245,12 +252,37 @@
           "source": "TRT World",
           "title": "Pakistan announces ratification of Mecca defence pact signed with Türkiye, Saudi Arabia",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "N12",
+          "title": "\"ימים שעשויים לזעזע את העולם\": כך מסקרים מעבר לים את מערכת הבחירות הדרמטית בישראל",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"הרשת היא הזירה בבחירות\": המפורסמים שיוצאים מהארון הפוליטי",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "بزشكيان لمسؤولين من تركيا وباكستان والسعودية: مستعدون لتعميق التعاون الإقليمي",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "عون أسير المُزايدات المسيحية ونصار يتمسّك بطرح الإحالة إلى المجلس العدلي: شاحنة ضهر البيدر تعود إلى مجلس الوزراء؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "البرلمان المصري يصوت اليوم على تفويض السيسي بإرسال قوات إلى السعودية",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 115,
-      "kept": 63,
+      "in": 109,
+      "kept": 62,
       "dropped": [
         {
           "source": "Kan 11",
@@ -281,13 +313,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "N12",
-          "title": "In Serbia, former leader Aleksandar Vučić conceded defeat in the elections.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Channel 13",
           "title": "Billionaire James Packer reportedly transferred approximately $2 million to Netanyahu's law firm, according…",
           "sec": 0,
@@ -310,21 +335,14 @@
         },
         {
           "source": "Channel 13",
-          "title": "A political shift occurred in Serbia as Vučić conceded defeat in the parliamentary elections, as reported by…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Lior Dayan discussed his participation in 'Survivor,' describing it as an 'extreme experience where you are…",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , All you need to know about US midterms 2026",
+          "title": "2 , All you need to know about US midterms 2026",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -478,13 +496,6 @@
         },
         {
           "source": "Falastin al-Youm",
-          "title": "A question is posed about whether drinking very hot tea and coffee increases the risk of esophageal cancer.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
           "title": "A protest was held demanding the rights of UNRWA employees in Gaza.",
           "sec": 0,
           "off": 0,
@@ -512,13 +523,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "Serbia’s strongman leader Vucic concedes defeat to student-led movement in seismic political shift",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "Lula wins Brazil election as Bolsonaro refuses to concede defeat",
           "sec": 0,
@@ -528,13 +532,6 @@
         {
           "source": "Anadolu Agency",
           "title": "Türkiye, Saudi Arabia, Pakistan, Iran pledge continued cooperation on regional security",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Turkish President Erdogan urges respect for Türkiye-Libya 'joint will' in Eastern Mediterranean",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -620,7 +617,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 41,
+      "clusters": 39,
       "sizes": [
         9,
         5,
@@ -630,9 +627,7 @@
         2,
         2,
         2,
-        1,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -877,45 +872,35 @@
         },
         {
           "selected_rank": 5,
-          "headline": "Israeli forces tighten military measures in Hebron, displacing nearly 4,000 Palestinians",
+          "headline": "Hezbollah readies for new regional war with funds from Iran, sources say",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 3,
             "camps": 2,
-            "newest": "2026-10-26T18:11+00:00"
+            "newest": "2026-10-26T15:27+00:00"
           },
           "outlet_names": [
-            "TRT World",
-            "WAFA News"
+            "Arab News",
+            "Kan 11",
+            "N12"
           ],
           "camps": [
-            "levant",
-            "turkish"
+            "israeli",
+            "gulf"
           ],
           "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces tighten military measures in Hebron, displacing nearly 4,000 Palestinians",
+            "source": "Arab News",
+            "title": "Hezbollah readies for new regional war with funds from Iran, sources say",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "neutral-by-default outlet",
+              "names 1 of the story's dominant entities (hezbollah)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Human rights organizations urge Trump administration and Congress to halt Israel",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Israel extends 'ethnic cleansing' campaign to Hebron in occupied West Bank — rig",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -951,33 +936,40 @@
         },
         {
           "selected_rank": null,
-          "headline": "Hezbollah has received tens of millions of dollars from Iran to enhance its military capabilities.",
+          "headline": "Human rights organizations urge Trump administration and Congress to halt Israeli ethnic cleansing i",
           "rank_key": {
             "outlets": 2,
-            "camps": 1,
-            "newest": "2026-10-26T15:21+00:00"
+            "camps": 2,
+            "newest": "2026-10-26T06:54+00:00"
           },
           "outlet_names": [
-            "Kan 11",
-            "N12"
+            "TRT World",
+            "WAFA News"
           ],
           "camps": [
-            "israeli"
+            "levant",
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Kan 11",
-            "title": "Hezbollah has received tens of millions of dollars from Iran to enhance its military capabilities.",
-            "title_source": "snippet",
+            "source": "WAFA News",
+            "title": "Human rights organizations urge Trump administration and Congress to halt Israeli ethnic cleansing in the West Bank",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hezbollah)",
+              "names 1 of the story's dominant entities (westbank)",
               "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "TRT World",
+                "title": "Israel extends 'ethnic cleansing' campaign to Hebron in occupied West Bank — rig",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1012,6 +1004,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Egypt condemns Israeli minister Ben-Gvir’s storming of Al-Aqsa Mosque",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-26T19:37+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "German defense minister says Russia not interested in peace with Ukraine",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-26T19:30+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "UNICEF chief says children 'cannot wait another 30 years' for protection in war",
           "rank_key": {
             "outlets": 1,
@@ -1023,6 +1051,24 @@
           ],
           "camps": [
             "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran president signals openness to regional cooperation in talks with Mecca Alliance",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-26T19:09+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1059,42 +1105,6 @@
           ],
           "camps": [
             "israeli"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Boroujerdi told Al Mayadeen that Iran will not negotiate with the US without its conditions being me",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-26T17:56+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Russia committed ‘crimes against humanity’ through attacks on Ukraine’s energy infrastructure: UN in",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-26T17:03+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1174,24 +1184,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "A quadrilateral meeting is being held in Tehran to discuss de-escalation of regional tensions.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-26T15:17+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Jordan condemns Israeli far-right minister storming of Aqsa Mosque",
           "rank_key": {
             "outlets": 1,
@@ -1227,7 +1219,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1245,7 +1237,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-26T19:32:46.925464+00:00",
+    "last_success": "2026-10-26T20:04:53.877495+00:00",
     "last_failure": null
   },
   "ok": true
