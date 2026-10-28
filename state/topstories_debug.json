@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T17:30:06.535113+00:00",
+  "updated": "2026-10-28T18:02:04.801926+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-28T17:27:53.435887+00:00"
+      "headlines_updated": "2026-10-28T17:59:46.885513+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 8,
-        "title_snippet": 33,
+        "dropped_stale": 7,
+        "dropped_no_english": 9,
+        "title_snippet": 25,
         "title_translated": 1,
         "title_native": 84,
         "in": 126,
-        "kept": 118
+        "kept": 110
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 34,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -198,13 +199,8 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Jordan Times",
-          "title": "Deputising for King, prime minister participates in funeral of Karak martyrs",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "البرلمان المصري يصوت اليوم على تفويض السيسي بإرسال قوات إلى السعودية",
+          "source": "SANA",
+          "title": "Lula da Silva wins fourth non-consecutive presidential term in Brazil",
           "reason": "stale (older than 48h)"
         },
         {
@@ -219,19 +215,64 @@
         },
         {
           "source": "TRT World",
-          "title": "Egypt authorises military support for Saudi Arabia as Houthi militia attacks escalate",
+          "title": "Türkiye, Saudi Arabia, Pakistan and Iran agree to continue regional security talks",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
-          "title": "Iran hosts Türkiye, Saudi Arabia and Pakistan for talks to ease regional war",
+          "title": "Egypt authorises military support for Saudi Arabia as Houthi militia attacks escalate",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "ראש עיריית לוד שמקורב לנתניהו: \"חייבים להקים פה ממשלת אחדות\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"אני לא בא לדרוס פה אנשים\": סטפן לגר חושף איך הוא מתכוון לשחק את המשחק",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "النتائج الأولية... فشل ائتلاف نتنياهو في الحصول على مقاعد كافية لتأليف الحكومة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "معركة تشكيل الحكومة: بيضة القبّان... عربية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "مشروب يحمي الأسنان من التسوس",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "ماذا يحدث للكبد عند الإفراط في تناول الملح؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الاحتلال يجبر مقدسيا على هدم منزله في سلوان جنوب المسجد الأقصى",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أطعمة نباتية مفيدة لصحة الكلى",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تسجيل أول وفاة بشرية بفيروس \"شاموندا\" في فرنسا",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 118,
-      "kept": 38,
+      "in": 110,
+      "kept": 40,
       "dropped": [
         {
           "source": "Kan 11",
@@ -243,13 +284,6 @@
         {
           "source": "Kan 11",
           "title": "A motorcyclist collided with a pedestrian at the Rosh Haayin junction, leaving both individuals in serious…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Regarding the election failure, Winter stated, \"I tried to bring a message of good news - unfortunately, I…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -278,13 +312,6 @@
         {
           "source": "Channel 13",
           "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Eden Peleg stated, \"I know how to deal with difficult situations.\"",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -326,28 +353,42 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Train crash in Spain kills at least 68 people",
-          "sec": 1,
+          "title": "4 , Why Arab parties may not be the ‘kingmakers’ in this Israeli election",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Train crash in Spain kills at least 68 people",
+          "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "Al Jazeera",
-          "title": "5 , Why Arab parties may not be the ‘kingmakers’ in this Israeli election",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Middle East Eye",
-          "title": "Israeli exit polls show huge Palestinian gains block Netanyahu from forming government",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Netanyahu and opposition blocs fall short as Palestinian parties projected to win record seats",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Middle East Eye",
+          "title": "Early Israeli election results show deadlock as Palestinians make huge gains",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Kuwait summons Iranian ambassador after embassy statement on ‘plot’",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Israel left-wing leader says opposition bloc should work with Arab parties",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -360,8 +401,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Arabiya",
-          "title": "Iran says supreme leader met with security chief over Hormuz",
+          "source": "The New Arab",
+          "title": "Qatar emir meets Iran president in Moscow amid mediation efforts",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -369,20 +410,6 @@
         {
           "source": "The New Arab",
           "title": "Turkey committee approves pact with Saudi Arabia and Pakistan",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Israel opposition holds narrow edge over Netanyahu, polls show",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Iran's Baghaei stated that Trump's admission of not believing in the Islamabad agreement proves US…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -411,13 +438,6 @@
         {
           "source": "IRNA",
           "title": "Iran urges Qatar to uphold principles of mediation",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Araghchi congratulates Lula da Silva on his victory in Brazilian election",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -452,13 +472,6 @@
         },
         {
           "source": "Iran International",
-          "title": "EXCLUSIVE Bessent says Iran economy will contract by more than 25%",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Iran International",
           "title": "INSIGHT Tehran plans for $130 oil it struggles to sell",
           "sec": 0,
           "off": 0,
@@ -467,6 +480,13 @@
         {
           "source": "Jordan Times",
           "title": "Netanyahu bloc leads as Israeli votes counted, but no majority",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Cabinet approves satellite investment incentives, circular economy roadmap",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -537,13 +557,6 @@
         {
           "source": "Egypt Independent",
           "title": "Taking back the algorithm: Social media platforms are restoring users’ control of their feeds",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "The Egyptian parliament has authorized the president to support Saudi Arabia militarily.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -626,20 +639,6 @@
           "reason": "disaster/accident with no conflict dimension"
         },
         {
-          "source": "Falastin al-Youm",
-          "title": "Iran has responded to Trump after he described a memorandum of understanding as a 'waste of time.'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Information regarding the timing of the 'Israeli' election results and government formation stages is…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Trump says Putin-Zelensky meeting could take place soon",
           "sec": 0,
@@ -648,14 +647,14 @@
         },
         {
           "source": "SANA",
-          "title": "Traffic resumes at Nassib border crossing between Syria and Jordan",
+          "title": "Syria takes part in OIC anti-corruption law enforcement meeting in Baku",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "SANA",
-          "title": "Saudi Arabia approves Syria cooperation pact on municipal and housing services",
+          "source": "Arab News",
+          "title": "Netanyahu bloc leads after half of Israeli votes counted but no majority",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -676,14 +675,14 @@
         },
         {
           "source": "Gulf News",
-          "title": "Israel election: Exit polls show no clear winner as Netanyahu’s fate hangs in balance",
+          "title": "The bloc running to unseat Netanyahu in Israel's election",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "The bloc running to unseat Netanyahu in Israel's election",
+          "title": "Israel election: Exit polls show no clear winner as Netanyahu’s fate hangs in balance",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -697,13 +696,6 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Netanyahu’s bloc projected to win 53 seats, Eisenkot’s 48 in Israeli elections",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
           "title": "Death toll in Spain train crash rises to 68 as Sanchez vows full investigation",
           "sec": 1,
           "off": 0,
@@ -711,17 +703,10 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Türkiye offers condolences to Spain over deadly train crash",
+          "title": "Former US officials who resigned over Gaza urge 2028 presidential candidates to reject architects of Biden-era policy",
           "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Turkish president offers condolences to Spain over deadly train crash",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
@@ -736,13 +721,6 @@
           "sec": 1,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "UK budget lifts tax on bank profits to extend energy support",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Hürriyet Daily News",
@@ -781,31 +759,26 @@
         },
         {
           "source": "TRT World",
-          "title": "Neither Netanyahu nor Eisenkot on track for majority in 120-seat Knesset — Israeli exit polls",
+          "title": "Israeli opposition leader reaches out to Arab parties to unseat Netanyahu",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Thousands evacuated as Cyclone Arnab nears India's eastern coast",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 28,
+      "clusters": 30,
       "sizes": [
-        4,
+        3,
+        3,
         3,
         2,
         2,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -836,29 +809,62 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Syria summons Jordanian ambassador for 'deadly' airstrikes in Daraa",
+          "headline": "Iran rejects 'unacceptable' proposal by Qatar to end war with US",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
-            "newest": "2026-10-28T16:47+00:00"
+            "newest": "2026-10-28T12:14+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Jordan Times",
-            "SANA"
+            "Gulf News",
+            "Mehr News",
+            "Middle East Eye"
           ],
           "camps": [
+            "gulf",
             "panarab",
-            "levant",
-            "turkish"
+            "iranian"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Anadolu Agency",
-            "title": "Syria summons Jordanian ambassador for 'deadly' airstrikes in Daraa",
+            "source": "Middle East Eye",
+            "title": "Iran rejects 'unacceptable' proposal by Qatar to end war with US",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (qatar)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 2,
+          "headline": "Jordan strikes groups in Syria after church attack",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-26T22:29+00:00"
+          },
+          "outlet_names": [
+            "Arab News",
+            "Jordan Times",
+            "The New Arab"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "levant"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "The New Arab",
+            "title": "Jordan strikes groups in Syria after church attack",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -868,11 +874,6 @@
             ],
             "passed_over": [
               {
-                "source": "Al Arabiya",
-                "title": "Jordan launches airstrikes in Syria in retaliation for deadly church attack",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "Jordan Times",
                 "title": "Jordanian Air Force strikes terrorist targets in southern Syria — JAF",
                 "rejected_by": "loaded/partisan wording"
@@ -881,7 +882,7 @@
           }
         },
         {
-          "selected_rank": 2,
+          "selected_rank": 3,
           "headline": "Houthis hit Saudi refinery as Iran warns of ‘devastating’ response to further US-Israeli attacks",
           "rank_key": {
             "outlets": 3,
@@ -918,14 +919,14 @@
               },
               {
                 "source": "Iran International",
-                "title": "5 Tehran summit divides Iranian hardliners over Yemen and US talks",
+                "title": "4 Tehran summit divides Iranian hardliners over Yemen and US talks",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Hezbollah's Secretary-General commented that the election results in Israel are a reflection of defe",
           "rank_key": {
             "outlets": 2,
@@ -963,59 +964,27 @@
           }
         },
         {
-          "selected_rank": 4,
-          "headline": "Qatari mediators present Iran with new deal to end the war, official says",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-28T13:36+00:00"
-          },
-          "outlet_names": [
-            "Arab News",
-            "The New Arab"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Qatari mediators present Iran with new deal to end the war, official says",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (qatar)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
           "selected_rank": 5,
-          "headline": "Iran, Saudi Arabia, Turkey and Pakistan agree to further talks",
+          "headline": "Egypt, Iran discuss regional de-escalation as risks grow",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-26T22:13+00:00"
+            "newest": "2026-10-28T09:33+00:00"
           },
           "outlet_names": [
-            "TRT World",
-            "The New Arab"
+            "Egypt Independent",
+            "TRT World"
           ],
           "camps": [
-            "panarab",
+            "levant",
             "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Iran, Saudi Arabia, Turkey and Pakistan agree to further talks",
+            "source": "Egypt Independent",
+            "title": "Egypt, Iran discuss regional de-escalation as risks grow",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -1027,15 +996,45 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Pentagon estimates the cost of the war with Iran has exceeded $47 billion.",
+          "headline": "Türkiye, Bulgaria and Romania condemn Black Sea drone attacks",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-10-28T11:38+00:00"
+            "newest": "2026-10-28T16:24+00:00"
           },
           "outlet_names": [
-            "Al-Akhbar",
-            "Falastin al-Youm"
+            "Anadolu Agency",
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Türkiye, Bulgaria and Romania condemn Black Sea drone attacks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Palestinian farmer injured, five detained in West Bank attacks",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-10-28T07:13+00:00"
+          },
+          "outlet_names": [
+            "SANA",
+            "WAFA News"
           ],
           "camps": [
             "levant"
@@ -1044,16 +1043,113 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al-Akhbar",
-            "title": "The Pentagon estimates the cost of the war with Iran has exceeded $47 billion.",
-            "title_source": "snippet",
+            "source": "SANA",
+            "title": "Palestinian farmer injured, five detained in West Bank attacks",
+            "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
               "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
+              "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Palestinian injured, another detained in Israeli colonist and military attacks i",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Ethiopia receives 12 Russian Su-35 fighter jets, plans to acquire S-400 air defenses",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-28T17:56+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iranian foreign minister says Tehran in talks with mediators to implement 7-day plan with US",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-28T17:51+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "CWRC documents seven Israeli attacks against farmers in 12 hours",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-28T17:41+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Iran war costs US taxpayers $47.1 billion",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-28T17:40+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Exclusive | Iran is pursuing energy diplomacy dynamically, resolutely: Minister",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-28T16:43+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1129,42 +1225,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran rejects 'unacceptable' proposal by Qatar to end war with US",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-28T12:14+00:00"
-          },
-          "outlet_names": [
-            "Middle East Eye"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Pezeshkian stated that they are committed to guidelines for moving from a 'no war, no peace' phase.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-28T12:02+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran embassy in Kuwait rejects allegation linking Iranian national to assassination plot",
           "rank_key": {
             "outlets": 1,
@@ -1176,24 +1236,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli occupation forces raid home in southern Quneitra, detain civilian",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-28T11:06+00:00"
-          },
-          "outlet_names": [
-            "SANA"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1236,43 +1278,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iran war or peace? Qatar presents new deal to Iran as Trump says ‘anything is possible’",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-28T10:17+00:00"
-          },
-          "outlet_names": [
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran says ready to help draft global treaty on plastic pollution",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-28T10:02+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "10 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1290,7 +1296,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-28T17:30:26.544076+00:00",
+    "last_success": "2026-10-28T18:02:36.519351+00:00",
     "last_failure": null
   },
   "ok": true
