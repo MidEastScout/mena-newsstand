@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T00:31:22.252714+00:00",
+  "updated": "2026-10-29T01:03:21.074859+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,16 +167,17 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-29T00:28:56.069014+00:00"
+      "headlines_updated": "2026-10-29T01:01:06.922996+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
-        "title_snippet": 34,
+        "dropped_stale": 8,
+        "dropped_no_english": 10,
+        "title_snippet": 24,
         "title_translated": 1,
-        "title_native": 87,
+        "title_native": 84,
         "in": 127,
-        "kept": 122
+        "kept": 109
       },
       "translator": {
         "configured": true,
@@ -188,13 +189,23 @@
       },
       "dropped": [
         {
+          "source": "The New Arab",
+          "title": "Iran, Saudi Arabia, Turkey and Pakistan agree to further talks",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Jordan Times",
           "title": "Jordanian Air Force strikes terrorist targets in southern Syria — JAF",
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Jordan Times",
-          "title": "Deputising for King, prime minister participates in funeral of Karak martyrs",
+          "source": "WAFA News",
+          "title": "Israeli forces tighten military measures in Hebron, displacing nearly 4,000 Palestinians",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Brazil's President Lula da Silva wins historic 4th term",
           "reason": "stale (older than 48h)"
         },
         {
@@ -211,11 +222,66 @@
           "source": "Al-Masirah",
           "title": "حصيلة دامية للعدوان السعودي خلال 24 ساعة .. استشهاد 18 مدنياً في غارات على أمانة العاصمة ومحافظات أخرى",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Türkiye, Saudi Arabia, Pakistan and Iran agree to continue regional security talks",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "בן 10 נפל מגובה בפארק שעשועים בחולון, מצבו קשה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "ילד בן 10 נפל מגובה בפארק שעשועים בחולון, מצבו קשה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"זה היה כל כך מרגש\": הכוכבת ההוליוודית חוזרת לפרנצ'ייז המצליח",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "\"נמצא דרך להקים ממשלה\": במטה של איזנקוט חגגו ניצחון - והתאכזבו",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "إيران: بقائي: اعتراف ترامب بأنه لم يؤمن باتفاقية إسلام آباد واعتبرها مضيعة للوقت أثبت مدى لامبالاة الولايات المتحدة بالت",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تقديرات أمريكية: كلفة الحرب على إيران تتجاوز 47 مليار دولار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "إيران ترد على ترامب بعد وصفه مذكرة التفاهم بأنها \"مضيعة للوقت\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "أسعار النفط تقفز مع استمرار التوترات في الشرق الأوسط واضطراب الإمدادات",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "تعرف على مواعيد نشر نتائج الانتخابات \"الإسرائيلية\" ومراحل تشكيل الحكومة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "بزشكيان: ملتزمون بإرشادات العبور من مرحلة \"لا حرب لا سلام\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 122,
+      "in": 109,
       "kept": 50,
       "dropped": [
         {
@@ -247,13 +313,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Kan 11",
-          "title": "The Central Elections Committee announced that the counting of double envelopes will begin tonight and is…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "N12",
           "title": "Fires near Ben Shemen Junction have led to the closure of Roads 444 and 6.",
           "sec": 0,
@@ -269,27 +328,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "Watch the latest episode of Survivor, Season 8, Episode 3, featuring an elimination.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Watch the full broadcast of the main news edition from October 28, 2026.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "The confrontation between Shi Hay and Sheila intensifies, with Hay stating Sheila is good at spreading…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "Sheila expresses disappointment and unwillingness to forgive, emphasizing the importance of words.",
           "sec": 0,
           "off": 0,
@@ -297,14 +335,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , Israel election results updates: No winner in Netanyahu-Eisenkot blocs race",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Jazeera",
-          "title": "3 , Why Arab parties may not be the ‘kingmakers’ in this Israeli election",
+          "title": "3 , Israel election results updates: No winner in Netanyahu-Eisenkot blocs race",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -318,7 +349,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , What’s next for Brazil’s Flavio Bolsonaro after election defeat?",
+          "title": "5 , Why Arab parties may not be the ‘kingmakers’ in this Israeli election",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -326,13 +357,6 @@
         {
           "source": "Middle East Eye",
           "title": "Israeli exit polls show huge Palestinian gains block Netanyahu from forming government",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Middle East Eye",
-          "title": "Early Israeli election results show deadlock as Palestinians make huge gains",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -373,13 +397,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "The New Arab",
-          "title": "Israel elections: High Arab turnout seeks to punish Netanyahu",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Mayadeen",
           "title": "Libya has announced the lifting of international flight restrictions after 11 years.",
           "sec": 0,
@@ -389,13 +406,6 @@
         {
           "source": "Al Mayadeen",
           "title": "Arab parties secured 19 seats, raising questions about an alternative government to Netanyahu or a power…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Netanyahu lacks a majority in the initial results, potentially opening the door for Arab parties to form an…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -438,6 +448,13 @@
         {
           "source": "Jordan Times",
           "title": "Netanyahu bloc leads as Israeli votes counted, but no majority",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Cabinet approves satellite investment incentives, circular economy roadmap",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -555,41 +572,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "WAFA News",
-          "title": "President Abbas offers condolences to Spanish PM over deadly train collision victims",
-          "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Amnesty International praised the Netherlands' withdrawal from 'Eurovision 2027', as reported by Palestine…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Trump has expressed his readiness to intervene to support the formation of a unity government led by…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "A drink that protects teeth from decay is mentioned by Palestine Today.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "Palestine Today discusses what happens to the liver from excessive salt intake.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "SANA",
           "title": "Trump says Putin-Zelensky meeting could take place soon",
           "sec": 0,
@@ -612,7 +594,7 @@
         },
         {
           "source": "Arab News",
-          "title": "High voter turnout boosts Arab parties as Israel election results roll in",
+          "title": "Netanyahu bloc leads after half of Israeli votes counted but no majority",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -632,15 +614,15 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "The bloc running to unseat Netanyahu in Israel's election",
+          "source": "Anadolu Agency",
+          "title": "Flavio Bolsonaro claims Brazil’s presidency in 1st public address from US exile",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "Flavio Bolsonaro claims Brazil’s presidency in 1st public address from US exile",
+          "title": "Israeli police find no evidence backing Netanyahu party’s election fraud claims: Report",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -714,29 +696,20 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Türkiye ready for maritime boundary deal with Egypt: defence ministry",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 40,
+      "clusters": 38,
       "sizes": [
+        6,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -779,21 +752,24 @@
           "selected_rank": 1,
           "headline": "Erdoğan urges diplomacy over Hormuz, Yemen tensions in Trump call",
           "rank_key": {
-            "outlets": 3,
-            "camps": 3,
+            "outlets": 5,
+            "camps": 4,
             "newest": "2026-10-28T18:51+00:00"
           },
           "outlet_names": [
+            "Al Jazeera",
             "Daily Sabah",
+            "Gulf News",
             "Iran International",
             "Middle East Eye"
           ],
           "camps": [
+            "gulf",
             "panarab",
             "iranian",
             "turkish"
           ],
-          "members": 3,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -802,11 +778,21 @@
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
+              "names 2 of the story's dominant entities (hormuz, yemen)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Iran war updates: Tehran in ‘close contact’ with mediators on Hormuz plan",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Jazeera",
+                "title": "2 , Iran in talks with mediators over 7-day Hormuz plan; Houthis attack Aden",
+                "rejected_by": "older than the story's newest wave"
+              },
               {
                 "source": "Middle East Eye",
                 "title": "Houthis hit Saudi refinery as Iran warns of ‘devastating’ response to further US",
@@ -900,30 +886,30 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Israeli forces shell southern Syria village after raid: state media",
+          "headline": "Qatari mediators present Iran with new deal to end the war, official says",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-28T19:29+00:00"
+            "newest": "2026-10-28T13:36+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
-            "Arab News"
+            "Arab News",
+            "The New Arab"
           ],
           "camps": [
             "gulf",
-            "turkish"
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Israeli forces shell southern Syria village after raid: state media",
+            "source": "The New Arab",
+            "title": "Qatari mediators present Iran with new deal to end the war, official says",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (syria)",
+              "names 1 of the story's dominant entities (qatar)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -959,44 +945,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran says discussing plan with mediators to end war, reopen Hormuz",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-10-28T08:18+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Arab News",
-            "title": "Iran says discussing plan with mediators to end war, reopen Hormuz",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran war updates: Tehran in ‘close contact’ with mediators on Hormuz plan",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -1084,24 +1032,6 @@
           ],
           "camps": [
             "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Tunisia condemns occupation’s aggression against Palestinian people, reaffirms steadfast support for",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-28T21:20+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1216,7 +1146,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "22 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "US warns Gulf of intense strikes on Iran after midterms: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-28T16:41+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1234,7 +1182,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-29T00:31:46.589916+00:00",
+    "last_success": "2026-10-29T01:03:44.873009+00:00",
     "last_failure": null
   },
   "ok": true
