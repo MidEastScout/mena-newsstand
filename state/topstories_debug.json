@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-31T04:57:36.841951+00:00",
+  "updated": "2026-10-31T05:29:49.448271+00:00",
   "stages": {
     "fetch": {
-      "items": 127,
+      "items": 126,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -73,7 +73,7 @@
         "Jordan Times": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "L'Orient Today": {
@@ -137,10 +137,10 @@
           "error": null
         },
         "Al-Masirah": {
-          "headlines": 1,
+          "headlines": 0,
           "lang": "ar",
-          "stale": true,
-          "error": null
+          "stale": false,
+          "error": "no entries"
         },
         "Anadolu Agency": {
           "headlines": 5,
@@ -167,25 +167,31 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-31T04:55:39.165246+00:00"
+      "headlines_updated": "2026-10-31T05:27:23.927064+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 15,
-        "title_snippet": 33,
-        "title_native": 79,
-        "in": 127,
-        "kept": 112
+        "dropped_stale": 11,
+        "title_snippet": 26,
+        "dropped_no_english": 9,
+        "title_native": 80,
+        "in": 126,
+        "kept": 106
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 35,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Middle East Eye",
+          "title": "Trump denies directing Vance to start peace talks with Iran",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "Israel election: Netanyahu bloc leads but no majority",
@@ -202,18 +208,13 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "The New Arab",
-          "title": "Houthis say deadly Saudi strikes hit Yemen as they target Aden",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "Jordan Times",
           "title": "Netanyahu bloc leads as Israeli votes counted, but no majority",
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "البنتاغون: تكلفة الحرب مع إيران تجاوزت 47 مليار دولار",
+          "source": "WAFA News",
+          "title": "Foreign Affairs offers condolences to Spain over deadly high-speed train collision",
           "reason": "stale (older than 48h)"
         },
         {
@@ -227,13 +228,8 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "WAFA News",
-          "title": "Foreign Affairs offers condolences to Spain over deadly high-speed train collision",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "تقديرات أمريكية: كلفة الحرب على إيران تتجاوز 47 مليار دولار",
+          "source": "SANA",
+          "title": "President al-Sharaa, Iraqi PM discuss bilateral ties, regional issues in Damascus",
           "reason": "stale (older than 48h)"
         },
         {
@@ -242,30 +238,60 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Israelis await final election results as Netanyahu rivals weigh joining forces with Arab parties",
+          "source": "TRT World",
+          "title": "Israeli police find no evidence backing Netanyahu's Likud election fraud claims",
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "Gulf News",
-          "title": "Netanyahu, rival Eisenkot each claim mandate after tight Israel election",
-          "reason": "stale (older than 48h)"
+          "source": "Channel 13",
+          "title": "עושים שישי עם אריק וייס 30.10.26 - התכנית המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
-          "source": "Gulf News",
-          "title": "Iran war or peace? Qatar presents new deal to Iran as Trump says ‘anything is possible’",
-          "reason": "stale (older than 48h)"
+          "source": "Channel 13",
+          "title": "בשב\"כ בודקים פגישות של בכירים ברשימה המשותפת עם גורמים מקטר",
+          "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
-          "source": "Al-Masirah",
-          "title": "حصيلة دامية للعدوان السعودي خلال 24 ساعة .. استشهاد 18 مدنياً في غارات على أمانة العاصمة ومحافظات أخرى",
-          "reason": "stale (older than 48h)"
+          "source": "Al Mayadeen",
+          "title": "عضو \"الكنيست\" عن \"القائمة المشتركة\" فاتن غطاس: مستعدون لكل ما يلزم للتخلّص من الحكومة الحالية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "تقرير: ترامب يطّلع على خيارات لشنّ هجمات على إيران",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "حماس: التهجير القسري وهدم المنازل في الخليل يستدعي تحركاً دولياً عاجلاً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "اختراق ضخم بقيمة 6.3 مليار دولار يضرب منصة \"بينانس\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الشيخ عكرمة صبري: سياسة إبعاد الخطباء تهدف لتسهيل اقتحامات المستوطنين",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الطقس: انخفاض طفيف على الحرارة والفرصة مهيئة لسقوط زخات من الأمطار",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "\"المشتركة\" تدعو قادة المعارضة للكف عن مجاراة أكاذيب نتنياهو",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 112,
-      "kept": 64,
+      "in": 106,
+      "kept": 60,
       "dropped": [
         {
           "source": "Kan 11",
@@ -303,20 +329,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Channel 13",
-          "title": "The Shin Bet is investigating meetings between senior members of the Joint List and Qatari elements.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "Omer Tal commented on a contestant from 'Survivor,' stating, 'This is an arrogant way to play the game.'",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Jazeera",
           "title": "2 , What polls say as Trump reverses course on cancelled campaign rallies",
           "sec": 0,
@@ -331,13 +343,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Jazeera",
-          "title": "4 , Fake polls expose vulnerabilities in US elections ahead of midterms",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Middle East Eye",
           "title": "Live: Qatari mediators head back to Tehran to push for US-Iran deal",
           "sec": 0,
@@ -346,7 +351,14 @@
         },
         {
           "source": "Al Arabiya",
-          "title": "Qatari mediators return to Tehran to push for US-Iran deal, official says",
+          "title": "Iran received letter from Vance but has yet to respond, state-linked agency says",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Israeli police reject Likud claims of fraud by Arab parties",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -437,13 +449,6 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Final Israeli election results are almost in. Netanyahu hasn’t won – but he hasn’t lost either",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
           "title": "An Arab political earthquake reshapes Israeli elections",
           "sec": 0,
           "off": 0,
@@ -466,6 +471,13 @@
         {
           "source": "Egypt Independent",
           "title": "Police Scotland Probe alleged human trafficking involving Jeffrey Epstein and former Prince Andrew at Royal estate",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "EgyptAir expands UK presence with 4 weekly direct flights between Cairo and Birmingham",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -500,6 +512,13 @@
         },
         {
           "source": "Arab News",
+          "title": "Netanyahu bloc leads Israel election but falls short of majority as Likud claims vote was ‘stolen’",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
           "title": "Qatari mediators return to Tehran to push for US-Iran deal, official says",
           "sec": 0,
           "off": 0,
@@ -513,8 +532,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "EXPLAINER - Police deployed after head of top court suspended, president cuts trip short: What's happening in Poland?",
+          "source": "Gulf News",
+          "title": "Israeli PM Benjamin Netanyahu's Likud party alleges election theft without evidence",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -584,21 +603,14 @@
         },
         {
           "source": "TRT World",
+          "title": "Spain mourns 68 killed in second deadly high-speed train crash this year",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
+        },
+        {
+          "source": "TRT World",
           "title": "Israeli opposition, Arab party slam Netanyahu for stoking election chaos",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Netanyahu wants new election, but opposition can block it, says Arab Party leader Ahmad Tibi",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Philippines raises Mayon volcano alert to level 3 after explosive eruption",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -607,12 +619,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 32,
+      "clusters": 34,
       "sizes": [
-        13,
-        8,
+        9,
         5,
         4,
+        4,
+        2,
+        2,
         2,
         2,
         2,
@@ -652,17 +666,15 @@
           "selected_rank": 1,
           "headline": "Iran says 4th oil tanker hit mine, caught fire in Strait of Hormuz",
           "rank_key": {
-            "outlets": 9,
+            "outlets": 7,
             "camps": 5,
-            "newest": "2026-10-31T00:17+00:00"
+            "newest": "2026-10-31T05:12+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Al Jazeera",
-            "Al Mayadeen",
             "Anadolu Agency",
             "Arab News",
-            "Falastin al-Youm",
             "IRNA",
             "Mehr News",
             "SANA"
@@ -674,7 +686,7 @@
             "levant",
             "turkish"
           ],
-          "members": 13,
+          "members": 9,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -690,7 +702,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Iran says four oil tankers on fire in Hormuz; Trump says war will end soon",
+                "title": "1 , Iran says 4 oil tankers on fire in Hormuz; Trump repeats war to end ‘soon’",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -699,8 +711,8 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Iran’s IRGC says three tankers on fire after hitting mines in Hormuz",
+                "source": "IRNA",
+                "title": "IRGC: Fourth offending tanker catches fire in Strait of Hormuz after defying Ira",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -713,36 +725,87 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Houthis target Saudi Arabia’s Medina and Yemen’s presidential palace in Aden",
+          "headline": "Saudi Arabia reported that a drone launched by the Houthis towards the southern part of the country ",
           "rank_key": {
-            "outlets": 8,
-            "camps": 6,
+            "outlets": 5,
+            "camps": 5,
             "newest": "2026-10-31T01:01+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Al Manar",
-            "Anadolu Agency",
-            "Arab News",
+            "Gulf News",
             "Kan 11",
             "Mehr News",
-            "Middle East Eye",
-            "TRT World"
+            "Middle East Eye"
           ],
           "camps": [
             "israeli",
             "gulf",
             "panarab",
             "iranian",
-            "levant",
-            "turkish"
+            "levant"
           ],
-          "members": 8,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Al Arabiya",
-            "title": "Houthis target Saudi Arabia’s Medina and Yemen’s presidential palace in Aden",
+            "source": "Kan 11",
+            "title": "Saudi Arabia reported that a drone launched by the Houthis towards the southern part of the country was…",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "Middle East Eye",
+                "title": "Houthis claim six attacks on Saudi Arabia airports and oil facilities",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "Yemen's Houthis claim attacks on Saudi oil, aviation, military targets",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Mehr News",
+                "title": "Yemen sets 3 conditions for ending war with Saudi Arabia",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Manar",
+                "title": "The leader of Ansarullah, Sayyid Abdul-Malik Badreddin al-Houthi, stated that Sa",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
+          "headline": "Saudi-led coalition intercepts Houthi drone over southern region",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 3,
+            "newest": "2026-10-31T05:06+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Anadolu Agency",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "turkish"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Saudi-led coalition intercepts Houthi drone over southern region",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -752,74 +815,18 @@
             ],
             "passed_over": [
               {
-                "source": "Middle East Eye",
-                "title": "Houthis claim six attacks on Saudi Arabia airports and oil facilities",
+                "source": "Al Arabiya",
+                "title": "Saudi-led coalition destroys drone fired by Yemen’s Houthis over Mecca",
                 "rejected_by": "older than the story's newest wave"
               },
               {
                 "source": "Arab News",
-                "title": "Houthis target Aden airport and Maashiq Presidential Palace with ballistic missi",
+                "title": "Saudi-led coalition intercepts Houthi drone over Riyadh, missile in south",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "TRT World",
-                "title": "Houthis target Saudi Arabia's Dammam airport as wave of airport attacks continue",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Mehr News",
-                "title": "Yemen sets 3 conditions for ending war with Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Gaza is described as a target of daily killings, both before and after the elections.",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-10-30T22:30+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar",
-            "Falastin al-Youm",
-            "Middle East Eye",
-            "N12"
-          ],
-          "camps": [
-            "israeli",
-            "panarab",
-            "levant"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al-Akhbar",
-            "title": "Gaza is described as a target of daily killings, both before and after the elections.",
-            "title_source": "snippet",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "neutral-by-default outlet",
-              "derived from the outlet's English snippet"
-            ],
-            "passed_over": [
-              {
-                "source": "N12",
-                "title": "Photos and videos of Mohammed Deif and senior Hamas military wing officials have",
-                "rejected_by": "bare stub headline"
-              },
-              {
-                "source": "Middle East Eye",
-                "title": "Israeli strike kills one Palestinian in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas praised a global labor movement in 113 ports demanding a halt to arms ship",
+                "source": "Al Arabiya",
+                "title": "Saudi air defenses intercept two Houthi ballistic missiles targeting Riyadh",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -829,12 +836,11 @@
           "selected_rank": 4,
           "headline": "Israeli settlers attack olive harvesters, build new outpost as Hebron siege enters eighth day",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-10-30T20:18+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm",
             "Middle East Eye",
             "The New Arab",
             "WAFA News"
@@ -843,7 +849,7 @@
             "panarab",
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -871,17 +877,81 @@
                 "source": "WAFA News",
                 "title": "Israeli forces detain and assault Palestinians as colonists attack olive pickers",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "1193 settlers stormed Al-Aqsa Mosque in one week, with Ben-Gvir leading one of t",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 5,
+          "headline": "Gaza is described as a target of daily killings, both before and after the elections.",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-30T22:30+00:00"
+          },
+          "outlet_names": [
+            "Al-Akhbar",
+            "N12"
+          ],
+          "camps": [
+            "israeli",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al-Akhbar",
+            "title": "Gaza is described as a target of daily killings, both before and after the elections.",
+            "title_source": "snippet",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "neutral-by-default outlet",
+              "derived from the outlet's English snippet"
+            ],
+            "passed_over": [
+              {
+                "source": "N12",
+                "title": "Photos and videos of Mohammed Deif and senior Hamas military wing officials have",
+                "rejected_by": "bare stub headline"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pakistan military ‘cautiously optimistic’ on Iran-US mediation",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-10-30T18:05+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Arab News"
+          ],
+          "camps": [
+            "gulf",
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Pakistan military ‘cautiously optimistic’ on Iran-US mediation",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "The Sanaa forces revealed the operational structure and military command of Saudi Arabia in Yemen.",
           "rank_key": {
             "outlets": 2,
@@ -914,40 +984,34 @@
         },
         {
           "selected_rank": null,
-          "headline": "Two teenagers killed in Ukraine drone strike as Russia and Kyiv exchange attacks",
+          "headline": "Erdogan, Trump discuss regional tensions, Ukraine war and bilateral ties in phone call",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-10-30T10:49+00:00"
+            "newest": "2026-10-30T13:21+00:00"
           },
           "outlet_names": [
-            "Arab News",
-            "SANA"
+            "SANA",
+            "TRT World"
           ],
           "camps": [
-            "gulf",
-            "levant"
+            "levant",
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "SANA",
-            "title": "Two teenagers killed in Ukraine drone strike as Russia and Kyiv exchange attacks",
+            "source": "TRT World",
+            "title": "Erdogan, Trump discuss regional tensions, Ukraine war and bilateral ties in phone call",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (ukraine)",
-              "neutral-by-default outlet",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "‘Horrific’ Russian drone strike kills 13 at Ukraine train station: Kyiv",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -988,11 +1052,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Turkish foreign minister, US secretary of state discuss Iran talks, Gaza, Ukraine war",
+          "headline": "Israel blows up homes, shells towns in southern Lebanon",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-10-30T20:58+00:00"
+            "newest": "2026-10-30T22:55+00:00"
           },
           "outlet_names": [
             "Anadolu Agency",
@@ -1006,21 +1070,15 @@
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Turkish foreign minister, US secretary of state discuss Iran talks, Gaza, Ukraine war",
+            "title": "Israel blows up homes, shells towns in southern Lebanon",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 2 of the story's dominant entities (gaza, ukraine)",
+              "names 1 of the story's dominant entities (hezbollah_south)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "TRT World",
-                "title": "Erdogan, Trump discuss regional tensions, Ukraine war and bilateral ties in phon",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -1086,6 +1144,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Trump may order major Iran strike if Republicans suffer losses in midterm election: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-31T05:08+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "It is reported that Trump is planning to renew attacks on Iran the day after the midterm elections.",
           "rank_key": {
             "outlets": 1,
@@ -1112,24 +1188,6 @@
           },
           "outlet_names": [
             "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Saudi-led coalition intercepts Houthi drone in Medina region",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-30T20:04+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
           ],
           "camps": [
             "turkish"
@@ -1230,42 +1288,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump says Iran war going to get wrapped up soon",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-30T11:59+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Tens of thousands performed Friday prayers at Al-Aqsa Mosque amidst strict Israeli measures.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-30T11:53+00:00"
-          },
-          "outlet_names": [
-            "Falastin al-Youm"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Erdoğan urges Turkic states to strengthen support for Palestinians at Ankara summit",
           "rank_key": {
             "outlets": 1,
@@ -1301,6 +1323,42 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
+          "selected_rank": null,
+          "headline": "Human rights rapporteurship whitewashing US, Israeli crimes: Iran Foreign Ministry spox.",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-30T06:28+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US Vice President Vance offers to meet Iran’s Rezaei for talks: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-30T05:35+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
           "note": "10 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
@@ -1319,7 +1377,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-31T04:57:58.213743+00:00",
+    "last_success": "2026-10-31T05:30:03.206482+00:00",
     "last_failure": null
   },
   "ok": true
