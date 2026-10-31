@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T02:17:08.679425+00:00",
+  "updated": "2026-10-31T02:49:05.270546+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,26 +167,31 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-10-31T02:14:46.886813+00:00"
+      "headlines_updated": "2026-10-31T02:46:44.995232+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 17,
-        "title_snippet": 34,
-        "title_translated": 1,
-        "title_native": 75,
+        "title_snippet": 26,
+        "dropped_no_english": 7,
+        "title_native": 77,
         "in": 127,
-        "kept": 110
+        "kept": 103
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 33,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Middle East Eye",
+          "title": "Trump denies directing Vance to start peace talks with Iran",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "Qatari mediators present Iran with new deal to end the war, official says",
@@ -208,6 +213,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Al-Akhbar",
+          "title": "البنتاغون: تكلفة الحرب مع إيران تجاوزت 47 مليار دولار",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "WAFA News",
           "title": "President Abbas offers condolences to Spanish PM over deadly train collision victims",
           "reason": "stale (older than 48h)"
@@ -223,8 +233,8 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "SANA",
-          "title": "President al-Sharaa, Iraqi PM discuss bilateral ties, regional issues in Damascus",
+          "source": "Falastin al-Youm",
+          "title": "تقديرات أمريكية: كلفة الحرب على إيران تتجاوز 47 مليار دولار",
           "reason": "stale (older than 48h)"
         },
         {
@@ -254,29 +264,54 @@
         },
         {
           "source": "Gulf News",
-          "title": "Netanyahu bloc leads after half of Israeli votes counted but no majority",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Gulf News",
           "title": "Israelis await final election results as Netanyahu rivals weigh joining forces with Arab parties",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Netanyahu, rival Eisenkot each claim mandate after tight Israel election",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Al-Masirah",
           "title": "حصيلة دامية للعدوان السعودي خلال 24 ساعة .. استشهاد 18 مدنياً في غارات على أمانة العاصمة ومحافظات أخرى",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "עומר טל נגד מתמודד \"הישרדות\": \"זו דרך יהירה לשחק את המשחק\"",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "حرس الثورة يعلن انفجار ناقلة نفط ثالثة إثر اصطدامها بلغم بحري في مضيق هرمز",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نشرة الثالثة فجراً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "الحرس الثوري الإيراني: انفجار واحتراق 3 ناقلات نفط في مضيق هرمز خلال 24 ساعة",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "حماس تشيد بحراك عمالي عالمي في 113 ميناءً للمطالبة بوقف شحن الأسلحة إلى الاحتلال",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "1193 مستوطناً يقتحمون الأقصى خلال أسبوع.. وبن غفير يقود إحداها",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "عشرات الآلاف يؤدون صلاة الجمعة في المسجد الأقصى وسط اجراءات \"إسرائيلية\" مشددة",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 110,
-      "kept": 66,
+      "in": 103,
+      "kept": 65,
       "dropped": [
         {
           "source": "Kan 11",
@@ -288,13 +323,6 @@
         {
           "source": "N12",
           "title": "A two-year-old toddler died after being forgotten in a closed vehicle in Rahat.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -336,21 +364,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Israel election result shows no overall majority as vote count complete",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "A member of the Knesset from the Joint List, Faten Ghataas, stated their readiness to take necessary measures…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "Benjamin Netanyahu faces the possibility of a minority government.",
+          "title": "4 , Fake polls expose vulnerabilities in US elections ahead of midterms",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -456,27 +470,6 @@
         {
           "source": "Al Manar",
           "title": "The US ambassador to Turkey stated that regional countries must take responsibility for their own security.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "A significant breach valued at $6.3 billion has impacted the Binance platform.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The weather forecast indicates a slight drop in temperature with a chance of scattered rain showers.",
-          "sec": 0,
-          "off": 2,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Falastin al-Youm",
-          "title": "The Joint List urged opposition leaders to stop echoing Netanyahu's falsehoods.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -592,11 +585,11 @@
       "method": "heuristic",
       "clusters": 33,
       "sizes": [
+        11,
         9,
-        9,
-        5,
         4,
-        4,
+        3,
+        3,
         3,
         2,
         2,
@@ -700,7 +693,7 @@
           "selected_rank": 2,
           "headline": "Iran says 4th oil tanker hit mine, caught fire in Strait of Hormuz",
           "rank_key": {
-            "outlets": 8,
+            "outlets": 9,
             "camps": 5,
             "newest": "2026-10-31T00:17+00:00"
           },
@@ -710,6 +703,7 @@
             "Al Mayadeen",
             "Anadolu Agency",
             "Arab News",
+            "Gulf News",
             "IRNA",
             "Mehr News",
             "SANA"
@@ -721,7 +715,7 @@
             "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 11,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -762,24 +756,21 @@
           "selected_rank": 3,
           "headline": "Turkish foreign minister, US secretary of state discuss Iran talks, Gaza, Ukraine war",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 3,
+            "camps": 3,
             "newest": "2026-10-30T22:30+00:00"
           },
           "outlet_names": [
             "Al-Akhbar",
             "Anadolu Agency",
-            "Falastin al-Youm",
-            "Middle East Eye",
             "N12"
           ],
           "camps": [
             "israeli",
-            "panarab",
             "levant",
             "turkish"
           ],
-          "members": 5,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -797,16 +788,6 @@
                 "source": "N12",
                 "title": "Photos and videos of Mohammed Deif and senior Hamas military wing officials have",
                 "rejected_by": "bare stub headline"
-              },
-              {
-                "source": "Middle East Eye",
-                "title": "Israeli strike kills one Palestinian in Gaza",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Falastin al-Youm",
-                "title": "Hamas stated that forced displacement and house demolitions in Hebron require ur",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
@@ -815,12 +796,11 @@
           "selected_rank": 4,
           "headline": "Erdogan, Trump discuss regional tensions, Ukraine war and bilateral ties in phone call",
           "rank_key": {
-            "outlets": 4,
+            "outlets": 3,
             "camps": 3,
             "newest": "2026-10-30T13:21+00:00"
           },
           "outlet_names": [
-            "Al Jazeera",
             "Al Mayadeen",
             "SANA",
             "TRT World"
@@ -830,7 +810,7 @@
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -843,13 +823,7 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "4 , Ukraine invests in firepower as it inflicts a new Russian casualty record",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -1246,24 +1220,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "The question of who will fire the first shot between Iran and the US is posed, indicating a highly v",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-10-30T10:25+00:00"
-          },
-          "outlet_names": [
-            "Al-Akhbar"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Exclusive | Qatari delegation arrives in Tehran for talks",
           "rank_key": {
             "outlets": 1,
@@ -1300,17 +1256,35 @@
         },
         {
           "selected_rank": null,
-          "headline": "Sheikh Akrama Sabri stated that the policy of barring preachers aims to facilitate settler incursion",
+          "headline": "Human rights rapporteurship whitewashing US, Israeli crimes: Iran Foreign Ministry spox.",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-10-30T06:49+00:00"
+            "newest": "2026-10-30T06:28+00:00"
           },
           "outlet_names": [
-            "Falastin al-Youm"
+            "IRNA"
           ],
           "camps": [
-            "levant"
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US Vice President Vance offers to meet Iran’s Rezaei for talks: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-10-30T05:35+00:00"
+          },
+          "outlet_names": [
+            "Gulf News"
+          ],
+          "camps": [
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
@@ -1335,7 +1309,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-10-31T02:17:22.511784+00:00",
+    "last_success": "2026-10-31T02:49:19.394797+00:00",
     "last_failure": null
   },
   "ok": true
