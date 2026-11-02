@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T18:36:34.184473+00:00",
+  "updated": "2026-11-02T19:09:05.853170+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -73,7 +73,7 @@
         "Jordan Times": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "L'Orient Today": {
@@ -139,7 +139,7 @@
         "Al-Masirah": {
           "headlines": 1,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "Anadolu Agency": {
@@ -167,26 +167,32 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-02T18:34:22.126010+00:00"
+      "headlines_updated": "2026-11-02T19:06:32.826934+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 35,
+        "dropped_stale": 6,
+        "title_snippet": 28,
+        "dropped_no_english": 6,
         "title_translated": 1,
-        "title_native": 87,
+        "title_native": 86,
         "in": 127,
-        "kept": 123
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "Al Arabiya",
+          "title": "Iranian navy says tanker caught fire after striking mines near Strait of Hormuz",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "Al Arabiya",
           "title": "Saudi coalition intercepts ‘hostile drone’ in Riyadh region",
@@ -198,6 +204,11 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "الاحتلال يواصل اعتداءاته على قطاع غزة: 6 شهداء و26 إصابة خلال 48 ساعة",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "WAFA News",
           "title": "Israeli forces intensify attacks in southern Lebanon, demolish homes and shell several areas",
           "reason": "stale (older than 48h)"
@@ -206,23 +217,46 @@
           "source": "TRT World",
           "title": "Israeli troops demolish homes and shell towns in southern Lebanon amid US-mediated talks",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "נתניהו: פתוח לקיים שיח על ממשלה לאומית רחבה עם שותפינו ועם כל מפלגה שתרצה בכך",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "مسار وساطة عمانية بين إيران والولايات المتحدة بضمانة صينية",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "سلطان عمان يزور الصين بهدف بحث وساطة بين طهران وواشنطن",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "نتائج انتخابات الكنيست جعلت المشهد السياسي في \"إسرائيل\" أكثر تعقيداً",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "«اليونيسكو»: ارتفاع المعدل العالمي للإفلات من العقاب في جرائم قتل الصحافيين",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Falastin al-Youm",
+          "title": "انخفاض متتالٍ في درجات الحرارة وفرصة لأمطار خفيفة نهاية الأسبوع",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 123,
-      "kept": 76,
+      "in": 115,
+      "kept": 73,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "A woman in her 40s was fatally stabbed in her home in Petah Tikva, with the incident occurring in front of…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Eisenkot stated in private discussions that he would not serve in a government under Netanyahu, even if…",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -278,7 +312,7 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Israeli officials say results stand as Netanyahu claims election ‘stolen’",
+          "title": "3 , Israeli officials say results stand as Netanyahu claims election ‘stolen’",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -298,29 +332,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "The Chinese president stated that the Middle East and the Gulf should not be arenas for major power conflict.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The Democratic candidate Abd Al-Sayed has raised $1.2 million after Haley Stevens endorsed his opponent.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "IRNA",
           "title": "Leader’s sincere response to a Letter from a ten-year-old Student",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "IRNA",
-          "title": "Iran, Russia reaffirm commitment to strategic cooperation",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -404,13 +417,6 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "Xi met with the Omani Sultan, stating that the Middle East and the Gulf are not arenas for major power…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al-Akhbar",
           "title": "Discussions were held between Lebanese and Syrian officials in Damascus.",
           "sec": 0,
           "off": 0,
@@ -460,9 +466,9 @@
         },
         {
           "source": "Gulf News",
-          "title": "$5 billion Moon resort eyeing UAE location recruits Artemis II astronaut",
+          "title": "Texas Senate race becomes costliest in US history at $573 million",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -481,9 +487,9 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "South Korean president’s passport details leaked online: Report",
+          "title": "Israeli opposition leaders to hold 1st post-election meeting ahead of coalition consultations",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -492,13 +498,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Daily Sabah",
-          "title": "9 killed as business jet crashes into Florida neighborhood",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         },
         {
           "source": "Hürriyet Daily News",
@@ -541,25 +540,33 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Nine killed as private jet crashes into Florida neighbourhood near Trump's house",
+          "sec": 1,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 43,
+      "clusters": 44,
       "sizes": [
         7,
         7,
         5,
-        5,
-        4,
         3,
         3,
         3,
+        3,
         2,
         2,
         2,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -715,104 +722,6 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Tucker Carlson claims Trump mulling nuclear attack on Iran",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 4,
-            "newest": "2026-11-02T15:16+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen",
-            "Daily Sabah",
-            "Egypt Independent",
-            "Iran International"
-          ],
-          "camps": [
-            "panarab",
-            "iranian",
-            "levant",
-            "turkish"
-          ],
-          "members": 5,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Tucker Carlson claims Trump mulling nuclear attack on Iran",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (nuclear)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Mayadeen",
-                "title": "Baqai stated that Iran's nuclear program is peaceful and that security in Hormuz",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Iran International",
-                "title": "2 Iran rejects nuclear talks despite ongoing mediation with US",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Iran International",
-                "title": "3 Iran’s nuclear bomb debate gains ground on official platforms",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "UK pledges action to support Saudi Arabia amid Houthi attacks: Minister",
-          "rank_key": {
-            "outlets": 4,
-            "camps": 3,
-            "newest": "2026-11-02T17:13+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 4,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "UK pledges action to support Saudi Arabia amid Houthi attacks: Minister",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "SANA",
-                "title": "Yemen coalition says it destroyed Houthi missile targeting Saudi Arabia",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "TRT World",
-                "title": "Saudi-led coalition intercepts Houthi militia ballistic missile targeting southe",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Israeli strikes kill three people in Gaza, medics say",
           "rank_key": {
             "outlets": 4,
@@ -863,7 +772,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 4,
           "headline": "Arab Parliament condemns attack on Qatari LNG tanker in Arabian Gulf",
           "rank_key": {
             "outlets": 3,
@@ -908,6 +817,49 @@
           }
         },
         {
+          "selected_rank": 5,
+          "headline": "Saudi-led coalition intercepts 2 drones over Riyadh region",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-11-02T17:13+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "SANA",
+            "TRT World"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Saudi-led coalition intercepts 2 drones over Riyadh region",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "SANA",
+                "title": "Yemen coalition says it destroyed Houthi missile targeting Saudi Arabia",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Saudi-led coalition intercepts Houthi militia ballistic missile targeting southe",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": null,
           "headline": "US still has to 'take care' of one or two targets in Iran — Trump",
           "rank_key": {
@@ -945,7 +897,7 @@
           "rank_key": {
             "outlets": 3,
             "camps": 1,
-            "newest": "2026-11-02T07:58+00:00"
+            "newest": "2026-11-02T07:55+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -1124,6 +1076,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "Multiple people killed or injured in shooting near California beach: Reports",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-02T18:53+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Pakistan appoints first female ambassador to Türkiye",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-02T18:37+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Saudi Arabia has conveyed a message to Iran stating it will not participate in the ongoing conflict ",
           "rank_key": {
             "outlets": 1,
@@ -1135,6 +1123,24 @@
           ],
           "camps": [
             "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "US FDA approves generic twice-yearly HIV prevention shot",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-02T18:15+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
+          ],
+          "camps": [
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1214,17 +1220,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran’s national security chief, Russian president discuss regional developments, reaffirm strategic ",
+          "headline": "Araghchi returns to Tehran after talks with Turkmen officials",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-11-02T15:14+00:00"
+            "newest": "2026-11-02T16:11+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency"
+            "IRNA"
           ],
           "camps": [
-            "turkish"
+            "iranian"
           ],
           "members": 1,
           "qualified": false,
@@ -1268,78 +1274,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "The Democrats have announced their recommendation of Eisenkot as a candidate for forming the governm",
+          "headline": "China stands by Iran amid fresh US strike threats",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-11-02T13:29+00:00"
+            "newest": "2026-11-02T13:58+00:00"
           },
           "outlet_names": [
-            "Kan 11"
+            "Gulf News"
           ],
           "camps": [
-            "israeli"
+            "gulf"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Bitter spat between Poland’s pro-Europe PM and pro-Trump president erupts",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-02T12:59+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "At least three killed as Houthis strike Yemen health clinic: report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-02T12:19+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "An Asian source told Al Mayadeen that the Omani Sultan's visit to China aims to discuss new mediatio",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-02T11:15+00:00"
-          },
-          "outlet_names": [
-            "Al Mayadeen"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "21 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1357,7 +1309,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-02T18:36:58.889003+00:00",
+    "last_success": "2026-11-02T19:09:26.283000+00:00",
     "last_failure": null
   },
   "ok": true
