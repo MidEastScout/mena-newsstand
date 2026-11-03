@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T23:16:44.606606+00:00",
+  "updated": "2026-11-03T23:49:10.763246+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -73,7 +73,7 @@
         "Jordan Times": {
           "headlines": 5,
           "lang": "en",
-          "stale": true,
+          "stale": false,
           "error": null
         },
         "L'Orient Today": {
@@ -167,31 +167,27 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-03T23:14:23.410265+00:00"
+      "headlines_updated": "2026-11-03T23:46:54.382799+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "title_snippet": 34,
+        "dropped_stale": 8,
+        "title_snippet": 30,
+        "dropped_no_english": 4,
         "title_translated": 1,
-        "title_native": 85,
+        "title_native": 84,
         "in": 127,
-        "kept": 120
+        "kept": 115
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 32,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Middle East Eye",
-          "title": "Israeli strikes kill nine people in Gaza",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Middle East Eye",
           "title": "Qatar condemns tanker attack in the Gulf as threat to global energy security",
@@ -203,13 +199,28 @@
           "reason": "stale (older than 48h)"
         },
         {
+          "source": "The New Arab",
+          "title": "Iran warns new war could last longer as Trump threatens strikes",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Jordan condemns attack on Qatari LNG carrier in Arabian Gulf",
+          "reason": "stale (older than 48h)"
+        },
+        {
           "source": "Syria Direct",
           "title": "Syria can speak freely, but is its government listening?",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "Gulf News",
-          "title": "Iran proposes '2-day plan' to reopen Strait of Hormuz amid US talks",
+          "title": "Saudi-led coalition launches military operation targeting Houthi resources",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Iran warns next war with US could last even longer",
           "reason": "stale (older than 48h)"
         },
         {
@@ -218,35 +229,36 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "TRT World",
-          "title": "US still has to 'take care' of one or two targets in Iran — Trump",
-          "reason": "stale (older than 48h)"
+          "source": "Kan 11",
+          "title": "טראמפ: \"לארה\"ב אין כוונה מיידית לתקוף באיראן",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "קלפיות ראשונות נסגרו: החלה ספירת הקולות בבחירות האמצע בארה״ב",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "המהדורה המרכזית 03.11.26 - המהדורה המלאה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "كوريا الشمالية تختبر صاروخ كروز استراتيجياً برأس حربي انشطاري",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 73,
+      "in": 115,
+      "kept": 78,
       "dropped": [
         {
           "source": "Kan 11",
           "title": "Eisenkot stated that the bloc would work to prevent elections and Netanyahu's entrenchment.",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "Lapid accused an attempt to dismantle democracy and steal elections with the assistance of those in power…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Kan 11",
-          "title": "The Supreme Court decided not to imprison the young man convicted of killing a Palestinian in 2018 until his…",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -279,13 +291,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Channel 13",
           "title": "This is a placeholder for \"HaYom Shehaya 03.11.26 – The Full Program - Reshet 13\", indicating a television…",
           "sec": 0,
           "off": 0,
@@ -293,7 +298,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "Daniel Barzilay has been declared the winner of \"The Voice All Stars\" after a dramatic finale.",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -307,14 +312,21 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "2 , US midterm elections 2026 updates: Polls open in test for Trump",
+          "title": "2 , Polls start closing in some states as US midterm voting winds down",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , Israel’s opposition leaders back Eisenkot to oust Netanyahu",
+          "title": "4 , US midterm elections 2026 updates: Polls open in test for Trump",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "5 , Israel’s opposition leaders back Eisenkot to oust Netanyahu",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -328,21 +340,7 @@
         },
         {
           "source": "The New Arab",
-          "title": "Trump says US will stop $4 billion to Israel at end of 2026",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
           "title": "Israel opposition backs Eisenkot, but Netanyahu refuses to go",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "The article explores how US elections might influence Netanyahu's fate in Israel.",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -370,14 +368,7 @@
         },
         {
           "source": "Jordan Times",
-          "title": "IMF says it reaches staff-level agreement with Jordan on $294m in new financing",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "JD1.06 billion allocated to support food security, stabilise prices – ministry",
+          "title": "Crown Prince to begin three-day working visit to Estonia",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -425,6 +416,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "WAFA News",
+          "title": "Trump announces halt to $4 billion in annual U.S. funding to Israel",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Falastin al-Youm",
           "title": "This is a placeholder for \"Arab and International - Palestine Today\".",
           "sec": 0,
@@ -434,13 +432,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Golan stated that Netanyahu is pushing them towards disaster and that a government must be formed.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Americans vote in midterm elections with control of Congress at stake",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -460,36 +451,8 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Nine dead in small plane crash near Trump's Florida home",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Dubai-based Indian expat wins Dh25m Big Ticket jackpot",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
-          "title": "Dubai court upholds student's dismissal over AI-written thesis",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "Nigeria's opposition alleges security agency plot to disrupt rally ahead of 2027 elections",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "First polls close in US midterms as election-night vote counting begins",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -549,25 +512,18 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Nine killed as private Learjet crashes in Florida residential area",
-          "sec": 1,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 52,
+      "clusters": 54,
       "sizes": [
+        5,
         4,
         4,
         4,
         3,
-        3,
         2,
         2,
         2,
@@ -576,6 +532,8 @@
         2,
         2,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -626,22 +584,24 @@
           "selected_rank": 1,
           "headline": "Iran says US ceasefire proposal 'insufficient' as strikes are reported on Qeshm Island",
           "rank_key": {
-            "outlets": 4,
-            "camps": 3,
+            "outlets": 5,
+            "camps": 4,
             "newest": "2026-11-03T17:22+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "Egypt Independent",
+            "Gulf News",
             "Middle East Eye",
             "TRT World"
           ],
           "camps": [
+            "gulf",
             "panarab",
             "levant",
             "turkish"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -665,6 +625,11 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
+                "source": "Gulf News",
+                "title": "US ‘defensive’ strikes on Iran's Qeshm Island: Latest developments as peace talk",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
                 "source": "TRT World",
                 "title": "US carries out strikes on Iran's Qeshm Island — report",
                 "rejected_by": "older than the story's newest wave"
@@ -674,19 +639,19 @@
         },
         {
           "selected_rank": 2,
-          "headline": "Yemen says Iranian, Hezbollah experts directing Houthi military operations",
+          "headline": "US Embassy warns Americans of Houthi attacks, airport security risks in Saudi Arabia",
           "rank_key": {
             "outlets": 3,
             "camps": 3,
-            "newest": "2026-11-03T20:09+00:00"
+            "newest": "2026-11-03T23:18+00:00"
           },
           "outlet_names": [
-            "Al Manar",
+            "Al Arabiya",
             "Anadolu Agency",
-            "Arab News"
+            "SANA"
           ],
           "camps": [
-            "gulf",
+            "panarab",
             "levant",
             "turkish"
           ],
@@ -694,8 +659,8 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Yemen says Iranian, Hezbollah experts directing Houthi military operations",
+            "source": "Anadolu Agency",
+            "title": "US Embassy warns Americans of Houthi attacks, airport security risks in Saudi Arabia",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -705,8 +670,13 @@
             ],
             "passed_over": [
               {
-                "source": "Al Manar",
-                "title": "The Yemeni Armed Forces announced they targeted Dammam Airport, an early warning",
+                "source": "Al Arabiya",
+                "title": "UK pledges action to support Saudi Arabia amid Houthi attacks: Minister",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "SANA",
+                "title": "Saudi Arabia, U.S. discuss regional de-escalation, Houthi attacks",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -822,7 +792,7 @@
             "panarab",
             "levant"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -901,29 +871,68 @@
         },
         {
           "selected_rank": null,
-          "headline": "Trump says US will stop $4 billion military aid to Israel at end of 2026",
+          "headline": "Witkoff: US to mediate Russia-Ukraine talks in Abu Dhabi next week",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-11-03T13:41+00:00"
+            "newest": "2026-11-03T09:21+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
-            "Arab News"
+            "SANA",
+            "TRT World"
           ],
           "camps": [
-            "gulf",
-            "panarab"
+            "levant",
+            "turkish"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Arab News",
-            "title": "Trump says US will stop $4 billion military aid to Israel at end of 2026",
+            "source": "SANA",
+            "title": "Witkoff: US to mediate Russia-Ukraine talks in Abu Dhabi next week",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
+              "neutral-by-default outlet",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "TRT World",
+                "title": "US to mediate Russia-Ukraine peace talks in Abu Dhabi this November",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Russia, Ukraine report cyberattacks on emergency alert apps as ceasefire ends",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-02T04:09+00:00"
+          },
+          "outlet_names": [
+            "Gulf News",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "TRT World",
+            "title": "Russia, Ukraine report cyberattacks on emergency alert apps as ceasefire ends",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (ukraine)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -932,40 +941,34 @@
         },
         {
           "selected_rank": null,
-          "headline": "US strikes Iranian targets in the Strait of Hormuz, leaving unclear what comes next",
+          "headline": "5 Qatar turns to US LNG to cushion Iran war losses",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-11-03T10:36+00:00"
+            "newest": null
           },
           "outlet_names": [
             "Al Manar",
-            "The New Arab"
+            "Iran International"
           ],
           "camps": [
-            "panarab",
+            "iranian",
             "levant"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "US strikes Iranian targets in the Strait of Hormuz, leaving unclear what comes next",
+            "source": "Iran International",
+            "title": "5 Qatar turns to US LNG to cushion Iran war losses",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
+              "names 1 of the story's dominant entities (qatar)",
+              "neutral-by-default outlet",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Manar",
-                "title": "Iranian Foreign Ministry spokesman Esmaeil Baqaei stated that no agreement or re",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
@@ -1044,37 +1047,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "At least 31 dead after Russia drops nine bombs on a Ukrainian school building",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-11-03T12:52+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent",
-            "SANA"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "At least 31 dead after Russia drops nine bombs on a Ukrainian school building",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (ukraine)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "North Korea has tested a ballistic missile equipped with a cluster munition warhead.",
           "rank_key": {
             "outlets": 2,
@@ -1105,6 +1077,43 @@
         },
         {
           "selected_rank": null,
+          "headline": "Israeli forces kill 19 Palestinians in three days of Gaza attacks",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 1,
+            "newest": "2026-11-03T12:11+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye",
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Middle East Eye",
+            "title": "Israeli forces kill 19 Palestinians in three days of Gaza attacks",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "The New Arab",
+                "title": "Israeli attacks kill five in Gaza Strip",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Northern Israel City bolsters emergency readiness amid fears of renewed war",
           "rank_key": {
             "outlets": 1,
@@ -1116,24 +1125,6 @@
           ],
           "camps": [
             "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Occupation forces seize 9 dunums in the Northern Jordan Valley",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-03T21:42+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
           ],
           "members": 1,
           "qualified": false,
@@ -1163,7 +1154,7 @@
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-11-03T20:49+00:00"
+            "newest": "2026-11-03T20:48+00:00"
           },
           "outlet_names": [
             "Al Mayadeen"
@@ -1177,17 +1168,17 @@
         },
         {
           "selected_rank": null,
-          "headline": "Iran stated that the American response was unconvincing and outlined five principles for security, b",
+          "headline": "Saudi-led coalition says it intercepted Houthi drone headed toward southern kingdom",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-11-03T20:04+00:00"
+            "newest": "2026-11-03T20:09+00:00"
           },
           "outlet_names": [
-            "Al Mayadeen"
+            "Anadolu Agency"
           ],
           "camps": [
-            "panarab"
+            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1320,7 +1311,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "27 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "A suspicious object on a Mano Shipping vessel in Greece led to the evacuation of 1,400 passengers an",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-03T17:13+00:00"
+          },
+          "outlet_names": [
+            "N12"
+          ],
+          "camps": [
+            "israeli"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "28 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1338,7 +1347,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-03T23:17:17.395586+00:00",
+    "last_success": "2026-11-03T23:49:24.322214+00:00",
     "last_failure": null
   },
   "ok": true
