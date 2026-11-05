@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T06:14:01.255374+00:00",
+  "updated": "2026-11-05T06:46:14.262081+00:00",
   "stages": {
     "fetch": {
       "items": 124,
@@ -167,21 +167,22 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-05T06:11:48.739165+00:00"
+      "headlines_updated": "2026-11-05T06:43:53.312983+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
-        "title_snippet": 34,
-        "title_translated": 1,
-        "title_native": 85,
+        "dropped_stale": 5,
+        "title_snippet": 30,
+        "dropped_no_english": 3,
+        "title_translated": 2,
+        "title_native": 84,
         "in": 124,
-        "kept": 120
+        "kept": 116
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 33,
+        "requested": 32,
         "translated": 0,
         "cached": 669,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -190,6 +191,11 @@
         {
           "source": "Jordan Times",
           "title": "Taliban government voices 'serious concern' over US Afghan deportation plans",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Nine dead after private aircraft crashes in southern Florida",
           "reason": "stale (older than 48h)"
         },
         {
@@ -206,12 +212,27 @@
           "source": "TRT World",
           "title": "US carries out strikes on Iran's Qeshm Island — report",
           "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "תושבים בחדרה מדווחים: ריח חריג של שריפה מורגש בעיר משעות הלילה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Kan 11",
+          "title": "דיווח: החות'ים דורשים מסעודיה 51 מיליארד דולר כדי לסיים את הלחימה",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
+          "title": "جريدة يوم الخميس 5 تشرين الثاني 2026",
+          "reason": "no English text obtainable (title/translation/snippet)"
         }
       ]
     },
     "relevance": {
-      "in": 120,
-      "kept": 62,
+      "in": 116,
+      "kept": 61,
       "dropped": [
         {
           "source": "Kan 11",
@@ -243,14 +264,14 @@
         },
         {
           "source": "Al Jazeera",
-          "title": "3 , What’s delaying the US Senate election results in Mississippi and Alaska?",
+          "title": "3 , US midterm elections 2026: Live results in maps and charts External Link This article will be opened in a new browse",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "4 , US midterm elections 2026: Live results in maps and charts External Link This article will be opened in a new browse",
+          "title": "4 , What’s delaying the US Senate election results in Mississippi and Alaska?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -265,13 +286,6 @@
         {
           "source": "Middle East Eye",
           "title": "Abdul El-Sayed becomes first Muslim elected to US Senate",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Elon Musk jokes about GOP election defeat after spending record sums on party",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -307,6 +321,13 @@
         {
           "source": "Al Mayadeen",
           "title": "This article discusses ten surprising results and analyzes how the Democrats overturned the election equation…",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "Midnight Bulletin",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -396,13 +417,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Al-Akhbar",
-          "title": "Rezaei stated that anyone who confronts Iran will have to pay the price.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Manar",
           "title": "This special report examines Israeli concerns and anxieties surrounding the US midterm elections and their…",
           "sec": 0,
@@ -412,13 +426,6 @@
         {
           "source": "Al Manar",
           "title": "The election results in Israel have created a complex political situation, perpetuating internal crises and…",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "WAFA News",
-          "title": "Colonists set vehicle ablaze, seize tractor and destroy crops in Beit Ummar",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -447,13 +454,6 @@
         {
           "source": "Falastin al-Youm",
           "title": "Iranians are commemorating the 47th anniversary of the storming of the US Embassy.",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "SANA",
-          "title": "Syria, Saudi Arabia sign several agreements and MoU’s",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -544,14 +544,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Netanyahu ‘toxic’ to US lawmakers who once backed Israel: Opposition leader",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Gen Z candidates make gains in US midterm elections",
+          "title": "US Republican lawmaker to force House vote on Hegseth’s impeachment unless he resigns",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -618,23 +611,29 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "Abdul El-Sayed makes history as first Muslim elected to US Senate",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 38,
+      "clusters": 37,
       "sizes": [
-        14,
-        5,
-        3,
+        13,
+        4,
+        4,
         2,
         2,
         2,
         2,
         2,
-        1,
-        1,
+        2,
         1,
         1,
         1,
@@ -672,11 +671,11 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Hegseth faces Republican revolt over Iran war after crushing midterm defeat — report",
+          "headline": "Trump says Iran war has been worth it despite election losses",
           "rank_key": {
-            "outlets": 11,
+            "outlets": 10,
             "camps": 4,
-            "newest": "2026-11-05T04:11+00:00"
+            "newest": "2026-11-04T21:41+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -688,7 +687,6 @@
             "Kan 11",
             "Middle East Eye",
             "N12",
-            "TRT World",
             "The New Arab"
           ],
           "camps": [
@@ -697,12 +695,12 @@
             "panarab",
             "turkish"
           ],
-          "members": 14,
+          "members": 13,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "TRT World",
-            "title": "Hegseth faces Republican revolt over Iran war after crushing midterm defeat — report",
+            "source": "Al Arabiya",
+            "title": "Trump says Iran war has been worth it despite election losses",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -711,23 +709,23 @@
             ],
             "passed_over": [
               {
-                "source": "Kan 11",
-                "title": "Trump stated that the war in Iran contributed to his party's loss in the midterm",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "N12",
-                "title": "Vance attributed Republican losses in the midterm elections to the war in Iran, ",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
                 "source": "N12",
                 "title": "Iran's media reacted to the US midterm election results by mocking the Republica",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Channel 13",
-                "title": "Trump stated that Vance's assessment of the election losses was accurate but mai",
+                "source": "Al Jazeera",
+                "title": "1 , Trump blames Iran war for midterms defeat; wait for more results continues",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Middle East Eye",
+                "title": "'I think a part of it was Iran': Trump acknowledges war's impact on midterm elec",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Al Arabiya",
+                "title": "Iran says Americans voted ‘no to war’ after Republican midterm defeat",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -735,33 +733,34 @@
         },
         {
           "selected_rank": 2,
-          "headline": "IRGC: Two oil tankers, tugboat catch fire in Strait of Hormuz; two LUCAS drones seized",
+          "headline": "Iran says 3 vessels catch fire in Strait of Hormuz",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 4,
             "camps": 3,
-            "newest": "2026-11-05T05:41+00:00"
+            "newest": "2026-11-05T06:16+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Al Jazeera",
-            "IRNA",
-            "Kan 11"
+            "Anadolu Agency",
+            "IRNA"
           ],
           "camps": [
-            "israeli",
             "panarab",
-            "iranian"
+            "iranian",
+            "turkish"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "IRNA",
-            "title": "IRGC: Two oil tankers, tugboat catch fire in Strait of Hormuz; two LUCAS drones seized",
+            "source": "Anadolu Agency",
+            "title": "Iran says 3 vessels catch fire in Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
@@ -775,7 +774,7 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Israeli forces raid area around Tulkarm hospital, ransack home of detained Fatah official",
+          "headline": "Israeli forces arrest 42 Palestinians across West Bank",
           "rank_key": {
             "outlets": 3,
             "camps": 1,
@@ -789,15 +788,15 @@
           "camps": [
             "levant"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "WAFA News",
-            "title": "Israeli forces raid area around Tulkarm hospital, ransack home of detained Fatah official",
+            "source": "SANA",
+            "title": "Israeli forces arrest 42 Palestinians across West Bank",
             "title_source": "native",
             "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (westbank)",
               "neutral-by-default outlet",
               "outlet's own English headline"
             ],
@@ -816,17 +815,50 @@
                 "source": "WAFA News",
                 "title": "Colonists set caravan ablaze in south Hebron",
                 "rejected_by": "loaded/partisan wording"
-              },
-              {
-                "source": "SANA",
-                "title": "Israeli forces arrest 42 Palestinians across West Bank",
-                "rejected_by": "older than the story's newest wave"
               }
             ]
           }
         },
         {
           "selected_rank": 4,
+          "headline": "Yemeni military announces 3 ops. deep inside Saudi Arabia",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-04T14:04+00:00"
+          },
+          "outlet_names": [
+            "Al Manar",
+            "Mehr News"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Mehr News",
+            "title": "Yemeni military announces 3 ops. deep inside Saudi Arabia",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (yemen)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Manar",
+                "title": "Hezbollah has categorically denied claims made by the interior minister of a Yem",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Trump confirms US strikes on Iran's Qeshm Island: ‘We watched it get built — then we hit it’",
           "rank_key": {
             "outlets": 2,
@@ -863,7 +895,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "US faces united front in Hormuz, Bab al-Mandab: Gen. Ghaani",
           "rank_key": {
             "outlets": 2,
@@ -955,6 +987,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "One Palestinian killed, several injured in Israeli airstrikes on central Gaza",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-05T06:39+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces detain around 30 Palestinians during raid on Dheisheh refugee camp",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-05T06:39+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Israel reportedly ordered around $10 billion worth of weapons and military equipment from the United",
           "rank_key": {
             "outlets": 1,
@@ -986,24 +1054,6 @@
             "israeli"
           ],
           "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "China's Foreign Minister announced intentions to deepen relations between China and North Korea.",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-05T03:44+00:00"
-          },
-          "outlet_names": [
-            "Kan 11"
-          ],
-          "camps": [
-            "israeli"
-          ],
-          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1152,25 +1202,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Ethiopia expels Sudan diplomats after allegations of RSF support",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-04T17:23+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1188,7 +1220,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-05T06:14:30.527980+00:00",
+    "last_success": "2026-11-05T06:46:33.885666+00:00",
     "last_failure": null
   },
   "ok": true
