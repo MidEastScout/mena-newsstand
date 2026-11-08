@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T21:36:54.132427+00:00",
+  "updated": "2026-11-08T22:09:21.854630+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,20 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-08T21:34:52.055860+00:00"
+      "headlines_updated": "2026-11-08T22:06:59.279050+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 7,
-        "dropped_no_english": 34,
-        "title_translated": 1,
-        "title_native": 84,
+        "dropped_stale": 8,
+        "dropped_no_english": 35,
+        "title_native": 83,
         "in": 126,
-        "kept": 85
+        "kept": 83
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 702,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -210,6 +209,11 @@
         {
           "source": "The New Arab",
           "title": "Israeli forces raze West Bank homes, displacing 20, after E1 settlement plans advanced",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Israel kills five in Gaza, including child",
           "reason": "stale (older than 48h)"
         },
         {
@@ -289,7 +293,12 @@
         },
         {
           "source": "Channel 13",
-          "title": "\"בחרתי באמת שלי\": ריאיון עם הבלוגר שנאבק עבור ישראל בעולם",
+          "title": "הארץ המובטחת, עונה 2, פרק 1: עונה חדשה לצפייה ישירה -",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Channel 13",
+          "title": "הקפאת מעצרים ותיקים בכירים: הדיל שנרקם בין ליברמן לחרדים",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -304,17 +313,17 @@
         },
         {
           "source": "Al Mayadeen",
+          "title": "1.6 مليون متظاهر في شوارع فرنسا",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
+          "title": "من قبو للتعذيب إلى التحذير من حرب أهلية.. ماذا يجري في أوكرانيا؟",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
           "title": "إعلام إسرائيلي: \"إسرائيل\" تواجه أكبر تحدٍّ لها في علاقاتها مع واشنطن منذ السبعينيات",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "واشنطن تجدد ضغوطها على طهران عبر \"البوابة الحديدة\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "تحذيرات إيرانية من رد مدمّر على أي حرب جديدة",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -395,16 +404,9 @@
       ]
     },
     "relevance": {
-      "in": 85,
-      "kept": 42,
+      "in": 83,
+      "kept": 43,
       "dropped": [
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Al Jazeera",
           "title": "2 , Eisenkot open to Netanyahu joining Israel’s next government",
@@ -442,9 +444,9 @@
         },
         {
           "source": "The New Arab",
-          "title": "Dozens arrested outside the Supreme Court following the Palestine Action hearing",
+          "title": "Macklemore says US venues rejected his Free Palestine tour",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -464,13 +466,6 @@
         {
           "source": "Iran International",
           "title": "5 Pahlavi accepts Freedom Prize on Iranians’ behalf as thousands rally in Frankfurt",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "In Chile, Cape Verde hero Vozinha struggles to cope with glare of fame",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -498,7 +493,7 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "Israel Eisenkot tasked with forming government",
+          "title": "PROFILE 'I’m a son of the South’: Who is Abbas Alawieh, the Lebanese-American elected to the Michigan Senate?",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -609,13 +604,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Former Israeli premier urges Eisenkot to swiftly replace Netanyahu government",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Daily Sabah",
           "title": "Former Apple CEO Tim Cook makes surprise Istanbul visit",
           "sec": 0,
@@ -703,7 +691,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 27,
+      "clusters": 29,
       "sizes": [
         5,
         4,
@@ -712,7 +700,9 @@
         2,
         2,
         2,
-        2,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -859,44 +849,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Israeli forces demolish five homes in the West Bank leaving 110 Palestinians homeless",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-11-08T07:59+00:00"
-          },
-          "outlet_names": [
-            "The New Arab",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "The New Arab",
-            "title": "Israeli forces demolish five homes in the West Bank leaving 110 Palestinians homeless",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "WAFA News",
-                "title": "Report: Israeli forces and colonists carry out 674 attacks on farmers in West Ba",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Iranian Army reports another tanker fire in east of Hormuz",
           "rank_key": {
             "outlets": 2,
@@ -943,7 +895,7 @@
           }
         },
         {
-          "selected_rank": null,
+          "selected_rank": 5,
           "headline": "US military forms task force to disrupt weapons shipments into Iran via land routes",
           "rank_key": {
             "outlets": 2,
@@ -1032,6 +984,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Drone strike targets gas field, disrupting electricity supplies in northern Iraq",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-08T21:43+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1232,25 +1202,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Multiple explosions heard in Riyadh, Saudi Arabia",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-08T06:02+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "7 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "10 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1268,7 +1220,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-08T21:37:28.688351+00:00",
+    "last_success": "2026-11-08T22:09:52.540111+00:00",
     "last_failure": null
   },
   "ok": true
