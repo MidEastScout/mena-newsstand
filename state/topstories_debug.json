@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T03:02:56.972754+00:00",
+  "updated": "2026-11-09T03:34:35.638115+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-09T03:01:02.770833+00:00"
+      "headlines_updated": "2026-11-09T03:32:34.523032+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
+        "dropped_stale": 11,
         "dropped_no_english": 35,
-        "title_native": 82,
+        "title_native": 80,
         "in": 126,
-        "kept": 82
+        "kept": 80
       },
       "translator": {
         "configured": true,
@@ -223,12 +223,22 @@
         },
         {
           "source": "Gulf News",
+          "title": "US military carries out new targeted strikes on Iran as Tehran's leaders weigh mediator's proposals",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
           "title": "US announces $20 million reward for intel on Iran's nuclear programme amid diplomatic tensions",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "TRT World",
           "title": "Vance reportedly leading quiet push for new US-Iran deal",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Putin confirms Russia-US-Ukraine talks in Abu Dhabi",
           "reason": "stale (older than 48h)"
         },
         {
@@ -409,8 +419,8 @@
       ]
     },
     "relevance": {
-      "in": 82,
-      "kept": 44,
+      "in": 80,
+      "kept": 42,
       "dropped": [
         {
           "source": "Al Jazeera",
@@ -575,6 +585,13 @@
         },
         {
           "source": "Arab News",
+          "title": "Iran says 3 tankers caught fire in Hormuz",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Arab News",
           "title": "Train collision in Egypt’s Giza kills 7, injures 112: health ministry",
           "sec": 0,
           "off": 0,
@@ -670,24 +687,16 @@
           "sec": 0,
           "off": 0,
           "reason": "disaster/accident with no conflict dimension"
-        },
-        {
-          "source": "TRT World",
-          "title": "France braces for fresh protests as Yellow Vests defy Paris rally ban",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 31,
+      "clusters": 30,
       "sizes": [
         5,
         4,
         3,
-        2,
         2,
         2,
         2,
@@ -880,37 +889,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "US military carries out new targeted strikes on Iran",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-11-07T07:40+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Gulf News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "US military carries out new targeted strikes on Iran",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "Iranian Army reports another tanker fire in east of Hormuz",
           "rank_key": {
             "outlets": 2,
@@ -1019,6 +997,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "Drone strike targets gas field, disrupting electricity supplies in northern Iraq",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-08T21:43+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Nvidia board opens independent probe into foreign intelligence targeting of CEO Jensen Huang",
           "rank_key": {
             "outlets": 1,
@@ -1084,24 +1080,6 @@
           ],
           "camps": [
             "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Explosions heard in southern Iran’s Bandar Abbas, Qeshm: Report",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-08T20:16+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1216,7 +1194,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-09T03:02:57.863369+00:00",
+    "last_success": "2026-11-09T03:34:52.451875+00:00",
     "last_failure": null
   },
   "ok": true
