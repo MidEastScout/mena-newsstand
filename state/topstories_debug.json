@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T04:15:00.194109+00:00",
+  "updated": "2026-11-10T04:47:03.175330+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-10T04:13:08.691472+00:00"
+      "headlines_updated": "2026-11-10T04:44:47.611009+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
+        "dropped_stale": 5,
         "dropped_no_english": 34,
-        "title_native": 87,
+        "title_native": 86,
         "title_translated": 1,
         "in": 126,
-        "kept": 88
+        "kept": 87
       },
       "translator": {
         "configured": true,
@@ -195,6 +195,11 @@
         {
           "source": "WAFA News",
           "title": "Heavy rains flood thousands of displacement tents across Gaza, two injured in building collapse",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Gulf News",
+          "title": "Trump offers UFC chief Dana White White House press secretary job",
           "reason": "stale (older than 48h)"
         },
         {
@@ -380,7 +385,7 @@
       ]
     },
     "relevance": {
-      "in": 88,
+      "in": 87,
       "kept": 52,
       "dropped": [
         {
@@ -560,13 +565,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Trump offers UFC chief Dana White White House press secretary job",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Gulf News",
           "title": "Who is Alice Huang, woman at centre of Nvidia CEO probe?",
           "sec": 0,
           "off": 0,
@@ -641,10 +639,10 @@
       "method": "heuristic",
       "clusters": 34,
       "sizes": [
-        8,
+        7,
         4,
         3,
-        2,
+        3,
         2,
         2,
         2,
@@ -684,7 +682,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Qatar, US make 'good progress' in Iran talks: Report",
+          "headline": "Trump says he had ‘excellent’ talks with Qatar’s prime minister on Iran",
           "rank_key": {
             "outlets": 6,
             "camps": 4,
@@ -695,8 +693,8 @@
             "Al Jazeera",
             "Anadolu Agency",
             "Arab News",
-            "Daily Sabah",
-            "Iran International"
+            "Iran International",
+            "Mehr News"
           ],
           "camps": [
             "gulf",
@@ -704,12 +702,12 @@
             "iranian",
             "turkish"
           ],
-          "members": 8,
+          "members": 7,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Daily Sabah",
-            "title": "Qatar, US make 'good progress' in Iran talks: Report",
+            "source": "Anadolu Agency",
+            "title": "Trump says he had ‘excellent’ talks with Qatar’s prime minister on Iran",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -730,7 +728,7 @@
               },
               {
                 "source": "Iran International",
-                "title": "5 Qatar takes Iran mediation to Trump as regional peace efforts gather pace",
+                "title": "4 Qatar takes Iran mediation to Trump as regional peace efforts gather pace",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -789,11 +787,11 @@
         },
         {
           "selected_rank": 3,
-          "headline": "Oil smuggling through illegal Hormuz route completely stopped",
+          "headline": "Iran says three tankers caught fire in Strait of Hormuz",
           "rank_key": {
             "outlets": 3,
             "camps": 2,
-            "newest": "2026-11-09T04:51+00:00"
+            "newest": "2026-11-08T12:04+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -808,19 +806,19 @@
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Mehr News",
-            "title": "Oil smuggling through illegal Hormuz route completely stopped",
+            "source": "Al Arabiya",
+            "title": "Iran says three tankers caught fire in Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
               "names 1 of the story's dominant entities (hormuz)",
-              "state/partisan outlet (last resort)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": [
               {
-                "source": "Al Arabiya",
-                "title": "Iran says three tankers caught fire in Strait of Hormuz",
+                "source": "Mehr News",
+                "title": "Oil smuggling through illegal Hormuz route completely stopped",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -833,6 +831,49 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Hamas says Board of Peace distorts Gaza flood crisis, overlooks Israel’s role",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-10T03:08+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "IRNA"
+          ],
+          "camps": [
+            "iranian",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Hamas says Board of Peace distorts Gaza flood crisis, overlooks Israel’s role",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Israel deliberately worsening humanitarian crisis in Gaza: Hamas",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Another humanitarian catastrophe is unfolding in Gaza as heavy rain submerges te",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Russian delegation arrives in Abu Dhabi for trilateral talks on Ukraine",
           "rank_key": {
             "outlets": 2,
@@ -870,7 +911,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Iran criticizes Grossi’s double standard in condemning attack on nuclear facilities",
           "rank_key": {
             "outlets": 2,
@@ -940,24 +981,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Live: Trump says US ready to strike Iran 'if necessary'",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-10T03:58+00:00"
-          },
-          "outlet_names": [
-            "Middle East Eye"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Trump: Military action on Iran 'doesn’t seem necessary,' but US is 'locked and loaded'",
           "rank_key": {
             "outlets": 1,
@@ -984,6 +1007,24 @@
           },
           "outlet_names": [
             "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Qatar, US make 'good progress' in Iran talks: Report",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-09T21:07+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah"
           ],
           "camps": [
             "turkish"
@@ -1102,24 +1143,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Israel deliberately worsening humanitarian crisis in Gaza: Hamas",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-09T16:40+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 2,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Iran war: Will Trump's midterm defeat end or entrench the conflict with Tehran?",
           "rank_key": {
             "outlets": 1,
@@ -1155,7 +1178,25 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "selected_rank": null,
+          "headline": "Nvidia CEO Jensen Huang admits affair as company launches investigation into foreign spy claims",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-09T13:34+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1173,7 +1214,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-10T04:15:01.084058+00:00",
+    "last_success": "2026-11-10T04:47:22.253254+00:00",
     "last_failure": null
   },
   "ok": true
