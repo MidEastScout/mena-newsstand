@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T23:55:25.524088+00:00",
+  "updated": "2026-11-10T00:27:14.656711+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-09T23:52:38.515941+00:00"
+      "headlines_updated": "2026-11-10T00:25:14.508788+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 9,
+        "dropped_stale": 5,
         "dropped_no_english": 33,
         "title_translated": 2,
-        "title_native": 82,
+        "title_native": 86,
         "in": 126,
-        "kept": 84
+        "kept": 88
       },
       "translator": {
         "configured": true,
@@ -198,21 +198,6 @@
           "reason": "stale (older than 48h)"
         },
         {
-          "source": "IRNA",
-          "title": "Iran’s Navy: Tanker catches fire after hitting sea mine east of Strait of Hormuz",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "IRNA",
-          "title": "Two other oil tankers on fire in Strait of Hormuz",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "IRNA",
-          "title": "Iranian-American congresswoman calls for end to Trump’s war of aggression against Iran",
-          "reason": "stale (older than 48h)"
-        },
-        {
           "source": "WAFA News",
           "title": "Heavy rains flood thousands of displacement tents across Gaza, two injured in building collapse",
           "reason": "stale (older than 48h)"
@@ -225,11 +210,6 @@
         {
           "source": "TRT World",
           "title": "UN hails Türkiye's action-oriented climate diplomacy, COP31 hosting",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "TRT World",
-          "title": "‘We will not lower our ambition’: Türkiye’s Kurum urges climate action ahead of COP31",
           "reason": "stale (older than 48h)"
         },
         {
@@ -344,7 +324,7 @@
         },
         {
           "source": "Al-Akhbar",
-          "title": "كفرشوبا تستعيد حقول الزيتون ليوم واحد | الأخبار",
+          "title": "محاولة خطف مسؤول سوري في جبيل",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -400,8 +380,8 @@
       ]
     },
     "relevance": {
-      "in": 84,
-      "kept": 47,
+      "in": 88,
+      "kept": 50,
       "dropped": [
         {
           "source": "Channel 13",
@@ -476,6 +456,13 @@
         {
           "source": "L'Orient Today",
           "title": "SOUTH LEBANON Five Christian villages in south Lebanon appeal to Catholic leaders for help 'staying on their land'",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "L'Orient Today",
+          "title": "FOCUS Eisenkot nomination: Trump has not yet fully turned the page on Netanyahu",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -586,13 +573,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Gulf News",
-          "title": "Who is Alice Huang, woman at centre of Nvidia CEO probe?",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Anadolu Agency",
           "title": "US senator calls for investigation into Nvidia CEO Jensen Huang over national security concerns",
           "sec": 0,
@@ -661,12 +641,19 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
+          "title": "5.7-magnitude earthquake hits central Japan, injuring at least 20",
+          "sec": 0,
+          "off": 0,
+          "reason": "disaster/accident with no conflict dimension"
         }
       ]
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 31,
+      "clusters": 33,
       "sizes": [
         6,
         5,
@@ -675,6 +662,8 @@
         2,
         2,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -742,7 +731,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "2 , Trump says war on Iran ‘effectively over’ after talks with Qatar’s PM",
+                "title": "2 , After meeting with Qatar PM, Trump declares Iran war ‘effectively over’",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -845,6 +834,82 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Iran criticizes Grossi’s double standard in condemning attack on nuclear facilities",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-09T20:52+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "IRNA",
+            "title": "Iran criticizes Grossi’s double standard in condemning attack on nuclear facilities",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
+              "state/partisan outlet (last resort)",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "L'Orient Today",
+                "title": "Nuclear, Hormuz, non-aggression: Qatar's plan for a deal between Washington and ",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Five Palestinians killed as sand embankment collapses on Gaza tents",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-09T08:08+00:00"
+          },
+          "outlet_names": [
+            "IRNA",
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Middle East Eye",
+            "title": "Five Palestinians killed as sand embankment collapses on Gaza tents",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "IRNA",
+                "title": "Another humanitarian catastrophe is unfolding in Gaza as heavy rain submerges te",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Trump says ’unlikely’ to attack Iran, Araghchi warns US on talks",
           "rank_key": {
             "outlets": 2,
@@ -874,42 +939,6 @@
               {
                 "source": "Al Arabiya",
                 "title": "Trump says he is ‘unlikely’ to order Iran attack if talks progress: Report",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "US military forms task force to disrupt weapons shipments into Iran via land routes",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 1,
-            "newest": "2026-11-08T10:29+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Al Jazeera"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "US military forms task force to disrupt weapons shipments into Iran via land routes",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "5 , Trump says Iran is sealed off. But can new US task force stop weapons flow?",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -971,24 +1000,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Nuclear, Hormuz, non-aggression: Qatar's plan for a deal between Washington and Tehran",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-09T20:52+00:00"
-          },
-          "outlet_names": [
-            "L'Orient Today"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Syria’s Al Sharaa receives high-profile Jordanian delegation, underlines deep Damascus-Amman ties",
           "rank_key": {
             "outlets": 1,
@@ -1025,11 +1036,29 @@
         },
         {
           "selected_rank": null,
+          "headline": "IRGC commander: Iranian Armed Forces disrupted enemy calculations",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-09T20:04+00:00"
+          },
+          "outlet_names": [
+            "IRNA"
+          ],
+          "camps": [
+            "iranian"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Ghalibaf: Israelis are trying day and night to draw US in endless war",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-11-09T18:52+00:00"
+            "newest": "2026-11-09T18:50+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1132,7 +1161,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1150,7 +1179,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-09T23:55:42.437168+00:00",
+    "last_success": "2026-11-10T00:27:30.100539+00:00",
     "last_failure": null
   },
   "ok": true
