@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T21:41:26.101015+00:00",
+  "updated": "2026-11-11T22:13:24.856065+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,7 +167,7 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-11T21:39:28.252206+00:00"
+      "headlines_updated": "2026-11-11T22:11:24.782081+00:00"
     },
     "normalize": {
       "stats": {
@@ -339,6 +339,11 @@
         },
         {
           "source": "Al Mayadeen",
+          "title": "الولايات المتحدة تصبح أول دولة تتجنب بشكل كامل مراجعة مجلس حقوق الإنسان",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
           "title": "قراءة في مقابلة رضائي مع الميادين.. أربع ثوابت ترسم موقف إيران",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
@@ -349,17 +354,12 @@
         },
         {
           "source": "Al Mayadeen",
+          "title": "الشيخ قاسم يفنّد مشاكل اتفاق الإطار: لا نقاش في السلاح قبل انسحاب الاحتلال",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al Mayadeen",
           "title": "\"فايننشل تايمز\": فرنسا تضغط على ألمانيا بشأن المخاطر النووية للصواريخ بعيدة المدى",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "الجنرال محسن رضائي - أمين المجلس الأعلى للأمن القومي الإيراني",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al Mayadeen",
-          "title": "ردود فعل عاصفة أثارها خطاب نتنياهو التهجمي والتحريضي على العرب",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -441,7 +441,7 @@
     },
     "relevance": {
       "in": 76,
-      "kept": 42,
+      "kept": 43,
       "dropped": [
         {
           "source": "Channel 13",
@@ -620,16 +620,16 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Hundreds protest rising rents, housing crisis in Athens",
+          "title": "Kazakhstan proposes UN-backed international water organization at COP31",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Anadolu Agency",
-          "title": "Climate change shows ‘our destinies are interconnected’: Türkiye’s COP31 president",
+          "title": "Maldives president backs small island nations’ right to choose development partners at COP31",
           "sec": 0,
-          "off": 1,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -673,13 +673,6 @@
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "TRT World",
-          "title": "Breaking News, Live Coverage, Opinions and Visuals",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
         }
       ]
     },
@@ -687,7 +680,7 @@
       "method": "heuristic",
       "clusters": 35,
       "sizes": [
-        4,
+        5,
         3,
         2,
         2,
@@ -727,18 +720,19 @@
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 3,
+      "selected": 4,
       "candidates": [
         {
           "selected_rank": 1,
           "headline": "Iranian army says oil tanker ablaze in Hormuz Strait after hitting mine",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 4,
             "camps": 2,
             "newest": "2026-11-11T12:27+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
+            "Al Jazeera",
             "IRNA",
             "Middle East Eye"
           ],
@@ -746,7 +740,7 @@
             "panarab",
             "iranian"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -759,7 +753,13 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "5 , Hormuz Strait will ‘never return’ to pre-war status, Iran’s Ghalibaf says",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -836,6 +836,44 @@
               {
                 "source": "Egypt Independent",
                 "title": "Trump envoys to meet Putin in Moscow after latest Ukraine talks end with no brea",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 4,
+          "headline": "Iran refuses to surrender enriched uranium, threatens to strike US bases in Europe if attacked",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-11T17:57+00:00"
+          },
+          "outlet_names": [
+            "Mehr News",
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Middle East Eye",
+            "title": "Iran refuses to surrender enriched uranium, threatens to strike US bases in Europe if attacked",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Mehr News",
+                "title": "Araghchi urges UN, IAEA to condemn U.S. nuclear bounty",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1017,7 +1055,7 @@
           "camps": [
             "panarab"
           ],
-          "members": 2,
+          "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1058,7 +1096,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "20 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "19 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1076,7 +1114,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-11T21:41:40.525241+00:00",
+    "last_success": "2026-11-11T22:13:43.922490+00:00",
     "last_failure": null
   },
   "ok": true
