@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T12:52:32.806537+00:00",
+  "updated": "2026-11-11T13:24:33.342605+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-11T12:50:31.936591+00:00"
+      "headlines_updated": "2026-11-11T13:22:26.467139+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 14,
+        "dropped_stale": 13,
         "dropped_no_english": 33,
         "title_translated": 2,
-        "title_native": 77,
+        "title_native": 78,
         "in": 126,
-        "kept": 79
+        "kept": 80
       },
       "translator": {
         "configured": true,
@@ -187,11 +187,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Middle East Eye",
-          "title": "Erdogan urges Trump to avoid fresh Iran strikes as Turkey pushes for deal",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Al Arabiya",
           "title": "Trump to meet Qatar’s prime minister as Iran diplomacy faces hurdles",
@@ -234,11 +229,6 @@
         },
         {
           "source": "Gulf News",
-          "title": "Is Trump backing away from fresh Iran strikes? 10 big revelations from his 60 Minutes interview",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Gulf News",
           "title": "Who is Alice Huang, woman at centre of Nvidia CEO probe?",
           "reason": "stale (older than 48h)"
         },
@@ -255,6 +245,11 @@
         {
           "source": "TRT World",
           "title": "In pictures: Winter storm worsens plight of displaced Palestinians in Gaza",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
+          "title": "Who is Alice Huang, the woman accused of spying on Nvidia chief for China?",
           "reason": "stale (older than 48h)"
         },
         {
@@ -425,8 +420,8 @@
       ]
     },
     "relevance": {
-      "in": 79,
-      "kept": 43,
+      "in": 80,
+      "kept": 44,
       "dropped": [
         {
           "source": "Channel 13",
@@ -494,13 +489,6 @@
         {
           "source": "IRNA",
           "title": "Fire on South Pars Phase 14 gas platform contained",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Mehr News",
-          "title": "Iran sends 10-page letter to IAEA over monitoring",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -577,7 +565,7 @@
         },
         {
           "source": "Egypt Independent",
-          "title": "Up to $13 billion in remittances from Egyptians abroad over 9 months: Central Bank of Egypt",
+          "title": "Up to $13 billion in remittances from Egyptians abroad over 9 months: CBE",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -618,22 +606,29 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Anadolu Agency",
-          "title": "Takeoffs suspended at Israel's Ramon Airport after magnitude 4.5 earthquake",
+          "source": "Gulf News",
+          "title": "Abdul Bari Khan",
           "sec": 0,
-          "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "off": 2,
+          "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Daily Sabah",
-          "title": "Türkiye clears French ship amid row with Athens over Med grid",
+          "source": "Gulf News",
+          "title": "Stephen N R",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Türkiye outlines green transportation, 6G connectivity goals at COP31",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
-          "title": "Şimşek says Türkiye may need about $300 billion to decarbonize",
+          "title": "Türkiye clears French ship amid row with Athens over Med grid",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -684,15 +679,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 31,
+      "clusters": 32,
       "sizes": [
-        4,
-        3,
+        5,
         3,
         3,
         2,
         2,
         2,
+        2,
+        1,
         1,
         1,
         1,
@@ -728,20 +724,21 @@
           "selected_rank": 1,
           "headline": "Iranian army says oil tanker ablaze in Hormuz Strait after hitting mine",
           "rank_key": {
-            "outlets": 3,
+            "outlets": 4,
             "camps": 2,
             "newest": "2026-11-11T12:27+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
             "IRNA",
+            "Mehr News",
             "Middle East Eye"
           ],
           "camps": [
             "panarab",
             "iranian"
           ],
-          "members": 4,
+          "members": 5,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -754,7 +751,13 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Mehr News",
+                "title": "Two violating oil tankers set on fire in Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -840,6 +843,43 @@
         },
         {
           "selected_rank": 4,
+          "headline": "IDF soldier faces probe for forcing Palestinian captive to eat feces",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-11T12:46+00:00"
+          },
+          "outlet_names": [
+            "Daily Sabah",
+            "WAFA News"
+          ],
+          "camps": [
+            "levant",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "IDF soldier faces probe for forcing Palestinian captive to eat feces",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "WAFA News",
+                "title": "Palestinian woman injured in Israeli colonist attack on olive pickers in Salfit",
+                "rejected_by": "loaded/partisan wording"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 5,
           "headline": "Iran rules out uranium transfer, condemns US $20M nuclear reward",
           "rank_key": {
             "outlets": 2,
@@ -847,11 +887,11 @@
             "newest": "2026-11-11T11:37+00:00"
           },
           "outlet_names": [
-            "Daily Sabah",
-            "Iran International"
+            "Al Jazeera",
+            "Daily Sabah"
           ],
           "camps": [
-            "iranian",
+            "panarab",
             "turkish"
           ],
           "members": 2,
@@ -869,45 +909,8 @@
             ],
             "passed_over": [
               {
-                "source": "Iran International",
-                "title": "4 Iran signals readiness for talks but demands US lift restrictions",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
-          "headline": "Trump, Netanyahu clash over renewed Iran strikes in 'screaming' call — report",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-11-10T22:56+00:00"
-          },
-          "outlet_names": [
-            "Gulf News",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "TRT World",
-            "title": "Trump, Netanyahu clash over renewed Iran strikes in 'screaming' call — report",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Gulf News",
-                "title": "Netanyahu calls Trump daily for Iran strikes. But is diplomacy winning?",
+                "source": "Al Jazeera",
+                "title": "1 , Iran’s security chief Rezaei rejects moving nuclear material out of country",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -966,7 +969,7 @@
           "camps": [
             "turkish"
           ],
-          "members": 3,
+          "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -981,6 +984,24 @@
             ],
             "passed_over": []
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Turkish environmental foundation to mobilize 16,000 volunteers to bring COP31 outcomes to local comm",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-11T13:20+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1038,24 +1059,6 @@
         },
         {
           "selected_rank": null,
-          "headline": "Palestinian woman injured in Israeli colonist attack on olive pickers in Salfit",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-11T11:41+00:00"
-          },
-          "outlet_names": [
-            "WAFA News"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
           "headline": "Verdict expected Sunday in trial over deadly Karak church attack – lawyer",
           "rank_key": {
             "outlets": 1,
@@ -1074,11 +1077,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Workers in Spain begin first general strike in 14 years",
+          "headline": "Türkiye AI Summit held under 'Agents Are Among Us' theme",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-11-11T10:48+00:00"
+            "newest": "2026-11-11T11:02+00:00"
           },
           "outlet_names": [
             "Daily Sabah"
@@ -1199,7 +1202,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1217,7 +1220,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-11T12:52:51.893909+00:00",
+    "last_success": "2026-11-11T13:24:54.430794+00:00",
     "last_failure": null
   },
   "ok": true
