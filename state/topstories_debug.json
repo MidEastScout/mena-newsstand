@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:30:06.324308+00:00",
+  "updated": "2026-11-12T02:33:38.419844+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,21 +167,20 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-12T02:28:01.286092+00:00"
+      "headlines_updated": "2026-11-12T02:31:20.472514+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 16,
-        "dropped_no_english": 34,
-        "title_translated": 1,
+        "dropped_no_english": 35,
         "title_native": 75,
         "in": 126,
-        "kept": 76
+        "kept": 75
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 34,
+        "requested": 35,
         "translated": 0,
         "cached": 702,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -338,6 +337,11 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
+          "source": "Channel 13",
+          "title": "הדרישה של משפחת נתניהו: שיפוץ המעונות גם אם ייצא מלשכת רה\"מ",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
           "source": "Al Mayadeen",
           "title": "العلاقات الأميركية الإسرائيلية على المحك.. خلافات تتسع وترامب ونتنياهو أمام اختبار متصاعد",
           "reason": "no English text obtainable (title/translation/snippet)"
@@ -440,16 +444,9 @@
       ]
     },
     "relevance": {
-      "in": 76,
-      "kept": 44,
+      "in": 75,
+      "kept": 46,
       "dropped": [
-        {
-          "source": "Channel 13",
-          "title": "News 13 | News - All the news and updates from Israel and around the world",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
         {
           "source": "Middle East Eye",
           "title": "Watch: Unicef says Israel blocking Gaza basin repairs warns of risk of sewage overflow",
@@ -481,13 +478,6 @@
         {
           "source": "Iran International",
           "title": "4 Workers in Iran sell organs to pay debts and cover living costs",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "Princess Basma calls for comprehensive approach to strengthening food security",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -592,16 +582,16 @@
         },
         {
           "source": "Gulf News",
-          "title": "Latest MENA News & Top Stories",
+          "title": "The 2027 Coachella lineup is here: Dua Lipa, Tame Impala and SZA to headline",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Gulf News",
-          "title": "The 2027 Coachella lineup is here: Dua Lipa, Tame Impala and SZA to headline",
+          "title": "Rain lashes the UAE: Is the worst of the weather still to come?",
           "sec": 0,
-          "off": 0,
+          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -614,13 +604,6 @@
         {
           "source": "Anadolu Agency",
           "title": "Türkiye's COP31 chief calls for fairer global climate framework protecting developing nations",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Scott Colom wins Mississippi Senate race, giving state its 1st Democratic Senator in nearly 4 decades",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -671,14 +654,15 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 35,
       "sizes": [
         5,
+        3,
         3,
         2,
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -756,6 +740,45 @@
         },
         {
           "selected_rank": 2,
+          "headline": "Engineered starvation: Israel's architecture of crisis in Gaza",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-11-12T02:29+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Anadolu Agency",
+            "Daily Sabah"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Engineered starvation: Israel's architecture of crisis in Gaza",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Iran warns of Europe retaliation; Israeli attacks on Gaza kill at least 6",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "Iran designates Argentina’s navy and air force as ‘terrorist organizations’",
           "rank_key": {
             "outlets": 3,
@@ -797,7 +820,7 @@
           }
         },
         {
-          "selected_rank": 3,
+          "selected_rank": 4,
           "headline": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
           "rank_key": {
             "outlets": 2,
@@ -829,44 +852,6 @@
               {
                 "source": "Middle East Eye",
                 "title": "Missiles intercepted over Saudi Arabia as Houthi attacks prompt emergency measur",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 4,
-          "headline": "Engineered starvation: Israel's architecture of crisis in Gaza",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-11-11T21:05+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Daily Sabah"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Engineered starvation: Israel's architecture of crisis in Gaza",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (gaza)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Iran warns of Europe retaliation; Israeli attacks on Gaza kill at least 6",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1110,24 +1095,24 @@
         },
         {
           "selected_rank": null,
-          "headline": "Aref: ECO Summit of Heads of State to be held in Tehran on Dec. 3–4",
+          "headline": "Verdict expected Sunday in trial over deadly Karak church attack – lawyer",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-11-11T10:13+00:00"
+            "newest": "2026-11-11T11:36+00:00"
           },
           "outlet_names": [
-            "IRNA"
+            "Jordan Times"
           ],
           "camps": [
-            "iranian"
+            "levant"
           ],
           "members": 1,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1145,7 +1130,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-12T02:30:07.190608+00:00",
+    "last_success": "2026-11-12T02:33:55.906493+00:00",
     "last_failure": null
   },
   "ok": true
