@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:33:38.419844+00:00",
+  "updated": "2026-11-12T03:05:17.094770+00:00",
   "stages": {
     "fetch": {
       "items": 126,
@@ -167,15 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-12T02:31:20.472514+00:00"
+      "headlines_updated": "2026-11-12T03:03:17.348778+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 16,
+        "dropped_stale": 13,
         "dropped_no_english": 35,
-        "title_native": 75,
+        "title_native": 78,
         "in": 126,
-        "kept": 75
+        "kept": 78
       },
       "translator": {
         "configured": true,
@@ -186,11 +186,6 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
-        {
-          "source": "Middle East Eye",
-          "title": "Saudi-led coalition says it intercepted Houthi missile",
-          "reason": "stale (older than 48h)"
-        },
         {
           "source": "Al Arabiya",
           "title": "Saudi-led coalition destroys Houthi factory for production of ballistic missile components",
@@ -204,11 +199,6 @@
         {
           "source": "The New Arab",
           "title": "Trump says Iran war ’effectively over’ after Qatar talks",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "Jordan Times",
-          "title": "King, Crown Prince extend condolences to family of martyr Jawad Al Salaytah",
           "reason": "stale (older than 48h)"
         },
         {
@@ -253,17 +243,12 @@
         },
         {
           "source": "TRT World",
+          "title": "Europeans to join Ukraine peace talks in Abu Dhabi: Berlin",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "TRT World",
           "title": "Anthropic launches powerful Fable 5.2 and Mythos 5.2 AI models ahead of Wall Street debut",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "TRT World",
-          "title": "COP31 climate summit kicks off in Türkiye amid growing calls for more decisive action",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "TRT World",
-          "title": "In pictures: Winter storm worsens plight of displaced Palestinians in Gaza",
           "reason": "stale (older than 48h)"
         },
         {
@@ -444,7 +429,7 @@
       ]
     },
     "relevance": {
-      "in": 75,
+      "in": 78,
       "kept": 46,
       "dropped": [
         {
@@ -478,6 +463,13 @@
         {
           "source": "Iran International",
           "title": "4 Workers in Iran sell organs to pay debts and cover living costs",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Princess Basma calls for comprehensive approach to strengthening food security",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -541,6 +533,13 @@
         {
           "source": "Egypt Independent",
           "title": "Egyptian Tax authority collects LE 14 billion through tax risk-assessment system: Official",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "WAFA News",
+          "title": "Israeli colonists set fire to more than 100 vehicles, dozens of olive trees in Nablus",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -645,6 +644,13 @@
         },
         {
           "source": "TRT World",
+          "title": "Republicans reshape congressional leadership as Thune retains Senate post, Jordan takes House helm",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "TRT World",
           "title": "COP31 in Türkiye shifts focus to energy security, green transport on day two",
           "sec": 0,
           "off": 0,
@@ -654,15 +660,14 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 35,
+      "clusters": 34,
       "sizes": [
         5,
         3,
         3,
+        3,
         2,
         2,
-        2,
-        1,
         1,
         1,
         1,
@@ -771,7 +776,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "1 , Iran warns of Europe retaliation; Israeli attacks on Gaza kill at least 6",
+                "title": "1 , Iran warns of Europe retaliation; Israel kills 6 in Gaza hospital strike",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -835,7 +840,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -852,6 +857,11 @@
               {
                 "source": "Middle East Eye",
                 "title": "Missiles intercepted over Saudi Arabia as Houthi attacks prompt emergency measur",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Middle East Eye",
+                "title": "Saudi-led coalition says it intercepted and destroyed two Houthi drones",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -894,6 +904,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli settlers set Palestinian vehicles and equipment on fire",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-12T02:38+00:00"
+          },
+          "outlet_names": [
+            "The New Arab"
+          ],
+          "camps": [
+            "panarab"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1094,25 +1122,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Verdict expected Sunday in trial over deadly Karak church attack – lawyer",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-11T11:36+00:00"
-          },
-          "outlet_names": [
-            "Jordan Times"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "18 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "17 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1130,7 +1140,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-12T02:33:55.906493+00:00",
+    "last_success": "2026-11-12T03:05:17.922760+00:00",
     "last_failure": null
   },
   "ok": true
