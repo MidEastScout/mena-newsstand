@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-13T03:36:43.305195+00:00",
+  "updated": "2026-11-13T04:08:26.772491+00:00",
   "stages": {
     "fetch": {
-      "items": 126,
+      "items": 127,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -71,7 +71,7 @@
           "error": null
         },
         "Jordan Times": {
-          "headlines": 4,
+          "headlines": 5,
           "lang": "en",
           "stale": false,
           "error": null
@@ -167,14 +167,14 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-13T03:34:50.935280+00:00"
+      "headlines_updated": "2026-11-13T04:06:30.932319+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 5,
+        "dropped_stale": 6,
         "dropped_no_english": 35,
         "title_native": 86,
-        "in": 126,
+        "in": 127,
         "kept": 86
       },
       "translator": {
@@ -194,6 +194,11 @@
         {
           "source": "The New Arab",
           "title": "Is the Iran war really ’effectively over’, as Trump says?",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "Jordan prepares for EU investment conference with over 700 participants expected – ministry",
           "reason": "stale (older than 48h)"
         },
         {
@@ -390,14 +395,14 @@
     },
     "relevance": {
       "in": 86,
-      "kept": 46,
+      "kept": 45,
       "dropped": [
         {
           "source": "Al Jazeera",
-          "title": "5 , UAE says 14 killed, 30 injured in Fujairah traffic accident",
-          "sec": 2,
+          "title": "4 , Chris Van Hollen launches bid to lead Democrats in US Senate",
+          "sec": 0,
           "off": 0,
-          "reason": "disaster/accident with no conflict dimension"
+          "reason": "no security/geopolitics signal"
         },
         {
           "source": "Middle East Eye",
@@ -596,6 +601,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Anadolu Agency",
+          "title": "Hunger crisis deepens in DR Congo as 28.8M face acute food insecurity: WFP",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
           "title": "AIPAC and more: Network of pro-Israel influence in US Congress",
           "sec": 0,
@@ -676,7 +688,7 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 30,
+      "clusters": 29,
       "sizes": [
         10,
         5,
@@ -706,14 +718,13 @@
         1,
         1,
         1,
-        1,
         1
       ]
     },
     "rank": {
       "rule": "distinct outlets → camp spread → recency",
       "min_outlets": 2,
-      "selected": 5,
+      "selected": 4,
       "candidates": [
         {
           "selected_rank": 1,
@@ -871,44 +882,6 @@
         },
         {
           "selected_rank": 4,
-          "headline": "Saudi-led coalition says 2 Houthi drones intercepted over Riyadh, eastern Saudi Arabia",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-11-12T19:47+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Saudi-led coalition says 2 Houthi drones intercepted over Riyadh, eastern Saudi Arabia",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (yemen)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "4 , Iran war updates: Houthis say attacked Saudi energy, military facilities",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 5,
           "headline": "Iran refuses to surrender enriched uranium, threatens to strike US bases in Europe if attacked",
           "rank_key": {
             "outlets": 2,
@@ -944,6 +917,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "CENTCOM calls Israeli media report of possible Iran war resumption ‘pure speculation’",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-12T23:25+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -994,24 +985,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Dozens of British lawmakers urge sanctions on Israeli officials over Gaza aid restrictions",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-12T19:40+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1180,7 +1153,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-13T03:37:03.379635+00:00",
+    "last_success": "2026-11-13T04:08:48.475559+00:00",
     "last_failure": null
   },
   "ok": true
