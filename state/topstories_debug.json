@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T23:09:37.928392+00:00",
+  "updated": "2026-11-17T23:42:27.247792+00:00",
   "stages": {
     "fetch": {
       "items": 124,
@@ -157,7 +157,7 @@
         "Hürriyet Daily News": {
           "headlines": 5,
           "lang": "en",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "TRT World": {
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-17T23:07:22.381143+00:00"
+      "headlines_updated": "2026-11-17T23:40:07.290689+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
-        "dropped_no_english": 35,
+        "dropped_no_english": 34,
         "title_native": 81,
+        "title_translated": 1,
         "in": 124,
-        "kept": 81
+        "kept": 82
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 702,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -298,7 +299,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "המהדורה המרכזית 17.11.26 - המהדורה המלאה לצפייה ישירה -",
+          "title": "הצינור 17.11.2026 - התוכנית המלאה לצפייה ישירה -",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -322,18 +323,13 @@
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
-          "source": "Al Mayadeen",
-          "title": "العراق والأردن يحجبان تطبيق تليغرام لأسباب تتعلق بالأمن الوطني",
+          "source": "Al-Akhbar",
+          "title": "... والسعودية تهرب من اليمن إلى إعدام القُصّر!",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al-Akhbar",
           "title": "حكم قضائي يمنع إدارة ترامب من تقييد فرص تدريب وعمل الطلاب الأجانب",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "... والسعودية تهرب من اليمن إلى إعدام القُصّر!",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -404,8 +400,8 @@
       ]
     },
     "relevance": {
-      "in": 81,
-      "kept": 48,
+      "in": 82,
+      "kept": 52,
       "dropped": [
         {
           "source": "Al Jazeera",
@@ -422,24 +418,10 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Middle East Eye",
-          "title": "Mamdani to disband special NYPD unit deployed during pro-Palestinian protests",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Al Arabiya",
           "title": "Trump says US taking seriously report of possible Iranian dirty bomb plot in Washington",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Al Arabiya",
-          "title": "Jordan blocks Telegram app over national security concerns",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -457,6 +439,13 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Al Mayadeen",
+          "title": "Midnight Bulletin",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Mehr News",
           "title": "Grand Ayatollah Vahid Khorasani passes away",
           "sec": 0,
@@ -465,7 +454,7 @@
         },
         {
           "source": "L'Orient Today",
-          "title": "BEHIND THE SCENES Post-UNIFIL era: Washington softens its stance but hardens its demands",
+          "title": "ISRAEL Israel parliament elects Eisenkot ally as speaker in blow for Netanyahu",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -480,13 +469,6 @@
         {
           "source": "L'Orient Today",
           "title": "LAUNCH MEA welcomes its first A321XLR: New destinations and the American dream Philippe HAGE BOUTROS",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "L'Orient Today",
-          "title": "Arts and lifestyle",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -535,7 +517,7 @@
         },
         {
           "source": "SANA",
-          "title": "Estonia to close Russian border after alleged sabotage attempt",
+          "title": "U.S., nine partners sign deal to secure AI technology supply chains",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -571,13 +553,6 @@
         {
           "source": "Anadolu Agency",
           "title": "Israeli parliament elects Eisenkot bloc candidate Matan Kahana as speaker",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Anadolu Agency",
-          "title": "Iraq approves rehabilitation of oil pipeline to Türkiye as flows resume after 12 years",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -642,15 +617,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 34,
+      "clusters": 35,
       "sizes": [
         7,
         5,
+        3,
         2,
         2,
         2,
         2,
-        1,
+        2,
         1,
         1,
         1,
@@ -799,11 +775,12 @@
           "selected_rank": 3,
           "headline": "UK imposes sanctions on eight Israeli firms and a group blocking Gaza aid",
           "rank_key": {
-            "outlets": 2,
+            "outlets": 3,
             "camps": 2,
             "newest": "2026-11-17T14:10+00:00"
           },
           "outlet_names": [
+            "Al Arabiya",
             "Middle East Eye",
             "WAFA News"
           ],
@@ -811,7 +788,7 @@
             "panarab",
             "levant"
           ],
-          "members": 2,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -829,6 +806,76 @@
         },
         {
           "selected_rank": 4,
+          "headline": "Kuwait air defences countering hostile drone attacks, army says",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-17T22:51+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Middle East Eye",
+            "title": "Kuwait air defences countering hostile drone attacks, army says",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (kuwait)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": []
+          }
+        },
+        {
+          "selected_rank": 5,
+          "headline": "Iran rules out UN inspections of damaged nuclear sites until war ends",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": "2026-11-16T09:07+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Mehr News"
+          ],
+          "camps": [
+            "panarab",
+            "iranian"
+          ],
+          "members": 2,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Iran rules out UN inspections of damaged nuclear sites until war ends",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Mehr News",
+                "title": "Double standards undermine nuclear-free Mideast efforts",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
           "headline": "Israeli opposition chiefs denounce Netanyahu over ‘attempted coup’",
           "rank_key": {
             "outlets": 2,
@@ -859,7 +906,7 @@
           }
         },
         {
-          "selected_rank": 5,
+          "selected_rank": null,
           "headline": "Palestinian woman killed, 10 injured in Israeli settler attack near Jericho",
           "rank_key": {
             "outlets": 2,
@@ -933,6 +980,42 @@
         },
         {
           "selected_rank": null,
+          "headline": "US Navy secretary nominee says urging Hegseth to end Iran war is not within his ‘purview’",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-17T23:33+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Navy chief nominee faces fierce Senate grilling over Iran war and US sailors' mental health",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-17T23:06+00:00"
+          },
+          "outlet_names": [
+            "TRT World"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "UNA condemns assault on WAFA photographer and calls for international legal action against the occup",
           "rank_key": {
             "outlets": 1,
@@ -962,24 +1045,6 @@
           ],
           "camps": [
             "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Iran rejects CNN's 'dirty bomb' report as 'Iraq War-style propaganda'",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-17T21:26+00:00"
-          },
-          "outlet_names": [
-            "TRT World"
-          ],
-          "camps": [
-            "turkish"
           ],
           "members": 1,
           "qualified": false,
@@ -1049,24 +1114,6 @@
           },
           "outlet_names": [
             "Daily Sabah"
-          ],
-          "camps": [
-            "turkish"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Putin arrives in China ahead of 1st trilateral talks with Trump and Xi",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-17T18:28+00:00"
-          },
-          "outlet_names": [
-            "Anadolu Agency"
           ],
           "camps": [
             "turkish"
@@ -1148,7 +1195,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "16 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "15 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1166,7 +1213,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-17T23:09:58.332150+00:00",
+    "last_success": "2026-11-17T23:42:41.279044+00:00",
     "last_failure": null
   },
   "ok": true
