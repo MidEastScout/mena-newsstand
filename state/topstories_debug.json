@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T03:36:59.813948+00:00",
+  "updated": "2026-11-18T04:08:30.190542+00:00",
   "stages": {
     "fetch": {
       "items": 124,
@@ -109,7 +109,7 @@
         "Falastin al-Youm": {
           "headlines": 5,
           "lang": "ar",
-          "stale": false,
+          "stale": true,
           "error": null
         },
         "SANA": {
@@ -167,15 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-18T03:34:57.744441+00:00"
+      "headlines_updated": "2026-11-18T04:06:26.511724+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 6,
+        "dropped_stale": 8,
         "dropped_no_english": 35,
-        "title_native": 83,
+        "title_native": 81,
         "in": 124,
-        "kept": 83
+        "kept": 81
       },
       "translator": {
         "configured": true,
@@ -186,6 +186,11 @@
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
       },
       "dropped": [
+        {
+          "source": "The New Arab",
+          "title": "Eisenkot says Netanyahu cannot stay in office ’a minute longer’",
+          "reason": "stale (older than 48h)"
+        },
         {
           "source": "The New Arab",
           "title": "Yemen forces withdraw from area near Bab al-Mandeb Strait",
@@ -204,6 +209,11 @@
         {
           "source": "Jordan Times",
           "title": "Anthropic CEO sells investors on safety, 'no jerks' culture",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "SANA",
+          "title": "Estonia foils sabotage attempt on drone factory, prepares to close Russian border",
           "reason": "stale (older than 48h)"
         },
         {
@@ -288,7 +298,7 @@
         },
         {
           "source": "Channel 13",
-          "title": "הצינור 17.11.2026 - התוכנית המלאה לצפייה ישירה -",
+          "title": "\"אנחנו 3 מול 3 והוא באמצע\": את מי ליאור ישלח הביתה?",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -394,19 +404,19 @@
       ]
     },
     "relevance": {
-      "in": 83,
-      "kept": 52,
+      "in": 81,
+      "kept": 51,
       "dropped": [
         {
           "source": "Al Jazeera",
-          "title": "4 , Trump announces critical minerals agreements at Quad meeting in Manila",
+          "title": "4 , Israel parliament elects Gadi Eisenkot ally Matan Kahana as new speaker",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , Israel parliament elects Gadi Eisenkot ally Matan Kahana as new speaker",
+          "title": "5 , Rare images of Indigenous group in Amazon highlight threats, advocates say",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -430,13 +440,6 @@
           "title": "Jordan blocks Telegram app over national security concerns",
           "sec": 0,
           "off": 1,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "The New Arab",
-          "title": "Eisenkot says Netanyahu cannot stay in office ’a minute longer’",
-          "sec": 0,
-          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -553,7 +556,7 @@
         },
         {
           "source": "Anadolu Agency",
-          "title": "Nvidia board rules out reinstating Jensen Huang as CEO",
+          "title": "Democrat Mary Peltola wins Alaska Senate race, unseats Republican incumbent",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -618,15 +621,17 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 31,
+      "clusters": 33,
       "sizes": [
-        9,
         7,
+        6,
         3,
         3,
         2,
         2,
         2,
+        1,
+        1,
         1,
         1,
         1,
@@ -662,27 +667,24 @@
           "selected_rank": 1,
           "headline": "Bahrain says its air defenses intercepted multiple Iranian attacks",
           "rank_key": {
-            "outlets": 7,
-            "camps": 5,
+            "outlets": 5,
+            "camps": 4,
             "newest": "2026-11-18T01:31+00:00"
           },
           "outlet_names": [
-            "Al Arabiya",
             "Al Jazeera",
             "Anadolu Agency",
             "Gulf News",
             "Mehr News",
-            "SANA",
             "TRT World"
           ],
           "camps": [
             "gulf",
             "panarab",
             "iranian",
-            "levant",
             "turkish"
           ],
-          "members": 9,
+          "members": 6,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -707,13 +709,13 @@
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Al Arabiya",
-                "title": "Bahrain says it intercepted Iranian air attacks",
+                "source": "Mehr News",
+                "title": "IRGC attacks U.S. radar system at Sheikh Isa base in Bahrain",
                 "rejected_by": "older than the story's newest wave"
               },
               {
-                "source": "Mehr News",
-                "title": "IRGC attacks U.S. radar system at Sheikh Isa base in Bahrain",
+                "source": "Gulf News",
+                "title": "Explosions heard in Bahrain after threat alert, Iran claims drone attack on US r",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1122,11 +1124,11 @@
         },
         {
           "selected_rank": null,
-          "headline": "Ghalibaf slams US ‘dirty bomb’ allegations as fresh anti-Iran war propaganda",
+          "headline": "Gharibabadi: Iran is one of the greatest victims of chemical weapons",
           "rank_key": {
             "outlets": 1,
             "camps": 1,
-            "newest": "2026-11-17T17:53+00:00"
+            "newest": "2026-11-17T20:51+00:00"
           },
           "outlet_names": [
             "IRNA"
@@ -1175,7 +1177,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "14 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1193,7 +1195,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-18T03:37:15.122419+00:00",
+    "last_success": "2026-11-18T04:08:30.456776+00:00",
     "last_failure": null
   },
   "ok": true
