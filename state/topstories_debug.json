@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-19T01:26:43.896587+00:00",
+  "updated": "2026-11-19T01:58:20.940811+00:00",
   "stages": {
     "fetch": {
-      "items": 124,
+      "items": 125,
       "outlets": {
         "Kan 11": {
           "headlines": 5,
@@ -71,7 +71,7 @@
           "error": null
         },
         "Jordan Times": {
-          "headlines": 2,
+          "headlines": 3,
           "lang": "en",
           "stale": false,
           "error": null
@@ -167,16 +167,16 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-19T01:24:54.209188+00:00"
+      "headlines_updated": "2026-11-19T01:56:07.588296+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 8,
         "dropped_no_english": 34,
-        "title_native": 81,
+        "title_native": 82,
         "title_translated": 1,
-        "in": 124,
-        "kept": 82
+        "in": 125,
+        "kept": 83
       },
       "translator": {
         "configured": true,
@@ -400,21 +400,21 @@
       ]
     },
     "relevance": {
-      "in": 82,
-      "kept": 50,
+      "in": 83,
+      "kept": 49,
       "dropped": [
         {
           "source": "Al Jazeera",
-          "title": "4 , What do Deutsche Bank leaks reveal about Trump, Epstein and Russia?",
+          "title": "4 , Why a trio of experts alleges Jeffrey Epstein did not die by suicide",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Al Jazeera",
-          "title": "5 , US lawmakers push to raise minimum wage to $25, end tipped pay system",
+          "title": "5 , Anthropic raises $81.3bn in biggest IPO of all-time",
           "sec": 0,
-          "off": 0,
+          "off": 2,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -427,6 +427,13 @@
         {
           "source": "Middle East Eye",
           "title": "Iraq resumes shipping oil for export to Turkey via pipeline",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Middle East Eye",
+          "title": "US re-issues security warnings to citizens in Bahrain, Saudi Arabia",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -475,14 +482,21 @@
         },
         {
           "source": "Iran International",
-          "title": "2 Iranian girl's suspected honor killing raises questions over school's role",
+          "title": "1 Iranian girl's suspected honor killing raises questions over school's role",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Iran International",
-          "title": "3 Daily reports secret bread rationing in two Iranian provinces",
+          "title": "2 Daily reports secret bread rationing in two Iranian provinces",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Jordan Times",
+          "title": "AI certifications top professional qualifications sought by local firms — Int@j",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -545,7 +559,7 @@
         },
         {
           "source": "Gulf News",
-          "title": "Pakistani man jailed for 27 years over Iran-linked plot to kill Trump",
+          "title": "US reissues security warnings to citizens in Bahrain, Saudi",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -634,15 +648,15 @@
       "clusters": 33,
       "sizes": [
         4,
-        3,
-        3,
-        3,
+        4,
+        4,
         3,
         3,
         2,
         2,
         2,
-        2,
+        1,
+        1,
         1,
         1,
         1,
@@ -675,6 +689,57 @@
       "candidates": [
         {
           "selected_rank": 1,
+          "headline": "Three oil tankers catch fire after hitting naval mines east of Strait of Hormuz: Report",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-11-18T20:55+00:00"
+          },
+          "outlet_names": [
+            "Al Arabiya",
+            "Al Jazeera",
+            "Gulf News",
+            "IRNA"
+          ],
+          "camps": [
+            "gulf",
+            "panarab",
+            "iranian"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Al Arabiya",
+            "title": "Three oil tankers catch fire after hitting naval mines east of Strait of Hormuz: Report",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hormuz)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "1 , Saudi-led coalition strikes Saada; Iran says three ships on fire in Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "IRNA",
+                "title": "Iran shoots down another US MQ-9 drone over Strait of Hormuz",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Gulf News",
+                "title": "ADNOC vessel attacked in Strait of Hormuz, 1 missing, 11 injured",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 2,
           "headline": "Saudi-led coalition says it intercepted Houthi ballistic missile, destroyed launcher",
           "rank_key": {
             "outlets": 3,
@@ -713,46 +778,6 @@
               {
                 "source": "SANA",
                 "title": "Saudi-led coalition intercepts second missile, reports 60 targets destroyed in Y",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "ADNOC vessel attacked in Strait of Hormuz, 1 missing, 11 injured",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 3,
-            "newest": "2026-11-18T11:54+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Gulf News",
-            "IRNA"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "iranian"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Gulf News",
-            "title": "ADNOC vessel attacked in Strait of Hormuz, 1 missing, 11 injured",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (hormuz)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "1 , Saudi-led coalition strikes Saada; Iran says three ships on fire in Hormuz",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -840,7 +865,7 @@
               },
               {
                 "source": "Iran International",
-                "title": "5 US strikes Qeshm Island after Iran drone attack on American base in Bahrain",
+                "title": "4 US strikes Qeshm Island after Iran drone attack on American base in Bahrain",
                 "rejected_by": "older than the story's newest wave"
               },
               {
@@ -853,43 +878,6 @@
         },
         {
           "selected_rank": 5,
-          "headline": "China set to host APEC Leaders’ Summit alongside Xi-Trump-Putin trilateral meeting",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-11-19T00:08+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency"
-          ],
-          "camps": [
-            "panarab",
-            "turkish"
-          ],
-          "members": 2,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "China set to host APEC Leaders’ Summit alongside Xi-Trump-Putin trilateral meeting",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "3 , ‘Crimea is turning into an island’: How Ukraine hit Putin’s prized bridge",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
           "headline": "UN committee adopts draft resolutions on Palestinian aid, property rights and Israeli occupation",
           "rank_key": {
             "outlets": 2,
@@ -917,48 +905,6 @@
               "outlet's own English headline"
             ],
             "passed_over": []
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "US strikes IRGC missile site on Qeshm Island in ‘self-defense’",
-          "rank_key": {
-            "outlets": 2,
-            "camps": 2,
-            "newest": "2026-11-18T15:35+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Arab News"
-          ],
-          "camps": [
-            "gulf",
-            "panarab"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Al Arabiya",
-            "title": "US strikes IRGC missile site on Qeshm Island in ‘self-defense’",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "US military strikes Iranian missile launch site on Qeshm Island, US official tel",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "US warplanes struck Iran missile site on Qeshm Island: US official",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
           }
         },
         {
@@ -1001,29 +947,67 @@
         },
         {
           "selected_rank": null,
-          "headline": "Elderly Palestinian woman killed by Israeli settlers in Jericho",
+          "headline": "US military strikes Iranian missile launch site on Qeshm Island, US official tells AAE",
           "rank_key": {
             "outlets": 2,
-            "camps": 1,
-            "newest": "2026-11-17T15:37+00:00"
+            "camps": 2,
+            "newest": "2026-11-17T19:41+00:00"
           },
           "outlet_names": [
-            "Middle East Eye",
-            "The New Arab"
+            "Al Arabiya",
+            "Arab News"
           ],
           "camps": [
+            "gulf",
             "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "The New Arab",
-            "title": "Elderly Palestinian woman killed by Israeli settlers in Jericho",
+            "source": "Al Arabiya",
+            "title": "US military strikes Iranian missile launch site on Qeshm Island, US official tells AAE",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Arab News",
+                "title": "US warplanes struck Iran missile site on Qeshm Island: US official",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": null,
+          "headline": "FOCUS Arrests in northern Lebanon: Documents fuel suspicions about Hezbollah’s intentions",
+          "rank_key": {
+            "outlets": 2,
+            "camps": 2,
+            "newest": null
+          },
+          "outlet_names": [
+            "Iran International",
+            "L'Orient Today"
+          ],
+          "camps": [
+            "iranian",
+            "levant"
+          ],
+          "members": 4,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "L'Orient Today",
+            "title": "FOCUS Arrests in northern Lebanon: Documents fuel suspicions about Hezbollah’s intentions",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (hezbollah)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
@@ -1037,6 +1021,24 @@
             "outlets": 1,
             "camps": 1,
             "newest": "2026-11-19T00:10+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "China set to host APEC Leaders’ Summit alongside Xi-Trump-Putin trilateral meeting",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-19T00:08+00:00"
           },
           "outlet_names": [
             "Anadolu Agency"
@@ -1229,25 +1231,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Russian military transport aircraft crashes in Siberia, killing 19, defense ministry says",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-18T13:13+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent"
-          ],
-          "camps": [
-            "levant"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "13 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1265,7 +1249,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-19T01:27:02.047228+00:00",
+    "last_success": "2026-11-19T01:58:42.727724+00:00",
     "last_failure": null
   },
   "ok": true
