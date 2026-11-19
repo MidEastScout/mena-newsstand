@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T13:35:02.018631+00:00",
+  "updated": "2026-11-19T14:07:03.153965+00:00",
   "stages": {
     "fetch": {
       "items": 127,
@@ -167,20 +167,21 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-19T13:33:00.966224+00:00"
+      "headlines_updated": "2026-11-19T14:04:46.602425+00:00"
     },
     "normalize": {
       "stats": {
         "dropped_stale": 10,
-        "dropped_no_english": 35,
+        "dropped_no_english": 34,
+        "title_translated": 1,
         "title_native": 82,
         "in": 127,
-        "kept": 82
+        "kept": 83
       },
       "translator": {
         "configured": true,
         "region": "uaenorth",
-        "requested": 35,
+        "requested": 34,
         "translated": 0,
         "cached": 702,
         "error": "HTTP 401: {\"error\":{\"code\":401001,\"message\":\"The request is not authorized because credentials are missing or invalid.\"}}"
@@ -193,17 +194,17 @@
         },
         {
           "source": "The New Arab",
-          "title": "Israeli forces arrest AFP contributor in occupied West Bank",
-          "reason": "stale (older than 48h)"
-        },
-        {
-          "source": "The New Arab",
           "title": "Houthis seize ground in Yemen, Israeli strikes target Lebanon",
           "reason": "stale (older than 48h)"
         },
         {
           "source": "The New Arab",
           "title": "Israel uploaded 3.5m photos of Palestinians to Amazon AI system",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "The New Arab",
+          "title": "Israeli forces arrest AFP contributor in occupied West Bank",
           "reason": "stale (older than 48h)"
         },
         {
@@ -253,12 +254,12 @@
         },
         {
           "source": "Kan 11",
-          "title": "כביש 4 נחסם לתנועה עקב הפגנות חרדים במחלף אלוף שדה לצפון ומחלף אם המושבות לדרום",
+          "title": "ראש עיריית כפר סבא נחקר בחשד לשיבוש החקירה",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Kan 11",
-          "title": "תושב הצפון התייעץ עם ChartGPT לגבי רצח אשתו",
+          "title": "דובר משמרות המהפכה לכלי תקשורת באיראן: אם ארה\"ב תתקוף סכרים באיראן, נגיב בפעולה דומה",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -298,11 +299,6 @@
         },
         {
           "source": "Channel 13",
-          "title": "המארב הפרוע: בלשים התחפשו למתדלקים - ותפסו שודד סדרתי \"על חם\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Channel 13",
           "title": "\"דמיינתי איך מוצאים את הגופה שלי\": רופאה הותקפה על ידי אדם זר",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
@@ -323,12 +319,12 @@
         },
         {
           "source": "Al Mayadeen",
-          "title": "قمة ترسم ملامح نظام دولي جديد.. واشنطن وموسكو وبكين تبحث إعادة صياغة التوازنات العالمية",
+          "title": "\"نيويورك تايمز\": مكتب نتنياهو متورط في اعتقال ناشطين فلسطينيين يوم الانتخابات",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "Al Mayadeen",
-          "title": "هل يفتح اتفاق مالطا 2 الطريق أمام تسوية الملفات العالقة؟",
+          "title": "قمة ترسم ملامح نظام دولي جديد.. واشنطن وموسكو وبكين تبحث إعادة صياغة التوازنات العالمية",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -414,9 +410,16 @@
       ]
     },
     "relevance": {
-      "in": 82,
-      "kept": 57,
+      "in": 83,
+      "kept": 54,
       "dropped": [
+        {
+          "source": "Channel 13",
+          "title": "News 13 | News - All the news and updates from Israel and around the world",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
         {
           "source": "Middle East Eye",
           "title": "Iran's navy says three oil tankers caught fire east of Hormuz",
@@ -427,6 +430,13 @@
         {
           "source": "Middle East Eye",
           "title": "Iraq resumes shipping oil for export to Turkey via pipeline",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Arabiya",
+          "title": "Israeli parliament elects speaker backed by Netanyahu opponents",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -475,6 +485,20 @@
         },
         {
           "source": "Egypt Independent",
+          "title": "A one-sided reckoning: The Anwar Sadat I came to know",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
+          "title": "Photos: US Congress bestows highest honor on Anwar Sadat’s timeless legacy",
+          "sec": 0,
+          "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Egypt Independent",
           "title": "Cairo’s Qasr El Nil Bridge to close for 15 hours on Friday for maintenance",
           "sec": 0,
           "off": 0,
@@ -485,20 +509,6 @@
           "title": "Ancient late period, Ptolemaic, early Roman necropolis uncovered in Menoufia",
           "sec": 0,
           "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "Egypt, US discuss strategic partnership, regional stability in Washington",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
-          "source": "Egypt Independent",
-          "title": "PM attends launch of Nevera Egypt project to boost tourism, investments in West Cairo",
-          "sec": 0,
-          "off": 1,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -523,15 +533,29 @@
           "reason": "no security/geopolitics signal"
         },
         {
+          "source": "Gulf News",
+          "title": "Pakistani man jailed for 27 years over Iran-linked plot to kill Trump",
+          "sec": 0,
+          "off": 0,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Anadolu Agency",
+          "title": "South Korea catches 98 cheating on college entrance exam amid AI fears",
+          "sec": 0,
+          "off": 3,
+          "reason": "no security/geopolitics signal"
+        },
+        {
           "source": "Daily Sabah",
-          "title": "9 mayors join AK Party as Erdoğan vows stronger public engagement",
+          "title": "Türkiye's Oruç Reis arrives in Pakistan for 2nd overseas mission",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
           "source": "Daily Sabah",
-          "title": "German group acquires Turkish logistics company Ekol Lojistik",
+          "title": "9 mayors join AK Party as Erdoğan vows stronger public engagement",
           "sec": 0,
           "off": 0,
           "reason": "no security/geopolitics signal"
@@ -587,7 +611,7 @@
         },
         {
           "source": "TRT World",
-          "title": "Anthropic prices its IPO at $83 per share, valuing AI giant at $1.5T",
+          "title": "South Korea tightens security for annual college entrance exam amid AI cheating fears",
           "sec": 0,
           "off": 1,
           "reason": "no security/geopolitics signal"
@@ -596,19 +620,22 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 28,
+      "clusters": 31,
       "sizes": [
-        7,
-        7,
+        8,
         6,
-        4,
         3,
         3,
+        3,
         2,
         2,
         2,
         2,
         2,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -635,105 +662,7 @@
       "candidates": [
         {
           "selected_rank": 1,
-          "headline": "Trump concludes Asia tour after historic trilateral summit with Xi, Putin in China",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 4,
-            "newest": "2026-11-19T12:43+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya",
-            "Anadolu Agency",
-            "Arab News",
-            "SANA",
-            "TRT World"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "levant",
-            "turkish"
-          ],
-          "members": 6,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Anadolu Agency",
-            "title": "Trump concludes Asia tour after historic trilateral summit with Xi, Putin in China",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Putin, Trump to meet at APEC summit but no full-scale talks planned, Kremlin say",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "SANA",
-                "title": "Trump holds separate talks with Putin and Xi in China ahead of trilateral meetin",
-                "rejected_by": "stale anticipatory framing"
-              },
-              {
-                "source": "Arab News",
-                "title": "Xi, Trump, Putin exchange greetings before historic China summit",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Trump seeks diplomatic gains on Asia tour as Putin arrives in China",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 2,
-          "headline": "Myanmar committed genocide against Rohingya: World court",
-          "rank_key": {
-            "outlets": 5,
-            "camps": 3,
-            "newest": "2026-11-19T13:19+00:00"
-          },
-          "outlet_names": [
-            "Al Jazeera",
-            "Anadolu Agency",
-            "Daily Sabah",
-            "Gulf News",
-            "Middle East Eye"
-          ],
-          "camps": [
-            "gulf",
-            "panarab",
-            "turkish"
-          ],
-          "members": 7,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Daily Sabah",
-            "title": "Myanmar committed genocide against Rohingya: World court",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Al Jazeera",
-                "title": "3 , UN’s top court finds Myanmar guilty of genocide against Rohingya",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": 3,
-          "headline": "Two more violating supertankers catch fire in Strait of Hormuz: IRGC Navy",
+          "headline": "Two violating supertankers explode in Strait of Hormuz",
           "rank_key": {
             "outlets": 5,
             "camps": 3,
@@ -751,12 +680,12 @@
             "panarab",
             "iranian"
           ],
-          "members": 7,
+          "members": 8,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "IRNA",
-            "title": "Two more violating supertankers catch fire in Strait of Hormuz: IRGC Navy",
+            "source": "Mehr News",
+            "title": "Two violating supertankers explode in Strait of Hormuz",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
@@ -789,7 +718,62 @@
           }
         },
         {
-          "selected_rank": 4,
+          "selected_rank": 2,
+          "headline": "Trump concludes Asia tour after historic trilateral summit with Xi, Putin in China",
+          "rank_key": {
+            "outlets": 4,
+            "camps": 3,
+            "newest": "2026-11-19T13:48+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency",
+            "Arab News",
+            "SANA",
+            "TRT World"
+          ],
+          "camps": [
+            "gulf",
+            "levant",
+            "turkish"
+          ],
+          "members": 6,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Anadolu Agency",
+            "title": "Trump concludes Asia tour after historic trilateral summit with Xi, Putin in China",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "SANA",
+                "title": "Trump holds separate talks with Putin and Xi in China ahead of trilateral meetin",
+                "rejected_by": "stale anticipatory framing"
+              },
+              {
+                "source": "Arab News",
+                "title": "Xi, Trump, Putin exchange greetings before historic China summit",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "Arab News",
+                "title": "Trump seeks diplomatic gains on Asia tour as Putin arrives in China",
+                "rejected_by": "older than the story's newest wave"
+              },
+              {
+                "source": "TRT World",
+                "title": "Putin, Trump and Xi will determine how long trilateral summit will last, says Kr",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
+          "selected_rank": 3,
           "headline": "US jets strike IRGC missile site on Iran’s Qeshm Island after drone attack on Bahrain",
           "rank_key": {
             "outlets": 3,
@@ -834,6 +818,44 @@
           }
         },
         {
+          "selected_rank": 4,
+          "headline": "Myanmar committed genocide against Rohingya: World court",
+          "rank_key": {
+            "outlets": 3,
+            "camps": 2,
+            "newest": "2026-11-19T11:40+00:00"
+          },
+          "outlet_names": [
+            "Al Jazeera",
+            "Daily Sabah",
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab",
+            "turkish"
+          ],
+          "members": 3,
+          "qualified": true,
+          "why_not": null,
+          "representative": {
+            "source": "Daily Sabah",
+            "title": "Myanmar committed genocide against Rohingya: World court",
+            "title_source": "native",
+            "why": [
+              "passed every gate (neutral, current, fresh, not a stub)",
+              "mainstream outlet phrasing",
+              "outlet's own English headline"
+            ],
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "3 , UN’s top court finds Myanmar guilty of genocide against Rohingya",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
+          }
+        },
+        {
           "selected_rank": 5,
           "headline": "Saudi-led coalition intercepts Houthi missiles, destroys launchers in Yemen",
           "rank_key": {
@@ -850,7 +872,7 @@
             "panarab",
             "levant"
           ],
-          "members": 4,
+          "members": 3,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -863,73 +885,23 @@
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": [
-              {
-                "source": "Al Arabiya",
-                "title": "Saudi-led coalition destroys 60 Houthi targets in Yemen, intercepts two cruise m",
-                "rejected_by": "older than the story's newest wave"
-              }
-            ]
+            "passed_over": []
           }
         },
         {
           "selected_rank": null,
-          "headline": "72-year-old Palestinian woman shot and killed by Israeli settlers near newly established outpost",
-          "rank_key": {
-            "outlets": 3,
-            "camps": 2,
-            "newest": "2026-11-19T08:43+00:00"
-          },
-          "outlet_names": [
-            "Egypt Independent",
-            "Middle East Eye",
-            "WAFA News"
-          ],
-          "camps": [
-            "panarab",
-            "levant"
-          ],
-          "members": 3,
-          "qualified": true,
-          "why_not": null,
-          "representative": {
-            "source": "Egypt Independent",
-            "title": "72-year-old Palestinian woman shot and killed by Israeli settlers near newly established outpost",
-            "title_source": "native",
-            "why": [
-              "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (westbank)",
-              "mainstream outlet phrasing",
-              "outlet's own English headline"
-            ],
-            "passed_over": [
-              {
-                "source": "Middle East Eye",
-                "title": "Watch: Israeli army forces Palestinian farmers out of their fields in occupied W",
-                "rejected_by": "bare stub headline"
-              },
-              {
-                "source": "WAFA News",
-                "title": "Australia sanctions three Israeli colonists and four organizations over settleme",
-                "rejected_by": "loaded/partisan wording"
-              }
-            ]
-          }
-        },
-        {
-          "selected_rank": null,
-          "headline": "Israeli forces arrest Palestinian school principal during raid in occupied East Jerusalem",
+          "headline": "WRAP-UP - Trump, Xi, Putin discuss nuclear risks, UN reform, energy in historic trilateral meeting",
           "rank_key": {
             "outlets": 2,
             "camps": 2,
-            "newest": "2026-11-19T12:20+00:00"
+            "newest": "2026-11-19T13:50+00:00"
           },
           "outlet_names": [
-            "Anadolu Agency",
-            "WAFA News"
+            "Al Jazeera",
+            "Anadolu Agency"
           ],
           "camps": [
-            "levant",
+            "panarab",
             "turkish"
           ],
           "members": 2,
@@ -937,14 +909,21 @@
           "why_not": null,
           "representative": {
             "source": "Anadolu Agency",
-            "title": "Israeli forces arrest Palestinian school principal during raid in occupied East Jerusalem",
+            "title": "WRAP-UP - Trump, Xi, Putin discuss nuclear risks, UN reform, energy in historic trilateral meeting",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
+              "names 1 of the story's dominant entities (nuclear)",
               "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
-            "passed_over": []
+            "passed_over": [
+              {
+                "source": "Al Jazeera",
+                "title": "4 , What is a ‘nuclear briefcase’, spotted at the APEC summit?",
+                "rejected_by": "older than the story's newest wave"
+              }
+            ]
           }
         },
         {
@@ -1019,30 +998,30 @@
         },
         {
           "selected_rank": null,
-          "headline": "Rights groups call for release of Shia clerics in Bahrain",
+          "headline": "Trump's Board of Peace warns of 'ceasefire' collapse in Gaza",
           "rank_key": {
             "outlets": 2,
             "camps": 1,
-            "newest": "2026-11-18T18:54+00:00"
+            "newest": "2026-11-18T12:43+00:00"
           },
           "outlet_names": [
-            "IRNA",
-            "Mehr News"
+            "Al Arabiya",
+            "The New Arab"
           ],
           "camps": [
-            "iranian"
+            "panarab"
           ],
           "members": 2,
           "qualified": true,
           "why_not": null,
           "representative": {
-            "source": "Mehr News",
-            "title": "Rights groups call for release of Shia clerics in Bahrain",
+            "source": "The New Arab",
+            "title": "Trump's Board of Peace warns of 'ceasefire' collapse in Gaza",
             "title_source": "native",
             "why": [
               "passed every gate (neutral, current, fresh, not a stub)",
-              "names 1 of the story's dominant entities (bahrain)",
-              "state/partisan outlet (last resort)",
+              "names 1 of the story's dominant entities (gaza)",
+              "mainstream outlet phrasing",
               "outlet's own English headline"
             ],
             "passed_over": []
@@ -1063,6 +1042,42 @@
             "levant"
           ],
           "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Tears, prayers, hopes of home as Rohingya celebrate ICJ genocide verdict against Myanmar",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-19T12:56+00:00"
+          },
+          "outlet_names": [
+            "Anadolu Agency"
+          ],
+          "camps": [
+            "turkish"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli colonists attack house under construction south of Nablus",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-19T12:32+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 2,
           "qualified": false,
           "why_not": "only 1 outlet — needs 2"
         },
@@ -1122,6 +1137,24 @@
         },
         {
           "selected_rank": null,
+          "headline": "72-year-old Palestinian woman shot and killed by Israeli settlers near newly established outpost",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-19T08:43+00:00"
+          },
+          "outlet_names": [
+            "Egypt Independent"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
           "headline": "Saudi crown prince, U.S. military commander discuss defense ties, regional security",
           "rank_key": {
             "outlets": 1,
@@ -1133,6 +1166,24 @@
           ],
           "camps": [
             "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
+        },
+        {
+          "selected_rank": null,
+          "headline": "Watch: Israeli army forces Palestinian farmers out of their fields in occupied West Bank",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-19T07:59+00:00"
+          },
+          "outlet_names": [
+            "Middle East Eye"
+          ],
+          "camps": [
+            "panarab"
           ],
           "members": 1,
           "qualified": false,
@@ -1193,79 +1244,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Six French nationals sentenced to life in prison in Iraq for Daesh membership",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-18T15:25+00:00"
-          },
-          "outlet_names": [
-            "IRNA"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Trump's Board of Peace warns of 'ceasefire' collapse in Gaza",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-18T09:30+00:00"
-          },
-          "outlet_names": [
-            "The New Arab"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "Kuwait, Bahrain fend off Iranian aerial attacks",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-17T22:38+00:00"
-          },
-          "outlet_names": [
-            "Arab News"
-          ],
-          "camps": [
-            "gulf"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "selected_rank": null,
-          "headline": "US military strikes Iranian missile launch site on Qeshm Island, US official tells AAE",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-17T19:41+00:00"
-          },
-          "outlet_names": [
-            "Al Arabiya"
-          ],
-          "camps": [
-            "panarab"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "6 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "10 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1283,7 +1262,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-19T13:35:24.480899+00:00",
+    "last_success": "2026-11-19T14:07:22.047837+00:00",
     "last_failure": null
   },
   "ok": true
