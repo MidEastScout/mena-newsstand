@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T19:51:04.090650+00:00",
+  "updated": "2026-11-23T19:54:50.089978+00:00",
   "stages": {
     "fetch": {
       "items": 122,
@@ -167,15 +167,15 @@
           "error": null
         }
       },
-      "headlines_updated": "2026-11-23T19:49:01.111285+00:00"
+      "headlines_updated": "2026-11-23T19:52:53.027757+00:00"
     },
     "normalize": {
       "stats": {
-        "dropped_stale": 4,
+        "dropped_stale": 5,
         "dropped_no_english": 35,
-        "title_native": 83,
+        "title_native": 82,
         "in": 122,
-        "kept": 83
+        "kept": 82
       },
       "translator": {
         "configured": true,
@@ -199,6 +199,11 @@
         {
           "source": "The New Arab",
           "title": "UK man swims in Strait of Hormuz to highlight environmental damage",
+          "reason": "stale (older than 48h)"
+        },
+        {
+          "source": "Arab News",
+          "title": "Maritime agency says 2 tankers struck in Hormuz, as Iran says ship on fire",
           "reason": "stale (older than 48h)"
         },
         {
@@ -243,17 +248,17 @@
         },
         {
           "source": "N12",
-          "title": "דוברת צה\"ל בערבית ביקרה בבית ספר בלבנון - ועוררה זעם: \"גררו את התלמידים למפגן צבאי\"",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "N12",
           "title": "ג'ארד קושנר על ישראל: \"בדרך למעמד של מדינה מנודה\"",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
           "source": "N12",
           "title": "אירוע חריג: זנב המטוס נחבט פעמיים במסלול הנחיתה בלונדון | תיעוד",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "N12",
+          "title": "בהלה באיסטנבול: לביאה מסתובבת חופשי, התושבים התבקשו להישאר בבתים",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -308,6 +313,11 @@
         },
         {
           "source": "Al-Akhbar",
+          "title": "استجابة لضغوط أميركية... طاجيكستان تبدأ الانسحاب من «الجنائية الدولية»",
+          "reason": "no English text obtainable (title/translation/snippet)"
+        },
+        {
+          "source": "Al-Akhbar",
           "title": "الكرملين ينفي مزاعم حول تخطيط روسيا لإطلاق قمر اصطناعي مزود بسلاح نووي",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
@@ -324,11 +334,6 @@
         {
           "source": "Al-Akhbar",
           "title": "بعد 10 أشهر من الجدل... «كاس» تحسم غداً هوية بطل كأس الأمم الأفريقية 2025",
-          "reason": "no English text obtainable (title/translation/snippet)"
-        },
-        {
-          "source": "Al-Akhbar",
-          "title": "باسيل: لا خلاص للبنان بالحروب أو التسويات... والأولوية لتفادي الحرب الداخلية",
           "reason": "no English text obtainable (title/translation/snippet)"
         },
         {
@@ -384,14 +389,21 @@
       ]
     },
     "relevance": {
-      "in": 83,
-      "kept": 47,
+      "in": 82,
+      "kept": 46,
       "dropped": [
         {
           "source": "Al Jazeera",
           "title": "3 , Artificial superintelligence ‘arriving’, warns top Meta executive",
           "sec": 0,
           "off": 1,
+          "reason": "no security/geopolitics signal"
+        },
+        {
+          "source": "Al Jazeera",
+          "title": "4 , Danish top court’s ‘ghetto law’ ruling supports hardline immigration policy",
+          "sec": 0,
+          "off": 0,
           "reason": "no security/geopolitics signal"
         },
         {
@@ -542,13 +554,6 @@
           "reason": "no security/geopolitics signal"
         },
         {
-          "source": "Arab News",
-          "title": "More remains recovered in the search for 34 workers missing after an Indonesian candy factory fire",
-          "sec": 0,
-          "off": 0,
-          "reason": "no security/geopolitics signal"
-        },
-        {
           "source": "Gulf News",
           "title": "Thousands evacuated after 'unknown substance' released at UK concert",
           "sec": 0,
@@ -643,17 +648,16 @@
     },
     "cluster": {
       "method": "heuristic",
-      "clusters": 32,
+      "clusters": 31,
       "sizes": [
-        5,
+        4,
+        4,
         4,
         3,
-        3,
         2,
         2,
         2,
         2,
-        1,
         1,
         1,
         1,
@@ -688,24 +692,22 @@
           "selected_rank": 1,
           "headline": "Iran shot down US drone east of Strait of Hormuz, state media claims",
           "rank_key": {
-            "outlets": 5,
-            "camps": 4,
+            "outlets": 4,
+            "camps": 3,
             "newest": "2026-11-23T19:30+00:00"
           },
           "outlet_names": [
             "Al Jazeera",
             "Anadolu Agency",
-            "Arab News",
             "IRNA",
             "Mehr News"
           ],
           "camps": [
-            "gulf",
             "panarab",
             "iranian",
             "turkish"
           ],
-          "members": 5,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -732,11 +734,6 @@
               {
                 "source": "Mehr News",
                 "title": "2 violating supertankers catch fire in Strait of Hormuz: IRGC",
-                "rejected_by": "older than the story's newest wave"
-              },
-              {
-                "source": "Arab News",
-                "title": "Bahrain says two injured in Iranian attack on industrial site, as tankers hit in",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -800,7 +797,7 @@
             "panarab",
             "turkish"
           ],
-          "members": 3,
+          "members": 4,
           "qualified": true,
           "why_not": null,
           "representative": {
@@ -821,7 +818,7 @@
           "rank_key": {
             "outlets": 3,
             "camps": 3,
-            "newest": "2026-11-22T08:59+00:00"
+            "newest": "2026-11-22T10:54+00:00"
           },
           "outlet_names": [
             "Al Arabiya",
@@ -847,11 +844,6 @@
               "outlet's own English headline"
             ],
             "passed_over": [
-              {
-                "source": "Arab News",
-                "title": "Bahrain says Iran struck civilian industrial facility, sparking fire",
-                "rejected_by": "older than the story's newest wave"
-              },
               {
                 "source": "TRT World",
                 "title": "Iran says struck US Patriot radars in Bahrain; Manama says attack hit civilian i",
@@ -892,7 +884,7 @@
             "passed_over": [
               {
                 "source": "Al Jazeera",
-                "title": "4 , Russia warns Ukraine of ‘dangerous trend’ after Libya and Baltic attacks",
+                "title": "2 , Russia warns Ukraine of ‘dangerous trend’ after Libya and Baltic attacks",
                 "rejected_by": "older than the story's newest wave"
               }
             ]
@@ -1001,6 +993,24 @@
               }
             ]
           }
+        },
+        {
+          "selected_rank": null,
+          "headline": "Israeli forces raid Al-Bireh amid heavy gunfire and tear gas",
+          "rank_key": {
+            "outlets": 1,
+            "camps": 1,
+            "newest": "2026-11-23T19:50+00:00"
+          },
+          "outlet_names": [
+            "WAFA News"
+          ],
+          "camps": [
+            "levant"
+          ],
+          "members": 1,
+          "qualified": false,
+          "why_not": "only 1 outlet — needs 2"
         },
         {
           "selected_rank": null,
@@ -1201,25 +1211,7 @@
           "why_not": "only 1 outlet — needs 2"
         },
         {
-          "selected_rank": null,
-          "headline": "Iran dismisses reports regarding to break US naval blockade",
-          "rank_key": {
-            "outlets": 1,
-            "camps": 1,
-            "newest": "2026-11-23T11:08+00:00"
-          },
-          "outlet_names": [
-            "Mehr News"
-          ],
-          "camps": [
-            "iranian"
-          ],
-          "members": 1,
-          "qualified": false,
-          "why_not": "only 1 outlet — needs 2"
-        },
-        {
-          "note": "12 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
+          "note": "11 further single-outlet clusters omitted (cannot qualify; see the cluster stage for the full count)"
         }
       ]
     },
@@ -1237,7 +1229,7 @@
   },
   "health": {
     "consecutive_failures": 0,
-    "last_success": "2026-11-23T19:51:21.122228+00:00",
+    "last_success": "2026-11-23T19:55:11.961372+00:00",
     "last_failure": null
   },
   "ok": true
